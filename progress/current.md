@@ -2,53 +2,46 @@
 
 Last updated: 15 October 2026 (IST).
 
-## Goal and background
+## Goal and constraints
 
-India data engineering job switch targeted for February 2027; salary aspiration about 15 LPA. Electrical engineering education; four years software support and one year development. Notice period: 90 days. Learner is considering resignation on 30 November 2026; resignation and last working date are not confirmed. February remains a target rather than a confirmed joining date.
+India data engineering switch targeted February 2027, about 15 LPA aspiration (not guaranteed). Electrical engineering education; four years support plus one development, separate from data engineering project experience. Notice period 90 days; considering resignation 30 November, resignation/last date unconfirmed.
 
-Study target: 50 hours weekly (weekdays six hours each, weekends ten each). Azure selected. Main track: SQL/Python, PostgreSQL, dbt, Airflow, intermediate Docker, PySpark fundamentals and selected Snowflake work. Power BI and PL/SQL are supporting skills.
-
-Learner reconfirmed the 50-hour target. Reports required tools available on their server and willingness to install more; environment has not yet been verified. No Azure or Snowflake access; willing to pay when needed. Begin locally and revisit access for the relevant lessons.
+Target 50 study hours/week: six weekdays, ten weekends; breaks separate. Azure one weekly concept; Docker within project hours. Tools reportedly on server, not independently verified; no Azure/Snowflake access, willing to pay later. Adapt scope to actual progress/sustainable time.
 
 ## Evidence so far
 
-- Initial revenue SQL used correct table keys, SUM and a completed-status filter.
-- It used INNER JOIN and lost customers without orders; omitted GROUP BY; used MONTH() in PostgreSQL; did not restrict the year or replace a missing total with zero.
-- Python cleaning and dbt/pipeline assessment not attempted; learner reported not knowing the remaining answers.
-- No project completion or independent lesson success has been demonstrated. Do not assume all listed technologies are working skills.
+- SQL-001: join-preservation prediction/query reasoning and changed-example outputs correct independently; reconstruction spelling help recorded. Initial success 15 October, early retrieval 16 October; no retained-mastery claim.
+- SQL-002: initial counting/grouping practice completed with COUNT/NULL, join-key and grouping-grain hints. Correct supplied changed/duplicate-name outputs. Unaided retrieval 16 October; independent-success anchor unset.
+- SQL-003: Asha total 1000 correct; Nila-zero prediction wrong. After rule explanation, correctly answered COUNT=0/SUM=NULL on all-NULL input. No totals query/output yet; setup deferred.
+- PY-001: cleaner attempts show dictionary key/value, record access, accumulation and conversion gaps. Reviewed earlier run produced empty valid dict and overwritten invalid entry. Tutor gave items()/record access, list and int()/ValueError hints. Learner revised but still struggled; no correct cleaner/function demonstrated. Expected output shape supplied on request; implementation not given.
+- PY-002: dictionary refresher requested. Tutor explained one record, keys/values, access and items() pairs. No learner refresher attempt yet. No integrated project complete; initial revenue date/year/filter gaps remain unassessed.
 
-## Current lesson
+## Exact next task — dictionaries, paused
 
-SQL: preserving unmatched customers with LEFT JOIN. The learner has not yet answered the simplified prediction/exercise. See tools/sql/exercises/001-join-preservation/README.md.
+Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md. Starting from order = {"order_id": 101, "amount": "500"}, learner prints amount, updates it to string "750" and prints dictionary, submitting code/output together. No loops/conversion/exception handling yet. Wait for explicit resume before starting another timer. Use progressive help from this demonstrated gap, then reconstruction/changed record and eventually return to cleaner. Do not restart SQL or the whole course.
 
-Latest prompt already presented: using customers (1, Asha), (2, Ravi), (3, Meera) and orders (101, 1), (102, 1), (103, 2), predict the INNER JOIN output row count and whether Meera appears, with a reason. No answer received and no hint given for this simplified task. The query is in tools/sql/exercises/001-join-preservation/README.md; attempt.sql remains a blank template.
+Preserve cleaner attempt.py and attempts/002-pause-draft.py, 003-pause-draft.py. feedback.md holds prior help. Latest draft mutates order_id, retains items loop/type errors and calls value(); not run/reviewed with learner yet. Do not overwrite it with tutor solution. New dictionary exercise attempt can use a separate file when learner begins.
 
-Exact next action: wait for the learner's prediction, or briefly restate those two questions in a new chat. Review that answer before asking the learner to modify the query to preserve every customer and predict Meera's order_id. Give a hint only if needed. Do not begin the full revenue aggregation until this is understood.
+## Deferred SQL
 
-## Revision
+Resolve exercise 003 setup before totals query. Supplied invalid INSERT into old orders(amount) had unfinished VALUES/WHERE syntax. Exact statement/error in exercise 003 attempt.sql. Provided original orders schema lacks amount; newly found tools/postgresql/setup.sql contains learner scratch ALTER/attempts, so actual live schema must be verified rather than assumed. Don't run scratch file wholesale.
 
-SQL-001 is in learning state, awaiting correction; no first independent success date. Schedule actual retrieval reviews after demonstrated learning. No need to restart the entire assessment.
+Later run tools/sql/exercises/003-customer-totals/setup.sql in one connection for separate temporary revenue_customers/revenue_orders, share result/error, then learner writes customer-ID/name/SUM report preserving all customers and leaving unmatched totals NULL. No COALESCE/date/status solution given yet. Earlier sample last reported five customers/five orders; temporary state may vanish on reconnect.
 
-## Timer and platform setup
+## Timer and Excel
 
-A SQL interval began at 08:11:20 IST on 15 October 2026. Subsequent messages concerned platform access and repository setup. The actual stop/pause time was not supplied. The migrated row is needs_confirmation and is excluded from confirmed totals. Ask for the actual end time before closing it; do not charge the whole setup gap to SQL study.
+All timers paused at 12:48:53 IST. Latest Python interval 12:41:42–12:48:53: 7m11s. Completed today/week 1h57m23s (SQL 1h30m56s, Python 26m27s). Remaining today 4h2m37s toward six hours. Resume starts a new row. Older 08:11:20 interval needs_confirmation, stop unknown and excluded; breaks excluded. Never infer study from silence or count overlapping intervals.
 
-No new timer has started. Learner said they will start it and was told to send "Start SQL" when ready. Follow reference/study-tracking.md on that explicit signal; do not infer a running interval from readiness or repository-maintenance messages.
+tracking/study-log.csv is authoritative. Excel outputs/study-tracker/study-hours.xlsx refreshed 15 October to completed 1h57m23s, excluding uncertain/running time. Rebuild with tracking/update-study-tracker.mjs after log changes, status requests and daily handoff; flag stale if unavailable. First partial week 32h from 15 October, full weeks 50h. Closed-day shortfall separate from today's remaining target.
 
-## Portability
+ClockIt octech.clockit v1.9.0 installed locally; ignored settings disable auto-start/cloud and select CSV. Learner prefers tutor-managed message-controlled tracking. No importer/tested focus alert/reminder configured; duration/delivery still unagreed. Don't promise an alert without setup.
 
-Cross-computer entry point: START-HERE.md. It summarises current status, the exact pending prediction, timer uncertainty, agreed commands and required reading. Keep its status and next step aligned with this checkpoint after meaningful work; underlying code and trackers remain authoritative.
+## Pacing, records and handoff
 
-This repository is now the canonical tutoring record: https://github.com/satishryali/data-engineering-journey (private). Files previously produced beside the original checkout are historical snapshots. Original-chat reminders use the local checkout; remote/cloud chats need repository access and current checkpoints. Read this file after pulling before resuming, and push reviewed checkpoint updates after finishing. Git does not migrate or run the existing reminders.
+One meaningful bounded task at a time; combine prediction/code/output, review actual work and use micro-questions only for gaps. Dictionary refresher explicitly requested. Avoid repeated trivial confirmations; don't infer proficiency from preference/familiarity/time.
 
-Learner explicitly requested durable Markdown handoffs so closing a context window or changing computers does not lose the current step. Maintain this checkpoint and session history after substantive exchanges. Learner authorised committing and pushing the latest changes on 15 October 2026. Verify actual sync using Git status and the remote branch; another computer needs the latest synced files before resuming.
+Batch learning records at task completion, pause/topic switch, explicit Save checkpoint, Finish or Finish for today; no file writes after each ordinary answer/hint. Timer events recorded immediately. Interim work stays in conversation until checkpoint. Save before closing/switching devices; no background/parallel writer or midnight execution. Preserve attempts and assistance history; no spaced review attempted today (revision-history.csv unchanged).
 
-Agreed record structure: update this single checkpoint in place, append dated session-history entries, preserve work in exercise folders, and maintain skill notes plus CSV trackers. No separate daily Markdown file is needed. Create additional exercise/project files as actual work requires them.
+Queue: SQL-001 retrieval, SQL-002 unaided reconstruction, SQL-003 SUM/NULL and PY-001 early practice due 16 October; PY-002 no success/review date yet. Prioritise dictionary foundations before the full cleaner; do not dump the whole queue at once. Schedule is flexible around actual learning, not elapsed dates.
 
-Schedule command: `Today's schedule` shows the current IST date's target, confirmed/remaining hours, due reviews and ordered tasks from the checkpoint and plan without starting a timer. Today's proposed sequence (15 October): pending SQL join prediction; preservation query, reconstruction and changed example; grouping/missing totals only if ready; Python cleaning baseline; retrieval and handoff. These are conditional tasks, not recorded completions or a fixed clock timetable.
-
-Time-report command: `Study time` is an alias for `Study status`; report confirmed daily/weekly hours and minutes against targets, remaining hours and closed-day shortfall, with any running/uncertain intervals separate. It does not start or stop the timer.
-
-Learner requested clear timer/checkpoint commands and checkpoints without reminders. README.md now defines the phrases and end-of-day procedure. Save after meaningful work; Finish for today closes any active interval and saves a daily summary. If the learner leaves silently, reconcile a missing closing summary at the next interaction from evidence only; no background midnight execution. This exchange is setup only; current SQL prediction and timer state remain unchanged.
-
-Excel hours tracker added at outputs/study-tracker/study-hours.xlsx, generated by tracking/update-study-tracker.mjs from tracking/study-log.csv. Refresh after log changes, status requests and daily handoff. Initial IST reporting date: 15 October 2026; targets start that date (32-hour first partial week, then 50-hour weeks). Shows daily/weekly confirmed hours, closed-day behind/ahead and today's remaining target. Initial confirmed hours: zero; today remaining: six; earlier uncertain interval excluded. No new timer started; SQL prediction still awaits an answer. Workbook and documentation are included in the authorised repository sync.
+START-HERE.md is the entry point; README.md has commands/sync/Excel instructions. Latest explicit request: commit and push current changes. Last previous verified push 9481e9e; Git history/remote will establish this sync's actual outcome. Commit/push only on instruction; keep secrets/runtime data out. Use repo-relative paths and read current files on every new device/chat.

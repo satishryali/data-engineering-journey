@@ -36,3 +36,5 @@ Thumbs.db
 outputs/study-tracker/node_modules/
 outputs/study-tracker/*-preview.png
 outputs/study-tracker/*.inspect.ndjson
+
+/clockit_backup_*.csv

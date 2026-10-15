@@ -13,7 +13,7 @@ On a new computer or in a new chat, begin with [START-HERE.md](START-HERE.md). I
 3. Inspect tracking/revision-queue.csv and the latest work before selecting a task.
 4. After reviewed work, update progress/current.md, progress/session-history.md and the relevant trackers. Never mark a planned topic as completed.
 
-Current assignment: tools/sql/exercises/001-join-preservation/README.md.
+Current assignment: tools/python/exercises/001-record-cleaning/dictionary-refresher.md (dictionary foundations, explicitly requested; timers paused). Record cleaner and SQL-003 setup/totals are deferred, not complete. SQL-001 initial learning completed; SQL-002 initial practice completed with assistance. Early SQL/Python practice due 16 October 2026. See progress/current.md for evidence and help used.
 
 ## Structure
 
@@ -97,13 +97,13 @@ Commit author configuration is separate from GitHub login. An AI can read the re
 ## How learning records are maintained
 
 - progress/current.md: one current checkpoint, updated in place with evidence, help used, weak points, exact pending task and timer state.
-- progress/session-history.md: append concise dated outcomes after meaningful exchanges, including agreed planning changes. Do not create a separate daily Markdown file by default.
+- progress/session-history.md: append one concise dated outcome per practical task or session block, including relevant planning changes; avoid an entry for every answer. Do not create a separate daily Markdown file by default.
 - tools/<skill>/exercises/: preserve prompts, attempts, feedback and changed examples. Keep hints and final solutions separate from unanswered practice.
 - tools/<skill>/notes.md: record explanations and lessons from actual work.
 - tracking/: record study intervals, actual retrieval attempts and the next review due; never infer completion from a planned date.
 - plan/: maintain the agreed curriculum and any deliberate scope changes.
 
-The tutor updates the relevant files after meaningful work and before a handoff. You can also say `Save checkpoint` before closing the chat. Git history preserves committed versions; a fresh chat still needs to read the latest files.
+The tutor batches file updates at practical-task completion, pause/topic switch, Save checkpoint, Finish or Finish for today. Ordinary teaching replies do not trigger Markdown edits. Interim attempts stay in the active conversation until the next checkpoint, where code/evidence/help and actual outcomes are consolidated. Timer start/stop timestamps are still recorded immediately. Say `Save checkpoint` before closing the chat or changing computers: uncheckpointed exchanges are not yet durable repository records. No background or parallel writer is running. Git history preserves committed versions; a fresh chat must read the latest files.
 
 ## New tutoring chat prompt
 
@@ -133,7 +133,27 @@ The example assumes the repository root as working folder. The builder itself re
 
 Include the generated workbook and builder in the reviewed files when committing/pushing for another computer. Preview images and local runtime links are ignored.
 
-### Exact phrases to use
+### VS Code timer extension
+
+ClockIt: Session manager (extension ID `octech.clockit`, installed version 1.9.0) is installed on the current computer. On another computer install it from Extensions or run `code --install-extension octech.clockit`. Installation does not migrate its local state.
+
+Before activation, set these workspace settings to keep tracking manual and exports local:
+
+```json
+{
+  "clockit.autoStartOnLaunch": false,
+  "clockit.cloud.enabled": false,
+  "clockit.enabledSinks": ["csv"]
+}
+```
+
+They are currently in .vscode/settings.json, which is ignored by Git; recreate them on each computer. Merge these keys into existing settings rather than replacing unrelated configuration.
+
+After activation, use the ClockIt CSV/folder control in the status bar to open its menu: Start time, Stop time, Pause/Resume time and Set focus timer. The installed version registers the focus/pause controls but does not list them separately in its Command Palette contributions. Start and stop are available as `Clockit: Start Time` and `Clockit: Stop Time`. If the controls do not appear, use `Developer: Reload Window`. Set focus timer takes the block duration and is intended to notify on expiry; notification delivery has not yet been tested on this computer.
+
+No extension session or focus countdown was started during installation. The chat CSV remains authoritative until export integration is built and verified. ClockIt exports have a different schema; do not append them directly to tracking/study-log.csv or count the same period twice. Keep setup and off-editor study separate from automatic editor-activity measurements.
+
+### Chat timer and checkpoint commands
 
 | Send this message | Tutor action |
 |---|---|
@@ -152,7 +172,7 @@ These phrases are convenient shortcuts; equivalent clear instructions are valid 
 
 ### Checkpoints without a reminder
 
-The tutor must save relevant records after meaningful work without waiting for the learner to request a checkpoint. After saving, briefly confirm: `Checkpoint saved — [what was completed or remains pending]; next: [exact step]; timer: [state].` Do not claim a save before writing the files.
+The tutor saves at practical-task completion, pause/topic switch or finish without waiting for another reminder, and on explicit Save checkpoint. Batch the evidence since the last checkpoint instead of editing files after each response. After an actual save, briefly confirm the pending step and timer state. Do not claim a save before writing files. Timer events are recorded when they happen; routine explanations do not change the timer.
 
 On `Finish` or `Finish for today`, save what was actually attempted, evidence and help used, remaining gaps, the exact next task, revision due and timer state. For the end-of-day summary, report confirmed study totals from the log and distinguish uncertain intervals. Keep dated outcomes in progress/session-history.md and the latest handoff in progress/current.md; a separate daily file is unnecessary.
 
@@ -160,4 +180,4 @@ If the learner leaves without an end-of-day message, the last saved checkpoint r
 
 ## Status
 
-Repository prepared on 15 October 2026 for the private GitHub repository above. No exercise has yet been completed independently. February 2027 readiness and 15 LPA are goals, not promised outcomes.
+Repository prepared on 15 October 2026 for the private GitHub repository above. SQL-001 initial learning has correct independent reasoning/changed examples with spelling help recorded; SQL-002 initial practice completed with assistance. Python dictionary foundations are active, cleaner/SUM report deferred, no integrated project complete. February 2027 readiness and 15 LPA are goals, not promised outcomes.
