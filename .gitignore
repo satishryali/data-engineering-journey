@@ -31,3 +31,8 @@ data/warehouse/
 postgres-data/
 .DS_Store
 Thumbs.db
+
+# Spreadsheet runtime junction and visual QA previews
+outputs/study-tracker/node_modules/
+outputs/study-tracker/*-preview.png
+outputs/study-tracker/*.inspect.ndjson

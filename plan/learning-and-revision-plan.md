@@ -2,7 +2,7 @@
 
 Prepared: 15 October 2026. Timezone: Asia/Kolkata (IST).
 Baseline/startup: 15–18 October 2026. Sixteen full learning weeks: 19 October 2026–7 February 2027.
-Goal: prepare to compete for suitable India data engineering roles by February 2027. A role or salary outcome is not guaranteed. February joining versus offer date and notice period still need clarification; apply early enough for the actual deadline.
+Goal: prepare to compete for suitable India data engineering roles by February 2027. A role or salary outcome is not guaranteed. Notice period is 90 days; learner is considering resignation on 30 November 2026. Resignation and last working date are not confirmed; February remains a target. Apply early enough for actual availability.
 
 ## Starting position and priorities
 
@@ -123,7 +123,7 @@ Build one growing orders/customer pipeline: Python ingestion into PostgreSQL; va
 
 Introduce realistic problems progressively: NULLs and malformed amounts; duplicate IDs; customer rows without orders; changed orders; retries; partial failures; historical reloads; schema changes; permissions and cost. Preserve a small expected-output example and a runbook. Local educational demos must not be described as production experience.
 
-Begin resume and experience-story work in week 1. Review target job descriptions weekly. Start targeted applications when the existing background and demonstrated work fit a role; aim to begin during November rather than waiting for every technology. The current notice period and February joining/offer deadline are still unknown. A 15 LPA offer is a goal, not an assessment promise.
+Begin resume and experience-story work in week 1. Review target job descriptions weekly. Start targeted applications when the existing background and demonstrated work fit a role; aim to begin during November rather than waiting for every technology. Account for the confirmed 90-day notice period and tentative 30 November resignation; verify actual availability when known. A 15 LPA offer is a goal, not an assessment promise.
 
 ## Week 1 daily tasks
 
