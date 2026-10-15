@@ -1,7 +1,19 @@
 # Dictionaries
 
+Purpose: associate a meaningful key with a value, such as a record field and its data.
+Use a dictionary for keyed records/lookups and a list for a collection of records.
+The existing runnable brand lookup below prints `Ford`. Update examples replace a
+value or add a unique key. Common pitfalls include mixing a field name with its value,
+overwriting earlier records, and confusing assignment `=` with literal `:` syntax.
+Recall tasks are separate in [[revision/questions|Questions]].
+
+Source-note correction, 15 October 2026: corrected ordering, assignment/literal syntax
+and `udpate` spelling below. These were source-note errors, not additional observed
+learner mistakes. Useful original explanations were preserved; prior wording is in Git.
+Reference: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+
 - Dictioanaries are used to store the data in key value pairs
-- Dictionaries are unordered, changeable and do not allow duplicates.
+- Dictionaries preserve insertion order in modern Python, are mutable and have unique keys.
 - Does not allow duplicates refers to that it will overwrite the existing values
 - we can use dictionary constructor to actually build the dictionaries.
 
@@ -51,8 +63,8 @@
 - ```python
 
     thisdict = {"brand" : "Ford" , "year" : 1965}
-    thisdict["brand"] : "Mustang" #updates existing one.
-    thisdict["Color"] : "Red" # adds new row
+    thisdict["brand"] = "Mustang" #updates existing one.
+    thisdict["Color"] = "Red" # adds new key
 
     ```
 
@@ -62,8 +74,8 @@
 
     thisdict = {"brand" : "Ford" , "year" : 2000}
     thisdict.update(year = 1965) #updates existing one.
-    thisdict.update({"color" = "Red"}) # Adds new row
-    thisdict.udpate(year= 1965, brand = "mustang") #updating multiple rows at a time.
+    thisdict.update({"color": "Red"}) # Adds new key
+    thisdict.update(year= 1965, brand = "mustang") #updating multiple keys at a time.
     thisdict.update([("year", 2021)]) # using iterable pairs
     ```
 

@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Kolkata",
+  "created_at": "2026-10-15T10:17:43.6336878Z",
+  "updated_at": "2026-10-15T10:17:43.6336878Z",
+  "default_session_minutes": 20,
+  "interval_days": [
+    1,
+    3,
+    7,
+    14,
+    30
+  ],
+  "topics": [
+    {
+      "id": "py.dict.access",
+      "name": "Dictionary lookup and missing keys",
+      "sources": [
+        {
+          "path": "Python/Concepts/dictionaries.md",
+          "sha256": "3e23811234dc68c86c3dd9f7c5e0ca220c5fd3782ba6421e26e6a3fc0134fa2d"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "active",
+      "prerequisites": [],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "py.dict.mutate",
+      "name": "Updating and iterating dictionaries",
+      "sources": [
+        {
+          "path": "Python/Concepts/dictionaries.md",
+          "sha256": "3e23811234dc68c86c3dd9f7c5e0ca220c5fd3782ba6421e26e6a3fc0134fa2d"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access"
+      ],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "py.context.resources",
+      "name": "Context managers and resource lifecycle",
+      "sources": [
+        {
+          "path": "Python/Concepts/with(Context_Manager).md",
+          "sha256": "89433eb559f03c99f13775287158c9843e1eeb158c32aba733b3af512cedec23"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "active",
+      "prerequisites": [],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "pg.cursor.results",
+      "name": "Connections, cursors, execute and fetch",
+      "sources": [
+        {
+          "path": "Python/Database Connections/postgres_connection.md",
+          "sha256": "f2d295b186312cde6b2eefaa8320e06120e18ffa53a0f048b9c8f5df09ec9656"
+        },
+        {
+          "path": "Python/Database Connections/Exeucting Commands.md",
+          "sha256": "25f818bc2d023b69fed89a3e3d59d9dc95fd95651fa249672ece14db71a77d1e"
+        },
+        {
+          "path": "Python/Lessons/Doubts/Connection.md",
+          "sha256": "aa38b75b0bf2d6bd5a52bbec4e8cf6d7eb6c32c3bab959fd07c15550bf10eb7f"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "active",
+      "prerequisites": [],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "py.logging.basics",
+      "name": "Logging configuration and named loggers",
+      "sources": [
+        {
+          "path": "Python/Concepts/Logging.md",
+          "sha256": "fa9ab02e041b7302a43e50ef3ec592f801344167a880ae199c7d71a6835ccf67"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "queued",
+      "prerequisites": [],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "py.paths.imports",
+      "name": "File paths and module lookup",
+      "sources": [
+        {
+          "path": "Python/Lessons/Errors & Resolutions/path.md",
+          "sha256": "c5198608e7a15f7c1af930bdb5c54c7f183cbafbaf2aac5cebeed14fdd2e8a77"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "queued",
+      "prerequisites": [],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "py.modules.main",
+      "name": "Imports and the main guard",
+      "sources": [
+        {
+          "path": "Python/Lessons/Understandings.md",
+          "sha256": "baf24df8a4895e91decc770cdb52a5619ea7a548f3dd41bf8234119f39319c7a"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "queued",
+      "prerequisites": [],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "vault.kv.read",
+      "name": "Vault client and nested KV response",
+      "sources": [
+        {
+          "path": "Python/Concepts/Hashicorp_vault.md",
+          "sha256": "613183d819190b8214853ade5473290aa4911f55bdc32331a80a5cb2c0e1928e"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access"
+      ],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "py.logging.shared",
+      "name": "Shared logging configuration",
+      "sources": [
+        {
+          "path": "Python/Lessons/Pending Tasks/Pending.md",
+          "sha256": "f3ecfc733545770d27a8adb662592bb0ce05fdd0e169a2eb481d2a3a6fa8670a"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "queued",
+      "prerequisites": [
+        "py.logging.basics",
+        "py.paths.imports"
+      ],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    },
+    {
+      "id": "de.ingest.seeds",
+      "name": "Raw ingestion types and dbt seeds",
+      "sources": [
+        {
+          "path": "Python/Lessons/tips.md",
+          "sha256": "1590a4fc9ac281f8b9b2b596326b4a5aa808ddae10c984070b27ac6247a63ac6"
+        }
+      ],
+      "source_history": [],
+      "assessment_status": "unassessed",
+      "coverage": "queued",
+      "prerequisites": [],
+      "interval_stage": null,
+      "last_reviewed_date": null,
+      "next_review_date": null,
+      "recent_scores": [],
+      "misconceptions": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "longest_stage_successes": 0
+    }
+  ],
+  "reminder": {
+    "status": "not_configured",
+    "preferred_time": null,
+    "time_asked": false
+  },
+  "session": {
+    "target_minutes": 20,
+    "focus_topic_ids": [
+      "py.dict.access",
+      "py.context.resources",
+      "pg.cursor.results"
+    ],
+    "pending_question": {
+      "notes_used": null,
+      "kind": "diagnostic",
+      "hints_used": 0,
+      "id": "diagnostic-dict-001",
+      "asked_at": "2026-10-15T10:17:43.6336878Z",
+      "prompt": "Write Python code to get batch_size from config, using 1000 if that key is missing. The code should work for both config = {\"table\": \"customers\", \"batch_size\": 500} and config = {\"table\": \"customers\"}.",
+      "topic_id": "py.dict.access"
+    },
+    "started_at": "2026-10-15T10:17:43.6336878Z",
+    "completed_review_ids": [],
+    "status": "awaiting_answer"
+  }
+}

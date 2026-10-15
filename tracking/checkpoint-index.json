@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "checkpoints": [
+    {
+      "checkpoint_id": "SETUP-five-role-coach-20261015",
+      "date_ist": "2026-10-15",
+      "kind": "setup",
+      "sha256": "b2ccf9dd413a91aa5eb28ffcc5c2d0888f5ef8bb57d36babf545b2f42564bf50",
+      "evidence_key": "7559d87072e9b6fd7b17deaae8c485523e726d781049866233f1279f7f7d0cd1"
+    },
+    {
+      "checkpoint_id": "NOTES-lists-reference-20261015",
+      "date_ist": "2026-10-15",
+      "kind": "setup",
+      "sha256": "be23f230e1a2f61668c26ab5f7b3174f5c75c115ddd6cebe10615a48e6805b6a",
+      "evidence_key": "1365f5d622bf597c2932682d035751083acf612efd22122f9d11d8e19b714281"
+    },
+    {
+      "checkpoint_id": "NOTES-lists-writing-style-20261015",
+      "date_ist": "2026-10-15",
+      "kind": "setup",
+      "sha256": "ef5775ef55f1bfc3a59735986057015cf38b644f1aa11d68d56c2444e70c80e4",
+      "evidence_key": "2fc639f370af9e013dff2b0f7e37176814690325f8558c165e5639f2c3ceaaab"
+    },
+    {
+      "checkpoint_id": "NOTES-style-specification-20261015",
+      "date_ist": "2026-10-15",
+      "kind": "setup",
+      "sha256": "3ac423c552777076e15c39020a45c8dbc056f814e910fb6af997ece724875eda",
+      "evidence_key": "66d4935acd0ada49bd11987c2bcba23673de5fe80ef5b1887256ca93e5af7fc2"
+    }
+  ]
+}

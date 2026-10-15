@@ -1,0 +1,4 @@
+interface:
+  display_name: "Progress Tracker"
+  short_description: "Show daily and weekly learning progress with evidence."
+  default_prompt: "Use $progress-tracker to show today's actual learning, assistance, gaps and next task, keeping study time separate from outcomes."

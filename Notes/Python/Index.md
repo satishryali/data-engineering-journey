@@ -14,3 +14,4 @@
 # Python Fundamentals
 
 1. Dictionaries [[dictionaries.md]]
+2. Lists [[lists.md]]

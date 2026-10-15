@@ -29,7 +29,7 @@ Each tool has README.md and notes.md. Add exercise folders as lessons are actual
 
 ## Codex commands on every computer
 
-Your nine personal commands and a portable installer are tracked in [codex/README.md](codex/README.md).
+Your five role entries (Learning Coach, Notes Keeper, Mistake Keeper, Revision Coach and Progress Tracker), GitHub Agent utility, nine existing personal commands and portable installer are tracked in [codex/README.md](codex/README.md).
 After cloning or updating this repository on another computer, run:
 
 ```bash
@@ -110,10 +110,21 @@ Commit author configuration is separate from GitHub login. An AI can read the re
 
 ## How learning records are maintained
 
+The [five-role learning coach](reference/learning-coach.md) coordinates Learning Coach,
+Notes Keeper, Mistake Keeper, Revision Coach and Progress Tracker through one conversation.
+Say **Start today's learning** to resume the genuine pending task without starting a timer.
+You can also say **Start revision**, **Show my mistakes**, **Show today's learning**,
+**Weekly review** or **Save checkpoint**. Your existing timer/checkpoint commands remain.
+No new installation, dashboard, API or background agents are required.
+
+The guide and [tracker operations](tracking/README.md) identify authoritative records.
+The two former review systems now share the CSV queue/history; Notes/revision is generated.
+Historical IDs, evidence and the old pending diagnostic are preserved in tracking/legacy.
+
 - progress/current.md: one current checkpoint, updated in place with evidence, help used, weak points, exact pending task and timer state.
 - progress/session-history.md: append one concise dated outcome per practical task or session block, including relevant planning changes; avoid an entry for every answer. Do not create a separate daily Markdown file by default.
 - tools/<skill>/exercises/: preserve prompts, attempts, feedback and changed examples. Keep hints and final solutions separate from unanswered practice.
-- tools/<skill>/notes.md: record explanations and lessons from actual work.
+- Notes/: canonical Obsidian explanations and separate recall prompts; tools/<skill>/notes.md links to the relevant vault notes.
 - tracking/: record study intervals, actual retrieval attempts and the next review due; never infer completion from a planned date.
 - plan/: maintain the agreed curriculum and any deliberate scope changes.
 

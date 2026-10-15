@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notes Keeper"
+  short_description: "Maintain your evidence-based Obsidian learning notes."
+  default_prompt: "Use $notes-keeper to inspect my existing notes and maintain them from saved learning evidence using the shared five-role workflow."

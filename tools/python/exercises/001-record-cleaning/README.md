@@ -1,8 +1,11 @@
 # Python 001: dictionary records and cleaning baseline
 
-Assigned 15 October 2026; no attempt yet. Revision item PY-001.
+Assigned 15 October 2026; historical drafts and feedback are preserved. Revision item PY-001.
+The learner later requested dictionary foundations: the active next task is
+dictionary-refresher.md (PY-002), as recorded in progress/current.md. The full cleaner
+below is deferred, not completed. Do not restart the baseline or overwrite attempts.
 
-## Active task — clean five order records
+## Deferred practical task — clean five order records
 
 The initial printing/type prediction below was assigned but not attempted. Learner requested less fragmented practice; use this bounded practical task instead. No Python proficiency assumed. Attempt it as a whole; hints and solutions stay separate.
 

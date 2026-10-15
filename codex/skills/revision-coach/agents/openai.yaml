@@ -1,0 +1,4 @@
+interface:
+  display_name: "Revision Coach"
+  short_description: "Practise manageable retrieval tasks from your records."
+  default_prompt: "Use $revision-coach to read my saved review state and give one meaningful retrieval task without showing the answer or starting a timer."

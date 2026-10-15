@@ -1,276 +1,505 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "generated": true,
   "timezone": "Asia/Kolkata",
-  "created_at": "2026-10-15T10:17:43.6336878Z",
-  "updated_at": "2026-10-15T10:17:43.6336878Z",
-  "default_session_minutes": 20,
-  "interval_days": [
-    1,
-    3,
-    7,
-    14,
-    30
-  ],
+  "authoritative_queue": "tracking/revision-queue.csv",
+  "authoritative_history": "tracking/revision-history.csv",
   "topics": [
     {
       "id": "py.dict.access",
       "name": "Dictionary lookup and missing keys",
       "sources": [
         {
-          "path": "Python/Concepts/dictionaries.md",
-          "sha256": "3e23811234dc68c86c3dd9f7c5e0ca220c5fd3782ba6421e26e6a3fc0134fa2d"
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "3e23811234dc68c86c3dd9f7c5e0ca220c5fd3782ba6421e26e6a3fc0134fa2d",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "3a11d8193d8c00b7031077350857e8d1a758e44717721ce5a12ca8a874105040",
+          "reason": "Targeted source-note corrections verified against official documentation during coach setup; not a learner assessment",
+          "changed_on": "2026-10-15"
+        }
+      ],
       "coverage": "active",
       "prerequisites": [],
+      "exercise_ids": [
+        "PY-001",
+        "PY-002"
+      ],
+      "legacy_id": "py.dict.access",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "py.dict.mutate",
       "name": "Updating and iterating dictionaries",
       "sources": [
         {
-          "path": "Python/Concepts/dictionaries.md",
-          "sha256": "3e23811234dc68c86c3dd9f7c5e0ca220c5fd3782ba6421e26e6a3fc0134fa2d"
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "3e23811234dc68c86c3dd9f7c5e0ca220c5fd3782ba6421e26e6a3fc0134fa2d",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "3a11d8193d8c00b7031077350857e8d1a758e44717721ce5a12ca8a874105040",
+          "reason": "Targeted source-note corrections verified against official documentation during coach setup; not a learner assessment",
+          "changed_on": "2026-10-15"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [
         "py.dict.access"
       ],
+      "exercise_ids": [
+        "PY-001",
+        "PY-002"
+      ],
+      "legacy_id": "py.dict.mutate",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "py.context.resources",
       "name": "Context managers and resource lifecycle",
       "sources": [
         {
-          "path": "Python/Concepts/with(Context_Manager).md",
-          "sha256": "89433eb559f03c99f13775287158c9843e1eeb158c32aba733b3af512cedec23"
+          "path": "Notes/Python/Concepts/with(Context_Manager).md",
+          "sha256": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/with(Context_Manager).md",
+          "sha256": "89433eb559f03c99f13775287158c9843e1eeb158c32aba733b3af512cedec23",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/with(Context_Manager).md",
+          "sha256": "9e914cde2a8bf264a79f9d0dddae743c7a3c3eca71dfc131f9514102a3644960",
+          "reason": "Targeted source-note corrections verified against official documentation during coach setup; not a learner assessment",
+          "changed_on": "2026-10-15"
+        }
+      ],
       "coverage": "active",
       "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": "py.context.resources",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "pg.cursor.results",
       "name": "Connections, cursors, execute and fetch",
       "sources": [
         {
-          "path": "Python/Database Connections/postgres_connection.md",
-          "sha256": "f2d295b186312cde6b2eefaa8320e06120e18ffa53a0f048b9c8f5df09ec9656"
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "sha256": "03095e6e496d97eaad4522f38dd25145b9643967144131a6f87be531310e5d4f"
         },
         {
-          "path": "Python/Database Connections/Exeucting Commands.md",
-          "sha256": "25f818bc2d023b69fed89a3e3d59d9dc95fd95651fa249672ece14db71a77d1e"
+          "path": "Notes/Python/Database Connections/Exeucting Commands.md",
+          "sha256": "14d49671c20352a06ef8bc9f16048178fd395e338866e22fc6e6e07632dad3d6"
         },
         {
-          "path": "Python/Lessons/Doubts/Connection.md",
+          "path": "Notes/Python/Lessons/Doubts/Connection.md",
           "sha256": "aa38b75b0bf2d6bd5a52bbec4e8cf6d7eb6c32c3bab959fd07c15550bf10eb7f"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "sha256": "f2d295b186312cde6b2eefaa8320e06120e18ffa53a0f048b9c8f5df09ec9656",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        },
+        {
+          "path": "Notes/Python/Database Connections/Exeucting Commands.md",
+          "sha256": "25f818bc2d023b69fed89a3e3d59d9dc95fd95651fa249672ece14db71a77d1e",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        }
+      ],
       "coverage": "active",
       "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": "pg.cursor.results",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "py.logging.basics",
       "name": "Logging configuration and named loggers",
       "sources": [
         {
-          "path": "Python/Concepts/Logging.md",
-          "sha256": "fa9ab02e041b7302a43e50ef3ec592f801344167a880ae199c7d71a6835ccf67"
+          "path": "Notes/Python/Concepts/Logging.md",
+          "sha256": "2448a74bda7aa969b615d80cd294a08a96a588507582a95213d0d0f812306a53"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/Logging.md",
+          "sha256": "fa9ab02e041b7302a43e50ef3ec592f801344167a880ae199c7d71a6835ccf67",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": "py.logging.basics",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "py.paths.imports",
       "name": "File paths and module lookup",
       "sources": [
         {
-          "path": "Python/Lessons/Errors & Resolutions/path.md",
-          "sha256": "c5198608e7a15f7c1af930bdb5c54c7f183cbafbaf2aac5cebeed14fdd2e8a77"
+          "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
+          "sha256": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
+          "sha256": "c5198608e7a15f7c1af930bdb5c54c7f183cbafbaf2aac5cebeed14fdd2e8a77",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": "py.paths.imports",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "py.modules.main",
       "name": "Imports and the main guard",
       "sources": [
         {
-          "path": "Python/Lessons/Understandings.md",
-          "sha256": "baf24df8a4895e91decc770cdb52a5619ea7a548f3dd41bf8234119f39319c7a"
+          "path": "Notes/Python/Lessons/Understandings.md",
+          "sha256": "c4dd5ba7ec703771c17745d67ea93f7ebe74802002dd73ea938b8868cb38c54a"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Lessons/Understandings.md",
+          "sha256": "baf24df8a4895e91decc770cdb52a5619ea7a548f3dd41bf8234119f39319c7a",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": "py.modules.main",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "vault.kv.read",
       "name": "Vault client and nested KV response",
       "sources": [
         {
-          "path": "Python/Concepts/Hashicorp_vault.md",
-          "sha256": "613183d819190b8214853ade5473290aa4911f55bdc32331a80a5cb2c0e1928e"
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "sha256": "7c14dbb241bc7013e39db62c3cb04c567dea36341244728d824bbff4014ac3bf"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "sha256": "613183d819190b8214853ade5473290aa4911f55bdc32331a80a5cb2c0e1928e",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [
         "py.dict.access"
       ],
+      "exercise_ids": [],
+      "legacy_id": "vault.kv.read",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "py.logging.shared",
       "name": "Shared logging configuration",
       "sources": [
         {
-          "path": "Python/Lessons/Pending Tasks/Pending.md",
-          "sha256": "f3ecfc733545770d27a8adb662592bb0ce05fdd0e169a2eb481d2a3a6fa8670a"
+          "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
+          "sha256": "fa122de79baa414e18daaaaee14efb06c66179b4356538f8dcff3acab78bcd66"
         }
       ],
-      "source_history": [],
-      "assessment_status": "unassessed",
+      "source_history": [
+        {
+          "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
+          "sha256": "f3ecfc733545770d27a8adb662592bb0ce05fdd0e169a2eb481d2a3a6fa8670a",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [
         "py.logging.basics",
         "py.paths.imports"
       ],
+      "exercise_ids": [],
+      "legacy_id": "py.logging.shared",
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
     },
     {
       "id": "de.ingest.seeds",
       "name": "Raw ingestion types and dbt seeds",
       "sources": [
         {
-          "path": "Python/Lessons/tips.md",
-          "sha256": "1590a4fc9ac281f8b9b2b596326b4a5aa808ddae10c984070b27ac6247a63ac6"
+          "path": "Notes/Python/Lessons/tips.md",
+          "sha256": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "sha256": "1590a4fc9ac281f8b9b2b596326b4a5aa808ddae10c984070b27ac6247a63ac6",
+          "retained_from": "tracking/legacy/notes-revision-topics.json",
+          "reason": "Original hash retained after vault formatting/migration; not a learner assessment"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": "de.ingest.seeds",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null
+    },
+    {
+      "id": "sql.join.preservation",
+      "name": "LEFT JOIN preservation",
+      "sources": [
+        {
+          "path": "tools/sql/exercises/001-join-preservation/attempt.sql",
+          "sha256": "4d5ec2cdf3dbf8cf2031a3f7a9611d9f0dc45a48d8cff4756295fcef6a5d4076"
         }
       ],
       "source_history": [],
-      "assessment_status": "unassessed",
-      "coverage": "queued",
+      "coverage": "introduced",
       "prerequisites": [],
+      "exercise_ids": [
+        "SQL-001"
+      ],
+      "legacy_id": null,
+      "assessment_status": "unassessed",
       "interval_stage": null,
-      "last_reviewed_date": null,
       "next_review_date": null,
+      "last_reviewed_date": null,
       "recent_scores": [],
-      "misconceptions": [],
       "help_needed": null,
-      "last_review_id": null,
-      "longest_stage_successes": 0
+      "last_review_id": null
+    },
+    {
+      "id": "sql.count.nulls",
+      "name": "COUNT and NULLs",
+      "sources": [
+        {
+          "path": "tools/sql/exercises/002-counting-orders/attempt.sql",
+          "sha256": "e3487e1511056a4d06254bf69a097ede391a07e9a3a3504d698f297415fd6391"
+        }
+      ],
+      "source_history": [],
+      "coverage": "introduced",
+      "prerequisites": [
+        "sql.join.preservation"
+      ],
+      "exercise_ids": [
+        "SQL-002"
+      ],
+      "legacy_id": null,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null
+    },
+    {
+      "id": "sql.join.keys",
+      "name": "Joining related identifiers",
+      "sources": [
+        {
+          "path": "tools/sql/exercises/002-counting-orders/attempt.sql",
+          "sha256": "e3487e1511056a4d06254bf69a097ede391a07e9a3a3504d698f297415fd6391"
+        }
+      ],
+      "source_history": [],
+      "coverage": "introduced",
+      "prerequisites": [
+        "sql.join.preservation"
+      ],
+      "exercise_ids": [
+        "SQL-001",
+        "SQL-002"
+      ],
+      "legacy_id": null,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null
+    },
+    {
+      "id": "sql.group.grain",
+      "name": "Customer identity and grouping grain",
+      "sources": [
+        {
+          "path": "tools/sql/exercises/002-counting-orders/attempt.sql",
+          "sha256": "e3487e1511056a4d06254bf69a097ede391a07e9a3a3504d698f297415fd6391"
+        }
+      ],
+      "source_history": [],
+      "coverage": "introduced",
+      "prerequisites": [
+        "sql.join.keys"
+      ],
+      "exercise_ids": [
+        "SQL-002"
+      ],
+      "legacy_id": null,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null
+    },
+    {
+      "id": "sql.sum.nulls",
+      "name": "SUM without non-NULL input",
+      "sources": [
+        {
+          "path": "tools/sql/exercises/003-customer-totals/attempt.sql",
+          "sha256": "2e4890092870353b7cd88e2daef7af31171fbd82cd5d3f24617cbe1aef399419"
+        }
+      ],
+      "source_history": [],
+      "coverage": "introduced",
+      "prerequisites": [
+        "sql.count.nulls"
+      ],
+      "exercise_ids": [
+        "SQL-003"
+      ],
+      "legacy_id": null,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null
+    },
+    {
+      "id": "py.records.cleaning",
+      "name": "Record access, accumulation and conversion",
+      "sources": [
+        {
+          "path": "tools/python/exercises/001-record-cleaning/feedback.md",
+          "sha256": "797a6ca4689015763f74e7cebc95328fa02ef95f2fa286085976e815878138b4"
+        }
+      ],
+      "source_history": [],
+      "coverage": "introduced",
+      "prerequisites": [
+        "py.dict.access",
+        "py.dict.mutate"
+      ],
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "legacy_id": null,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null
     }
   ],
-  "reminder": {
-    "status": "not_configured",
-    "preferred_time": null,
-    "time_asked": false
-  },
   "session": {
-    "target_minutes": 20,
-    "focus_topic_ids": [
-      "py.dict.access",
-      "py.context.resources",
-      "pg.cursor.results"
-    ],
-    "pending_question": {
-      "notes_used": null,
-      "kind": "diagnostic",
-      "hints_used": 0,
-      "id": "diagnostic-dict-001",
-      "asked_at": "2026-10-15T10:17:43.6336878Z",
-      "prompt": "Write Python code to get batch_size from config, using 1000 if that key is missing. The code should work for both config = {\"table\": \"customers\", \"batch_size\": 500} and config = {\"table\": \"customers\"}.",
-      "topic_id": "py.dict.access"
-    },
-    "started_at": "2026-10-15T10:17:43.6336878Z",
-    "completed_review_ids": [],
-    "status": "awaiting_answer"
+    "status": "not_started",
+    "pending_task_source": "progress/current.md",
+    "deferred_legacy_question_id": "diagnostic-dict-001"
   }
 }

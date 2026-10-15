@@ -39,3 +39,7 @@ outputs/study-tracker/*-preview.png
 outputs/study-tracker/*.inspect.ndjson
 
 /clockit_backup_*.csv
+
+# Interrupted coach writes are local recovery state, not published records.
+/tracking/.coach-transaction.json
+*.coach-tmp

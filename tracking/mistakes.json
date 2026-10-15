@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "seeded_on": "2026-10-15",
+  "seed_provenance": "Historical saved feedback/attempts only. Counts refer to distinct identified attempts, not independent confirmations.",
+  "mistakes": [
+    {
+      "mistake_id": "M-SQL-001",
+      "category": "conceptual",
+      "exercise_ids": [
+        "SQL-002"
+      ],
+      "topic_ids": [
+        "sql.count.nulls"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Unfinished CASE/COALESCE logic around actual-order counts.",
+      "expected_behaviour": "Count non-NULL matching order IDs while keeping every customer.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May be treating missing orders as requiring a conditional aggregate."
+      },
+      "correction_and_assistance": "Tutor explained COUNT(column) ignores NULL and pointed to expression already present; later query/output correct after help.",
+      "follow_up_task": "Reconstruct actual-order counts unaided on a changed dataset.",
+      "linked_review_items": [
+        "SQL-002",
+        "sql.count.nulls"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "SQL-002-count-initial",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/sql/exercises/002-counting-orders/attempt.sql#Actual-order-count-attempt",
+          "observation": "Unfinished actual-order-count query and request for help.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-SQL-002",
+      "category": "conceptual",
+      "exercise_ids": [
+        "SQL-002"
+      ],
+      "topic_ids": [
+        "sql.join.keys"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Joined customer_id to order_id during reconstruction.",
+      "expected_behaviour": "Join corresponding customer IDs.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May be selecting similarly named ID columns without checking their relationship."
+      },
+      "correction_and_assistance": "Tutor identified key mismatch; learner corrected query after feedback.",
+      "follow_up_task": "Explain and choose matching keys on a changed schema before querying.",
+      "linked_review_items": [
+        "SQL-002",
+        "sql.join.keys"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "SQL-002-reconstruction-keys",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/sql/exercises/002-counting-orders/attempt.sql#Reconstruction",
+          "observation": "Saved wrong-key query; no execution output for that incorrect query.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-SQL-003",
+      "category": "conceptual",
+      "exercise_ids": [
+        "SQL-002"
+      ],
+      "topic_ids": [
+        "sql.group.grain"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Predicted two Asha groups when grouping only by name.",
+      "expected_behaviour": "Group by customer identity to retain two distinct customers with the same name.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May be equating distinct stored rows with distinct output groups."
+      },
+      "correction_and_assistance": "Tutor explained shared grouping key and primary-key distinction; subsequent comparison correct with assistance.",
+      "follow_up_task": "Predict duplicate-name outputs and explain grouping grain without a hint.",
+      "linked_review_items": [
+        "SQL-002",
+        "sql.group.grain"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "SQL-002-grouping-initial",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/sql/exercises/002-counting-orders/attempt.sql#Grouping-check",
+          "observation": "Original duplicate-name prediction preserved.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-SQL-004",
+      "category": "conceptual",
+      "exercise_ids": [
+        "SQL-003"
+      ],
+      "topic_ids": [
+        "sql.sum.nulls"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Predicted zero for Nila SUM with no non-NULL input.",
+      "expected_behaviour": "Distinguish COUNT zero from SUM NULL.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May be applying count/zero intuition to SUM."
+      },
+      "correction_and_assistance": "Tutor explained PostgreSQL aggregate rule; immediate all-NULL answer correct after explanation.",
+      "follow_up_task": "Delayed COUNT/SUM prediction on unmatched and all-NULL inputs.",
+      "linked_review_items": [
+        "SQL-003",
+        "sql.sum.nulls"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "SQL-003-sum-first",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/sql/exercises/003-customer-totals/attempt.sql#First-prediction",
+          "observation": "Nila-zero prediction before rule explanation.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-SQL-005",
+      "category": "debugging_approach",
+      "exercise_ids": [
+        "SQL-003"
+      ],
+      "topic_ids": [
+        "sql.sum.nulls"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Malformed VALUES-derived INSERT into an older exercise table.",
+      "expected_behaviour": "Check statement structure and actual target schema; use separate supplied revenue setup.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May be mixing earlier table state and the new task; live schema remains unverified."
+      },
+      "correction_and_assistance": "Saved syntax error and diagnosis; separate revenue setup supplied. Do not run syntax-only fixes against unknown schema.",
+      "follow_up_task": "Run the supplied exercise setup in one connection and report its result before totals query.",
+      "linked_review_items": [
+        "SQL-003",
+        "sql.sum.nulls"
+      ],
+      "verification_review_id": null,
+      "status": "open",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "SQL-003-insert-error",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/sql/exercises/003-customer-totals/attempt.sql#Insertion-failure",
+          "observation": "Actual syntax error at WHERE supplied; not evidence of a server failure.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-001",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001",
+        "PY-002"
+      ],
+      "topic_ids": [
+        "py.dict.access",
+        "py.dict.mutate"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Treated items() field-name/value pairs as whole records and compared mismatched types.",
+      "expected_behaviour": "Distinguish a record from its keys and values before numeric comparisons.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Record and field-level iteration may be conflated."
+      },
+      "correction_and_assistance": "Tutor explained items(), record-key access and type distinction. Latest learner request is dictionary foundations.",
+      "follow_up_task": "Complete the saved one-record refresher, then reconstruct on a changed record.",
+      "linked_review_items": [
+        "PY-001",
+        "PY-002",
+        "py.dict.access",
+        "py.dict.mutate"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 2,
+      "observations": [
+        {
+          "attempt_id": "PY-001-reviewed-initial",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/python/exercises/001-record-cleaning/feedback.md#Evidence-and-help",
+          "observation": "Feedback records actual first run and loop/type gap.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        },
+        {
+          "attempt_id": "PY-001-draft-002",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/002-pause-draft.py",
+          "observation": "Distinct saved later draft retains loop/type issue; inspected as source, not executed during setup.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-002",
+      "category": "debugging_approach",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Repeated assignment to one dictionary key overwrote rejected records.",
+      "expected_behaviour": "Accumulate whole valid/rejected records without dropping earlier entries.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May be confusing one-record storage with a collection of records."
+      },
+      "correction_and_assistance": "Tutor explained list accumulation; saved feedback records overwritten invalid output.",
+      "follow_up_task": "After foundations, trace two rejected records and verify both remain.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "PY-001-accumulation-first",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/python/exercises/001-record-cleaning/feedback.md#Evidence-and-help",
+          "observation": "Reviewed output had one overwritten rejected value.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-003",
+      "category": "debugging_approach",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of saved evidence",
+      "observed_behaviour": "Later draft assigns an amount into input order_id and calls value() on the result.",
+      "expected_behaviour": "Preserve the original input records and inspect value/type before calling methods.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May be conflating assignment result, record identity and dictionary methods."
+      },
+      "correction_and_assistance": "Latest draft is preserved and has not been run/reviewed with learner; no correction success claimed.",
+      "follow_up_task": "Review actual output/type after the currently selected dictionary prerequisite.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "open",
+      "first_observed": "2026-10-15",
+      "latest_observed": "2026-10-15",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "PY-001-draft-003",
+          "observed_date_ist": "2026-10-15",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/003-pause-draft.py",
+          "observation": "Historical saved draft inspection; no setup execution or learner assessment.",
+          "recorded_during": "historical seed at five-role setup; not a new attempt"
+        }
+      ]
+    }
+  ]
+}

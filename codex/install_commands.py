@@ -15,6 +15,8 @@ BEGIN = '# BEGIN data-engineering-journey study commands'
 END = '# END data-engineering-journey study commands'
 LEGACY = '# Personal study commands enabled; other installed skills disabled (reversible).'
 NAMES = (
+    'learning-coach', 'notes-keeper', 'mistake-keeper', 'revision-coach', 'progress-tracker',
+    'github-agent',
     'start-timer', 'pause-timer', 'resume-timer', 'finish-study',
     'study-status', 'todays-schedule', 'save-checkpoint',
     'finish-for-today', 'continue-checkpoint',

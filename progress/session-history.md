@@ -112,6 +112,34 @@ Python block 12:41:42–12:48:53 IST (7m11s), stopped at first explicit pause (r
 
 Learner authorised commit/push. Reviewed pending lesson records, tracker, draft snapshots and synthetic SQL scratch file; preserved learner code unchanged. Replaced stale accumulated checkpoint/handoff instructions with concise current state: all timers paused, dictionary refresher next, cleaner/SQL totals deferred. Noted scratch ALTER statement means actual live orders schema must be checked rather than assumed; scratch file is not a reproducible setup. Checked CSV/timer totals and staged only intended repository files. Git history/remote provide actual sync outcome; no new learning/time recorded.
 
-15 October Python dictionary practice in Jupyter, 13:42:59�13:48:32 IST (5m33s), explicit resume/pause. Re-explained key versus value and direct key access; one-record read/update/print task remains pending. No notebook code/output or learner attempt submitted; no new learning success or revision completion recorded. Confirmed today/week 2h2m56s (SQL 1h30m56s; Python 32m); remaining today 3h57m4s. All timers paused, old uncertain interval excluded. Checkpoint/handoff saved; revision queue/history unchanged.
+15 October Python dictionary practice in Jupyter, 13:42:59–13:48:32 IST (5m33s), explicit resume/pause. Re-explained key versus value and direct key access; one-record read/update/print task remains pending. No notebook code/output or learner attempt submitted; no new learning success or revision completion recorded. Confirmed today/week 2h2m56s (SQL 1h30m56s; Python 32m); remaining today 3h57m4s. All timers paused, old uncertain interval excluded. Checkpoint/handoff saved; revision queue/history unchanged.
 
-15 October Python dictionary practice in Jupyter, 14:14:07�14:59:45 IST (45m38s), explicit resume/pause. No notebook code/output or reasoning submitted for review during this block; no additional learning success or revision completion inferred from elapsed time. Pending task remains one-record amount read/update/print with code/output. Confirmed today/week 2h48m34s (SQL 1h30m56s; Python 1h17m38s); remaining today 3h11m26s. All timers paused; old uncertain interval excluded. Checkpoint/handoff saved; revision queue/history unchanged.
+15 October Python dictionary practice in Jupyter, 14:14:07–14:59:45 IST (45m38s), explicit resume/pause. No notebook code/output or reasoning submitted for review during this block; no additional learning success or revision completion inferred from elapsed time. Pending task remains one-record amount read/update/print with code/output. Confirmed today/week 2h48m34s (SQL 1h30m56s; Python 1h17m38s); remaining today 3h11m26s. All timers paused; old uncertain interval excluded. Checkpoint/handoff saved; revision queue/history unchanged.
+
+<!-- checkpoint:SETUP-five-role-coach-20261015 -->
+## 2026-10-15 — SETUP-five-role-coach-20261015 (setup)
+
+Implemented exactly five coordinated learning-coach responsibilities, reconciled revision authority and save boundaries, preserved original records and IDs, seeded only historical mistake/skill evidence, and added tested duplicate-safe/recoverable helpers. The existing PY-002 one-record read/update/print task remains pending. The general dictionary notebook is available but not yet assessed against that task. No lesson, assessment, independent success, study interval, timer change, reminder, commit or push occurred. Weekly reporting uses saved evidence only.
+
+Evidence: `reference/learning-coach.md`; `tracking/legacy/README.md`
+
+<!-- checkpoint:NOTES-lists-reference-20261015 -->
+## 2026-10-15 — NOTES-lists-reference-20261015 (setup)
+
+Prepared the explicitly requested Python lists reference in the Obsidian vault, covering collections, indexing, replacement, append and record accumulation. Kept recall prompts separate, linked the Python index, checked official Python documentation, and executed both standalone examples against their documented output. This is reference preparation, not evidence of an answered lesson, list proficiency or completed review. The dictionary refresher remains pending; no timer or study duration changed.
+
+Evidence: `Notes/Python/Concepts/lists.md`; `Notes/revision/list-questions.md`
+
+<!-- checkpoint:NOTES-lists-writing-style-20261015 -->
+## 2026-10-15 — NOTES-lists-writing-style-20261015 (setup)
+
+Recorded the learner's explicit note-writing preference: simple words, short headings/bullets and more small examples with output, matching existing personal notes. Rewrote the lists reference and simplified its separate recall questions; saved the reusable style guide and updated Notes Keeper instructions. Executed all 10 standalone examples successfully. Reference editing only: no assessed learning result, study interval, timer change or review date; current dictionary task remains pending.
+
+Evidence: `reference/note-style.md`; `Notes/Python/Concepts/lists.md`; `codex/skills/notes-keeper/SKILL.md`
+
+<!-- checkpoint:NOTES-style-specification-20261015 -->
+## 2026-10-15 — NOTES-style-specification-20261015 (setup)
+
+Read existing dictionary, PostgreSQL connection and list notes, then expanded the saved Notes Keeper instructions and shared style guide to the learner's explicit specification. Main tutoring instructions link the rules. Existing notes were not rewritten; a short conversation-only dictionary lookup preview was executed and its output checked for the learner to evaluate. No learner answer, lesson success, timer change or review date was recorded. Current dictionary exercise remains pending.
+
+Evidence: `reference/note-style.md`; `codex/skills/notes-keeper/SKILL.md`; `AGENTS.md`

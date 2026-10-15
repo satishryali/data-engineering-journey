@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learning Coach"
+  short_description: "Start your coordinated five-role learning coach."
+  default_prompt: "Use $learning-coach to read my checkpoint and start today's learning through the five-role workflow without starting a timer."

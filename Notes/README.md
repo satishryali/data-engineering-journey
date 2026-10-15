@@ -6,6 +6,15 @@ learning repository as the vault, and do not create another `Notes` folder insid
 - [Python notes](Python/Index.md)
 - [Revision records](revision/README.md)
 - [Learning plan](learning-and-revision-plan.md)
+- [SQL learning notes](SQL/learning-notes.md)
+- [Recall questions, without answers](revision/questions.md)
+- [Mistake index](revision/mistakes.md)
+
+The five-role coach uses this vault for explanations, but the repository's tracking
+CSV/JSON files own scheduling, mistake observations and progress evidence. Revision
+JSON/JSONL and the mistake index here are generated views, not another editable tracker.
+See [revision workflow](revision/README.md). Save learning records at checkpoint boundaries;
+ordinary answers stay conversational. Timer events are recorded immediately.
 
 ## Use on another computer
 

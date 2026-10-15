@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mistake Keeper"
+  short_description: "Track observed mistakes and targeted follow-up tasks."
+  default_prompt: "Use $mistake-keeper to show my relevant saved mistakes, their evidence and targeted follow-up tasks without starting a timer."

@@ -20,6 +20,11 @@ Excel report: outputs/study-tracker/study-hours.xlsx. Source remains tracking/st
 
 ## Learner messages
 
+Start today's learning and Start revision select work but do not start a timer.
+Show my mistakes, Show today's learning and Weekly review are status/planning requests;
+they do not start or stop intervals. Use the five-role workflow in learning-coach.md
+for notes, mistakes and checkpoint saves. The CSV and existing Excel reporting remain unchanged.
+
 Start SQL / Start Python / Start dbt / Start Azure: begin a session.
 Pause / Finish: close the active interval.
 Resume [topic]: start a new interval.

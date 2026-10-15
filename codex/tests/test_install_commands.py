@@ -31,12 +31,20 @@ class InstallerTests(unittest.TestCase):
 
     def test_install_preserves_settings_and_is_idempotent(self):
         result = self.run_install()
-        self.assertEqual(result['commands'], 9)
+        self.assertEqual(result['commands'], 15)
+        coach = self.home / '.agents/skills/learning-coach/SKILL.md'
+        self.assertTrue(coach.is_file())
+        self.assertIn('reference/learning-coach.md', coach.read_text(encoding='utf-8'))
+        for role in ('learning-coach', 'notes-keeper', 'mistake-keeper', 'revision-coach', 'progress-tracker'):
+            self.assertTrue((self.home / '.agents/skills' / role / 'agents/openai.yaml').is_file())
+        github = self.home / '.agents/skills/github-agent'
+        self.assertTrue((github / 'SKILL.md').is_file())
+        self.assertIn('$github-agent', (github / 'agents/openai.yaml').read_text(encoding='utf-8'))
         data = tomllib.loads(self.config.read_text(encoding='utf-8'))
         self.assertEqual(data['model'], 'existing-model')
         self.assertTrue(data['plugins']['example']['enabled'])
         entries = data['skills']['config']
-        self.assertEqual(sum(e['enabled'] for e in entries), 9)
+        self.assertEqual(sum(e['enabled'] for e in entries), 15)
         self.assertEqual(sum(not e['enabled'] for e in entries), 1)
         self.assertEqual((Path(result['backup']) / 'config.toml').read_text(),
                          'model = "existing-model"\n[plugins.example]\nenabled = true\n')
@@ -72,7 +80,7 @@ class InstallerTests(unittest.TestCase):
         self.assertIn(moved.as_posix(), text)
         self.assertNotIn(REPO.as_posix(), text)
         entries = tomllib.loads(self.config.read_text())['skills']['config']
-        self.assertEqual(len(entries), 9)
+        self.assertEqual(len(entries), 15)
         self.assertTrue(all(e['enabled'] for e in entries))
 
     def test_existing_override_merged_without_duplicate(self):

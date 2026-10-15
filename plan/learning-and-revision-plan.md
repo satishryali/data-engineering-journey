@@ -60,7 +60,7 @@ Retrieval and spacing are supported by learning research. These studies do not v
 
 ## Revision scheduling
 
-After the first successful reconstruction of a skill, initially plan reviews approximately 1, 3, 7, 14 and 30 days after that learning date. Example: first success 19 October; initial review targets 20 October, 22 October, 26 October, 2 November and 18 November. These are provisional dates, not an optimal universal forgetting-curve formula.
+Use [the shared five-role review rule](../reference/learning-coach.md): stages 0–4 are 1, 3, 7, 14 and 30 days from the actual latest scored assessment date in IST. Initial assessment on 19 October gives 20 October; independent score-3 delayed retrieval on 20 October advances to a three-day interval, due 23 October. Immediate correction does not move a delayed date; unknown assistance cannot advance independence. Existing valid historical due dates remain unchanged. These are adjustable heuristics; the table describes interval-stage task variations, not fixed offsets from the original learning date.
 
 | Review | Exercise |
 |---|---|
@@ -70,7 +70,7 @@ After the first successful reconstruction of a skill, initially plan reviews app
 | Around day 14 | Use it in the project or compare two possible approaches |
 | Around day 30 | Solve an unfamiliar version and explain the tradeoff |
 
-At each attempt, log the actual date, task variation, correctness, help used and evidence in revision-history.csv, and update the next due date in revision-queue.csv. Only schedule reviews for work actually introduced; do not mark all planned topics as learned.
+At the next checkpoint boundary, log actual attempts, dates, variation, correctness, help used and evidence in revision-history.csv, and update revision-queue.csv using the shared rule. Timer events remain immediate. Only schedule assessed work; do not mark all planned topics as learned.
 
 - Independent and correct: progress to a more demanding variation or later review. Keep occasional mixed review after the 30-day checkpoint.
 - Correct after a hint or solution: record assisted, teach the gap and review the next day. Do not record independent mastery.
@@ -141,7 +141,7 @@ All daily tasks are conditional on the previous step being understood. In the st
 
 ## Today's starting point
 
-Write a query returning every customer's name and matching order_id, including Meera. Do not add filters or totals yet. Predict Meera's order_id and explain why. Share the attempt before asking for the final solution. After feedback, rebuild the query without looking, then add grouping and date filtering in separate steps.
+Read progress/current.md and START-HERE.md for the latest learner-selected task. The old initial LEFT JOIN prompt is historical and must not restart assessment. At this setup the pending task remains PY-002's dictionary read/update/print attempt; SQL totals and the full cleaner remain deferred. Selecting a task does not start a timer.
 
 ## How the assistant maintains this plan
 

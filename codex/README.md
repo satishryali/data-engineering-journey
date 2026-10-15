@@ -1,6 +1,42 @@
 # Personal Codex commands on every computer
 
-These nine skills preserve the command definitions in the repository's README and
+## Five-role tutoring coordination
+
+The skill picker has five separate role entries:
+
+| Menu entry | Explicit invocation |
+| --- | --- |
+| Learning Coach | `$learning-coach` |
+| Notes Keeper | `$notes-keeper` |
+| Mistake Keeper | `$mistake-keeper` |
+| Revision Coach | `$revision-coach` |
+| Progress Tracker | `$progress-tracker` |
+
+Type `/` to find these by name in the skill picker (or use `/skills` where that
+command is supported). Learning Coach selects the saved pending task without starting a timer.
+The nine existing commands also consult `reference/learning-coach.md`. Learning Coach, Notes Keeper,
+Mistake Keeper, Revision Coach and Progress Tracker are responsibilities of one tutor,
+not extra running agents. The five skills are individual entry points to those same roles.
+With this checkout open, say Start today's
+learning; Start revision; Show my mistakes; Show today's learning; Weekly review; or
+Save checkpoint. These requests require no installation. Task selection/status never
+starts a timer. Run the existing installer after pulling updates to refresh global skills.
+
+## GitHub utility
+
+**GitHub Agent** is an additional picker entry for Git operations, separate from the
+five tutoring roles. To publish the learning repository's changes, say:
+
+```text
+$github-agent review, commit and push the current changes
+```
+
+It reviews the intended files, runs relevant checks, commits and pushes to the verified
+configured remote when asked. Creating/installing the skill does not publish anything.
+It preserves existing learning/time records and does not publish automatically on saves.
+GitHub authentication must already be configured separately on each computer.
+
+The fifteen skills preserve the command definitions in the repository's README and
 reference/study-tracking.md. Git stores their portable source here. The installer
 places them in your user skill folder so they work from any project.
 
@@ -21,6 +57,12 @@ invocation. Menu visibility must be checked on each computer.
 
 | Command | Existing action |
 | --- | --- |
+| learning-coach | Start the coordinated five-role coach from the saved checkpoint |
+| notes-keeper | Maintain existing learning notes from actual evidence |
+| mistake-keeper | Show and maintain observed mistakes and follow-up tasks |
+| revision-coach | Select one meaningful retrieval task |
+| progress-tracker | Show evidence-based daily or weekly learning progress |
+| github-agent | Review, commit and push changes when explicitly requested |
 | start-timer | Start SQL, Python, dbt, Azure or another study topic |
 | pause-timer | Pause |
 | resume-timer | Resume a topic |
@@ -31,7 +73,7 @@ invocation. Menu visibility must be checked on each computer.
 | finish-for-today | Finish for today |
 | continue-checkpoint | Read the checkpoint and continue |
 
-The installer writes only the nine command folders, skill enablement settings and
+The installer writes only the fifteen command folders, skill enablement settings and
 its installation manifest/backups. By default it disables other installed local
 and cached plugin skills to match the personal-command-only preference. Built-in
 commands such as `/model` remain. Plugin connections remain installed. New plugins

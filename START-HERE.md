@@ -9,7 +9,7 @@ Last updated: 15 October 2026 (IST). Update this file in place at checkpoint bou
 ## Current status and exact next step
 
 - All timers paused at 14:59:45 IST on 15 October. Latest Python/Jupyter dictionary interval 14:14:07–14:59:45 lasted 45m38s. Completed today/week: 2h48m34s (SQL 1h30m56s; Python 1h17m38s). Remaining today: 3h11m26s toward six hours. The old 08:11:20 interval is needs_confirmation and excluded; never infer its duration.
-- Active learning task is PY-002 dictionary foundations, requested after difficulty with the cleaner. Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md. Tutor has explained keys/values, retrieval and what items() yields. No refresher attempt yet.
+- Active learning task is PY-002 dictionary foundations, requested after difficulty with the cleaner. Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md. Tutor has explained keys/values, retrieval and what items() yields. The selected refresher is not yet assessed; practice/Dictionaries.ipynb contains general practice but does not establish completion or independent proficiency.
 - Next learner attempt: starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together. No loops, conversions or exception handling yet. No notebook code/output submitted during the latest block; All timers paused; await explicit resume before starting another interval.
 - PY-001 cleaner is deferred, not solved. Preserve attempt.py and snapshots in attempts/. Earlier hints covered record access, lists and int()/ValueError. Expected valid/rejected output shape was supplied on request, not the implementation. feedback.md records reviewed evidence. No Python proficiency or success anchor established.
 - SQL-001 initial join-preservation learning completed with independent reasoning and changed outputs; reconstruction spelling help recorded. SQL-002 initial counting/grouping practice completed with COUNT/NULL, join-key and grouping assistance. Both need early retrieval on 16 October.
@@ -51,3 +51,30 @@ ClockIt octech.clockit v1.9.0 is installed only on the original computer. Local 
 Pause/finish and save before switching. Review and commit/push intended files, then clone or pull the same branch into a clean checkout on the other computer (README.md has commands). Resolve conflicts without discarding attempts. Reconnect to the server; Git does not transfer credentials, installed tools, databases, temporary tables or reminders. Recreate local ClockIt settings if needed.
 
 At checkpoints replace stale status/next step here and in progress/current.md; append one concise block outcome to session-history.md and update actual trackers. Commit/push only when explicitly authorised. Learner authorised this sync on 15 October; verify actual outcome in Git/remote rather than assuming success.
+
+## Five-role setup and next session
+
+Read reference/learning-coach.md alongside AGENTS.md. Learning Coach, Notes Keeper,
+Mistake Keeper, Revision Coach and Progress Tracker are coordinated responsibilities
+of one tutor. Use the canonical tracking files; Notes/revision JSON/JSONL and mistake
+index are generated views. tracking/legacy preserves the original concept records,
+dates and deferred diagnostic-dict-001. Keep the selected PY-002 task above; no restart.
+
+Say **Start today's learning**. This selects the next bounded task without starting a
+timer. Status/planning requests also leave timers unchanged. Setup is administrative,
+not a completed lesson/review. No commit or push is authorised for this setup.
+
+Lists reference requested via Notes Keeper: Notes/Python/Concepts/lists.md and separate
+Notes/revision/list-questions.md are saved. This is reference preparation only; no list
+assessment or review date was recorded. The selected dictionary task and timer state
+remain unchanged.
+
+Note-writing preference: use reference/note-style.md. Match the learner's short
+headings and bullets, simple words and more small examples with output. The lists
+reference was rewritten in this style; no new assessment, timer change or review date.
+
+Notes Keeper style specification expanded: reference/note-style.md now defines
+why/input/code/output/explanation, examples for different behaviours, output verification
+labels and evidence-based doubts/mistake links. Apply to future notes; existing notes
+were not rewritten for this request. One dictionary style preview is awaiting learner
+feedback; it is a tutor example, not an assessed attempt. Pending task/timers unchanged.

@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "dimensions": [
+    "explaining",
+    "reading_predicting",
+    "modifying",
+    "building",
+    "debugging"
+  ],
+  "default_state": "unassessed",
+  "unknown_help_value": null,
+  "retention_source": "tracking/revision-history.csv; only actual delayed events are retention evidence",
+  "default_delayed_retention": "unassessed",
+  "observations": [
+    {
+      "observation_id": "SK-SQL001-explain",
+      "item_id": "SQL-001",
+      "dimension": "explaining",
+      "state": "independent",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/001-join-preservation/attempt.sql",
+      "help_used": false,
+      "notes": "Independent preservation explanations; wording refinement does not erase correct reasoning.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL001-predict",
+      "item_id": "SQL-001",
+      "dimension": "reading_predicting",
+      "state": "independent",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/001-join-preservation/attempt.sql",
+      "help_used": false,
+      "notes": "Changed-input predictions and supplied outputs; no delayed review yet.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL001-modify",
+      "item_id": "SQL-001",
+      "dimension": "modifying",
+      "state": "independent",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/001-join-preservation/attempt.sql",
+      "help_used": false,
+      "notes": "Original customer-preserving modification submitted without a hint.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL001-build",
+      "item_id": "SQL-001",
+      "dimension": "building",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/001-join-preservation/attempt.sql",
+      "help_used": true,
+      "notes": "Reconstruction needed spelling help; do not transfer reasoning independence to whole implementation.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL002-explain",
+      "item_id": "SQL-002",
+      "dimension": "explaining",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/002-counting-orders/attempt.sql",
+      "help_used": true,
+      "notes": "COUNT NULL and grouping clarification; earlier correct reasoning remains in source.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL002-predict-initial",
+      "item_id": "SQL-002",
+      "dimension": "reading_predicting",
+      "state": "independent",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/002-counting-orders/attempt.sql",
+      "help_used": false,
+      "notes": "Changed Asha/Nila count prediction was independently correct.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL002-predict-grouping",
+      "item_id": "SQL-002",
+      "dimension": "reading_predicting",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/002-counting-orders/attempt.sql",
+      "help_used": true,
+      "notes": "Later duplicate-name grouping needed a hint; record both observations rather than erase earlier evidence.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL002-build",
+      "item_id": "SQL-002",
+      "dimension": "building",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/002-counting-orders/attempt.sql",
+      "help_used": true,
+      "notes": "Correct final supplied outputs after counting/join-key/grouping help.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-SQL003-predict",
+      "item_id": "SQL-003",
+      "dimension": "reading_predicting",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/sql/exercises/003-customer-totals/attempt.sql",
+      "help_used": true,
+      "notes": "SUM NULL rule explained before immediate comparison; query not demonstrated.",
+      "historical_seed": true
+    },
+    {
+      "observation_id": "SK-PY001-build",
+      "item_id": "PY-001",
+      "dimension": "building",
+      "state": "needs_guidance",
+      "observed_date_ist": "2026-10-15",
+      "evidence": "tools/python/exercises/001-record-cleaning/feedback.md",
+      "help_used": true,
+      "notes": "Reviewed output and help recorded; no correct cleaner function demonstrated.",
+      "historical_seed": true
+    }
+  ]
+}

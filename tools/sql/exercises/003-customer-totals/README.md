@@ -1,6 +1,8 @@
 # Exercise 003: customer order totals and missing matches
 
-Status: first prediction assigned 15 October 2026; no attempt yet. Revision item SQL-003.
+Status: predictions and an assisted immediate correction are preserved in attempt.sql.
+Setup/totals implementation remain deferred; follow progress/current.md for current
+task priority. Revision item SQL-003. The original prompts below remain practice material.
 
 New small synthetic dataset; earlier orders table has no amount column, so do not assume it does. For later execution, setup.sql creates separate temporary tables revenue_customers and revenue_orders in one PostgreSQL connection. Existing exercise tables remain intact.
 

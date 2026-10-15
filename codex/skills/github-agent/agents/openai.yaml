@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Agent"
+  short_description: "Review, commit and push your requested GitHub changes."
+  default_prompt: "Use $github-agent to review, commit and push the current changes in my learning repository to its configured GitHub remote."

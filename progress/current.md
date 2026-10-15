@@ -14,7 +14,7 @@ Target 50 study hours/week: six weekdays, ten weekends; breaks separate. Azure o
 - SQL-002: initial counting/grouping practice completed with COUNT/NULL, join-key and grouping-grain hints. Correct supplied changed/duplicate-name outputs. Unaided retrieval 16 October; independent-success anchor unset.
 - SQL-003: Asha total 1000 correct; Nila-zero prediction wrong. After rule explanation, correctly answered COUNT=0/SUM=NULL on all-NULL input. No totals query/output yet; setup deferred.
 - PY-001: cleaner attempts show dictionary key/value, record access, accumulation and conversion gaps. Reviewed earlier run produced empty valid dict and overwritten invalid entry. Tutor gave items()/record access, list and int()/ValueError hints. Learner revised but still struggled; no correct cleaner/function demonstrated. Expected output shape supplied on request; implementation not given.
-- PY-002: dictionary refresher requested. Tutor explained one record, keys/values, access and items() pairs. No learner refresher attempt yet. No integrated project complete; initial revenue date/year/filter gaps remain unassessed.
+- PY-002: dictionary refresher requested. Tutor explained one record, keys/values, access and items() pairs. The selected refresher has not yet been assessed. practice/Dictionaries.ipynb now contains general dictionary practice; do not infer completion of the selected task or independence from its presence. No integrated project complete; initial revenue date/year/filter gaps remain unassessed.
 
 ## Exact next task — dictionaries in Jupyter
 
@@ -44,4 +44,36 @@ Batch learning records at task completion, pause/topic switch, explicit Save che
 
 Queue: SQL-001 retrieval, SQL-002 unaided reconstruction, SQL-003 SUM/NULL and PY-001 early practice due 16 October; PY-002 no success/review date yet. Prioritise dictionary foundations before the full cleaner; do not dump the whole queue at once. Schedule is flexible around actual learning, not elapsed dates.
 
-START-HERE.md is the entry point; README.md has commands/sync/Excel instructions. Latest explicit request: commit and push current changes. Last previous verified push 9481e9e; Git history/remote will establish this sync's actual outcome. Commit/push only on instruction; keep secrets/runtime data out. Use repo-relative paths and read current files on every new device/chat.
+START-HERE.md is the entry point; README.md has commands/sync/Excel instructions. Latest explicit request: implement the five-role coach without committing or pushing. Git history records prior syncs; setup changes remain local until separately authorised. Commit/push only on instruction; keep secrets/runtime data out. Use repo-relative paths and read current files on every new device/chat.
+
+## Five-role coordination — setup only, 15 October 2026
+
+Use reference/learning-coach.md. Exactly five roles coordinate one conversation; no
+independent/background agents exist. CSV queue/history own dates/events; topic-map
+links broad exercise and concept IDs without transferring scores. Notes/revision
+views are generated; original state and diagnostic-dict-001 are preserved in tracking/legacy.
+That older diagnostic is deferred by the later explicit PY-002 request. Setup records
+historical evidence only: no new lesson, success, review or timer event occurred.
+The saved notebook is available but has not been reviewed against the pending task.
+Eight historical mistake entries and dimension-specific observations cite original
+15 October evidence; no mistake is verified on delayed independent practice.
+
+Natural entry phrase: Start today's learning. Select the existing task without an
+automatic timer. All old slash commands remain. Ordinary answers are saved at checkpoint
+boundaries; timer events remain immediate. Weekly summaries are generated on demand or
+at the next session after week end, with partial/later-reconstruction labels.
+
+Lists reference requested via Notes Keeper: Notes/Python/Concepts/lists.md and separate
+Notes/revision/list-questions.md are saved. This is reference preparation only; no list
+assessment or review date was recorded. The selected dictionary task and timer state
+remain unchanged.
+
+Note-writing preference: use reference/note-style.md. Match the learner's short
+headings and bullets, simple words and more small examples with output. The lists
+reference was rewritten in this style; no new assessment, timer change or review date.
+
+Notes Keeper style specification expanded: reference/note-style.md now defines
+why/input/code/output/explanation, examples for different behaviours, output verification
+labels and evidence-based doubts/mistake links. Apply to future notes; existing notes
+were not rewritten for this request. One dictionary style preview is awaiting learner
+feedback; it is a tutor example, not an assessed attempt. Pending task/timers unchanged.
