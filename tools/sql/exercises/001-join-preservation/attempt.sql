@@ -1,0 +1,5 @@
+-- Write your prediction and query here. No solution has been provided.
+-- Predicted INNER JOIN row count:
+-- Will Meera appear? Why?
+-- Modified query:
+-- Predicted Meera order_id and explanation:

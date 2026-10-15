@@ -1,0 +1,2 @@
+item_id,skill,retrieval_task,first_independent_success_date,last_attempt_date,last_result,review_stage,next_review_date_ist,status,evidence,notes
+SQL-001,LEFT JOIN and unmatched rows,Return every customer name and matching order_id; predict Meera order_id and explain why,,2026-10-15,needs_guidance,0,2026-10-15,learning,Initial query used INNER JOIN and omitted Meera,Correction task pending; no independent success or mastery recorded

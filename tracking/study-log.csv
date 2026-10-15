@@ -1,0 +1,2 @@
+session_id,study_date_ist,topic,start_time_ist,end_time_ist,elapsed_minutes,status,notes
+SQL-20261015T081120,2026-10-15,SQL: LEFT JOIN and unmatched rows,2026-10-15T08:11:20+05:30,,,needs_confirmation,Learner explicitly said lets start; initial lesson and prediction task; Migrated during platform setup; actual stop time needed; no duration assumed
