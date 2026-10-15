@@ -1,0 +1,12 @@
+# Share only portable, non-secret Obsidian preferences.
+/.obsidian/*
+!/.obsidian/app.json
+!/.obsidian/appearance.json
+!/.obsidian/core-plugins.json
+
+# Device state, deleted files and temporary editor files stay local.
+.trash/
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp

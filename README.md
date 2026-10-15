@@ -23,6 +23,7 @@ Current assignment: tools/python/exercises/001-record-cleaning/dictionary-refres
 - tools/: notes and exercises organised by skill.
 - projects/: integrated pipelines combining tools.
 - reference/: supporting tutoring and time-accounting guidance.
+- Notes/: Obsidian vault with Python notes, images and revision records; open this folder directly in Obsidian. See [vault setup and Git sync](Notes/README.md).
 
 Each tool has README.md and notes.md. Add exercise folders as lessons are actually assigned. Store explanations of the problem, attempted code, expected output, mistakes and a changed example. Integrated projects belong in projects/, with one main README and run instructions.
 
