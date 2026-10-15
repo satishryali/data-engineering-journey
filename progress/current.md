@@ -16,9 +16,9 @@ Target 50 study hours/week: six weekdays, ten weekends; breaks separate. Azure o
 - PY-001: cleaner attempts show dictionary key/value, record access, accumulation and conversion gaps. Reviewed earlier run produced empty valid dict and overwritten invalid entry. Tutor gave items()/record access, list and int()/ValueError hints. Learner revised but still struggled; no correct cleaner/function demonstrated. Expected output shape supplied on request; implementation not given.
 - PY-002: dictionary refresher requested. Tutor explained one record, keys/values, access and items() pairs. No learner refresher attempt yet. No integrated project complete; initial revenue date/year/filter gaps remain unassessed.
 
-## Exact next task — dictionaries, paused
+## Exact next task — dictionaries in Jupyter
 
-Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md. Starting from order = {"order_id": 101, "amount": "500"}, learner prints amount, updates it to string "750" and prints dictionary, submitting code/output together. No loops/conversion/exception handling yet. Wait for explicit resume before starting another timer. Use progressive help from this demonstrated gap, then reconstruction/changed record and eventually return to cleaner. Do not restart SQL or the whole course.
+Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md. Starting from order = {"order_id": 101, "amount": "500"}, learner prints amount, updates it to string "750" and prints dictionary, submitting code/output together. No loops/conversion/exception handling yet. All timers paused at 14:59:45 IST; await explicit resume. No notebook code/output submitted during this block. Use progressive help from this demonstrated gap, then reconstruction/changed record and eventually return to cleaner. Do not restart SQL or the whole course.
 
 Preserve cleaner attempt.py and attempts/002-pause-draft.py, 003-pause-draft.py. feedback.md holds prior help. Latest draft mutates order_id, retains items loop/type errors and calls value(); not run/reviewed with learner yet. Do not overwrite it with tutor solution. New dictionary exercise attempt can use a separate file when learner begins.
 
@@ -30,9 +30,9 @@ Later run tools/sql/exercises/003-customer-totals/setup.sql in one connection fo
 
 ## Timer and Excel
 
-All timers paused at 12:48:53 IST. Latest Python interval 12:41:42–12:48:53: 7m11s. Completed today/week 1h57m23s (SQL 1h30m56s, Python 26m27s). Remaining today 4h2m37s toward six hours. Resume starts a new row. Older 08:11:20 interval needs_confirmation, stop unknown and excluded; breaks excluded. Never infer study from silence or count overlapping intervals.
+All timers paused at 14:59:45 IST on 15 October. Latest Python interval 14:14:07–14:59:45: 45m38s, dictionary practice in Jupyter. Completed today/week 2h48m34s (SQL 1h30m56s, Python 1h17m38s). Remaining today 3h11m26s toward six hours. Resume starts a new row. Older 08:11:20 interval needs_confirmation, stop unknown and excluded. Never infer study from silence or count overlapping intervals.
 
-tracking/study-log.csv is authoritative. Excel outputs/study-tracker/study-hours.xlsx refreshed 15 October to completed 1h57m23s, excluding uncertain/running time. Rebuild with tracking/update-study-tracker.mjs after log changes, status requests and daily handoff; flag stale if unavailable. First partial week 32h from 15 October, full weeks 50h. Closed-day shortfall separate from today's remaining target.
+tracking/study-log.csv is authoritative. Excel outputs/study-tracker/study-hours.xlsx refreshed 15 October to completed 2h48m34s, excluding uncertain/running time. Rebuild with tracking/update-study-tracker.mjs after log changes, status requests and daily handoff; flag stale if unavailable. First partial week 32h from 15 October, full weeks 50h. Closed-day shortfall separate from today's remaining target.
 
 ClockIt octech.clockit v1.9.0 installed locally; ignored settings disable auto-start/cloud and select CSV. Learner prefers tutor-managed message-controlled tracking. No importer/tested focus alert/reminder configured; duration/delivery still unagreed. Don't promise an alert without setup.
 
