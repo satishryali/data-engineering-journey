@@ -43,3 +43,5 @@ left intact. Use this vault for new edits so the two copies do not diverge.
 
 The Vault token in the teaching example is now a placeholder. Supply real tokens
 through your local environment/secret store and never commit them in notes.
+
+- [Notes-driven revision plan](revision/plan.md): upcoming dates, initial slots and coverage.

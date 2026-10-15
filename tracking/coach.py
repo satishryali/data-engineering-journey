@@ -6,6 +6,7 @@ import csv
 from datetime import date, datetime, timedelta, timezone
 import hashlib
 import io
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -19,6 +20,9 @@ STATES = ('unassessed', 'needs_guidance', 'assisted', 'independent')
 KINDS = ('initial_learning', 'diagnostic', 'immediate_correction', 'delayed', 'application')
 HISTORY_EXTRA = ('review_id', 'attempt_id', 'review_kind', 'score', 'hints_used', 'notes_used', 'event_json')
 JOURNAL = 'tracking/.coach-transaction.json'
+_spec = importlib.util.spec_from_file_location('note_revision', Path(__file__).with_name('note_revision.py'))
+note_revision = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(note_revision)
 
 
 def dump(value):
@@ -108,7 +112,8 @@ def safe_target(root, relative):
     fixed = {'tracking/revision-queue.csv', 'tracking/revision-history.csv',
              'tracking/mistakes.json', 'tracking/skill-state.json', 'tracking/checkpoint-index.json',
              'progress/current.md', 'START-HERE.md', 'progress/session-history.md',
-             'Notes/revision/topics.json', 'Notes/revision/reviews.jsonl', 'Notes/revision/mistakes.md'}
+             'Notes/revision/topics.json', 'Notes/revision/reviews.jsonl', 'Notes/revision/mistakes.md',
+             'Notes/revision/plan.md', 'tracking/topic-map.json'}
     require(relative in fixed or re.fullmatch(r'progress/weekly/\d{4}-W\d{2}\.md', relative), 'Unsupported transaction path')
     target = (root / relative).resolve()
     require(target.is_relative_to(root.resolve()), 'Path outside repository')
@@ -150,11 +155,13 @@ def transaction(root, writes):
     recover(root)
 
 
-def views(root, queue=None, history=None, mistakes=None):
+def views(root, queue=None, history=None, mistakes=None, registry=None):
     queue = queue if queue is not None else read_csv(root, 'tracking/revision-queue.csv')[1]
     history = history if history is not None else read_csv(root, 'tracking/revision-history.csv')[1]
     mistakes = mistakes if mistakes is not None else read_json(root, 'tracking/mistakes.json')
-    registry = read_json(root, 'tracking/topic-map.json')
+    registry = registry if registry is not None else read_json(root, 'tracking/topic-map.json')
+    plan_state = note_revision.snapshot(root, registry, queue, history, mistakes, registry['inventory_date_ist'])
+    plan_topics = {t['id']: t for t in plan_state['topics']}
     by_id = {q['item_id']: q for q in queue}
     topics = []
     events = [json.loads(r['event_json']) for r in history if r.get('event_json')]
@@ -169,6 +176,8 @@ def views(root, queue=None, history=None, mistakes=None):
                      recent_scores=[e.get('score') for e in actual[-5:]],
                      help_needed=actual[-1].get('help_used') if actual else None,
                      last_review_id=actual[-1]['review_id'] if actual else None)
+        topic.update(learning_state=plan_topics[topic['id']]['state'],
+                     linked_mistakes=plan_topics[topic['id']]['mistakes'])
         topics.append(topic)
     state = {'schema_version': 2, 'generated': True, 'timezone': 'Asia/Kolkata',
              'authoritative_queue': 'tracking/revision-queue.csv',
@@ -183,7 +192,8 @@ def views(root, queue=None, history=None, mistakes=None):
         lines.append('| ' + ' | '.join(clean(x) for x in (m['mistake_id'], m['category'], m['status'], m['recurrence_count'], m['observed_behaviour'], m['follow_up_task'])) + ' |')
     return {'Notes/revision/topics.json': dump(state),
             'Notes/revision/reviews.jsonl': ''.join(json.dumps(e, ensure_ascii=False) + '\n' for e in events),
-            'Notes/revision/mistakes.md': '\n'.join(lines) + '\n'}
+            'Notes/revision/mistakes.md': '\n'.join(lines) + '\n',
+            'Notes/revision/plan.md': note_revision.render(plan_state, registry, queue)}
 
 
 def record(root, batch):
@@ -212,12 +222,15 @@ def record(root, batch):
     hfields, history = read_csv(root, 'tracking/revision-history.csv')
     by_id = {q['item_id']: q for q in queue}
     registry = read_json(root, 'tracking/topic-map.json')
+    registry = note_revision.sync(root, registry, when)
     links = {t['id']: set(t['exercise_ids']) for t in registry['topics']}
     prior_events = [json.loads(r['event_json']) for r in history if r.get('event_json')]
     for event in batch.get('reviews', []):
         require(all(isinstance(event.get(key), str) and event[key].strip() for key in ('review_id', 'attempt_id', 'evidence')), 'Review and attempt IDs/evidence required')
         require(event['item_id'] in by_id, 'Unknown review item')
         require(event['evidence'] in evidence, 'Review evidence must belong to this batch')
+        require(all(isinstance(event.get(key), str) and event[key].strip() for key in ('question', 'answer')),
+                'An answered question is required; pending prompts are not review events')
         require(event.get('result') in ('independent', 'assisted', 'needs_guidance', 'unknown'), 'Unknown review result')
         for key in ('help_used', 'notes_used'):
             require(event.get(key) is None or type(event[key]) is bool, f'{key} must be boolean or null')
@@ -236,6 +249,8 @@ def record(root, batch):
             continue
         require(not any(e['item_id'] == event['item_id'] and e['attempt_id'] == event['attempt_id'] for e in prior_events), 'Attempt already recorded under another review ID')
         row = by_id[event['item_id']]
+        require(event['review_kind'] != 'delayed' or row['last_attempt_date'],
+                'Delayed review requires a prior dated attempt for this exact item')
         require(not row['last_attempt_date'] or event['attempt_date_ist'] >= row['last_attempt_date'], 'Older review needs explicit historical reconciliation')
         stage, due = schedule(int(row['review_stage']) if row['review_stage'] else None,
                               row['next_review_date_ist'] or None, event, row['last_attempt_date'] or None)
@@ -291,7 +306,8 @@ def record(root, batch):
     if 'checkpoint_text' in batch:
         require(batch.get('next_task') and batch['next_task'] in batch['checkpoint_text'] and batch['next_task'] in batch['handoff_text'], 'Same exact next task required in both handoffs')
         writes.update({'progress/current.md': batch['checkpoint_text'], 'START-HERE.md': batch['handoff_text']})
-    writes.update(views(root, queue, history, mistakes))
+    writes['tracking/topic-map.json'] = dump(registry)
+    writes.update(views(root, queue, history, mistakes, registry))
     transaction(root, writes)
     return True
 
@@ -318,10 +334,21 @@ def status(root, when):
         if observation['observed_date_ist'] <= when:
             states[observation['item_id']][observation['dimension']] = observation['state']
     changed_sources = []
-    for topic in read_json(root, 'tracking/topic-map.json')['topics']:
-        if any(sha((root / source['path']).read_bytes()) != source['sha256'] for source in topic['sources']):
+    registry = read_json(root, 'tracking/topic-map.json')
+    changed_sections = {ident for f in note_revision.inventory(root, registry)
+                        for s in f.get('sections', []) if s.get('changed') for ident in s.get('topic_ids', [])}
+    for topic in registry['topics']:
+        non_note_change = any(not source['path'].startswith('Notes/') and
+                              sha((root / source['path']).read_bytes()) != source['sha256'] for source in topic['sources'])
+        if topic['id'] in changed_sections or topic.get('needs_reassessment') or non_note_change:
             changed_sources.append(topic['id'])
+    revision = note_revision.snapshot(root, read_json(root, 'tracking/topic-map.json'), queue,
+                                     read_csv(root, 'tracking/revision-history.csv')[1],
+                                     read_json(root, 'tracking/mistakes.json'), when)
     return {'date_ist': when, 'due_items': [q['item_id'] for q in due],
+            'revision_coverage': revision['coverage'], 'coverage_gaps': revision['gaps'],
+            'neglected_topics': revision['neglected_topics'],
+            'proposed_revision': note_revision.selection(revision, queue),
             'confirmed_today_seconds': seconds_today, 'confirmed_week_seconds': seconds_week,
             'running_or_uncertain_sessions': [r['session_id'] for r in sessions if r['status'] != 'completed'],
             'daily_learning_source': 'progress/session-history.md', 'pending_task_source': 'progress/current.md',
@@ -359,6 +386,16 @@ def weekly(root, week, as_of):
     text.extend(['', '## Delayed review results', '', f'{len(delayed)} actual delayed review events in this period.'])
     for e in delayed:
         text.append(f'- {e["review_id"]}: {e["item_id"]}, {e["result"]}; score {e.get("score")!r}, `{e["evidence"]}`.')
+    revision = note_revision.snapshot(root, read_json(root, 'tracking/topic-map.json'),
+                                     read_csv(root, 'tracking/revision-queue.csv')[1],
+                                     read_csv(root, 'tracking/revision-history.csv')[1],
+                                     read_json(root, 'tracking/mistakes.json'), observed_end.isoformat())
+    text.extend(['', '## Revision coverage', '',
+                 'Current note inventory; performance counted only through the reporting date.',
+                 '; '.join(f'{k}: {v}' for k, v in revision['coverage'].items()),
+                 'Neglected topics: ' + (', '.join(revision['neglected_topics']) or 'none'),
+                 'Coverage gaps: ' + ('; '.join(revision['gaps']) or 'none'),
+                 'See Notes/revision/plan.md for sources, initial slots and upcoming reviews.'])
     text.extend(['', '## Unassessed areas and next focus', '',
                  'Unobserved skill dimensions remain unassessed; note presence, time and setup are not proficiency.',
                  'Keep the latest learner-selected task in `progress/current.md`; complete its prerequisite step before returning to the full cleaner. Select a few due weak concepts rather than the whole backlog.',
@@ -374,6 +411,7 @@ def validate(root):
     ids = [q['item_id'] for q in queue]
     require(len(ids) == len(set(ids)), 'Duplicate queue ID')
     registry = read_json(root, 'tracking/topic-map.json')
+    note_revision.check(root, registry)
     topics = {t['id']: t for t in registry['topics']}
     require(len(topics) == len(registry['topics']), 'Duplicate topic ID')
     for t in topics.values():
@@ -422,7 +460,7 @@ def validate(root):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('validate', 'refresh', 'record', 'recover', 'status', 'weekly'))
+    parser.add_argument('command', choices=('validate', 'refresh', 'notes-sync', 'record', 'recover', 'status', 'weekly'))
     parser.add_argument('--event', type=Path)
     parser.add_argument('--date')
     parser.add_argument('--week')
@@ -431,9 +469,14 @@ def main():
     try:
         if args.command == 'validate':
             print(validate(ROOT))
-        elif args.command == 'refresh':
-            transaction(ROOT, views(ROOT))
-            print('Refreshed compatibility views; no learning or timer events created.')
+        elif args.command in ('refresh', 'notes-sync'):
+            registry = read_json(ROOT, 'tracking/topic-map.json')
+            when = args.date or registry['inventory_date_ist']
+            registry = note_revision.sync(ROOT, registry, when)
+            writes = views(ROOT, registry=registry)
+            writes['tracking/topic-map.json'] = dump(registry)
+            transaction(ROOT, writes)
+            print('Refreshed note inventory and revision views; no learning or timer events created.')
         elif args.command == 'record':
             require(args.event is not None, '--event is required')
             print('Saved.' if record(ROOT, json.loads(args.event.read_text(encoding='utf-8-sig'))) else 'Already saved; no changes.')

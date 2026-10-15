@@ -45,3 +45,11 @@ Read START-HERE.md as the cross-computer handoff and verify its summary against 
 - Do not push, publish or message externally unless authorised. Commit/push instructions in README describe the learner's workflow, not standing permission for external writes.
 
 Git stores records; it does not guarantee an AI reads them. If files are unavailable, ask for the latest checkpoint instead of pretending to remember.
+
+## Notes-driven revision
+
+At revision planning and checkpoint boundaries follow reference/learning-coach.md's
+notes inventory process. Notes are the source of concept coverage; topic-map and the
+existing CSV queue/history own identities and actual schedules. Use Notes/revision/plan.md
+as the generated view. Map new/changed learning sections before declaring coverage complete.
+Never turn a diagnostic planning date, pending question or note into an answered review.

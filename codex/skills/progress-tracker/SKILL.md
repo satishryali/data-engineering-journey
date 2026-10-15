@@ -33,3 +33,10 @@ boundaries, updating current checkpoint and handoff together and preventing dupl
 
 Status requests do not start/stop timers, lessons or assessments. Do not commit, push,
 create reminders, message another chat or claim automatic midnight/background updates.
+
+For weekly revision coverage follow reference/learning-coach.md's notes-driven process.
+Synchronise notes with the actual IST date, reconcile mappings and refresh/validate.
+Use Notes/revision/plan.md and the weekly helper to report mapped sections, assessed
+concepts, delayed-practised concepts, concepts needing help, actual delayed scores/help,
+recurring mistakes and neglected topics. Keep historical broad-exercise evidence separate
+from exact concept counts; no memory percentage. Report capacity limits and a small plan.

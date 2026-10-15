@@ -106,3 +106,32 @@ recover` before continuing or using Git. It completes the same batch idempotentl
 refuses to overwrite concurrent edits. Resolve conflicts against preserved evidence;
 never discard an interrupted event just to make validation pass. Work on one computer
 at a time. No automatic monitoring or notifications are provided.
+
+## Notes inventory and visible revision plan
+
+`topic-map.json` owns note_inventory (file exclusions and heading-section mappings),
+note_sections backlinks, content hashes/change history, prerequisites and separate
+initial_assessment_date_ist planning slots. Stable concepts still have one queue row.
+The existing CSV history owns actual reviews, scores, help and follow-up dates.
+`note_revision.py` parses notes and generates `Notes/revision/plan.md` through coach.py.
+
+Run `python tracking/coach.py notes-sync --date YYYY-MM-DD` at revision planning and
+checkpoint boundaries, using actual IST date; then inspect/reconcile new content,
+refresh and validate. `refresh --date YYYY-MM-DD` also synchronises the inventory.
+Refresh without --date retains the last reporting date. `record` synchronises using
+the batch's date and updates topic-map and views in the same recoverable transaction.
+No guessing of a new concept mapping: new sections are visible coverage gaps until the
+tutor maps them or documents an exclusion. Validation refuses missing mappings, broken
+source/backlinks and duplicate concept names/IDs. The tutor additionally checks semantic
+duplicates; different names are not proof that two concepts differ.
+
+A source edit records prior/current content hashes and flags only affected concepts;
+no queue or assessment is reset. Inspect changes before teaching. To acknowledge an
+inspected formatting/wording change, remove the section's changed flag and clear the
+topic's needs_reassessment only when justified; retain content_changes history.
+A renamed/deleted heading is a coverage gap until reconciled, never silent deletion.
+
+Every new answered review now requires nonempty question and answer; delayed events
+also require a prior dated exact-item attempt. Unknown help remains unknown. Pending
+prompts and initial slots never create history rows. See reference/learning-coach.md
+for the four displayed states, count definitions and bounded-session rules.

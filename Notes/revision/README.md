@@ -51,3 +51,15 @@ Start revision; Revise [topic]; Show progress; I have 5 minutes; Practise coding
 Stop and save. Also: Start today's learning; Show my mistakes; Show today's learning;
 Weekly review; Save checkpoint. Status/planning and task selection do not start timers.
 Reminders are optional and separate; do not invent a notification time.
+
+## Open the revision plan
+
+See [Revision plan](plan.md) for due/overdue/upcoming reviews, initial assessment slots,
+weak topics, coverage and source-section mappings/exclusions. This is generated from
+topic-map and the existing queue/history; do not edit it directly.
+
+Refresh with `python tracking/coach.py notes-sync --date YYYY-MM-DD` using the actual
+IST date, reconcile any new mappings, then run `python tracking/coach.py validate`.
+Initial assessment slots are adjustable plans, not completed learning or overdue retention.
+The four learning states and count definitions are explained in the generated plan and
+[shared guide](../../reference/learning-coach.md). Reading a note is not a review event.

@@ -2,6 +2,16 @@
 
 Last updated: 15 October 2026 (IST).
 
+## Finished for today - 15 October 2026
+
+Daily handoff saved at the learner's explicit Finish for today request. No interval was running; the last confirmed stop remains 14:59:45 IST. Confirmed today and this week: 2h48m34s (SQL 1h30m56s; Python 1h17m38s). Today's six-hour target has 3h11m26s unfilled, with no catch-up debt assumed. Partial-week target: 32h; remaining 29h11m26s. Closed-day shortfall before today: 0h. The 08:11:20 SQL interval still needs its actual stop time and is excluded. Excel refreshed for 15 October from the unchanged CSV.
+
+SQL-001 initial reasoning/output succeeded, with spelling help retained; SQL-002 needed COUNT/NULL, join-key and grouping hints. SQL-003 totals and Python cleaner remain unfinished. Dictionary/list explanations and coach setup are reference/administration, not new assessed success. No new learner attempt or delayed review occurred in this chat. Preserve all prior attempts, mistakes, skill states and review dates.
+
+Exact next task: Starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together.
+
+Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md; no loops/conversion/exception handling yet. Resume only on an explicit timer command. Early practice for SQL-001/002/003 and PY-001 remains due 16 October; select a manageable set after the dictionary prerequisite. GitHub contains commit a70f3fb; this daily handoff is local and has not been pushed.
+
 ## Goal and constraints
 
 India data engineering switch targeted February 2027, about 15 LPA aspiration (not guaranteed). Electrical engineering education; four years support plus one development, separate from data engineering project experience. Notice period 90 days; considering resignation 30 November, resignation/last date unconfirmed.
@@ -30,7 +40,7 @@ Later run tools/sql/exercises/003-customer-totals/setup.sql in one connection fo
 
 ## Timer and Excel
 
-All timers paused at 14:59:45 IST on 15 October. Latest Python interval 14:14:07–14:59:45: 45m38s, dictionary practice in Jupyter. Completed today/week 2h48m34s (SQL 1h30m56s, Python 1h17m38s). Remaining today 3h11m26s toward six hours. Resume starts a new row. Older 08:11:20 interval needs_confirmation, stop unknown and excluded. Never infer study from silence or count overlapping intervals.
+All timers paused at 14:59:45 IST on 15 October. Latest Python interval 14:14:07–14:59:45: 45m38s, dictionary practice in Jupyter. Completed today/week 2h48m34s (SQL 1h30m56s, Python 1h17m38s). At finish, 3h11m26s of the six-hour target was unfilled; no extra study time inferred. Resume starts a new row. Older 08:11:20 interval needs_confirmation, stop unknown and excluded. Never infer study from silence or count overlapping intervals.
 
 tracking/study-log.csv is authoritative. Excel outputs/study-tracker/study-hours.xlsx refreshed 15 October to completed 2h48m34s, excluding uncertain/running time. Rebuild with tracking/update-study-tracker.mjs after log changes, status requests and daily handoff; flag stale if unavailable. First partial week 32h from 15 October, full weeks 50h. Closed-day shortfall separate from today's remaining target.
 
@@ -44,7 +54,7 @@ Batch learning records at task completion, pause/topic switch, explicit Save che
 
 Queue: SQL-001 retrieval, SQL-002 unaided reconstruction, SQL-003 SUM/NULL and PY-001 early practice due 16 October; PY-002 no success/review date yet. Prioritise dictionary foundations before the full cleaner; do not dump the whole queue at once. Schedule is flexible around actual learning, not elapsed dates.
 
-START-HERE.md is the entry point; README.md has commands/sync/Excel instructions. Latest explicit request: implement the five-role coach without committing or pushing. Git history records prior syncs; setup changes remain local until separately authorised. Commit/push only on instruction; keep secrets/runtime data out. Use repo-relative paths and read current files on every new device/chat.
+START-HERE.md is the entry point; README.md has commands/sync/Excel instructions. The learner explicitly authorised commit/push: a70f3fb was pushed to origin/main on 15 October 2026 and verified synced. This end-of-day checkpoint is saved locally after that push. Further commit/push requires a new instruction. Keep secrets/runtime data out; use repo-relative paths and read current files on every new device/chat.
 
 ## Five-role coordination — setup only, 15 October 2026
 
@@ -77,3 +87,29 @@ why/input/code/output/explanation, examples for different behaviours, output ver
 labels and evidence-based doubts/mistake links. Apply to future notes; existing notes
 were not rewritten for this request. One dictionary style preview is awaiting learner
 feedback; it is a tutor example, not an assessed attempt. Pending task/timers unchanged.
+
+## Notes-driven revision setup - 15 October 2026
+
+The requested Revision Coach upgrade is saved locally. Same five roles; no quiz, study
+interval or completed review was created. The generated Notes/revision/plan.md maps
+53 learning sections to 20 stable concepts, excluding two navigation/reference sections
+and documented non-learning files. Four concepts were added as unassessed (lists: basics,
+changes, records; dictionary removal). Existing IDs, attempts, mistakes, skill evidence,
+review history and due dates are preserved. Initial diagnostic slots run from 16 October
+at most one per suitable session; these are adjustable plans, not completed reviews.
+Concept assessment counts remain zero; historical SQL exercise evidence stays separate.
+
+Start revision / Today's schedule / Weekly review / Save checkpoint now synchronise
+notes and use the generated plan. Material changes flag affected concepts; formatting
+does not reset progress. New sections need mappings, and questionable source claims
+need official verification before teaching. No background monitor exists.
+
+Next suitable 15-minute block: about five minutes for the pending dictionary read/update/
+print task and up to ten minutes for a due SQL COUNT/NULL reconstruction, if readiness
+and available time allow. Ask one task at a time without answers; teach missing basics
+first. Start today's learning does not start a timer; all timers remain stopped.
+
+Exact next task: Starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together.
+
+The earlier end-of-day summary remains valid. This setup and subsequent handoff updates
+are local and uncommitted; no push was requested.

@@ -35,13 +35,28 @@
         "PY-002"
       ],
       "legacy_id": "py.dict.access",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Accessing items"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-16",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": [
+        "M-PY-001"
+      ]
     },
     {
       "id": "py.dict.mutate",
@@ -75,13 +90,40 @@
         "PY-002"
       ],
       "legacy_id": "py.dict.mutate",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 1 : Direct Key assignment"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 2 : .update() Method"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 3 : Dictionary comprehension"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 4 : Merging  |="
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Looping through Dictionaries"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-17",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": [
+        "M-PY-001"
+      ]
     },
     {
       "id": "py.context.resources",
@@ -110,13 +152,30 @@
       "prerequisites": [],
       "exercise_ids": [],
       "legacy_id": "py.context.resources",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/with(Context_Manager).md",
+          "key": "using with (Automatic Cleanup)"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Best Practice"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-31",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "pg.cursor.results",
@@ -153,13 +212,58 @@
       "prerequisites": [],
       "exercise_ids": [],
       "legacy_id": "pg.cursor.results",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Database Connections/Exeucting Commands.md",
+          "key": "Execution of Commands in Postgres"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Install the PostgreSQL Driver"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Import psycopg2"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Define Connection Parameters"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Open the connection"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Create a cursor"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Execute a Query and Fetch Results"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Close the connection"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Best Practice"
+        },
+        {
+          "path": "Notes/Python/Lessons/Doubts/Connection.md",
+          "key": "If you wanted to check whether the connection is closed or not using a simple statement you can use this"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-01",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "py.logging.basics",
@@ -182,13 +286,35 @@
       "prerequisites": [],
       "exercise_ids": [],
       "legacy_id": "py.logging.basics",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 2 : creating your logger object"
+        },
+        {
+          "path": "Notes/Python/Concepts/Logging.md",
+          "key": "Notes / Logging Module"
+        },
+        {
+          "path": "Notes/Python/Concepts/Logging.md",
+          "key": "When you are not sure about the error using logging.exception in the except section."
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-30",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes.",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "py.paths.imports",
@@ -211,13 +337,31 @@
       "prerequisites": [],
       "exercise_ids": [],
       "legacy_id": "py.paths.imports",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/Logging.md",
+          "key": "Notes / Logging Module"
+        },
+        {
+          "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
+          "key": "PATH ERROR"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Path :"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-29",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes.",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "py.modules.main",
@@ -240,13 +384,26 @@
       "prerequisites": [],
       "exercise_ids": [],
       "legacy_id": "py.modules.main",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Lessons/Understandings.md",
+          "key": "Key Findings"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-28",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "vault.kv.read",
@@ -271,13 +428,47 @@
       ],
       "exercise_ids": [],
       "legacy_id": "vault.kv.read",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 1 : importing hvac"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 3 : Define where the vault lives and your secret token"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Initialize the Vault Client"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Check if the connection is acutally working or not"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 6 : Know your secrets path & Mount Point"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 7 : Connect to the vault and fetch the secrets"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-04",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes.",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "py.logging.shared",
@@ -303,13 +494,22 @@
       ],
       "exercise_ids": [],
       "legacy_id": "py.logging.shared",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
+          "key": "Pending Tasks"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-02",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "de.ingest.seeds",
@@ -332,13 +532,23 @@
       "prerequisites": [],
       "exercise_ids": [],
       "legacy_id": "de.ingest.seeds",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Tips to follow when creating dbt models,transformations or anything"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-03",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes.",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "sql.join.preservation",
@@ -356,13 +566,22 @@
         "SQL-001"
       ],
       "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-21",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     },
     {
       "id": "sql.count.nulls",
@@ -382,13 +601,28 @@
         "SQL-002"
       ],
       "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-23",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": [
+        "M-SQL-001"
+      ]
     },
     {
       "id": "sql.join.keys",
@@ -409,13 +643,28 @@
         "SQL-002"
       ],
       "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-22",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": [
+        "M-SQL-002"
+      ]
     },
     {
       "id": "sql.group.grain",
@@ -435,13 +684,28 @@
         "SQL-002"
       ],
       "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-24",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": [
+        "M-SQL-003"
+      ]
     },
     {
       "id": "sql.sum.nulls",
@@ -461,13 +725,21 @@
         "SQL-003"
       ],
       "legacy_id": null,
+      "note_sections": [],
+      "initial_assessment_date_ist": "2026-10-25",
+      "note_coverage_deferral": "Existing exercise/feedback concept retained with original evidence. A standalone explanation note has not been written; no new learning inferred.",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": [
+        "M-SQL-004",
+        "M-SQL-005"
+      ]
     },
     {
       "id": "py.records.cleaning",
@@ -488,13 +760,209 @@
         "PY-001"
       ],
       "legacy_id": null,
+      "note_sections": [],
+      "initial_assessment_date_ist": "2026-10-26",
+      "note_coverage_deferral": "Existing exercise/feedback concept retained with original evidence. A standalone explanation note has not been written; no new learning inferred.",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
       "last_reviewed_date": null,
       "recent_scores": [],
       "help_needed": null,
-      "last_review_id": null
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": [
+        "M-PY-002",
+        "M-PY-003"
+      ]
+    },
+    {
+      "id": "py.dict.remove",
+      "name": "Removing dictionary items",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access",
+        "py.dict.mutate"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 1 : using pop"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 2 : Removing Last inserted item"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 3 : deleting the dict & deleting the item using del"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 4 : clear the data in dictionary"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-27",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.list.basics",
+      "name": "Lists, positions, length and repeated values",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "sha256": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Why we use lists"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Accessing items"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Finding how many items we have"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Repeated values are allowed"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Things to remember"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-18",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.list.mutate",
+      "name": "Replacing list items and appending",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "sha256": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.list.basics"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Changing an item"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Adding an item using append"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Adding an item using append / Starting with an empty list"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Common mistake with append"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Common mistake with append / Wrong way"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Common mistake with append / Correct way"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Things to remember"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-19",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.list.records",
+      "name": "Collecting dictionary records in lists",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "sha256": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access",
+        "py.list.mutate"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Keeping dictionaries inside a list"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-20",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     }
   ],
   "session": {

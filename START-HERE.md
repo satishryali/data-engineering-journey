@@ -6,9 +6,19 @@ Last updated: 15 October 2026 (IST). Update this file in place at checkpoint bou
 
 > Read START-HERE.md, AGENTS.md and progress/current.md from this checkout, verify the trackers and current exercise files, then continue the exact pending task. Do not restart the assessment or start a timer without my explicit instruction. Tell me if files are unavailable.
 
+## Finished for today - 15 October 2026
+
+Daily handoff saved at the learner's explicit Finish for today request. No interval was running; the last confirmed stop remains 14:59:45 IST. Confirmed today and this week: 2h48m34s (SQL 1h30m56s; Python 1h17m38s). Today's six-hour target has 3h11m26s unfilled, with no catch-up debt assumed. Partial-week target: 32h; remaining 29h11m26s. Closed-day shortfall before today: 0h. The 08:11:20 SQL interval still needs its actual stop time and is excluded. Excel refreshed for 15 October from the unchanged CSV.
+
+SQL-001 initial reasoning/output succeeded, with spelling help retained; SQL-002 needed COUNT/NULL, join-key and grouping hints. SQL-003 totals and Python cleaner remain unfinished. Dictionary/list explanations and coach setup are reference/administration, not new assessed success. No new learner attempt or delayed review occurred in this chat. Preserve all prior attempts, mistakes, skill states and review dates.
+
+Exact next task: Starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together.
+
+Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md; no loops/conversion/exception handling yet. Resume only on an explicit timer command. Early practice for SQL-001/002/003 and PY-001 remains due 16 October; select a manageable set after the dictionary prerequisite. GitHub contains commit a70f3fb; this daily handoff is local and has not been pushed.
+
 ## Current status and exact next step
 
-- All timers paused at 14:59:45 IST on 15 October. Latest Python/Jupyter dictionary interval 14:14:07–14:59:45 lasted 45m38s. Completed today/week: 2h48m34s (SQL 1h30m56s; Python 1h17m38s). Remaining today: 3h11m26s toward six hours. The old 08:11:20 interval is needs_confirmation and excluded; never infer its duration.
+- All timers paused at 14:59:45 IST on 15 October. Latest Python/Jupyter dictionary interval 14:14:07–14:59:45 lasted 45m38s. Completed today/week: 2h48m34s (SQL 1h30m56s; Python 1h17m38s). At finish: 3h11m26s of the six-hour target unfilled. The old 08:11:20 interval is needs_confirmation and excluded; never infer its duration.
 - Active learning task is PY-002 dictionary foundations, requested after difficulty with the cleaner. Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md. Tutor has explained keys/values, retrieval and what items() yields. The selected refresher is not yet assessed; practice/Dictionaries.ipynb contains general practice but does not establish completion or independent proficiency.
 - Next learner attempt: starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together. No loops, conversions or exception handling yet. No notebook code/output submitted during the latest block; All timers paused; await explicit resume before starting another interval.
 - PY-001 cleaner is deferred, not solved. Preserve attempt.py and snapshots in attempts/. Earlier hints covered record access, lists and int()/ValueError. Expected valid/rejected output shape was supplied on request, not the implementation. feedback.md records reviewed evidence. No Python proficiency or success anchor established.
@@ -78,3 +88,29 @@ why/input/code/output/explanation, examples for different behaviours, output ver
 labels and evidence-based doubts/mistake links. Apply to future notes; existing notes
 were not rewritten for this request. One dictionary style preview is awaiting learner
 feedback; it is a tutor example, not an assessed attempt. Pending task/timers unchanged.
+
+## Notes-driven revision setup - 15 October 2026
+
+The requested Revision Coach upgrade is saved locally. Same five roles; no quiz, study
+interval or completed review was created. The generated Notes/revision/plan.md maps
+53 learning sections to 20 stable concepts, excluding two navigation/reference sections
+and documented non-learning files. Four concepts were added as unassessed (lists: basics,
+changes, records; dictionary removal). Existing IDs, attempts, mistakes, skill evidence,
+review history and due dates are preserved. Initial diagnostic slots run from 16 October
+at most one per suitable session; these are adjustable plans, not completed reviews.
+Concept assessment counts remain zero; historical SQL exercise evidence stays separate.
+
+Start revision / Today's schedule / Weekly review / Save checkpoint now synchronise
+notes and use the generated plan. Material changes flag affected concepts; formatting
+does not reset progress. New sections need mappings, and questionable source claims
+need official verification before teaching. No background monitor exists.
+
+Next suitable 15-minute block: about five minutes for the pending dictionary read/update/
+print task and up to ten minutes for a due SQL COUNT/NULL reconstruction, if readiness
+and available time allow. Ask one task at a time without answers; teach missing basics
+first. Start today's learning does not start a timer; all timers remain stopped.
+
+Exact next task: Starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together.
+
+The earlier end-of-day summary remains valid. This setup and subsequent handoff updates
+are local and uncommitted; no push was requested.

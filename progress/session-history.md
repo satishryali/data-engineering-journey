@@ -143,3 +143,17 @@ Evidence: `reference/note-style.md`; `Notes/Python/Concepts/lists.md`; `codex/sk
 Read existing dictionary, PostgreSQL connection and list notes, then expanded the saved Notes Keeper instructions and shared style guide to the learner's explicit specification. Main tutoring instructions link the rules. Existing notes were not rewritten; a short conversation-only dictionary lookup preview was executed and its output checked for the learner to evaluate. No learner answer, lesson success, timer change or review date was recorded. Current dictionary exercise remains pending.
 
 Evidence: `reference/note-style.md`; `codex/skills/notes-keeper/SKILL.md`; `AGENTS.md`
+
+<!-- checkpoint:FINISH-TODAY-20261015 -->
+## 2026-10-15 — FINISH-TODAY-20261015 (setup)
+
+Finished for today on explicit request. No active timer; latest confirmed stop remains 14:59:45 IST. Confirmed 15 October/week: 2h48m34s (SQL 1h30m56s; Python 1h17m38s); six-hour daily target unfilled by 3h11m26s. Partial-week target 32h, remaining 29h11m26s; prior closed-day shortfall 0h. The uncertain SQL interval starting 08:11:20 remains excluded, with actual stop unknown. Excel refreshed from unchanged study-log.csv. This is a day-end consolidation of saved evidence, not another counted learning/review event: SQL-001 initial reasoning/output success with spelling help; SQL-002 assisted counting/grouping; SQL-003 and cleaner deferred; PY-002 dictionary task unassessed. Reference notes and five-role setup do not establish proficiency. No new learner attempt, mistake observation, review, score or study interval in this chat. Reviewed and pushed 64 authorised files as a70f3fb to origin/main; this subsequent daily checkpoint is local only. Next: Starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together. Keep early practice due 16 October unchanged and resume timers only explicitly.
+
+Evidence: `tracking/study-log.csv#2026-10-15-day-end`; `tools/python/exercises/001-record-cleaning/dictionary-refresher.md#pending-day-end`
+
+<!-- checkpoint:SETUP-notes-driven-revision-20261015 -->
+## 2026-10-15 — SETUP-notes-driven-revision-20261015 (setup)
+
+Implemented the requested notes-driven revision upgrade using the existing five roles and authoritative records. Inventoried Notes and tool note files: 53 learning sections mapped to 20 concepts; two metadata/navigation sections and non-learning files excluded with reasons. Preserved 16 IDs and added four unassessed dictionary/list concepts, each with separate adjustable initial slots, prerequisites and source mappings. Added generated Notes/revision/plan.md, section-change detection, explicit performance states, coverage/neglect reporting, bounded session candidates and command integration. Installed six updated skill definitions with backup; configuration unchanged. No quiz, learner attempt, scored review, mistake observation or timer event created. Existing queue dates, review history, skill evidence and attempts preserved; end-of-day totals remain 2h48m34s, uncertain interval excluded. Proposed next suitable session: pending dictionary task (~5m), then a due SQL COUNT/NULL task (~10m) if suitable. Exact pending task unchanged; all timers stopped. Setup saved locally, not committed/pushed.
+
+Evidence: `reference/learning-coach.md#notes-drive-revision`; `tracking/note_revision.py`; `Notes/revision/plan.md`

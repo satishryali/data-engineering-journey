@@ -36,3 +36,17 @@ infer completion from dates/reminders, erase valid history or promise permanent 
 Do not alter timers without an explicit timer instruction, edit the learner's active
 attempt with a solution, commit, push, create reminders or message another chat as a
 side effect. Preserve the pending learning task when finishing a revision session.
+
+## Notes-driven planning
+
+Follow the notes-driven revision section in reference/learning-coach.md. Before selecting
+work, run `python tracking/coach.py notes-sync --date YYYY-MM-DD` using the actual IST
+date. Inspect new/changed sections; map them in topic-map and the existing CSV queue,
+reuse stable IDs and document exclusions. Refresh/validate; never hide unmapped notes.
+Read Notes/revision/plan.md and relevant explanation notes privately. Ask one meaningful
+retrieval/application task without exposing answers. Check weak prerequisites and teach
+missing understanding before calling it retention practice. Include at most one small
+initial diagnostic in suitable 15?20 minute sessions; skip or defer it when overloaded.
+Initial slots are planning only. Keep the four displayed learning states, evidence/help,
+actual reviews and review dates distinct. Report neglected topics/capacity limits; do
+not restart after missed days. Preserve the learner's selected pending task and timers.

@@ -157,3 +157,85 @@ prose remains valid evidence even before checkpoint IDs were introduced.
 
 There is no continuous monitoring, midnight job, notification or background agent.
 Reminders are optional and separate; no notification time or learning result is invented.
+
+## Notes drive revision
+
+Keep the same five roles. `tracking/topic-map.json` now also owns `note_inventory`:
+each note file is either excluded with a reason, or split into direct content under
+headings. Every included section has `topic_ids`; related sections reuse IDs. Empty
+container headings and headings inside code fences are not learning sections. Images,
+app configuration, indexes, generated views, administrative instructions, empty tool
+note templates and link-only tool notes are excluded with reasons. A new substantive
+tool note must be mapped even when it used to be an empty template.
+
+At Start revision, Today's schedule, Weekly review and checkpoint boundaries:
+
+1. Run `python tracking/coach.py notes-sync --date YYYY-MM-DD` with the actual IST date.
+   This inventories files and flags gaps/changed sections; it never judges learning.
+2. Inspect new content and affected source headings. Add a useful concept to the same
+   topic-map/CSV queue only when no existing concept fits. Preserve IDs and older hashes.
+   Add each section's topic mapping and the topic's `note_sections` backlink. Exclude
+   only with a specific reason. New concepts get `not_attempted`, blank actual review/
+   success/due fields, prerequisites and a proposed `initial_assessment_date_ist`.
+3. Spread initial slots over suitable sessions: at most one new diagnostic concept,
+   usually five minutes, alongside about ten minutes of weak/due practice. Dates are
+   adjustable planning slots, not overdue retention or proof of learning. Replan missed
+   slots; never restart the course or dump the backlog. Current slots start 16 October,
+   one per day; prerequisite readiness and learner time take precedence.
+4. Refresh and validate. New/unmapped sections fail coverage validation. The helper
+   detects content changes conservatively, ignores ordinary prose wrapping/spacing,
+   and flags only mapped concepts. Formatting never resets scores or dates. Inspect
+   flags: a wording change need not require reassessment. Keep content-change history;
+   after inspection clear `changed` on the inventory section and the topic's
+   `needs_reassessment` only when justified by inspection or actual reassessment.
+5. Read relevant notes privately, check questionable technical claims against official
+   docs before teaching, and choose a bounded task. Existing source issues in logging,
+   paths, Vault and dbt seeds still need checking when those lessons arise. They are
+   not observed learner mistakes. No continuous monitoring is running.
+
+`Notes/revision/plan.md` shows due today, overdue, upcoming reviews, initial slots,
+weak topics, section mappings/exclusions, evidence/help and coverage gaps. Its date is
+fixed to the last planning/checkpoint run. Run notes-sync on a later day before using it.
+`coach.py status --date ...` also reports bounded candidates without changing timers.
+
+Use these displayed concept states (derived from exact-item review evidence):
+
+- Unassessed: no scored non-immediate concept assessment yet.
+- Learning with help: latest scored assessment was incorrect/assisted/incomplete help evidence.
+- Applied independently: latest scored initial/application assessment was independently
+  successful, with explicit no hints, notes or help.
+- Demonstrated on delayed review: latest scored delayed assessment was independently
+  successful on a later date than a previous attempt for this exact item.
+
+Retain scores, help, notes, hints and dimension evidence alongside these broad labels.
+They describe demonstrated performance, not a memory probability. An immediate answer
+never promotes delayed status. A later failed/assisted assessment shows a current gap;
+historical successes remain in history. Unknown/unscored evidence does not invent success.
+Do not copy historical exercise outcomes to concept rows. Current concept counts can be
+zero while SQL exercise evidence is independently demonstrated in some dimensions.
+
+Count mapped learning sections, topics assessed, topics actually practised on a delayed
+review, and topics needing help separately. Delayed practice can be incorrect or assisted;
+it does not mean retained. Weekly review also reports actual delayed scores/help,
+repeated mistakes and neglected topics. Neglect means a missed initial slot or at least
+30 days since successful independent application (a planning heuristic). The last date,
+prerequisites, due date and recurring mistakes inform selection. The helper suggests
+at most two targets, substitutes a weak prerequisite for a blocked broad exercise, and
+avoids assigning its linked concept as another copy of the same task. Tutor judgement
+and the learner's selected pending task remain authoritative.
+
+Reserve one small diagnostic slot in suitable sessions so uncovered notes receive
+practice. If notes outgrow that capacity, report counts and the minimum sessions needed;
+reduce scope together. No promise that unlimited notes fit a fixed daily interval.
+
+Command integration:
+- Start revision: synchronise mappings, inspect notes/state, choose a task and wait for
+  the learner's attempt without showing answers. Teach missing understanding first.
+- Today's schedule: include a bounded revision block beside the pending learning task.
+- Weekly review: include coverage, delayed performance, recurring mistakes and neglected topics.
+- Save checkpoint: save actual answered events with nonempty `question` and `answer`,
+  then synchronise note mappings and generated views; pending prompts cannot be events.
+
+All existing timer behaviour, checkpoint deduplication and 1/3/7/14/30-day scheduling
+rules remain. Planning dates never occupy `next_review_date_ist` until actual scored
+learning warrants a follow-up. No timer, quiz or review is started by this setup.

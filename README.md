@@ -206,3 +206,10 @@ If the learner leaves without an end-of-day message, the last saved checkpoint r
 ## Status
 
 Repository prepared on 15 October 2026 for the private GitHub repository above. SQL-001 initial learning has correct independent reasoning/changed examples with spelling help recorded; SQL-002 initial practice completed with assistance. Python dictionary foundations are active, cleaner/SUM report deferred, no integrated project complete. February 2027 readiness and 15 LPA are goals, not promised outcomes.
+
+## Notes-driven revision
+
+Open [the generated revision plan](Notes/revision/plan.md) for upcoming reviews,
+initial assessment slots and notes coverage. The existing five-role coach maps note
+sections to stable concepts and uses actual answered attempts to update learning state.
+New notes are checked at planning/checkpoint boundaries; no background monitor runs.

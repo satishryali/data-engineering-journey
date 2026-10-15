@@ -52,3 +52,9 @@ shared checkpoint boundary, preserving the current task and learner attempt file
 Do not start/stop timers, create assessment results, reset review history, commit,
 push, create reminders or message another chat as a side effect. No background work
 is configured. Follow the shared guide rather than maintaining another tracker.
+
+At note save boundaries follow reference/learning-coach.md's notes-driven revision process.
+Map each substantive heading section to existing topic IDs or a justified new concept,
+record exclusions for navigation/admin content, and update note_sections backlinks.
+Run notes-sync/refresh/validate and keep Notes/revision/plan.md current. A prepared note
+gets an initial diagnostic planning slot, never an invented completed assessment or score.

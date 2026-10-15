@@ -1,0 +1,219 @@
+# Revision plan (generated)
+
+As of 2026-10-15 IST. Refresh at revision planning or checkpoint boundaries.
+Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
+
+## Coverage
+
+| Count | Meaning |
+| ---: | --- |
+| 53 | learning sections mapped |
+| 2 | sections excluded |
+| 20 | topics total |
+| 0 | topics assessed |
+| 0 | topics practised on delayed review |
+| 0 | topics needing help |
+
+Assessed = a scored, non-immediate concept assessment. Delayed practice = an actual answered delayed event;
+it can be incorrect or assisted. Neither count means permanent retention. Broad exercise results stay separate.
+
+## Due today
+
+- None.
+
+## Overdue
+
+- None.
+
+## Upcoming reviews
+
+- **SQL-001**: LEFT JOIN and unmatched rows; due 2026-10-16; last result independent.
+- **SQL-002**: Counting orders after LEFT JOIN; due 2026-10-16; last result assisted.
+- **SQL-003**: Customer order totals; due 2026-10-16; last result assisted.
+- **PY-001**: Python record cleaning; due 2026-10-16; last result needs_guidance.
+
+## Awaiting initial assessment
+
+Dates below are adjustable planning slots, not completed reviews or overdue retention.
+
+| Topic | Initial slot | Prerequisites |
+| --- | --- | --- |
+| py.dict.access: Dictionary lookup and missing keys | 2026-10-16 | None |
+| py.dict.mutate: Updating and iterating dictionaries | 2026-10-17 | py.dict.access |
+| py.list.basics: Lists, positions, length and repeated values | 2026-10-18 | None |
+| py.list.mutate: Replacing list items and appending | 2026-10-19 | py.list.basics |
+| py.list.records: Collecting dictionary records in lists | 2026-10-20 | py.dict.access, py.list.mutate |
+| sql.join.preservation: LEFT JOIN preservation | 2026-10-21 | None |
+| sql.join.keys: Joining related identifiers | 2026-10-22 | sql.join.preservation |
+| sql.count.nulls: COUNT and NULLs | 2026-10-23 | sql.join.preservation |
+| sql.group.grain: Customer identity and grouping grain | 2026-10-24 | sql.join.keys |
+| sql.sum.nulls: SUM without non-NULL input | 2026-10-25 | sql.count.nulls |
+| py.records.cleaning: Record access, accumulation and conversion | 2026-10-26 | py.dict.access, py.dict.mutate |
+| py.dict.remove: Removing dictionary items | 2026-10-27 | py.dict.access, py.dict.mutate |
+| py.modules.main: Imports and the main guard | 2026-10-28 | None |
+| py.paths.imports: File paths and module lookup | 2026-10-29 | None |
+| py.logging.basics: Logging configuration and named loggers | 2026-10-30 | None |
+| py.context.resources: Context managers and resource lifecycle | 2026-10-31 | None |
+| pg.cursor.results: Connections, cursors, execute and fetch | 2026-11-01 | None |
+| py.logging.shared: Shared logging configuration | 2026-11-02 | py.logging.basics, py.paths.imports |
+| de.ingest.seeds: Raw ingestion types and dbt seeds | 2026-11-03 | None |
+| vault.kv.read: Vault client and nested KV response | 2026-11-04 | py.dict.access |
+
+## Important weak topics
+
+- Exercise SQL-002: assisted. Historical exercise evidence is separate from concept assessment counts.
+- Exercise SQL-003: assisted. Historical exercise evidence is separate from concept assessment counts.
+- Exercise PY-001: needs_guidance. Historical exercise evidence is separate from concept assessment counts.
+- py.dict.access: Unassessed; linked mistakes M-PY-001.
+- py.dict.mutate: Unassessed; linked mistakes M-PY-001.
+- sql.count.nulls: Unassessed; linked mistakes M-SQL-001.
+- sql.join.keys: Unassessed; linked mistakes M-SQL-002.
+- sql.group.grain: Unassessed; linked mistakes M-SQL-003.
+- sql.sum.nulls: Unassessed; linked mistakes M-SQL-004, M-SQL-005.
+- py.records.cleaning: Unassessed; linked mistakes M-PY-002, M-PY-003.
+
+## Coverage gaps
+
+- Every included learning section has a topic mapping.
+- Neglected topics: none under the current rules (missed initial slots or 30 days since independent application).
+- Reassessment flags: none.
+
+## Manageable session
+
+Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
+Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
+- No eligible review is due today. Keep the exact pending learning task in progress/current.md; add a short due follow-up in the next suitable session.
+- 20 topics await assessment. One diagnostic per suitable session needs at least 20 sessions; new notes can extend this. Replan missed slots without restarting.
+
+## Topic evidence
+
+| Topic | State | Last actual review | Next review | Evidence / help |
+| --- | --- | --- | --- | --- |
+| py.dict.access | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.dict.mutate | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.context.resources | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| pg.cursor.results | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.logging.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.paths.imports | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.modules.main | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| vault.kv.read | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.logging.shared | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| de.ingest.seeds | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| sql.join.preservation | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| sql.count.nulls | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| sql.join.keys | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| sql.group.grain | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| sql.sum.nulls | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.records.cleaning | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.dict.remove | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.list.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.list.mutate | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.list.records | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+
+## Source sections and exclusions
+
+A section is direct content under a Markdown heading (or a preamble); code-fence headings are ignored.
+Related sections share topic IDs. Empty container headings are not counted.
+
+- [Notes/.gitignore](../../Notes/.gitignore): Image, asset or machine-readable view; learning is mapped from its explanation note.
+- [Notes/.obsidian/app.json](../../Notes/.obsidian/app.json): App configuration; no learning coverage.
+- [Notes/.obsidian/appearance.json](../../Notes/.obsidian/appearance.json): App configuration; no learning coverage.
+- [Notes/.obsidian/core-plugins.json](../../Notes/.obsidian/core-plugins.json): App configuration; no learning coverage.
+- [Notes/.obsidian/graph.json](../../Notes/.obsidian/graph.json): App configuration; no learning coverage.
+- [Notes/.obsidian/workspace.json](../../Notes/.obsidian/workspace.json): App configuration; no learning coverage.
+- [Notes/Python/Concepts/Hashicorp_vault.md](../../Notes/Python/Concepts/Hashicorp_vault.md)
+  - Step 1 : importing hvac: vault.kv.read
+  - Step 2 : creating your logger object: py.logging.basics
+  - Step 3 : Define where the vault lives and your secret token: vault.kv.read
+  - Initialize the Vault Client: vault.kv.read
+  - Check if the connection is acutally working or not: vault.kv.read
+  - Step 6 : Know your secrets path & Mount Point: vault.kv.read
+  - Step 7 : Connect to the vault and fetch the secrets: vault.kv.read
+- [Notes/Python/Concepts/Logging.md](../../Notes/Python/Concepts/Logging.md)
+  - Notes / Logging Module: py.logging.basics, py.paths.imports
+  - When you are not sure about the error using logging.exception in the except section.: py.logging.basics
+- [Notes/Python/Concepts/dictionaries.md](../../Notes/Python/Concepts/dictionaries.md)
+  - Dictionaries: py.dict.access
+  - Dictionaries / Accessing items: py.dict.access
+  - Dictionaries / Changing the elements / Method 1 : Direct Key assignment: py.dict.mutate
+  - Dictionaries / Changing the elements / Method 2 : .update() Method: py.dict.mutate
+  - Dictionaries / Changing the elements / Method 3 : Dictionary comprehension: py.dict.mutate
+  - Dictionaries / Changing the elements / Method 4 : Merging  |=: py.dict.mutate
+  - Dictionaries / Remove Items : / Method 1 : using pop: py.dict.remove
+  - Dictionaries / Remove Items : / Method 2 : Removing Last inserted item: py.dict.remove
+  - Dictionaries / Remove Items : / Method 3 : deleting the dict & deleting the item using del: py.dict.remove
+  - Dictionaries / Remove Items : / Method 4 : clear the data in dictionary: py.dict.remove
+  - Dictionaries / Looping through Dictionaries: py.dict.mutate
+- [Notes/Python/Concepts/lists.md](../../Notes/Python/Concepts/lists.md)
+  - Lists: py.list.basics
+  - Lists / Why we use lists: py.list.basics
+  - Lists / Accessing items: py.list.basics
+  - Lists / Changing an item: py.list.mutate
+  - Lists / Adding an item using append: py.list.mutate
+  - Lists / Adding an item using append / Starting with an empty list: py.list.mutate
+  - Lists / Finding how many items we have: py.list.basics
+  - Lists / Repeated values are allowed: py.list.basics
+  - Lists / Keeping dictionaries inside a list: py.list.records
+  - Lists / Common mistake with append: py.list.mutate
+  - Lists / Common mistake with append / Wrong way: py.list.mutate
+  - Lists / Common mistake with append / Correct way: py.list.mutate
+  - Lists / Things to remember: py.list.basics, py.list.mutate
+  - Lists / Questions for later: Recall navigation or source/administrative metadata; examples above are mapped.
+  - Lists / Reference: Recall navigation or source/administrative metadata; examples above are mapped.
+- [Notes/Python/Concepts/with(Context_Manager).md](../../Notes/Python/Concepts/with%28Context_Manager%29.md)
+  - using with (Automatic Cleanup): py.context.resources
+- [Notes/Python/Database Connections/Exeucting Commands.md](../../Notes/Python/Database%20Connections/Exeucting%20Commands.md)
+  - Execution of Commands in Postgres: pg.cursor.results
+- [Notes/Python/Database Connections/postgres_connection.md](../../Notes/Python/Database%20Connections/postgres_connection.md)
+  - Postgres Connection / Install the PostgreSQL Driver: pg.cursor.results
+  - Postgres Connection / Import psycopg2: pg.cursor.results
+  - Postgres Connection / Define Connection Parameters: pg.cursor.results
+  - Postgres Connection / Open the connection: pg.cursor.results
+  - Postgres Connection / Create a cursor: pg.cursor.results
+  - Postgres Connection / Execute a Query and Fetch Results: pg.cursor.results
+  - Postgres Connection / Close the connection: pg.cursor.results
+  - Postgres Connection / Best Practice: pg.cursor.results, py.context.resources
+- [Notes/Python/Index.md](../../Notes/Python/Index.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/Python/Lessons/Doubts/Connection.md](../../Notes/Python/Lessons/Doubts/Connection.md)
+  - If you wanted to check whether the connection is closed or not using a simple statement you can use this: pg.cursor.results
+- [Notes/Python/Lessons/Errors & Resolutions/index.md](../../Notes/Python/Lessons/Errors%20%26%20Resolutions/index.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/Python/Lessons/Errors & Resolutions/path.md](../../Notes/Python/Lessons/Errors%20%26%20Resolutions/path.md)
+  - PATH ERROR: py.paths.imports
+- [Notes/Python/Lessons/Images/image-1.png](../../Notes/Python/Lessons/Images/image-1.png): Image, asset or machine-readable view; learning is mapped from its explanation note.
+- [Notes/Python/Lessons/Pending Tasks/Pending.md](../../Notes/Python/Lessons/Pending%20Tasks/Pending.md)
+  - Pending Tasks: py.logging.shared
+- [Notes/Python/Lessons/Understandings.md](../../Notes/Python/Lessons/Understandings.md)
+  - Key Findings: py.modules.main
+- [Notes/Python/Lessons/tips.md](../../Notes/Python/Lessons/tips.md)
+  - Tips to follow when creating dbt models,transformations or anything: de.ingest.seeds
+  - Interesting Topics: py.modules.main, py.context.resources, py.logging.basics, vault.kv.read
+  - Path :: py.paths.imports
+- [Notes/README.md](../../Notes/README.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/SQL/learning-notes.md](../../Notes/SQL/learning-notes.md)
+  - sql learning notes: sql.count.nulls, sql.join.keys, sql.group.grain
+  - sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001): sql.join.preservation
+  - sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002): sql.count.nulls, sql.join.keys, sql.group.grain
+- [Notes/Welcome.md](../../Notes/Welcome.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/learning-and-revision-plan.md](../../Notes/learning-and-revision-plan.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/revision/README.md](../../Notes/revision/README.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/mistakes.md](../../Notes/revision/mistakes.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/plan.md](../../Notes/revision/plan.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/questions.md](../../Notes/revision/questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/reviews.jsonl](../../Notes/revision/reviews.jsonl): Image, asset or machine-readable view; learning is mapped from its explanation note.
+- [Notes/revision/topics.json](../../Notes/revision/topics.json): Image, asset or machine-readable view; learning is mapped from its explanation note.
+- [tools/airflow/notes.md](../../tools/airflow/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/azure/notes.md](../../tools/azure/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/data-modelling/notes.md](../../tools/data-modelling/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/dbt/notes.md](../../tools/dbt/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/docker/notes.md](../../tools/docker/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/git/notes.md](../../tools/git/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/pipeline-reliability/notes.md](../../tools/pipeline-reliability/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/plsql/notes.md](../../tools/plsql/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/postgresql/notes.md](../../tools/postgresql/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/powerbi/notes.md](../../tools/powerbi/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/pyspark/notes.md](../../tools/pyspark/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/python/notes.md](../../tools/python/notes.md): Links to canonical vault explanations; no duplicate coverage.
+- [tools/shell/notes.md](../../tools/shell/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/snowflake/notes.md](../../tools/snowflake/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/sql/notes.md](../../tools/sql/notes.md): Links to canonical vault explanations; no duplicate coverage.

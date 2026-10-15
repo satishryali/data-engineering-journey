@@ -28,6 +28,20 @@
       "kind": "setup",
       "sha256": "3ac423c552777076e15c39020a45c8dbc056f814e910fb6af997ece724875eda",
       "evidence_key": "66d4935acd0ada49bd11987c2bcba23673de5fe80ef5b1887256ca93e5af7fc2"
+    },
+    {
+      "checkpoint_id": "FINISH-TODAY-20261015",
+      "date_ist": "2026-10-15",
+      "kind": "setup",
+      "sha256": "91a6d7eb21adcbd8634b6cbb43abcef2b70398d471e53307a8c73ca3eaf4abea",
+      "evidence_key": "4c80e108b72560bf2f835e4b0ba603d5837af39b0cc5297c593bded897a375bc"
+    },
+    {
+      "checkpoint_id": "SETUP-notes-driven-revision-20261015",
+      "date_ist": "2026-10-15",
+      "kind": "setup",
+      "sha256": "9ae14c28ca0c87dc11ebcf480714669a5317a7d9c505a38184792734e5f4b3f2",
+      "evidence_key": "e7e00a645d586cc50b1938239d78008f8ca8d5be562fc74fef9c4119f1bdaf86"
     }
   ]
 }

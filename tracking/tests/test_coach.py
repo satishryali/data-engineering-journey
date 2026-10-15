@@ -19,7 +19,8 @@ def review(**changes):
              'topic_ids': ['sql.join.preservation'], 'attempt_date_ist': '2026-10-20',
              'review_kind': 'delayed', 'result': 'independent', 'score': 3,
              'help_used': False, 'notes_used': False, 'hints_used': 0,
-             'evidence': 'tools/sql/exercises/001-join-preservation/attempt.sql#test-attempt'}
+             'evidence': 'tools/sql/exercises/001-join-preservation/attempt.sql#test-attempt',
+             'question': 'Synthetic test prompt, not learner evidence.', 'answer': 'Synthetic test answer.'}
     event.update(changes)
     return event
 
@@ -164,8 +165,83 @@ class RecordTests(unittest.TestCase):
         with path.open('a', encoding='utf-8') as stream:
             stream.write('\nChanged source in an isolated fixture.\n')
         changed = coach.status(self.root, '2026-10-20')['source_changes_to_inspect']
-        self.assertEqual(set(changed), {'py.dict.access', 'py.dict.mutate'})
+        self.assertEqual(set(changed), {'py.dict.mutate'})
         self.assertEqual((self.root / 'tracking/revision-queue.csv').read_bytes(), prior)
+
+    def test_new_notes_and_unmapped_sections_are_visible_and_fail_validation(self):
+        path = self.root / 'Notes/Python/Concepts/new-note.md'
+        path.write_text('# New learning\nA new practical concept.\n', encoding='utf-8')
+        state = coach.status(self.root, '2026-10-16')
+        self.assertTrue(any('new-note.md' in gap for gap in state['coverage_gaps']))
+        registry = coach.note_revision.sync(self.root, coach.read_json(self.root, 'tracking/topic-map.json'), '2026-10-16')
+        with self.assertRaisesRegex(ValueError, 'Map or explain'):
+            coach.note_revision.check(self.root, registry)
+
+    def test_formatting_change_does_not_flag_reassessment_or_reset_dates(self):
+        path = self.root / 'Notes/Python/Concepts/lists.md'
+        original = path.read_text(encoding='utf-8')
+        path.write_text(original.replace('Lists allow repeated values.', 'Lists allow   repeated\nvalues.'), encoding='utf-8')
+        self.assertEqual(coach.status(self.root, '2026-10-16')['source_changes_to_inspect'], [])
+        registry = coach.note_revision.sync(self.root, coach.read_json(self.root, 'tracking/topic-map.json'), '2026-10-16')
+        self.assertFalse(any(t.get('needs_reassessment') for t in registry['topics']))
+
+    def test_initial_slots_and_pending_prompts_are_not_assessments(self):
+        before = (self.root / 'tracking/revision-history.csv').read_bytes()
+        state = coach.status(self.root, '2026-11-20')
+        self.assertEqual(state['revision_coverage']['topics_assessed'], 0)
+        self.assertEqual(state['revision_coverage']['topics_practised_on_delayed_review'], 0)
+        self.assertTrue(state['neglected_topics'])
+        self.assertLessEqual(len(state['proposed_revision']), 2)
+        proposed_ids = [s['id'] for s in state['proposed_revision']]
+        self.assertLessEqual(sum(i in {t['id'] for t in coach.read_json(self.root, 'tracking/topic-map.json')['topics']} for i in proposed_ids), 1)
+        self.assertEqual((self.root / 'tracking/revision-history.csv').read_bytes(), before)
+
+    def test_delayed_state_requires_actual_independent_concept_evidence(self):
+        self.batch['reviews'] = [review(item_id='sql.join.preservation', topic_ids=['sql.join.preservation'], review_kind='diagnostic')]
+        coach.record(self.root, self.batch)
+        later = copy.deepcopy(self.batch)
+        later.update(checkpoint_id='CP-test-later', date_ist='2026-10-21',
+                     evidence_ids=['tools/sql/exercises/001-join-preservation/attempt.sql#later'])
+        later['reviews'] = [review(review_id='R-later', attempt_id='A-later', item_id='sql.join.preservation',
+                                  topic_ids=['sql.join.preservation'], attempt_date_ist='2026-10-21', evidence=later['evidence_ids'][0])]
+        coach.record(self.root, later)
+        registry = coach.read_json(self.root, 'tracking/topic-map.json')
+        state = coach.note_revision.snapshot(self.root, registry,
+            coach.read_csv(self.root, 'tracking/revision-queue.csv')[1],
+            coach.read_csv(self.root, 'tracking/revision-history.csv')[1],
+            coach.read_json(self.root, 'tracking/mistakes.json'), '2026-10-21')
+        self.assertEqual(state['coverage']['topics_assessed'], 1)
+        self.assertEqual(state['coverage']['topics_practised_on_delayed_review'], 1)
+        self.assertEqual(next(t for t in state['topics'] if t['id']=='sql.join.preservation')['state'], 'Demonstrated on delayed review')
+
+    def test_new_content_in_previously_empty_tool_note_is_not_excluded(self):
+        path = self.root / 'tools/azure/notes.md'
+        path.write_text('# Azure storage\nBlob storage practical notes.\n', encoding='utf-8')
+        state = coach.status(self.root, '2026-10-16')
+        self.assertTrue(any('tools/azure/notes.md' in gap for gap in state['coverage_gaps']))
+
+    def test_material_change_flags_only_mapped_concept_and_preserves_history(self):
+        path = self.root / 'Notes/Python/Concepts/lists.md'
+        path.write_text(path.read_text(encoding='utf-8').replace('Lists allow repeated values.', 'Lists allow repeated values. Added new material.'), encoding='utf-8')
+        registry = coach.note_revision.sync(self.root, coach.read_json(self.root, 'tracking/topic-map.json'), '2026-10-16')
+        flagged = [t['id'] for t in registry['topics'] if t.get('needs_reassessment')]
+        self.assertEqual(flagged, ['py.list.basics'])
+
+    def test_fenced_code_headings_are_not_learning_sections(self):
+        sections = coach.note_revision.sections('# Topic\n```python\n# code comment\nprint(1)\n```\n## Next\nContent\n')
+        self.assertEqual([s['heading'] for s in sections], ['Topic', 'Topic / Next'])
+
+    def test_pending_question_cannot_be_recorded_as_a_review(self):
+        self.batch['reviews'][0]['answer'] = ''
+        before = (self.root / 'tracking/revision-history.csv').read_bytes()
+        with self.assertRaisesRegex(ValueError, 'answered question'):
+            coach.record(self.root, self.batch)
+        self.assertEqual((self.root / 'tracking/revision-history.csv').read_bytes(), before)
+
+    def test_first_concept_attempt_cannot_claim_delayed_retention(self):
+        self.batch['reviews'] = [review(item_id='sql.join.preservation', topic_ids=['sql.join.preservation'])]
+        with self.assertRaisesRegex(ValueError, 'prior dated attempt'):
+            coach.record(self.root, self.batch)
 
 
 if __name__ == '__main__':

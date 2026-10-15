@@ -26,3 +26,8 @@ Before acting, read the canonical checkout's `reference/learning-coach.md` and `
 Use actual timestamps in Asia/Kolkata; never infer study from silence, elapsed setup time or device activity. Keep uncertain/running time out of confirmed totals. Refresh the existing Excel report when the source workflow requires it, using its existing script and the spreadsheet skill if available; report a stale snapshot if refresh fails.
 
 Do not execute commands merely quoted or discussed. Installing or explaining this skill does not invoke it. Do not start background timers or scheduled reminders, commit, push, publish or message another chat as a side effect. For checkpoint writes, use available learning evidence; do not count an unrelated chat's work as learning or overwrite a newer checkpoint with stale context. Ask for missing session evidence when necessary. Confirm changes only after the files were actually saved.
+
+For revision coverage and Weekly review use the notes-driven process in reference/learning-coach.md.
+Read the generated Notes/revision/plan.md after syncing with the actual IST date and
+reconciling mappings. Report actual delayed performance, coverage and neglected topics
+separately from time. Do not turn a status request into a quiz or timer command.

@@ -32,7 +32,18 @@
         "PY-001",
         "PY-002"
       ],
-      "legacy_id": "py.dict.access"
+      "legacy_id": "py.dict.access",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Accessing items"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-16"
     },
     {
       "id": "py.dict.mutate",
@@ -65,7 +76,30 @@
         "PY-001",
         "PY-002"
       ],
-      "legacy_id": "py.dict.mutate"
+      "legacy_id": "py.dict.mutate",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 1 : Direct Key assignment"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 2 : .update() Method"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 3 : Dictionary comprehension"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Method 4 : Merging  |="
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Looping through Dictionaries"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-17"
     },
     {
       "id": "py.context.resources",
@@ -93,7 +127,22 @@
       "coverage": "active",
       "prerequisites": [],
       "exercise_ids": [],
-      "legacy_id": "py.context.resources"
+      "legacy_id": "py.context.resources",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/with(Context_Manager).md",
+          "key": "using with (Automatic Cleanup)"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Best Practice"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-31"
     },
     {
       "id": "pg.cursor.results",
@@ -129,7 +178,50 @@
       "coverage": "active",
       "prerequisites": [],
       "exercise_ids": [],
-      "legacy_id": "pg.cursor.results"
+      "legacy_id": "pg.cursor.results",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Database Connections/Exeucting Commands.md",
+          "key": "Execution of Commands in Postgres"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Install the PostgreSQL Driver"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Import psycopg2"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Define Connection Parameters"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Open the connection"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Create a cursor"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Execute a Query and Fetch Results"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Close the connection"
+        },
+        {
+          "path": "Notes/Python/Database Connections/postgres_connection.md",
+          "key": "Postgres Connection / Best Practice"
+        },
+        {
+          "path": "Notes/Python/Lessons/Doubts/Connection.md",
+          "key": "If you wanted to check whether the connection is closed or not using a simple statement you can use this"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-01"
     },
     {
       "id": "py.logging.basics",
@@ -151,7 +243,27 @@
       "coverage": "queued",
       "prerequisites": [],
       "exercise_ids": [],
-      "legacy_id": "py.logging.basics"
+      "legacy_id": "py.logging.basics",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 2 : creating your logger object"
+        },
+        {
+          "path": "Notes/Python/Concepts/Logging.md",
+          "key": "Notes / Logging Module"
+        },
+        {
+          "path": "Notes/Python/Concepts/Logging.md",
+          "key": "When you are not sure about the error using logging.exception in the except section."
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-30",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes."
     },
     {
       "id": "py.paths.imports",
@@ -173,7 +285,23 @@
       "coverage": "queued",
       "prerequisites": [],
       "exercise_ids": [],
-      "legacy_id": "py.paths.imports"
+      "legacy_id": "py.paths.imports",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/Logging.md",
+          "key": "Notes / Logging Module"
+        },
+        {
+          "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
+          "key": "PATH ERROR"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Path :"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-29",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes."
     },
     {
       "id": "py.modules.main",
@@ -195,7 +323,18 @@
       "coverage": "queued",
       "prerequisites": [],
       "exercise_ids": [],
-      "legacy_id": "py.modules.main"
+      "legacy_id": "py.modules.main",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Lessons/Understandings.md",
+          "key": "Key Findings"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-28"
     },
     {
       "id": "vault.kv.read",
@@ -219,7 +358,39 @@
         "py.dict.access"
       ],
       "exercise_ids": [],
-      "legacy_id": "vault.kv.read"
+      "legacy_id": "vault.kv.read",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 1 : importing hvac"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 3 : Define where the vault lives and your secret token"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Initialize the Vault Client"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Check if the connection is acutally working or not"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 6 : Know your secrets path & Mount Point"
+        },
+        {
+          "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+          "key": "Step 7 : Connect to the vault and fetch the secrets"
+        },
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Interesting Topics"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-04",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes."
     },
     {
       "id": "py.logging.shared",
@@ -244,7 +415,14 @@
         "py.paths.imports"
       ],
       "exercise_ids": [],
-      "legacy_id": "py.logging.shared"
+      "legacy_id": "py.logging.shared",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
+          "key": "Pending Tasks"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-02"
     },
     {
       "id": "de.ingest.seeds",
@@ -266,7 +444,15 @@
       "coverage": "queued",
       "prerequisites": [],
       "exercise_ids": [],
-      "legacy_id": "de.ingest.seeds"
+      "legacy_id": "de.ingest.seeds",
+      "note_sections": [
+        {
+          "path": "Notes/Python/Lessons/tips.md",
+          "key": "Tips to follow when creating dbt models,transformations or anything"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-03",
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes."
     },
     {
       "id": "sql.join.preservation",
@@ -283,7 +469,14 @@
       "exercise_ids": [
         "SQL-001"
       ],
-      "legacy_id": null
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-21"
     },
     {
       "id": "sql.count.nulls",
@@ -302,7 +495,18 @@
       "exercise_ids": [
         "SQL-002"
       ],
-      "legacy_id": null
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-23"
     },
     {
       "id": "sql.join.keys",
@@ -322,7 +526,18 @@
         "SQL-001",
         "SQL-002"
       ],
-      "legacy_id": null
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-22"
     },
     {
       "id": "sql.group.grain",
@@ -341,7 +556,18 @@
       "exercise_ids": [
         "SQL-002"
       ],
-      "legacy_id": null
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-24"
     },
     {
       "id": "sql.sum.nulls",
@@ -360,7 +586,10 @@
       "exercise_ids": [
         "SQL-003"
       ],
-      "legacy_id": null
+      "legacy_id": null,
+      "note_sections": [],
+      "initial_assessment_date_ist": "2026-10-25",
+      "note_coverage_deferral": "Existing exercise/feedback concept retained with original evidence. A standalone explanation note has not been written; no new learning inferred."
     },
     {
       "id": "py.records.cleaning",
@@ -380,7 +609,846 @@
       "exercise_ids": [
         "PY-001"
       ],
-      "legacy_id": null
+      "legacy_id": null,
+      "note_sections": [],
+      "initial_assessment_date_ist": "2026-10-26",
+      "note_coverage_deferral": "Existing exercise/feedback concept retained with original evidence. A standalone explanation note has not been written; no new learning inferred."
+    },
+    {
+      "id": "py.dict.remove",
+      "name": "Removing dictionary items",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access",
+        "py.dict.mutate"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 1 : using pop"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 2 : Removing Last inserted item"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 3 : deleting the dict & deleting the item using del"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Remove Items : / Method 4 : clear the data in dictionary"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-27"
+    },
+    {
+      "id": "py.list.basics",
+      "name": "Lists, positions, length and repeated values",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "sha256": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Why we use lists"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Accessing items"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Finding how many items we have"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Repeated values are allowed"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Things to remember"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-18"
+    },
+    {
+      "id": "py.list.mutate",
+      "name": "Replacing list items and appending",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "sha256": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.list.basics"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Changing an item"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Adding an item using append"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Adding an item using append / Starting with an empty list"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Common mistake with append"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Common mistake with append / Wrong way"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Common mistake with append / Correct way"
+        },
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Things to remember"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-19"
+    },
+    {
+      "id": "py.list.records",
+      "name": "Collecting dictionary records in lists",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "sha256": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access",
+        "py.list.mutate"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/lists.md",
+          "key": "Lists / Keeping dictionaries inside a list"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-20"
     }
-  ]
+  ],
+  "note_inventory": [
+    {
+      "path": "Notes/.gitignore",
+      "exclusion_reason": "Image, asset or machine-readable view; learning is mapped from its explanation note."
+    },
+    {
+      "path": "Notes/.obsidian/app.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
+      "path": "Notes/.obsidian/appearance.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
+      "path": "Notes/.obsidian/core-plugins.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
+      "path": "Notes/.obsidian/graph.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
+      "path": "Notes/.obsidian/workspace.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
+      "path": "Notes/Python/Concepts/Hashicorp_vault.md",
+      "file_hash": "7c14dbb241bc7013e39db62c3cb04c567dea36341244728d824bbff4014ac3bf",
+      "sections": [
+        {
+          "key": "Step 1 : importing hvac",
+          "heading": "Step 1 : importing hvac",
+          "content_hash": "7b669467e39538aca89dc0d08fb7a5f2fcf1f2f186fe30dd4d5497c01272f92f",
+          "topic_ids": [
+            "vault.kv.read"
+          ]
+        },
+        {
+          "key": "Step 2 : creating your logger object",
+          "heading": "Step 2 : creating your logger object",
+          "content_hash": "1c1003b1fb3f79bf2d4861bc76712b53afb8aeb9b2de2280298dcf5632d84bbb",
+          "topic_ids": [
+            "py.logging.basics"
+          ]
+        },
+        {
+          "key": "Step 3 : Define where the vault lives and your secret token",
+          "heading": "Step 3 : Define where the vault lives and your secret token",
+          "content_hash": "6ffdf5810c21f63fd929178e413a26280399c067449570a855db1fa994dac9c8",
+          "topic_ids": [
+            "vault.kv.read"
+          ]
+        },
+        {
+          "key": "Initialize the Vault Client",
+          "heading": "Initialize the Vault Client",
+          "content_hash": "016f524e6f8444d7c5d0fd6fa871fd5b2003d2f64eed76857e5e39765c474b11",
+          "topic_ids": [
+            "vault.kv.read"
+          ]
+        },
+        {
+          "key": "Check if the connection is acutally working or not",
+          "heading": "Check if the connection is acutally working or not",
+          "content_hash": "7cba4416faed5ae36c9765dad97e9f74a58f2769a4e355314669cf5ef887784e",
+          "topic_ids": [
+            "vault.kv.read"
+          ]
+        },
+        {
+          "key": "Step 6 : Know your secrets path & Mount Point",
+          "heading": "Step 6 : Know your secrets path & Mount Point",
+          "content_hash": "7b589bda4d003b1d72f629f0bf44d32982a3e46c993e135b9c5a9c888c517075",
+          "topic_ids": [
+            "vault.kv.read"
+          ]
+        },
+        {
+          "key": "Step 7 : Connect to the vault and fetch the secrets",
+          "heading": "Step 7 : Connect to the vault and fetch the secrets",
+          "content_hash": "8b2dd79cd17ee88eda748e08157549d55cc2d66db251740185c862c7b434e98d",
+          "topic_ids": [
+            "vault.kv.read"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/Logging.md",
+      "file_hash": "2448a74bda7aa969b615d80cd294a08a96a588507582a95213d0d0f812306a53",
+      "sections": [
+        {
+          "key": "Notes / Logging Module",
+          "heading": "Notes / Logging Module",
+          "content_hash": "c7b95f816aa3e063734ae0b790fb3d072fdefb91ddf239f552ac837300b4a329",
+          "topic_ids": [
+            "py.logging.basics",
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "When you are not sure about the error using logging.exception in the except section.",
+          "heading": "When you are not sure about the error using logging.exception in the except section.",
+          "content_hash": "6867fd2ea488480e1532fee45c7c6f81bd37b41435e8fc19de4669c0f7a22b9f",
+          "topic_ids": [
+            "py.logging.basics"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/dictionaries.md",
+      "file_hash": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+      "sections": [
+        {
+          "key": "Dictionaries",
+          "heading": "Dictionaries",
+          "content_hash": "ef5c369b3da6098da98014350006fe1919faed3a98cefe3302a7cc7f95a646ee",
+          "topic_ids": [
+            "py.dict.access"
+          ]
+        },
+        {
+          "key": "Dictionaries / Accessing items",
+          "heading": "Dictionaries / Accessing items",
+          "content_hash": "b169303624a015ea2d8125921fe95414df0834177bba4620b9e7cbbdb3afd7bc",
+          "topic_ids": [
+            "py.dict.access"
+          ]
+        },
+        {
+          "key": "Dictionaries / Changing the elements / Method 1 : Direct Key assignment",
+          "heading": "Dictionaries / Changing the elements / Method 1 : Direct Key assignment",
+          "content_hash": "3fcf4a65ebc6310c3b323e7a0d12b63a99e2136d7eaaf6287af32dfba73135db",
+          "topic_ids": [
+            "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Dictionaries / Changing the elements / Method 2 : .update() Method",
+          "heading": "Dictionaries / Changing the elements / Method 2 : .update() Method",
+          "content_hash": "259a6e9651a2c667d362ff3919af23b3d5fec9ddd8ba5be29a0c97629fb0fa64",
+          "topic_ids": [
+            "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Dictionaries / Changing the elements / Method 3 : Dictionary comprehension",
+          "heading": "Dictionaries / Changing the elements / Method 3 : Dictionary comprehension",
+          "content_hash": "a31dc76cdf954c2fe0a041fa95e1911f9ab6464b42bea8d076360b465fa0dd23",
+          "topic_ids": [
+            "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Dictionaries / Changing the elements / Method 4 : Merging  |=",
+          "heading": "Dictionaries / Changing the elements / Method 4 : Merging  |=",
+          "content_hash": "3b901bec1af89836daee7ec33626ee09f2578f60c5af560e179777ff2817d3a8",
+          "topic_ids": [
+            "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Dictionaries / Remove Items : / Method 1 : using pop",
+          "heading": "Dictionaries / Remove Items : / Method 1 : using pop",
+          "content_hash": "9adc9e5182076b76e8105f0157264a0c4a5210c198f1f6963ea44ee4d53c8694",
+          "topic_ids": [
+            "py.dict.remove"
+          ]
+        },
+        {
+          "key": "Dictionaries / Remove Items : / Method 2 : Removing Last inserted item",
+          "heading": "Dictionaries / Remove Items : / Method 2 : Removing Last inserted item",
+          "content_hash": "c3fb0c64054dfe4dfb89e2db93f00e45da9f28cde3e687ff1d61bce7e4b144d4",
+          "topic_ids": [
+            "py.dict.remove"
+          ]
+        },
+        {
+          "key": "Dictionaries / Remove Items : / Method 3 : deleting the dict & deleting the item using del",
+          "heading": "Dictionaries / Remove Items : / Method 3 : deleting the dict & deleting the item using del",
+          "content_hash": "058047236eaa6dac78e9befed3603f22131a3c46db905944f3fca0cf849d03c6",
+          "topic_ids": [
+            "py.dict.remove"
+          ]
+        },
+        {
+          "key": "Dictionaries / Remove Items : / Method 4 : clear the data in dictionary",
+          "heading": "Dictionaries / Remove Items : / Method 4 : clear the data in dictionary",
+          "content_hash": "1e5161571014943642ca4690e8e8d3d234934a18ea719aab68a3fd0df33442c6",
+          "topic_ids": [
+            "py.dict.remove"
+          ]
+        },
+        {
+          "key": "Dictionaries / Looping through Dictionaries",
+          "heading": "Dictionaries / Looping through Dictionaries",
+          "content_hash": "2a75dd2c067648a5c8adf2e220707856b356951d6bf4c5bae768ffb494fee184",
+          "topic_ids": [
+            "py.dict.mutate"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/lists.md",
+      "file_hash": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267",
+      "sections": [
+        {
+          "key": "Lists",
+          "heading": "Lists",
+          "content_hash": "3334744d788b90ef8f93f02f96be89cced7dee1a9b9ea2c1f08d858764f9415c",
+          "topic_ids": [
+            "py.list.basics"
+          ]
+        },
+        {
+          "key": "Lists / Why we use lists",
+          "heading": "Lists / Why we use lists",
+          "content_hash": "e76be81dad85a1e19afe3d6780fcc973b3f94e91e95371700d09c5e8a171418c",
+          "topic_ids": [
+            "py.list.basics"
+          ]
+        },
+        {
+          "key": "Lists / Accessing items",
+          "heading": "Lists / Accessing items",
+          "content_hash": "6835504b0007a6c66c63fb49ee12fb0ec73b81009cb31d445a58213063494438",
+          "topic_ids": [
+            "py.list.basics"
+          ]
+        },
+        {
+          "key": "Lists / Changing an item",
+          "heading": "Lists / Changing an item",
+          "content_hash": "d82fea490a187e18aa20dcbe35947868cb42c616d822d5d75957b19756ff570a",
+          "topic_ids": [
+            "py.list.mutate"
+          ]
+        },
+        {
+          "key": "Lists / Adding an item using append",
+          "heading": "Lists / Adding an item using append",
+          "content_hash": "3eb854c600e90d3cc593acedeebc9329ef1539db084fa2622acea27ef8eb6655",
+          "topic_ids": [
+            "py.list.mutate"
+          ]
+        },
+        {
+          "key": "Lists / Adding an item using append / Starting with an empty list",
+          "heading": "Lists / Adding an item using append / Starting with an empty list",
+          "content_hash": "87fc1a62478b344a1fef785669340256fcc95b53fc86151be00ed167e5982b51",
+          "topic_ids": [
+            "py.list.mutate"
+          ]
+        },
+        {
+          "key": "Lists / Finding how many items we have",
+          "heading": "Lists / Finding how many items we have",
+          "content_hash": "fdd9708cb351828a65700d513d2ad26e81ba5988a52959833ba126bd798a35dd",
+          "topic_ids": [
+            "py.list.basics"
+          ]
+        },
+        {
+          "key": "Lists / Repeated values are allowed",
+          "heading": "Lists / Repeated values are allowed",
+          "content_hash": "2884b1f5bf425a5fbf0bb5acf69c1d499e7b3ada4f215ec2b3c3e20ac580738d",
+          "topic_ids": [
+            "py.list.basics"
+          ]
+        },
+        {
+          "key": "Lists / Keeping dictionaries inside a list",
+          "heading": "Lists / Keeping dictionaries inside a list",
+          "content_hash": "036f8fcbc5959ce3e1118610d34964271e77b31a5f8cad9e391efca18bc7f324",
+          "topic_ids": [
+            "py.list.records"
+          ]
+        },
+        {
+          "key": "Lists / Common mistake with append",
+          "heading": "Lists / Common mistake with append",
+          "content_hash": "897d4c2444b0e3adebda9e8ced70315059b8d8d14adfad6ce6913ba2ef429455",
+          "topic_ids": [
+            "py.list.mutate"
+          ]
+        },
+        {
+          "key": "Lists / Common mistake with append / Wrong way",
+          "heading": "Lists / Common mistake with append / Wrong way",
+          "content_hash": "2a8c33e7b84aa0006b1baf6434878e409c7646e9eb74caf5c27445326a6f52dd",
+          "topic_ids": [
+            "py.list.mutate"
+          ]
+        },
+        {
+          "key": "Lists / Common mistake with append / Correct way",
+          "heading": "Lists / Common mistake with append / Correct way",
+          "content_hash": "1b961cc25a04020c997aa5894ca4f3e383dce7c137985ff5a1910dbcb001a5ae",
+          "topic_ids": [
+            "py.list.mutate"
+          ]
+        },
+        {
+          "key": "Lists / Things to remember",
+          "heading": "Lists / Things to remember",
+          "content_hash": "0a2c92e214b2786813709ab8b8e67a0eab70dbb8f3c2f1c6a1d46ccec8468a78",
+          "topic_ids": [
+            "py.list.basics",
+            "py.list.mutate"
+          ]
+        },
+        {
+          "key": "Lists / Questions for later",
+          "heading": "Lists / Questions for later",
+          "content_hash": "e4432e6c23c88e4893d6cc9ffe793e5fcea26c7a5acf2f850868c36db7d9e6da",
+          "exclusion_reason": "Recall navigation or source/administrative metadata; examples above are mapped."
+        },
+        {
+          "key": "Lists / Reference",
+          "heading": "Lists / Reference",
+          "content_hash": "97874e264ec0e45b0b4d51b0bf5258d14bf6c443809bc9025722bd250e2a8242",
+          "exclusion_reason": "Recall navigation or source/administrative metadata; examples above are mapped."
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/with(Context_Manager).md",
+      "file_hash": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829",
+      "sections": [
+        {
+          "key": "using with (Automatic Cleanup)",
+          "heading": "using with (Automatic Cleanup)",
+          "content_hash": "fd72231caceb8bf924adf9991c2663e7b870e7ca084903b3c605f837ca068741",
+          "topic_ids": [
+            "py.context.resources"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Database Connections/Exeucting Commands.md",
+      "file_hash": "14d49671c20352a06ef8bc9f16048178fd395e338866e22fc6e6e07632dad3d6",
+      "sections": [
+        {
+          "key": "Execution of Commands in Postgres",
+          "heading": "Execution of Commands in Postgres",
+          "content_hash": "860a44ac03557da73c54161f3f60f053960b7233001e9d10f3b57c5246c57e57",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Database Connections/postgres_connection.md",
+      "file_hash": "03095e6e496d97eaad4522f38dd25145b9643967144131a6f87be531310e5d4f",
+      "sections": [
+        {
+          "key": "Postgres Connection / Install the PostgreSQL Driver",
+          "heading": "Postgres Connection / Install the PostgreSQL Driver",
+          "content_hash": "39219a7a853c045e7ff66a08ca9205edfb358e54b913b08cf2c6ed601837de8d",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "Postgres Connection / Import psycopg2",
+          "heading": "Postgres Connection / Import psycopg2",
+          "content_hash": "0edeb4a0e91fdf0825a45b4d9364ed47cf6cd19e0c43928cb36588ef5e826380",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "Postgres Connection / Define Connection Parameters",
+          "heading": "Postgres Connection / Define Connection Parameters",
+          "content_hash": "64e04cf26ab505f3dc4eca92427685d025cfb23317f23a0ee885722d918ead3f",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "Postgres Connection / Open the connection",
+          "heading": "Postgres Connection / Open the connection",
+          "content_hash": "e74fbd355d813a49747a75ee3b9bca7130945ea35787601860d0f8b4b32b7d9d",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "Postgres Connection / Create a cursor",
+          "heading": "Postgres Connection / Create a cursor",
+          "content_hash": "26b6935b0212e10176c4e4c4b8c5349ac0a4e055e9302bdaa2a2fd605e20a516",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "Postgres Connection / Execute a Query and Fetch Results",
+          "heading": "Postgres Connection / Execute a Query and Fetch Results",
+          "content_hash": "fceb94b27e39ec6d529f653e2bf22a5236c39694b2817021ae3828f8c0f52c28",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "Postgres Connection / Close the connection",
+          "heading": "Postgres Connection / Close the connection",
+          "content_hash": "c18e575dacea4be8e0cf832f6f740b28c2b23ba96bbc462acc5154d82dfc43db",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "Postgres Connection / Best Practice",
+          "heading": "Postgres Connection / Best Practice",
+          "content_hash": "21419f1a1c557c3ac378f52fdbd42b8daac0c091d53835bd9ea1aa9264b61d4d",
+          "topic_ids": [
+            "pg.cursor.results",
+            "py.context.resources"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Index.md",
+      "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
+    },
+    {
+      "path": "Notes/Python/Lessons/Doubts/Connection.md",
+      "file_hash": "aa38b75b0bf2d6bd5a52bbec4e8cf6d7eb6c32c3bab959fd07c15550bf10eb7f",
+      "sections": [
+        {
+          "key": "If you wanted to check whether the connection is closed or not using a simple statement you can use this",
+          "heading": "If you wanted to check whether the connection is closed or not using a simple statement you can use this",
+          "content_hash": "181143c7036f107c7f859713d88c3e3aaa081251b6e8862b9d57a97e1ef5700b",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Lessons/Errors & Resolutions/index.md",
+      "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
+    },
+    {
+      "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
+      "file_hash": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c",
+      "sections": [
+        {
+          "key": "PATH ERROR",
+          "heading": "PATH ERROR",
+          "content_hash": "bd78d11fa8bf1295d3042b628055744d47e9ce21bc6b4f1a606b5d9a2a2d0938",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Lessons/Images/image-1.png",
+      "exclusion_reason": "Image, asset or machine-readable view; learning is mapped from its explanation note."
+    },
+    {
+      "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
+      "file_hash": "fa122de79baa414e18daaaaee14efb06c66179b4356538f8dcff3acab78bcd66",
+      "sections": [
+        {
+          "key": "Pending Tasks",
+          "heading": "Pending Tasks",
+          "content_hash": "6c7fc4b4d2e5021eb2250ffc135b1a0228eb139dd5a05a17631039999621be2a",
+          "topic_ids": [
+            "py.logging.shared"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Lessons/Understandings.md",
+      "file_hash": "c4dd5ba7ec703771c17745d67ea93f7ebe74802002dd73ea938b8868cb38c54a",
+      "sections": [
+        {
+          "key": "Key Findings",
+          "heading": "Key Findings",
+          "content_hash": "1a2429b19ea9dd392790b322af7850705109f0bb6b72bbf35261f97e6eddb2ef",
+          "topic_ids": [
+            "py.modules.main"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Lessons/tips.md",
+      "file_hash": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345",
+      "sections": [
+        {
+          "key": "Tips to follow when creating dbt models,transformations or anything",
+          "heading": "Tips to follow when creating dbt models,transformations or anything",
+          "content_hash": "c4e65341d21977abbb46c7b80d6fae0667a9261c85fea4ecb15a2b86784b0203",
+          "topic_ids": [
+            "de.ingest.seeds"
+          ]
+        },
+        {
+          "key": "Interesting Topics",
+          "heading": "Interesting Topics",
+          "content_hash": "1d0fc119e6552665e058f05d45e84327baba676ce02591a077e9bdff6a57121e",
+          "topic_ids": [
+            "py.modules.main",
+            "py.context.resources",
+            "py.logging.basics",
+            "vault.kv.read"
+          ]
+        },
+        {
+          "key": "Path :",
+          "heading": "Path :",
+          "content_hash": "432ee5f197a17555db1c07b2e72e0e81a14af7e85bf87a23bb91cc03102c0cdf",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/README.md",
+      "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
+    },
+    {
+      "path": "Notes/SQL/learning-notes.md",
+      "file_hash": "b7c12513ccf0564ccb5e6772ba4cd0c7cbd99f8c68c169713bb482933903e73b",
+      "sections": [
+        {
+          "key": "sql learning notes",
+          "heading": "sql learning notes",
+          "content_hash": "3ec8342881dcc7f5665a803fc634563c0775e875c96b6da48db188e9fdd81ce3",
+          "topic_ids": [
+            "sql.count.nulls",
+            "sql.join.keys",
+            "sql.group.grain"
+          ]
+        },
+        {
+          "key": "sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001)",
+          "heading": "sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001)",
+          "content_hash": "a4065b687046afd4dca1f45c4b838515f3ec76ff9442ba39eca1195fb37ac1ab",
+          "topic_ids": [
+            "sql.join.preservation"
+          ]
+        },
+        {
+          "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)",
+          "heading": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)",
+          "content_hash": "9d3f475d2e0f5fdc34c58fd7fe9b000af277ed42046b94e73d5efdecf5944d1a",
+          "topic_ids": [
+            "sql.count.nulls",
+            "sql.join.keys",
+            "sql.group.grain"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Welcome.md",
+      "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
+    },
+    {
+      "path": "Notes/learning-and-revision-plan.md",
+      "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
+    },
+    {
+      "path": "Notes/revision/README.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
+      "path": "Notes/revision/list-questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
+      "path": "Notes/revision/mistakes.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
+      "path": "Notes/revision/plan.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
+      "path": "Notes/revision/questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
+      "path": "Notes/revision/reviews.jsonl",
+      "exclusion_reason": "Image, asset or machine-readable view; learning is mapped from its explanation note."
+    },
+    {
+      "path": "Notes/revision/topics.json",
+      "exclusion_reason": "Image, asset or machine-readable view; learning is mapped from its explanation note."
+    },
+    {
+      "path": "tools/airflow/notes.md",
+      "file_hash": "28689372886d214468ce70f3a609e2a1ecf5e5b294cfb2cdec772a281f793a42",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/azure/notes.md",
+      "file_hash": "7c1d7ca7ce79cbfebc2d3e5935978f23b23498ef1be0819482c0168001cee9fa",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/data-modelling/notes.md",
+      "file_hash": "91704aaebb4e7aacf83dd0cbf4ad7f3af4bcbb061e3a573216ab6a44620ceedb",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/dbt/notes.md",
+      "file_hash": "94165171df43413bc2f08d49c52ee8057c34b2873663da39a0f070b59cb096a5",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/docker/notes.md",
+      "file_hash": "16c169776f271a01f1c8d29a7d4ee2b7a1e43c9a0c6c3ea48b5d6832f6cd5da6",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/git/notes.md",
+      "file_hash": "77183b805685ac3986986802f2293e2aba1391f7582a3d13e2b40cc8371260b2",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/pipeline-reliability/notes.md",
+      "file_hash": "7cd6a7ca7ee561a18369ea4e32567a66817ce9e9688d9b087290778c27f021b3",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/plsql/notes.md",
+      "file_hash": "e7f57363d8e3e18269f8cdd4ee9e15aea0d3e27d0cc5730e304842c6e8abf56b",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/postgresql/notes.md",
+      "file_hash": "6c15254da17150657b8c53a3924b391c76298554ea121c408d1c6432c7bf2925",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/powerbi/notes.md",
+      "file_hash": "dec71564ca8cbcd3fed4746fae25820e1504d179a1eb195c193f48d8fb698a79",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/pyspark/notes.md",
+      "file_hash": "9a5751b6e2a5fa13152a62ecc01a6c1d0abf2871a7e915058599ec3630c818ba",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/python/notes.md",
+      "file_hash": "30635721d9ede835487bee521677b96d6b2c4b97a09311d35a87332624605681",
+      "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
+    },
+    {
+      "path": "tools/shell/notes.md",
+      "file_hash": "b5650127f7d603115f5d30d1180abc56313f7b8123d8744ae6dea5a324f52622",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/snowflake/notes.md",
+      "file_hash": "9d4c0ac81e45edbd4e85efc532c404d62a3722905c3d26e3ecdeaa1396e18ef5",
+      "exclusion_reason": "Empty lesson template; no substantive learning content yet."
+    },
+    {
+      "path": "tools/sql/notes.md",
+      "file_hash": "8392458b0c09fcbc3ca36e3c8741b7596114365b60de8a9ea54940a098bafd9a",
+      "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
+    }
+  ],
+  "inventory_date_ist": "2026-10-15",
+  "diagnostic_policy": {
+    "max_new_topics_per_suitable_session": 1,
+    "slot_minutes": 5,
+    "dates_are": "adjustable planning slots, not completed assessments",
+    "neglected_after_independent_days": 30
+  }
 }
