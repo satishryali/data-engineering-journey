@@ -1,0 +1,5 @@
+interface:
+  display_name: "Save Checkpoint"
+  short_description: "Save learning evidence without changing timer state."
+  default_prompt: "Use $save-checkpoint. Save my current learning checkpoint without\
+    \ changing timers."

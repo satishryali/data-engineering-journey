@@ -1,0 +1,5 @@
+interface:
+  display_name: "Study Status"
+  short_description: "Show confirmed daily and weekly study progress."
+  default_prompt: "Use $study-status. Show my study time and status for today and\
+    \ this week."

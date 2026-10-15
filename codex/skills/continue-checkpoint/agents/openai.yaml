@@ -1,0 +1,5 @@
+interface:
+  display_name: "Continue Checkpoint"
+  short_description: "Load the learning checkpoint and resume its next step."
+  default_prompt: "Use $continue-checkpoint. Read my latest learning checkpoint\
+    \ and continue the pending step without starting a timer."

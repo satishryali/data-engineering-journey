@@ -26,6 +26,19 @@ Current assignment: tools/python/exercises/001-record-cleaning/dictionary-refres
 
 Each tool has README.md and notes.md. Add exercise folders as lessons are actually assigned. Store explanations of the problem, attempted code, expected output, mistakes and a changed example. Integrated projects belong in projects/, with one main README and run instructions.
 
+## Codex commands on every computer
+
+Your nine personal commands and a portable installer are tracked in [codex/README.md](codex/README.md).
+After cloning or updating this repository on another computer, run:
+
+```bash
+python codex/install_commands.py
+```
+
+Restart Codex to load the commands and personal-skill visibility preference. The installer
+uses this checkout's actual path, backs up local changes, and leaves credentials and
+study records untouched. See the linked guide for the full computer-switching workflow.
+
 ## Across computers
 
 Repository: https://github.com/satishryali/data-engineering-journey

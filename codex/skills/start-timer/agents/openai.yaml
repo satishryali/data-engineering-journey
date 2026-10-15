@@ -1,0 +1,5 @@
+interface:
+  display_name: "Start Timer"
+  short_description: "Start a study interval in the existing study log."
+  default_prompt: "Use $start-timer. Start a study interval for the topic I provide.\
+    \ Ask for the topic if it is missing."

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Finish Study"
+  short_description: "Finish the study interval and save its checkpoint."
+  default_prompt: "Use $finish-study. Finish my current study session and save the\
+    \ checkpoint."

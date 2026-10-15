@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pause Timer"
+  short_description: "Pause the active study interval and exclude breaks."
+  default_prompt: "Use $pause-timer. Pause my active study interval."

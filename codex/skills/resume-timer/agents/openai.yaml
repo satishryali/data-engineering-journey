@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume Timer"
+  short_description: "Resume study by starting a fresh tracked interval."
+  default_prompt: "Use $resume-timer. Resume study for the topic I provide."

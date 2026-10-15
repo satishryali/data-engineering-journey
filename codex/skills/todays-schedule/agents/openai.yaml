@@ -1,0 +1,5 @@
+interface:
+  display_name: "Today's Schedule"
+  short_description: "Show today's study target, due reviews and next tasks."
+  default_prompt: "Use $todays-schedule. Show today's study schedule without starting\
+    \ a timer."

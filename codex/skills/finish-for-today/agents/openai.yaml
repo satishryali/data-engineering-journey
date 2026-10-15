@@ -1,0 +1,5 @@
+interface:
+  display_name: "Finish for Today"
+  short_description: "Close study and save the daily learning handoff."
+  default_prompt: "Use $finish-for-today. Finish study for today and save the end-of-day\
+    \ checkpoint."
