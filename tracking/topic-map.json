@@ -97,6 +97,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Looping through Dictionaries"
+        },
+        {
+          "path": "Notes/New Syntax/dictionary-copy.md",
+          "key": "Copy a dictionary before changing it"
         }
       ],
       "initial_assessment_date_ist": "2026-10-17"
@@ -610,7 +614,12 @@
         "PY-001"
       ],
       "legacy_id": null,
-      "note_sections": [],
+      "note_sections": [
+        {
+          "path": "Notes/New Syntax/dictionary-copy.md",
+          "key": "Copy a dictionary before changing it"
+        }
+      ],
       "initial_assessment_date_ist": "2026-10-26",
       "note_coverage_deferral": "Existing exercise/feedback concept retained with original evidence. A standalone explanation note has not been written; no new learning inferred."
     },
@@ -689,6 +698,18 @@
         {
           "path": "Notes/Python/Concepts/lists.md",
           "key": "Lists / Things to remember"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using +"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using + / A small example"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using + / Why the square brackets matter"
         }
       ],
       "initial_assessment_date_ist": "2026-10-18"
@@ -762,9 +783,82 @@
         {
           "path": "Notes/Python/Concepts/lists.md",
           "key": "Lists / Keeping dictionaries inside a list"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using + / A small example"
         }
       ],
       "initial_assessment_date_ist": "2026-10-20"
+    },
+    {
+      "id": "py.functions.basics",
+      "name": "Function inputs, local result lists and return",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "sha256": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808"
+        }
+      ],
+      "source_history": [],
+      "coverage": "active",
+      "prerequisites": [
+        "py.list.records"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "key": "Functions"
+        },
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "key": "Functions / Input and return"
+        },
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "key": "Functions / Fresh lists for each call"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-16"
+    },
+    {
+      "id": "py.csv.read",
+      "name": "Read CSV rows as dictionaries",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "sha256": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350"
+        }
+      ],
+      "source_history": [],
+      "coverage": "active",
+      "prerequisites": [
+        "py.functions.basics",
+        "py.list.records"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Read rows with DictReader"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Import names must match"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Pass records to the cleaner"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-16"
     }
   ],
   "note_inventory": [
@@ -785,16 +879,58 @@
       "exclusion_reason": "App configuration; no learning coverage."
     },
     {
-      "path": "Notes/.obsidian/graph.json",
-      "exclusion_reason": "App configuration; no learning coverage."
+      "path": "Notes/New Syntax/README.md",
+      "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
     },
     {
-      "path": "Notes/.obsidian/workspace.json",
-      "exclusion_reason": "App configuration; no learning coverage."
+      "path": "Notes/New Syntax/dictionary-copy.md",
+      "file_hash": "67d27405e819ce4ac4636d9abea468a898eecfc0d3fdbcfd568d3c9d8b11f4e3",
+      "sections": [
+        {
+          "key": "Copy a dictionary before changing it",
+          "heading": "Copy a dictionary before changing it",
+          "content_hash": "9dd885333c543c3284cdab1dc3140b9de2785262c0e43146fc5cacadecc65727",
+          "topic_ids": [
+            "py.dict.mutate",
+            "py.records.cleaning"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/New Syntax/list-plus.md",
+      "file_hash": "23bc5e33d4ec14511df24b815c5bc853b64205c70a9eb85832acadf2d4bde420",
+      "sections": [
+        {
+          "key": "Join lists using +",
+          "heading": "Join lists using +",
+          "content_hash": "b248e6536930e6a71bfec80e8737d9bca9e642e07c0e357522d183234480c76a",
+          "topic_ids": [
+            "py.list.basics"
+          ]
+        },
+        {
+          "key": "Join lists using + / A small example",
+          "heading": "Join lists using + / A small example",
+          "content_hash": "c59adfa8bbf70e83d67fed3e82573a0bf2ecced8898e947d8f1a56297971cb18",
+          "topic_ids": [
+            "py.list.basics",
+            "py.list.records"
+          ]
+        },
+        {
+          "key": "Join lists using + / Why the square brackets matter",
+          "heading": "Join lists using + / Why the square brackets matter",
+          "content_hash": "9927fb1d047719562723b70444c2f477efef43bbeec283ff6c85bb2e8ad13a86",
+          "topic_ids": [
+            "py.list.basics"
+          ]
+        }
+      ]
     },
     {
       "path": "Notes/Python/Concepts/Hashicorp_vault.md",
-      "file_hash": "7c14dbb241bc7013e39db62c3cb04c567dea36341244728d824bbff4014ac3bf",
+      "file_hash": "288af3824dc21794a2822b32bb374cb5376505da71139b01b2515d013fd353ec",
       "sections": [
         {
           "key": "Step 1 : importing hvac",
@@ -856,7 +992,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Logging.md",
-      "file_hash": "2448a74bda7aa969b615d80cd294a08a96a588507582a95213d0d0f812306a53",
+      "file_hash": "4c3fdb19ebccd67c433f1c3b92e4cbbbf2e6fa32115cb3d664af4f45244a1269",
       "sections": [
         {
           "key": "Notes / Logging Module",
@@ -878,8 +1014,46 @@
       ]
     },
     {
+      "path": "Notes/Python/Concepts/csv-reading.md",
+      "file_hash": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350",
+      "sections": [
+        {
+          "key": "Read a CSV file",
+          "heading": "Read a CSV file",
+          "content_hash": "33378e9258f96a56eae7618c924f54abcf511889d8d0a44a4f24cee6e13e987b",
+          "topic_ids": [
+            "py.csv.read"
+          ]
+        },
+        {
+          "key": "Read a CSV file / Read rows with DictReader",
+          "heading": "Read a CSV file / Read rows with DictReader",
+          "content_hash": "a68a7d67527c837bca0e0726b5bab4ccacf6a86a47a52f0ead9ea18001b045fe",
+          "topic_ids": [
+            "py.csv.read"
+          ]
+        },
+        {
+          "key": "Read a CSV file / Import names must match",
+          "heading": "Read a CSV file / Import names must match",
+          "content_hash": "9ceec63d0215b98044643c9570a09923720b3ac8ab7eac7f9674c940f4779e7b",
+          "topic_ids": [
+            "py.csv.read"
+          ]
+        },
+        {
+          "key": "Read a CSV file / Pass records to the cleaner",
+          "heading": "Read a CSV file / Pass records to the cleaner",
+          "content_hash": "34257c9a1e5b8f2e8cad32bd423a87a78fdf57094a0ea372f367f44767c72890",
+          "topic_ids": [
+            "py.csv.read"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Concepts/dictionaries.md",
-      "file_hash": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+      "file_hash": "a9ddce3826a44717cb926d89100f2c41a8144dc854fd78da521a5e4843f69e4e",
       "sections": [
         {
           "key": "Dictionaries",
@@ -972,8 +1146,38 @@
       ]
     },
     {
+      "path": "Notes/Python/Concepts/functions.md",
+      "file_hash": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808",
+      "sections": [
+        {
+          "key": "Functions",
+          "heading": "Functions",
+          "content_hash": "c64e72375ad67344b330bd93b75b30b39fd83b39958abf8f1fb96bd0a5794cb9",
+          "topic_ids": [
+            "py.functions.basics"
+          ]
+        },
+        {
+          "key": "Functions / Input and return",
+          "heading": "Functions / Input and return",
+          "content_hash": "e26cb24b7ce686724c36a767559e0702bdf606bfec4a7e2eb5be2112cf516cbb",
+          "topic_ids": [
+            "py.functions.basics"
+          ]
+        },
+        {
+          "key": "Functions / Fresh lists for each call",
+          "heading": "Functions / Fresh lists for each call",
+          "content_hash": "ae54739e986675dcd0446d27cc5f151360e049e268518b4d5861d50b5de2e796",
+          "topic_ids": [
+            "py.functions.basics"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Concepts/lists.md",
-      "file_hash": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267",
+      "file_hash": "56140e5c8e47aea2006593757131e3df792ed2c016ddd8484931e7bba7c6fac6",
       "sections": [
         {
           "key": "Lists",
@@ -1096,7 +1300,7 @@
     },
     {
       "path": "Notes/Python/Concepts/with(Context_Manager).md",
-      "file_hash": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829",
+      "file_hash": "f7f0b80b399d8749a8474da8f267ceebc1276311fab18312a1b5cb3b1e28c644",
       "sections": [
         {
           "key": "using with (Automatic Cleanup)",
@@ -1110,7 +1314,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/Exeucting Commands.md",
-      "file_hash": "14d49671c20352a06ef8bc9f16048178fd395e338866e22fc6e6e07632dad3d6",
+      "file_hash": "eec116c38b586780012a7c30f034d5fc4ccafb7f8dc04a05d124d9eb2cef2cac",
       "sections": [
         {
           "key": "Execution of Commands in Postgres",
@@ -1124,7 +1328,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/postgres_connection.md",
-      "file_hash": "03095e6e496d97eaad4522f38dd25145b9643967144131a6f87be531310e5d4f",
+      "file_hash": "747cb52d8d764e893d99f9d8fd687e48bfc5f83cff3d0d245fcc8996b9a66466",
       "sections": [
         {
           "key": "Postgres Connection / Install the PostgreSQL Driver",
@@ -1217,7 +1421,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
-      "file_hash": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c",
+      "file_hash": "d5f8f0fe82173d1849b3bab314aafef4e5d6b44c81cf1a2ae7a0b0e3ec5a9341",
       "sections": [
         {
           "key": "PATH ERROR",
@@ -1235,7 +1439,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
-      "file_hash": "fa122de79baa414e18daaaaee14efb06c66179b4356538f8dcff3acab78bcd66",
+      "file_hash": "c31baab4c16010d8260c6ae51a20a599ed4423661a2ecd3e36d61bbd02d485ca",
       "sections": [
         {
           "key": "Pending Tasks",
@@ -1249,7 +1453,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Understandings.md",
-      "file_hash": "c4dd5ba7ec703771c17745d67ea93f7ebe74802002dd73ea938b8868cb38c54a",
+      "file_hash": "aa9d57515277febf0cfa9abc3d482690ec3c35d930ff4d0e18b023b00cf827da",
       "sections": [
         {
           "key": "Key Findings",
@@ -1263,7 +1467,7 @@
     },
     {
       "path": "Notes/Python/Lessons/tips.md",
-      "file_hash": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345",
+      "file_hash": "9dd7f987fa977cad88356bf010bab7710b74a594c985d2cb65059132475e508e",
       "sections": [
         {
           "key": "Tips to follow when creating dbt models,transformations or anything",
@@ -1300,7 +1504,7 @@
     },
     {
       "path": "Notes/SQL/learning-notes.md",
-      "file_hash": "b7c12513ccf0564ccb5e6772ba4cd0c7cbd99f8c68c169713bb482933903e73b",
+      "file_hash": "7bc4211fe72d8c8e52cceaddddfde4df89b6d6e42c843e7b9e6cfc4d064f28ca",
       "sections": [
         {
           "key": "sql learning notes",
@@ -1444,7 +1648,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-15",
+  "inventory_date_ist": "2026-10-16",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

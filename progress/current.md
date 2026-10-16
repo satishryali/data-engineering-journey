@@ -1,115 +1,33 @@
-# Current tutoring checkpoint
+# Current tutoring checkpoint - paused 16 October 2026 (IST)
 
-Last updated: 15 October 2026 (IST).
+## Current state
 
-## Finished for today - 15 October 2026
+Python paused at **12:00:15 IST**. Today's intervals: 09:40:20-10:27:42 (47m22s), 10:34:47-10:51:42 (16m55s), 11:30:47-12:00:15 (29m28s). Confirmed today **1h33m45s**, target 6h, remaining **4h26m15s**. Partial week **4h22m19s / 32h**. Breaks excluded. Old 15 October 08:11:20 interval needs confirmation and is excluded. Excel refreshed for 16 October; CSV is authoritative.
 
-Daily handoff saved at the learner's explicit Finish for today request. No interval was running; the last confirmed stop remains 14:59:45 IST. Confirmed today and this week: 2h48m34s (SQL 1h30m56s; Python 1h17m38s). Today's six-hour target has 3h11m26s unfilled, with no catch-up debt assumed. Partial-week target: 32h; remaining 29h11m26s. Closed-day shortfall before today: 0h. The 08:11:20 SQL interval still needs its actual stop time and is excluded. Excel refreshed for 15 October from the unchanged CSV.
+## Reviewed Python work
 
-SQL-001 initial reasoning/output succeeded, with spelling help retained; SQL-002 needed COUNT/NULL, join-key and grouping hints. SQL-003 totals and Python cleaner remain unfinished. Dictionary/list explanations and coach setup are reference/administration, not new assessed success. No new learner attempt or delayed review occurred in this chat. Preserve all prior attempts, mistakes, skill states and review dates.
+- Dictionary/list/conversion/copy foundations and per-record ValueError handling practised with guidance; earlier snapshots and feedback preserve failures/help.
+- Notebook now defines working clean_orders(orders): local fresh lists, parameter-based loop, copied output records, integer conversion, invalid original/reason retention and both returned lists.
+- Saved output checks original five orders (3 valid, 2 rejected), unchanged original input, different input (401 -> integer 75), blank/spaces/zero, repeated calls and empty input. Guided success; no independent reconstruction or delayed retention claim.
+- CSV reading uses import csv, with open and csv.DictReader. Five input rows yield 3 valid and 2 rejected as detailed in review. order_id remains a string intentionally. Original notebook uses an absolute Windows path; adjust to the actual working folder on another machine.
+- Pending CSV writing is not a completed pipeline. Historical attempt.py is not the current working solution and must not be repaired automatically.
 
-Exact next task: Starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together.
+Evidence: tools/python/exercises/10-16-2026 Dict.ipynb; immutable snapshot attempts/012-function-and-csv-pause.ipynb and attempts/012-function-and-csv-review.md under tools/python/exercises/001-record-cleaning; source files/orders.csv under that exercise.
 
-Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md; no loops/conversion/exception handling yet. Resume only on an explicit timer command. Early practice for SQL-001/002/003 and PY-001 remains due 16 October; select a manageable set after the dictionary prerequisite. GitHub contains commit a70f3fb; this daily handoff is local and has not been pushed.
+## Exact next task
 
-## Goal and constraints
+Write valid_orders.csv with columns order_id,amount and rejected_orders.csv with columns order_id,amount,reason from the CSV cleaner results. Use csv.DictWriter, writeheader(), writerows(), mode "w" and newline="". Leave source orders.csv unchanged. Read both outputs back using DictReader and display contents; submit code/output and help used. This task is assigned, not completed.
 
-India data engineering switch targeted February 2027, about 15 LPA aspiration (not guaranteed). Electrical engineering education; four years support plus one development, separate from data engineering project experience. Notice period 90 days; considering resignation 30 November, resignation/last date unconfirmed.
+## Reviews and teaching
 
-Target 50 study hours/week: six weekdays, ten weekends; breaks separate. Azure one weekly concept; Docker within project hours. Tools reportedly on server, not independently verified; no Azure/Snowflake access, willing to pay later. Adapt scope to actual progress/sustainable time.
+Use a bounded SQL-002 COUNT/NULL review after the current Python block; SQL-001/002/003 remain due 16 October. Python cleaner/functions/CSV assisted application review due 17 October. Do not dump the whole queue. No delayed review has been answered. Follow actual queue/history and notes-driven revision mappings. Missing prediction/help declarations are not independence.
 
-## Evidence so far
+One meaningful task at a time. Preserve attempts and keep hints separate. Explain simply with small examples. Follow reference/checkpoints.md: ordinary done replies/reviews do not save trackers; pause/resume/start-study, explicit topic switches, save/finish and device/session handoffs consolidate only meaningful new evidence. Explicit requested note/config writes remain authorised. Resume starts a new interval only on an explicit command. No background agents or timer alerts.
 
-- SQL-001: join-preservation prediction/query reasoning and changed-example outputs correct independently; reconstruction spelling help recorded. Initial success 15 October, early retrieval 16 October; no retained-mastery claim.
-- SQL-002: initial counting/grouping practice completed with COUNT/NULL, join-key and grouping-grain hints. Correct supplied changed/duplicate-name outputs. Unaided retrieval 16 October; independent-success anchor unset.
-- SQL-003: Asha total 1000 correct; Nila-zero prediction wrong. After rule explanation, correctly answered COUNT=0/SUM=NULL on all-NULL input. No totals query/output yet; setup deferred.
-- PY-001: cleaner attempts show dictionary key/value, record access, accumulation and conversion gaps. Reviewed earlier run produced empty valid dict and overwritten invalid entry. Tutor gave items()/record access, list and int()/ValueError hints. Learner revised but still struggled; no correct cleaner/function demonstrated. Expected output shape supplied on request; implementation not given.
-- PY-002: dictionary refresher requested. Tutor explained one record, keys/values, access and items() pairs. The selected refresher has not yet been assessed. practice/Dictionaries.ipynb now contains general dictionary practice; do not infer completion of the selected task or independence from its presence. No integrated project complete; initial revenue date/year/filter gaps remain unassessed.
+## Goal and durable records
 
-## Exact next task — dictionaries in Jupyter
+India data engineering role-switch target February 2027, 15 LPA aspiration, neither guaranteed. Plan: 16 weeks 19 October-7 February, six-hour weekdays/ten-hour weekends (50h full week), one Azure concept weekly; Docker inside project hours. Prior experience four years support plus one development, separate from DE project experience. 90-day notice; possible 30 November resignation unconfirmed. No Azure/Snowflake access confirmed; begin locally.
 
-Use tools/python/exercises/001-record-cleaning/dictionary-refresher.md. Starting from order = {"order_id": 101, "amount": "500"}, learner prints amount, updates it to string "750" and prints dictionary, submitting code/output together. No loops/conversion/exception handling yet. All timers paused at 14:59:45 IST; await explicit resume. No notebook code/output submitted during this block. Use progressive help from this demonstrated gap, then reconstruction/changed record and eventually return to cleaner. Do not restart SQL or the whole course.
+Read AGENTS.md, reference/learning-coach.md, reference/checkpoints.md, plan/learning-and-revision-plan.md, current checkpoint/handoff, recent progress/session-history.md, tracking queues/mistakes/skill-state and actual attempts. Use repository-relative paths. Notes/ contains explanations; Notes/New Syntax/ is the requested useful-syntax collection. Canonical CSV/JSON trackers own evidence/schedules; generated Notes/revision views do not create success.
 
-Preserve cleaner attempt.py and attempts/002-pause-draft.py, 003-pause-draft.py. feedback.md holds prior help. Latest draft mutates order_id, retains items loop/type errors and calls value(); not run/reviewed with learner yet. Do not overwrite it with tutor solution. New dictionary exercise attempt can use a separate file when learner begins.
-
-## Deferred SQL
-
-Resolve exercise 003 setup before totals query. Supplied invalid INSERT into old orders(amount) had unfinished VALUES/WHERE syntax. Exact statement/error in exercise 003 attempt.sql. Provided original orders schema lacks amount; newly found tools/postgresql/setup.sql contains learner scratch ALTER/attempts, so actual live schema must be verified rather than assumed. Don't run scratch file wholesale.
-
-Later run tools/sql/exercises/003-customer-totals/setup.sql in one connection for separate temporary revenue_customers/revenue_orders, share result/error, then learner writes customer-ID/name/SUM report preserving all customers and leaving unmatched totals NULL. No COALESCE/date/status solution given yet. Earlier sample last reported five customers/five orders; temporary state may vanish on reconnect.
-
-## Timer and Excel
-
-All timers paused at 14:59:45 IST on 15 October. Latest Python interval 14:14:07–14:59:45: 45m38s, dictionary practice in Jupyter. Completed today/week 2h48m34s (SQL 1h30m56s, Python 1h17m38s). At finish, 3h11m26s of the six-hour target was unfilled; no extra study time inferred. Resume starts a new row. Older 08:11:20 interval needs_confirmation, stop unknown and excluded. Never infer study from silence or count overlapping intervals.
-
-tracking/study-log.csv is authoritative. Excel outputs/study-tracker/study-hours.xlsx refreshed 15 October to completed 2h48m34s, excluding uncertain/running time. Rebuild with tracking/update-study-tracker.mjs after log changes, status requests and daily handoff; flag stale if unavailable. First partial week 32h from 15 October, full weeks 50h. Closed-day shortfall separate from today's remaining target.
-
-ClockIt octech.clockit v1.9.0 installed locally; ignored settings disable auto-start/cloud and select CSV. Learner prefers tutor-managed message-controlled tracking. No importer/tested focus alert/reminder configured; duration/delivery still unagreed. Don't promise an alert without setup.
-
-## Pacing, records and handoff
-
-One meaningful bounded task at a time; combine prediction/code/output, review actual work and use micro-questions only for gaps. Dictionary refresher explicitly requested. Avoid repeated trivial confirmations; don't infer proficiency from preference/familiarity/time.
-
-Batch learning records at task completion, pause/topic switch, explicit Save checkpoint, Finish or Finish for today; no file writes after each ordinary answer/hint. Timer events recorded immediately. Interim work stays in conversation until checkpoint. Save before closing/switching devices; no background/parallel writer or midnight execution. Preserve attempts and assistance history; no spaced review attempted today (revision-history.csv unchanged).
-
-Queue: SQL-001 retrieval, SQL-002 unaided reconstruction, SQL-003 SUM/NULL and PY-001 early practice due 16 October; PY-002 no success/review date yet. Prioritise dictionary foundations before the full cleaner; do not dump the whole queue at once. Schedule is flexible around actual learning, not elapsed dates.
-
-START-HERE.md is the entry point; README.md has commands/sync/Excel instructions. The learner explicitly authorised commit/push: a70f3fb was pushed to origin/main on 15 October 2026 and verified synced. This end-of-day checkpoint is saved locally after that push. Further commit/push requires a new instruction. Keep secrets/runtime data out; use repo-relative paths and read current files on every new device/chat.
-
-## Five-role coordination — setup only, 15 October 2026
-
-Use reference/learning-coach.md. Exactly five roles coordinate one conversation; no
-independent/background agents exist. CSV queue/history own dates/events; topic-map
-links broad exercise and concept IDs without transferring scores. Notes/revision
-views are generated; original state and diagnostic-dict-001 are preserved in tracking/legacy.
-That older diagnostic is deferred by the later explicit PY-002 request. Setup records
-historical evidence only: no new lesson, success, review or timer event occurred.
-The saved notebook is available but has not been reviewed against the pending task.
-Eight historical mistake entries and dimension-specific observations cite original
-15 October evidence; no mistake is verified on delayed independent practice.
-
-Natural entry phrase: Start today's learning. Select the existing task without an
-automatic timer. All old slash commands remain. Ordinary answers are saved at checkpoint
-boundaries; timer events remain immediate. Weekly summaries are generated on demand or
-at the next session after week end, with partial/later-reconstruction labels.
-
-Lists reference requested via Notes Keeper: Notes/Python/Concepts/lists.md and separate
-Notes/revision/list-questions.md are saved. This is reference preparation only; no list
-assessment or review date was recorded. The selected dictionary task and timer state
-remain unchanged.
-
-Note-writing preference: use reference/note-style.md. Match the learner's short
-headings and bullets, simple words and more small examples with output. The lists
-reference was rewritten in this style; no new assessment, timer change or review date.
-
-Notes Keeper style specification expanded: reference/note-style.md now defines
-why/input/code/output/explanation, examples for different behaviours, output verification
-labels and evidence-based doubts/mistake links. Apply to future notes; existing notes
-were not rewritten for this request. One dictionary style preview is awaiting learner
-feedback; it is a tutor example, not an assessed attempt. Pending task/timers unchanged.
-
-## Notes-driven revision setup - 15 October 2026
-
-The requested Revision Coach upgrade is saved locally. Same five roles; no quiz, study
-interval or completed review was created. The generated Notes/revision/plan.md maps
-53 learning sections to 20 stable concepts, excluding two navigation/reference sections
-and documented non-learning files. Four concepts were added as unassessed (lists: basics,
-changes, records; dictionary removal). Existing IDs, attempts, mistakes, skill evidence,
-review history and due dates are preserved. Initial diagnostic slots run from 16 October
-at most one per suitable session; these are adjustable plans, not completed reviews.
-Concept assessment counts remain zero; historical SQL exercise evidence stays separate.
-
-Start revision / Today's schedule / Weekly review / Save checkpoint now synchronise
-notes and use the generated plan. Material changes flag affected concepts; formatting
-does not reset progress. New sections need mappings, and questionable source claims
-need official verification before teaching. No background monitor exists.
-
-Next suitable 15-minute block: about five minutes for the pending dictionary read/update/
-print task and up to ten minutes for a due SQL COUNT/NULL reconstruction, if readiness
-and available time allow. Ask one task at a time without answers; teach missing basics
-first. Start today's learning does not start a timer; all timers remain stopped.
-
-Exact next task: Starting with order = {"order_id": 101, "amount": "500"}, print the amount, change it to the string "750", then print the dictionary. Submit code/output together.
-
-The earlier end-of-day summary remains valid. This setup and subsequent handoff updates
-are local and uncommitted; no push was requested.
+No commit/push is authorised by this checkpoint. Save before switching devices; transfer latest files through an authorised Git sync. Git does not transfer databases, installed tools or credentials.

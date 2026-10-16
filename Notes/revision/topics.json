@@ -110,6 +110,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Looping through Dictionaries"
+        },
+        {
+          "path": "Notes/New Syntax/dictionary-copy.md",
+          "key": "Copy a dictionary before changing it"
         }
       ],
       "initial_assessment_date_ist": "2026-10-17",
@@ -760,20 +764,35 @@
         "PY-001"
       ],
       "legacy_id": null,
-      "note_sections": [],
+      "note_sections": [
+        {
+          "path": "Notes/New Syntax/dictionary-copy.md",
+          "key": "Copy a dictionary before changing it"
+        }
+      ],
       "initial_assessment_date_ist": "2026-10-26",
       "note_coverage_deferral": "Existing exercise/feedback concept retained with original evidence. A standalone explanation note has not been written; no new learning inferred.",
-      "assessment_status": "unassessed",
-      "interval_stage": null,
-      "next_review_date": null,
-      "last_reviewed_date": null,
-      "recent_scores": [],
-      "help_needed": null,
-      "last_review_id": null,
-      "learning_state": "Unassessed",
+      "assessment_status": "assisted",
+      "interval_stage": 0,
+      "next_review_date": "2026-10-17",
+      "last_reviewed_date": "2026-10-16",
+      "recent_scores": [
+        1,
+        1
+      ],
+      "help_needed": true,
+      "last_review_id": "REV-20261016-copy-correction-10",
+      "learning_state": "Learning with help",
       "linked_mistakes": [
         "M-PY-002",
-        "M-PY-003"
+        "M-PY-003",
+        "M-PY-004",
+        "M-PY-005",
+        "M-PY-006",
+        "M-PY-007",
+        "M-PY-008",
+        "M-PY-009",
+        "M-PY-010"
       ]
     },
     {
@@ -860,6 +879,18 @@
         {
           "path": "Notes/Python/Concepts/lists.md",
           "key": "Lists / Things to remember"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using +"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using + / A small example"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using + / Why the square brackets matter"
         }
       ],
       "initial_assessment_date_ist": "2026-10-18",
@@ -951,18 +982,119 @@
         {
           "path": "Notes/Python/Concepts/lists.md",
           "key": "Lists / Keeping dictionaries inside a list"
+        },
+        {
+          "path": "Notes/New Syntax/list-plus.md",
+          "key": "Join lists using + / A small example"
         }
       ],
       "initial_assessment_date_ist": "2026-10-20",
-      "assessment_status": "unassessed",
+      "assessment_status": "unknown",
       "interval_stage": null,
       "next_review_date": null,
-      "last_reviewed_date": null,
-      "recent_scores": [],
+      "last_reviewed_date": "2026-10-16",
+      "recent_scores": [
+        null
+      ],
       "help_needed": null,
-      "last_review_id": null,
+      "last_review_id": "REV-20261016-PY-list-loop-03",
       "learning_state": "Unassessed",
       "linked_mistakes": []
+    },
+    {
+      "id": "py.functions.basics",
+      "name": "Function inputs, local result lists and return",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "sha256": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808"
+        }
+      ],
+      "source_history": [],
+      "coverage": "active",
+      "prerequisites": [
+        "py.list.records"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "key": "Functions"
+        },
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "key": "Functions / Input and return"
+        },
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "key": "Functions / Fresh lists for each call"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-16",
+      "assessment_status": "assisted",
+      "interval_stage": 0,
+      "next_review_date": "2026-10-17",
+      "last_reviewed_date": "2026-10-16",
+      "recent_scores": [
+        1
+      ],
+      "help_needed": true,
+      "last_review_id": "REV-20261016-pause13-functions",
+      "learning_state": "Learning with help",
+      "linked_mistakes": [
+        "M-PY-011"
+      ]
+    },
+    {
+      "id": "py.csv.read",
+      "name": "Read CSV rows as dictionaries",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "sha256": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350"
+        }
+      ],
+      "source_history": [],
+      "coverage": "active",
+      "prerequisites": [
+        "py.functions.basics",
+        "py.list.records"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Read rows with DictReader"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Import names must match"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Pass records to the cleaner"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-10-16",
+      "assessment_status": "assisted",
+      "interval_stage": 0,
+      "next_review_date": "2026-10-17",
+      "last_reviewed_date": "2026-10-16",
+      "recent_scores": [
+        1
+      ],
+      "help_needed": true,
+      "last_review_id": "REV-20261016-pause13-csv",
+      "learning_state": "Learning with help",
+      "linked_mistakes": [
+        "M-PY-012"
+      ]
     }
   ],
   "session": {

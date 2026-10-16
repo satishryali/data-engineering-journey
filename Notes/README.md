@@ -4,6 +4,7 @@ Open this `Notes` folder directly as a vault in Obsidian. Do not open the whole
 learning repository as the vault, and do not create another `Notes` folder inside it.
 
 - [Python notes](Python/Index.md)
+- [New syntax collection](New%20Syntax/README.md)
 - [Revision records](revision/README.md)
 - [Learning plan](learning-and-revision-plan.md)
 - [SQL learning notes](SQL/learning-notes.md)

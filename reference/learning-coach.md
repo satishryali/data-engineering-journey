@@ -57,7 +57,7 @@ uncertain, say so rather than assigning proficiency. Do not expose worked answer
 the retrieval prompt. `Notes/revision/questions.md` holds unanswered prompts separately
 from explanations. Do not assess topics merely because their notes exist.
 
-At task completion, pause/topic switch, Save checkpoint, Finish or Finish for today:
+At the explicit checkpoint commands in [Checkpoint commands](checkpoints.md), consolidate all meaningful unsaved learning since the previous checkpoint. These include pause, resume, start-study/topic switch, save, finish and clear session/device handoffs. Task completion and done replies alone do not trigger record writes:
 
 1. Preserve actual attempts, output, questions and help used. Give distinct attempt IDs
    to distinct submissions; include a section anchor for combined historical files.

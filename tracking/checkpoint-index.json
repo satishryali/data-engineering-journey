@@ -42,6 +42,97 @@
       "kind": "setup",
       "sha256": "9ae14c28ca0c87dc11ebcf480714669a5317a7d9c505a38184792734e5f4b3f2",
       "evidence_key": "e7e00a645d586cc50b1938239d78008f8ca8d5be562fc74fef9c4119f1bdaf86"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY002-notebook-01",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "9644936a3e374258c9e9fcf7a128fcae09c9c10aa604cd53e49a4a01d5fe34e5",
+      "evidence_key": "fc66450eb2fa1075bec57741587894294071443b4fba4ae93693cd4ee73b2d2b"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY002-changed-02",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "9d13398124609f9b59b33186a3b7523e2c3b1b4866e66a96f0cbb6b5d571e50d",
+      "evidence_key": "5d2d9163328dc213726976df7148e2aa448c1142c39201249ba5af529ba2fb36"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-list-loop-03",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "a2bf0313b931d85f66df0e14538a1e07a29952441ceb6e5af18c041c472f1d10",
+      "evidence_key": "a1cd65c98098edea15d36d92752d6773cc02ec6ec9843206b7df9e6f358e81f8"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-total-04",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "715c00f2cbf95730bcdabd73197828633ce0e790846ffa6a5e6fd297b7367130",
+      "evidence_key": "5912753856ece8bfa997c3318c383978ad7c00571f0241372f786515d46b3ed3"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-third-total-05",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "959cf6bd132fe15d06a419e4fe65f136d5484b0233e5074f94f60e2996e08b5d",
+      "evidence_key": "04d4a98b19aad7c4805191a9dfeb3c34d764c2bf0f15de5fd736990542ee1ba3"
+    },
+    {
+      "checkpoint_id": "CP-20261016-notes-syntax-06",
+      "date_ist": "2026-10-16",
+      "kind": "setup",
+      "sha256": "fd213a97bfdda7c4be09531ebabf89cd4f4c17fa089716dc952a962383170acd",
+      "evidence_key": "fd9be65653da717ce07bb8e680bada896c7b001d0155b35354c3cd02ec63a330"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-invalid-error-07",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "6f595a8889e7f1bf50dd10e645c6204f3127cf371679fb2702de5fec35c89df5",
+      "evidence_key": "7a356dc7161ccbeeb18c2ec6637d2f4d5474edb75e1284ca87a949c002f6367d"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-handling-corrected-08",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "216628e6db013b260769218a0544a16bc42b6309f6e9b9eadb5efc839bd64e50",
+      "evidence_key": "5a0b851052701ae6b9d0434537be4b1cb2bd189f5b10a724a8a165765fc8bc39"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-pause-09",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "d1d8ed9b5861e4f7b022cb90049dc0e90a6287e6dd0a4a3174edfb274d3f406e",
+      "evidence_key": "d843de25c5bdae83f75fe21c0573a0e9d3efbee126f8bdbcc26432c1b949fbe2"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-copy-correction-10",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "765ee0b9b3a1a378a36393b519c3455de74b41fa864e56dcd6c662dacb800cca",
+      "evidence_key": "000aac4eed2ad3c88f1c7f77e5a4c01f7645fc666de44ee9d649a42cb5d0c120"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-pause-11",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "ebb08cc29e6f0f030e78873ab03a6d2adbbe1a89fe4114b17a9795c6cb8db4ef",
+      "evidence_key": "fad389429eb4ebe89fd4ba520f801291095fb154e48e0260d3d5e5d9f966593a"
+    },
+    {
+      "checkpoint_id": "CP-20261016-checkpoint-command-policy-12",
+      "date_ist": "2026-10-16",
+      "kind": "setup",
+      "sha256": "b740b21de5e7c7d3746658eca0b618d5dd7d71f598c8a78df2f03f6f63f7dfe1",
+      "evidence_key": "411624b59c5e7a9183cc1a02f02f3ae5fe768306e5bf140038e65751be4830a2"
+    },
+    {
+      "checkpoint_id": "CP-20261016-PY-function-csv-pause-13",
+      "date_ist": "2026-10-16",
+      "kind": "learning",
+      "sha256": "9446ea113eb76faea3cd02355182702ba79dd2cceb52df1449fa9fbc374c5ef2",
+      "evidence_key": "bac70cadd6992e7ada44f84c1d2c5b9ce1945025ea780bd88c3a17ab23ad4c68"
     }
   ]
 }

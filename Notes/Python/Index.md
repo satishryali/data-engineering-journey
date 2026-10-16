@@ -15,3 +15,5 @@
 
 1. Dictionaries [[dictionaries.md]]
 2. Lists [[lists.md]]
+3. [Functions](Concepts/functions.md)
+4. [Read a CSV file](Concepts/csv-reading.md)

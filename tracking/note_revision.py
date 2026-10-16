@@ -282,7 +282,7 @@ def render(state, registry, queue):
     lines += ['', '## Manageable session', '', 'Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.',
               'Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.']
     selected = selection(state, queue)
-    lines += [f'- {s["id"]}: {s["kind"]}, about {s["minutes"]} minutes. ' + (f'Check concept {s["concept_to_assess_if_demonstrated"]} in the same task; no automatic score transfer.' if s.get('concept_to_assess_if_demonstrated') else '') for s in selected]
+    lines += [(f'- {s["id"]}: {s["kind"]}, about {s["minutes"]} minutes. ' + (f'Check concept {s["concept_to_assess_if_demonstrated"]} in the same task; no automatic score transfer.' if s.get('concept_to_assess_if_demonstrated') else '')).rstrip() for s in selected]
     if not selected:
         lines.append('- No eligible review is due today. Keep the exact pending learning task in progress/current.md; add a short due follow-up in the next suitable session.')
     awaiting = sum(t['state'] == 'Unassessed' for t in state['topics'])

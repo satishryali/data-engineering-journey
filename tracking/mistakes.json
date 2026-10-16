@@ -309,6 +309,323 @@
           "recorded_during": "historical seed at five-role setup; not a new attempt"
         }
       ]
+    },
+    {
+      "mistake_id": "M-PY-004",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of reviewed notebook and feedback",
+      "observed_behaviour": "Added the previous total twice with total += int(amount) + total; observed 6050 instead of 2000.",
+      "expected_behaviour": "Add each converted amount once to the running total.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Operator/control-flow behaviour needs changed-example retrieval."
+      },
+      "correction_and_assistance": "Tutor diagnosed issue and gave placement outline; final output 2100 correct with guidance.",
+      "follow_up_task": "Changed valid/invalid record practice without solution; explain accumulated total and continuation.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-errors-M-PY-004",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/009-error-handling-review.md",
+          "observation": "Execution 63 double-addition attempt; corrected after tutor diagnosis."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-005",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of reviewed notebook and feedback",
+      "observed_behaviour": "Wrapped the whole for loop in try/except, so an invalid record exited the loop.",
+      "expected_behaviour": "Handle conversion per record so later valid records are processed.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Operator/control-flow behaviour needs changed-example retrieval."
+      },
+      "correction_and_assistance": "Tutor diagnosed issue and gave placement outline; final output 2100 correct with guidance.",
+      "follow_up_task": "Changed valid/invalid record practice without solution; explain accumulated total and continuation.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-errors-M-PY-005",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/009-error-handling-review.md",
+          "observation": "Executions 63 and 67 surround the loop; after placement hints, executions 68/71 handle each record."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-006",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of reviewed notebook",
+      "observed_behaviour": "Converted amount in a condition but appended the original dictionary; valid output amounts stayed strings.",
+      "expected_behaviour": "Build a new output dictionary holding the converted integer and retain the original input.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Need to separate conversion, validation rules and output record construction."
+      },
+      "correction_and_assistance": "Tutor explained issue and requested new dictionaries, rejection reason and removal of >0 filter; revision pending.",
+      "follow_up_task": "In a new notebook cell, revise the valid_orders/rejected_orders loop: create new valid dictionaries with order_id and integer amount, create rejected dictionaries with order_id, original amount and a short reason, remove the unrequested > 0 filter, and leave input dictionaries unchanged. Run/display both lists and the input; submit output and help used. No function yet.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "open",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-cleaner-lists-85",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/010-pause-cleaner-lists.ipynb",
+          "observation": "Reviewed cells 28-30 execution 85-87; missing rejection reason also noted."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-007",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of reviewed notebook",
+      "observed_behaviour": "Added an unrequested > 0 condition with no else, silently omitting convertible zero/negative values.",
+      "expected_behaviour": "Use conversion success as the specified validity rule unless positivity is explicitly required.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Need to separate conversion, validation rules and output record construction."
+      },
+      "correction_and_assistance": "Tutor explained issue and requested new dictionaries, rejection reason and removal of >0 filter; revision pending.",
+      "follow_up_task": "In a new notebook cell, revise the valid_orders/rejected_orders loop: create new valid dictionaries with order_id and integer amount, create rejected dictionaries with order_id, original amount and a short reason, remove the unrequested > 0 filter, and leave input dictionaries unchanged. Run/display both lists and the input; submit output and help used. No function yet.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "open",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-cleaner-lists-85",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/010-pause-cleaner-lists.ipynb",
+          "observation": "Reviewed cells 28-30 execution 85-87; missing rejection reason also noted."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-008",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of reviewed notebook attempts",
+      "observed_behaviour": "Used i.update to convert amount and add reason, changing input dictionaries.",
+      "expected_behaviour": "Modify a separate output dictionary while preserving original fields.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Dictionary object sharing and mutation need changed-example retrieval."
+      },
+      "correction_and_assistance": "Tutor explained alias/mutation, supplied copy hint and fresh input; learner corrected code; tutor verified input preservation.",
+      "follow_up_task": "In a fresh new-cell dataset, test the corrected copying cleaner with [{\"order_id\": 301, \"amount\": \"\"}, {\"order_id\": 302, \"amount\": \" 300 \"}, {\"order_id\": 303, \"amount\": \"0\"}]. Predict valid/rejected IDs and resulting amounts; run and display input plus both output lists, stating help used. Preserve earlier attempts. Function wrapping comes after this changed-input check.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-copy-M-PY-008",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/011-copy-cleaner-review.md",
+          "observation": "Execution 112 directly mutated input; execution 115 used an alias; subsequent correction uses copy and is tutor-verified."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-009",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of reviewed notebook attempts",
+      "observed_behaviour": "Used new_i = i expecting a new dictionary; updates still affected input.",
+      "expected_behaviour": "Use a suitable copy or construct a new dictionary; assignment alone shares the same object.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Dictionary object sharing and mutation need changed-example retrieval."
+      },
+      "correction_and_assistance": "Tutor explained alias/mutation, supplied copy hint and fresh input; learner corrected code; tutor verified input preservation.",
+      "follow_up_task": "In a fresh new-cell dataset, test the corrected copying cleaner with [{\"order_id\": 301, \"amount\": \"\"}, {\"order_id\": 302, \"amount\": \" 300 \"}, {\"order_id\": 303, \"amount\": \"0\"}]. Predict valid/rejected IDs and resulting amounts; run and display input plus both output lists, stating help used. Preserve earlier attempts. Function wrapping comes after this changed-input check.",
+      "linked_review_items": [
+        "PY-001",
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-copy-M-PY-009",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/011-copy-cleaner-review.md",
+          "observation": "Execution 112 directly mutated input; execution 115 used an alias; subsequent correction uses copy and is tutor-verified."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-010",
+      "category": "conceptual",
+      "exercise_ids": [
+        "PY-001"
+      ],
+      "topic_ids": [
+        "py.records.cleaning"
+      ],
+      "wording": "paraphrase of actual reviewed attempts",
+      "observed_behaviour": "Reused earlier result lists for changed input, mixing earlier and new records.",
+      "expected_behaviour": "Create fresh result lists for each separate processing run.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Notebook state and variable scope/name usage need changed-input reconstruction."
+      },
+      "correction_and_assistance": "Tutor diagnosed and gave targeted instructions; saved corrected outputs verified. Immediate assisted correction only.",
+      "follow_up_task": "Reconstruct the relevant small step on 17 October, recording notes/hints; do not infer retention from same-day success.",
+      "linked_review_items": [
+        "py.records.cleaning"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-changed-input-list-reset",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-review.md",
+          "observation": "Reused earlier result lists for changed input, mixing earlier and new records. See reviewed execution history in this note."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-011",
+      "category": "conceptual",
+      "exercise_ids": [],
+      "topic_ids": [
+        "py.functions.basics"
+      ],
+      "wording": "paraphrase of actual reviewed attempts",
+      "observed_behaviour": "Initial function used global result lists and test_payments instead of its orders parameter, and omitted return; next revision still used global test_payments.",
+      "expected_behaviour": "Keep result lists local, process the parameter, return both results and test different inputs.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Notebook state and variable scope/name usage need changed-input reconstruction."
+      },
+      "correction_and_assistance": "Tutor diagnosed and gave targeted instructions; saved corrected outputs verified. Immediate assisted correction only.",
+      "follow_up_task": "Reconstruct the relevant small step on 17 October, recording notes/hints; do not infer retention from same-day success.",
+      "linked_review_items": [
+        "py.functions.basics"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-function-152-162",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-review.md",
+          "observation": "Initial function used global result lists and test_payments instead of its orders parameter, and omitted return; next revision still used global test_payments. See reviewed execution history in this note."
+        }
+      ]
+    },
+    {
+      "mistake_id": "M-PY-012",
+      "category": "debugging_approach",
+      "exercise_ids": [],
+      "topic_ids": [
+        "py.csv.read"
+      ],
+      "wording": "paraphrase of actual reviewed attempts",
+      "observed_behaviour": "Imported DictReader directly but called csv.DictReader; saved success depended on unrecorded prior kernel state.",
+      "expected_behaviour": "Match import form and call; explicit import csv supports csv.DictReader.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "Notebook state and variable scope/name usage need changed-input reconstruction."
+      },
+      "correction_and_assistance": "Tutor diagnosed and gave targeted instructions; saved corrected outputs verified. Immediate assisted correction only.",
+      "follow_up_task": "Reconstruct the relevant small step on 17 October, recording notes/hints; do not infer retention from same-day success.",
+      "linked_review_items": [
+        "py.csv.read"
+      ],
+      "verification_review_id": null,
+      "status": "practising",
+      "first_observed": "2026-10-16",
+      "latest_observed": "2026-10-16",
+      "recurrence_count": 1,
+      "observations": [
+        {
+          "attempt_id": "ATT-20261016-csv-import-192",
+          "observed_date_ist": "2026-10-16",
+          "evidence": "tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-review.md",
+          "observation": "Imported DictReader directly but called csv.DictReader; saved success depended on unrecorded prior kernel state. See reviewed execution history in this note."
+        }
+      ]
     }
   ]
 }

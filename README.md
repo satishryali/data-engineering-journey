@@ -128,7 +128,7 @@ Historical IDs, evidence and the old pending diagnostic are preserved in trackin
 - tracking/: record study intervals, actual retrieval attempts and the next review due; never infer completion from a planned date.
 - plan/: maintain the agreed curriculum and any deliberate scope changes.
 
-The tutor batches file updates at practical-task completion, pause/topic switch, Save checkpoint, Finish or Finish for today. Ordinary teaching replies do not trigger Markdown edits. Interim attempts stay in the active conversation until the next checkpoint, where code/evidence/help and actual outcomes are consolidated. Timer start/stop timestamps are still recorded immediately. Say `Save checkpoint` before closing the chat or changing computers: uncheckpointed exchanges are not yet durable repository records. No background or parallel writer is running. Git history preserves committed versions; a fresh chat must read the latest files.
+The tutor batches learning-record updates at the explicit command boundaries in [Checkpoint commands](reference/checkpoints.md), including Pause, Resume, Start [topic], topic switches and save/finish/handoff requests. An exercise completion or done reply alone does not save records. Ordinary teaching replies do not trigger Markdown edits. Interim attempts stay in the active conversation until the next checkpoint, where code/evidence/help and actual outcomes are consolidated. Timer start/stop timestamps are still recorded immediately. Say `Save checkpoint` before closing the chat or changing computers: uncheckpointed exchanges are not yet durable repository records. No background or parallel writer is running. Git history preserves committed versions; a fresh chat must read the latest files.
 
 ## New tutoring chat prompt
 
@@ -182,9 +182,9 @@ No extension session or focus countdown was started during installation. The cha
 
 | Send this message | Tutor action |
 |---|---|
-| `Start SQL` | Record the actual start time for SQL and confirm it in IST. Replace SQL with Python, dbt or another topic as needed. |
-| `Pause` | Close the active interval at the actual time; the break is excluded. |
-| `Resume SQL` | Start a new SQL interval after checking that none is running. |
+| `Start SQL` | Record the actual start time for SQL, save any unsaved learning context and update the handoff; confirm in IST. Replace SQL with Python, dbt or another topic as needed. |
+| `Pause` | Close the active interval at the actual time; exclude the break and save a checkpoint. |
+| `Resume SQL` | Start a new SQL interval after checking that none is running; save any unsaved learning context and update the handoff. |
 | `Finish` | Close the active interval and save the checkpoint. |
 | `Study status` | Report confirmed daily/weekly time, with running or uncertain time separately labelled. |
 | `Study time` | Same as Study status: show today's and this week's confirmed hours and minutes, targets, remaining hours and closed-day shortfall. Show elapsed time in any running interval separately; do not change the timer. |
@@ -197,7 +197,7 @@ These phrases are convenient shortcuts; equivalent clear instructions are valid 
 
 ### Checkpoints without a reminder
 
-The tutor saves at practical-task completion, pause/topic switch or finish without waiting for another reminder, and on explicit Save checkpoint. Batch the evidence since the last checkpoint instead of editing files after each response. After an actual save, briefly confirm the pending step and timer state. Do not claim a save before writing files. Timer events are recorded when they happen; routine explanations do not change the timer.
+The tutor saves at the checkpoint commands in [Checkpoint commands](reference/checkpoints.md), without waiting for an extra reminder. Done replies and ordinary teaching exchanges stay in conversation until that boundary. Batch the evidence since the last checkpoint instead of editing files after each response. After an actual save, briefly confirm the pending step and timer state. Do not claim a save before writing files. Timer events are recorded when they happen; routine explanations do not change the timer.
 
 On `Finish` or `Finish for today`, save what was actually attempted, evidence and help used, remaining gaps, the exact next task, revision due and timer state. For the end-of-day summary, report confirmed study totals from the log and distinguish uncertain intervals. Keep dated outcomes in progress/session-history.md and the latest handoff in progress/current.md; a separate daily file is unnecessary.
 

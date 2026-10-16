@@ -121,6 +121,60 @@
       "help_used": true,
       "notes": "Reviewed output and help recorded; no correct cleaner function demonstrated.",
       "historical_seed": true
+    },
+    {
+      "observation_id": "OBS-20261016-conversion-modify-08",
+      "item_id": "py.records.cleaning",
+      "dimension": "modifying",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-16",
+      "evidence": "tools/python/exercises/001-record-cleaning/attempts/009-per-record-error-handling.ipynb",
+      "help_used": true
+    },
+    {
+      "observation_id": "OBS-20261016-cleaner-lists-building-09",
+      "item_id": "py.records.cleaning",
+      "dimension": "building",
+      "state": "needs_guidance",
+      "observed_date_ist": "2026-10-16",
+      "evidence": "tools/python/exercises/001-record-cleaning/attempts/010-pause-cleaner-lists.ipynb",
+      "help_used": true
+    },
+    {
+      "observation_id": "OBS-20261016-copy-modifying-10",
+      "item_id": "py.records.cleaning",
+      "dimension": "modifying",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-16",
+      "evidence": "tools/python/exercises/001-record-cleaning/attempts/011-copy-cleaner-fresh-input.ipynb",
+      "help_used": true
+    },
+    {
+      "observation_id": "OBS-20261016-pause13-PY-001",
+      "item_id": "PY-001",
+      "dimension": "building",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-16",
+      "evidence": "tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb",
+      "help_used": true
+    },
+    {
+      "observation_id": "OBS-20261016-pause13-py.functions.basics",
+      "item_id": "py.functions.basics",
+      "dimension": "modifying",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-16",
+      "evidence": "tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb",
+      "help_used": true
+    },
+    {
+      "observation_id": "OBS-20261016-pause13-py.csv.read",
+      "item_id": "py.csv.read",
+      "dimension": "modifying",
+      "state": "assisted",
+      "observed_date_ist": "2026-10-16",
+      "evidence": "tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb",
+      "help_used": true
     }
   ]
 }

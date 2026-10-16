@@ -1,25 +1,27 @@
 # Revision plan (generated)
 
-As of 2026-10-15 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-10-16 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 53 | learning sections mapped |
+| 64 | learning sections mapped |
 | 2 | sections excluded |
-| 20 | topics total |
-| 0 | topics assessed |
+| 22 | topics total |
+| 3 | topics assessed |
 | 0 | topics practised on delayed review |
-| 0 | topics needing help |
+| 3 | topics needing help |
 
 Assessed = a scored, non-immediate concept assessment. Delayed practice = an actual answered delayed event;
 it can be incorrect or assisted. Neither count means permanent retention. Broad exercise results stay separate.
 
 ## Due today
 
-- None.
+- **SQL-001**: LEFT JOIN and unmatched rows; due 2026-10-16; last result independent.
+- **SQL-002**: Counting orders after LEFT JOIN; due 2026-10-16; last result assisted.
+- **SQL-003**: Customer order totals; due 2026-10-16; last result assisted.
 
 ## Overdue
 
@@ -27,10 +29,10 @@ it can be incorrect or assisted. Neither count means permanent retention. Broad 
 
 ## Upcoming reviews
 
-- **SQL-001**: LEFT JOIN and unmatched rows; due 2026-10-16; last result independent.
-- **SQL-002**: Counting orders after LEFT JOIN; due 2026-10-16; last result assisted.
-- **SQL-003**: Customer order totals; due 2026-10-16; last result assisted.
-- **PY-001**: Python record cleaning; due 2026-10-16; last result needs_guidance.
+- **PY-001**: Python record cleaning; due 2026-10-17; last result assisted.
+- **py.records.cleaning**: Record access, accumulation and conversion; due 2026-10-17; last result assisted.
+- **py.functions.basics**: Function inputs, local result lists and return; due 2026-10-17; last result assisted.
+- **py.csv.read**: Read CSV rows as dictionaries; due 2026-10-17; last result assisted.
 
 ## Awaiting initial assessment
 
@@ -48,7 +50,6 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | sql.count.nulls: COUNT and NULLs | 2026-10-23 | sql.join.preservation |
 | sql.group.grain: Customer identity and grouping grain | 2026-10-24 | sql.join.keys |
 | sql.sum.nulls: SUM without non-NULL input | 2026-10-25 | sql.count.nulls |
-| py.records.cleaning: Record access, accumulation and conversion | 2026-10-26 | py.dict.access, py.dict.mutate |
 | py.dict.remove: Removing dictionary items | 2026-10-27 | py.dict.access, py.dict.mutate |
 | py.modules.main: Imports and the main guard | 2026-10-28 | None |
 | py.paths.imports: File paths and module lookup | 2026-10-29 | None |
@@ -63,14 +64,16 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 
 - Exercise SQL-002: assisted. Historical exercise evidence is separate from concept assessment counts.
 - Exercise SQL-003: assisted. Historical exercise evidence is separate from concept assessment counts.
-- Exercise PY-001: needs_guidance. Historical exercise evidence is separate from concept assessment counts.
+- Exercise PY-001: assisted. Historical exercise evidence is separate from concept assessment counts.
 - py.dict.access: Unassessed; linked mistakes M-PY-001.
 - py.dict.mutate: Unassessed; linked mistakes M-PY-001.
 - sql.count.nulls: Unassessed; linked mistakes M-SQL-001.
 - sql.join.keys: Unassessed; linked mistakes M-SQL-002.
 - sql.group.grain: Unassessed; linked mistakes M-SQL-003.
 - sql.sum.nulls: Unassessed; linked mistakes M-SQL-004, M-SQL-005.
-- py.records.cleaning: Unassessed; linked mistakes M-PY-002, M-PY-003.
+- py.records.cleaning: Learning with help; linked mistakes M-PY-002, M-PY-003, M-PY-004, M-PY-005, M-PY-006, M-PY-007, M-PY-008, M-PY-009, M-PY-010.
+- py.functions.basics: Learning with help; linked mistakes M-PY-011.
+- py.csv.read: Learning with help; linked mistakes M-PY-012.
 
 ## Coverage gaps
 
@@ -82,8 +85,8 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
-- No eligible review is due today. Keep the exact pending learning task in progress/current.md; add a short due follow-up in the next suitable session.
-- 20 topics await assessment. One diagnostic per suitable session needs at least 20 sessions; new notes can extend this. Replan missed slots without restarting.
+- sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
+- 19 topics await assessment. One diagnostic per suitable session needs at least 19 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -104,11 +107,13 @@ Check prerequisites first. Teach missing understanding before retention practice
 | sql.join.keys | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | sql.group.grain | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | sql.sum.nulls | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
-| py.records.cleaning | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.records.cleaning | Learning with help | 2026-10-16 | 2026-10-17 | tools/python/exercises/001-record-cleaning/attempts/011-copy-cleaner-fresh-input.ipynb; help=True, notes=None, hints=None |
 | py.dict.remove | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.list.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.list.mutate | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
-| py.list.records | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.list.records | Unassessed | 2026-10-16 | None | tools/python/exercises/001-record-cleaning/attempts/005-payment-list-loop.ipynb; help=None, notes=None, hints=None |
+| py.functions.basics | Learning with help | 2026-10-16 | 2026-10-17 | tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb; help=True, notes=None, hints=None |
+| py.csv.read | Learning with help | 2026-10-16 | 2026-10-17 | tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb; help=True, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -119,8 +124,13 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/.obsidian/app.json](../../Notes/.obsidian/app.json): App configuration; no learning coverage.
 - [Notes/.obsidian/appearance.json](../../Notes/.obsidian/appearance.json): App configuration; no learning coverage.
 - [Notes/.obsidian/core-plugins.json](../../Notes/.obsidian/core-plugins.json): App configuration; no learning coverage.
-- [Notes/.obsidian/graph.json](../../Notes/.obsidian/graph.json): App configuration; no learning coverage.
-- [Notes/.obsidian/workspace.json](../../Notes/.obsidian/workspace.json): App configuration; no learning coverage.
+- [Notes/New Syntax/README.md](../../Notes/New%20Syntax/README.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/New Syntax/dictionary-copy.md](../../Notes/New%20Syntax/dictionary-copy.md)
+  - Copy a dictionary before changing it: py.dict.mutate, py.records.cleaning
+- [Notes/New Syntax/list-plus.md](../../Notes/New%20Syntax/list-plus.md)
+  - Join lists using +: py.list.basics
+  - Join lists using + / A small example: py.list.basics, py.list.records
+  - Join lists using + / Why the square brackets matter: py.list.basics
 - [Notes/Python/Concepts/Hashicorp_vault.md](../../Notes/Python/Concepts/Hashicorp_vault.md)
   - Step 1 : importing hvac: vault.kv.read
   - Step 2 : creating your logger object: py.logging.basics
@@ -132,6 +142,11 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/Python/Concepts/Logging.md](../../Notes/Python/Concepts/Logging.md)
   - Notes / Logging Module: py.logging.basics, py.paths.imports
   - When you are not sure about the error using logging.exception in the except section.: py.logging.basics
+- [Notes/Python/Concepts/csv-reading.md](../../Notes/Python/Concepts/csv-reading.md)
+  - Read a CSV file: py.csv.read
+  - Read a CSV file / Read rows with DictReader: py.csv.read
+  - Read a CSV file / Import names must match: py.csv.read
+  - Read a CSV file / Pass records to the cleaner: py.csv.read
 - [Notes/Python/Concepts/dictionaries.md](../../Notes/Python/Concepts/dictionaries.md)
   - Dictionaries: py.dict.access
   - Dictionaries / Accessing items: py.dict.access
@@ -144,6 +159,10 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Dictionaries / Remove Items : / Method 3 : deleting the dict & deleting the item using del: py.dict.remove
   - Dictionaries / Remove Items : / Method 4 : clear the data in dictionary: py.dict.remove
   - Dictionaries / Looping through Dictionaries: py.dict.mutate
+- [Notes/Python/Concepts/functions.md](../../Notes/Python/Concepts/functions.md)
+  - Functions: py.functions.basics
+  - Functions / Input and return: py.functions.basics
+  - Functions / Fresh lists for each call: py.functions.basics
 - [Notes/Python/Concepts/lists.md](../../Notes/Python/Concepts/lists.md)
   - Lists: py.list.basics
   - Lists / Why we use lists: py.list.basics

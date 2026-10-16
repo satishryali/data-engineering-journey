@@ -40,3 +40,7 @@ Save checkpoint / This is the checkpoint: save learning state only; do not chang
 Finish also saves a checkpoint. Follow README.md for the complete command table and missing end-of-day summary procedure. Discussing these phrases does not start or stop an interval.
 
 A CSV does not tick continuously. Timestamps allow elapsed time to be calculated when the assistant next runs. Timed notifications use the app's existing scheduled reminders. Tracking requires access to this log; a different chat without that access cannot automatically update it.
+
+## Checkpoints at timer commands
+
+Follow [Checkpoint commands](checkpoints.md). Pause, Resume [topic], Start [topic] and explicit topic switches save the meaningful unsaved learning context as well as recording the timer action immediately. Resume starts a new interval; it does not count the break. Update current.md and START-HERE.md together with the timer state and exact next task. If nothing new was learned, update the handoff/timer state without duplicating prior learning history or assessments. Ordinary done replies do not trigger saves.

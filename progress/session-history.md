@@ -157,3 +157,94 @@ Evidence: `tracking/study-log.csv#2026-10-15-day-end`; `tools/python/exercises/0
 Implemented the requested notes-driven revision upgrade using the existing five roles and authoritative records. Inventoried Notes and tool note files: 53 learning sections mapped to 20 concepts; two metadata/navigation sections and non-learning files excluded with reasons. Preserved 16 IDs and added four unassessed dictionary/list concepts, each with separate adjustable initial slots, prerequisites and source mappings. Added generated Notes/revision/plan.md, section-change detection, explicit performance states, coverage/neglect reporting, bounded session candidates and command integration. Installed six updated skill definitions with backup; configuration unchanged. No quiz, learner attempt, scored review, mistake observation or timer event created. Existing queue dates, review history, skill evidence and attempts preserved; end-of-day totals remain 2h48m34s, uncertain interval excluded. Proposed next suitable session: pending dictionary task (~5m), then a due SQL COUNT/NULL task (~10m) if suitable. Exact pending task unchanged; all timers stopped. Setup saved locally, not committed/pushed.
 
 Evidence: `reference/learning-coach.md#notes-drive-revision`; `tracking/note_revision.py`; `Notes/revision/plan.md`
+
+<!-- checkpoint:CP-20261016-PY002-notebook-01 -->
+## 2026-10-16 — CP-20261016-PY002-notebook-01 (learning)
+
+Reviewed saved notebook cells 0-4: dictionary amount lookup returned string 500, assignment changed it to string 750, and final dictionary retained order_id 101. Correct task behaviour demonstrated using Jupyter expression display. Tutor had supplied expected output before notebook review; timing of notebook execution relative to help and other notes use is unknown. Not independent or delayed-retention evidence. Numeric score left unset. Python timer remains running from 09:40:20 IST on 16 October; no stop inferred. Next: Changed-record practice: starting with payment = {"payment_id": 202, "amount": "900"}, print its amount, change the amount to the string "1200", then print the whole dictionary. Submit code and output together and state any help used.
+
+Evidence: `tools/python/exercises/10-16-2026 Dict.ipynb`
+
+<!-- checkpoint:CP-20261016-PY002-changed-02 -->
+## 2026-10-16 — CP-20261016-PY002-changed-02 (learning)
+
+Reviewed changed-record notebook cells 5-8: payment amount lookup displayed string 900, assignment changed it to string 1200, final dictionary preserved payment_id 202. Correct executed changed example; used Jupyter expression display rather than print. Assistance not reported, so independence unconfirmed; no numeric score or delayed-retention claim. Immutable notebook snapshot preserved. Next: Create two payment dictionaries with payment_id 202/203 and amount strings "1200"/"450". Put both whole dictionaries in a payments list. Use a for loop to print each payment amount. Submit predicted output, code and actual output together; state any notes or help used. No numeric conversion or exception handling yet.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/004-dictionary-changed-record.ipynb`
+
+<!-- checkpoint:CP-20261016-PY-list-loop-03 -->
+## 2026-10-16 — CP-20261016-PY-list-loop-03 (learning)
+
+Reviewed notebook cells 9-14: learner created two whole dictionaries, appended both to payments, and looped over the list with print(i["amount"]). Executed output is 1200 then 450 on separate lines. Correct whole-record list storage, iteration and amount access demonstrated. Used order_id rather than requested payment_id consistently; amount task still correct. Prediction and help report absent; no independence or numeric score inferred. Next: Using the existing payments list, calculate one numeric total of its amount strings with a for loop and int(), then print the total once after the loop. Submit predicted output, code, actual output and a short explanation of what the loop variable holds; state notes or help used. No invalid amounts or exception handling yet.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/005-payment-list-loop.ipynb`
+
+<!-- checkpoint:CP-20261016-PY-total-04 -->
+## 2026-10-16 — CP-20261016-PY-total-04 (learning)
+
+Reviewed notebook cell 14: total = 0; for i in payments: total += int(i["amount"]). Cell 15 executed output is integer 1650. Correct numeric conversion and accumulation over two whole records. Tutor explained the four implementation steps after learner requested clarification; this is assisted application, not independent or delayed success. Jupyter expression display used rather than print. Snapshot preserves actual code/output; earlier separate-print loop remains in snapshot 005. This only demonstrates the valid-value accumulation substep, not completion of PY-001 cleaner, functions, malformed input or exception handling. Next: Add a third payment dictionary with order_id 204 and amount string "350" to payments. Predict the new total, rerun the total calculation and show code/output. Explain briefly why total = 0 is before the loop. State any notes or help used.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/006-payment-numeric-total.ipynb`
+
+<!-- checkpoint:CP-20261016-PY-third-total-05 -->
+## 2026-10-16 — CP-20261016-PY-third-total-05 (learning)
+
+Reviewed cells 17-20: appended third record order_id 204 amount string 350; displayed three records; reset total and summed converted amounts; saved output integer 2000. Learner explained total = 0 as declaring/initializing a variable to store output. Correct purpose identified; explanation did not address placement before versus inside loop. Tutor clarified accumulator starts at zero once, changes each iteration (1200, 1650, 2000), and resetting inside loop would lose earlier amounts. Placement explanation is taught, not independently demonstrated. Prior step-by-step guidance known; current changed attempt assistance unreported. No independent, score or delayed-retention claim. Next: In a new cell, create a separate test list from payments plus one dictionary with order_id 205 and amount string "bad". Predict what the existing int-based total loop will do, then run it against the test list and share exact output/error. Preserve payments and prior working cells. No exception-handling solution supplied yet.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/007-third-payment-total.ipynb`
+
+<!-- checkpoint:CP-20261016-notes-syntax-06 -->
+## 2026-10-16 — CP-20261016-notes-syntax-06 (setup)
+
+Created learner-requested Notes/New Syntax collection and list-plus.md explaining payments + [dictionary], with a complete small example and executed output, why brackets matter, append link and shared-dictionary caveat. Mapped all three explanation sections to existing list concepts; no new assessed topic, review or learning success. Collection is for useful syntax encountered during study. Pending invalid-amount prediction/run task unchanged. Python timer still running from 09:40:20 IST.
+
+Evidence: `Notes/New Syntax/list-plus.md`; `Notes/New Syntax/README.md`
+
+<!-- checkpoint:CP-20261016-PY-invalid-error-07 -->
+## 2026-10-16 — CP-20261016-PY-invalid-error-07 (learning)
+
+Reviewed saved cells 21-23: test_payments has four dictionaries, last order_id 205 amount bad. Learner reused total=0 and int-based accumulation over test_payments; execution 53 raised ValueError: invalid literal for int() with base 10: bad. This was an intentional failure probe, not an accidental learner misconception. No prediction/help report supplied. Cell 24 total=2000 has execution 52, before failing execution 53; tutor flagged stale output rather than claiming a fresh post-error result. Snapshot preserves attempt/error. Explained int cannot convert bad and unhandled error stops the loop. No exception handling yet demonstrated. Next: Use try/except ValueError in the test_payments total loop: add valid integer amounts, print the order_id of any skipped invalid record, continue processing, and print total after the loop. Keep the failing attempt unchanged; use a new cell. Submit code and fresh output plus any help used. Tutor first supplies a separate one-value try/except example.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/008-invalid-amount-error.ipynb`
+
+<!-- checkpoint:CP-20261016-PY-handling-corrected-08 -->
+## 2026-10-16 — CP-20261016-PY-handling-corrected-08 (learning)
+
+Reviewed final per-record try/except loop execution 71: invalid order 205 reported, total 2100; valid order 206 amount 100 after bad is included. Correct assisted correction after earlier double-addition output 6050 and try-outside-loop issue. Known tutor example, diagnoses, indentation outline and run/save guidance preserved in review note; earlier attempts preserved/transcribed. This assesses conversion/error continuation only, not full cleaner or functions. No independent or delayed success. Next: Using test_payments, build valid_orders and rejected_orders lists in a new cell. Valid records keep order_id and an integer amount; rejected records keep order_id, original amount and a short reason. Handle each record separately, preserve input dictionaries, and display both lists. No function yet. Submit code/output and any help used.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/009-per-record-error-handling.ipynb`; `tools/python/exercises/001-record-cleaning/attempts/009-error-handling-review.md`
+
+<!-- checkpoint:CP-20261016-PY-pause-09 -->
+## 2026-10-16 — CP-20261016-PY-pause-09 (learning)
+
+Paused Python at 10:27:42 IST on 16 October. Interval 09:40:20-10:27:42 = 47m22s; confirmed today 47m22s, week 3h35m56s; today six-hour target remaining 5h12m38s. Prior uncertain 15 October interval excluded. Excel refreshed for 16 October. Latest reviewed cleaner-list cells 28-30 execution 85-87: lists initialized, loop converts amount for >0 condition, appends original dictionaries; saved valid amounts remain strings and rejected order 205 lacks reason. Tutor diagnosed temporary conversion versus stored value, need for new output dictionaries, missing rejection reason, and unrequested positivity filter which would silently omit zero/negative integers. These fixes not yet demonstrated; input not mutated by reviewed code. Correct separation on current positive-valid/bad dataset is partial progress, not full cleaner completion. Earlier assisted outcomes already saved, not assessed again. Next: In a new notebook cell, revise the valid_orders/rejected_orders loop: create new valid dictionaries with order_id and integer amount, create rejected dictionaries with order_id, original amount and a short reason, remove the unrequested > 0 filter, and leave input dictionaries unchanged. Run/display both lists and the input; submit output and help used. No function yet.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/010-pause-cleaner-lists.ipynb`
+
+<!-- checkpoint:CP-20261016-PY-copy-correction-10 -->
+## 2026-10-16 — CP-20261016-PY-copy-correction-10 (learning)
+
+Reviewed copy-cleaner correction and fresh-input reset. Learner execution 126 uses i.copy(), integer update and valid/rejected append; executions 131/132 recreate/display clean string input. Tutor separately executed saved fresh input then learner cleaner, verified valid integers 1200/450/350/100, rejection 205 with original bad amount/reason, unchanged input and separate output dictionaries. Distinguish tutor verification from saved learner execution order: notebook cleaner was not rerun after fresh input. Substantial guidance included mutation diagnosis, new-dictionary example, alias explanation, copy() hint and fresh input; assisted immediate correction only. Prior i.update and new_i=i attempts transcribed in review note. Existing 17 October review date preserved; full cleaner/function not completed. Next: In a fresh new-cell dataset, test the corrected copying cleaner with [{"order_id": 301, "amount": ""}, {"order_id": 302, "amount": " 300 "}, {"order_id": 303, "amount": "0"}]. Predict valid/rejected IDs and resulting amounts; run and display input plus both output lists, stating help used. Preserve earlier attempts. Function wrapping comes after this changed-input check.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/011-copy-cleaner-fresh-input.ipynb`; `tools/python/exercises/001-record-cleaning/attempts/011-copy-cleaner-review.md`
+
+<!-- checkpoint:CP-20261016-PY-pause-11 -->
+## 2026-10-16 — CP-20261016-PY-pause-11 (learning)
+
+Paused Python at 10:51:42 IST on 16 October 2026. Closed 10:34:47-10:51:42 interval: 16m55s; breaks excluded. Confirmed today 1h04m17s; six-hour target remaining 4h55m43s. Confirmed partial week 3h52m51s out of 32h. No running intervals; old uncertain 15 October interval excluded. CSV and Excel refreshed. Last reviewed learning remains assisted copy/input-preservation correction and tutor-verified valid/rejected output, already recorded; no additional attempt or review scored. Blank/space-padded/zero changed-data exercise remains pending. Next: In a fresh new-cell dataset, test the corrected copying cleaner with [{"order_id": 301, "amount": ""}, {"order_id": 302, "amount": " 300 "}, {"order_id": 303, "amount": "0"}]. Predict valid/rejected IDs and resulting amounts; run and display input plus both output lists, stating help used. Preserve earlier attempts. Function wrapping comes after this changed-input check.
+
+Evidence: `tracking/study-log.csv`; `tools/python/exercises/001-record-cleaning/attempts/011-copy-cleaner-review.md`
+
+<!-- checkpoint:CP-20261016-checkpoint-command-policy-12 -->
+## 2026-10-16 — CP-20261016-checkpoint-command-policy-12 (setup)
+
+Updated checkpoint policy at learner request: learning records are batched at explicit pause/resume/start-study, topic-switch, save, finish and session/device-handoff commands, not after done replies or task completion. reference/checkpoints.md defines natural-language aliases, timer behaviour, meaningful unsaved history, deduplication and status/report exceptions. AGENTS.md, README.md, shared coach and study-tracking guide now agree. Explicit note/config requests still authorise their requested writes. No timer, assessment or learning result changed; Python remains paused at 10:51:42 IST. Pending blank/space-padded/zero cleaner check unchanged.
+
+Evidence: `reference/checkpoints.md`; `AGENTS.md`; `reference/learning-coach.md`; `reference/study-tracking.md`; `README.md`
+
+<!-- checkpoint:CP-20261016-PY-function-csv-pause-13 -->
+## 2026-10-16 — CP-20261016-PY-function-csv-pause-13 (learning)
+
+Paused Python at 12:00:15 IST: interval 11:30:47-12:00:15 = 29m28s. Confirmed today 1h33m45s; remaining six-hour target 4h26m15s. Week confirmed 4h22m19s/32h. All timers stopped; uncertain 15 October interval excluded. Completed with guidance since last checkpoint: blank/spaces/zero cleaning after fresh-list fix; reusable clean_orders(orders) after local-list, parameter and return corrections; changed record, original five records, unchanged input and repeated/empty-call checks; CSV reading into dictionaries and cleaner outputs after import mismatch fix. Known help and overwritten attempts transcribed in review; no independent or delayed success. CSV results: valid string IDs 501/503/505 amounts 250/600/0; rejects 502/504 retain original amounts/reasons. Function and CSV notes added plus copy syntax note; mapped sections and added two exact concepts. Original attempt.py untouched. DictWriter/output-file task remains pending. Next: Write valid_orders.csv with columns order_id,amount and rejected_orders.csv with columns order_id,amount,reason from the CSV cleaner results. Use csv.DictWriter, writeheader(), writerows(), mode "w" and newline="". Leave source orders.csv unchanged. Read both outputs back using DictReader and display contents; submit code/output and help used. This task is assigned, not completed.
+
+Evidence: `tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb`; `tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-review.md`; `tools/python/exercises/001-record-cleaning/files/orders.csv`; `Notes/Python/Concepts/functions.md`; `Notes/Python/Concepts/csv-reading.md`; `Notes/New Syntax/dictionary-copy.md`
