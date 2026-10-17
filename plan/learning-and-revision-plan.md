@@ -161,3 +161,9 @@ Use reference/study-tracking.md for time accounting. Start/stop messages record 
 - Docker Compose quickstart: https://docs.docker.com/compose/gettingstarted/
 - Docker build practices: https://docs.docker.com/build/building/best-practices/
 - Compose readiness and startup: https://docs.docker.com/compose/how-tos/startup-order/
+
+## Active project: RRDAP - 17 October 2026
+
+RRDAP replaces RetailFlow; [high-level milestones](../projects/rrdap/roadmap.md) own project planning. RDS-001 Product Catalogue is active. Preserve RetailFlow's plan and setup history without crediting its time or 200-250-hour estimate to RRDAP. RRDAP remaining effort is unestimated from implementation evidence.
+
+30 November 2026 is a stretch target for a first demonstrable operational-data -> ingestion -> processing -> reporting flow. Advanced volume, performance and recovery work can extend beyond it; no guarantee. The dated curriculum remains planning context: introduce tools only when actual project requirements and measured evidence justify them. Preserve SQL/Python reviews, one Azure concept weekly, existing sustainable hour targets and Docker within project time. The prior CSV output exercise is deferred, not completed. Lab specifications are user-reported, not verified capacity; scale objectives are conditional and do not trigger large dataset generation now.

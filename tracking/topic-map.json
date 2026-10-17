@@ -9,7 +9,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
         }
       ],
       "source_history": [
@@ -24,6 +24,12 @@
           "sha256": "3a11d8193d8c00b7031077350857e8d1a758e44717721ce5a12ca8a874105040",
           "reason": "Targeted source-note corrections verified against official documentation during coach setup; not a learner assessment",
           "changed_on": "2026-10-15"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
         }
       ],
       "coverage": "active",
@@ -41,6 +47,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Accessing items"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output / Duplicate keys and live views"
         }
       ],
       "initial_assessment_date_ist": "2026-10-16"
@@ -51,7 +61,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
         }
       ],
       "source_history": [
@@ -66,6 +76,12 @@
           "sha256": "3a11d8193d8c00b7031077350857e8d1a758e44717721ce5a12ca8a874105040",
           "reason": "Targeted source-note corrections verified against official documentation during coach setup; not a learner assessment",
           "changed_on": "2026-10-15"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
         }
       ],
       "coverage": "queued",
@@ -101,6 +117,14 @@
         {
           "path": "Notes/New Syntax/dictionary-copy.md",
           "key": "Copy a dictionary before changing it"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output / Change a value or build a new dictionary"
         }
       ],
       "initial_assessment_date_ist": "2026-10-17"
@@ -629,10 +653,17 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [
         "py.dict.access",
@@ -656,6 +687,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Remove Items : / Method 4 : clear the data in dictionary"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output / Remove a key, clear contents, or delete a name"
         }
       ],
       "initial_assessment_date_ist": "2026-10-27"
@@ -829,10 +864,17 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/csv-reading.md",
-          "sha256": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350"
+          "sha256": "40df2c07b85173453451f80121ed0e4f91f15c170ddc8e004908814dec74bb15"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "sha256": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
+        }
+      ],
       "coverage": "active",
       "prerequisites": [
         "py.functions.basics",
@@ -856,9 +898,273 @@
         {
           "path": "Notes/Python/Concepts/csv-reading.md",
           "key": "Read a CSV file / Pass records to the cleaner"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / CSV files"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / A comma inside a value"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Reader versus DictReader"
         }
       ],
-      "initial_assessment_date_ist": "2026-10-16"
+      "initial_assessment_date_ist": "2026-10-16",
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "section": "Split text using split() / CSV files",
+          "prior_hash": "c08c7aa7e02fa786b704fce05872bdd77b49cfcfbb6242bb3f104c114d238de3",
+          "content_hash": "c00c38543d187edb3fa3cdd873c1f94c1f8de9a45d692ef26e49a1f5000fa20c",
+          "detected_date_ist": "2026-10-17"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "section": "Read a CSV file / Pass records to the cleaner",
+          "prior_hash": "34257c9a1e5b8f2e8cad32bd423a87a78fdf57094a0ea372f367f44767c72890",
+          "content_hash": "7af19138593e9221ab7a4b9bd826784c0edc851596819acedd696798fea747af",
+          "detected_date_ist": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "py.str.split",
+      "name": "Split strings into pieces",
+      "sources": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "sha256": "2a76934a1d04a3a5cb4e4393a85527c3a2ff3b4828244e1a4c87fc07cfcd7f5b"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "sha256": "3f5734fadbd1214bc36f11d551ef1a0ad52bf77170533acb168734ab0057b071",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.list.basics"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split()"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / Split at a chosen separator"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / Split on spaces"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / Limit the splits"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-05"
+    },
+    {
+      "id": "py.csv.write",
+      "name": "Write CSV lists and dictionaries",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "sha256": "8402a24e7dd166b362e0f36ddf1835f30aa75f1b2fd0f78d1729277e70fe12f0"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.csv.read"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Write lists as rows"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Write dictionaries as rows"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Why newline matters"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Notebook evidence"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-06"
+    },
+    {
+      "id": "py.files.methods",
+      "name": "File reading methods and position",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "sha256": "d034e576d61d94b186cd8b69b6d41be19d566f99dbf5cfc6bff000030e9b37ce"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / Read and return to the start"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / A method versus a method call"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / Look up available methods"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / Read bytes and control printed newlines"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-07"
+    },
+    {
+      "id": "py.objects.basics",
+      "name": "Objects methods and printed representation",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "sha256": "99eeb59ae0b9c97da3968ca9d2770e4ba9a0d1d4eff46e6ffcc11c264a8eca69"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Create an employee"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Choose what print displays"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-08"
+    },
+    {
+      "id": "py.random.basics",
+      "name": "Random numbers selections and repeatable sequences",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "sha256": "2679a7164afa7a6fc97185dc65a700271a917b096233709d915cda31d116a85f"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.list.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Generate numbers"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Choose from a list"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Repeat a sequence with seed"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Shuffle a list"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-09"
+    },
+    {
+      "id": "py.faker.basics",
+      "name": "Faker generators locales and commerce providers",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "sha256": "ddd2e403a1e8429086c7e0de23675ca1ffe504b1dfc06c9081140d393d8cee19"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access",
+        "py.csv.write"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Create a generator"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Build customer dictionaries"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Add the commerce provider"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Check a method argument before using it"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / What the product loop has done"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Sources"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-10"
     }
   ],
   "note_inventory": [
@@ -879,10 +1185,6 @@
       "exclusion_reason": "App configuration; no learning coverage."
     },
     {
-      "path": "Notes/.obsidian/graph.json",
-      "exclusion_reason": "App configuration; no learning coverage."
-    },
-    {
       "path": "Notes/.obsidian/workspace.json",
       "exclusion_reason": "App configuration; no learning coverage."
     },
@@ -892,7 +1194,7 @@
     },
     {
       "path": "Notes/New Syntax/dictionary-copy.md",
-      "file_hash": "a80b4d76a7090aef86547483df697155bcd32aedec338a06395fbd33e858011a",
+      "file_hash": "67d27405e819ce4ac4636d9abea468a898eecfc0d3fdbcfd568d3c9d8b11f4e3",
       "sections": [
         {
           "key": "Copy a dictionary before changing it",
@@ -907,7 +1209,7 @@
     },
     {
       "path": "Notes/New Syntax/list-plus.md",
-      "file_hash": "41bcf2978312b5921dbf615784f7e1e42e2b08e2051d45df55f693a6b45ef54f",
+      "file_hash": "23bc5e33d4ec14511df24b815c5bc853b64205c70a9eb85832acadf2d4bde420",
       "sections": [
         {
           "key": "Join lists using +",
@@ -937,8 +1239,54 @@
       ]
     },
     {
+      "path": "Notes/New Syntax/string-split.md",
+      "file_hash": "2a76934a1d04a3a5cb4e4393a85527c3a2ff3b4828244e1a4c87fc07cfcd7f5b",
+      "sections": [
+        {
+          "key": "Split text using split()",
+          "heading": "Split text using split()",
+          "content_hash": "e626ab15b6346cf48b686e34d24d00f4e3424e54ad77a705a65f9e346f4fd074",
+          "topic_ids": [
+            "py.str.split"
+          ]
+        },
+        {
+          "key": "Split text using split() / Split at a chosen separator",
+          "heading": "Split text using split() / Split at a chosen separator",
+          "content_hash": "59bded04ee7c1ab2c94b481d0e5b3509e07c51573dfc7dc643d3d6a590bdb351",
+          "topic_ids": [
+            "py.str.split"
+          ]
+        },
+        {
+          "key": "Split text using split() / Split on spaces",
+          "heading": "Split text using split() / Split on spaces",
+          "content_hash": "cecac923aef5337f2b47a9dfb7c680ba05887ddfbfa05e5dbd687921cd46ef6e",
+          "topic_ids": [
+            "py.str.split"
+          ]
+        },
+        {
+          "key": "Split text using split() / Limit the splits",
+          "heading": "Split text using split() / Limit the splits",
+          "content_hash": "f9de5e6d364eb8fd72f37b170249b2ffa87d4bba951b140c48cd46dacf2a74ed",
+          "topic_ids": [
+            "py.str.split"
+          ]
+        },
+        {
+          "key": "Split text using split() / CSV files",
+          "heading": "Split text using split() / CSV files",
+          "content_hash": "c00c38543d187edb3fa3cdd873c1f94c1f8de9a45d692ef26e49a1f5000fa20c",
+          "topic_ids": [
+            "py.csv.read"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Concepts/Hashicorp_vault.md",
-      "file_hash": "7c14dbb241bc7013e39db62c3cb04c567dea36341244728d824bbff4014ac3bf",
+      "file_hash": "288af3824dc21794a2822b32bb374cb5376505da71139b01b2515d013fd353ec",
       "sections": [
         {
           "key": "Step 1 : importing hvac",
@@ -1000,7 +1348,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Logging.md",
-      "file_hash": "2448a74bda7aa969b615d80cd294a08a96a588507582a95213d0d0f812306a53",
+      "file_hash": "4c3fdb19ebccd67c433f1c3b92e4cbbbf2e6fa32115cb3d664af4f45244a1269",
       "sections": [
         {
           "key": "Notes / Logging Module",
@@ -1023,7 +1371,7 @@
     },
     {
       "path": "Notes/Python/Concepts/csv-reading.md",
-      "file_hash": "6f2da40f69f1a3a09f6340b901e34546faf5e1d8cdd731c0abb9da5307e5cc91",
+      "file_hash": "40df2c07b85173453451f80121ed0e4f91f15c170ddc8e004908814dec74bb15",
       "sections": [
         {
           "key": "Read a CSV file",
@@ -1052,7 +1400,23 @@
         {
           "key": "Read a CSV file / Pass records to the cleaner",
           "heading": "Read a CSV file / Pass records to the cleaner",
-          "content_hash": "34257c9a1e5b8f2e8cad32bd423a87a78fdf57094a0ea372f367f44767c72890",
+          "content_hash": "7af19138593e9221ab7a4b9bd826784c0edc851596819acedd696798fea747af",
+          "topic_ids": [
+            "py.csv.read"
+          ]
+        },
+        {
+          "key": "Read a CSV file / A comma inside a value",
+          "heading": "Read a CSV file / A comma inside a value",
+          "content_hash": "b377b15078d88c52965acc369a275ad27de85bdc08780688d6ca012023f23441",
+          "topic_ids": [
+            "py.csv.read"
+          ]
+        },
+        {
+          "key": "Read a CSV file / Reader versus DictReader",
+          "heading": "Read a CSV file / Reader versus DictReader",
+          "content_hash": "be46c7ec3f5c21dcccc459145ea71861bf2234606e42c1d959d787c948759027",
           "topic_ids": [
             "py.csv.read"
           ]
@@ -1060,8 +1424,54 @@
       ]
     },
     {
+      "path": "Notes/Python/Concepts/csv-writing.md",
+      "file_hash": "8402a24e7dd166b362e0f36ddf1835f30aa75f1b2fd0f78d1729277e70fe12f0",
+      "sections": [
+        {
+          "key": "Write CSV files",
+          "heading": "Write CSV files",
+          "content_hash": "fc9936cdb7dbf6de71a742832f004f4ad14b1e1480fec639b328178992e348e4",
+          "topic_ids": [
+            "py.csv.write"
+          ]
+        },
+        {
+          "key": "Write CSV files / Write lists as rows",
+          "heading": "Write CSV files / Write lists as rows",
+          "content_hash": "fba463cdc2765ddb4cebc24f25141ba3e13cf70626efadfc127ab5e1fcb6343f",
+          "topic_ids": [
+            "py.csv.write"
+          ]
+        },
+        {
+          "key": "Write CSV files / Write dictionaries as rows",
+          "heading": "Write CSV files / Write dictionaries as rows",
+          "content_hash": "a6dee945f9e26ec1529a66de7bba6c778a4aec9a29b5cf30ee9e16aaf58369db",
+          "topic_ids": [
+            "py.csv.write"
+          ]
+        },
+        {
+          "key": "Write CSV files / Why newline matters",
+          "heading": "Write CSV files / Why newline matters",
+          "content_hash": "186c38928e91c8fb7cbe6522150c61596912b46aa486d385a75a727572049b2f",
+          "topic_ids": [
+            "py.csv.write"
+          ]
+        },
+        {
+          "key": "Write CSV files / Notebook evidence",
+          "heading": "Write CSV files / Notebook evidence",
+          "content_hash": "a759d9ee462a5687beb542a5d4910211b07b81e5984d2687f4337acde9d0075b",
+          "topic_ids": [
+            "py.csv.write"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Concepts/dictionaries.md",
-      "file_hash": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+      "file_hash": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860",
       "sections": [
         {
           "key": "Dictionaries",
@@ -1150,12 +1560,152 @@
           "topic_ids": [
             "py.dict.mutate"
           ]
+        },
+        {
+          "key": "Dictionaries / Notebook examples with output",
+          "heading": "Dictionaries / Notebook examples with output",
+          "content_hash": "ff8bdcf0b0d95a4858d6cfe3f6da342d6fff6d8e64b579bd5c207af0b3c6139a",
+          "topic_ids": [
+            "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Dictionaries / Notebook examples with output / Duplicate keys and live views",
+          "heading": "Dictionaries / Notebook examples with output / Duplicate keys and live views",
+          "content_hash": "6b6665c7f5d13dbdbf31146d310e4631c555bc2266f316a84ae59e0cab4a78c5",
+          "topic_ids": [
+            "py.dict.access"
+          ]
+        },
+        {
+          "key": "Dictionaries / Notebook examples with output / Change a value or build a new dictionary",
+          "heading": "Dictionaries / Notebook examples with output / Change a value or build a new dictionary",
+          "content_hash": "a0a7c22610aab81e9e720c062ce4b838cf0a2579fa8367ea0aa565436c24a4f0",
+          "topic_ids": [
+            "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Dictionaries / Notebook examples with output / Remove a key, clear contents, or delete a name",
+          "heading": "Dictionaries / Notebook examples with output / Remove a key, clear contents, or delete a name",
+          "content_hash": "006f9f28d87e428d5a1e4896c0373c9ade02a54c29ee475f817bafe26c41e357",
+          "topic_ids": [
+            "py.dict.remove"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/faker.md",
+      "file_hash": "ddd2e403a1e8429086c7e0de23675ca1ffe504b1dfc06c9081140d393d8cee19",
+      "sections": [
+        {
+          "key": "Generate practice data with Faker",
+          "heading": "Generate practice data with Faker",
+          "content_hash": "e4922adc42a0d396d43830a8253bc59a4008459d8506239dddb2d58e8642f919",
+          "topic_ids": [
+            "py.faker.basics"
+          ]
+        },
+        {
+          "key": "Generate practice data with Faker / Create a generator",
+          "heading": "Generate practice data with Faker / Create a generator",
+          "content_hash": "7722da195632f1f85e355d4ce0f86bfd8784b07b1746dcfe0c01e9497dc2b15c",
+          "topic_ids": [
+            "py.faker.basics"
+          ]
+        },
+        {
+          "key": "Generate practice data with Faker / Build customer dictionaries",
+          "heading": "Generate practice data with Faker / Build customer dictionaries",
+          "content_hash": "ece1509f1ef42a2400596de9a2fa5f2dbdf44ff3f05546b5714b15e915ffc797",
+          "topic_ids": [
+            "py.faker.basics"
+          ]
+        },
+        {
+          "key": "Generate practice data with Faker / Add the commerce provider",
+          "heading": "Generate practice data with Faker / Add the commerce provider",
+          "content_hash": "cff86764d559063bd426d874882bcf4d89a4694042c52fe1800b8d67b6c795cd",
+          "topic_ids": [
+            "py.faker.basics"
+          ]
+        },
+        {
+          "key": "Generate practice data with Faker / Check a method argument before using it",
+          "heading": "Generate practice data with Faker / Check a method argument before using it",
+          "content_hash": "580a5c7138504775efeb1c20b18b8af196d74c59be7a59b6e1fa1745bb536bbb",
+          "topic_ids": [
+            "py.faker.basics"
+          ]
+        },
+        {
+          "key": "Generate practice data with Faker / What the product loop has done",
+          "heading": "Generate practice data with Faker / What the product loop has done",
+          "content_hash": "5222a83afd3d2100af4cfd43ac994a698d8533494b4ec2c7dbc2045008a915ef",
+          "topic_ids": [
+            "py.faker.basics"
+          ]
+        },
+        {
+          "key": "Generate practice data with Faker / Sources",
+          "heading": "Generate practice data with Faker / Sources",
+          "content_hash": "9ea432504b2b53652d668768eb7e3e2a30f82368e6c1efbd711bae6326f2615c",
+          "topic_ids": [
+            "py.faker.basics"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/file-methods.md",
+      "file_hash": "d034e576d61d94b186cd8b69b6d41be19d566f99dbf5cfc6bff000030e9b37ce",
+      "sections": [
+        {
+          "key": "Work with an open file",
+          "heading": "Work with an open file",
+          "content_hash": "f97e69149fd4ddd254a0bd771a10260c978d3a0cc81b0edd23161715f9c2825e",
+          "topic_ids": [
+            "py.files.methods"
+          ]
+        },
+        {
+          "key": "Work with an open file / Read and return to the start",
+          "heading": "Work with an open file / Read and return to the start",
+          "content_hash": "505ab3b14479d73a7d3aa33fab574c250c41f7cfc8369b073b202ceedee85418",
+          "topic_ids": [
+            "py.files.methods"
+          ]
+        },
+        {
+          "key": "Work with an open file / A method versus a method call",
+          "heading": "Work with an open file / A method versus a method call",
+          "content_hash": "17f61fb1b8d9a9da137f4caf4324eebe9427d7e22adda9283d0413cd4411c87d",
+          "topic_ids": [
+            "py.files.methods"
+          ]
+        },
+        {
+          "key": "Work with an open file / Look up available methods",
+          "heading": "Work with an open file / Look up available methods",
+          "content_hash": "24af7b515a240c02b1ae343f0632a7c4546191ee492e5e7f3d077948528b6eb8",
+          "topic_ids": [
+            "py.files.methods"
+          ]
+        },
+        {
+          "key": "Work with an open file / Read bytes and control printed newlines",
+          "heading": "Work with an open file / Read bytes and control printed newlines",
+          "content_hash": "586107b5877e6a0f8e4b306c7cc44287e112fea9f736e72d2b0f4cb93b5f5c48",
+          "topic_ids": [
+            "py.files.methods"
+          ]
         }
       ]
     },
     {
       "path": "Notes/Python/Concepts/functions.md",
-      "file_hash": "7f4f8d43718cd181ce80f6c0acd2ddb8e2f06146c8bc9468ed8a8835b6d1da94",
+      "file_hash": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808",
       "sections": [
         {
           "key": "Functions",
@@ -1185,7 +1735,7 @@
     },
     {
       "path": "Notes/Python/Concepts/lists.md",
-      "file_hash": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267",
+      "file_hash": "56140e5c8e47aea2006593757131e3df792ed2c016ddd8484931e7bba7c6fac6",
       "sections": [
         {
           "key": "Lists",
@@ -1307,8 +1857,84 @@
       ]
     },
     {
+      "path": "Notes/Python/Concepts/objects-and-printing.md",
+      "file_hash": "99eeb59ae0b9c97da3968ca9d2770e4ba9a0d1d4eff46e6ffcc11c264a8eca69",
+      "sections": [
+        {
+          "key": "Objects and printing",
+          "heading": "Objects and printing",
+          "content_hash": "7f41f359c94db2b0d4e0151d1e40ee98969cc817b3d48ade6db85b07834ca85b",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / Create an employee",
+          "heading": "Objects and printing / Create an employee",
+          "content_hash": "c3e4ec6d49143f44e18bfbb77595e66ffa0493983da949fd42974af8959bdc6d",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / Choose what print displays",
+          "heading": "Objects and printing / Choose what print displays",
+          "content_hash": "70e4df6dab69d2e5ded41c931a95c0efc36394059022d3a49fe3941958c0cbd7",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/random.md",
+      "file_hash": "2679a7164afa7a6fc97185dc65a700271a917b096233709d915cda31d116a85f",
+      "sections": [
+        {
+          "key": "Use the random module",
+          "heading": "Use the random module",
+          "content_hash": "6f621e79eef7f906f7573f9898089454d22f1beb697eee9ee52a47786f5e85a6",
+          "topic_ids": [
+            "py.random.basics"
+          ]
+        },
+        {
+          "key": "Use the random module / Generate numbers",
+          "heading": "Use the random module / Generate numbers",
+          "content_hash": "80c2b27505f25da84376e381b254755acc5ec36c8984e7a1993da89091b2d969",
+          "topic_ids": [
+            "py.random.basics"
+          ]
+        },
+        {
+          "key": "Use the random module / Choose from a list",
+          "heading": "Use the random module / Choose from a list",
+          "content_hash": "85af8ac2c612c6d9b45ea2f34836129b9f10a0ef842b81e33cbd1442ea0456f7",
+          "topic_ids": [
+            "py.random.basics"
+          ]
+        },
+        {
+          "key": "Use the random module / Repeat a sequence with seed",
+          "heading": "Use the random module / Repeat a sequence with seed",
+          "content_hash": "a95fcd45d3ae0b93f4adeb0d6d1e101867ca1eb35d067d65856c313dce5dc32e",
+          "topic_ids": [
+            "py.random.basics"
+          ]
+        },
+        {
+          "key": "Use the random module / Shuffle a list",
+          "heading": "Use the random module / Shuffle a list",
+          "content_hash": "d7037346a197ae22e0951abd49274518d83aa4100582b73f82915d08cb17734c",
+          "topic_ids": [
+            "py.random.basics"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Concepts/with(Context_Manager).md",
-      "file_hash": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829",
+      "file_hash": "f7f0b80b399d8749a8474da8f267ceebc1276311fab18312a1b5cb3b1e28c644",
       "sections": [
         {
           "key": "using with (Automatic Cleanup)",
@@ -1322,7 +1948,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/Exeucting Commands.md",
-      "file_hash": "14d49671c20352a06ef8bc9f16048178fd395e338866e22fc6e6e07632dad3d6",
+      "file_hash": "eec116c38b586780012a7c30f034d5fc4ccafb7f8dc04a05d124d9eb2cef2cac",
       "sections": [
         {
           "key": "Execution of Commands in Postgres",
@@ -1336,7 +1962,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/postgres_connection.md",
-      "file_hash": "03095e6e496d97eaad4522f38dd25145b9643967144131a6f87be531310e5d4f",
+      "file_hash": "747cb52d8d764e893d99f9d8fd687e48bfc5f83cff3d0d245fcc8996b9a66466",
       "sections": [
         {
           "key": "Postgres Connection / Install the PostgreSQL Driver",
@@ -1429,7 +2055,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
-      "file_hash": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c",
+      "file_hash": "d5f8f0fe82173d1849b3bab314aafef4e5d6b44c81cf1a2ae7a0b0e3ec5a9341",
       "sections": [
         {
           "key": "PATH ERROR",
@@ -1447,7 +2073,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
-      "file_hash": "fa122de79baa414e18daaaaee14efb06c66179b4356538f8dcff3acab78bcd66",
+      "file_hash": "c31baab4c16010d8260c6ae51a20a599ed4423661a2ecd3e36d61bbd02d485ca",
       "sections": [
         {
           "key": "Pending Tasks",
@@ -1461,7 +2087,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Understandings.md",
-      "file_hash": "c4dd5ba7ec703771c17745d67ea93f7ebe74802002dd73ea938b8868cb38c54a",
+      "file_hash": "aa9d57515277febf0cfa9abc3d482690ec3c35d930ff4d0e18b023b00cf827da",
       "sections": [
         {
           "key": "Key Findings",
@@ -1475,7 +2101,7 @@
     },
     {
       "path": "Notes/Python/Lessons/tips.md",
-      "file_hash": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345",
+      "file_hash": "9dd7f987fa977cad88356bf010bab7710b74a594c985d2cb65059132475e508e",
       "sections": [
         {
           "key": "Tips to follow when creating dbt models,transformations or anything",
@@ -1512,7 +2138,7 @@
     },
     {
       "path": "Notes/SQL/learning-notes.md",
-      "file_hash": "b7c12513ccf0564ccb5e6772ba4cd0c7cbd99f8c68c169713bb482933903e73b",
+      "file_hash": "7bc4211fe72d8c8e52cceaddddfde4df89b6d6e42c843e7b9e6cfc4d064f28ca",
       "sections": [
         {
           "key": "sql learning notes",
@@ -1562,6 +2188,10 @@
     },
     {
       "path": "Notes/revision/mistakes.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
+      "path": "Notes/revision/notebook-questions.md",
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
     {

@@ -11,7 +11,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
         }
       ],
       "source_history": [
@@ -26,6 +26,12 @@
           "sha256": "3a11d8193d8c00b7031077350857e8d1a758e44717721ce5a12ca8a874105040",
           "reason": "Targeted source-note corrections verified against official documentation during coach setup; not a learner assessment",
           "changed_on": "2026-10-15"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
         }
       ],
       "coverage": "active",
@@ -43,6 +49,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Accessing items"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output / Duplicate keys and live views"
         }
       ],
       "initial_assessment_date_ist": "2026-10-16",
@@ -64,7 +74,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
         }
       ],
       "source_history": [
@@ -79,6 +89,12 @@
           "sha256": "3a11d8193d8c00b7031077350857e8d1a758e44717721ce5a12ca8a874105040",
           "reason": "Targeted source-note corrections verified against official documentation during coach setup; not a learner assessment",
           "changed_on": "2026-10-15"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
         }
       ],
       "coverage": "queued",
@@ -114,6 +130,14 @@
         {
           "path": "Notes/New Syntax/dictionary-copy.md",
           "key": "Copy a dictionary before changing it"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output / Change a value or build a new dictionary"
         }
       ],
       "initial_assessment_date_ist": "2026-10-17",
@@ -801,10 +825,17 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6"
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [
         "py.dict.access",
@@ -828,6 +859,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Remove Items : / Method 4 : clear the data in dictionary"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Notebook examples with output / Remove a key, clear contents, or delete a name"
         }
       ],
       "initial_assessment_date_ist": "2026-10-27",
@@ -1052,10 +1087,17 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/csv-reading.md",
-          "sha256": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350"
+          "sha256": "40df2c07b85173453451f80121ed0e4f91f15c170ddc8e004908814dec74bb15"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "sha256": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
+        }
+      ],
       "coverage": "active",
       "prerequisites": [
         "py.functions.basics",
@@ -1079,9 +1121,38 @@
         {
           "path": "Notes/Python/Concepts/csv-reading.md",
           "key": "Read a CSV file / Pass records to the cleaner"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / CSV files"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / A comma inside a value"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Reader versus DictReader"
         }
       ],
       "initial_assessment_date_ist": "2026-10-16",
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "section": "Split text using split() / CSV files",
+          "prior_hash": "c08c7aa7e02fa786b704fce05872bdd77b49cfcfbb6242bb3f104c114d238de3",
+          "content_hash": "c00c38543d187edb3fa3cdd873c1f94c1f8de9a45d692ef26e49a1f5000fa20c",
+          "detected_date_ist": "2026-10-17"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "section": "Read a CSV file / Pass records to the cleaner",
+          "prior_hash": "34257c9a1e5b8f2e8cad32bd423a87a78fdf57094a0ea372f367f44767c72890",
+          "content_hash": "7af19138593e9221ab7a4b9bd826784c0edc851596819acedd696798fea747af",
+          "detected_date_ist": "2026-10-17"
+        }
+      ],
       "assessment_status": "assisted",
       "interval_stage": 0,
       "next_review_date": "2026-10-17",
@@ -1095,6 +1166,295 @@
       "linked_mistakes": [
         "M-PY-012"
       ]
+    },
+    {
+      "id": "py.str.split",
+      "name": "Split strings into pieces",
+      "sources": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "sha256": "2a76934a1d04a3a5cb4e4393a85527c3a2ff3b4828244e1a4c87fc07cfcd7f5b"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "sha256": "3f5734fadbd1214bc36f11d551ef1a0ad52bf77170533acb168734ab0057b071",
+          "changed_on": "2026-10-17",
+          "reason": "Notebook-based examples and evidence wording; no assessment"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.list.basics"
+      ],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split()"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / Split at a chosen separator"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / Split on spaces"
+        },
+        {
+          "path": "Notes/New Syntax/string-split.md",
+          "key": "Split text using split() / Limit the splits"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-05",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.csv.write",
+      "name": "Write CSV lists and dictionaries",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "sha256": "8402a24e7dd166b362e0f36ddf1835f30aa75f1b2fd0f78d1729277e70fe12f0"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.csv.read"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Write lists as rows"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Write dictionaries as rows"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Why newline matters"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Notebook evidence"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-06",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.files.methods",
+      "name": "File reading methods and position",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "sha256": "d034e576d61d94b186cd8b69b6d41be19d566f99dbf5cfc6bff000030e9b37ce"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / Read and return to the start"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / A method versus a method call"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / Look up available methods"
+        },
+        {
+          "path": "Notes/Python/Concepts/file-methods.md",
+          "key": "Work with an open file / Read bytes and control printed newlines"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-07",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.objects.basics",
+      "name": "Objects methods and printed representation",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "sha256": "99eeb59ae0b9c97da3968ca9d2770e4ba9a0d1d4eff46e6ffcc11c264a8eca69"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Create an employee"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Choose what print displays"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-08",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.random.basics",
+      "name": "Random numbers selections and repeatable sequences",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "sha256": "2679a7164afa7a6fc97185dc65a700271a917b096233709d915cda31d116a85f"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.list.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Generate numbers"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Choose from a list"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Repeat a sequence with seed"
+        },
+        {
+          "path": "Notes/Python/Concepts/random.md",
+          "key": "Use the random module / Shuffle a list"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-09",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.faker.basics",
+      "name": "Faker generators locales and commerce providers",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "sha256": "ddd2e403a1e8429086c7e0de23675ca1ffe504b1dfc06c9081140d393d8cee19"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.dict.access",
+        "py.csv.write"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Create a generator"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Build customer dictionaries"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Add the commerce provider"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Check a method argument before using it"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / What the product loop has done"
+        },
+        {
+          "path": "Notes/Python/Concepts/faker.md",
+          "key": "Generate practice data with Faker / Sources"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-10",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     }
   ],
   "session": {

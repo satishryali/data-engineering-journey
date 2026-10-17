@@ -1,0 +1,4 @@
+file.tell()
+file.read()
+file.seek(0)
+callable()

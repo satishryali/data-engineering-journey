@@ -53,3 +53,7 @@ notes inventory process. Notes are the source of concept coverage; topic-map and
 existing CSV queue/history own identities and actual schedules. Use Notes/revision/plan.md
 as the generated view. Map new/changed learning sections before declaring coverage complete.
 Never turn a diagnostic planning date, pending question or note into an answered review.
+
+## Active distribution project
+
+RRDAP replaces RetailFlow as the primary project. Read [the RRDAP workflow](reference/rrdap.md), [project checkpoint](projects/rrdap/checkpoint.md) and active task RDS-001. One tutor coordinates the existing five roles. Business requirement and independent implementation lead; do not reveal future pain points or prescribe unnecessary tools. Preserve RetailFlow and earlier attempts as historical evidence. Shared checkpoint boundaries and canonical record authority remain unchanged.

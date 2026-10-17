@@ -262,3 +262,80 @@ Evidence: `tracking/study-log.csv#PY-20261016T133137`
 Paused CSV at 13:39:15 IST; 13:31:37-13:39:15 interval closed as 7m38s. Confirmed today 1h41m23s; ten-hour planned target remaining 8h18m37s. Partial week confirmed 4h29m57s. No running intervals; old uncertain 15 October interval excluded. Excel refreshed with baseline targets. No new submitted attempt/output or assessed learning; pending CSV writing and read-back task unchanged.
 
 Evidence: `tracking/study-log.csv#PY-20261016T133137-pause`
+
+<!-- checkpoint:CP-20261017-close-20261016 -->
+## 2026-10-17 — CP-20261017-close-20261016 (setup)
+
+Closed 16 October retrospectively on 17 October at learner request, using saved records only. Confirmed 1h41m23s in four Python sessions; last pause 13:39:15 IST; no running timer and no extra time inferred. Ten-hour personal-plan shortfall 8h18m37s; six-hour baseline shortfall 4h18m37s. Week confirmed 4h29m57s; uncertain 15 October interval excluded. Previously saved outcomes: guided dictionary/list/conversion/error-handling and input-copy practice, reusable clean_orders function, changed/empty/repeated-input checks, and CSV reading/cleaning. These remain assisted application; no new attempt, score or delayed review recorded. CSV writing and read-back are still pending. Excel refreshed for 17 October. Learner plans Python today; no timer started. Next: Write valid_orders.csv with columns order_id,amount and rejected_orders.csv with columns order_id,amount,reason from the CSV cleaner results. Use csv.DictWriter, writeheader(), writerows(), mode "w" and newline="". Leave source orders.csv unchanged. Read both outputs back using DictReader and display contents; submit code/output and help used. This task is assigned, not completed.
+
+Evidence: `tracking/study-log.csv#20261016-daily-close-recorded-20261017`; `progress/session-history.md#checkpoint:CP-20261016-PY-function-csv-pause-13`
+
+<!-- checkpoint:CP-20261017-split-reference -->
+## 2026-10-17 — CP-20261017-split-reference (setup)
+
+Saved learner-requested split() syntax reference with small expected-output examples: comma separator, default whitespace versus explicit space, maxsplit, and CSV parsing limitation. Tutor ran examples. Added notes inventory mapping and one unassessed concept with an adjustable initial diagnostic slot; no assessment, proficiency or review event. Python timer remains running from 10:37:39 IST; pending CSV writing/read-back task unchanged.
+
+Evidence: `Notes/New Syntax/string-split.md`
+
+<!-- checkpoint:CP-20261017-PY-pause-112508 -->
+## 2026-10-17 — CP-20261017-PY-pause-112508 (setup)
+
+Paused Python at 11:25:08 IST; interval 10:37:39-11:25:08 = 47m29s. Confirmed today 47m29s; ten-hour target remaining 9h12m31s; partial week 5h17m26s/32h. No running timer; old 15 October uncertain interval excluded. Requested split() reference already saved; no learner code/output, new assessment or duplicated learning evidence. Pending valid/rejected CSV writing and read-back unchanged. Excel refreshed for 17 October.
+
+Evidence: `tracking/study-log.csv#PY-20261017T103739-pause-112508`
+
+<!-- checkpoint:CP-20261017-PY-pause-114531 -->
+## 2026-10-17 — CP-20261017-PY-pause-114531 (setup)
+
+Paused Python at 11:45:31 IST; interval 11:34:12-11:45:31 = 11m19s. Confirmed today 0h58m48s; ten-hour target remaining 9h01m12s; partial week 5h28m45s/32h. Breaks and old uncertain interval excluded; no running timer. No new learning attempt/output or assessment since previous checkpoint; pending CSV writing/read-back unchanged. Excel refreshed for 17 October.
+
+Evidence: `tracking/study-log.csv#PY-20261017T113412-pause-114531`
+
+<!-- checkpoint:CP-20261017-PY-pause-123230 -->
+## 2026-10-17 — CP-20261017-PY-pause-123230 (setup)
+
+Paused Python at 12:32:30 IST; interval 12:01:53-12:32:30 = 30m37s. Confirmed today 1h29m25s; ten-hour target remaining 8h30m35s; partial week 5h59m22s/32h. Breaks and old uncertain interval excluded; no running timer. No new learning attempt/output or assessment since previous checkpoint; pending CSV writing/read-back unchanged. Excel refreshed for 17 October.
+
+Evidence: `tracking/study-log.csv#PY-20261017T120153-pause-123230`
+
+<!-- checkpoint:CP-20261017-retailflow-integration -->
+## 2026-10-17 — CP-20261017-retailflow-integration (setup)
+
+Integrated learner-requested RetailFlow with existing five-role records and discovery-first independent implementation rules. Added project overview, ten high-level milestones (200 estimated hours; 200-250 planning allowance), RF-001 brief and verified 100-row synthetic input, plus project status view. RF-001 active/assigned, no implementation or assessed skill generated. Preserved deferred CSV task, old attempts, practice changes and actual review dates. Existing timer split at 16:39:54 IST for topic attribution; today confirmed 2h49m03s, week 7h19m00s; RetailFlow closed time zero, project interval running. No dbt project found in checkout; external experiment location unknown. Shared handoffs, entry points and plan updated; no commits or external writes. Next: RF-001: Propose an approach, confirm development PostgreSQL availability, then independently load the supplied 100-order CSV and verify all task acceptance criteria, including a second run.
+
+Evidence: `projects/retailflow/README.md`; `projects/retailflow/roadmap.md`; `projects/retailflow/tasks/RF-001.md`; `projects/retailflow/input/orders-2026-10-16.csv`; `reference/retailflow.md`
+
+<!-- checkpoint:CP-20261017-rrdap-integration -->
+## 2026-10-17 — CP-20261017-rrdap-integration (setup)
+
+Integrated RRDAP as the primary project replacing RetailFlow per learner request. Added overview with explicitly user-reported lab, ten high-level phases, RDS-001 Product Catalogue brief and project checkpoint; adapted discovery-first five-role workflow, command routing and plan. Preserved superseded RetailFlow files, original input/briefs, prior practice changes, attempts, actual reviews and schedules. RDS-001 assigned, no product data/schema/implementation generated and no assessed learning. November 30 is a stretch end-to-end target; long-term scale conditional on measurements; remaining effort unestimated. Timer split at 17:45:25 IST without overlap; RetailFlow setup/planning interval 1h05m31s retained separately; RRDAP running with zero closed time. Today confirmed 3h54m34s, week 8h24m31s. No remote services verified, tools installed, external writes or commits. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
+
+Evidence: `projects/rrdap/README.md`; `projects/rrdap/roadmap.md`; `projects/rrdap/tasks/RDS-001.md`; `reference/rrdap.md`
+
+<!-- checkpoint:CP-20261017-RDS-pause-195856 -->
+## 2026-10-17 — CP-20261017-RDS-pause-195856 (setup)
+
+Paused RRDAP at 19:58:56 IST; interval 17:45:25-19:58:56 = 2h13m31s. Confirmed today 6h08m05s; ten-hour target remaining 3h51m55s; partial week 10h38m02s/32h. RRDAP closed time 2h13m31s; no running timer; old uncertain 15 October interval excluded. No new learner code/output or assessment available in this chat; no learning outcomes inferred. Existing task, prior evidence and review schedules preserved. Excel refreshed for 17 October. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
+
+Evidence: `tracking/study-log.csv#RDS-20261017T174525-pause-195856`
+
+<!-- checkpoint:CP-20261017-RDS-pause-212754 -->
+## 2026-10-17 — CP-20261017-RDS-pause-212754 (setup)
+
+Paused RRDAP at 21:27:54 IST; interval 20:56:51-21:27:54 = 31m03s. Confirmed today 6h39m08s; ten-hour target remaining 3h20m52s; partial week 11h09m05s/32h; RRDAP closed time 2h44m34s. No running interval; breaks and old uncertain 15 October time excluded. No new learner submission or assessment in this chat; existing evidence and schedules preserved. Excel refreshed for 17 October. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
+
+Evidence: `tracking/study-log.csv#RDS-20261017T205651-pause-212754`
+
+<!-- checkpoint:CP-20261017-notebook-notes -->
+## 2026-10-17 — CP-20261017-notebook-notes (setup)
+
+Created learner-requested notes from the three notebooks under practice/Modules: dictionaries, CSV, files, basic objects and random. Updated relevant existing explanations, added four notes and separate recall prompts, linked the Python index. Executed small examples in scratch space; inspected saved CSV bytes: employees.csv has extra CR, employees_w_n.csv normal endings, product_data.csv currently empty despite a saved write cell. Saved outputs show practice with assistance unknown, not independent mastery or accepted RDS-001 work. Four new concept mappings/adjustable diagnostic slots added; no scored reviews, mistake observations or schedule resets. Timer remains paused at 21:27:54 IST. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
+
+Evidence: `practice/Modules/Dictionaries.ipynb`; `practice/Modules/csv-module.ipynb`; `practice/Modules/random.ipynb`; `Notes/Python/Concepts/csv-writing.md`; `Notes/Python/Concepts/file-methods.md`; `Notes/Python/Concepts/objects-and-printing.md`; `Notes/Python/Concepts/random.md`; `Notes/Python/Concepts/dictionaries.md`; `Notes/Python/Concepts/csv-reading.md`
+
+<!-- checkpoint:CP-20261017-faker-notes -->
+## 2026-10-17 — CP-20261017-faker-notes (setup)
+
+Added requested Faker notes from previously missed projects/rrdap/Test/datafaker.ipynb: generator/locale, customer dictionaries, commerce provider and CSV loop. Inspected product_data.csv: 1,000 nonempty records and 1,001 blank rows. Verified installed ecommerce_price(as_int=True) signature; random integer argument does not set range. Preserved notebook/data; ran three standalone note examples without file writes. Updated project evidence status; no PostgreSQL acceptance, independence, correction or score inferred. Added unassessed topic and adjustable diagnostic slot; timer remains paused. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
+
+Evidence: `projects/rrdap/Test/datafaker.ipynb`; `projects/rrdap/Test/product_data.csv`; `Notes/Python/Concepts/faker.md`

@@ -5,6 +5,7 @@ attempting retrieval. Record hints and notes consulted honestly at the checkpoin
 Question presence is not evidence of assessment or a due date.
 
 Optional reference follow-up: [[revision/list-questions|List recall questions]].
+Notebook practice follow-up: [Notebook recall questions](notebook-questions.md).
 The list note was requested separately; these prompts do not replace the pending
 dictionary task or create a scheduled review.
 

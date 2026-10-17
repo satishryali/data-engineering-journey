@@ -1,33 +1,21 @@
-# Start here - 16 October 2026 (IST)
+# Start here - RRDAP, 17 October 2026 (IST)
 
 ## Current state
 
-Python CSV paused at **13:39:15 IST**, 16 October 2026. Latest interval 13:31:37-13:39:15 = **7m38s**. Confirmed today **1h41m23s**; today-only planned target **10h**, remaining **8h18m37s**. Extra four hours planned as 2h CSV and 2h context managers/related file handling; adjust scope to actual progress. Baseline remains six-hour weekdays/ten-hour weekends (50h full week). Partial week confirmed **4h29m57s / 32h baseline**. No running intervals. Old 15 October 08:11:20 interval still needs confirmation and is excluded. Excel refreshed for 16 October; it retains baseline six-hour weekday target (today remaining 4h18m37s). CSV is authoritative. No new code/output submitted during this interval; CSV writing/read-back task remains pending.
-
-## Reviewed Python work
-
-- Dictionary/list/conversion/copy foundations and per-record ValueError handling practised with guidance; earlier snapshots and feedback preserve failures/help.
-- Notebook now defines working clean_orders(orders): local fresh lists, parameter-based loop, copied output records, integer conversion, invalid original/reason retention and both returned lists.
-- Saved output checks original five orders (3 valid, 2 rejected), unchanged original input, different input (401 -> integer 75), blank/spaces/zero, repeated calls and empty input. Guided success; no independent reconstruction or delayed retention claim.
-- CSV reading uses import csv, with open and csv.DictReader. Five input rows yield 3 valid and 2 rejected as detailed in review. order_id remains a string intentionally. Original notebook uses an absolute Windows path; adjust to the actual working folder on another machine.
-- Pending CSV writing is not a completed pipeline. Historical attempt.py is not the current working solution and must not be repaired automatically.
-
-Evidence: tools/python/exercises/10-16-2026 Dict.ipynb; immutable snapshot attempts/012-function-and-csv-pause.ipynb and attempts/012-function-and-csv-review.md under tools/python/exercises/001-record-cleaning; source files/orders.csv under that exercise.
+**Real-Time Retail Distribution & Analytics Platform (RRDAP)** is active, replacing RetailFlow. **RDS-001 Product Catalogue** is in progress: Faker/commerce generator and a 1,000-record CSV found under projects/rrdap/Test; PostgreSQL loading and SQL verification remain pending. PostgreSQL is available per learner report; task connection unverified. Read [main checkpoint](progress/current.md), [project checkpoint](projects/rrdap/checkpoint.md), [current task](projects/rrdap/tasks/RDS-001.md) and [tutoring workflow](reference/rrdap.md).
 
 ## Exact next task
 
-Write valid_orders.csv with columns order_id,amount and rejected_orders.csv with columns order_id,amount,reason from the CSV cleaner results. Use csv.DictWriter, writeheader(), writerows(), mode "w" and newline="". Leave source orders.csv unchanged. Read both outputs back using DictReader and display contents; submit code/output and help used. This task is assigned, not completed.
+RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
 
-## Reviews and teaching
+## Timer and handoff
 
-Use a bounded SQL-002 COUNT/NULL review after the current Python block; SQL-001/002/003 remain due 16 October. Python cleaner/functions/CSV assisted application review due 17 October. Do not dump the whole queue. No delayed review has been answered. Follow actual queue/history and notes-driven revision mappings. Missing prediction/help declarations are not independence.
+Study timer **paused at 21:27:54 IST**. **RDS-20261017T205651** closed: **20:56:51-21:27:54 = 31m03s**. Confirmed today **6h39m08s**; ten-hour target remaining **3h20m52s**. Partial week confirmed **11h09m05s / 32h baseline**. RRDAP confirmed closed time **2h44m34s**; prior RetailFlow/Python time separate. No running timer; breaks and old uncertain 15 October interval excluded. No new learner submission or assessment in this chat; exact next task unchanged. Excel refreshed for 17 October.
 
-One meaningful task at a time. Preserve attempts and keep hints separate. Explain simply with small examples. Follow reference/checkpoints.md: ordinary done replies/reviews do not save trackers; pause/resume/start-study, explicit topic switches, save/finish and device/session handoffs consolidate only meaningful new evidence. Explicit requested note/config writes remain authorised. Resume starts a new interval only on an explicit command. No background agents or timer alerts.
+RetailFlow files/history preserved as superseded; RF-001 uncompleted. Earlier CSV output/read-back and SQL-003 remain deferred. Preserve actual attempts, notes, mistakes, skill evidence and review schedules; project setup adds no scored learning. New notebooks inspected for requested notes; saved outputs show practice, with assistance unknown. [Python notes](Notes/Python/Index.md) now include CSV writing, file methods, objects and random, plus targeted dictionary/CSV reading updates. Examples ran in scratch space; no scored review, completed project task or changed timer.
 
-## Goal and durable records
+One tutor coordinates five roles. Give one business task; learner designs/codes/debugs. No future pain-point spoilers or forced technologies. November 30 first end-to-end flow is a stretch target; long-term volume objectives require measured capacity. Lab/service availability is user-reported, not verified. No large datasets, services or pipeline implementation generated.
 
-India data engineering role-switch target February 2027, 15 LPA aspiration, neither guaranteed. Plan: 16 weeks 19 October-7 February, six-hour weekdays/ten-hour weekends (50h full week), one Azure concept weekly; Docker inside project hours. Prior experience four years support plus one development, separate from DE project experience. 90-day notice; possible 30 November resignation unconfirmed. No Azure/Snowflake access confirmed; begin locally.
+Use Start Distribution Project / Continue Distribution Project to load the next task without another timer. Save my learning saves; End session saves and closes the study interval. Existing timer commands and explicit checkpoint boundaries remain. Update both main handoffs and project checkpoint together; canonical trackers remain shared. No background agents or external Git writes authorised.
 
-Read AGENTS.md, reference/learning-coach.md, reference/checkpoints.md, plan/learning-and-revision-plan.md, current checkpoint/handoff, recent progress/session-history.md, tracking queues/mistakes/skill-state and actual attempts. Use repository-relative paths. Notes/ contains explanations; Notes/New Syntax/ is the requested useful-syntax collection. Canonical CSV/JSON trackers own evidence/schedules; generated Notes/revision views do not create success.
-
-No commit/push is authorised by this checkpoint. Save before switching devices; transfer latest files through an authorised Git sync. Git does not transfer databases, installed tools or credentials.
+Faker follow-up: [Faker notes](Notes/Python/Concepts/faker.md) capture customer generation, locale, commerce provider, the price-argument issue and extra CSV blank rows. Learner notebook/data preserved; no task acceptance, independent score or timer change.

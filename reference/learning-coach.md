@@ -239,3 +239,7 @@ Command integration:
 All existing timer behaviour, checkpoint deduplication and 1/3/7/14/30-day scheduling
 rules remain. Planning dates never occupy `next_review_date_ist` until actual scored
 learning warrants a follow-up. No timer, quiz or review is started by this setup.
+
+## Distribution project routing
+
+RRDAP replaces RetailFlow as the active project and uses these same five roles and canonical records. Read [RRDAP workflow](rrdap.md) and [project checkpoint](../projects/rrdap/checkpoint.md) for command routing, independent implementation, acceptance, time attribution and discovery rules. No separate background agents or parallel review system. RetailFlow files remain historical evidence.

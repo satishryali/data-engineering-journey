@@ -13,7 +13,9 @@ On a new computer or in a new chat, begin with [START-HERE.md](START-HERE.md). I
 3. Inspect tracking/revision-queue.csv and the latest work before selecting a task.
 4. After reviewed work, update progress/current.md, progress/session-history.md and the relevant trackers. Never mark a planned topic as completed.
 
-Current assignment: tools/python/exercises/001-record-cleaning/dictionary-refresher.md (dictionary foundations, explicitly requested; timers paused). Record cleaner and SQL-003 setup/totals are deferred, not complete. SQL-001 initial learning completed; SQL-002 initial practice completed with assistance. Early SQL/Python practice due 16 October 2026. See progress/current.md for evidence and help used.
+Current project: [RRDAP](projects/rrdap/README.md), [RDS-001 Product Catalogue](projects/rrdap/tasks/RDS-001.md). Setup complete; awaiting the learner's approach. RetailFlow is superseded with all files/history preserved. Earlier CSV output/read-back remains deferred, not complete. See progress/current.md for timer state and evidence.
+
+Say **Start Distribution Project** or **Continue Distribution Project** to load the next incomplete task without starting another timer. **Save my learning**, **Revise Distribution Project**, **Show Distribution Project progress** and **End session** use the [RRDAP workflow](reference/rrdap.md).
 
 ## Structure
 

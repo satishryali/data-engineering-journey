@@ -1,5 +1,5 @@
-# Integrated data engineering project
+# Integrated data engineering projects
 
-Planned, not built: orders/customer pipeline combining Python ingestion, PostgreSQL, dbt, selected Snowflake work, Airflow, Docker, Azure and a justified PySpark component.
+[RRDAP](rrdap/README.md) is the active project. [RDS-001 Product Catalogue](rrdap/tasks/RDS-001.md) is assigned, awaiting learner implementation. Use shared learning records and requirement-led technology decisions.
 
-Create one project folder when implementation begins. Record purpose, source/target grain, how to run, configuration, expected outputs, tests, known failures, recovery and decisions. Do not add technologies solely to make the diagram larger.
+[RetailFlow](retailflow/README.md) is superseded, preserved with its original briefs/input and setup history. RF-001 was not implemented or verified.

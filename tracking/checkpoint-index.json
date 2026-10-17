@@ -147,6 +147,83 @@
       "kind": "setup",
       "sha256": "09b08d2757e19260ce4358f37f8fe8468f83446cab2a731481ff2294076b89ce",
       "evidence_key": "70bed3ae6f12e895db44969b7c929afc065848810bb383be4ffa4a380c127ba5"
+    },
+    {
+      "checkpoint_id": "CP-20261017-close-20261016",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "c6320ec3517092fba2bc26f70cb33983e3880a04c0387ba7e87cd62ae33ef8f8",
+      "evidence_key": "a411d85f590342f95edb5b03342b8938898e5cea8e08aaef4dd6ea6f6b87426d"
+    },
+    {
+      "checkpoint_id": "CP-20261017-split-reference",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "9cf167db8ccb3f223b2def9dcfd0cc2c4b6982fc430609789940eca893dcf2e6",
+      "evidence_key": "5f927b48e0f2c3a6798599d818dcc5fd032c9068e3de4875fcd9caef3a195020"
+    },
+    {
+      "checkpoint_id": "CP-20261017-PY-pause-112508",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "f30b0ba1ac69200fad1ae9dd1defe0df0f4b9db5a821d689b298e4595bf368a6",
+      "evidence_key": "83599be5de2fb86a320d6906ba527d088040f32d257b1dc0b7176e5f31d26d75"
+    },
+    {
+      "checkpoint_id": "CP-20261017-PY-pause-114531",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "6d381a693c3280048d8b5e996c4648dd252c51eba058aad665534cb78db65353",
+      "evidence_key": "7f3e77f5f7d38d04bda50eba3a3f0f7e2edd20bc688073f935b817db495bd493"
+    },
+    {
+      "checkpoint_id": "CP-20261017-PY-pause-123230",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "15dc6f5fde15a07722786db89d26cc47948785fefb94731202bc72c60b675961",
+      "evidence_key": "14217a5a723ceef372e6ae26c95126272718bf352b28e8ccc9f82b3d07c7ab9d"
+    },
+    {
+      "checkpoint_id": "CP-20261017-retailflow-integration",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "2bfd2e0d1645b1f1d6c6866c671feca6115681bcb921290c83749b50ce8a35e1",
+      "evidence_key": "96fa3c737fc506833067414075edf8208785290b8b50dc1bf694fcd13d390469"
+    },
+    {
+      "checkpoint_id": "CP-20261017-rrdap-integration",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "d62246adc1ad546877b481187384aa566cd1b75771e532234b882066a4928ad4",
+      "evidence_key": "6c3ab003eb6ddb5b6a90f64a9a94ed86b8e9693332d7a67d9796b999fde16f8f"
+    },
+    {
+      "checkpoint_id": "CP-20261017-RDS-pause-195856",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "05385f8c59d4b4631da2987a216ab08a824c6c2c48e30f7524d28eaf138a1906",
+      "evidence_key": "e8f3a471bbc9cb726267a466e7efd9591350c4645ece711223d5b33a403a542e"
+    },
+    {
+      "checkpoint_id": "CP-20261017-RDS-pause-212754",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "7aa843c0d378ba3f4d1644b66b75232fa1707bea79885a5217e25d1d689f768e",
+      "evidence_key": "81fbd812208f1de34117d5269eca648b779dedca33fb3e615e71b03c35075e06"
+    },
+    {
+      "checkpoint_id": "CP-20261017-notebook-notes",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "bc8413a61d63ab7bf3cdd9d4a46c3272c9f944578b985303bb5057b96d184abc",
+      "evidence_key": "76eb99c331420872369f10d8e51a4e5ad8309e415300182b8e4e9323c67adf10"
+    },
+    {
+      "checkpoint_id": "CP-20261017-faker-notes",
+      "date_ist": "2026-10-17",
+      "kind": "setup",
+      "sha256": "21266cef006f39913ccb4fec8d5c7cf13edbe7fd3c654cb1241f30ae0e3343e9",
+      "evidence_key": "c91a01cb654a58e4e4cf27129a3f27af0cb5120eb0814dc3558f1298043e1c57"
     }
   ]
 }

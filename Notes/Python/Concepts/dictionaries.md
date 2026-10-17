@@ -154,3 +154,85 @@ Reference: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
         print(i,j)
 
     ```
+
+## Notebook examples with output
+
+These small examples fill the output gaps in the earlier syntax notes. Each example starts with its own input.
+
+### Duplicate keys and live views
+
+```python
+car = {"brand": "Ford", "year": 1964, "year": 2000}
+keys = car.keys()
+print(car["year"])
+car["color"] = "white"
+print(list(keys))
+print(list(car.values()))
+print(list(car.items()))
+print("brand" in car)
+```
+
+Expected output:
+
+```text
+2000
+['brand', 'year', 'color']
+['Ford', 2000, 'white']
+[('brand', 'Ford'), ('year', 2000), ('color', 'white')]
+True
+```
+
+The later value for a duplicate key wins. `keys()` returns a live view: it reflects later dictionary changes. `values()` gives values; `items()` gives key/value pairs. `in` checks keys here.
+The notebook also used `dict(name="john", age=36)` to construct a dictionary with string keys.
+
+### Change a value or build a new dictionary
+
+```python
+amounts = {"a": 10, "b": 20}
+doubled = {key: value * 2 for key, value in amounts.items()}
+print(amounts)
+print(doubled)
+amounts.update([("a", 30)])
+amounts |= {"b": 40, "c": 50}
+print(amounts)
+```
+
+Expected output:
+
+```text
+{'a': 10, 'b': 20}
+{'a': 20, 'b': 40}
+{'a': 30, 'b': 40, 'c': 50}
+```
+
+The comprehension builds a new dictionary; it does not change `amounts`. `update()` and `|=` change the existing dictionary, replacing matching keys and adding new ones. `|=` needs Python 3.9 or later.
+By contrast, `amounts = {"a": 1}` assigns a replacement dictionary to the name; it does not add to the earlier one.
+
+### Remove a key, clear contents, or delete a name
+
+```python
+car = {"brand": "Ford", "year": 2020, "color": "red"}
+print(car.pop("brand"))
+print(car.popitem())
+print(car)
+car.clear()
+print(car)
+del car
+```
+
+Expected output:
+
+```text
+Ford
+('color', 'red')
+{'year': 2020}
+{}
+```
+
+- `pop(key)` removes a key and returns its value.
+- `popitem()` removes and returns the last inserted remaining key/value pair.
+- `del car["year"]` would remove just that key if present.
+- `clear()` empties the dictionary but keeps the variable.
+- `del car` removes the variable name. Using that name afterwards raises `NameError`, as the notebook output shows. It does not prove every reference to the object has disappeared.
+
+Source: [Dictionaries.ipynb](../../../practice/Modules/Dictionaries.ipynb), cells 0-65. These are saved practice outputs, with assistance unknown; no independent or delayed review score is inferred. The `NameError` follows an explicit deletion experiment, so it is not automatically a learner misconception.

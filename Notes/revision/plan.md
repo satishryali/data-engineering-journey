@@ -7,9 +7,9 @@ Source: topic-map + revision queue/history + mistakes. This plan does not record
 
 | Count | Meaning |
 | ---: | --- |
-| 64 | learning sections mapped |
+| 100 | learning sections mapped |
 | 2 | sections excluded |
-| 22 | topics total |
+| 28 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -59,6 +59,12 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | py.logging.shared: Shared logging configuration | 2026-11-02 | py.logging.basics, py.paths.imports |
 | de.ingest.seeds: Raw ingestion types and dbt seeds | 2026-11-03 | None |
 | vault.kv.read: Vault client and nested KV response | 2026-11-04 | py.dict.access |
+| py.str.split: Split strings into pieces | 2026-11-05 | py.list.basics |
+| py.csv.write: Write CSV lists and dictionaries | 2026-11-06 | py.csv.read |
+| py.files.methods: File reading methods and position | 2026-11-07 | None |
+| py.objects.basics: Objects methods and printed representation | 2026-11-08 | None |
+| py.random.basics: Random numbers selections and repeatable sequences | 2026-11-09 | py.list.basics |
+| py.faker.basics: Faker generators locales and commerce providers | 2026-11-10 | py.dict.access, py.csv.write |
 
 ## Important weak topics
 
@@ -86,7 +92,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 19 topics await assessment. One diagnostic per suitable session needs at least 19 sessions; new notes can extend this. Replan missed slots without restarting.
+- 25 topics await assessment. One diagnostic per suitable session needs at least 25 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -114,6 +120,12 @@ Check prerequisites first. Teach missing understanding before retention practice
 | py.list.records | Unassessed | 2026-10-16 | None | tools/python/exercises/001-record-cleaning/attempts/005-payment-list-loop.ipynb; help=None, notes=None, hints=None |
 | py.functions.basics | Learning with help | 2026-10-16 | 2026-10-17 | tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb; help=True, notes=None, hints=None |
 | py.csv.read | Learning with help | 2026-10-16 | 2026-10-17 | tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb; help=True, notes=None, hints=None |
+| py.str.split | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.csv.write | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.files.methods | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.objects.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.random.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.faker.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -124,7 +136,6 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/.obsidian/app.json](../../Notes/.obsidian/app.json): App configuration; no learning coverage.
 - [Notes/.obsidian/appearance.json](../../Notes/.obsidian/appearance.json): App configuration; no learning coverage.
 - [Notes/.obsidian/core-plugins.json](../../Notes/.obsidian/core-plugins.json): App configuration; no learning coverage.
-- [Notes/.obsidian/graph.json](../../Notes/.obsidian/graph.json): App configuration; no learning coverage.
 - [Notes/.obsidian/workspace.json](../../Notes/.obsidian/workspace.json): App configuration; no learning coverage.
 - [Notes/New Syntax/README.md](../../Notes/New%20Syntax/README.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/New Syntax/dictionary-copy.md](../../Notes/New%20Syntax/dictionary-copy.md)
@@ -133,6 +144,12 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Join lists using +: py.list.basics
   - Join lists using + / A small example: py.list.basics, py.list.records
   - Join lists using + / Why the square brackets matter: py.list.basics
+- [Notes/New Syntax/string-split.md](../../Notes/New%20Syntax/string-split.md)
+  - Split text using split(): py.str.split
+  - Split text using split() / Split at a chosen separator: py.str.split
+  - Split text using split() / Split on spaces: py.str.split
+  - Split text using split() / Limit the splits: py.str.split
+  - Split text using split() / CSV files: py.csv.read
 - [Notes/Python/Concepts/Hashicorp_vault.md](../../Notes/Python/Concepts/Hashicorp_vault.md)
   - Step 1 : importing hvac: vault.kv.read
   - Step 2 : creating your logger object: py.logging.basics
@@ -149,6 +166,14 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Read a CSV file / Read rows with DictReader: py.csv.read
   - Read a CSV file / Import names must match: py.csv.read
   - Read a CSV file / Pass records to the cleaner: py.csv.read
+  - Read a CSV file / A comma inside a value: py.csv.read
+  - Read a CSV file / Reader versus DictReader: py.csv.read
+- [Notes/Python/Concepts/csv-writing.md](../../Notes/Python/Concepts/csv-writing.md)
+  - Write CSV files: py.csv.write
+  - Write CSV files / Write lists as rows: py.csv.write
+  - Write CSV files / Write dictionaries as rows: py.csv.write
+  - Write CSV files / Why newline matters: py.csv.write
+  - Write CSV files / Notebook evidence: py.csv.write
 - [Notes/Python/Concepts/dictionaries.md](../../Notes/Python/Concepts/dictionaries.md)
   - Dictionaries: py.dict.access
   - Dictionaries / Accessing items: py.dict.access
@@ -161,6 +186,24 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Dictionaries / Remove Items : / Method 3 : deleting the dict & deleting the item using del: py.dict.remove
   - Dictionaries / Remove Items : / Method 4 : clear the data in dictionary: py.dict.remove
   - Dictionaries / Looping through Dictionaries: py.dict.mutate
+  - Dictionaries / Notebook examples with output: py.dict.mutate
+  - Dictionaries / Notebook examples with output / Duplicate keys and live views: py.dict.access
+  - Dictionaries / Notebook examples with output / Change a value or build a new dictionary: py.dict.mutate
+  - Dictionaries / Notebook examples with output / Remove a key, clear contents, or delete a name: py.dict.remove
+- [Notes/Python/Concepts/faker.md](../../Notes/Python/Concepts/faker.md)
+  - Generate practice data with Faker: py.faker.basics
+  - Generate practice data with Faker / Create a generator: py.faker.basics
+  - Generate practice data with Faker / Build customer dictionaries: py.faker.basics
+  - Generate practice data with Faker / Add the commerce provider: py.faker.basics
+  - Generate practice data with Faker / Check a method argument before using it: py.faker.basics
+  - Generate practice data with Faker / What the product loop has done: py.faker.basics
+  - Generate practice data with Faker / Sources: py.faker.basics
+- [Notes/Python/Concepts/file-methods.md](../../Notes/Python/Concepts/file-methods.md)
+  - Work with an open file: py.files.methods
+  - Work with an open file / Read and return to the start: py.files.methods
+  - Work with an open file / A method versus a method call: py.files.methods
+  - Work with an open file / Look up available methods: py.files.methods
+  - Work with an open file / Read bytes and control printed newlines: py.files.methods
 - [Notes/Python/Concepts/functions.md](../../Notes/Python/Concepts/functions.md)
   - Functions: py.functions.basics
   - Functions / Input and return: py.functions.basics
@@ -181,6 +224,16 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Lists / Things to remember: py.list.basics, py.list.mutate
   - Lists / Questions for later: Recall navigation or source/administrative metadata; examples above are mapped.
   - Lists / Reference: Recall navigation or source/administrative metadata; examples above are mapped.
+- [Notes/Python/Concepts/objects-and-printing.md](../../Notes/Python/Concepts/objects-and-printing.md)
+  - Objects and printing: py.objects.basics
+  - Objects and printing / Create an employee: py.objects.basics
+  - Objects and printing / Choose what print displays: py.objects.basics
+- [Notes/Python/Concepts/random.md](../../Notes/Python/Concepts/random.md)
+  - Use the random module: py.random.basics
+  - Use the random module / Generate numbers: py.random.basics
+  - Use the random module / Choose from a list: py.random.basics
+  - Use the random module / Repeat a sequence with seed: py.random.basics
+  - Use the random module / Shuffle a list: py.random.basics
 - [Notes/Python/Concepts/with(Context_Manager).md](../../Notes/Python/Concepts/with%28Context_Manager%29.md)
   - using with (Automatic Cleanup): py.context.resources
 - [Notes/Python/Database Connections/Exeucting Commands.md](../../Notes/Python/Database%20Connections/Exeucting%20Commands.md)
@@ -219,6 +272,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/revision/README.md](../../Notes/revision/README.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/mistakes.md](../../Notes/revision/mistakes.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/notebook-questions.md](../../Notes/revision/notebook-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/plan.md](../../Notes/revision/plan.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/questions.md](../../Notes/revision/questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/reviews.jsonl](../../Notes/revision/reviews.jsonl): Image, asset or machine-readable view; learning is mapped from its explanation note.

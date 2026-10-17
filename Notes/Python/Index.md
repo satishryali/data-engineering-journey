@@ -17,3 +17,8 @@
 2. Lists [[lists.md]]
 3. [Functions](Concepts/functions.md)
 4. [Read a CSV file](Concepts/csv-reading.md)
+5. [Write CSV files](Concepts/csv-writing.md)
+6. [Work with an open file](Concepts/file-methods.md)
+7. [Objects and printing](Concepts/objects-and-printing.md)
+8. [Use the random module](Concepts/random.md)
+9. [Generate practice data with Faker](Concepts/faker.md)
