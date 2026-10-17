@@ -43,3 +43,9 @@ outputs/study-tracker/*.inspect.ndjson
 # Interrupted coach writes are local recovery state, not published records.
 /tracking/.coach-transaction.json
 *.coach-tmp
+
+# RecallLab local operational state; submitted evidence is deliberately trackable.
+/apps/recalllab/data/
+/apps/recalllab/config.toml
+/apps/recalllab/.streamlit/secrets.toml
+/apps/recalllab/.venv/

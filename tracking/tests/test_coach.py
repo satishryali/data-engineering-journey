@@ -60,6 +60,11 @@ class RecordTests(unittest.TestCase):
             shutil.copy2(REPO / name, self.root / name)
         # Each test starts with a fresh index, without touching real study records.
         (self.root / 'tracking/checkpoint-index.json').write_text(coach.dump({'schema_version': 1, 'checkpoints': []}), encoding='utf-8')
+        # Isolate assessed state from the learner's growing real history.
+        fields, _ = coach.read_csv(self.root, 'tracking/revision-history.csv')
+        (self.root / 'tracking/revision-history.csv').write_text(coach.csv_text(fields, []), encoding='utf-8')
+        registry = coach.note_revision.sync(self.root, coach.read_json(self.root, 'tracking/topic-map.json'), '2026-10-17')
+        (self.root / 'tracking/topic-map.json').write_text(coach.dump(registry), encoding='utf-8')
         self.batch = {'checkpoint_id': 'CP-test-001', 'date_ist': '2026-10-20',
                       'kind': 'learning', 'summary': 'Fixture outcome, not real study.',
                       'evidence_ids': [review()['evidence']], 'reviews': [review()]}
@@ -165,7 +170,10 @@ class RecordTests(unittest.TestCase):
         with path.open('a', encoding='utf-8') as stream:
             stream.write('\nChanged source in an isolated fixture.\n')
         changed = coach.status(self.root, '2026-10-20')['source_changes_to_inspect']
-        self.assertEqual(set(changed), {'py.dict.mutate'})
+        registry = coach.read_json(self.root, 'tracking/topic-map.json')
+        last = coach.note_revision.sections(path.read_text(encoding='utf-8'))[-1]['key']
+        expected = next(s['topic_ids'] for f in registry['note_inventory'] if f['path'] == path.relative_to(self.root).as_posix() for s in f.get('sections', []) if s['key'] == last)
+        self.assertEqual(set(changed), set(expected))
         self.assertEqual((self.root / 'tracking/revision-queue.csv').read_bytes(), prior)
 
     def test_new_notes_and_unmapped_sections_are_visible_and_fail_validation(self):
