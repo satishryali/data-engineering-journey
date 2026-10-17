@@ -133,6 +133,20 @@
       "kind": "learning",
       "sha256": "9446ea113eb76faea3cd02355182702ba79dd2cceb52df1449fa9fbc374c5ef2",
       "evidence_key": "bac70cadd6992e7ada44f84c1d2c5b9ce1945025ea780bd88c3a17ab23ad4c68"
+    },
+    {
+      "checkpoint_id": "CP-20261016-CSV-start-14",
+      "date_ist": "2026-10-16",
+      "kind": "setup",
+      "sha256": "791cc950f6f4e712aa0f07dbe86f5e35649d0d84141b34495ad983594eacea40",
+      "evidence_key": "0cfbb0cbf8db85fd8c7f8dcc8e9d60c130b3a0daf6ab242560fb7d476aa4603a"
+    },
+    {
+      "checkpoint_id": "CP-20261016-CSV-pause-15",
+      "date_ist": "2026-10-16",
+      "kind": "setup",
+      "sha256": "09b08d2757e19260ce4358f37f8fe8468f83446cab2a731481ff2294076b89ce",
+      "evidence_key": "70bed3ae6f12e895db44969b7c929afc065848810bb383be4ffa4a380c127ba5"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Revision plan (generated)
 
-As of 2026-10-16 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-10-17 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
@@ -19,20 +19,20 @@ it can be incorrect or assisted. Neither count means permanent retention. Broad 
 
 ## Due today
 
-- **SQL-001**: LEFT JOIN and unmatched rows; due 2026-10-16; last result independent.
-- **SQL-002**: Counting orders after LEFT JOIN; due 2026-10-16; last result assisted.
-- **SQL-003**: Customer order totals; due 2026-10-16; last result assisted.
-
-## Overdue
-
-- None.
-
-## Upcoming reviews
-
 - **PY-001**: Python record cleaning; due 2026-10-17; last result assisted.
 - **py.records.cleaning**: Record access, accumulation and conversion; due 2026-10-17; last result assisted.
 - **py.functions.basics**: Function inputs, local result lists and return; due 2026-10-17; last result assisted.
 - **py.csv.read**: Read CSV rows as dictionaries; due 2026-10-17; last result assisted.
+
+## Overdue
+
+- **SQL-001**: LEFT JOIN and unmatched rows; due 2026-10-16; last result independent.
+- **SQL-002**: Counting orders after LEFT JOIN; due 2026-10-16; last result assisted.
+- **SQL-003**: Customer order totals; due 2026-10-16; last result assisted.
+
+## Upcoming reviews
+
+- None.
 
 ## Awaiting initial assessment
 
@@ -78,7 +78,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 ## Coverage gaps
 
 - Every included learning section has a topic mapping.
-- Neglected topics: none under the current rules (missed initial slots or 30 days since independent application).
+- Neglected topics: py.dict.access
 - Reassessment flags: none.
 
 ## Manageable session
@@ -124,6 +124,8 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/.obsidian/app.json](../../Notes/.obsidian/app.json): App configuration; no learning coverage.
 - [Notes/.obsidian/appearance.json](../../Notes/.obsidian/appearance.json): App configuration; no learning coverage.
 - [Notes/.obsidian/core-plugins.json](../../Notes/.obsidian/core-plugins.json): App configuration; no learning coverage.
+- [Notes/.obsidian/graph.json](../../Notes/.obsidian/graph.json): App configuration; no learning coverage.
+- [Notes/.obsidian/workspace.json](../../Notes/.obsidian/workspace.json): App configuration; no learning coverage.
 - [Notes/New Syntax/README.md](../../Notes/New%20Syntax/README.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/New Syntax/dictionary-copy.md](../../Notes/New%20Syntax/dictionary-copy.md)
   - Copy a dictionary before changing it: py.dict.mutate, py.records.cleaning

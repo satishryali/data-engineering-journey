@@ -879,12 +879,20 @@
       "exclusion_reason": "App configuration; no learning coverage."
     },
     {
+      "path": "Notes/.obsidian/graph.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
+      "path": "Notes/.obsidian/workspace.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
       "path": "Notes/New Syntax/README.md",
       "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
     },
     {
       "path": "Notes/New Syntax/dictionary-copy.md",
-      "file_hash": "67d27405e819ce4ac4636d9abea468a898eecfc0d3fdbcfd568d3c9d8b11f4e3",
+      "file_hash": "a80b4d76a7090aef86547483df697155bcd32aedec338a06395fbd33e858011a",
       "sections": [
         {
           "key": "Copy a dictionary before changing it",
@@ -899,7 +907,7 @@
     },
     {
       "path": "Notes/New Syntax/list-plus.md",
-      "file_hash": "23bc5e33d4ec14511df24b815c5bc853b64205c70a9eb85832acadf2d4bde420",
+      "file_hash": "41bcf2978312b5921dbf615784f7e1e42e2b08e2051d45df55f693a6b45ef54f",
       "sections": [
         {
           "key": "Join lists using +",
@@ -930,7 +938,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Hashicorp_vault.md",
-      "file_hash": "288af3824dc21794a2822b32bb374cb5376505da71139b01b2515d013fd353ec",
+      "file_hash": "7c14dbb241bc7013e39db62c3cb04c567dea36341244728d824bbff4014ac3bf",
       "sections": [
         {
           "key": "Step 1 : importing hvac",
@@ -992,7 +1000,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Logging.md",
-      "file_hash": "4c3fdb19ebccd67c433f1c3b92e4cbbbf2e6fa32115cb3d664af4f45244a1269",
+      "file_hash": "2448a74bda7aa969b615d80cd294a08a96a588507582a95213d0d0f812306a53",
       "sections": [
         {
           "key": "Notes / Logging Module",
@@ -1015,7 +1023,7 @@
     },
     {
       "path": "Notes/Python/Concepts/csv-reading.md",
-      "file_hash": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350",
+      "file_hash": "6f2da40f69f1a3a09f6340b901e34546faf5e1d8cdd731c0abb9da5307e5cc91",
       "sections": [
         {
           "key": "Read a CSV file",
@@ -1053,7 +1061,7 @@
     },
     {
       "path": "Notes/Python/Concepts/dictionaries.md",
-      "file_hash": "a9ddce3826a44717cb926d89100f2c41a8144dc854fd78da521a5e4843f69e4e",
+      "file_hash": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
       "sections": [
         {
           "key": "Dictionaries",
@@ -1147,7 +1155,7 @@
     },
     {
       "path": "Notes/Python/Concepts/functions.md",
-      "file_hash": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808",
+      "file_hash": "7f4f8d43718cd181ce80f6c0acd2ddb8e2f06146c8bc9468ed8a8835b6d1da94",
       "sections": [
         {
           "key": "Functions",
@@ -1177,7 +1185,7 @@
     },
     {
       "path": "Notes/Python/Concepts/lists.md",
-      "file_hash": "56140e5c8e47aea2006593757131e3df792ed2c016ddd8484931e7bba7c6fac6",
+      "file_hash": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267",
       "sections": [
         {
           "key": "Lists",
@@ -1300,7 +1308,7 @@
     },
     {
       "path": "Notes/Python/Concepts/with(Context_Manager).md",
-      "file_hash": "f7f0b80b399d8749a8474da8f267ceebc1276311fab18312a1b5cb3b1e28c644",
+      "file_hash": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829",
       "sections": [
         {
           "key": "using with (Automatic Cleanup)",
@@ -1314,7 +1322,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/Exeucting Commands.md",
-      "file_hash": "eec116c38b586780012a7c30f034d5fc4ccafb7f8dc04a05d124d9eb2cef2cac",
+      "file_hash": "14d49671c20352a06ef8bc9f16048178fd395e338866e22fc6e6e07632dad3d6",
       "sections": [
         {
           "key": "Execution of Commands in Postgres",
@@ -1328,7 +1336,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/postgres_connection.md",
-      "file_hash": "747cb52d8d764e893d99f9d8fd687e48bfc5f83cff3d0d245fcc8996b9a66466",
+      "file_hash": "03095e6e496d97eaad4522f38dd25145b9643967144131a6f87be531310e5d4f",
       "sections": [
         {
           "key": "Postgres Connection / Install the PostgreSQL Driver",
@@ -1421,7 +1429,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
-      "file_hash": "d5f8f0fe82173d1849b3bab314aafef4e5d6b44c81cf1a2ae7a0b0e3ec5a9341",
+      "file_hash": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c",
       "sections": [
         {
           "key": "PATH ERROR",
@@ -1439,7 +1447,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
-      "file_hash": "c31baab4c16010d8260c6ae51a20a599ed4423661a2ecd3e36d61bbd02d485ca",
+      "file_hash": "fa122de79baa414e18daaaaee14efb06c66179b4356538f8dcff3acab78bcd66",
       "sections": [
         {
           "key": "Pending Tasks",
@@ -1453,7 +1461,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Understandings.md",
-      "file_hash": "aa9d57515277febf0cfa9abc3d482690ec3c35d930ff4d0e18b023b00cf827da",
+      "file_hash": "c4dd5ba7ec703771c17745d67ea93f7ebe74802002dd73ea938b8868cb38c54a",
       "sections": [
         {
           "key": "Key Findings",
@@ -1467,7 +1475,7 @@
     },
     {
       "path": "Notes/Python/Lessons/tips.md",
-      "file_hash": "9dd7f987fa977cad88356bf010bab7710b74a594c985d2cb65059132475e508e",
+      "file_hash": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345",
       "sections": [
         {
           "key": "Tips to follow when creating dbt models,transformations or anything",
@@ -1504,7 +1512,7 @@
     },
     {
       "path": "Notes/SQL/learning-notes.md",
-      "file_hash": "7bc4211fe72d8c8e52cceaddddfde4df89b6d6e42c843e7b9e6cfc4d064f28ca",
+      "file_hash": "b7c12513ccf0564ccb5e6772ba4cd0c7cbd99f8c68c169713bb482933903e73b",
       "sections": [
         {
           "key": "sql learning notes",
@@ -1648,7 +1656,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-16",
+  "inventory_date_ist": "2026-10-17",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

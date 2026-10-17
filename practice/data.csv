@@ -1,0 +1,11 @@
+id,name,department,role,salary,hire_date,is_active
+101,Aarav Patel,Engineering,Senior Developer,95000,2021-03-15,True
+102,Priya Sharma,Marketing,Content Strategist,68000,2022-07-01,True
+103,Rohan Gupta,Finance,Financial Analyst,72000,2020-11-20,False
+104,Ananya Iyer,Engineering,Data Scientist,105000,2023-01-10,True
+105,Vikram Singh,Sales,Account Executive,62000,2022-05-18,True
+106,Neha Reddy,HR,HR Specialist,58000,2021-09-05,True
+107,Karan Verma,Engineering,DevOps Engineer,98000,2020-06-12,False
+108,Sneha Nair,Design,Product Designer,85000,2023-04-22,True
+109,Arjun Das,Sales,Sales Manager,88000,2019-08-30,True
+110,Meera Krishnan,Marketing,SEO Specialist,61000,2023-08-14,True

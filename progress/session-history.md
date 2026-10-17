@@ -248,3 +248,17 @@ Evidence: `reference/checkpoints.md`; `AGENTS.md`; `reference/learning-coach.md`
 Paused Python at 12:00:15 IST: interval 11:30:47-12:00:15 = 29m28s. Confirmed today 1h33m45s; remaining six-hour target 4h26m15s. Week confirmed 4h22m19s/32h. All timers stopped; uncertain 15 October interval excluded. Completed with guidance since last checkpoint: blank/spaces/zero cleaning after fresh-list fix; reusable clean_orders(orders) after local-list, parameter and return corrections; changed record, original five records, unchanged input and repeated/empty-call checks; CSV reading into dictionaries and cleaner outputs after import mismatch fix. Known help and overwritten attempts transcribed in review; no independent or delayed success. CSV results: valid string IDs 501/503/505 amounts 250/600/0; rejects 502/504 retain original amounts/reasons. Function and CSV notes added plus copy syntax note; mapped sections and added two exact concepts. Original attempt.py untouched. DictWriter/output-file task remains pending. Next: Write valid_orders.csv with columns order_id,amount and rejected_orders.csv with columns order_id,amount,reason from the CSV cleaner results. Use csv.DictWriter, writeheader(), writerows(), mode "w" and newline="". Leave source orders.csv unchanged. Read both outputs back using DictReader and display contents; submit code/output and help used. This task is assigned, not completed.
 
 Evidence: `tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-pause.ipynb`; `tools/python/exercises/001-record-cleaning/attempts/012-function-and-csv-review.md`; `tools/python/exercises/001-record-cleaning/files/orders.csv`; `Notes/Python/Concepts/functions.md`; `Notes/Python/Concepts/csv-reading.md`; `Notes/New Syntax/dictionary-copy.md`
+
+<!-- checkpoint:CP-20261016-CSV-start-14 -->
+## 2026-10-16 — CP-20261016-CSV-start-14 (setup)
+
+Started CSV interval at 13:31:37 IST on explicit start-timer request. Saved today-only ten-hour plan: extra 2h CSV and 2h context managers/related file handling. Baseline plan unchanged. Confirmed today 1h33m45s; running and uncertain intervals excluded. No new learning attempt or assessment. Pending task remains writing valid/rejected CSV files and reading them back. Excel refreshed using baseline targets.
+
+Evidence: `tracking/study-log.csv#PY-20261016T133137`
+
+<!-- checkpoint:CP-20261016-CSV-pause-15 -->
+## 2026-10-16 — CP-20261016-CSV-pause-15 (setup)
+
+Paused CSV at 13:39:15 IST; 13:31:37-13:39:15 interval closed as 7m38s. Confirmed today 1h41m23s; ten-hour planned target remaining 8h18m37s. Partial week confirmed 4h29m57s. No running intervals; old uncertain 15 October interval excluded. Excel refreshed with baseline targets. No new submitted attempt/output or assessed learning; pending CSV writing and read-back task unchanged.
+
+Evidence: `tracking/study-log.csv#PY-20261016T133137-pause`
