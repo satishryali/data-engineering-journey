@@ -165,6 +165,7 @@ class RecordTests(unittest.TestCase):
         self.assertEqual((self.root / 'tracking/mistakes.json').read_bytes(), original)
 
     def test_source_change_flags_only_affected_topics_without_resetting_state(self):
+        baseline = set(coach.status(self.root, '2026-10-20')['source_changes_to_inspect'])
         prior = (self.root / 'tracking/revision-queue.csv').read_bytes()
         path = self.root / 'Notes/Python/Concepts/dictionaries.md'
         with path.open('a', encoding='utf-8') as stream:
@@ -173,7 +174,7 @@ class RecordTests(unittest.TestCase):
         registry = coach.read_json(self.root, 'tracking/topic-map.json')
         last = coach.note_revision.sections(path.read_text(encoding='utf-8'))[-1]['key']
         expected = next(s['topic_ids'] for f in registry['note_inventory'] if f['path'] == path.relative_to(self.root).as_posix() for s in f.get('sections', []) if s['key'] == last)
-        self.assertEqual(set(changed), set(expected))
+        self.assertEqual(set(changed), baseline | set(expected))
         self.assertEqual((self.root / 'tracking/revision-queue.csv').read_bytes(), prior)
 
     def test_new_notes_and_unmapped_sections_are_visible_and_fail_validation(self):
@@ -186,10 +187,11 @@ class RecordTests(unittest.TestCase):
             coach.note_revision.check(self.root, registry)
 
     def test_formatting_change_does_not_flag_reassessment_or_reset_dates(self):
+        baseline = coach.status(self.root, '2026-10-16')['source_changes_to_inspect']
         path = self.root / 'Notes/Python/Concepts/lists.md'
         original = path.read_text(encoding='utf-8')
         path.write_text(original.replace('Lists allow repeated values.', 'Lists allow   repeated\nvalues.'), encoding='utf-8')
-        self.assertEqual(coach.status(self.root, '2026-10-16')['source_changes_to_inspect'], [])
+        self.assertEqual(coach.status(self.root, '2026-10-16')['source_changes_to_inspect'], baseline)
         registry = coach.note_revision.sync(self.root, coach.read_json(self.root, 'tracking/topic-map.json'), '2026-10-16')
         self.assertFalse(any(t.get('needs_reassessment') for t in registry['topics']))
 

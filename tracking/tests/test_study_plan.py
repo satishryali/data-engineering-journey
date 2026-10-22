@@ -44,6 +44,11 @@ class TargetTests(unittest.TestCase):
         self.assertEqual(self.hours('2027-01-18', '2027-01-22'), 35)
         self.assertEqual(self.hours('2026-10-22', '2027-01-22'), 729)
         self.assertEqual(plan.summary(ROOT, '2027-01-22')['weekly_target_hours'], 35)
+        self.assertEqual(plan.summary(ROOT, '2027-01-24')['weekly_target_hours'], 35)
+        self.assertEqual(plan.summary(ROOT, '2027-01-25')['weekly_target_hours'], 55)
+        allocations = plan.activity_rows(ROOT)
+        for row in allocations:
+            self.assertEqual(5*row['weekday_hours'] + 2*row['weekend_hours'], row['weekly_hours'])
 
     def test_curriculum_is_contiguous_and_csv_is_only_a_generated_plan(self):
         rows = plan.roadmap_rows(ROOT)

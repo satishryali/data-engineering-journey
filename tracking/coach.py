@@ -404,7 +404,7 @@ def weekly(root, week, as_of):
                  'See Notes/revision/plan.md for sources, initial slots and upcoming reviews.'])
     text.extend(['', '## Unassessed areas and next focus', '',
                  'Unobserved skill dimensions remain unassessed; note presence, time and setup are not proficiency.',
-                 'Keep the latest learner-selected task in `progress/current.md`; complete its prerequisite step before returning to the full cleaner. Select a few due weak concepts rather than the whole backlog.',
+                 'Keep the latest learner-selected task in `progress/current.md`; verify its prerequisite and acceptance evidence before advancing. Select a few due weak concepts rather than the whole backlog.',
                  'The tutor should interpret changes in independence from distinct dated observations, not compare hours with ability.', ''])
     relative = f'progress/weekly/{year}-W{number:02d}.md'
     transaction(root, {relative: '\n'.join(text)})

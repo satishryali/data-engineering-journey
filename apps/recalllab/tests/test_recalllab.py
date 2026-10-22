@@ -21,6 +21,15 @@ from components.calendar import heatmap
 
 
 class ReadTests(unittest.TestCase):
+    def test_heatmap_uses_date_effective_study_targets(self):
+        values = {'seconds': 6*3600, 'events': [], 'revisions': [], 'coding': [], 'intervals': []}
+        self.assertEqual(level((date(2026,10,21), values), 'All Learning'), 4)
+        self.assertEqual(level((date(2026,10,22), values), 'All Learning'), 3)
+        values['seconds'] = 7*3600
+        self.assertEqual(level((date(2026,10,22), values), 'All Learning'), 4)
+        values['seconds'] = 10*3600
+        self.assertEqual(level((date(2026,10,24), values), 'All Learning'), 4)
+
     def test_study_and_initial_practice_are_not_revision_activity(self):
         records = Records()
         initial = [dict(attempt_date_ist='2026-10-17', review_kind=kind) for kind in

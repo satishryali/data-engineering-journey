@@ -148,7 +148,7 @@ Targets come from [study-targets.json](tracking/study-targets.json): six-hour we
 
 The [single authoritative roadmap](plan/learning-and-revision-plan.md) defines thirteen Thursday–Wednesday curriculum weeks plus 21–22 January verification buffer. Weekly hour reports remain Monday–Sunday. Weekdays allocate 1.5 h learning, 2 h practice, 2 h project, 0.5 h debugging/tests and 1 h revision/interviews. Weekend days allocate 2/2.5/3/1/1.5 h respectively. Actual learning evidence, help and project acceptance determine progress.
 
-Use **Start interview practice** for one question without a timer or exposed answer; **Show my weaknesses** for observed gaps. [Interview preparation](plan/interview-preparation.md) uses the existing review history and skill model. [Engineering simulation](reference/engineering-simulation.md) adds reusable project templates without solving RDS-001. No apps directory or revision website exists in this checkout as inspected on 22 October; website views are deferred until its source is available. Existing note/revision functionality remains.
+Use **Start interview practice** for one question without a timer or exposed answer; **Show my weaknesses** for observed gaps. [Interview preparation](plan/interview-preparation.md) uses the existing review history and skill model. [Engineering simulation](reference/engineering-simulation.md) adds reusable templates without solving RDS-001. [RecallLab](apps/recalllab/README.md) retains revision, coding, notes and persistence, and now exposes schedule, roadmap, project and interview views using the same authorities. It remains local; no public deployment was performed.
 
 Behind/ahead compares confirmed time with targets for dates before the reporting date. Today's remaining target is shown separately because the day is still in progress. Future dates are not overdue. Unlogged hours mean no confirmed evidence, not proof that no study occurred; uncertain or running intervals are excluded. Hours are decimals: 1.50 means 1 hour 30 minutes. This comparison is for planning, not a requirement to make up missed hours.
 
@@ -211,7 +211,7 @@ If the learner leaves without an end-of-day message, the last saved checkpoint r
 
 ## Status
 
-Repository prepared on 15 October 2026 for the private GitHub repository above. SQL-001 initial learning has correct independent reasoning/changed examples with spelling help recorded; SQL-002 initial practice completed with assistance. Python dictionary foundations are active, cleaner/SUM report deferred, no integrated project complete. February 2027 readiness and 15 LPA are goals, not promised outcomes.
+Repository prepared on 15 October; roadmap upgraded on 22 October 2026 for Azure Data Engineer assessment on 22 January 2027. RRDAP/RDS-001 remains active and unaccepted. SQL/Python evidence, deferred tasks and actual review dates remain in the checkpoint/trackers. The roadmap and hours establish planning, not interview readiness or a career outcome.
 
 ## Notes-driven revision
 

@@ -231,6 +231,13 @@
       "kind": "setup",
       "sha256": "eb100448a91e0721471b3edd2d88a037e5d9f8ebcad6a869cf5dd010e7bb61af",
       "evidence_key": "0c833221a23a45092ea07ca35d7a85f65d069d9403047529c760b8026d58a9cd"
+    },
+    {
+      "checkpoint_id": "CP-20261022-azure-recalllab-integration",
+      "date_ist": "2026-10-22",
+      "kind": "setup",
+      "sha256": "aee89e2ee5c5d0146fe66773a72ec946d06d32052c651c814cd2e16bc25232e1",
+      "evidence_key": "c2bf039bf6da108c816e6b72a660de74cb65e042a22aced3398822bab940e0ff"
     }
   ]
 }

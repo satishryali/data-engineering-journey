@@ -4,7 +4,7 @@
 
 The [authoritative Azure interview roadmap](../plan/learning-and-revision-plan.md) now runs 22 October 2026–22 January 2027: 13 curriculum weeks plus 21–22 January verification buffer. Seven-hour weekdays and ten-hour weekends give 55 focused hours/full week. Earlier targets/intervals remain unchanged; transition reporting week 19–25 October is 52 h. Today and this week have **zero confirmed logged hours**; this is missing evidence, not proof of no study. Earlier confirmed total remains **11h09m05s**; old uncertain interval excluded. Excel refreshed for 22 October.
 
-This was repository infrastructure/planning work, not a learner assessment. No timer started, task completed, skill scored or review due date changed. Start interview practice selects a prompt and waits; Show my weaknesses uses actual observations. Engineering templates are available without assigning future tasks. No website source or apps directory exists in this checkout; website enhancements await source. RDS-001 acceptance and exact next task below are unchanged.
+This was repository infrastructure/planning work, not a learner assessment. No timer started, task completed, skill scored or review due date changed. Start interview practice selects a prompt and waits; Show my weaknesses uses actual observations. Engineering templates assign no future task. A remote update discovered RecallLab after initial local inspection; integrated it without losing records. Dashboard/progress now use shared targets and interview evidence; read-only roadmap/project/interview pages preserve existing coding/revision flows. No public deployment. RDS-001 acceptance and exact next task below are unchanged.
 
 ## Current state
 

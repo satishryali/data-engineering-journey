@@ -9,6 +9,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 IST = timezone(timedelta(hours=5, minutes=30), 'IST')
+_plan_spec = importlib.util.spec_from_file_location('recalllab_study_plan', ROOT / 'tracking/study_plan.py')
+study_plan = importlib.util.module_from_spec(_plan_spec)
+_plan_spec.loader.exec_module(study_plan)
+TARGET_POLICY = study_plan.config(ROOT)
 
 
 def now():
@@ -153,7 +157,10 @@ class Records:
 def level(day, metric, study=(.25, .5, 1, 1.25), attempts=(1, 3, 5, 8)):
     d, values = day
     if metric == 'All Learning':
-        value = values['seconds'] / ((10 if d.weekday() >= 5 else 6) * 3600)
+        hours = study_plan.target(d, TARGET_POLICY)
+        if not hours:
+            return 1 if values['seconds'] or values['events'] else 0
+        value = values['seconds'] / (hours * 3600)
         if value == 0:
             return 1 if values['events'] else 0
         return 1 + sum(value >= threshold for threshold in study)

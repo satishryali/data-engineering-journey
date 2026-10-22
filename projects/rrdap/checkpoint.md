@@ -2,6 +2,8 @@
 
 Planning-only upgrade: the [Azure interview roadmap](../../plan/learning-and-revision-plan.md) targets 22 January 2027 with 55-hour full weeks from 22 October. November 30 stays a minimal-flow stretch; deeper Azure integration may continue in December. No learner task completed or new proficiency assessed. RDS-001 and its next action remain unchanged. Timer is still paused since 17 October; no gap credited. [Engineering simulation](../../reference/engineering-simulation.md) provides templates, not future assignments.
 
+RecallLab's Project view now reads this checkpoint and the existing task/roadmap. Its schedule/interview views share canonical records; viewing them cannot accept a project task or add study time.
+
 PROJECT: Real-Time Retail Distribution & Analytics Platform
 
 - Current milestone: phase 1, Initial retail business operations.

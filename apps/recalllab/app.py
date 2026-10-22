@@ -21,6 +21,7 @@ from services.notes import headings, section, render_links, relationships, block
 from components.session_ui import daily_session
 from components.assessment_ui import manual_review
 from services.evaluation import sql_assessment
+from components.learning import overview, roadmap, project, interview, interview_progress
 
 st.set_page_config(page_title='RecallLab', page_icon='◈', layout='wide')
 st.markdown('<style>' + (Path(__file__).parent / 'components/theme.css').read_text(encoding='utf-8') + '</style>', unsafe_allow_html=True)
@@ -523,7 +524,7 @@ elif fingerprint(query) != st.session_state.get('_nav_query'):
         st.session_state['route'] = resolve(remembered)
         navigate(st.session_state['route'])
     st.session_state['_nav_query'] = fingerprint(st.query_params.to_dict())
-nav_icons = ['⌂', '☷', '▣', '⌘', '▤', '◎', '▥', '▦', '⌕', '⚙']
+nav_icons = ['⌂', '☷', '▣', '⌘', '▤', '◎', '▥', '▦', '⌕', '⚙', '▤', '▣', '◎']
 page = st.sidebar.radio('Workspace', PAGES, key='route', on_change=sidebar_changed, format_func=lambda p: nav_icons[PAGES.index(p)] + '    ' + p)
 side_metric = 'Revision Only' if page == 'Revision Calendar' else 'All Learning'
 side_stats = metrics(records.activity(today), side_metric)
@@ -554,6 +555,7 @@ try:
         st.warning('Changed source sections need inspection (history preserved): ' + ', '.join(changed))
     if page == 'Dashboard':
         st.markdown(dashboard(records, journal, today, settings), unsafe_allow_html=True)
+        overview(records, today)
         session_summary()
         if st.query_params.get('day'):
             with st.expander('Selected calendar day ? recorded evidence', expanded=True):
@@ -617,6 +619,13 @@ try:
         st.dataframe([{k: t.get(k) for k in ('id', 'state', 'prerequisites')} for t in state['topics']], hide_index=True)
     elif page == 'Progress & Analytics':
         analytics()
+        interview_progress(records, today)
+    elif page == 'Learning Roadmap':
+        roadmap(records)
+    elif page == 'Project':
+        project(records)
+    elif page == 'Interview Practice':
+        interview(records)
     elif page == 'Settings':
         settings_page()
 except (OSError, ValueError, KeyError) as error:

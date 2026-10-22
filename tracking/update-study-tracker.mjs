@@ -88,13 +88,15 @@ weekly.getRange('A7:H7').values=[['Week starting','Weekly target (h)','Closed-da
 const monday=first-((new Date(iso(first)+'T00:00:00Z').getUTCDay()+6)%7);
 let wr=8;
 for(let d=monday;d<=last;d+=7,wr++) {
+ const cutoff = d<=deadline ? Math.min(d+6,deadline) : d+6;
+ const clip = `,'Daily'!$A$15:$A$${end},"<=${cutoff}"`;
  weekly.getRange(`A${wr}`).values=[[d]];
  weekly.getRange(`B${wr}:H${wr}`).formulas=[[
- `=SUMIFS('Daily'!$D$15:$D$${end},'Daily'!$C$15:$C$${end},A${wr})`,
- `=SUMIFS('Daily'!$D$15:$D$${end},'Daily'!$C$15:$C$${end},A${wr},'Daily'!$A$15:$A$${end},"<"&'Daily'!$B$4)`,
- `=SUMIFS('Daily'!$E$15:$E$${end},'Daily'!$C$15:$C$${end},A${wr})`,
- `=MAX(C${wr}-SUMIFS('Daily'!$E$15:$E$${end},'Daily'!$C$15:$C$${end},A${wr},'Daily'!$A$15:$A$${end},"<"&'Daily'!$B$4),0)`,
- `=MAX(SUMIFS('Daily'!$E$15:$E$${end},'Daily'!$C$15:$C$${end},A${wr},'Daily'!$A$15:$A$${end},"<"&'Daily'!$B$4)-C${wr},0)`,
+ `=SUMIFS('Daily'!$D$15:$D$${end},'Daily'!$C$15:$C$${end},A${wr}${clip})`,
+ `=SUMIFS('Daily'!$D$15:$D$${end},'Daily'!$C$15:$C$${end},A${wr},'Daily'!$A$15:$A$${end},"<"&'Daily'!$B$4${clip})`,
+ `=SUMIFS('Daily'!$E$15:$E$${end},'Daily'!$C$15:$C$${end},A${wr}${clip})`,
+ `=MAX(C${wr}-SUMIFS('Daily'!$E$15:$E$${end},'Daily'!$C$15:$C$${end},A${wr},'Daily'!$A$15:$A$${end},"<"&'Daily'!$B$4${clip}),0)`,
+ `=MAX(SUMIFS('Daily'!$E$15:$E$${end},'Daily'!$C$15:$C$${end},A${wr},'Daily'!$A$15:$A$${end},"<"&'Daily'!$B$4${clip})-C${wr},0)`,
  `=MAX(B${wr}-D${wr},0)`,`=IF(B${wr}=0,0,D${wr}/B${wr})`]];
 }
 for(const sh of [daily,weekly,sessions]) {
@@ -144,7 +146,7 @@ console.log((await book.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|
 const baseline=daily.getRange('E15').values[0][0];
 if (Number(baseline)!==0 && raw.length===2 && raw[1][6]==='needs_confirmation') throw Error('Unconfirmed time counted');
 const expectedWeeks = {'2026-10-12':32, '2026-10-19':52, '2026-10-26':55, '2026-12-28':55};
-if (last === deadline) expectedWeeks['2027-01-18'] = 35;
+expectedWeeks['2027-01-18'] = 35;
 for (let r=8;r<wr;r++) {
  const start = iso(Number(weekly.getRange(`A${r}`).values[0][0]));
  if (start in expectedWeeks && Number(weekly.getRange(`B${r}`).values[0][0]) !== expectedWeeks[start]) throw Error(`Weekly target mismatch: ${start}`);

@@ -47,8 +47,8 @@ def summary(root, when):
     def seconds(row):
         return (datetime.fromisoformat(row['end_time_ist']) - datetime.fromisoformat(row['start_time_ist'])).total_seconds()
     today = sum(seconds(r) for r in confirmed if r['study_date_ist'] == when) / 3600
-    week = sum(seconds(r) for r in confirmed if monday.isoformat() <= r['study_date_ist']) / 3600
-    before = sum(seconds(r) for r in confirmed if monday.isoformat() <= r['study_date_ist'] < when) / 3600
+    week = sum(seconds(r) for r in confirmed if monday.isoformat() <= r['study_date_ist'] <= end.isoformat()) / 3600
+    before = sum(seconds(r) for r in confirmed if monday.isoformat() <= r['study_date_ist'] <= end.isoformat() and r['study_date_ist'] < when) / 3600
     by_topic = {}
     by_activity = {}
     for row in confirmed:
@@ -81,6 +81,24 @@ def roadmap_rows(root=ROOT):
                              target_hours=int(hours), status='planned'))
     if len(rows) != 13:
         raise ValueError('Expected thirteen curriculum weeks')
+    return rows
+
+
+def activity_rows(root=ROOT):
+    """Read activity allocations from the owning Markdown table, without copies."""
+    text = (root / 'plan/learning-and-revision-plan.md').read_text(encoding='utf-8')
+    rows = []
+    for line in text.splitlines():
+        cells = [c.strip() for c in line.strip().strip('|').split('|')]
+        if not line.startswith('| ') or len(cells) != 4 or cells[0] == 'Total':
+            continue
+        try:
+            weekday, weekend, weekly = map(float, cells[1:])
+        except ValueError:
+            continue
+        rows.append({'activity': cells[0], 'weekday_hours': weekday, 'weekend_hours': weekend, 'weekly_hours': weekly})
+    if len(rows) != 5 or sum(r['weekday_hours'] for r in rows) != 7 or sum(r['weekend_hours'] for r in rows) != 10 or sum(r['weekly_hours'] for r in rows) != 55:
+        raise ValueError('Activity allocations do not reconcile to the new study budget')
     return rows
 
 

@@ -17,7 +17,7 @@ class UITests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for folder in ('tracking', 'Notes', 'tools', 'progress'):
+        for folder in ('tracking', 'Notes', 'tools', 'progress', 'plan', 'projects'):
             shutil.copytree(ROOT / folder, self.root / folder, ignore=shutil.ignore_patterns('__pycache__', 'node_modules', '.obsidian', 'tests', '*.coach-tmp', '.coach-transaction.json'))
         for file in ('START-HERE.md', 'AGENTS.md'):
             shutil.copy2(ROOT / file, self.root / file)
@@ -32,9 +32,32 @@ class UITests(unittest.TestCase):
         app.run()
         self.assertFalse(app.exception)
         for page in ['Dashboard', "Today's Session", 'Question Bank', 'Coding Challenges', 'Notes Browser',
-                     'Mistakes & Weak Topics', 'Progress & Analytics', 'Revision Calendar', 'Search Notes', 'Settings']:
+                     'Mistakes & Weak Topics', 'Progress & Analytics', 'Revision Calendar', 'Search Notes', 'Settings',
+                     'Learning Roadmap', 'Project', 'Interview Practice']:
             app.radio(key='route').set_value(page).run()
             self.assertFalse(app.exception, (page, list(app.exception)))
+
+    def test_azure_schedule_and_interview_pages_preserve_records(self):
+        from datetime import datetime
+        from services.records import IST
+        protected = ['tracking/study-log.csv', 'tracking/revision-queue.csv', 'tracking/revision-history.csv',
+                     'tracking/mistakes.json', 'tracking/skill-state.json', 'progress/current.md', 'START-HERE.md']
+        before = {p: (self.root/p).read_bytes() for p in protected}
+        with patch('services.records.now', return_value=datetime(2026,10,22,12,tzinfo=IST)):
+            app = AppTest.from_file(str(APP/'app.py'), default_timeout=20).run()
+            self.assertFalse(app.exception)
+            self.assertEqual(next(m.value for m in app.metric if m.label=='Daily target'), '7.00 h')
+            self.assertEqual(next(m.value for m in app.metric if m.label=='Week target'), '52.00 h')
+            app.radio(key='route').set_value('Learning Roadmap').run()
+            self.assertEqual(len(app.dataframe[0].value), 13)
+            self.assertTrue(all(app.dataframe[0].value['status']=='planned'))
+            app.radio(key='route').set_value('Interview Practice').run()
+            self.assertFalse(app.exception)
+            self.assertFalse(app.text_area)
+            self.assertFalse(any('solution' in exp.label.lower() for exp in app.expander))
+            app.selectbox[0].set_value('INT-DELTA-001').run()
+            self.assertFalse(app.exception)
+        self.assertEqual({p: (self.root/p).read_bytes() for p in protected}, before)
 
     def test_submit_hint_retry_and_checkpoint_in_browser(self):
         app = AppTest.from_file(str(APP / 'app.py'), default_timeout=20).run()

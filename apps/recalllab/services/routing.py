@@ -3,7 +3,8 @@ import json
 from urllib.parse import urlencode
 
 PAGES = ['Dashboard', "Today's Session", 'Question Bank', 'Coding Challenges', 'Notes Browser',
-         'Mistakes & Weak Topics', 'Progress & Analytics', 'Revision Calendar', 'Search Notes', 'Settings']
+         'Mistakes & Weak Topics', 'Progress & Analytics', 'Revision Calendar', 'Search Notes', 'Settings',
+         'Learning Roadmap', 'Project', 'Interview Practice']
 
 
 def app_url(page='Dashboard', **values):

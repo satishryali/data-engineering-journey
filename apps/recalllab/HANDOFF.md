@@ -1,5 +1,7 @@
 # RecallLab development handoff
 
+22 October 2026 upgrade: integrated this implementation from remote main into the Azure-roadmap feature branch. Added shared date-effective targets in heatmap/dashboard, source-derived daily allocations, Learning Roadmap, Project and read-only Interview Practice views, plus interview evidence/source-topic summaries in analytics. Existing journal/coding/revision/checkpoint flows preserved. RDS-001 remains pending; no genuine assessment or timer event created. Final upgrade validation is recorded in [upgrade report](../../progress/azure-upgrade-2026-10-22.md). No public deployment.
+
 Completed supported local/manual release on 18 October 2026 IST. App: http://127.0.0.1:8501. Implementation and current brief are under apps/recalllab; see COMPLETION_BRIEF.md, AUDIT.md and README.md. No commit, push or deployment performed.
 
 ## Implemented

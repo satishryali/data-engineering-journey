@@ -1,5 +1,7 @@
 # RetailFlow tutoring workflow
 
+Historical workflow, superseded by RRDAP on 17 October 2026. Preserve the original targets and evidence below as history. Active tutoring uses [RRDAP](rrdap.md), the shared five-role guide and the [Azure preparation roadmap](../plan/learning-and-revision-plan.md).
+
 Superseded on 17 October 2026 by [RRDAP](rrdap.md). Preserved as historical planning; its tasks are inactive and uncompleted.
 
 

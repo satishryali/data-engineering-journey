@@ -346,3 +346,10 @@ Evidence: `projects/rrdap/Test/datafaker.ipynb`; `projects/rrdap/Test/product_da
 Upgraded existing roadmap to 13 weeks plus verification buffer, targeting Azure Data Engineer assessment on 22 January 2027. Added date-effective 7-hour weekdays from 22 October, 10-hour weekends and 55-hour full weeks; historical targets and actual intervals preserved. Integrated interview prompts/rubric and engineering templates with the existing five roles and canonical records. No apps/website source found; deferred website work. No learner assessment, task acceptance, timer start or due-date change. RDS-001 remains in progress. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
 
 Evidence: `plan/learning-and-revision-plan.md#azure-upgrade-20261022`; `tracking/study-targets.json`; `plan/interview-preparation.md`; `reference/engineering-simulation.md`
+
+<!-- checkpoint:CP-20261022-azure-recalllab-integration -->
+## 2026-10-22 — CP-20261022-azure-recalllab-integration (setup)
+
+Fetched newer remote main containing RecallLab and integrated its existing architecture. Added shared date-effective targets/allocations, roadmap/project/read-only interview views and evidence-based analytics. Preserved coding/revision/journal/checkpoint flows. Added regression checks and documented validation in progress/azure-upgrade-2026-10-22.md. Reconstructed the due historical weekly summary from saved evidence. This supersedes the initial checkout-only website absence finding. No learner assessment, task acceptance, timer change or review-date reset; no public deployment or Azure resources. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
+
+Evidence: `apps/recalllab/components/learning.py#azure-upgrade-20261022`; `progress/azure-upgrade-2026-10-22.md`; `progress/weekly/2026-W42.md#reconstructed-20261022`

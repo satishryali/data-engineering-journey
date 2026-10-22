@@ -10,6 +10,8 @@ RecallLab is a local browser interface in this checkout. It is not a second tuto
 | Observed mistakes | tracking/mistakes.json | Read; append only explicitly observed gaps through coach.record |
 | Skill dimensions | tracking/skill-state.json | Read; append only assessed dimensions through coach.record |
 | Confirmed time | tracking/study-log.csv | Read only, split closed intervals at IST midnight; never start timers |
+| Target policy and curriculum | tracking/study-targets.json; plan/learning-and-revision-plan.md | Shared study_plan helper; CSV is generated, no completion inferred |
+| Interview prompts and outcomes | tracking/interview/questions.json; canonical review event_json | Read-only prompt view; tutor records actual rubric/evidence through existing checkpoint API |
 | Active project/task | progress/current.md, START-HERE.md, projects/rrdap | Read only; revision does not replace RDS-001 |
 | Notes | Notes/ | Render original Markdown read only; no copied vault |
 | Checkpoint identity/recovery | tracking/checkpoint-index.json, coach transaction | Reuse record/recover/refresh/validate |

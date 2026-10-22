@@ -2,6 +2,14 @@
 
 Local daily revision over this repository's existing learning records. Website: **http://127.0.0.1:8501**. No new repository, cloud account or database server is needed.
 
+## Azure preparation upgrade, 22 October 2026
+
+Dashboard now reads date-effective daily/weekly targets and source-derived activity allocations from the repository roadmap/target policy. Historical six-hour weekdays stay unchanged; weekdays from 22 October are seven hours, weekends ten. Heatmap intensity uses the appropriate date's target. The transition week is 52 h, ordinary full weeks 55, final preparation partial week 35.
+
+Learning Roadmap displays thirteen planned weeks and the 21–22 January verification buffer. Project reads the existing RRDAP checkpoint, RDS-001 acceptance criteria and phase roadmap. Interview Practice presents the sixteen-category prompt bank without answers or new assessment writes. Share interview attempts with the tutor for review/checkpointing through existing authorities. Progress & Analytics shows saved interview metadata and exact source-topic hours; unassessed categories stay unassessed. Existing Coding Challenges, notes, journal, human review and checkpoint bridge remain in place.
+
+Automatic grading/execution of these new interview prompts is deferred. Existing SQL fixture tests and manual Python assessment retain their supported scope; no PostgreSQL/PySpark runner or new timer system was introduced. No public deployment or Azure resources were created. The only roadmap authority is [the repository plan](../../plan/learning-and-revision-plan.md).
+
 ## Start in Windows PowerShell
 
 From the repository root, using Python 3.12+ (verified on 3.13.7):
