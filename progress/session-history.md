@@ -339,3 +339,10 @@ Evidence: `practice/Modules/Dictionaries.ipynb`; `practice/Modules/csv-module.ip
 Added requested Faker notes from previously missed projects/rrdap/Test/datafaker.ipynb: generator/locale, customer dictionaries, commerce provider and CSV loop. Inspected product_data.csv: 1,000 nonempty records and 1,001 blank rows. Verified installed ecommerce_price(as_int=True) signature; random integer argument does not set range. Preserved notebook/data; ran three standalone note examples without file writes. Updated project evidence status; no PostgreSQL acceptance, independence, correction or score inferred. Added unassessed topic and adjustable diagnostic slot; timer remains paused. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
 
 Evidence: `projects/rrdap/Test/datafaker.ipynb`; `projects/rrdap/Test/product_data.csv`; `Notes/Python/Concepts/faker.md`
+
+<!-- checkpoint:CP-20261022-azure-roadmap-upgrade -->
+## 2026-10-22 — CP-20261022-azure-roadmap-upgrade (setup)
+
+Upgraded existing roadmap to 13 weeks plus verification buffer, targeting Azure Data Engineer assessment on 22 January 2027. Added date-effective 7-hour weekdays from 22 October, 10-hour weekends and 55-hour full weeks; historical targets and actual intervals preserved. Integrated interview prompts/rubric and engineering templates with the existing five roles and canonical records. No apps/website source found; deferred website work. No learner assessment, task acceptance, timer start or due-date change. RDS-001 remains in progress. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
+
+Evidence: `plan/learning-and-revision-plan.md#azure-upgrade-20261022`; `tracking/study-targets.json`; `plan/interview-preparation.md`; `reference/engineering-simulation.md`

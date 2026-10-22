@@ -2286,7 +2286,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-17",
+  "inventory_date_ist": "2026-10-22",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

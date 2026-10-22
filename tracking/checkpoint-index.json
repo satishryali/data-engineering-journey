@@ -224,6 +224,13 @@
       "kind": "setup",
       "sha256": "21266cef006f39913ccb4fec8d5c7cf13edbe7fd3c654cb1241f30ae0e3343e9",
       "evidence_key": "c91a01cb654a58e4e4cf27129a3f27af0cb5120eb0814dc3558f1298043e1c57"
+    },
+    {
+      "checkpoint_id": "CP-20261022-azure-roadmap-upgrade",
+      "date_ist": "2026-10-22",
+      "kind": "setup",
+      "sha256": "eb100448a91e0721471b3edd2d88a037e5d9f8ebcad6a869cf5dd010e7bb61af",
+      "evidence_key": "0c833221a23a45092ea07ca35d7a85f65d069d9403047529c760b8026d58a9cd"
     }
   ]
 }

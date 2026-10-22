@@ -17,6 +17,8 @@ High-level planning only. Do not expose future detailed tasks, expected pain poi
 
 ## Delivery target
 
+Planning reconciliation, 22 October 2026: the [Azure interview roadmap](../../plan/learning-and-revision-plan.md) targets assessment on **22 January 2027**. Its weeks own technology/practice planning; this file continues to own project phase state. **RDS-001 remains in progress; zero phases accepted.** November 30 stays a stretch for a minimal first flow; Azure integration can continue in December. Prerequisite delays move scope rather than fabricate completion. Long-term volume/recovery experiments are outside mandatory January scope. Use [engineering templates](templates/engineering-records.md) only as work actually needs them; task briefs own dependency IDs.
+
 30 November 2026 is a stretch target for a first demonstrable end-to-end flow across operational data, ingestion, processing and reporting. Zero phases complete. Do not claim feasibility from the date alone; evaluate scope and throughput from actual early implementation. Remaining effort is not yet estimated from evidence. The superseded RetailFlow 200-250-hour estimate is not a validated estimate for this larger project. Retain existing sustainable weekly study targets and reviews; protect correctness and learning quality.
 
 Long-term scope: simulated retail operations, continuous generation, genuinely independent sources representing one business, real-time/near-real-time and batch/incremental movement, transactional/analytical storage, transformations, orchestration, distributed experiments, marts/reporting, monitoring/recovery, archives and tested database restoration. Introduce entities and tables only when current business requirements need them.

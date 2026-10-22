@@ -19,7 +19,7 @@ Say **Start Distribution Project** or **Continue Distribution Project** to load 
 
 ## Structure
 
-- plan/: 16-week curriculum and weekly milestones.
+- plan/: authoritative 13-week Azure interview curriculum and generated weekly milestones, 22 October 2026–22 January 2027.
 - progress/: current checkpoint and concise session handoffs.
 - tracking/: study intervals, revision queue and actual review history.
 - tools/: notes and exercises organised by skill.
@@ -144,7 +144,11 @@ Follow reference/study-tracking.md. Start/pause/finish messages control recorded
 
 Open [the Excel tracker](outputs/study-tracker/study-hours.xlsx). Daily shows each day's target, confirmed hours, behind/ahead hours and cumulative totals. Weekly shows Monday–Sunday totals, completion percentage and hours remaining. Sessions preserves the source intervals, including uncertain entries.
 
-Targets are six hours per weekday and ten per weekend day (50 per full week). Tracking starts on 15 October 2026: that first partial week's target is 32 hours; earlier days are not charged. The initial calendar runs through 7 February 2027 and extends when refreshed after that date.
+Targets come from [study-targets.json](tracking/study-targets.json): six-hour weekdays before 22 October 2026, seven-hour weekdays from that date, ten-hour weekends throughout. The new full-week target is **55 focused hours**. Tracking starts 15 October: historical partial week 32 h; transition week 19–25 October 52 h; final preparation partial week 18–22 January 35 h. The preparation report runs through **22 January 2027** and extends for later reporting dates. Earlier dates, targets and recorded hours stay intact.
+
+The [single authoritative roadmap](plan/learning-and-revision-plan.md) defines thirteen Thursday–Wednesday curriculum weeks plus 21–22 January verification buffer. Weekly hour reports remain Monday–Sunday. Weekdays allocate 1.5 h learning, 2 h practice, 2 h project, 0.5 h debugging/tests and 1 h revision/interviews. Weekend days allocate 2/2.5/3/1/1.5 h respectively. Actual learning evidence, help and project acceptance determine progress.
+
+Use **Start interview practice** for one question without a timer or exposed answer; **Show my weaknesses** for observed gaps. [Interview preparation](plan/interview-preparation.md) uses the existing review history and skill model. [Engineering simulation](reference/engineering-simulation.md) adds reusable project templates without solving RDS-001. No apps directory or revision website exists in this checkout as inspected on 22 October; website views are deferred until its source is available. Existing note/revision functionality remains.
 
 Behind/ahead compares confirmed time with targets for dates before the reporting date. Today's remaining target is shown separately because the day is still in progress. Future dates are not overdue. Unlogged hours mean no confirmed evidence, not proof that no study occurred; uncertain or running intervals are excluded. Hours are decimals: 1.50 means 1 hour 30 minutes. This comparison is for planning, not a requirement to make up missed hours.
 

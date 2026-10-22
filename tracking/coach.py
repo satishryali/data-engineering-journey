@@ -23,6 +23,9 @@ JOURNAL = 'tracking/.coach-transaction.json'
 _spec = importlib.util.spec_from_file_location('note_revision', Path(__file__).with_name('note_revision.py'))
 note_revision = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(note_revision)
+_plan_spec = importlib.util.spec_from_file_location('study_plan', Path(__file__).with_name('study_plan.py'))
+study_plan = importlib.util.module_from_spec(_plan_spec)
+_plan_spec.loader.exec_module(study_plan)
 
 
 def dump(value):
@@ -345,7 +348,9 @@ def status(root, when):
     revision = note_revision.snapshot(root, read_json(root, 'tracking/topic-map.json'), queue,
                                      read_csv(root, 'tracking/revision-history.csv')[1],
                                      read_json(root, 'tracking/mistakes.json'), when)
-    return {'date_ist': when, 'due_items': [q['item_id'] for q in due],
+    return {'date_ist': when, 'study_targets': study_plan.summary(root, when),
+            'interview_evidence_source': 'tracking/revision-history.csv (assessment metadata in event_json)',
+            'due_items': [q['item_id'] for q in due],
             'revision_coverage': revision['coverage'], 'coverage_gaps': revision['gaps'],
             'neglected_topics': revision['neglected_topics'],
             'proposed_revision': note_revision.selection(revision, queue),
@@ -372,7 +377,8 @@ def weekly(root, week, as_of):
     text = [f'# {year}-W{number:02d} learning summary', '',
             f'Generated from saved evidence as of {as_of} IST; ' + ('partial week.' if current <= end else 'reconstructed after week end.'),
             'This is a generated view, not a new learning or review event.', '',
-            f'Confirmed study time: {int(seconds)//3600}h {int(seconds)%3600//60}m {int(seconds)%60}s. Running/uncertain intervals excluded.', '',
+            f'Confirmed study time: {int(seconds)//3600}h {int(seconds)%3600//60}m {int(seconds)%60}s. Running/uncertain intervals excluded.',
+            f'Planned week target: {study_plan.summary(root, observed_end.isoformat())["weekly_target_hours"]}h. Date-effective targets; final preparation week ends 22 January 2027.', '',
             '## Actual work and demonstrated independence', '',
             'Daily evidence: `progress/session-history.md`; underlying attempts are referenced by each observation.', '']
     for o in observations:

@@ -1,4 +1,6 @@
-# RRDAP checkpoint - 17 October 2026 (IST)
+# RRDAP checkpoint - 22 October 2026 (IST)
+
+Planning-only upgrade: the [Azure interview roadmap](../../plan/learning-and-revision-plan.md) targets 22 January 2027 with 55-hour full weeks from 22 October. November 30 stays a minimal-flow stretch; deeper Azure integration may continue in December. No learner task completed or new proficiency assessed. RDS-001 and its next action remain unchanged. Timer is still paused since 17 October; no gap credited. [Engineering simulation](../../reference/engineering-simulation.md) provides templates, not future assignments.
 
 PROJECT: Real-Time Retail Distribution & Analytics Platform
 

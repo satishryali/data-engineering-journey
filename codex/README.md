@@ -22,6 +22,12 @@ learning; Start revision; Show my mistakes; Show today's learning; Weekly review
 Save checkpoint. These requests require no installation. Task selection/status never
 starts a timer. Run the existing installer after pulling updates to refresh global skills.
 
+Start interview practice and Show my weaknesses route through the existing Learning
+Coach and shared guide; they add no command folders or timer system. Today's schedule
+uses date-effective targets and the 13-week Azure roadmap targeting 22 January 2027.
+Refresh installed command copies with the existing installer when ready; this repository
+upgrade does not change unrelated global skill settings.
+
 ## GitHub utility
 
 **GitHub Agent** is an additional picker entry for Git operations, separate from the

@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "provenance": "Tutor-authored practice prompts; no employer-question attribution, answers or learner results.",
+  "questions": [
+    {
+      "id": "INT-SQL-001",
+      "category": "sql",
+      "item_id": "SQL-002",
+      "difficulty": "foundation",
+      "prerequisites": [
+        "SQL joins and grouping"
+      ],
+      "minutes": 25,
+      "scenario": "A store report must retain customers without orders.",
+      "task": "Write a query returning each customer ID and actual order count; explain your grouping key.",
+      "sample_input": "customers: (1,Asha),(2,Asha),(3,Nila); orders: (11,1),(12,1),(13,2)",
+      "expected_output": "(1,2),(2,1),(3,0)",
+      "sources": [
+        "https://www.postgresql.org/docs/current/tutorial-join.html"
+      ]
+    },
+    {
+      "id": "INT-PY-001",
+      "category": "python",
+      "item_id": "py.records.cleaning",
+      "difficulty": "foundation",
+      "prerequisites": [
+        "Python dictionaries, functions and exceptions"
+      ],
+      "minutes": 25,
+      "scenario": "A small import has malformed amount text.",
+      "task": "Write a function returning valid and rejected rows without mutating input. Submit tests and explain your error boundary.",
+      "sample_input": "[{id:1,amount:'12'},{id:2,amount:'bad'},{id:3,amount:'0'}]",
+      "expected_output": "Valid IDs 1 and 3 with integer amounts 12 and 0; rejected ID 2 with a reason; input unchanged.",
+      "sources": [
+        "https://docs.python.org/3/tutorial/errors.html"
+      ]
+    },
+    {
+      "id": "INT-SPARK-001",
+      "category": "pyspark",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "SQL joins, typed Spark DataFrames"
+      ],
+      "minutes": 25,
+      "scenario": "A dated retail extract contains repeat product versions.",
+      "task": "Keep one latest version per product; state a deterministic tie rule and show tests.",
+      "sample_input": "(P1,2026-10-20,10),(P1,2026-10-21,12),(P2,2026-10-20,4)",
+      "expected_output": "P1 latest price 12; P2 price 4; explain behaviour if timestamps tie.",
+      "sources": [
+        "https://spark.apache.org/docs/latest/sql-programming-guide.html"
+      ]
+    },
+    {
+      "id": "INT-ADF-001",
+      "category": "adf",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "ADF activities and watermark loading"
+      ],
+      "minutes": 15,
+      "scenario": "An incremental copy fails after writing some rows.",
+      "task": "Explain what run evidence you inspect, how you decide a safe retry and when the watermark may change.",
+      "sample_input": "Old watermark 10:00; range ends 11:00; copy failed after a partial write.",
+      "expected_output": "An evidence-based diagnosis and recovery plan that can be tested for missing or duplicate rows.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/data-factory/tutorial-incremental-copy-overview"
+      ]
+    },
+    {
+      "id": "INT-ADLS-001",
+      "category": "adls",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "Azure storage and identity basics"
+      ],
+      "minutes": 15,
+      "scenario": "A job can list a container but cannot read one directory.",
+      "task": "Describe the checks you would run and the redacted evidence needed before changing access.",
+      "sample_input": "One application identity; read denied at /retail/day=2026-10-22/.",
+      "expected_output": "A bounded investigation distinguishing identity, scope and path permissions.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control-model"
+      ]
+    },
+    {
+      "id": "INT-DBX-001",
+      "category": "databricks",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "Spark, Delta, cloud job basics"
+      ],
+      "minutes": 15,
+      "scenario": "A notebook works manually but its scheduled job fails.",
+      "task": "Explain how you isolate differences and verify a correction without exposing credentials.",
+      "sample_input": "Interactive run succeeds; job run reports access denied.",
+      "expected_output": "A sequence of evidence checks and a rerun verification plan.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+      ]
+    },
+    {
+      "id": "INT-DELTA-001",
+      "category": "delta_incremental",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "Delta merge, business keys"
+      ],
+      "minutes": 15,
+      "scenario": "A changed product batch arrives twice.",
+      "task": "Implement or explain a tested update/load for the given batch; state duplicate-key assumptions.",
+      "sample_input": "Target (P1,10); batch (P1,12),(P2,4), delivered twice.",
+      "expected_output": "Final P1=12, P2=4 once each; demonstrate repeated-run equivalence.",
+      "sources": [
+        "https://docs.delta.io/"
+      ]
+    },
+    {
+      "id": "INT-MODEL-001",
+      "category": "modelling",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "SQL, facts and dimensions"
+      ],
+      "minutes": 15,
+      "scenario": "A report must show the category applicable at sale time.",
+      "task": "Design the row grain, keys and historical example; show how you would verify an as-of result.",
+      "sample_input": "P1 category A before 2026-10-21, B from that date; sales on Oct 20 and Oct 22.",
+      "expected_output": "The first sale reports A and the second B; no double-counted sale.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/architecture/data-guide/relational-data/data-warehousing"
+      ]
+    },
+    {
+      "id": "INT-AIRFLOW-001",
+      "category": "airflow",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "Python, intervals, rerun-safe jobs"
+      ],
+      "minutes": 15,
+      "scenario": "A daily workflow needs a bounded historical replay.",
+      "task": "Explain interval selection, task dependencies, validation and safe retry for a two-day backfill.",
+      "sample_input": "Daily run failed for Oct 20; Oct 21 already succeeded.",
+      "expected_output": "A replay/verification plan with explicit date boundaries and duplicate checks.",
+      "sources": [
+        "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+      ]
+    },
+    {
+      "id": "INT-DBT-001",
+      "category": "dbt",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "SQL grain, sources/ref, tests"
+      ],
+      "minutes": 15,
+      "scenario": "A reporting model now produces duplicate product IDs.",
+      "task": "Describe how you investigate the failing test and verify the smallest correction.",
+      "sample_input": "Source product IDs unique; model unique-ID test fails after a new join.",
+      "expected_output": "Evidence locating the changed grain and checks of totals before/after correction.",
+      "sources": [
+        "https://docs.getdbt.com/docs/build/data-tests"
+      ]
+    },
+    {
+      "id": "INT-DOCKER-001",
+      "category": "docker",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "Docker image/container and Compose networking"
+      ],
+      "minutes": 15,
+      "scenario": "A loader cannot connect to its database service.",
+      "task": "Explain the checks and reproduce a minimal fix in a safe local environment.",
+      "sample_input": "Loader container uses localhost:5432; database is a separate Compose service.",
+      "expected_output": "Connection and readiness evidence plus a persistence check after recreation.",
+      "sources": [
+        "https://docs.docker.com/compose/how-tos/networking/"
+      ]
+    },
+    {
+      "id": "INT-GIT-001",
+      "category": "git_cicd",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "Git branches, tests and configuration"
+      ],
+      "minutes": 15,
+      "scenario": "A pipeline change passes locally but fails in CI.",
+      "task": "Explain investigation, review and rollback evidence for a bounded change.",
+      "sample_input": "CI cannot import a dependency installed manually on the laptop.",
+      "expected_output": "Reproducible dependency/test evidence and a reviewed change; no production deployment assumed.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines"
+      ]
+    },
+    {
+      "id": "INT-SEC-001",
+      "category": "security_monitoring",
+      "item_id": null,
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "Managed identity, secret references and run logs"
+      ],
+      "minutes": 15,
+      "scenario": "A previously working pipeline reports secret access denied.",
+      "task": "Explain identity/scope checks and what to alert on; show how you redact evidence.",
+      "sample_input": "One failed run ID, a Key Vault reference and no confirmed configuration change.",
+      "expected_output": "A least-privilege investigation and useful alert proposal without secret disclosure.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/key-vault/general/authentication"
+      ]
+    },
+    {
+      "id": "INT-INCIDENT-001",
+      "category": "incidents",
+      "item_id": null,
+      "difficulty": "advanced",
+      "prerequisites": [
+        "Pipeline validation, retries and logs"
+      ],
+      "minutes": 15,
+      "scenario": "A dashboard total doubled after a rerun.",
+      "task": "Describe detection, containment, investigation, safe recovery and regression tests.",
+      "sample_input": "Input count 100; first result 100; rerun result 200.",
+      "expected_output": "An evidence-based incident explanation with explicit unknowns and verified recovery criteria.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/overview"
+      ]
+    },
+    {
+      "id": "INT-ARCH-001",
+      "category": "architecture",
+      "item_id": null,
+      "difficulty": "advanced",
+      "prerequisites": [
+        "Ingestion, modelling, orchestration and cloud boundaries"
+      ],
+      "minutes": 15,
+      "scenario": "A fictional retailer needs a small daily analytics pipeline.",
+      "task": "Sketch the simplest justified design; explain correctness, failures, security, cost and tool tradeoffs.",
+      "sample_input": "Daily small product/sales files, next-morning reporting, limited cloud budget.",
+      "expected_output": "A coherent design and test plan with assumptions; no requirement to include every tool.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/architecture/data-guide/"
+      ]
+    },
+    {
+      "id": "INT-EXP-001",
+      "category": "experience",
+      "item_id": null,
+      "difficulty": "foundation",
+      "prerequisites": [
+        "Actual project and professional evidence"
+      ],
+      "minutes": 15,
+      "scenario": "An interviewer asks about your Azure production experience.",
+      "task": "Give a two-minute truthful answer connecting database support/development strengths with verified RRDAP practice and remaining gaps.",
+      "sample_input": "Use only actual employment responsibilities and saved educational project evidence.",
+      "expected_output": "Clear separation of employment, simulation, actual cloud runs and unverified plans.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/training/career-paths/data-engineer"
+      ]
+    }
+  ]
+}

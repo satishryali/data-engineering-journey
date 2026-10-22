@@ -21,7 +21,7 @@ simple words and more small examples with output, matching the existing personal
 | --- | --- | --- |
 | Current pending task and context | `progress/current.md` | `START-HERE.md` is its concise handoff; update together |
 | Daily actual outcomes | `progress/session-history.md` | Status/weekly summaries cite its sections; no separate daily files |
-| Study intervals | `tracking/study-log.csv` | Existing Excel builder/report unchanged; running/uncertain time excluded |
+| Study intervals | `tracking/study-log.csv` | Excel is generated; date-effective target policy is `tracking/study-targets.json`; running/uncertain time excluded |
 | Topic identities, source versions and exercise/concept relationships | `tracking/topic-map.json` | Stable concept IDs retained from the notes inventory; a broad exercise can map to many concepts |
 | Review stage and due dates | `tracking/revision-queue.csv` | Existing exercise IDs retained; concept rows have their own state |
 | Answered assessment events | `tracking/revision-history.csv` | Stable `review_id`; event kind distinguishes initial, immediate and delayed work |
@@ -105,6 +105,16 @@ keep revision around 15–20 minutes unless the learner requests otherwise, and 
 scope when time is limited. Unassessed inventory is not an overdue backlog.
 
 ## Requests
+
+Follow [the Azure roadmap](../plan/learning-and-revision-plan.md) from 22 October 2026 to 22 January 2027: 7-hour weekdays, 10-hour weekends, 55-hour full weeks. Preserve older targets via tracking/study-targets.json. This supersedes the old one-Azure-concept weekly limit. Continue the learner's pending RDS-001 before advancing project dependencies; weeks are planning, never proficiency.
+
+Today's schedule includes daily/weekly target and confirmed progress, actual versus planned primary technology, pending RRDAP task, one independent practice assignment, bounded due reviews, an interview exercise and carried work. Use `python tracking/study_plan.py --date YYYY-MM-DD` or coach status for current target calculations; no timer starts.
+
+**Start interview practice**: read [interview preparation](../plan/interview-preparation.md), select one prerequisite-appropriate prompt from tracking/interview/questions.json, present the task only and wait. The question selector is read-only. Hints/answers remain separate. Capture actual answer, help and optional rubric metadata through the existing checkpoint/review/skill records, not a new assessment ledger. Pending prompts are not review events. This command does not start a timer.
+
+**Show my weaknesses**: report observed mistakes and dimension-specific gaps with source evidence, help and unassessed areas. Do not infer weakness or mastery solely from a roadmap entry. Weekly review includes independently implemented tasks and actual interview evidence alongside time and delayed-review results.
+
+For realistic project practice use [engineering simulation](engineering-simulation.md). Infrastructure explicitly assigned to Codex is implemented/tested directly; learner coding assignments remain independent. No background workers or extra roles are introduced.
 
 | Learner phrase | Action |
 | --- | --- |

@@ -24,6 +24,13 @@ learner attempts and prerequisite order. Do not restart assessment. If the reque
 instead asks for revision, notes, mistakes or a progress view, use the corresponding
 route in the guide. Ask a question only when needed to resolve an actual ambiguity.
 
+Start interview practice selects one prerequisite-appropriate question using
+plan/interview-preparation.md and tracking/interview/questions.json; present its prompt
+and wait without revealing answers or starting a timer. Show my weaknesses reports
+observed gaps from canonical mistakes and skill dimensions. Follow the 13-week Azure
+roadmap targeting 22 January 2027, with 55-hour full weeks from 22 October 2026;
+pending RDS-001 acceptance and actual evidence still control project advancement.
+
 Selecting this skill does not start a timer. Start study time only after an explicit
 timer/start-study instruction under `reference/study-tracking.md`. Status/planning
 requests do not change timers or create learning/review events. Save learning records

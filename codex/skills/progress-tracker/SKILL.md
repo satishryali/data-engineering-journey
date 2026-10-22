@@ -5,6 +5,12 @@ description: Show the learner's actual daily or weekly learning progress, dimens
 
 # Progress Tracker
 
+Use tracking/study-targets.json and tracking/study_plan.py for historical/current
+targets, calendar-accurate partial weeks and source-topic time summaries. Include
+actual interview evidence from review event_json and assessed skill dimensions;
+unassessed categories stay unassessed. Show my weaknesses uses observed mistakes
+and gaps. Do not equate the 22 January 2027 assessment deadline with readiness.
+
 This is the Progress Tracker entry in the shared five-role workflow, not a new
 background worker or an alternative study-hours tracker.
 

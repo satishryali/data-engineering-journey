@@ -5,6 +5,7 @@ import os from 'node:os';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const policy = JSON.parse(await fs.readFile(path.join(root, 'tracking/study-targets.json'), 'utf8'));
 const modules = process.env.CODEX_NODE_MODULES || path.join(os.homedir(), '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules');
 const requireRuntime = createRequire(path.join(modules, '../package.json'));
 const { Workbook, SpreadsheetFile } = await import(pathToFileURL(requireRuntime.resolve('@oai/artifact-tool')).href);
@@ -36,7 +37,8 @@ const serial = s => (Date.parse(s.slice(0,10) + 'T00:00:00Z') - Date.UTC(1899,11
 const iso = n => new Date(Date.UTC(1899,11,30) + n * 86400000).toISOString().slice(0,10);
 const today = process.argv[2] || new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 if (!/^\d{4}-\d{2}-\d{2}$/.test(today)) throw Error('Use YYYY-MM-DD as reporting date.');
-const first = serial('2026-10-15'), last = Math.max(serial('2027-02-07'), serial(today));
+const first = serial(policy.tracking_start), deadline = serial(policy.preparation_deadline);
+const last = Math.max(deadline, serial(today));
 const ids = new Set();
 for (const r of raw.slice(1)) {
   if (ids.has(r[0])) throw Error(`Duplicate session ID: ${r[0]}`);
@@ -52,7 +54,11 @@ sessions.getRange(`A1:H${raw.length}`).values = raw.map((r,i)=>r.map((v,c)=>i>0 
 const sourceLast = Math.max(raw.length, 2);
 const sumDay = r => `SUMIFS('Sessions'!$F$2:$F$${sourceLast},'Sessions'!$B$2:$B$${sourceLast},A${r},'Sessions'!$G$2:$G$${sourceLast},"completed")/60`;
 daily.getRange('A2').values = [['Study hours: daily progress']];
-daily.getRange('A4:B7').values = [['Reporting date (IST)',serial(today)],['Tracking starts',first],['Weekday target (hours)',6],['Weekend target (hours)',10]];
+daily.getRange('A4:B9').values = [['Reporting date (IST)',serial(today)],['Tracking starts',first],['Weekday target (from 22 Oct)',7],['Weekend target (hours)',10],['New target effective',serial(policy.preparation_start)],['Preparation deadline',deadline]];
+daily.getRange('G4:H5').values = [['Earlier weekday target',6],['Target source','tracking/study-targets.json']];
+// Derive both historical and current controls from the shared policy.
+daily.getRange('H4').values = [[policy.targets[0].weekday_hours]];
+daily.getRange('B6:B7').values = [[policy.targets.at(-1).weekday_hours],[policy.targets.at(-1).weekend_hours]];
 daily.getRange('D4:E8').values = [['Confirmed hours',null],['Target: closed days',null],['Behind: closed days',null],['Ahead: closed days',null],['Remaining today',null]];
 daily.getRange('A10').values = [['Hours are decimal: 1.50 = 1 hour 30 minutes. Zero means no confirmed time logged.']];
 daily.getRange('A11').values = [['Uncertain and running intervals are excluded. Today is in progress; future days are not overdue.']];
@@ -64,7 +70,7 @@ const forms = [];
 for (let i=0;i<n;i++) {
  const r=15+i,d=first+i;
  data.push([d,new Date(iso(d)+'T00:00:00Z').toLocaleDateString('en-US',{weekday:'short',timeZone:'UTC'})]);
- forms.push([`=A${r}-WEEKDAY(A${r},2)+1`,`=IF(WEEKDAY(A${r},2)>5,$B$7,$B$6)`,`=IF(A${r}>$B$4,"",${sumDay(r)})`,`=IF(A${r}>=$B$4,"",MAX(D${r}-E${r},0))`,`=IF(A${r}>=$B$4,"",MAX(E${r}-D${r},0))`,`=IF(A${r}>=$B$4,"",SUM($D$15:D${r}))`,`=IF(A${r}>$B$4,"",SUM($E$15:E${r}))`,`=IF(A${r}>$B$4,"Future",IF(A${r}=$B$4,"In progress",IF(COUNTIFS('Sessions'!$B$2:$B$${sourceLast},A${r},'Sessions'!$G$2:$G$${sourceLast},"needs_confirmation")>0,"Uncertain time",IF(E${r}=0,"No confirmed time","Logged"))))`]);
+ forms.push([`=A${r}-WEEKDAY(A${r},2)+1`,`=IF(WEEKDAY(A${r},2)>5,$B$7,IF(A${r}<$B$8,$H$4,$B$6))`,`=IF(A${r}>$B$4,"",${sumDay(r)})`,`=IF(A${r}>=$B$4,"",MAX(D${r}-E${r},0))`,`=IF(A${r}>=$B$4,"",MAX(E${r}-D${r},0))`,`=IF(A${r}>=$B$4,"",SUM($D$15:D${r}))`,`=IF(A${r}>$B$4,"",SUM($E$15:E${r}))`,`=IF(A${r}>$B$4,"Future",IF(A${r}=$B$4,"In progress",IF(COUNTIFS('Sessions'!$B$2:$B$${sourceLast},A${r},'Sessions'!$G$2:$G$${sourceLast},"needs_confirmation")>0,"Uncertain time",IF(E${r}=0,"No confirmed time","Logged"))))`]);
 }
 daily.getRange(`A15:B${end}`).values=data;
 daily.getRange(`C15:J${end}`).formulas=forms;
@@ -76,7 +82,7 @@ daily.getRange('E4:E8').formulas=[
  [`=MAX(SUMIFS(D15:D${end},A15:A${end},B4)-SUMIFS(E15:E${end},A15:A${end},B4),0)`]
 ];
 weekly.getRange('A2').values=[['Study hours: weekly progress']];
-weekly.getRange('A4').values=[['Monday–Sunday. First week starts tracking on 15 Oct: 32 h; full weeks: 50 h.']];
+weekly.getRange('A4').values=[['Monday–Sunday: first partial 32 h; transition 52 h; full new weeks 55 h; final preparation partial 35 h.']];
 weekly.getRange('A5').values=[['Behind compares confirmed time with targets for closed days only. Remaining includes today and future days.']];
 weekly.getRange('A7:H7').values=[['Week starting','Weekly target (h)','Closed-day target','Confirmed (h)','Behind closed days','Ahead closed days','Remaining to target','Completion']];
 const monday=first-((new Date(iso(first)+'T00:00:00Z').getUTCDay()+6)%7);
@@ -105,6 +111,7 @@ weekly.getRange('A2').format.font={size:16,bold:true};
 daily.getRange(`D15:I${end}`).setNumberFormat('0.00');
 daily.getRange('E4:E8').setNumberFormat('0.00');
 daily.getRange('B4:B5').setNumberFormat('dd mmm yyyy');
+daily.getRange('B8:B9').setNumberFormat('dd mmm yyyy');
 daily.getRange('B4:B7').format.fill='#FFF2CC';
 daily.getRange(`A15:A${end}`).setNumberFormat('dd mmm yyyy');
 daily.getRange(`C15:C${end}`).setNumberFormat('dd mmm yyyy');
@@ -136,10 +143,42 @@ console.log((await book.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|
 // Validate representative boundaries against the imported source, then restore.
 const baseline=daily.getRange('E15').values[0][0];
 if (Number(baseline)!==0 && raw.length===2 && raw[1][6]==='needs_confirmation') throw Error('Unconfirmed time counted');
-if (Number(weekly.getRange('B8').values[0][0])!==32 || Number(weekly.getRange('B9').values[0][0])!==50) throw Error('Weekly target mismatch');
+const expectedWeeks = {'2026-10-12':32, '2026-10-19':52, '2026-10-26':55, '2026-12-28':55};
+if (last === deadline) expectedWeeks['2027-01-18'] = 35;
+for (let r=8;r<wr;r++) {
+ const start = iso(Number(weekly.getRange(`A${r}`).values[0][0]));
+ if (start in expectedWeeks && Number(weekly.getRange(`B${r}`).values[0][0]) !== expectedWeeks[start]) throw Error(`Weekly target mismatch: ${start}`);
+}
+for (const [date, expected] of [['2026-10-21',6],['2026-10-22',7],['2026-10-24',10],['2027-01-22',7]]) {
+ const row=15+serial(date)-first;
+ if(Number(daily.getRange(`D${row}`).values[0][0])!==expected) throw Error(`Daily target mismatch: ${date}`);
+}
+// Topic summaries retain source labels, including mixed/setup topics; no retrospective classification.
+const topics = book.worksheets.add('Topics');
+topics.getRange('A2').values = [['Confirmed time by source topic']];
+topics.getRange('A4').values = [['Exact source labels. Mixed/setup time does not prove technology proficiency.']];
+topics.getRange('A6:B6').values = [['Source topic','Confirmed hours']];
+const labels = [...new Set(raw.slice(1).map(r=>r[2]))].sort();
+topics.getRange(`A7:A${6+labels.length}`).values=labels.map(v=>[v]);
+topics.getRange(`B7:B${6+labels.length}`).formulas=labels.map((_,i)=>[`=SUMIFS('Sessions'!$F$2:$F$${sourceLast},'Sessions'!$C$2:$C$${sourceLast},A${i+7},'Sessions'!$G$2:$G$${sourceLast},"completed",'Sessions'!$B$2:$B$${sourceLast},"<="&'Daily'!$B$4)/60`]);
+topics.showGridLines=false;
+topics.getRange(`A6:B${6+labels.length}`).format.font={name:'Arial',size:10,color:'#243247'};
+topics.getRange('A6:B6').format={fill:'#253C5B',font:{bold:true,color:'#FFFFFF'},rowHeight:28};
+topics.getRange('A1:A2').format.columnWidth=65;
+topics.getRange('B1:B2').format.columnWidth=20;
+topics.getRange(`B7:B${6+labels.length}`).setNumberFormat('0.00');
+book.recalculate();
+const sourceHours=raw.slice(1).filter(r=>r[6]==='completed' && r[1]<=serial(today)).reduce((sum,r)=>sum+r[5]/60,0);
+const reportedHours=Number(daily.getRange('E4').values[0][0]);
+if(Math.abs(sourceHours-reportedHours)>0.000001) throw Error('Confirmed hours do not reconcile');
+const topicHours=topics.getRange(`B7:B${6+labels.length}`).values.reduce((sum,r)=>sum+Number(r[0]),0);
+if(Math.abs(sourceHours-topicHours)>0.000001) throw Error('Topic hours do not reconcile');
+for(const sheet of [daily,weekly,sessions,topics]) {
+ if(sheet.getUsedRange().values.flat().some(v=>typeof v==='string' && /^#(REF!|DIV\/0!|VALUE!|NAME\?|NUM!|SPILL!|N\/A)/.test(v))) throw Error(`Formula error in ${sheet.name}`);
+}
 const xlsx=await SpreadsheetFile.exportXlsx(book);
 await xlsx.save(path.join(out,'study-hours.xlsx'));
-for(const [sh,range] of [['Daily','A2:J19'],['Weekly','A2:H12'],['Sessions','A1:G2']]) {
+for(const [sh,range] of [['Daily','A2:J23'],['Weekly','A2:H12'],['Sessions','A1:G2'],['Topics',`A2:B${6+labels.length}`]]) {
  const preview=await book.render({sheetName:sh,range,scale:1,format:'png'});
  await fs.writeFile(path.join(out,`${sh.toLowerCase()}-preview.png`),new Uint8Array(await preview.arrayBuffer()));
 }

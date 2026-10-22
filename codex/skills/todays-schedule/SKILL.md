@@ -10,6 +10,14 @@ Existing command: Today's schedule.
 
 Use the actual IST date, checkpoint, agreed plan and revision queue. Show target, confirmed/remaining time, manageable due reviews and ordered next tasks. Do not start a timer or imply completed learning.
 
+Use tracking/study-targets.json or `python tracking/study_plan.py --date YYYY-MM-DD`
+for date-effective daily/weekly targets (7-hour weekdays from 22 October 2026,
+10-hour weekends; historical targets preserved). Include this week's confirmed
+progress, planned versus actual primary technology, pending RRDAP task, one practice
+assignment, bounded revision, one appropriate interview prompt and unfinished carried
+work. Use the single plan/learning-and-revision-plan.md and preserve RDS-001 until
+acceptance. Do not count curriculum dates as actual progress.
+
 ## Existing workflow and scope
 
 These are shortcuts for the learner's existing data-engineering study workflow, not generic countdowns. The canonical checkout on this computer is `{{LEARNING_REPO}}`. Use that checkout even when invoked from another project; do not write trackers into the current project. On another computer, locate a verified checkout of that learning repository or ask for its path. If source files are inaccessible, report that and do not invent state or create replacement records.
