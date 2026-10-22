@@ -1,4 +1,6 @@
-# Start here - RRDAP, 17 October 2026 (IST)
+# Start here - Docker focus, 22 October 2026 (IST)
+
+Learner chose Docker study today. Three completed 25-minute Pomodoros and three 5-minute breaks were reported; `DOC-20261022-POM1` through `DOC-20261022-POM3` in `tracking/study-log.csv` total 75 minutes of reported focus, pending exact IST start/end times and excluded from confirmed hours. Breaks are excluded. No Docker work/output has been supplied. No timer is running. Confirm interval times, then continue the learner's Docker work. RDS-001 stays the pending RRDAP project task; no acceptance or review status changed. Excel snapshot refreshed for 22 October.
 
 ## Current state
 

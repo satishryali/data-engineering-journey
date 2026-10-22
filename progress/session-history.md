@@ -353,3 +353,24 @@ Evidence: `plan/learning-and-revision-plan.md#azure-upgrade-20261022`; `tracking
 Fetched newer remote main containing RecallLab and integrated its existing architecture. Added shared date-effective targets/allocations, roadmap/project/read-only interview views and evidence-based analytics. Preserved coding/revision/journal/checkpoint flows. Added regression checks and documented validation in progress/azure-upgrade-2026-10-22.md. Reconstructed the due historical weekly summary from saved evidence. This supersedes the initial checkout-only website absence finding. No learner assessment, task acceptance, timer change or review-date reset; no public deployment or Azure resources. Next: RDS-001: Propose an approach or independently implement the 1,000-product PostgreSQL catalogue, then submit code and SQL verification against the six acceptance criteria.
 
 Evidence: `apps/recalllab/components/learning.py#azure-upgrade-20261022`; `progress/azure-upgrade-2026-10-22.md`; `progress/weekly/2026-W42.md#reconstructed-20261022`
+
+<!-- checkpoint:CP-20261022-docker-focus-pomodoro -->
+## 2026-10-22 — CP-20261022-docker-focus-pomodoro (setup)
+
+Learner switched today's study focus to Docker and requested logging reported Pomodoro time. Recorded one self-reported 25-minute interval as pending exact IST start/end confirmation; the reported 5-minute break is excluded. Second-session duration remains unknown. No timer running, confirmed hours added, Docker attempt reviewed, proficiency scored or RDS-001 acceptance changed. Excel refreshed for 22 October. Next: confirm interval times and continue Docker study; RDS-001 remains the pending project task.
+
+Evidence: `tracking/study-log.csv#DOC-20261022-POM1`
+
+<!-- checkpoint:CP-20261022-docker-pomodoro-2 -->
+## 2026-10-22 — CP-20261022-docker-pomodoro-2 (setup)
+
+Learner reported a second completed 25-minute Docker Pomodoro and a 5-minute break. Both reported focus intervals now total 50 minutes but lack actual IST start/end times, so both remain pending confirmation and excluded from confirmed totals. Both reported 5-minute breaks are excluded. No running timer, Docker attempt, proficiency assessment or RDS-001 acceptance change. Excel refreshed for 22 October. Next: confirm Pomodoro times and continue Docker study; RDS-001 remains the pending project task.
+
+Evidence: `tracking/study-log.csv#DOC-20261022-POM2`
+
+<!-- checkpoint:CP-20261022-docker-pomodoro-3 -->
+## 2026-10-22 — CP-20261022-docker-pomodoro-3 (setup)
+
+Learner reported a third completed 25-minute Docker Pomodoro and a 5-minute break. Three reported focus intervals now total 75 minutes but lack actual IST start/end times, so all remain pending confirmation and excluded from confirmed totals. Three reported 5-minute breaks are excluded. No running timer, Docker attempt, proficiency assessment or RDS-001 acceptance change. Excel refreshed for 22 October. Next: confirm Pomodoro times and continue Docker study; RDS-001 remains the pending project task.
+
+Evidence: `tracking/study-log.csv#DOC-20261022-POM3`

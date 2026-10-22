@@ -1,4 +1,8 @@
-# Current tutoring checkpoint - RRDAP, 22 October 2026 (IST)
+# Current tutoring checkpoint - Docker focus, 22 October 2026 (IST)
+
+## Docker study update, 22 October
+
+Learner chose Docker for today's study. Three completed 25-minute Pomodoros were self-reported, each followed by a 5-minute break. Their exact IST start and end times were not supplied, so `DOC-20261022-POM1` through `DOC-20261022-POM3` are recorded as `needs_confirmation` and excluded from confirmed hours. Reported focus totals 75 minutes; breaks total 15 minutes and are excluded. No timer is running. No Docker attempt, output or learning assessment has been submitted. Today's immediate step is to confirm the Pomodoro times and continue Docker study; RDS-001 remains the pending project task with its acceptance unchanged. The Python notes index was linked for context, without a Python task switch.
 
 ## Planning upgrade, 22 October
 

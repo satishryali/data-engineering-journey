@@ -238,6 +238,27 @@
       "kind": "setup",
       "sha256": "aee89e2ee5c5d0146fe66773a72ec946d06d32052c651c814cd2e16bc25232e1",
       "evidence_key": "c2bf039bf6da108c816e6b72a660de74cb65e042a22aced3398822bab940e0ff"
+    },
+    {
+      "checkpoint_id": "CP-20261022-docker-focus-pomodoro",
+      "date_ist": "2026-10-22",
+      "kind": "setup",
+      "sha256": "3236502ff0658c1edcefe5e0172f07480568163751c617a39399e49db7cae397",
+      "evidence_key": "e6866a3ffbe5de9e26d7b0faee59e28fd4671e297a5691bb1bcf1578959459ef"
+    },
+    {
+      "checkpoint_id": "CP-20261022-docker-pomodoro-2",
+      "date_ist": "2026-10-22",
+      "kind": "setup",
+      "sha256": "fa1d573787f26cf5820827584be7be4fbdf061590bc7d05a2cd37e5486da1e47",
+      "evidence_key": "81b8c2d18bb977ca1b6b31b2d2277a0c6cc0329fc5cf79a8a49855e5d1082d01"
+    },
+    {
+      "checkpoint_id": "CP-20261022-docker-pomodoro-3",
+      "date_ist": "2026-10-22",
+      "kind": "setup",
+      "sha256": "9499ca0e0c2dea074dafdde13d96b3f27d9c5fe698aadfa8426346344623daac",
+      "evidence_key": "cea51bee3cf21203aca45466efcf8849cf4805b963fb48107eb5daecf1d9b1eb"
     }
   ]
 }
