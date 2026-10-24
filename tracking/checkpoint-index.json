@@ -259,6 +259,27 @@
       "kind": "setup",
       "sha256": "9499ca0e0c2dea074dafdde13d96b3f27d9c5fe698aadfa8426346344623daac",
       "evidence_key": "cea51bee3cf21203aca45466efcf8849cf4805b963fb48107eb5daecf1d9b1eb"
+    },
+    {
+      "checkpoint_id": "CP-20261024-dict-csv-notes",
+      "date_ist": "2026-10-24",
+      "kind": "setup",
+      "sha256": "986a87e76e61ec3d3ac055dd0f5490e7865b7089272b03383a231b52424eda74",
+      "evidence_key": "06e7fb89a8fb5f7b87a026eda50e1d7a57ddab1856518db1349a8f4ec7d7c5c8"
+    },
+    {
+      "checkpoint_id": "CP-20261024-two-context-notes",
+      "date_ist": "2026-10-24",
+      "kind": "setup",
+      "sha256": "94a098cc59352a2a8dadb65b62481a777555f79ad40d4fcfded7522ddf8f55da",
+      "evidence_key": "291803f4e61b4829b91e47de932a12ce009b5ac22becd82cdba239a25911a204"
+    },
+    {
+      "checkpoint_id": "CP-20261024-order-summary-logic-note",
+      "date_ist": "2026-10-24",
+      "kind": "setup",
+      "sha256": "74081cf9990fe95eb89b607be5db06c11d1204a120c9aa3d9d9f438e829daa88",
+      "evidence_key": "f50b95b4546736a4b4d42c483cf706064800b8a5c9a9f108f225d577fd0b22ae"
     }
   ]
 }

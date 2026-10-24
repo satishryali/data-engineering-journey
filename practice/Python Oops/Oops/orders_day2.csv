@@ -1,0 +1,4 @@
+order_id,customer_id,quantity,unit_price,status
+1006,C005,2,150,completed
+1007,C006,3,200,cancelled
+1008,C005,1,500,completed

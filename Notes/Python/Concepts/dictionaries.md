@@ -79,6 +79,33 @@ Reference: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
     thisdict.update([("year", 2021)]) # using iterable pairs
     ```
 
+### Same key replaces its value
+
+Use `update()` to change fields in one record. It does not collect separate rows.
+
+```python
+order = {"order_id": "1001", "customer_id": "C001"}
+order.update({"order_id": "1003", "quantity": "3"})
+print(order)
+```
+
+Expected output:
+
+```text
+{'order_id': '1003', 'customer_id': 'C001', 'quantity': '3'}
+```
+
+- Existing key `order_id`: its value is replaced.
+- New key `quantity`: it is added.
+- Key `customer_id` was not supplied: its value stays unchanged.
+- Keys must be unique within one dictionary. Different dictionaries can use the same keys.
+- This is overwriting a value. Method overriding in OOP means a child class supplies its own version of a parent's method.
+
+To keep several CSV rows, put each row dictionary into a list with `append()`.
+See [Keep all CSV rows](csv-reading.md#keep-all-csv-rows).
+
+Added 24 October 2026 from the learner's questions about repeated keys and keeping several rows. Explained with tutor examples; no independent attempt assessed.
+
 ### Method 3 : Dictionary comprehension
 
 - ```python

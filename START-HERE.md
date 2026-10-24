@@ -1,4 +1,10 @@
-# Start here - Docker focus, 22 October 2026 (IST)
+# Start here - Python notes saved, 24 October 2026 (IST)
+
+Order-summary logic note saved, 24 October 2026: created Notes/Python/Logic/order-summary-after-loop.md with grouping by status, running totals, order count versus quantity and writing after the loop. Tutor worked example executed in memory. Learner split-file read-back output supplied; final summary implementation/output still unverified. Optional immediate Python follow-up: reconstruct the changed-input recall task and show the summary, stating help used. No timer or review completion recorded; RDS-001 remains the pending project task.
+
+Two-context-manager notes saved, 24 October 2026: added copying a CSV with two files in one with statement, automatic closing, and separate write-then-read blocks for the same file. Tutor explanation and unanswered recall prompt only; no learner attempt assessed, timer change or review-date change. Pending project action remains unchanged.
+
+Python notes saved, 24 October 2026: learner asked whether repeated dictionary keys overwrite values and how to keep several CSV rows. Added update-versus-append examples and an answer-free recall task. The supplied completed-orders CSV has three data rows (1001, 1003, 1004), not five. Explanations are tutor-supplied; no independent collection attempt, score, review completion or study time recorded. Optional Python follow-up: try the collection example and explain its row count. Prior Docker clock times remain unresolved; no timer is running. RDS-001 stays the pending project task.
 
 Learner chose Docker study today. Three completed 25-minute Pomodoros and three 5-minute breaks were reported; `DOC-20261022-POM1` through `DOC-20261022-POM3` in `tracking/study-log.csv` total 75 minutes of reported focus, pending exact IST start/end times and excluded from confirmed hours. Breaks are excluded. No Docker work/output has been supplied. No timer is running. Confirm interval times, then continue the learner's Docker work. RDS-001 stays the pending RRDAP project task; no acceptance or review status changed. Excel snapshot refreshed for 22 October.
 

@@ -9,4 +9,10 @@ Try one task before opening its explanation. These prompts have not been answere
 - Random: choose two categories with and without repeated picks, repeat a seeded sequence, and shuffle a list. Explain the return values and whether the original list changes.
 - Faker: generate three customer dictionaries and explain the locale and provider. Inspect the price method's argument before predicting its effect. Explain why a generated CSV does not prove records were loaded into PostgreSQL.
 
+- CSV row collection, added 24 October 2026: read the completed-orders CSV into a list of dictionaries, then show its row count and first row. Predict the count if the file contained five data rows. Explain why repeated `order_id` keys in separate dictionaries are kept, while repeated `update()` calls on one dictionary replace earlier values. Not yet attempted or scored.
+
+- Two context managers, added 24 October 2026: copy a small CSV to a different file using one `with` statement. Explain when both files close and why writing a file then reading that same file uses separate blocks in the notes. Not yet attempted or scored.
+
 Explanations are linked from [Python notes](../Python/Index.md). These questions do not replace the pending RDS-001 task.
+
+- Order summary logic, added 24 October 2026: use three orders: completed (quantity 2, price 40), completed (quantity 1, price 90), cancelled (quantity 3, price 20). Predict the two summary rows, then build and run the summary. Explain order count versus quantity and why summary writing belongs after the loop. State any notes or help used. Pending; no score or completed review.

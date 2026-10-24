@@ -9,7 +9,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
+          "sha256": "966add023a55c5fdbcbb76f9ec10adbfba96ac8542ab87a58e836ff6cf21c475"
         }
       ],
       "source_history": [
@@ -30,6 +30,12 @@
           "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
           "changed_on": "2026-10-17",
           "reason": "Notebook-based examples and evidence wording; no assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860",
+          "changed_on": "2026-10-24",
+          "reason": "Requested dictionary update and CSV collection explanation; no assessment"
         }
       ],
       "coverage": "active",
@@ -61,7 +67,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
+          "sha256": "966add023a55c5fdbcbb76f9ec10adbfba96ac8542ab87a58e836ff6cf21c475"
         }
       ],
       "source_history": [
@@ -82,6 +88,12 @@
           "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
           "changed_on": "2026-10-17",
           "reason": "Notebook-based examples and evidence wording; no assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860",
+          "changed_on": "2026-10-24",
+          "reason": "Requested dictionary update and CSV collection explanation; no assessment"
         }
       ],
       "coverage": "queued",
@@ -125,6 +137,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Notebook examples with output / Change a value or build a new dictionary"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Same key replaces its value"
         }
       ],
       "initial_assessment_date_ist": "2026-10-17"
@@ -168,6 +184,10 @@
         {
           "path": "Notes/Python/Lessons/tips.md",
           "key": "Interesting Topics"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Open two files in one with statement"
         }
       ],
       "initial_assessment_date_ist": "2026-10-31"
@@ -653,7 +673,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
-          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860"
+          "sha256": "966add023a55c5fdbcbb76f9ec10adbfba96ac8542ab87a58e836ff6cf21c475"
         }
       ],
       "source_history": [
@@ -662,6 +682,12 @@
           "sha256": "b68ff6de22e830bbf2bdc97dddb6de1c5db68a21866efa045f8c9033e93b3ea6",
           "changed_on": "2026-10-17",
           "reason": "Notebook-based examples and evidence wording; no assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "sha256": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860",
+          "changed_on": "2026-10-24",
+          "reason": "Requested dictionary update and CSV collection explanation; no assessment"
         }
       ],
       "coverage": "queued",
@@ -793,6 +819,10 @@
         {
           "path": "Notes/Python/Concepts/lists.md",
           "key": "Lists / Things to remember"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Keep all CSV rows"
         }
       ],
       "initial_assessment_date_ist": "2026-10-19"
@@ -822,6 +852,18 @@
         {
           "path": "Notes/New Syntax/list-plus.md",
           "key": "Join lists using + / A small example"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Keep all CSV rows"
+        },
+        {
+          "path": "Notes/Python/Concepts/dictionaries.md",
+          "key": "Dictionaries / Changing the elements / Same key replaces its value"
+        },
+        {
+          "path": "Notes/Python/Logic/order-summary-after-loop.md",
+          "key": "Count orders and write the summary after the loop / Keep separate orders before summarising"
         }
       ],
       "initial_assessment_date_ist": "2026-10-20"
@@ -864,7 +906,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/csv-reading.md",
-          "sha256": "40df2c07b85173453451f80121ed0e4f91f15c170ddc8e004908814dec74bb15"
+          "sha256": "9567773321cf3e92de313ba9a233283a493c3254569f338d4bf4955d8b05df8f"
         }
       ],
       "source_history": [
@@ -873,6 +915,12 @@
           "sha256": "cd4d47fe24960b2c63e9656217dadd4e2703db98e2dd67ef1fdd09b74cb2a350",
           "changed_on": "2026-10-17",
           "reason": "Notebook-based examples and evidence wording; no assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "sha256": "40df2c07b85173453451f80121ed0e4f91f15c170ddc8e004908814dec74bb15",
+          "changed_on": "2026-10-24",
+          "reason": "Requested dictionary update and CSV collection explanation; no assessment"
         }
       ],
       "coverage": "active",
@@ -910,6 +958,14 @@
         {
           "path": "Notes/Python/Concepts/csv-reading.md",
           "key": "Read a CSV file / Reader versus DictReader"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-reading.md",
+          "key": "Read a CSV file / Keep all CSV rows"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Open two files in one with statement"
         }
       ],
       "initial_assessment_date_ist": "2026-10-16",
@@ -980,10 +1036,23 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/csv-writing.md",
-          "sha256": "8402a24e7dd166b362e0f36ddf1835f30aa75f1b2fd0f78d1729277e70fe12f0"
+          "sha256": "d337a8c0bd48c2e5a3d75556f724ea5739ffa627379b935bc3d5101c8dad8d1a"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "sha256": "8402a24e7dd166b362e0f36ddf1835f30aa75f1b2fd0f78d1729277e70fe12f0",
+          "changed_on": "2026-10-24",
+          "reason": "Requested two-context-manager explanation; no assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "sha256": "497bf5d3d8854c1a076de2a65d5adbd7883197355095d3a8bda4c1fb991a3c6a",
+          "changed_on": "2026-10-24",
+          "reason": "Navigation link to requested logic note; no assessment"
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [
         "py.csv.read"
@@ -1009,9 +1078,23 @@
         {
           "path": "Notes/Python/Concepts/csv-writing.md",
           "key": "Write CSV files / Notebook evidence"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "key": "Write CSV files / Open two files in one with statement"
         }
       ],
-      "initial_assessment_date_ist": "2026-11-06"
+      "initial_assessment_date_ist": "2026-11-06",
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "section": "Write CSV files / Notebook evidence",
+          "prior_hash": "a759d9ee462a5687beb542a5d4910211b07b81e5984d2687f4337acde9d0075b",
+          "content_hash": "eb4deba7e77b266754a47aac166461c7c9f36247b4f4cf292815718bd3af1db7",
+          "detected_date_ist": "2026-10-24"
+        }
+      ]
     },
     {
       "id": "py.files.methods",
@@ -1165,6 +1248,47 @@
         }
       ],
       "initial_assessment_date_ist": "2026-11-10"
+    },
+    {
+      "id": "py.records.summary",
+      "name": "Count and total orders by status after a loop",
+      "sources": [
+        {
+          "path": "Notes/Python/Logic/order-summary-after-loop.md",
+          "sha256": "551ea1550438be51fbe87d2f78d33d18763c33d07b403e7ed67748959dabbe4f"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.list.records",
+        "py.csv.read"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Logic/order-summary-after-loop.md",
+          "key": "Count orders and write the summary after the loop"
+        },
+        {
+          "path": "Notes/Python/Logic/order-summary-after-loop.md",
+          "key": "Count orders and write the summary after the loop / Groups come from the status values"
+        },
+        {
+          "path": "Notes/Python/Logic/order-summary-after-loop.md",
+          "key": "Count orders and write the summary after the loop / Count first, write after the loop"
+        },
+        {
+          "path": "Notes/Python/Logic/order-summary-after-loop.md",
+          "key": "Count orders and write the summary after the loop / Trace the running totals"
+        },
+        {
+          "path": "Notes/Python/Logic/order-summary-after-loop.md",
+          "key": "Count orders and write the summary after the loop / Keep separate orders before summarising"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-11",
+      "planning_note": "New grouping and accumulation concept distinct from CSV syntax; adjustable diagnostic slot, no scored assessment."
     }
   ],
   "note_inventory": [
@@ -1371,7 +1495,7 @@
     },
     {
       "path": "Notes/Python/Concepts/csv-reading.md",
-      "file_hash": "40df2c07b85173453451f80121ed0e4f91f15c170ddc8e004908814dec74bb15",
+      "file_hash": "9567773321cf3e92de313ba9a233283a493c3254569f338d4bf4955d8b05df8f",
       "sections": [
         {
           "key": "Read a CSV file",
@@ -1387,6 +1511,16 @@
           "content_hash": "a68a7d67527c837bca0e0726b5bab4ccacf6a86a47a52f0ead9ea18001b045fe",
           "topic_ids": [
             "py.csv.read"
+          ]
+        },
+        {
+          "key": "Read a CSV file / Keep all CSV rows",
+          "heading": "Read a CSV file / Keep all CSV rows",
+          "content_hash": "5b52de7ba94de48ff8a7e2edbdec6c2861fd552f4c919eabbcb4acd40926493a",
+          "topic_ids": [
+            "py.csv.read",
+            "py.list.records",
+            "py.list.mutate"
           ]
         },
         {
@@ -1425,7 +1559,7 @@
     },
     {
       "path": "Notes/Python/Concepts/csv-writing.md",
-      "file_hash": "8402a24e7dd166b362e0f36ddf1835f30aa75f1b2fd0f78d1729277e70fe12f0",
+      "file_hash": "d337a8c0bd48c2e5a3d75556f724ea5739ffa627379b935bc3d5101c8dad8d1a",
       "sections": [
         {
           "key": "Write CSV files",
@@ -1452,6 +1586,16 @@
           ]
         },
         {
+          "key": "Write CSV files / Open two files in one with statement",
+          "heading": "Write CSV files / Open two files in one with statement",
+          "content_hash": "d3d60d9d07cc5aba76b29138e2ef620d9e2cc007d191cc52b43e5ff355ffc12e",
+          "topic_ids": [
+            "py.context.resources",
+            "py.csv.read",
+            "py.csv.write"
+          ]
+        },
+        {
           "key": "Write CSV files / Why newline matters",
           "heading": "Write CSV files / Why newline matters",
           "content_hash": "186c38928e91c8fb7cbe6522150c61596912b46aa486d385a75a727572049b2f",
@@ -1462,7 +1606,7 @@
         {
           "key": "Write CSV files / Notebook evidence",
           "heading": "Write CSV files / Notebook evidence",
-          "content_hash": "a759d9ee462a5687beb542a5d4910211b07b81e5984d2687f4337acde9d0075b",
+          "content_hash": "eb4deba7e77b266754a47aac166461c7c9f36247b4f4cf292815718bd3af1db7",
           "topic_ids": [
             "py.csv.write"
           ]
@@ -1471,7 +1615,7 @@
     },
     {
       "path": "Notes/Python/Concepts/dictionaries.md",
-      "file_hash": "2777b68bbe40e4b46cf2a2e866acf82d4d19e686c1a75ba86dcf25a1982c1860",
+      "file_hash": "966add023a55c5fdbcbb76f9ec10adbfba96ac8542ab87a58e836ff6cf21c475",
       "sections": [
         {
           "key": "Dictionaries",
@@ -1503,6 +1647,15 @@
           "content_hash": "259a6e9651a2c667d362ff3919af23b3d5fec9ddd8ba5be29a0c97629fb0fa64",
           "topic_ids": [
             "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Dictionaries / Changing the elements / Same key replaces its value",
+          "heading": "Dictionaries / Changing the elements / Same key replaces its value",
+          "content_hash": "34581fd725be012d46e042f4cbbee409bd7f2c9ce1a77f0b750ce24a675db67b",
+          "topic_ids": [
+            "py.dict.mutate",
+            "py.list.records"
           ]
         },
         {
@@ -2133,6 +2286,59 @@
       ]
     },
     {
+      "path": "Notes/Python/Logic/order-summary-after-loop.md",
+      "file_hash": "551ea1550438be51fbe87d2f78d33d18763c33d07b403e7ed67748959dabbe4f",
+      "sections": [
+        {
+          "key": "Count orders and write the summary after the loop",
+          "heading": "Count orders and write the summary after the loop",
+          "content_hash": "47d7bac5e8742933a0c075ff81d15719e3472b628e8dac72c5b4f4e29bce8040",
+          "topic_ids": [
+            "py.records.summary"
+          ]
+        },
+        {
+          "key": "Count orders and write the summary after the loop / Groups come from the status values",
+          "heading": "Count orders and write the summary after the loop / Groups come from the status values",
+          "content_hash": "99c2f6b8f3c3ca9c6ed203783d04857ce548ae66957167d76ed12d71ffc38bbf",
+          "topic_ids": [
+            "py.records.summary"
+          ]
+        },
+        {
+          "key": "Count orders and write the summary after the loop / Count first, write after the loop",
+          "heading": "Count orders and write the summary after the loop / Count first, write after the loop",
+          "content_hash": "18b4fb684c660fe281cfa96503a244f8a65b4e96a8b33548690f8b15496aeca9",
+          "topic_ids": [
+            "py.records.summary"
+          ]
+        },
+        {
+          "key": "Count orders and write the summary after the loop / Trace the running totals",
+          "heading": "Count orders and write the summary after the loop / Trace the running totals",
+          "content_hash": "f64aa369d183f203c55d929bc533cece5504bb7fce4c71c169be144500d9c378",
+          "topic_ids": [
+            "py.records.summary"
+          ]
+        },
+        {
+          "key": "Count orders and write the summary after the loop / Keep separate orders before summarising",
+          "heading": "Count orders and write the summary after the loop / Keep separate orders before summarising",
+          "content_hash": "9eed05c8ec1b436876c0271fba31847ebee6f2b40a49745b1367c9e916fd7138",
+          "topic_ids": [
+            "py.list.records",
+            "py.records.summary"
+          ]
+        },
+        {
+          "key": "Count orders and write the summary after the loop / Learning context",
+          "heading": "Count orders and write the summary after the loop / Learning context",
+          "content_hash": "8b8b429dd362ddd8e5390da648ff8197714c91d73a8fcbdb98a774283587cdf5",
+          "exclusion_reason": "Provenance and pending-practice status; no additional concept coverage."
+        }
+      ]
+    },
+    {
       "path": "Notes/README.md",
       "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
     },
@@ -2286,7 +2492,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-22",
+  "inventory_date_ist": "2026-10-24",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

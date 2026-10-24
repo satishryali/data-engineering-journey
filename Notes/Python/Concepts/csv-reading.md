@@ -44,6 +44,55 @@ Expected output:
 - `newline=""` lets the CSV reader handle line endings.
 - A relative path is resolved from the current working folder. If the file is elsewhere, supply the correct relative path. The learner's original notebook uses an absolute Windows path; that path needs changing on another computer.
 
+## Keep all CSV rows
+
+We need a list of dictionaries to keep several orders. Each dictionary holds one row; the list holds all the rows.
+
+The learner's [completed orders CSV](../../../practice/Python%20Oops/Oops/completed_orders_v1.csv) currently contains three data rows:
+
+```csv
+order_id,customer_id,quantity,unit_price,total_amount
+1001,C001,2,250,500
+1003,C003,3,100,300
+1004,C001,1,450,450
+```
+
+Run from the repository root:
+
+```python
+import csv
+
+orders = []
+with open("practice/Python Oops/Oops/completed_orders_v1.csv",
+          "r", newline="", encoding="utf-8") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        orders.append(row)
+
+print(len(orders))
+print(orders[0])
+print([row["order_id"] for row in orders])
+```
+
+Expected output:
+
+```text
+3
+{'order_id': '1001', 'customer_id': 'C001', 'quantity': '2', 'unit_price': '250', 'total_amount': '500'}
+['1001', '1003', '1004']
+```
+
+- `orders = []` is outside the loop so we keep earlier rows.
+- `DictReader` uses the first row as column names. It returns a new dictionary for each data row.
+- `orders.append(row)` adds that whole dictionary as one list item.
+- All three dictionaries have an `order_id` key. Their values stay separate because they belong to different dictionaries.
+- The file has three data rows, not five. With five data rows, the same code collects five dictionaries. The header does not count.
+- Values stay strings. Collecting rows does not convert amounts to numbers.
+
+Using `orders = {}` and `orders.update(row)` repeatedly would leave one dictionary with the last row's field values for this file. Use `append()` on a list to keep all rows. See [Same key replaces its value](dictionaries.md#same-key-replaces-its-value).
+
+Added 24 October 2026 from the learner's question about keeping five CSV rows. File contents inspected; collection code supplied by the tutor, with no learner execution or independent understanding assessed. Recall task is separate in [Notebook recall questions](../../revision/notebook-questions.md).
+
 ## Import names must match
 
 Use either `import csv` with `csv.DictReader(file)`, or `from csv import DictReader` with `DictReader(file)`.

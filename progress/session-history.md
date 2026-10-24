@@ -374,3 +374,24 @@ Evidence: `tracking/study-log.csv#DOC-20261022-POM2`
 Learner reported a third completed 25-minute Docker Pomodoro and a 5-minute break. Three reported focus intervals now total 75 minutes but lack actual IST start/end times, so all remain pending confirmation and excluded from confirmed totals. Three reported 5-minute breaks are excluded. No running timer, Docker attempt, proficiency assessment or RDS-001 acceptance change. Excel refreshed for 22 October. Next: confirm Pomodoro times and continue Docker study; RDS-001 remains the pending project task.
 
 Evidence: `tracking/study-log.csv#DOC-20261022-POM3`
+
+<!-- checkpoint:CP-20261024-dict-csv-notes -->
+## 2026-10-24 — CP-20261024-dict-csv-notes (setup)
+
+Requested notes saved: update replaces matching keys; append collects separate CSV row dictionaries. Added a practical example using the supplied three-row CSV and an unanswered recall task. Tutor explanation only; no learner execution assessed, review dates or timer changed. RDS-001 project acceptance and pending next action preserved.
+
+Evidence: `Notes/Python/Concepts/dictionaries.md#same-key-replaces-its-value`; `Notes/Python/Concepts/csv-reading.md#keep-all-csv-rows`; `practice/Python Oops/Oops/completed_orders_v1.csv`
+
+<!-- checkpoint:CP-20261024-two-context-notes -->
+## 2026-10-24 — CP-20261024-two-context-notes (setup)
+
+Two-context-manager notes saved, 24 October 2026: added copying a CSV with two files in one with statement, automatic closing, and separate write-then-read blocks for the same file. Tutor explanation and unanswered recall prompt only; no learner attempt assessed, timer change or review-date change. Pending project action remains unchanged.
+
+Evidence: `Notes/Python/Concepts/csv-writing.md#open-two-files-in-one-with-statement`; `Notes/revision/notebook-questions.md`
+
+<!-- checkpoint:CP-20261024-order-summary-logic-note -->
+## 2026-10-24 — CP-20261024-order-summary-logic-note (setup)
+
+Order-summary logic note saved, 24 October 2026: created Notes/Python/Logic/order-summary-after-loop.md with grouping by status, running totals, order count versus quantity and writing after the loop. Tutor worked example executed in memory. Learner split-file read-back output supplied; final summary implementation/output still unverified. Optional immediate Python follow-up: reconstruct the changed-input recall task and show the summary, stating help used. No timer or review completion recorded; RDS-001 remains the pending project task.
+
+Evidence: `Notes/Python/Logic/order-summary-after-loop.md`; `Notes/revision/notebook-questions.md#order-summary-logic`

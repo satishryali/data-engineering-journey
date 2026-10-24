@@ -22,3 +22,7 @@
 7. [Objects and printing](Concepts/objects-and-printing.md)
 8. [Use the random module](Concepts/random.md)
 9. [Generate practice data with Faker](Concepts/faker.md)
+
+# Logic
+
+1. [Count orders and write the summary after the loop](Logic/order-summary-after-loop.md)

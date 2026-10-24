@@ -1,0 +1,4 @@
+order_id,customer_id,quantity,unit_price,total_amount
+1001,C001,2,250,500
+1003,C003,3,100,300
+1004,C001,1,450,450

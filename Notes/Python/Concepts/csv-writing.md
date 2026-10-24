@@ -60,6 +60,52 @@ Expected output:
 - `writeheader()` writes the field names as the first row.
 - The default reader returns strings. Writing an integer does not preserve its Python type in CSV.
 
+## Open two files in one with statement
+
+When copying CSV rows, we need the input and output files open together. Put a comma between the two context managers. A context manager handles setup and cleanup; for these files, it closes them when the block ends, including if an error occurs.
+
+Create `input.csv` in a scratch folder with this small input:
+
+```csv
+id,name,salary
+2,Ravi,60000
+3,Priya,55000
+```
+
+Run this code from that folder. Use different input and output paths: `"w"` replaces an existing output file's contents.
+
+```python
+import csv
+
+with (
+    open("input.csv", "r", newline="", encoding="utf-8") as source,
+    open("output.csv", "w", newline="", encoding="utf-8") as destination,
+):
+    reader = csv.DictReader(source)
+    writer = csv.DictWriter(destination, fieldnames=reader.fieldnames)
+    writer.writeheader()
+    for row in reader:
+        writer.writerow(row)
+```
+
+Expected contents of `output.csv` after the block ends:
+
+```csv
+id,name,salary
+2,Ravi,60000
+3,Priya,55000
+```
+
+- `source` reads the existing file; `destination` writes the copied rows.
+- Both files stay open inside the block. The input must have a header for this example.
+- `reader.fieldnames` supplies the input column names to the writer.
+- Parentheses let us spread the statement over several lines (Python 3.9+).
+- Files open from left to right and close in reverse order: destination, then source.
+
+For the earlier example that writes a file and then reads that same file, keep the two `with` blocks separate. The first block finishes writing and closes the file before the second reads it. Opening that same path in `"w"` while reading it would erase its existing contents.
+
+Added 24 October 2026 from the learner's question about two context managers. Tutor explanation; no independent attempt assessed. Recall task is in [Notebook recall questions](../../revision/notebook-questions.md).
+
 ## Why newline matters
 
 Use `newline=""` when opening a file for the CSV module. This lets the CSV module handle line endings.
@@ -81,4 +127,5 @@ The employee files and `product_data_dict.csv` contain saved rows. `product_data
 These examples explain the studied syntax; they do not complete the deferred valid/rejected-orders task or RDS-001. Help used during the notebook work is unknown.
 
 Related: [CSV reading](csv-reading.md), [file methods](file-methods.md).
+For grouping and running totals, see [Count orders and write the summary after the loop](../Logic/order-summary-after-loop.md).
 Reference: [Python CSV documentation](https://docs.python.org/3/library/csv.html).
