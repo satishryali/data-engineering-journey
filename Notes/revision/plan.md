@@ -1,15 +1,15 @@
 # Revision plan (generated)
 
-As of 2026-10-24 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-10-25 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 108 | learning sections mapped |
-| 3 | sections excluded |
-| 29 | topics total |
+| 118 | learning sections mapped |
+| 5 | sections excluded |
+| 30 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -67,6 +67,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | py.random.basics: Random numbers selections and repeatable sequences | 2026-11-09 | py.list.basics |
 | py.faker.basics: Faker generators locales and commerce providers | 2026-11-10 | py.dict.access, py.csv.write |
 | py.records.summary: Count and total orders by status after a loop | 2026-11-11 | py.list.records, py.csv.read |
+| py.decimal.money: Decimal prices and explicit money rounding | 2026-11-12 | py.csv.read |
 
 ## Important weak topics
 
@@ -86,7 +87,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 ## Coverage gaps
 
 - Every included learning section has a topic mapping.
-- Neglected topics: py.dict.access, py.dict.mutate, sql.join.preservation, sql.count.nulls, sql.join.keys, py.list.basics, py.list.mutate, py.list.records
+- Neglected topics: py.dict.access, py.dict.mutate, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, py.list.basics, py.list.mutate, py.list.records
 - Reassessment flags: none.
 
 ## Manageable session
@@ -94,7 +95,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 26 topics await assessment. One diagnostic per suitable session needs at least 26 sessions; new notes can extend this. Replan missed slots without restarting.
+- 27 topics await assessment. One diagnostic per suitable session needs at least 27 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -129,6 +130,7 @@ Check prerequisites first. Teach missing understanding before retention practice
 | py.random.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.faker.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.records.summary | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.decimal.money | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -179,6 +181,12 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Write CSV files / Open two files in one with statement: py.context.resources, py.csv.read, py.csv.write
   - Write CSV files / Why newline matters: py.csv.write
   - Write CSV files / Notebook evidence: py.csv.write
+- [Notes/Python/Concepts/decimal-money.md](../../Notes/Python/Concepts/decimal-money.md)
+  - Decimal for prices and totals: py.decimal.money
+  - Decimal for prices and totals / Import and create a Decimal: py.decimal.money
+  - Decimal for prices and totals / Convert the CSV price directly: py.decimal.money
+  - Decimal for prices and totals / Round to two decimal places: py.decimal.money
+  - Decimal for prices and totals / Learning evidence: Source-code observations, links and pending assessment; no additional concept coverage.
 - [Notes/Python/Concepts/dictionaries.md](../../Notes/Python/Concepts/dictionaries.md)
   - Dictionaries: py.dict.access
   - Dictionaries / Accessing items: py.dict.access
@@ -268,6 +276,14 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Tips to follow when creating dbt models,transformations or anything: de.ingest.seeds
   - Interesting Topics: py.modules.main, py.context.resources, py.logging.basics, vault.kv.read
   - Path :: py.paths.imports
+- [Notes/Python/Logic/collect-function-results-write-once.md](../../Notes/Python/Logic/collect-function-results-write-once.md)
+  - Collect function results and write once: py.functions.basics, py.list.records
+  - Collect function results and write once / Why only the last result remained: py.functions.basics, py.list.records, py.csv.write
+  - Collect function results and write once / Keep one dictionary per input file: py.functions.basics, py.list.records, py.dict.mutate
+  - Collect function results and write once / Return one result and collect it outside: py.functions.basics, py.list.records, py.csv.write
+  - Collect function results and write once / All writing can be inside a function: py.functions.basics, py.list.records, py.csv.write
+  - Collect function results and write once / Append versus a fresh report: py.csv.write, py.files.methods
+  - Collect function results and write once / Evidence and next attempt: Actual source context and pending assignment; no additional learning concept.
 - [Notes/Python/Logic/order-summary-after-loop.md](../../Notes/Python/Logic/order-summary-after-loop.md)
   - Count orders and write the summary after the loop: py.records.summary
   - Count orders and write the summary after the loop / Groups come from the status values: py.records.summary

@@ -280,6 +280,20 @@
       "kind": "setup",
       "sha256": "74081cf9990fe95eb89b607be5db06c11d1204a120c9aa3d9d9f438e829daa88",
       "evidence_key": "f50b95b4546736a4b4d42c483cf706064800b8a5c9a9f108f225d577fd0b22ae"
+    },
+    {
+      "checkpoint_id": "CP-20261025-function-results-note",
+      "date_ist": "2026-10-25",
+      "kind": "setup",
+      "sha256": "8a5d2e620939f412daf9dda4a149e8cd558eaadb31957355e84fa5062e7f083a",
+      "evidence_key": "c167e7b7b83b6281de8b31ecd6c07539d21e50393d9e6d1a49c716a3877fd96a"
+    },
+    {
+      "checkpoint_id": "CP-20261025-decimal-note",
+      "date_ist": "2026-10-25",
+      "kind": "setup",
+      "sha256": "d37b24a7589ce7a879d00324795d0eed54cab161add604e63279807f5c46817b",
+      "evidence_key": "3ac6bc1f192b35438d140c24ca84e07c0b6175283a69fea9a3d71e30f4585e42"
     }
   ]
 }

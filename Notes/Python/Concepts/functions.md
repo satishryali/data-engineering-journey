@@ -49,4 +49,6 @@ Expected output:
 
 Our cleaner returns two lists with `return valid_orders, rejected_orders`. Capture them using `valid_result, rejected_result = clean_orders(orders)`.
 
+For collecting results from several calls, see [Collect function results and write once](../Logic/collect-function-results-write-once.md). Each call can return its own result while the caller keeps them together.
+
 Practice on 16 October 2026: function corrections needed guidance about the parameter, fresh lists and return. Saved notebook output confirms changed input, empty input and original five-order results. Independent reconstruction is still pending.

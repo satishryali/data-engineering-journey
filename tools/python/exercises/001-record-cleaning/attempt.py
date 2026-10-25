@@ -19,8 +19,7 @@ for i in orders:
     for order_id,amount in i.items():
         try:
             if amount > 0:
-                res = i['order_id'] = amount
-                print(res.value())
-                break
+                return i['order_id'] = amount
+                print(res)
         except Exception as e:
             print("Type Error")

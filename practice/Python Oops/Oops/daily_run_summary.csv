@@ -1,0 +1,6 @@
+input,completed,cancelled,pending
+orders.csv,3,2,0
+orders_day2.csv,2,1,0
+orders_day3.csv,1,1,1
+orders_day4.csv,0,0,0
+orders_day5.csv,2,1,0

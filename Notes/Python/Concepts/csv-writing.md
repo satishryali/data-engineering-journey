@@ -128,4 +128,5 @@ These examples explain the studied syntax; they do not complete the deferred val
 
 Related: [CSV reading](csv-reading.md), [file methods](file-methods.md).
 For grouping and running totals, see [Count orders and write the summary after the loop](../Logic/order-summary-after-loop.md).
+For keeping results from several function calls, see [Collect function results and write once](../Logic/collect-function-results-write-once.md).
 Reference: [Python CSV documentation](https://docs.python.org/3/library/csv.html).

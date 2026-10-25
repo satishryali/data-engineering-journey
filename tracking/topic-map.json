@@ -141,6 +141,10 @@
         {
           "path": "Notes/Python/Concepts/dictionaries.md",
           "key": "Dictionaries / Changing the elements / Same key replaces its value"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Keep one dictionary per input file"
         }
       ],
       "initial_assessment_date_ist": "2026-10-17"
@@ -864,6 +868,26 @@
         {
           "path": "Notes/Python/Logic/order-summary-after-loop.md",
           "key": "Count orders and write the summary after the loop / Keep separate orders before summarising"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Why only the last result remained"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Keep one dictionary per input file"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Return one result and collect it outside"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / All writing can be inside a function"
         }
       ],
       "initial_assessment_date_ist": "2026-10-20"
@@ -874,10 +898,17 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/functions.md",
-          "sha256": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808"
+          "sha256": "951c2913afbdc1044e88d1a3dff17643cd55ef182a9c9a2ea25236222b7e78ee"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "sha256": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808",
+          "changed_on": "2026-10-25",
+          "reason": "Navigation link to function-result logic note; inspected, no new assessment"
+        }
+      ],
       "coverage": "active",
       "prerequisites": [
         "py.list.records"
@@ -896,9 +927,39 @@
         {
           "path": "Notes/Python/Concepts/functions.md",
           "key": "Functions / Fresh lists for each call"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Why only the last result remained"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Keep one dictionary per input file"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Return one result and collect it outside"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / All writing can be inside a function"
         }
       ],
-      "initial_assessment_date_ist": "2026-10-16"
+      "initial_assessment_date_ist": "2026-10-16",
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/functions.md",
+          "section": "Functions / Fresh lists for each call",
+          "prior_hash": "ae54739e986675dcd0446d27cc5f151360e049e268518b4d5861d50b5de2e796",
+          "content_hash": "62f501c4b1d35f67529cee9d05adba5eb8f2ebfbb3c896146afc1ef3ddf410cd",
+          "detected_date_ist": "2026-10-25"
+        }
+      ]
     },
     {
       "id": "py.csv.read",
@@ -1036,7 +1097,7 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/csv-writing.md",
-          "sha256": "d337a8c0bd48c2e5a3d75556f724ea5739ffa627379b935bc3d5101c8dad8d1a"
+          "sha256": "bdae734758b52a50503d732c220f7b47a17cd8cbb709004f29e2689baf60254c"
         }
       ],
       "source_history": [
@@ -1051,6 +1112,12 @@
           "sha256": "497bf5d3d8854c1a076de2a65d5adbd7883197355095d3a8bda4c1fb991a3c6a",
           "changed_on": "2026-10-24",
           "reason": "Navigation link to requested logic note; no assessment"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "sha256": "d337a8c0bd48c2e5a3d75556f724ea5739ffa627379b935bc3d5101c8dad8d1a",
+          "changed_on": "2026-10-25",
+          "reason": "Navigation link to function-result logic note; inspected, no new assessment"
         }
       ],
       "coverage": "queued",
@@ -1082,6 +1149,22 @@
         {
           "path": "Notes/Python/Concepts/csv-writing.md",
           "key": "Write CSV files / Open two files in one with statement"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Why only the last result remained"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Return one result and collect it outside"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / All writing can be inside a function"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Append versus a fresh report"
         }
       ],
       "initial_assessment_date_ist": "2026-11-06",
@@ -1093,6 +1176,13 @@
           "prior_hash": "a759d9ee462a5687beb542a5d4910211b07b81e5984d2687f4337acde9d0075b",
           "content_hash": "eb4deba7e77b266754a47aac166461c7c9f36247b4f4cf292815718bd3af1db7",
           "detected_date_ist": "2026-10-24"
+        },
+        {
+          "path": "Notes/Python/Concepts/csv-writing.md",
+          "section": "Write CSV files / Notebook evidence",
+          "prior_hash": "eb4deba7e77b266754a47aac166461c7c9f36247b4f4cf292815718bd3af1db7",
+          "content_hash": "157a726bc1394082d61d6adcb31a2c4ec66c00ebc92dd5b1888276da42145185",
+          "detected_date_ist": "2026-10-25"
         }
       ]
     },
@@ -1129,6 +1219,10 @@
         {
           "path": "Notes/Python/Concepts/file-methods.md",
           "key": "Work with an open file / Read bytes and control printed newlines"
+        },
+        {
+          "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+          "key": "Collect function results and write once / Append versus a fresh report"
         }
       ],
       "initial_assessment_date_ist": "2026-11-07"
@@ -1289,6 +1383,42 @@
       ],
       "initial_assessment_date_ist": "2026-11-11",
       "planning_note": "New grouping and accumulation concept distinct from CSV syntax; adjustable diagnostic slot, no scored assessment."
+    },
+    {
+      "id": "py.decimal.money",
+      "name": "Decimal prices and explicit money rounding",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/decimal-money.md",
+          "sha256": "0046a215702ab3f5a1454f1294091adeda31e98495ce2a45d44e6431c7b40923"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.csv.read"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/decimal-money.md",
+          "key": "Decimal for prices and totals"
+        },
+        {
+          "path": "Notes/Python/Concepts/decimal-money.md",
+          "key": "Decimal for prices and totals / Import and create a Decimal"
+        },
+        {
+          "path": "Notes/Python/Concepts/decimal-money.md",
+          "key": "Decimal for prices and totals / Convert the CSV price directly"
+        },
+        {
+          "path": "Notes/Python/Concepts/decimal-money.md",
+          "key": "Decimal for prices and totals / Round to two decimal places"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-12",
+      "planning_note": "Decimal conversion and rounding are distinct from CSV syntax. Tutor explanation and unexecuted learner source only; initial slot is adjustable, no scored review."
     }
   ],
   "note_inventory": [
@@ -1559,7 +1689,7 @@
     },
     {
       "path": "Notes/Python/Concepts/csv-writing.md",
-      "file_hash": "d337a8c0bd48c2e5a3d75556f724ea5739ffa627379b935bc3d5101c8dad8d1a",
+      "file_hash": "bdae734758b52a50503d732c220f7b47a17cd8cbb709004f29e2689baf60254c",
       "sections": [
         {
           "key": "Write CSV files",
@@ -1606,10 +1736,54 @@
         {
           "key": "Write CSV files / Notebook evidence",
           "heading": "Write CSV files / Notebook evidence",
-          "content_hash": "eb4deba7e77b266754a47aac166461c7c9f36247b4f4cf292815718bd3af1db7",
+          "content_hash": "157a726bc1394082d61d6adcb31a2c4ec66c00ebc92dd5b1888276da42145185",
           "topic_ids": [
             "py.csv.write"
           ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/decimal-money.md",
+      "file_hash": "0046a215702ab3f5a1454f1294091adeda31e98495ce2a45d44e6431c7b40923",
+      "sections": [
+        {
+          "key": "Decimal for prices and totals",
+          "heading": "Decimal for prices and totals",
+          "content_hash": "73ca055580c810c4eda1864c503f263b9fcf4daa974e745f41132d5b1318ae44",
+          "topic_ids": [
+            "py.decimal.money"
+          ]
+        },
+        {
+          "key": "Decimal for prices and totals / Import and create a Decimal",
+          "heading": "Decimal for prices and totals / Import and create a Decimal",
+          "content_hash": "e5e016af53b746530f07f3351ac6e9ecd0ff733b1fe913ae5a36c8c116b7fff7",
+          "topic_ids": [
+            "py.decimal.money"
+          ]
+        },
+        {
+          "key": "Decimal for prices and totals / Convert the CSV price directly",
+          "heading": "Decimal for prices and totals / Convert the CSV price directly",
+          "content_hash": "30cc32831ca10577745848aecbc82b5731321f48d2b7b1439fad3525a308253b",
+          "topic_ids": [
+            "py.decimal.money"
+          ]
+        },
+        {
+          "key": "Decimal for prices and totals / Round to two decimal places",
+          "heading": "Decimal for prices and totals / Round to two decimal places",
+          "content_hash": "58730456c7d199d748a6ddb5dd7487b641ae1f4c1d3afdb7e880ce56153ed296",
+          "topic_ids": [
+            "py.decimal.money"
+          ]
+        },
+        {
+          "key": "Decimal for prices and totals / Learning evidence",
+          "heading": "Decimal for prices and totals / Learning evidence",
+          "content_hash": "234e0c7f81a02d3af5b73c3b19b86be0ce47f9fc9281bc0351441e6ec080ad82",
+          "exclusion_reason": "Source-code observations, links and pending assessment; no additional concept coverage."
         }
       ]
     },
@@ -1858,7 +2032,7 @@
     },
     {
       "path": "Notes/Python/Concepts/functions.md",
-      "file_hash": "0549986fb8ddeca6f8a0f5e5f412427eafd83cb3b0f5d3f11e3f3c210f520808",
+      "file_hash": "951c2913afbdc1044e88d1a3dff17643cd55ef182a9c9a2ea25236222b7e78ee",
       "sections": [
         {
           "key": "Functions",
@@ -1879,7 +2053,7 @@
         {
           "key": "Functions / Fresh lists for each call",
           "heading": "Functions / Fresh lists for each call",
-          "content_hash": "ae54739e986675dcd0446d27cc5f151360e049e268518b4d5861d50b5de2e796",
+          "content_hash": "62f501c4b1d35f67529cee9d05adba5eb8f2ebfbb3c896146afc1ef3ddf410cd",
           "topic_ids": [
             "py.functions.basics"
           ]
@@ -2286,6 +2460,76 @@
       ]
     },
     {
+      "path": "Notes/Python/Logic/collect-function-results-write-once.md",
+      "file_hash": "0ff7cf16aa1823f4093d790352e881a401dede0bfe83c57954d304b738f37559",
+      "sections": [
+        {
+          "key": "Collect function results and write once",
+          "heading": "Collect function results and write once",
+          "content_hash": "1beb9ac6a5a35c148f5da3165a606df0ddf8e05cf799fd78ac11d35413d92006",
+          "topic_ids": [
+            "py.functions.basics",
+            "py.list.records"
+          ]
+        },
+        {
+          "key": "Collect function results and write once / Why only the last result remained",
+          "heading": "Collect function results and write once / Why only the last result remained",
+          "content_hash": "6fac226c7d215ca053924ee89caf489ee698f445e1da82845dc5c075225e7d1a",
+          "topic_ids": [
+            "py.functions.basics",
+            "py.list.records",
+            "py.csv.write"
+          ]
+        },
+        {
+          "key": "Collect function results and write once / Keep one dictionary per input file",
+          "heading": "Collect function results and write once / Keep one dictionary per input file",
+          "content_hash": "93561ec821e37f2dd3d3ac2c808db92896fb82cd405bc505d415dd47055a6766",
+          "topic_ids": [
+            "py.functions.basics",
+            "py.list.records",
+            "py.dict.mutate"
+          ]
+        },
+        {
+          "key": "Collect function results and write once / Return one result and collect it outside",
+          "heading": "Collect function results and write once / Return one result and collect it outside",
+          "content_hash": "5a4ddc41b173a30d4e0f57d696328862204d44abafdd2c9ec9ea425444b1d83c",
+          "topic_ids": [
+            "py.functions.basics",
+            "py.list.records",
+            "py.csv.write"
+          ]
+        },
+        {
+          "key": "Collect function results and write once / All writing can be inside a function",
+          "heading": "Collect function results and write once / All writing can be inside a function",
+          "content_hash": "8597f90f58353adf7a1dacca7b5cc32d6042dd1dc2700fff957acdaa693cb0fe",
+          "topic_ids": [
+            "py.functions.basics",
+            "py.list.records",
+            "py.csv.write"
+          ]
+        },
+        {
+          "key": "Collect function results and write once / Append versus a fresh report",
+          "heading": "Collect function results and write once / Append versus a fresh report",
+          "content_hash": "b1c99a4d9283d726d541ae5985ab17693ef6f942a6bb31e854529d2305a5cd2b",
+          "topic_ids": [
+            "py.csv.write",
+            "py.files.methods"
+          ]
+        },
+        {
+          "key": "Collect function results and write once / Evidence and next attempt",
+          "heading": "Collect function results and write once / Evidence and next attempt",
+          "content_hash": "5e04d6a3cbab4335d4496ef6ec0b68c2a226d916d9b49a71bfa89eb3843df9c1",
+          "exclusion_reason": "Actual source context and pending assignment; no additional learning concept."
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Logic/order-summary-after-loop.md",
       "file_hash": "551ea1550438be51fbe87d2f78d33d18763c33d07b403e7ed67748959dabbe4f",
       "sections": [
@@ -2492,7 +2736,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-24",
+  "inventory_date_ist": "2026-10-25",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

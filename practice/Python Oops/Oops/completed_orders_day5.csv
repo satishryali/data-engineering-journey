@@ -1,0 +1,3 @@
+order_id,customer_id,quantity,unit_price,total_amount
+1012,C010,3,19.95,59.85
+1014,C012,1,40.10,40.10

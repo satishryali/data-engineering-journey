@@ -1,5 +1,9 @@
 # Notebook recall questions
 
+- Decimal prices, added 25 October 2026: for quantity `"4"` and unit price `"12.35"`, predict and calculate the amount directly from CSV strings without a float conversion. Explain why `Decimal("0.1")` differs from `Decimal(0.1)`, and compare default rounding with half-up rounding for `Decimal("8.125")` to two decimal places. State any help used. Pending; not an answered review.
+
+- Function results and a combined report, added 25 October 2026: explain why a fresh list inside each function call does not collect earlier calls, and why repeated `update()` calls do not keep separate rows. Build a small function that returns one counts dictionary, collect two calls without a global list inside that function, and write the combined results once. Explain what happens on rerun with `"w"` versus `"a"`. Pending; no scored review.
+
 Try one task before opening its explanation. These prompts have not been answered or scored.
 
 - Dictionaries: predict what a saved `keys()` view contains after adding a key. Build a doubled-value dictionary and explain whether the input changed. Compare `pop()`, `popitem()`, `clear()` and `del` with a small example.
