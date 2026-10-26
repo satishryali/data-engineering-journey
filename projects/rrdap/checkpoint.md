@@ -25,3 +25,6 @@ PROJECT: Real-Time Retail Distribution & Analytics Platform
 [Main checkpoint](../../progress/current.md) owns the next task; update it, START-HERE.md and this project view at existing explicit checkpoint boundaries. [Roadmap](roadmap.md) owns phase state; canonical learning/mistake/skill/revision/time records remain shared. Lab details are user-reported in [project overview](README.md); no remote services verified. No external code repository linked.
 
 RetailFlow is superseded and preserved; RF-001 remains uncompleted. Its setup/planning interval 16:39:54-17:45:25 = 1h05m31s is retained separately. Earlier Python CSV output/read-back and SQL-003 implementation remain deferred, not complete. The reported unfinished SQL-versus-dbt experiment has no verified external location, branch or commit.
+
+<!-- CP-20261026-dataclass-special-method-notes -->
+Python reference notes saved, 26 October: dataclasses and individual special-method examples. No RDS-001 code or acceptance change. Main handoff records the exact Python follow-up. Note inventory refreshed and coach validation passed during publishing on 26 October.

@@ -294,6 +294,21 @@
       "kind": "setup",
       "sha256": "d37b24a7589ce7a879d00324795d0eed54cab161add604e63279807f5c46817b",
       "evidence_key": "3ac6bc1f192b35438d140c24ca84e07c0b6175283a69fea9a3d71e30f4585e42"
+    },
+    {
+      "checkpoint_id": "CP-20261026-other-computer-morning-pomodoros",
+      "date_ist": "2026-10-26",
+      "kind": "setup",
+      "sha256": "576617090591dd5b0253c84aaa097f273b695c03b0fefd360e11b121dc622a66",
+      "evidence_key": "41aa9ab104341fa373559f43ae6a1085b1ada532cc01d6b7817472de20d1fd82"
+    },
+    {
+      "checkpoint_id": "CP-20261026-dataclass-special-method-notes",
+      "date_ist": "2026-10-26",
+      "kind": "setup",
+      "sha256": "99dc2f2d3f48d60248785f7400ac2c94862b8b89abe363b767e86db4097f1c20",
+      "evidence_key": "94d175bf107119a891bf20a56d7c947c9ddc48bcfcceda261aa571e7de577e1c",
+      "reconstructed_from": "progress/session-history.md#CP-20261026-dataclass-special-method-notes"
     }
   ]
 }

@@ -1,15 +1,15 @@
 # Revision plan (generated)
 
-As of 2026-10-25 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-10-26 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 118 | learning sections mapped |
-| 5 | sections excluded |
-| 30 | topics total |
+| 143 | learning sections mapped |
+| 7 | sections excluded |
+| 32 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -68,6 +68,8 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | py.faker.basics: Faker generators locales and commerce providers | 2026-11-10 | py.dict.access, py.csv.write |
 | py.records.summary: Count and total orders by status after a loop | 2026-11-11 | py.list.records, py.csv.read |
 | py.decimal.money: Decimal prices and explicit money rounding | 2026-11-12 | py.csv.read |
+| py.dataclasses.basics: Dataclass records and generated methods | 2026-11-13 | py.objects.basics |
+| py.objects.protocols: Object comparison and collection special methods | 2026-11-14 | py.objects.basics |
 
 ## Important weak topics
 
@@ -86,16 +88,16 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 
 ## Coverage gaps
 
-- Every included learning section has a topic mapping.
-- Neglected topics: py.dict.access, py.dict.mutate, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, py.list.basics, py.list.mutate, py.list.records
-- Reassessment flags: none.
+- Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
+- Neglected topics: py.dict.access, py.dict.mutate, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.list.basics, py.list.mutate, py.list.records
+- Reassessment flags: py.objects.protocols
 
 ## Manageable session
 
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 27 topics await assessment. One diagnostic per suitable session needs at least 27 sessions; new notes can extend this. Replan missed slots without restarting.
+- 29 topics await assessment. One diagnostic per suitable session needs at least 29 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -131,6 +133,8 @@ Check prerequisites first. Teach missing understanding before retention practice
 | py.faker.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.records.summary | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.decimal.money | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.dataclasses.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.objects.protocols | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -181,6 +185,13 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Write CSV files / Open two files in one with statement: py.context.resources, py.csv.read, py.csv.write
   - Write CSV files / Why newline matters: py.csv.write
   - Write CSV files / Notebook evidence: py.csv.write
+- [Notes/Python/Concepts/dataclasses.md](../../Notes/Python/Concepts/dataclasses.md)
+  - Dataclasses: py.dataclasses.basics
+  - Dataclasses / Create an order: py.dataclasses.basics
+  - Dataclasses / Why use it when dictionaries exist: py.dataclasses.basics
+  - Dataclasses / Type hints do not convert values: py.dataclasses.basics
+  - Dataclasses / The same display with a regular class: py.dataclasses.basics
+  - Dataclasses / Sources and learning status: Source provenance and assessment status; no additional concept.
 - [Notes/Python/Concepts/decimal-money.md](../../Notes/Python/Concepts/decimal-money.md)
   - Decimal for prices and totals: py.decimal.money
   - Decimal for prices and totals / Import and create a Decimal: py.decimal.money
@@ -242,12 +253,34 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Objects and printing: py.objects.basics
   - Objects and printing / Create an employee: py.objects.basics
   - Objects and printing / Choose what print displays: py.objects.basics
+  - Objects and printing / The difference between `__str__` and `__repr__`: py.objects.basics
+  - Objects and printing / The difference between `__str__` and `__repr__` / Where Python automatically uses `__repr__`: py.objects.basics
+  - Objects and printing / The difference between `__str__` and `__repr__` / How `print()` chooses between them: py.objects.basics
+  - Objects and printing / The difference between `__str__` and `__repr__` / Choose a useful representation: py.objects.basics
+  - Objects and printing / Measure length with `__len__`: py.objects.basics
+  - Objects and printing / Indexing, looping and searching with `__getitem__`: py.objects.basics
+  - Objects and printing / Indexing, looping and searching with `__getitem__` / Three superpowers unlocked by `__getitem__`: py.objects.basics
+  - Objects and printing / Separate practice examples: py.objects.basics
 - [Notes/Python/Concepts/random.md](../../Notes/Python/Concepts/random.md)
   - Use the random module: py.random.basics
   - Use the random module / Generate numbers: py.random.basics
   - Use the random module / Choose from a list: py.random.basics
   - Use the random module / Repeat a sequence with seed: py.random.basics
   - Use the random module / Shuffle a list: py.random.basics
+- [Notes/Python/Concepts/special-methods.md](../../Notes/Python/Concepts/special-methods.md)
+  - Special methods: py.objects.protocols
+  - Special methods / __init__ - store starting values: py.objects.basics
+  - Special methods / __repr__ - describe an object: py.objects.basics
+  - Special methods / __str__ - display readable text: py.objects.basics
+  - Special methods / __eq__ - compare with ==: py.objects.protocols
+  - Special methods / __lt__ - compare with <: py.objects.protocols
+  - Special methods / __gt__ - compare with >: py.objects.protocols
+  - Special methods / __len__ - support len: py.objects.protocols
+  - Special methods / __getitem__ - support square brackets: py.objects.protocols
+  - Special methods / __iter__ - support a for loop: py.objects.protocols
+  - Special methods / __enter__ - enter a with block: py.context.resources
+  - Special methods / __exit__ - leave a with block: py.context.resources
+  - Special methods / Sources and learning status: Source provenance and assessment status; no additional concept.
 - [Notes/Python/Concepts/with(Context_Manager).md](../../Notes/Python/Concepts/with%28Context_Manager%29.md)
   - using with (Automatic Cleanup): py.context.resources
 - [Notes/Python/Database Connections/Exeucting Commands.md](../../Notes/Python/Database%20Connections/Exeucting%20Commands.md)

@@ -28,3 +28,6 @@
 
 1. [Count orders and write the summary after the loop](Logic/order-summary-after-loop.md)
 2. [Collect function results and write once](Logic/collect-function-results-write-once.md)
+
+- [Dataclasses: why and how](Concepts/dataclasses.md)
+- [Special methods: one example each](Concepts/special-methods.md)

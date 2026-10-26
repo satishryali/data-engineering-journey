@@ -409,3 +409,19 @@ Evidence: `Notes/Python/Logic/collect-function-results-write-once.md`; `Notes/re
 Decimal notes saved, 25 October 2026: added Notes/Python/Concepts/decimal-money.md with matching import syntax, CSV string conversion, integer quantities, Decimal totals and default half-even versus explicit half-up rounding. Four tutor examples executed. Latest learner code now returns counts, uses Decimal for prices, and collects results outside before one combined write; no output supplied and outside printing is not shown. This supersedes the earlier global-list/no-return snapshot; no independent assessment or acceptance claimed. Next Python step: print each returned dictionary and verify the original reports plus counts against actual inputs. No timer or existing review-date change. RDS-001 remains the pending project task.
 
 Evidence: `Notes/Python/Concepts/decimal-money.md`; `Notes/revision/notebook-questions.md`
+
+<!-- checkpoint:CP-20261026-other-computer-morning-pomodoros -->
+## 2026-10-26 — CP-20261026-other-computer-morning-pomodoros (setup)
+
+Morning study reported, 26 October 2026: three Pomodoro sessions completed on another computer. Recorded as POM-20261026-OTHER-MORNING-1 through -3; topic, duration and exact IST times not supplied, so confirmed hours are unchanged. These are reported completions, separate from local extension counts; no timer or learning assessment started. Confirm the topic and interval times when available. Continue the existing pending Python verification and RDS-001 task.
+
+Evidence: `tracking/study-log.csv#POM-20261026-OTHER-MORNING-1`
+
+<!-- checkpoint:CP-20261026-dataclass-special-method-notes -->
+## 2026-10-26 — CP-20261026-dataclass-special-method-notes (setup)
+
+Dataclass and special-method reference notes saved, 26 October 2026. Added Notes/Python/Concepts/dataclasses.md and special-methods.md with one standalone example per method; updated objects-and-printing.md, Python index and separate recall prompts. Inspected practice/Dataclass/dataclass.ipynb and its saved outputs (string order_id, equality, reversed __lt__, negative __len__, item access); assistance/independent understanding unknown. Attached snapshots were inaccessible and unchanged. No scored review, timer change or task acceptance. Two new concepts remain unassessed with adjustable initial slots, not retention due dates. Verification completed on 26 October: 13 standalone note examples executed with matching outputs; coach notes-sync, refresh and validate passed (37 review items, 32 concepts). Latest read-only attachment contains __getitem__ practice with saved output order-B, matching batch[1]. Earlier attachment access was blocked; the latest attachments were read successfully and remain unchanged. Next Python step: practise one method at a time, starting with __repr__ and __str__, and explain actual output/help used. Earlier returned-summary verification remains pending; RDS-001 remains the pending project task.
+
+Evidence: `Notes/Python/Concepts/dataclasses.md`; `Notes/Python/Concepts/special-methods.md`; `practice/Dataclass/dataclass.ipynb`.
+
+Publishing verification, 26 October 2026: refreshed note inventory and derived views; coach validation passed. Reconstructed this missing deduplication-index entry from the existing block; no duplicate outcome block, review, timer or skill event was added. Learner notebook outputs were not rerun.
