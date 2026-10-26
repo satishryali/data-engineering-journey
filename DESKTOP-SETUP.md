@@ -48,10 +48,74 @@ ask Codex to help reconcile them before continuing. Do not clone inside an exist
 
 ## 3. Install the learning skills
 
+### First create Python on this computer
+
+Virtual environments contain paths to a local Python installation. Do not copy
+`.venv` between computers or put it in Git/Google Drive. Git transfers the setup
+script and package list; each computer creates its own environment.
+
+From the repository root, run:
+
+```powershell
+& ./codex/setup-python.ps1
+```
+
+This finds a local Python 3.11+ installation, creates `.venv`, installs
+`requirements-study.txt`, checks dependencies and verifies the notebook kernel and
+Faker imports. Existing working environments are reused. It does not run notebook
+cells, change learner code, register a system kernel or start a timer. Optional
+RecallLab packages can be installed with `-IncludeRecallLab`.
+
+If an old/copied environment cannot run, close its notebook kernels and terminals,
+then run:
+
+```powershell
+& ./codex/setup-python.ps1 -Recreate
+```
+
+The old directory is moved to an ignored `.venv.backup-...` directory, never deleted.
+If Python is not found, install Python first or supply its actual path:
+
+```powershell
+& ./codex/setup-python.ps1 -PythonExecutable 'C:/your/local/Python/python.exe' -Recreate
+```
+
+Replace that example with the installed Python path on the laptop, not a path from
+the desktop. A missing Python installation must be installed on each computer.
+
+Open [data-engineering.code-workspace](data-engineering.code-workspace) in VS Code.
+It recommends Python/Jupyter extensions and points to this checkout's `.venv`
+without a desktop-specific path. If VS Code remembers an older interpreter, run
+**Python: Select Interpreter**, choose **Enter interpreter path**, then select
+`.venv/Scripts/python.exe` inside this checkout.
+
+For notebooks, also choose **Select Kernel > Select Another Kernel > Python
+Environments > .venv**. Notebook kernels have their own selection. Do not select
+the unavailable desktop kernel saved in old notebook metadata. Verify without
+running an exercise:
+
+```powershell
+& ./.venv/Scripts/python.exe ./codex/verify-python-env.py
+```
+
+Activation is optional. Direct interpreter commands work even if PowerShell blocks
+`Activate.ps1`; do not change the system execution policy just to activate a venv.
+If setup itself is blocked, use a process-only invocation:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./codex/setup-python.ps1
+```
+
+[Python's environment guide](https://docs.python.org/3/library/venv.html) explains
+why environments are recreated; [VS Code's kernel guide](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management)
+shows the separate notebook selection.
+
+### Then install the learning skills
+
 From the repository folder, run:
 
 ```powershell
-python codex/install_commands.py --keep-other-skills
+& ./.venv/Scripts/python.exe codex/install_commands.py --keep-other-skills
 ```
 
 - This installs 15 skills, including the five learning roles and GitHub utility.
@@ -115,6 +179,21 @@ The revision plan shows the date when it was last generated. Ask for `Today's sc
 or `Start revision` to have the tutor refresh planning using the actual IST date.
 
 ## 7. Switch between computers
+
+For the timer, install the repository's [Pomodoro setup](codex/pomodoro/README.md#continue-on-a-laptop-during-power-cuts)
+once on the laptop:
+
+```powershell
+& ./codex/pomodoro/Setup-Laptop.ps1
+```
+
+Reload VS Code, run **Pomodoro: Configure Sync Folder**, select the existing
+`Pomodoro-Sync` folder in My Drive and choose **Join existing shared history**.
+Do not create another baseline. Reload again; use **Pomodoro: Continue Session
+Here** when switching computers. Google Drive must be signed in on each computer.
+Wait for Drive sync to finish. The laptop resumes from the last uploaded snapshot;
+an abrupt shutdown can leave an older snapshot. A real two-computer handoff still
+needs verification after laptop setup. Git sync of code/records is separate.
 
 Before leaving one computer:
 

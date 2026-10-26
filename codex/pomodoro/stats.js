@@ -15,6 +15,7 @@ function weekStart(dateKey) {
 class StatsManager {
     constructor(storage, options = {}) {
         this.storage = storage;
+        this.externalCounts = options.externalCounts;
         this.startDate = options.startDate || '';
         this.pending = Promise.resolve();
         if (this.startDate) {
@@ -30,6 +31,13 @@ class StatsManager {
             }
         }
     }
+    reportedCounts() {
+        if (this.externalCounts) return this.externalCounts;
+        try {
+            return require('vscode').workspace.getConfiguration('pomodoro')
+                .get('externalCompletedSessions', {}) || {};
+        } catch { return {}; }
+    }
     rawCount(dateKey) {
         const value = this.storage.get(PREFIX + dateKey, 0);
         return Number.isSafeInteger(value) && value > 0 ? value : 0;
@@ -37,8 +45,10 @@ class StatsManager {
     getCount(dateKey) {
         if (this.startDate && dateKey < this.startDate) return 0;
         const raw = this.rawCount(dateKey);
-        return dateKey === this.startDate
-            ? Math.max(0, raw - this.baseline.raw + this.baseline.count) : raw;
+        const reported = this.reportedCounts()[dateKey];
+        const extra = Number.isSafeInteger(reported) && reported > 0 ? reported : 0;
+        return (dateKey === this.startDate
+            ? Math.max(0, raw - this.baseline.raw + this.baseline.count) : raw) + extra;
     }
     incrementCount(dateKey) {
         const write = this.pending.then(async () => {
@@ -56,7 +66,9 @@ class StatsManager {
         const exclusiveEnd = end.toISOString().slice(0, 10);
         let week = 0;
         let overall = 0;
-        for (const key of this.storage.keys()) {
+        const keys = new Set(this.storage.keys());
+        for (const day of Object.keys(this.reportedCounts())) keys.add(PREFIX + day);
+        for (const key of keys) {
             if (!/^pomodoro\.stats\.\d{4}-\d{2}-\d{2}$/.test(key)) continue;
             const day = key.slice(PREFIX.length);
             if (this.startDate && day < this.startDate) continue;
@@ -65,7 +77,7 @@ class StatsManager {
             if (day >= start && day < exclusiveEnd) week += count;
         }
         // The reported starting count exists even if no timer history key exists yet.
-        if (this.startDate && !this.storage.keys().includes(PREFIX + this.startDate)) {
+        if (this.startDate && !keys.has(PREFIX + this.startDate)) {
             const count = this.getCount(this.startDate);
             overall += count;
             if (this.startDate >= start && this.startDate < exclusiveEnd) week += count;
