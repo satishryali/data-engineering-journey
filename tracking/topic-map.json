@@ -1439,6 +1439,10 @@
       "exclusion_reason": "App configuration; no learning coverage."
     },
     {
+      "path": "Notes/.obsidian/graph.json",
+      "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
       "path": "Notes/.obsidian/workspace.json",
       "exclusion_reason": "App configuration; no learning coverage."
     },
@@ -1448,7 +1452,7 @@
     },
     {
       "path": "Notes/New Syntax/dictionary-copy.md",
-      "file_hash": "67d27405e819ce4ac4636d9abea468a898eecfc0d3fdbcfd568d3c9d8b11f4e3",
+      "file_hash": "a80b4d76a7090aef86547483df697155bcd32aedec338a06395fbd33e858011a",
       "sections": [
         {
           "key": "Copy a dictionary before changing it",
@@ -1463,7 +1467,7 @@
     },
     {
       "path": "Notes/New Syntax/list-plus.md",
-      "file_hash": "23bc5e33d4ec14511df24b815c5bc853b64205c70a9eb85832acadf2d4bde420",
+      "file_hash": "41bcf2978312b5921dbf615784f7e1e42e2b08e2051d45df55f693a6b45ef54f",
       "sections": [
         {
           "key": "Join lists using +",
@@ -1540,7 +1544,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Hashicorp_vault.md",
-      "file_hash": "288af3824dc21794a2822b32bb374cb5376505da71139b01b2515d013fd353ec",
+      "file_hash": "7c14dbb241bc7013e39db62c3cb04c567dea36341244728d824bbff4014ac3bf",
       "sections": [
         {
           "key": "Step 1 : importing hvac",
@@ -1602,7 +1606,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Logging.md",
-      "file_hash": "4c3fdb19ebccd67c433f1c3b92e4cbbbf2e6fa32115cb3d664af4f45244a1269",
+      "file_hash": "2448a74bda7aa969b615d80cd294a08a96a588507582a95213d0d0f812306a53",
       "sections": [
         {
           "key": "Notes / Logging Module",
@@ -1625,7 +1629,7 @@
     },
     {
       "path": "Notes/Python/Concepts/csv-reading.md",
-      "file_hash": "9567773321cf3e92de313ba9a233283a493c3254569f338d4bf4955d8b05df8f",
+      "file_hash": "f114c9d1e3d79b9114a8c0af150fd4eb99328437167be6c1eeb6de4766c055e5",
       "sections": [
         {
           "key": "Read a CSV file",
@@ -1689,7 +1693,7 @@
     },
     {
       "path": "Notes/Python/Concepts/csv-writing.md",
-      "file_hash": "bdae734758b52a50503d732c220f7b47a17cd8cbb709004f29e2689baf60254c",
+      "file_hash": "2c9c61b2b617bdbc436728fa43cfb8b1e768442632c84680911ec36ff05a8c37",
       "sections": [
         {
           "key": "Write CSV files",
@@ -1745,7 +1749,7 @@
     },
     {
       "path": "Notes/Python/Concepts/decimal-money.md",
-      "file_hash": "0046a215702ab3f5a1454f1294091adeda31e98495ce2a45d44e6431c7b40923",
+      "file_hash": "a365c90f51a2f78017e110e6892fd96887a46dcb546bfc6bc95ee15594c2a6bd",
       "sections": [
         {
           "key": "Decimal for prices and totals",
@@ -1924,7 +1928,7 @@
     },
     {
       "path": "Notes/Python/Concepts/faker.md",
-      "file_hash": "ddd2e403a1e8429086c7e0de23675ca1ffe504b1dfc06c9081140d393d8cee19",
+      "file_hash": "6d32ef71185cd209fe555bc389a46fc9eebd1c366db80e3217fc239ff034428c",
       "sections": [
         {
           "key": "Generate practice data with Faker",
@@ -1986,7 +1990,7 @@
     },
     {
       "path": "Notes/Python/Concepts/file-methods.md",
-      "file_hash": "d034e576d61d94b186cd8b69b6d41be19d566f99dbf5cfc6bff000030e9b37ce",
+      "file_hash": "eaf5da225fb66e1b01f7a4d2fd165b5da16a09ec00293dbd4ab5b35e44bc5c9d",
       "sections": [
         {
           "key": "Work with an open file",
@@ -2032,7 +2036,7 @@
     },
     {
       "path": "Notes/Python/Concepts/functions.md",
-      "file_hash": "951c2913afbdc1044e88d1a3dff17643cd55ef182a9c9a2ea25236222b7e78ee",
+      "file_hash": "749db4203a63057f1b98a349b4a77d228c96a801d034feb6b083d8542598f786",
       "sections": [
         {
           "key": "Functions",
@@ -2062,7 +2066,7 @@
     },
     {
       "path": "Notes/Python/Concepts/lists.md",
-      "file_hash": "56140e5c8e47aea2006593757131e3df792ed2c016ddd8484931e7bba7c6fac6",
+      "file_hash": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267",
       "sections": [
         {
           "key": "Lists",
@@ -2185,7 +2189,7 @@
     },
     {
       "path": "Notes/Python/Concepts/objects-and-printing.md",
-      "file_hash": "99eeb59ae0b9c97da3968ca9d2770e4ba9a0d1d4eff46e6ffcc11c264a8eca69",
+      "file_hash": "8234ac69cccc1501b1002f19d97db522cfb09685a5d5c3e852f60cdbeeaaca7e",
       "sections": [
         {
           "key": "Objects and printing",
@@ -2215,7 +2219,7 @@
     },
     {
       "path": "Notes/Python/Concepts/random.md",
-      "file_hash": "2679a7164afa7a6fc97185dc65a700271a917b096233709d915cda31d116a85f",
+      "file_hash": "0816540e8db073f9303971e5cfe7cddefa7abec8eca19135999916a1b06e15ac",
       "sections": [
         {
           "key": "Use the random module",
@@ -2261,7 +2265,7 @@
     },
     {
       "path": "Notes/Python/Concepts/with(Context_Manager).md",
-      "file_hash": "f7f0b80b399d8749a8474da8f267ceebc1276311fab18312a1b5cb3b1e28c644",
+      "file_hash": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829",
       "sections": [
         {
           "key": "using with (Automatic Cleanup)",
@@ -2275,7 +2279,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/Exeucting Commands.md",
-      "file_hash": "eec116c38b586780012a7c30f034d5fc4ccafb7f8dc04a05d124d9eb2cef2cac",
+      "file_hash": "14d49671c20352a06ef8bc9f16048178fd395e338866e22fc6e6e07632dad3d6",
       "sections": [
         {
           "key": "Execution of Commands in Postgres",
@@ -2289,7 +2293,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/postgres_connection.md",
-      "file_hash": "747cb52d8d764e893d99f9d8fd687e48bfc5f83cff3d0d245fcc8996b9a66466",
+      "file_hash": "03095e6e496d97eaad4522f38dd25145b9643967144131a6f87be531310e5d4f",
       "sections": [
         {
           "key": "Postgres Connection / Install the PostgreSQL Driver",
@@ -2382,7 +2386,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
-      "file_hash": "d5f8f0fe82173d1849b3bab314aafef4e5d6b44c81cf1a2ae7a0b0e3ec5a9341",
+      "file_hash": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c",
       "sections": [
         {
           "key": "PATH ERROR",
@@ -2400,7 +2404,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
-      "file_hash": "c31baab4c16010d8260c6ae51a20a599ed4423661a2ecd3e36d61bbd02d485ca",
+      "file_hash": "fa122de79baa414e18daaaaee14efb06c66179b4356538f8dcff3acab78bcd66",
       "sections": [
         {
           "key": "Pending Tasks",
@@ -2414,7 +2418,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Understandings.md",
-      "file_hash": "aa9d57515277febf0cfa9abc3d482690ec3c35d930ff4d0e18b023b00cf827da",
+      "file_hash": "c4dd5ba7ec703771c17745d67ea93f7ebe74802002dd73ea938b8868cb38c54a",
       "sections": [
         {
           "key": "Key Findings",
@@ -2428,7 +2432,7 @@
     },
     {
       "path": "Notes/Python/Lessons/tips.md",
-      "file_hash": "9dd7f987fa977cad88356bf010bab7710b74a594c985d2cb65059132475e508e",
+      "file_hash": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345",
       "sections": [
         {
           "key": "Tips to follow when creating dbt models,transformations or anything",
@@ -2461,7 +2465,7 @@
     },
     {
       "path": "Notes/Python/Logic/collect-function-results-write-once.md",
-      "file_hash": "0ff7cf16aa1823f4093d790352e881a401dede0bfe83c57954d304b738f37559",
+      "file_hash": "16ba3965ceda84f6c2e27d15d2ede8fbcded7bfac024fdd499ec995acb700c1e",
       "sections": [
         {
           "key": "Collect function results and write once",
@@ -2531,7 +2535,7 @@
     },
     {
       "path": "Notes/Python/Logic/order-summary-after-loop.md",
-      "file_hash": "551ea1550438be51fbe87d2f78d33d18763c33d07b403e7ed67748959dabbe4f",
+      "file_hash": "b89fe1b710b4cc1eec3ae026f3729cf4909c2e7f4ab9bac265314a82ae9b2c82",
       "sections": [
         {
           "key": "Count orders and write the summary after the loop",
@@ -2588,7 +2592,7 @@
     },
     {
       "path": "Notes/SQL/learning-notes.md",
-      "file_hash": "7bc4211fe72d8c8e52cceaddddfde4df89b6d6e42c843e7b9e6cfc4d064f28ca",
+      "file_hash": "b7c12513ccf0564ccb5e6772ba4cd0c7cbd99f8c68c169713bb482933903e73b",
       "sections": [
         {
           "key": "sql learning notes",
@@ -2736,7 +2740,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-25",
+  "inventory_date_ist": "2026-10-26",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,
