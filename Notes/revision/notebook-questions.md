@@ -20,3 +20,15 @@ Try one task before opening its explanation. These prompts have not been answere
 Explanations are linked from [Python notes](../Python/Index.md). These questions do not replace the pending RDS-001 task.
 
 - Order summary logic, added 24 October 2026: use three orders: completed (quantity 2, price 40), completed (quantity 1, price 90), cancelled (quantity 3, price 20). Predict the two summary rows, then build and run the summary. Explain order count versus quantity and why summary writing belongs after the loop. State any notes or help used. Pending; no score or completed review.
+
+## Dataclasses and special methods — 26 October 2026
+
+1. Explain when you would choose a dictionary or a dataclass for an ETL record.
+2. Define an Order dataclass and test what happens when a number field receives a string. State any notes/help used.
+3. Write separate tiny classes for repr and str. Explain print(obj), repr(obj) and print([obj]).
+4. Build a quantity comparison using == and <. Test different quantities and explain the result.
+5. Make len(batch) work. Predict what happens if its method returns -1.
+6. Support batch[1] and then a for loop. Explain which method each operation uses.
+7. Write a with example that prints on entry and exit. Explain what becomes the as variable.
+
+These are unanswered practice prompts; no review completion or score is implied.

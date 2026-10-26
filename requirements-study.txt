@@ -1,0 +1,5 @@
+# Notebook kernel and packages imported by the current study notebooks.
+# RecallLab has its own optional requirements in apps/recalllab/requirements.txt.
+ipykernel==7.4.0
+Faker==40.43.0
+faker-commerce==1.0.4

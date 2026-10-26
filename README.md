@@ -44,6 +44,13 @@ study records untouched. See the linked guide for the full computer-switching wo
 
 ## Across computers
 
+For a new laptop, follow [desktop/laptop setup](DESKTOP-SETUP.md). Run
+`./codex/setup-python.ps1` to create that computer's Python environment and
+`./codex/pomodoro/Setup-Laptop.ps1` to install the shared timer support. Open
+[data-engineering.code-workspace](data-engineering.code-workspace) and choose
+the local `.venv` interpreter/kernel. Virtual environments stay out of Git;
+[requirements-study.txt](requirements-study.txt) records notebook dependencies.
+
 Repository: https://github.com/satishryali/data-engineering-journey
 
 Use the repository root as the working folder on every computer. Its location may differ; all learning-file paths are relative to that root. Work on one computer at a time and use the same branch for the learning record.
@@ -165,6 +172,10 @@ The example assumes the repository root as working folder. The builder itself re
 Include the generated workbook and builder in the reviewed files when committing/pushing for another computer. Preview images and local runtime links are ignored.
 
 ### VS Code timer extension
+
+For the customized Pomodoro Code timer, see [Pomodoro setup and two-computer sync](codex/pomodoro/README.md#continue-on-a-laptop-during-power-cuts).
+Optional Google Drive sync shares completed counts and saved countdowns for laptop
+takeover during power cuts. It is separate from Git and confirmed study-hour records.
 
 ClockIt: Session manager (extension ID `octech.clockit`, installed version 1.9.0) is installed on the current computer. On another computer install it from Extensions or run `code --install-extension octech.clockit`. Installation does not migrate its local state.
 

@@ -12,6 +12,7 @@ if ($manifest.publisher -ne 'kumodh' -or $manifest.name -ne 'pomodoro-code-timer
 $marker = 'journeyPomodoroCustomization'
 if ($manifest.PSObject.Properties.Name -contains $marker) {
     & (Join-Path $PSScriptRoot 'upgrade.ps1') -ExtensionPath $ExtensionPath -SettingsPath $SettingsPath
+    & (Join-Path $PSScriptRoot 'install-sync.ps1') -ExtensionPath $ExtensionPath
     return
 }
 function Replace-Required([string]$text, [string]$old, [string]$new) {
@@ -83,4 +84,5 @@ Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'audio.js') -Destination (Join-P
 [IO.File]::WriteAllText($manifestPath, ($manifest | ConvertTo-Json -Depth 30), $utf8)
 Write-Output "Customized Pomodoro. Original files: $backupPath"
 & (Join-Path $PSScriptRoot 'upgrade.ps1') -ExtensionPath $ExtensionPath -SettingsPath $SettingsPath
+& (Join-Path $PSScriptRoot 'install-sync.ps1') -ExtensionPath $ExtensionPath
 Write-Output 'Reload VS Code when no timer is running to activate the changes.'

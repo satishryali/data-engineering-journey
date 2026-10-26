@@ -12,6 +12,7 @@ secrets/
 
 # Python / editors
 .venv/
+.venv.backup-*/
 venv/
 __pycache__/
 *.py[cod]

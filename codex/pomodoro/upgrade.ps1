@@ -7,6 +7,13 @@ $utf8 = New-Object System.Text.UTF8Encoding($false)
 $manifestPath = Join-Path $ExtensionPath 'package.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
 if ($manifest.journeyPomodoroCustomization -eq 2) {
+    if ($manifest.contributes.configuration.properties.PSObject.Properties.Name -notcontains 'pomodoro.externalCompletedSessions') {
+        Copy-Item -LiteralPath $manifestPath -Destination ($manifestPath + '.backup-' + (Get-Date -Format 'yyyyMMdd-HHmmssfff'))
+        $manifest.contributes.configuration.properties | Add-Member -NotePropertyName 'pomodoro.externalCompletedSessions' -NotePropertyValue ([pscustomobject]@{
+            type = 'object'; default = @{}; additionalProperties = @{ type = 'integer'; minimum = 0 }; description = 'Reported completions on other computers, keyed by IST date YYYY-MM-DD. Added to local counts in the display.'
+        })
+        [IO.File]::WriteAllText($manifestPath, ($manifest | ConvertTo-Json -Depth 30), $utf8)
+    }
     $installedStats = Join-Path $ExtensionPath 'out/stats.js'
     $newStats = Join-Path $PSScriptRoot 'stats.js'
     if ((Get-FileHash -LiteralPath $installedStats).Hash -ne (Get-FileHash -LiteralPath $newStats).Hash) {

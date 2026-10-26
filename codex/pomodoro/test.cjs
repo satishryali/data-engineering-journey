@@ -49,6 +49,16 @@ async function main() {
     corrected = new StatsManager(reported, { startDate: '2026-10-25', initialCount: 4 });
     assert.equal(corrected.getCount('2026-10-25'), 5, 'correction is not added again on reload');
     assert.match(formatSummary({ today: 22, week: 112, overall: 112 }, '2026-10-25'), /Remaining today: 0.*Remaining this week: 0/);
+    const crossStorage = memory({ 'pomodoro.stats.2026-10-26': 2 });
+    const crossOptions = { externalCounts: { '2026-10-26': 3 } };
+    let cross = new StatsManager(crossStorage, crossOptions);
+    assert.deepEqual(cross.getSummary('2026-10-26'), { today: 5, week: 5, overall: 5, weekStart: '2026-10-26' });
+    assert.equal(await cross.incrementCount('2026-10-26'), 6);
+    cross = new StatsManager(crossStorage, crossOptions);
+    assert.equal(cross.getCount('2026-10-26'), 6, 'external counts are not added again on reload');
+    const externalOnly = new StatsManager(memory(), crossOptions);
+    assert.equal(externalOnly.getSummary('2026-10-26').overall, 3);
+    assert.equal(externalOnly.getSummary('2026-11-02').week, 0);
     const fixture = process.argv[2];
     assert.ok(fixture, 'Pass the customized extension fixture path');
     const timerModule = { exports: {} };

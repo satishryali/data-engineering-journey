@@ -156,6 +156,10 @@
         {
           "path": "Notes/Python/Concepts/with(Context_Manager).md",
           "sha256": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "sha256": "7e873c04200107fa654c5c8806ada7ae32d5c54ee83632a9a2aae488d9313dbd"
         }
       ],
       "source_history": [
@@ -192,6 +196,14 @@
         {
           "path": "Notes/Python/Concepts/csv-writing.md",
           "key": "Write CSV files / Open two files in one with statement"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __enter__ - enter a with block"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __exit__ - leave a with block"
         }
       ],
       "initial_assessment_date_ist": "2026-10-31"
@@ -1233,10 +1245,21 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/objects-and-printing.md",
-          "sha256": "99eeb59ae0b9c97da3968ca9d2770e4ba9a0d1d4eff46e6ffcc11c264a8eca69"
+          "sha256": "2d647174debe48a3ea9483c2f1fdfa1bdbec4d15cdcc2f66134f42b671f64a8f"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "sha256": "7e873c04200107fa654c5c8806ada7ae32d5c54ee83632a9a2aae488d9313dbd"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "sha256": "99eeb59ae0b9c97da3968ca9d2770e4ba9a0d1d4eff46e6ffcc11c264a8eca69",
+          "changed_on": "2026-10-26",
+          "reason": "Requested notes and inspected corrections; no scored assessment."
+        }
+      ],
       "coverage": "queued",
       "prerequisites": [],
       "exercise_ids": [],
@@ -1252,9 +1275,63 @@
         {
           "path": "Notes/Python/Concepts/objects-and-printing.md",
           "key": "Objects and printing / Choose what print displays"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / The difference between `__str__` and `__repr__`"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / The difference between `__str__` and `__repr__` / Where Python automatically uses `__repr__`"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / The difference between `__str__` and `__repr__` / How `print()` chooses between them"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / The difference between `__str__` and `__repr__` / Choose a useful representation"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Measure length with `__len__`"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Indexing, looping and searching with `__getitem__`"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Indexing, looping and searching with `__getitem__` / Three superpowers unlocked by `__getitem__`"
+        },
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "key": "Objects and printing / Separate practice examples"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __init__ - store starting values"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __repr__ - describe an object"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __str__ - display readable text"
         }
       ],
-      "initial_assessment_date_ist": "2026-11-08"
+      "initial_assessment_date_ist": "2026-11-08",
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/objects-and-printing.md",
+          "section": "Objects and printing / Choose what print displays",
+          "prior_hash": "70e4df6dab69d2e5ded41c931a95c0efc36394059022d3a49fe3941958c0cbd7",
+          "content_hash": "9709fb11df811487b5c19ea9d8271a835f6866a6a4b27caa99b4916ee97c4c28",
+          "detected_date_ist": "2026-10-26",
+          "reason": "Inspected explanatory correction; no assessed proficiency or schedule change."
+        }
+      ]
     },
     {
       "id": "py.random.basics",
@@ -1419,6 +1496,116 @@
       ],
       "initial_assessment_date_ist": "2026-11-12",
       "planning_note": "Decimal conversion and rounding are distinct from CSV syntax. Tutor explanation and unexecuted learner source only; initial slot is adjustable, no scored review."
+    },
+    {
+      "id": "py.dataclasses.basics",
+      "name": "Dataclass records and generated methods",
+      "prerequisites": [
+        "py.objects.basics"
+      ],
+      "initial_assessment_date_ist": "2026-11-13",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/dataclasses.md",
+          "sha256": "aa4681a0649b4f5fe487d811c18b885385a25bc4273e416111947703e4f601a8"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/dataclasses.md",
+          "key": "Dataclasses"
+        },
+        {
+          "path": "Notes/Python/Concepts/dataclasses.md",
+          "key": "Dataclasses / Create an order"
+        },
+        {
+          "path": "Notes/Python/Concepts/dataclasses.md",
+          "key": "Dataclasses / Why use it when dictionaries exist"
+        },
+        {
+          "path": "Notes/Python/Concepts/dataclasses.md",
+          "key": "Dataclasses / Type hints do not convert values"
+        },
+        {
+          "path": "Notes/Python/Concepts/dataclasses.md",
+          "key": "Dataclasses / The same display with a regular class"
+        }
+      ]
+    },
+    {
+      "id": "py.objects.protocols",
+      "name": "Object comparison and collection special methods",
+      "prerequisites": [
+        "py.objects.basics"
+      ],
+      "initial_assessment_date_ist": "2026-11-14",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "sha256": "7e873c04200107fa654c5c8806ada7ae32d5c54ee83632a9a2aae488d9313dbd"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __eq__ - compare with =="
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __lt__ - compare with <"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __gt__ - compare with >"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __len__ - support len"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __getitem__ - support square brackets"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "key": "Special methods / __iter__ - support a for loop"
+        }
+      ],
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "section": "Special methods / __len__ - support len",
+          "prior_hash": "05830c9dc020bdddb70641c548c4169411455c52905ceed3c0621af39b76c15b",
+          "content_hash": "2cf8d11ef0a35079bccec1b8be14bcaaaa58955e9e6654d711188200f15ade35",
+          "detected_date_ist": "2026-10-26"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "section": "Special methods / __getitem__ - support square brackets",
+          "prior_hash": "039f1041e0a194062ec6636d52f513b68b4817ac144dd2bbcdcef7e21d0e5846",
+          "content_hash": "ed9fc1c6cdc7b12957cd2fd1b17eceeaaa737908f44fb1b5d013312f064f9f39",
+          "detected_date_ist": "2026-10-26"
+        },
+        {
+          "path": "Notes/Python/Concepts/special-methods.md",
+          "section": "Special methods / __getitem__ - support square brackets",
+          "prior_hash": "ed9fc1c6cdc7b12957cd2fd1b17eceeaaa737908f44fb1b5d013312f064f9f39",
+          "content_hash": "fad00168a5492a4b67c6f0739869ad721d4690b2659a0538168b39b56bb29d82",
+          "detected_date_ist": "2026-10-26"
+        }
+      ]
     }
   ],
   "note_inventory": [
@@ -1744,6 +1931,58 @@
           "topic_ids": [
             "py.csv.write"
           ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/dataclasses.md",
+      "file_hash": "5dffc678e9b0ab938a91c10662ebc5ab179f4d5f3c76a2021ad9bd866edc8275",
+      "sections": [
+        {
+          "key": "Dataclasses",
+          "heading": "Dataclasses",
+          "content_hash": "96711cc551b6faee02360567a767e459e898ed3eb5b42840cce3131c61cfe238",
+          "topic_ids": [
+            "py.dataclasses.basics"
+          ]
+        },
+        {
+          "key": "Dataclasses / Create an order",
+          "heading": "Dataclasses / Create an order",
+          "content_hash": "31e63f9584ec76cebfcd697f1d8e288db5fafb1451b02cecba76cc781392e4a2",
+          "topic_ids": [
+            "py.dataclasses.basics"
+          ]
+        },
+        {
+          "key": "Dataclasses / Why use it when dictionaries exist",
+          "heading": "Dataclasses / Why use it when dictionaries exist",
+          "content_hash": "ab70b383596da98be3d3b68b26729d77d0bbc2d8c7a6f1ee32964f60b3d59aeb",
+          "topic_ids": [
+            "py.dataclasses.basics"
+          ]
+        },
+        {
+          "key": "Dataclasses / Type hints do not convert values",
+          "heading": "Dataclasses / Type hints do not convert values",
+          "content_hash": "5f1fe4cfb53ebeb839729abd26aba3c5a67cf278624eb72972f5eea9161dd4af",
+          "topic_ids": [
+            "py.dataclasses.basics"
+          ]
+        },
+        {
+          "key": "Dataclasses / The same display with a regular class",
+          "heading": "Dataclasses / The same display with a regular class",
+          "content_hash": "fa347d1145db9317cb5265ee3d2f26efe7eb21ecd7bf2750bd1e59b8acc147a9",
+          "topic_ids": [
+            "py.dataclasses.basics"
+          ]
+        },
+        {
+          "key": "Dataclasses / Sources and learning status",
+          "heading": "Dataclasses / Sources and learning status",
+          "content_hash": "3a1e35b1ec42b7d906b2444b4f11d83fc1706f26bbbfc646c33d86c0a9eee621",
+          "exclusion_reason": "Source provenance and assessment status; no additional concept."
         }
       ]
     },
@@ -2189,7 +2428,7 @@
     },
     {
       "path": "Notes/Python/Concepts/objects-and-printing.md",
-      "file_hash": "8234ac69cccc1501b1002f19d97db522cfb09685a5d5c3e852f60cdbeeaaca7e",
+      "file_hash": "a218b82d01fb5a6f35552d8dacf78f08559c9b53f9853f4547415ef26183632a",
       "sections": [
         {
           "key": "Objects and printing",
@@ -2210,7 +2449,71 @@
         {
           "key": "Objects and printing / Choose what print displays",
           "heading": "Objects and printing / Choose what print displays",
-          "content_hash": "70e4df6dab69d2e5ded41c931a95c0efc36394059022d3a49fe3941958c0cbd7",
+          "content_hash": "9709fb11df811487b5c19ea9d8271a835f6866a6a4b27caa99b4916ee97c4c28",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / The difference between `__str__` and `__repr__`",
+          "heading": "Objects and printing / The difference between `__str__` and `__repr__`",
+          "content_hash": "25bc6f96572311aba91598a9596a5f19de8edfc8064809326a2bb04c9a755449",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / The difference between `__str__` and `__repr__` / Where Python automatically uses `__repr__`",
+          "heading": "Objects and printing / The difference between `__str__` and `__repr__` / Where Python automatically uses `__repr__`",
+          "content_hash": "0172e10590c771e319f61571d062b50e4b69e6b95621239ddead2327293c9cc3",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / The difference between `__str__` and `__repr__` / How `print()` chooses between them",
+          "heading": "Objects and printing / The difference between `__str__` and `__repr__` / How `print()` chooses between them",
+          "content_hash": "30a9a7d7f9a58f86934b3e3a54901126ed31056981a264d7f26c6235392d537b",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / The difference between `__str__` and `__repr__` / Choose a useful representation",
+          "heading": "Objects and printing / The difference between `__str__` and `__repr__` / Choose a useful representation",
+          "content_hash": "0f0dd5c21a4bd6d563e543fc63e58100d9ea08ee66288400ab307960733941df",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / Measure length with `__len__`",
+          "heading": "Objects and printing / Measure length with `__len__`",
+          "content_hash": "b0259bc28a8dfdd442abdd6c0e4dcc3f5a0f3623ec193773235a2cdcb4071ce2",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / Indexing, looping and searching with `__getitem__`",
+          "heading": "Objects and printing / Indexing, looping and searching with `__getitem__`",
+          "content_hash": "0c09e9f8e9b5e1a6844d5a436568f7b7d3b217fe0764461743a21e26b444e560",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / Indexing, looping and searching with `__getitem__` / Three superpowers unlocked by `__getitem__`",
+          "heading": "Objects and printing / Indexing, looping and searching with `__getitem__` / Three superpowers unlocked by `__getitem__`",
+          "content_hash": "43d958f944684accd99cacf539c8b953a3c2767f2b98f61d8d07eadaf4e96ef0",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Objects and printing / Separate practice examples",
+          "heading": "Objects and printing / Separate practice examples",
+          "content_hash": "2e2f9c25c988b3e7f20c0f3c29e47e5566639cfe411def1d61764a0a7dd7d77e",
           "topic_ids": [
             "py.objects.basics"
           ]
@@ -2261,6 +2564,119 @@
             "py.random.basics"
           ]
         }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/special-methods.md",
+      "file_hash": "bb9cae1cc0cb6fb70856a2c52b10b10684cabc8dfd7ec9631a98e3ac75840ed3",
+      "sections": [
+        {
+          "key": "Special methods",
+          "heading": "Special methods",
+          "content_hash": "e5eb1f6c323e8747d972fe527cc6d18489f3536ba895dd3a01d1b4cbc0ffe7ee",
+          "topic_ids": [
+            "py.objects.protocols"
+          ]
+        },
+        {
+          "key": "Special methods / __init__ - store starting values",
+          "heading": "Special methods / __init__ - store starting values",
+          "content_hash": "9d5b132744b7db4b42c1d5086ef9c7a9f0d48c22dceeefb0e6cf88c44b53cd15",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Special methods / __repr__ - describe an object",
+          "heading": "Special methods / __repr__ - describe an object",
+          "content_hash": "d0e2fa2ed2931a4a8bd56dc8aec2a81bbf4dbfec96420882b887c5adbf33f30f",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Special methods / __str__ - display readable text",
+          "heading": "Special methods / __str__ - display readable text",
+          "content_hash": "85a75608ba15a91b9110b9c364223d5305626db4727f33ea5a473414bc28a619",
+          "topic_ids": [
+            "py.objects.basics"
+          ]
+        },
+        {
+          "key": "Special methods / __eq__ - compare with ==",
+          "heading": "Special methods / __eq__ - compare with ==",
+          "content_hash": "df29ef60e7213bb678ba79e24e7eb6e8a253ef841f9f4a5b7161e3d2a30a3f92",
+          "topic_ids": [
+            "py.objects.protocols"
+          ]
+        },
+        {
+          "key": "Special methods / __lt__ - compare with <",
+          "heading": "Special methods / __lt__ - compare with <",
+          "content_hash": "3bbb612e6336871eb8c088b250b6a1b0b104b3a5af23e1110fcbb8d5bc8c498c",
+          "topic_ids": [
+            "py.objects.protocols"
+          ]
+        },
+        {
+          "key": "Special methods / __gt__ - compare with >",
+          "heading": "Special methods / __gt__ - compare with >",
+          "content_hash": "05a7c5a4bfb2237b47de60c303cc03a6858f84ca150fb5b591eede57e9aa4a2d",
+          "topic_ids": [
+            "py.objects.protocols"
+          ]
+        },
+        {
+          "key": "Special methods / __len__ - support len",
+          "heading": "Special methods / __len__ - support len",
+          "content_hash": "2cf8d11ef0a35079bccec1b8be14bcaaaa58955e9e6654d711188200f15ade35",
+          "topic_ids": [
+            "py.objects.protocols"
+          ],
+          "changed": true
+        },
+        {
+          "key": "Special methods / __getitem__ - support square brackets",
+          "heading": "Special methods / __getitem__ - support square brackets",
+          "content_hash": "fad00168a5492a4b67c6f0739869ad721d4690b2659a0538168b39b56bb29d82",
+          "topic_ids": [
+            "py.objects.protocols"
+          ],
+          "changed": true
+        },
+        {
+          "key": "Special methods / __iter__ - support a for loop",
+          "heading": "Special methods / __iter__ - support a for loop",
+          "content_hash": "3222af614cce8d3dae1418ef2775f9db69643bf260c73ed5a1c5e992bf274a60",
+          "topic_ids": [
+            "py.objects.protocols"
+          ]
+        },
+        {
+          "key": "Special methods / __enter__ - enter a with block",
+          "heading": "Special methods / __enter__ - enter a with block",
+          "content_hash": "dccd1d8176058d44f2c7c725bdc52bffb0f9878ec10d59c81f947ec19430d252",
+          "topic_ids": [
+            "py.context.resources"
+          ]
+        },
+        {
+          "key": "Special methods / __exit__ - leave a with block",
+          "heading": "Special methods / __exit__ - leave a with block",
+          "content_hash": "0a42300fdc33f301632a5bcd194b915a34b9e1a87690a97cd16c6c15c300339a",
+          "topic_ids": [
+            "py.context.resources"
+          ]
+        },
+        {
+          "key": "Special methods / Sources and learning status",
+          "heading": "Special methods / Sources and learning status",
+          "content_hash": "09833aaa7c4d7f34fa6614dbf9b6e955795cbedae33d75c836bd199f6fe45ccb",
+          "exclusion_reason": "Source provenance and assessment status; no additional concept."
+        }
+      ],
+      "removed_sections": [
+        "Special methods / __getitem__ - support square brackets / What makes `__getitem__` special"
       ]
     },
     {
