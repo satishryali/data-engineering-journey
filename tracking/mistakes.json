@@ -626,6 +626,39 @@
           "observation": "Imported DictReader directly but called csv.DictReader; saved success depended on unrecorded prior kernel state. See reviewed execution history in this note."
         }
       ]
+    },
+    {
+      "mistake_id": "M-PY-REM-001",
+      "category": "conceptual",
+      "exercise_ids": [],
+      "topic_ids": [
+        "py.functions.basics"
+      ],
+      "wording": "Direct code observation; cause is a hypothesis.",
+      "observed_behaviour": "Calls recurrence.upper() as a standalone expression and does not print recurrence; the requested lowercase normalized result is not retained or displayed.",
+      "expected_behaviour": "Retain the normalized lowercase answer and display it with task and time.",
+      "cause": {
+        "confidence": "hypothesis",
+        "description": "May expect a string method call to change the variable in place; learner explanation has not been requested yet."
+      },
+      "correction_and_assistance": "Earlier tutor hint named lower() and requested a printed YES-to-yes check. Checkpoint flags the unretained result; no solution code supplied and no corrected output verified.",
+      "follow_up_task": "Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.",
+      "linked_review_items": [
+        "py.functions.basics"
+      ],
+      "verification_review_id": null,
+      "status": "open",
+      "observations": [
+        {
+          "attempt_id": "AI-REM-CODE-02",
+          "observed_date_ist": "2026-10-28",
+          "evidence": "progress/ai-reminder/2026-10-28-session.md#ai-rem-code-02",
+          "observation": "Latest file contains standalone recurrence.upper(), after task and time prints; code inspected, not executed."
+        }
+      ],
+      "first_observed": "2026-10-28",
+      "latest_observed": "2026-10-28",
+      "recurrence_count": 1
     }
   ]
 }

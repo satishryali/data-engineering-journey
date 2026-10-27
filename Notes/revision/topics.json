@@ -1193,7 +1193,8 @@
       "last_review_id": "REV-20261016-pause13-functions",
       "learning_state": "Learning with help",
       "linked_mistakes": [
-        "M-PY-011"
+        "M-PY-011",
+        "M-PY-REM-001"
       ]
     },
     {
@@ -1999,6 +2000,240 @@
           "key": "Multithreading / Python's Global Interpreter Lock (GIL)"
         }
       ],
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.model.adaptation",
+      "name": "Inference prompting and fine-tuning for a reminder model",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders"
+        },
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Running and fine-tuning"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-15",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.reminders.evaluation",
+      "name": "Evaluate reminder fields against a baseline",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.model.adaptation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Check the answer before training"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-16",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.reminders.dataset",
+      "name": "Input target pairs and template data for reminders",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.reminders.evaluation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Create input and answer pairs"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-17",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.reminder.model",
+      "name": "Reminder models: inference prompting and fine-tuning",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "92e71406bcd779e229b906ee45a15a364a0676331e2e2a1d801af9e0d237314b"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders"
+        },
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Running and fine-tuning"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-18",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.reminder.evaluation",
+      "name": "Checking reminder model fields against a baseline",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "92e71406bcd779e229b906ee45a15a364a0676331e2e2a1d801af9e0d237314b"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.reminder.model"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Check the answer before training"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-19",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.reminder.examples",
+      "name": "Reminder input and target example pairs",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "92e71406bcd779e229b906ee45a15a364a0676331e2e2a1d801af9e0d237314b"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.reminder.evaluation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Create input and answer pairs"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-20",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.strings.returned-text",
+      "name": "String cleanup and returned case conversions",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "sha256": "135cab4226e25ed56817c5195a995ece0415742e3aacc431d51719da20619fea"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "key": "Collecting reminder inputs"
+        },
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "key": "Collecting reminder inputs / Read and clean text"
+        },
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "key": "Collecting reminder inputs / A string method returns new text"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-21",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,

@@ -1,15 +1,15 @@
 # Revision plan (generated)
 
-As of 2026-10-26 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-10-28 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 155 | learning sections mapped |
-| 7 | sections excluded |
-| 33 | topics total |
+| 162 | learning sections mapped |
+| 9 | sections excluded |
+| 40 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -71,6 +71,13 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | py.dataclasses.basics: Dataclass records and generated methods | 2026-11-13 | py.objects.basics |
 | py.concurrency.threading: Python multithreading: Thread, start, join and ThreadPoolExecutor | 2026-11-14 | py.functions.basics |
 | py.objects.protocols: Object comparison and collection special methods | 2026-11-14 | py.objects.basics |
+| ai.model.adaptation: Inference prompting and fine-tuning for a reminder model | 2026-11-15 | None |
+| ai.reminders.evaluation: Evaluate reminder fields against a baseline | 2026-11-16 | ai.model.adaptation |
+| ai.reminders.dataset: Input target pairs and template data for reminders | 2026-11-17 | ai.reminders.evaluation |
+| ai.reminder.model: Reminder models: inference prompting and fine-tuning | 2026-11-18 | None |
+| ai.reminder.evaluation: Checking reminder model fields against a baseline | 2026-11-19 | ai.reminder.model |
+| ai.reminder.examples: Reminder input and target example pairs | 2026-11-20 | ai.reminder.evaluation |
+| py.strings.returned-text: String cleanup and returned case conversions | 2026-11-21 | None |
 
 ## Important weak topics
 
@@ -84,13 +91,13 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 - sql.group.grain: Unassessed; linked mistakes M-SQL-003.
 - sql.sum.nulls: Unassessed; linked mistakes M-SQL-004, M-SQL-005.
 - py.records.cleaning: Learning with help; linked mistakes M-PY-002, M-PY-003, M-PY-004, M-PY-005, M-PY-006, M-PY-007, M-PY-008, M-PY-009, M-PY-010.
-- py.functions.basics: Learning with help; linked mistakes M-PY-011.
+- py.functions.basics: Learning with help; linked mistakes M-PY-011, M-PY-REM-001.
 - py.csv.read: Learning with help; linked mistakes M-PY-012.
 
 ## Coverage gaps
 
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.list.basics, py.list.mutate, py.list.records
+- Neglected topics: py.dict.access, py.dict.mutate, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
 - Reassessment flags: py.objects.protocols
 
 ## Manageable session
@@ -98,7 +105,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 30 topics await assessment. One diagnostic per suitable session needs at least 30 sessions; new notes can extend this. Replan missed slots without restarting.
+- 37 topics await assessment. One diagnostic per suitable session needs at least 37 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -137,6 +144,13 @@ Check prerequisites first. Teach missing understanding before retention practice
 | py.dataclasses.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.objects.protocols | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.concurrency.threading | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.model.adaptation | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.reminders.evaluation | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.reminders.dataset | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.reminder.model | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.reminder.evaluation | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.reminder.examples | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.strings.returned-text | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -149,6 +163,19 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/.obsidian/core-plugins.json](../../Notes/.obsidian/core-plugins.json): App configuration; no learning coverage.
 - [Notes/.obsidian/graph.json](../../Notes/.obsidian/graph.json): App configuration; no learning coverage.
 - [Notes/.obsidian/workspace.json](../../Notes/.obsidian/workspace.json): App configuration; no learning coverage.
+- [Notes/AI/Index.md](../../Notes/AI/Index.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/AI/recall-questions.md](../../Notes/AI/recall-questions.md): Answer-free retrieval prompts; explanations mapped from AI notes.
+- [Notes/AI/reminder-input-practice.md](../../Notes/AI/reminder-input-practice.md)
+  - Collecting reminder inputs: py.strings.returned-text
+  - Collecting reminder inputs / Read and clean text: py.strings.returned-text
+  - Collecting reminder inputs / A string method returns new text: py.strings.returned-text
+  - Collecting reminder inputs / Sources and next step: Sources, provenance and pending task links; no extra concept.
+- [Notes/AI/reminder-model-basics.md](../../Notes/AI/reminder-model-basics.md)
+  - A small model for reminders: ai.reminder.model
+  - A small model for reminders / Running and fine-tuning: ai.reminder.model
+  - A small model for reminders / Check the answer before training: ai.reminder.evaluation
+  - A small model for reminders / Create input and answer pairs: ai.reminder.examples
+  - A small model for reminders / Sources and session evidence: Sources, provenance and pending task links; no extra concept.
 - [Notes/New Syntax/README.md](../../Notes/New%20Syntax/README.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/New Syntax/dictionary-copy.md](../../Notes/New%20Syntax/dictionary-copy.md)
   - Copy a dictionary before changing it: py.dict.mutate, py.records.cleaning
@@ -348,6 +375,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/Welcome.md](../../Notes/Welcome.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/learning-and-revision-plan.md](../../Notes/learning-and-revision-plan.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/revision/README.md](../../Notes/revision/README.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/ai-reminder-questions.md](../../Notes/revision/ai-reminder-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/mistakes.md](../../Notes/revision/mistakes.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/notebook-questions.md](../../Notes/revision/notebook-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.

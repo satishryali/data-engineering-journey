@@ -1,0 +1,6 @@
+task = input("What should i remind you to do? : ").strip()
+time = input("Please enter the time in 24 hour hh:mm format :  ").strip()
+recurrence = input("Should this repeat every day (yes/no) ? : ").strip()
+print(task)
+print(time)
+recurrence.upper()

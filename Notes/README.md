@@ -3,6 +3,8 @@
 Open this `Notes` folder directly as a vault in Obsidian. Do not open the whole
 learning repository as the vault, and do not create another `Notes` folder inside it.
 
+- [AI reminder model notes](AI/reminder-model-basics.md)
+- [AI notes](AI/Index.md)
 - [Python notes](Python/Index.md)
 - [New syntax collection](New%20Syntax/README.md)
 - [Revision records](revision/README.md)

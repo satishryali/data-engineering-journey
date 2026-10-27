@@ -1673,6 +1673,177 @@
           "key": "Multithreading / Python's Global Interpreter Lock (GIL)"
         }
       ]
+    },
+    {
+      "id": "ai.model.adaptation",
+      "name": "Inference prompting and fine-tuning for a reminder model",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders"
+        },
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Running and fine-tuning"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-15"
+    },
+    {
+      "id": "ai.reminders.evaluation",
+      "name": "Evaluate reminder fields against a baseline",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.model.adaptation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Check the answer before training"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-16"
+    },
+    {
+      "id": "ai.reminders.dataset",
+      "name": "Input target pairs and template data for reminders",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.reminders.evaluation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Create input and answer pairs"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-17"
+    },
+    {
+      "id": "ai.reminder.model",
+      "name": "Reminder models: inference prompting and fine-tuning",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "92e71406bcd779e229b906ee45a15a364a0676331e2e2a1d801af9e0d237314b"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders"
+        },
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Running and fine-tuning"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-18"
+    },
+    {
+      "id": "ai.reminder.evaluation",
+      "name": "Checking reminder model fields against a baseline",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "92e71406bcd779e229b906ee45a15a364a0676331e2e2a1d801af9e0d237314b"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.reminder.model"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Check the answer before training"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-19"
+    },
+    {
+      "id": "ai.reminder.examples",
+      "name": "Reminder input and target example pairs",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "sha256": "92e71406bcd779e229b906ee45a15a364a0676331e2e2a1d801af9e0d237314b"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.reminder.evaluation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-model-basics.md",
+          "key": "A small model for reminders / Create input and answer pairs"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-20"
+    },
+    {
+      "id": "py.strings.returned-text",
+      "name": "String cleanup and returned case conversions",
+      "sources": [
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "sha256": "135cab4226e25ed56817c5195a995ece0415742e3aacc431d51719da20619fea"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "key": "Collecting reminder inputs"
+        },
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "key": "Collecting reminder inputs / Read and clean text"
+        },
+        {
+          "path": "Notes/AI/reminder-input-practice.md",
+          "key": "Collecting reminder inputs / A string method returns new text"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-21"
     }
   ],
   "note_inventory": [
@@ -1699,6 +1870,96 @@
     {
       "path": "Notes/.obsidian/workspace.json",
       "exclusion_reason": "App configuration; no learning coverage."
+    },
+    {
+      "path": "Notes/AI/Index.md",
+      "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
+    },
+    {
+      "path": "Notes/AI/recall-questions.md",
+      "file_hash": "59805b56765ffc470d418415961d257f3c970e6ebe4054c13393c0694b0919b7",
+      "exclusion_reason": "Answer-free retrieval prompts; explanations mapped from AI notes."
+    },
+    {
+      "path": "Notes/AI/reminder-input-practice.md",
+      "file_hash": "135cab4226e25ed56817c5195a995ece0415742e3aacc431d51719da20619fea",
+      "sections": [
+        {
+          "key": "Collecting reminder inputs",
+          "heading": "Collecting reminder inputs",
+          "content_hash": "3b10d7ad1242810f28e1f6128043256ed086882db014df53242e496f589b9f26",
+          "topic_ids": [
+            "py.strings.returned-text"
+          ]
+        },
+        {
+          "key": "Collecting reminder inputs / Read and clean text",
+          "heading": "Collecting reminder inputs / Read and clean text",
+          "content_hash": "62a55a2a627a71414b514047be02acecd36c8ca94001ca9b4b17cd622a631b95",
+          "topic_ids": [
+            "py.strings.returned-text"
+          ]
+        },
+        {
+          "key": "Collecting reminder inputs / A string method returns new text",
+          "heading": "Collecting reminder inputs / A string method returns new text",
+          "content_hash": "13e219598c800dc2480893a5344c530cee5b0111a93d6c24642c53ca7675500a",
+          "topic_ids": [
+            "py.strings.returned-text"
+          ]
+        },
+        {
+          "key": "Collecting reminder inputs / Sources and next step",
+          "heading": "Collecting reminder inputs / Sources and next step",
+          "content_hash": "18083ff1cd0a943d1f97e670c84cf1c3eaf07fe87972ea5c9148cc42fadb75b7",
+          "exclusion_reason": "Sources, provenance and pending task links; no extra concept."
+        }
+      ]
+    },
+    {
+      "path": "Notes/AI/reminder-model-basics.md",
+      "file_hash": "92e71406bcd779e229b906ee45a15a364a0676331e2e2a1d801af9e0d237314b",
+      "sections": [
+        {
+          "key": "A small model for reminders",
+          "heading": "A small model for reminders",
+          "content_hash": "f4adbd17146ad9ff8e611a7925045d52db0d34dcc559a88665d8eaba22083030",
+          "topic_ids": [
+            "ai.reminder.model"
+          ]
+        },
+        {
+          "key": "A small model for reminders / Running and fine-tuning",
+          "heading": "A small model for reminders / Running and fine-tuning",
+          "content_hash": "15c6c18e5f8fa45f54fa061b1402be38465da9897c7d63156f2fa9e5217dd078",
+          "topic_ids": [
+            "ai.reminder.model"
+          ]
+        },
+        {
+          "key": "A small model for reminders / Check the answer before training",
+          "heading": "A small model for reminders / Check the answer before training",
+          "content_hash": "465ecd39c3e3a42d1c400cc8f3c440c7bf02bc6f8d1ef2ef645cf1286607b663",
+          "topic_ids": [
+            "ai.reminder.evaluation"
+          ]
+        },
+        {
+          "key": "A small model for reminders / Create input and answer pairs",
+          "heading": "A small model for reminders / Create input and answer pairs",
+          "content_hash": "609f5a228bd71672bb4409acdc02158a0e48f216cb02ddb5d6b813ceceff8907",
+          "topic_ids": [
+            "ai.reminder.examples"
+          ]
+        },
+        {
+          "key": "A small model for reminders / Sources and session evidence",
+          "heading": "A small model for reminders / Sources and session evidence",
+          "content_hash": "aa46b51098b21621b110faf05ad0c899df1742dc175ff74500156909595d64b2",
+          "exclusion_reason": "Sources, provenance and pending task links; no extra concept.",
+          "changed": true
+        }
+      ]
     },
     {
       "path": "Notes/New Syntax/README.md",
@@ -2495,7 +2756,7 @@
     },
     {
       "path": "Notes/Python/Concepts/multithreading.md",
-      "file_hash": "a05ada3b3e310a1599bec6c4a690c0053398d4fa2219706bd855cd294a752ead",
+      "file_hash": "c9c0f15c682193c3556907db557dbd57fa91ed9d54649130397a2737fdcf25d3",
       "sections": [
         {
           "key": "Multithreading",
@@ -3222,6 +3483,10 @@
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
     {
+      "path": "Notes/revision/ai-reminder-questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
       "path": "Notes/revision/list-questions.md",
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
@@ -3325,7 +3590,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-26",
+  "inventory_date_ist": "2026-10-28",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

@@ -1,5 +1,13 @@
 # Start here - Python notes saved, 25 October 2026 (IST)
 
+## AI reminder checkpoint, 28 October 2026 IST
+
+<!-- CP-20261028-ai-reminder-baseline -->
+AI reminder baseline and guided collector saved. Four learner-reported outputs for the same soak-nuts reminder failed exact field extraction, including fresh-session time=daily; these are model errors, not learner misconceptions or a general benchmark. Latest learner code collects task, time and recurrence, prints the first two and discards recurrence.upper(); no collector execution output or corrected attempt supplied. Tutor supplied initial input/strip code and later hints. Learner explicitly requests one step at a time and writes all project code. Notes cover inference versus training, prompting, LoRA, baseline checking and input-target data generation; all three AI concepts remain unassessed with planning slots only. No training, mobile deployment, notification or dataset generation completed. Timer and confirmed hours unchanged. RRDAP RDS-001 and earlier Python follow-up remain pending. Next: Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.
+
+Evidence: [AI session and attempts](progress/ai-reminder/2026-10-28-session.md); [Obsidian explanation note](Notes/AI/reminder-model-basics.md). The source project remains C:/GIT/AI/FineTuning/reminder_assistant/collect_example.py; its exact inspected snapshot is preserved in the learning repository. Phone Android version is unverified. No learner project file was edited. Resume the AI collector for this chat; preserved RRDAP work below is a separate task.
+
+
 ## RecallLab bank expansion, 27 October 2026
 
 Infrastructure status: **4,213 published problems** meet all 4,200 allocated targets; 243 drafts remain excluded. [Actual counts and verification limits](apps/recalllab/BANK-EXPANSION.md) are recorded separately. This adds no learner completion, score, review date or study time; the exact pending Python and RDS-001 tasks below remain unchanged.
@@ -28,7 +36,7 @@ Learner chose Docker study today. Three completed 25-minute Pomodoros and three 
 
 ## Current state
 
-Planning updated **22 October 2026**: [single Azure interview roadmap](plan/learning-and-revision-plan.md), 13 weeks from 22 October plus 21–22 January buffer, assessment **22 January 2027**. Date-effective 7-hour weekdays/10-hour weekends = 55 hours/full week; historical targets preserved. This transition week is 52 h. Today/week confirmed logged hours **0**, prior overall confirmed **11h09m05s**, uncertain interval excluded. No learning assessment, acceptance, review-date change or new timer from this infrastructure upgrade. Excel refreshed for 22 October. Start interview practice and Show my weaknesses use the existing five roles/records. [RecallLab](apps/recalllab/README.md) was found in a newer remote commit and integrated; shared schedule, roadmap/project/interview views added while preserving revision/coding/persistence. No public deployment.
+Planning updated **22 October 2026**: [single Azure interview roadmap](plan/learning-and-revision-plan.md), 13 weeks from 22 October plus 21â€“22 January buffer, assessment **22 January 2027**. Date-effective 7-hour weekdays/10-hour weekends = 55 hours/full week; historical targets preserved. This transition week is 52 h. Today/week confirmed logged hours **0**, prior overall confirmed **11h09m05s**, uncertain interval excluded. No learning assessment, acceptance, review-date change or new timer from this infrastructure upgrade. Excel refreshed for 22 October. Start interview practice and Show my weaknesses use the existing five roles/records. [RecallLab](apps/recalllab/README.md) was found in a newer remote commit and integrated; shared schedule, roadmap/project/interview views added while preserving revision/coding/persistence. No public deployment.
 
 **Real-Time Retail Distribution & Analytics Platform (RRDAP)** is active, replacing RetailFlow. **RDS-001 Product Catalogue** is in progress: Faker/commerce generator and a 1,000-record CSV found under projects/rrdap/Test; PostgreSQL loading and SQL verification remain pending. PostgreSQL is available per learner report; task connection unverified. Read [main checkpoint](progress/current.md), [project checkpoint](projects/rrdap/checkpoint.md), [current task](projects/rrdap/tasks/RDS-001.md) and [tutoring workflow](reference/rrdap.md).
 
@@ -47,3 +55,11 @@ One tutor coordinates five roles. Give one business task; learner designs/codes/
 Use Start Distribution Project / Continue Distribution Project to load the next task without another timer. Save my learning saves; End session saves and closes the study interval. Existing timer commands and explicit checkpoint boundaries remain. Update both main handoffs and project checkpoint together; canonical trackers remain shared. No background agents. The current upgrade request authorizes its scoped feature branch/PR only; future study publishing or deployments still need authorization.
 
 Faker follow-up: [Faker notes](Notes/Python/Concepts/faker.md) capture customer generation, locale, commerce provider, the price-argument issue and extra CSV blank rows. Learner notebook/data preserved; no task acceptance, independent score or timer change.
+
+## AI notes saved, 28 October 2026
+
+[AI notes](Notes/AI/Index.md) and [session evidence](progress/ai-reminder/2026-10-28-session.md) capture today's reminder-model exploration and collector practice. No independent assessment or training completed.
+
+Next AI task: Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.
+
+Earlier Python follow-ups and RDS-001 remain pending.

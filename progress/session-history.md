@@ -425,3 +425,17 @@ Dataclass and special-method reference notes saved, 26 October 2026. Added Notes
 Evidence: `Notes/Python/Concepts/dataclasses.md`; `Notes/Python/Concepts/special-methods.md`; `practice/Dataclass/dataclass.ipynb`.
 
 Publishing verification, 26 October 2026: refreshed note inventory and derived views; coach validation passed. Reconstructed this missing deduplication-index entry from the existing block; no duplicate outcome block, review, timer or skill event was added. Learner notebook outputs were not rerun.
+
+<!-- checkpoint:CP-20261028-ai-reminder-baseline -->
+## 2026-10-28 — CP-20261028-ai-reminder-baseline (learning)
+
+AI reminder baseline and guided collector saved. Four learner-reported outputs for the same soak-nuts reminder failed exact field extraction, including fresh-session time=daily; these are model errors, not learner misconceptions or a general benchmark. Latest learner code collects task, time and recurrence, prints the first two and discards recurrence.upper(); no collector execution output or corrected attempt supplied. Tutor supplied initial input/strip code and later hints. Learner explicitly requests one step at a time and writes all project code. Notes cover inference versus training, prompting, LoRA, baseline checking and input-target data generation; all three AI concepts remain unassessed with planning slots only. No training, mobile deployment, notification or dataset generation completed. Timer and confirmed hours unchanged. RRDAP RDS-001 and earlier Python follow-up remain pending. Next: Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.
+
+Evidence: `progress/ai-reminder/2026-10-28-session.md`; `progress/ai-reminder/collect_example-2026-10-28.py`; `Notes/AI/reminder-model-basics.md`; `progress/ai-reminder/2026-10-28-session.md#ai-rem-code-02`
+
+<!-- checkpoint:CP-20261028-ai-notes-organized -->
+## 2026-10-28 — CP-20261028-ai-notes-organized (setup)
+
+Organized requested AI notes from the saved 28 October session under Notes/AI, with model basics, input practice, index and separate recall prompts. Source and saved notebook inspected; upper() result versus unchanged original documented. Existing session model/hardware observations were not rerun. Four concepts receive unassessed diagnostic planning slots only. No scored review, training, timer change or project acceptance. Learner source preserved. Next: Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.
+
+Evidence: `Notes/AI/Index.md`; `Notes/AI/reminder-model-basics.md`; `Notes/AI/reminder-input-practice.md`; `progress/ai-reminder/2026-10-28-session.md`

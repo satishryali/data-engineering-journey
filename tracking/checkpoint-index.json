@@ -309,6 +309,20 @@
       "sha256": "99dc2f2d3f48d60248785f7400ac2c94862b8b89abe363b767e86db4097f1c20",
       "evidence_key": "94d175bf107119a891bf20a56d7c947c9ddc48bcfcceda261aa571e7de577e1c",
       "reconstructed_from": "progress/session-history.md#CP-20261026-dataclass-special-method-notes"
+    },
+    {
+      "checkpoint_id": "CP-20261028-ai-reminder-baseline",
+      "date_ist": "2026-10-28",
+      "kind": "learning",
+      "sha256": "85ec046ddb61d82648cecb3d2558398bfb52e4d6285789f685602dbb966f4a32",
+      "evidence_key": "599c0927b4fe475f30e917f8495737603365b21c280bd833ac0849d8aa7ade7e"
+    },
+    {
+      "checkpoint_id": "CP-20261028-ai-notes-organized",
+      "date_ist": "2026-10-28",
+      "kind": "setup",
+      "sha256": "261819cf55f0bfc3e2da0c680650948643f64291f793f5db01c1611f4e3a252b",
+      "evidence_key": "d0c85248d3b0e351bbdcffedc7663fe94fd139680c08d198ae19624745f09638"
     }
   ]
 }

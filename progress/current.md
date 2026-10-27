@@ -1,5 +1,13 @@
 # Current tutoring checkpoint - Python notes saved, 25 October 2026 (IST)
 
+## AI reminder checkpoint, 28 October 2026 IST
+
+<!-- CP-20261028-ai-reminder-baseline -->
+AI reminder baseline and guided collector saved. Four learner-reported outputs for the same soak-nuts reminder failed exact field extraction, including fresh-session time=daily; these are model errors, not learner misconceptions or a general benchmark. Latest learner code collects task, time and recurrence, prints the first two and discards recurrence.upper(); no collector execution output or corrected attempt supplied. Tutor supplied initial input/strip code and later hints. Learner explicitly requests one step at a time and writes all project code. Notes cover inference versus training, prompting, LoRA, baseline checking and input-target data generation; all three AI concepts remain unassessed with planning slots only. No training, mobile deployment, notification or dataset generation completed. Timer and confirmed hours unchanged. RRDAP RDS-001 and earlier Python follow-up remain pending. Next: Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.
+
+Evidence: [AI session and attempts](../progress/ai-reminder/2026-10-28-session.md); [Obsidian explanation note](../Notes/AI/reminder-model-basics.md). The source project remains C:/GIT/AI/FineTuning/reminder_assistant/collect_example.py; its exact inspected snapshot is preserved in the learning repository. Phone Android version is unverified. No learner project file was edited. Resume the AI collector for this chat; preserved RRDAP work below is a separate task.
+
+
 ## RecallLab bank expansion, 27 October 2026
 
 Infrastructure status: **4,213 published problems** meet all 4,200 allocated targets; 243 drafts remain excluded. [Actual counts and verification limits](../apps/recalllab/BANK-EXPANSION.md) are recorded separately. This adds no learner completion, score, review date or study time; the exact pending Python and RDS-001 tasks below remain unchanged.
@@ -30,7 +38,7 @@ Learner chose Docker for today's study. Three completed 25-minute Pomodoros were
 
 ## Planning upgrade, 22 October
 
-The [authoritative Azure interview roadmap](../plan/learning-and-revision-plan.md) now runs 22 October 2026–22 January 2027: 13 curriculum weeks plus 21–22 January verification buffer. Seven-hour weekdays and ten-hour weekends give 55 focused hours/full week. Earlier targets/intervals remain unchanged; transition reporting week 19–25 October is 52 h. Today and this week have **zero confirmed logged hours**; this is missing evidence, not proof of no study. Earlier confirmed total remains **11h09m05s**; old uncertain interval excluded. Excel refreshed for 22 October.
+The [authoritative Azure interview roadmap](../plan/learning-and-revision-plan.md) now runs 22 October 2026â€“22 January 2027: 13 curriculum weeks plus 21â€“22 January verification buffer. Seven-hour weekdays and ten-hour weekends give 55 focused hours/full week. Earlier targets/intervals remain unchanged; transition reporting week 19â€“25 October is 52 h. Today and this week have **zero confirmed logged hours**; this is missing evidence, not proof of no study. Earlier confirmed total remains **11h09m05s**; old uncertain interval excluded. Excel refreshed for 22 October.
 
 This was repository infrastructure/planning work, not a learner assessment. No timer started, task completed, skill scored or review due date changed. Start interview practice selects a prompt and waits; Show my weaknesses uses actual observations. Engineering templates assign no future task. A remote update discovered RecallLab after initial local inspection; integrated it without losing records. Dashboard/progress now use shared targets and interview evidence; read-only roadmap/project/interview pages preserve existing coding/revision flows. No public deployment. RDS-001 acceptance and exact next task below are unchanged.
 
@@ -69,3 +77,11 @@ Existing SQL-001/002/003 due dates remain 16 October; relevant Python assisted r
 The reported SQL-versus-dbt experiment was not found in this checkout; external location/branch/commit unknown. Inspect when available and relevant, preserving work. The 22 October upgrade request authorizes a scoped feature branch/PR for this infrastructure change; it is not standing permission to publish future study changes or deploy a website/cloud resources. Update this file, START-HERE.md and project checkpoint together at explicit save boundaries; no background agents/reminders.
 
 Faker notes follow-up, 17 October: inspected projects/rrdap/Test/datafaker.ipynb and its product_data.csv, which is distinct from the empty practice/Modules/product_data.csv. Saved basic/customer/provider outputs and CSV evidence documented; small note examples executed separately. Assistance unknown. Price argument and extra newline findings documented without changing the learner code. PostgreSQL catalogue acceptance still pending; timer unchanged and paused.
+
+## AI notes saved, 28 October 2026
+
+[AI notes](../Notes/AI/Index.md) and [session evidence](ai-reminder/2026-10-28-session.md) capture today's reminder-model exploration and collector practice. No independent assessment or training completed.
+
+Next AI task: Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.
+
+Earlier Python follow-ups and RDS-001 remain pending.
