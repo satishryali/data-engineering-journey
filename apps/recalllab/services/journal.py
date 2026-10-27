@@ -1,5 +1,5 @@
 """Durable local drafts/submissions. No canonical write until explicit end-session."""
-from contextlib import contextmanager
+from contextlib import contextmanager, closing
 import json
 from pathlib import Path
 import sqlite3
@@ -9,9 +9,22 @@ from services.records import ROOT, now
 
 
 class Journal:
+    SCHEMA_VERSION = 2
+
     def __init__(self, path=None):
         self.path = Path(path or ROOT / 'apps/recalllab/data/recalllab.sqlite3')
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        # Inspect and snapshot existing data before any DDL, including CREATE TABLE.
+        # SQLite's backup API includes committed WAL data and leaves the source intact.
+        if self.path.exists() and self.path.stat().st_size:
+            with closing(sqlite3.connect(self.path, timeout=20)) as source:
+                version = source.execute('PRAGMA user_version').fetchone()[0]
+                if version > self.SCHEMA_VERSION:
+                    raise ValueError('This journal uses a newer schema. Update RecallLab before opening it.')
+                if version < self.SCHEMA_VERSION:
+                    backup = self.path.with_name(f'backup-pre-v{self.SCHEMA_VERSION}-{uuid.uuid4().hex}.sqlite3')
+                    with closing(sqlite3.connect(backup)) as destination:
+                        source.backup(destination)
         with self.db() as db:
             db.executescript('''
                 CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY, created TEXT NOT NULL, state TEXT NOT NULL DEFAULT 'open', batch TEXT);
@@ -20,6 +33,18 @@ class Journal:
                 CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, payload TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS assessments(attempt_id TEXT PRIMARY KEY REFERENCES attempts(id), payload TEXT NOT NULL);
             ''')
+            self._migrate(db)
+
+    def _migrate(self, db):
+        """Bring older local journals forward without rewriting user payloads."""
+        columns = {row['name'] for row in db.execute('PRAGMA table_info(sessions)')}
+        if 'state' not in columns:
+            db.execute("ALTER TABLE sessions ADD COLUMN state TEXT NOT NULL DEFAULT 'open'")
+        if 'batch' not in columns:
+            db.execute('ALTER TABLE sessions ADD COLUMN batch TEXT')
+        db.execute('CREATE INDEX IF NOT EXISTS idx_attempts_session ON attempts(session_id)')
+        db.execute('CREATE INDEX IF NOT EXISTS idx_assessments_attempt ON assessments(attempt_id)')
+        db.execute(f'PRAGMA user_version={self.SCHEMA_VERSION}')
 
     @contextmanager
     def db(self):
@@ -35,6 +60,8 @@ class Journal:
 
     def session(self):
         with self.db() as db:
+            # Serialize the read-then-create sequence when two browser tabs open together.
+            db.execute('BEGIN IMMEDIATE')
             row = db.execute("SELECT * FROM sessions WHERE state='open' ORDER BY created DESC LIMIT 1").fetchone()
             if row:
                 return row['id']

@@ -22,15 +22,18 @@ from components.session_ui import daily_session
 from components.assessment_ui import manual_review
 from services.evaluation import sql_assessment
 from components.learning import overview, roadmap, project, interview, interview_progress
+from components.tools_ui import tools_page
 
 st.set_page_config(page_title='RecallLab', page_icon='◈', layout='wide')
-st.markdown('<style>' + (Path(__file__).parent / 'components/theme.css').read_text(encoding='utf-8') + '</style>', unsafe_allow_html=True)
+style_dir = Path(__file__).parent / 'components'
+st.markdown('<style>' + '\n'.join((style_dir / name).read_text(encoding='utf-8-sig')
+    for name in ('theme.css', 'foundation.css', 'dashboard.css') if (style_dir / name).exists()) + '</style>', unsafe_allow_html=True)
 from components.dashboard import dashboard, brand, topbar
 
 records = Records(Path(os.environ.get('RECALLLAB_ROOT', ROOT)))
 journal = Journal(Path(os.environ['RECALLLAB_DATA']) / 'recalllab.sqlite3' if os.environ.get('RECALLLAB_DATA') else None)
 today = now().date()
-settings = {'session_minutes': 20, 'study_thresholds': [.25, .5, 1, 1.25], 'attempt_thresholds': [1, 3, 5, 8], 'coding_thresholds': [1, 2, 4, 6]}
+settings = {'session_minutes': 20, 'daily_review_limit': 8, 'study_thresholds': [.25, .5, 1, 1.25], 'attempt_thresholds': [1, 3, 5, 8], 'coding_thresholds': [1, 2, 4, 6]}
 config_path = Path(__file__).parent / 'config.toml'
 if config_path.exists():
     settings.update(tomllib.loads(config_path.read_text(encoding='utf-8')))
@@ -328,75 +331,87 @@ def challenges():
     challenge = st.selectbox('Challenge', bank, index=None if 'coding-challenge-filter' in st.session_state else next((i for i,c in enumerate(bank) if c[0]==requested),0),format_func=lambda x: x[2],key='coding-challenge-filter',on_change=challenge_changed)
     journal.put('settings','challenge:'+language,challenge[0])
     ident, item, title, prompt, *kind = challenge
-    st.subheader(title); st.write(prompt)
-    if kind:
-        st.code('customers(customer_id INTEGER, name TEXT)\norders(order_id INTEGER, customer_id INTEGER, amount INTEGER)', language='sql')
-        expected_sample = {'join':'(1,101), (1,102), (2,NULL), (3,103)', 'sum':'(1,Asha,7), (2,Asha,NULL), (3,Devi,0)', 'count':'(1,Asha,2), (2,Asha,0), (3,Devi,1)'}[kind[0]]
-        st.caption('Sample: customers (1,Asha),(2,Asha),(3,Devi); orders (101,1,7),(102,1,NULL),(103,3,0). Expected rows: '+expected_sample+'. Tests use three fixtures. SQLite-compatible SQL only.')
-    else:
-        st.info('Run Tests disabled: no verified isolated Python runner is available. Submit source for manual tutor assessment. RecallLab never executes it.')
-        with st.expander('Starter shape and verification checklist'):
-            name = {'clean-records':'clean_orders','dictionary':'changed_copy','list-records':'active_ids','csv-read':'parse_rows','csv-write':'write_rows','files':'inspect_file','random':'generate_records'}[ident]
-            st.code(f'def {name}(data):\n    # Implement the problem above using scratch inputs.\n    pass\n\n# Verify the sample, empty input and one changed edge case.\n# Preserve original inputs where required.',language='python')
-    session = journal.session()
-    retry = journal.get('settings','coding-retry:'+ident,0)
-    token = f'{session}:code:{ident}:{retry}'
-    key = 'code-' + token
-    if key not in st.session_state:
-        st.session_state[key] = journal.get('drafts', token, {}).get('answer', '')
-    def save_code():
-        journal.put('drafts', token, dict(journal.get('drafts', token, {}), answer=st.session_state[key]))
-    code = st.text_area('Writable code editor', key=key, height=260, on_change=save_code)
-    if st.button('Run Query' if kind else 'Run Tests', disabled=not kind):
-        result = run_sql(code, kind[0])
-        journal.put('drafts', token, dict(journal.get('drafts', token, {}), tests=result, tested_hash=hashlib.sha256(code.encode()).hexdigest()))
-    draft = journal.get('drafts', token, {})
-    result = draft.get('tests') if draft.get('tested_hash') == hashlib.sha256(code.encode()).hexdigest() else None
-    if result:
-        st.success('All controlled fixtures passed') if result['passed'] else st.warning('Tests did not pass')
-        st.json(result)
-    hints = draft.get('hints', 0)
-    if st.button('Challenge hint'):
-        journal.put('drafts', token, dict(draft, hints=hints + 1))
-        st.rerun()
-    if hints:
-        st.info('Trace one input by hand; check empty input, NULL/missing values, and whether identity is preserved.')
-    if st.button('Consult challenge notes'):
-        journal.put('drafts', token, dict(draft, notes_used=True))
-        st.rerun()
-    notes_used = draft.get('notes_used', False)
-    if notes_used:
-        sources = question(records, item, today).sources
-        if sources:
-            note_view(sources[0]['path'], sources[0]['key'])
-    declared = st.radio('Help declaration', ['Unknown', 'No help or notes beyond recorded hints', 'Other help used'])
-    help_used = None if declared == 'Unknown' else declared == 'Other help used'
-    if hints or notes_used:
-        help_used = True
-    if st.button('Submit Code Attempt', type='primary'):
-        try:
-            if result is None:
-                assessment = dict(score=None,result='assisted' if help_used else 'unknown',feedback='Manual assessment pending. No passing tests or score claimed.',correct=None,evaluation='manual_pending',evaluation_status='not_evaluated',test_evidence=None)
+    with st.expander('Workspace layout'):
+        problem_width = st.slider('Problem pane width (%)',30,60,40,5)
+    with st.container(key='coding-workspace'):
+        problem_pane, editor_pane = st.columns([problem_width,100-problem_width],gap='large')
+        with problem_pane:
+            st.subheader(title); st.write(prompt)
+            if kind:
+                st.code('customers(customer_id INTEGER, name TEXT)\norders(order_id INTEGER, customer_id INTEGER, amount INTEGER)', language='sql')
+                expected_sample = {'join':'(1,101), (1,102), (2,NULL), (3,103)', 'sum':'(1,Asha,7), (2,Asha,NULL), (3,Devi,0)', 'count':'(1,Asha,2), (2,Asha,0), (3,Devi,1)'}[kind[0]]
+                st.caption('Sample: customers (1,Asha),(2,Asha),(3,Devi); orders (101,1,7),(102,1,NULL),(103,3,0). Expected rows: '+expected_sample+'. Tests use three fixtures. SQLite-compatible SQL only.')
             else:
-                assessment = sql_assessment(result,help_used,notes_used,hints)
-            saved = journal.save(session, token, dict(item_id=item, question=prompt, answer=code,
-                       dimension='building', task_variant=f'{ident}-{retry}', assessment_kind='application',
-                       help_used=help_used, hints_used=hints, notes_used=notes_used, code_submission=True,
-                       sources=question(records,item,today).sources,correction_of=journal.get('settings',f'code-correction:{ident}:{retry}'),**assessment))
-            st.success('Saved locally / pending sync: ' + saved['attempt_id'])
-        except ValueError as error:
-            st.error(str(error))
-    if st.button('New code attempt'):
-        previous = next((a for a in journal.attempts(session) if a.get('task_variant')==f'{ident}-{retry}'),None)
-        if previous:
-            journal.put('settings',f'code-correction:{ident}:{retry+1}',previous['attempt_id'])
-        journal.put('settings','coding-retry:'+ident,retry+1)
-        st.rerun()
+                st.info('Run Tests disabled: no verified isolated Python runner is available. Submit source for manual tutor assessment. RecallLab never executes it.')
+                with st.expander('Starter shape and verification checklist'):
+                    name = {'clean-records':'clean_orders','dictionary':'changed_copy','list-records':'active_ids','csv-read':'parse_rows','csv-write':'write_rows','files':'inspect_file','random':'generate_records'}[ident]
+                    st.code(f'def {name}(data):\n    # Implement the problem above using scratch inputs.\n    pass\n\n# Verify the sample, empty input and one changed edge case.\n# Preserve original inputs where required.',language='python')
+        with editor_pane:
+            st.subheader('Your solution')
+            st.caption('Draft saves when the editor loses focus. SQL runs against disposable fixtures; Python uses human review.')
+            session = journal.session()
+            retry = journal.get('settings','coding-retry:'+ident,0)
+            token = f'{session}:code:{ident}:{retry}'
+            key = 'code-' + token
+            if key not in st.session_state:
+                st.session_state[key] = journal.get('drafts', token, {}).get('answer', '')
+            def save_code():
+                journal.put('drafts', token, dict(journal.get('drafts', token, {}), answer=st.session_state[key]))
+            code = st.text_area('Writable code editor', key=key, height=260, on_change=save_code)
+            if st.button('Run Query' if kind else 'Run Tests', disabled=not kind):
+                result = run_sql(code, kind[0])
+                journal.put('drafts', token, dict(journal.get('drafts', token, {}), tests=result, tested_hash=hashlib.sha256(code.encode()).hexdigest()))
+            draft = journal.get('drafts', token, {})
+            result = draft.get('tests') if draft.get('tested_hash') == hashlib.sha256(code.encode()).hexdigest() else None
+            if result:
+                st.success('All controlled fixtures passed') if result['passed'] else st.warning('Tests did not pass')
+                st.json(result)
+            hints = draft.get('hints', 0)
+            if st.button('Challenge hint'):
+                journal.put('drafts', token, dict(draft, hints=hints + 1))
+                st.rerun()
+            if hints:
+                st.info('Trace one input by hand; check empty input, NULL/missing values, and whether identity is preserved.')
+            if st.button('Consult challenge notes'):
+                journal.put('drafts', token, dict(draft, notes_used=True))
+                st.rerun()
+            notes_used = draft.get('notes_used', False)
+            if notes_used:
+                sources = question(records, item, today).sources
+                if sources:
+                    note_view(sources[0]['path'], sources[0]['key'])
+            declared = st.radio('Help declaration', ['Unknown', 'No help or notes beyond recorded hints', 'Other help used'])
+            help_used = None if declared == 'Unknown' else declared == 'Other help used'
+            if hints or notes_used:
+                help_used = True
+            if st.button('Submit Code Attempt', type='primary'):
+                try:
+                    if result is None:
+                        assessment = dict(score=None,result='assisted' if help_used else 'unknown',feedback='Manual assessment pending. No passing tests or score claimed.',correct=None,evaluation='manual_pending',evaluation_status='not_evaluated',test_evidence=None)
+                    else:
+                        assessment = sql_assessment(result,help_used,notes_used,hints)
+                    saved = journal.save(session, token, dict(item_id=item, question=prompt, answer=code,
+                               dimension='building', task_variant=f'{ident}-{retry}', assessment_kind='application',
+                               help_used=help_used, hints_used=hints, notes_used=notes_used, code_submission=True,
+                               sources=question(records,item,today).sources,correction_of=journal.get('settings',f'code-correction:{ident}:{retry}'),**assessment))
+                    st.success('Saved locally / pending sync: ' + saved['attempt_id'])
+                except ValueError as error:
+                    st.error(str(error))
+            if st.button('New code attempt'):
+                previous = next((a for a in journal.attempts(session) if a.get('task_variant')==f'{ident}-{retry}'),None)
+                if previous:
+                    journal.put('settings',f'code-correction:{ident}:{retry+1}',previous['attempt_id'])
+                journal.put('settings','coding-retry:'+ident,retry+1)
+                st.rerun()
     manual_review(journal,session,'coding-manual')
     st.subheader('Saved code history')
-    history = [a for a in journal.effective_attempts() if a.get('code_submission') and a['item_id']==item]
+    # Canonical checkpoint evidence must remain visible when the ignored local journal
+    # is restored, deleted, or moved to another computer. Pending local attempts win
+    # over their canonical replay by stable review_id.
+    history = code_history(records, journal, item)
     for a in reversed(history[-15:]):
-        with st.expander(a['timestamp']+' · '+a.get('evaluation_status',a.get('result','unknown'))):
+        stamp = a.get('timestamp', a.get('submitted_date_ist', 'Saved attempt'))
+        with st.expander(stamp+' · '+a.get('evaluation_status',a.get('result','unknown'))):
             st.code(a['answer'],language='sql' if kind else 'python')
             st.write(a['feedback'])
             if a.get('test_evidence'):
@@ -404,6 +419,15 @@ def challenges():
     if not history:
         st.caption('No code submitted for this concept yet.')
     session_summary()
+
+
+def code_history(records, journal, item):
+    """Return canonical and pending code attempts once, with pending data preferred."""
+    history_by_id = {a.get('review_id', a.get('attempt_id')): a for a in records.events()
+                     if a.get('code_submission') and a.get('item_id') == item}
+    history_by_id.update({a.get('review_id', a.get('attempt_id')): a for a in journal.effective_attempts()
+                          if a.get('code_submission') and a.get('item_id') == item})
+    return list(history_by_id.values())
 
 
 def analytics():
@@ -417,13 +441,21 @@ def analytics():
     columns[3].metric('Unscored / unknown assessments', len(events) - len(scored))
     st.caption('Activity and accuracy are separate. Output tests do not assess explanation. Assisted success is not independent retention.')
     objective = [e for e in events if type(e.get('correct')) is bool]
-    st.metric('Verified output accuracy (help included)', f'{100*sum(e["correct"] for e in objective)/len(objective):.0f}%' if objective else 'No explicit output assessments')
+    verification = st.columns(2)
+    verification[0].metric('Verified output accuracy (help included)', f'{100*sum(e["correct"] for e in objective)/len(objective):.0f}%' if objective else 'Unassessed')
     code_tests = [e for e in events if e.get('code_submission') and e.get('test_evidence')]
-    st.metric('Coding test pass rate',f'{100*sum(e["test_evidence"]["passed"] for e in code_tests)/len(code_tests):.0f}%' if code_tests else 'Not evaluated')
+    verification[1].metric('Coding test pass rate',f'{100*sum(e["test_evidence"]["passed"] for e in code_tests)/len(code_tests):.0f}%' if code_tests else 'Not evaluated')
     st.caption('Human assessments are labelled human_review in evidence; executable test outcomes are counted separately above.')
     state, _ = records.coverage(today)
-    st.write(state['coverage'])
-    st.dataframe([{k: t.get(k) for k in ('id', 'name', 'state', 'delayed_practised', 'initial_assessment_date_ist')} for t in state['topics']], hide_index=True)
+    st.subheader('Your concept coverage')
+    coverage = state['coverage']
+    coverage_cols = st.columns(3)
+    coverage_cols[0].metric('Mapped note sections',coverage['learning_sections_mapped'])
+    coverage_cols[1].metric('Concepts assessed',f"{coverage['topics_assessed']} / {coverage['topics_total']}")
+    coverage_cols[2].metric('Practised on delayed review',coverage['topics_practised_on_delayed_review'])
+    st.caption(f"{coverage['topics_needing_help']} concepts currently need help. Planned diagnostic dates are suggestions, not completed reviews.")
+    st.dataframe([{'Concept':t['name'],'Evidence state':t['state'],'Delayed practice':t.get('delayed_practised',False),
+                   'Proposed first assessment':t.get('initial_assessment_date_ist'),'Concept ID':t['id']} for t in state['topics']], hide_index=True)
     st.subheader('Dimension-specific evidence')
     st.dataframe(records.json('tracking/skill-state.json')['observations'], hide_index=True)
     st.subheader('Weekly confirmed activity')
@@ -438,6 +470,8 @@ def analytics():
 def settings_page():
     st.caption('Offline deterministic questions are always available. Optional AI explanations are off unless you explicitly enable a local provider below.')
     minutes = st.select_slider('Default session minutes', options=list(range(5, 61, 5)), value=int(settings['session_minutes']))
+    daily_limit = st.number_input('Daily review task limit', min_value=1, max_value=20, value=max(1,min(20,int(settings['daily_review_limit']))))
+    st.caption('Limits new session plans. Existing saved tasks and canonical due dates are preserved.')
     study = st.text_input('Study intensity thresholds (fractions of daily target)', value=','.join(str(x) for x in settings['study_thresholds']))
     counts = st.text_input('Revision intensity thresholds (attempt counts)', value=','.join(str(x) for x in settings['attempt_thresholds']))
     coding = st.text_input('Coding intensity thresholds (attempt counts)', value=','.join(str(x) for x in settings['coding_thresholds']))
@@ -446,7 +480,7 @@ def settings_page():
             a = [float(x) for x in study.split(',')]; b = [int(x) for x in counts.split(',')]; c = [int(x) for x in coding.split(',')]
             if len(a) != 4 or len(b) != 4 or len(c) != 4 or a != sorted(set(a)) or b != sorted(set(b)) or c != sorted(set(c)) or min(a) <= 0 or min(b) < 1 or min(c) < 1 or a[-1] <= 1:
                 raise ValueError('Use four increasing positive thresholds; highest study threshold must exceed the target.')
-            journal.put('settings', 'preferences', dict(session_minutes=minutes, study_thresholds=a, attempt_thresholds=b, coding_thresholds=c))
+            journal.put('settings', 'preferences', dict(session_minutes=minutes, daily_review_limit=int(daily_limit), study_thresholds=a, attempt_thresholds=b, coding_thresholds=c))
             st.success('Local preferences saved')
         except ValueError as error:
             st.error(str(error))
@@ -524,12 +558,11 @@ elif fingerprint(query) != st.session_state.get('_nav_query'):
         st.session_state['route'] = resolve(remembered)
         navigate(st.session_state['route'])
     st.session_state['_nav_query'] = fingerprint(st.query_params.to_dict())
-nav_icons = ['⌂', '☷', '▣', '⌘', '▤', '◎', '▥', '▦', '⌕', '⚙', '▤', '▣', '◎']
-page = st.sidebar.radio('Workspace', PAGES, key='route', on_change=sidebar_changed, format_func=lambda p: nav_icons[PAGES.index(p)] + '    ' + p)
+page = st.sidebar.radio('Workspace', PAGES, key='route', on_change=sidebar_changed)
 side_metric = 'Revision Only' if page == 'Revision Calendar' else 'All Learning'
 side_stats = metrics(records.activity(today), side_metric)
 side_label = 'Revision Streak' if side_metric == 'Revision Only' else 'Learning Streak'
-st.sidebar.markdown(f'<div class="rl-sidecard">🔥 {side_label}<strong>{side_stats["current_streak"]} days</strong><small>Best: {side_stats["longest_streak"]} days · {"revision attempts" if side_metric == "Revision Only" else "confirmed activity"}</small></div>', unsafe_allow_html=True)
+st.sidebar.markdown(f'<div class="rl-sidecard">{side_label}<strong>{side_stats["current_streak"]} days</strong><small>Best: {side_stats["longest_streak"]} days · {"revision attempts" if side_metric == "Revision Only" else "confirmed activity"}<br>A fresh start is always available.</small></div>', unsafe_allow_html=True)
 st.sidebar.markdown('---')
 st.sidebar.caption('Learning continuity: START-HERE.md\nActive project: RRDAP / RDS-001')
 pending_count = sum(len(journal.attempts(s['id'])) for s in journal.sessions() if s['state'] != 'recorded')
@@ -538,6 +571,21 @@ if pending_count:
 st.markdown(topbar(today), unsafe_allow_html=True)
 if page != 'Dashboard':
     st.title(page)
+    descriptions = {
+        "Today's Session": 'A little retrieval, a useful correction, one step forward. Your answers and position save locally.',
+        'Question Bank': 'Choose a concept to retrieve. Source notes and worked references stay separate from your attempt.',
+        'Coding Challenges': 'Think through the problem, write your solution, then check what it actually does.',
+        'Notes Browser': 'Your original notes, with room to read. Use a recall session when you are ready to practise.',
+        'Mistakes & Weak Topics': 'Turn observed gaps into your next useful practice. Every entry comes from saved evidence.',
+        'Progress & Analytics': 'See what you have practised and demonstrated. Activity, assistance and assessed results stay distinct.',
+        'Revision Calendar': 'A record of showing up. Missed days do not erase your work.',
+        'Search Notes': 'Find an explanation, example or edge case across your Git-versioned notes.',
+        'Settings': 'Shape a manageable daily session and keep your local work recoverable.',
+        'Learning Roadmap': 'Your preparation plan, grounded in prerequisites and actual evidence.',
+        'Project': 'Continue your current business requirement. Acceptance follows verified implementation.',
+        'Interview Practice': 'One bounded prompt. Explain your approach, show your output and name any help used.',
+        'Tools': 'One practical problem at a time. Show your work, review the evidence and continue.'}
+    st.markdown('<p class="rl-page-intro">'+descriptions.get(page,'')+'</p>',unsafe_allow_html=True)
 if 'saved_checkpoint_message' in st.session_state:
     st.success(st.session_state.pop('saved_checkpoint_message'))
 try:
@@ -548,14 +596,18 @@ try:
     except ValueError as warning:
         with st.sidebar.expander('Records notice · note inventory', expanded=False):
             st.caption('Scores and due dates are preserved. ' + str(warning))
-    if state['gaps']:
-        st.warning('Notes coverage needs mapping: ' + '; '.join(state['gaps'][:3]))
     changed = [t['id'] for t in live['topics'] if t.get('needs_reassessment')]
-    if changed:
-        st.warning('Changed source sections need inspection (history preserved): ' + ', '.join(changed))
+    if state['gaps'] or changed:
+        with st.sidebar.expander('Source notes need inspection', expanded=False):
+            if state['gaps']:
+                st.warning('Notes coverage needs mapping: ' + '; '.join(state['gaps'][:3]))
+            if changed:
+                st.warning('Changed source sections need inspection (history preserved): ' + ', '.join(changed))
+            st.caption('Existing assessment evidence and due dates are preserved.')
     if page == 'Dashboard':
         st.markdown(dashboard(records, journal, today, settings), unsafe_allow_html=True)
-        overview(records, today)
+        with st.expander("Today's learning plan",expanded=False):
+            overview(records, today)
         session_summary()
         if st.query_params.get('day'):
             with st.expander('Selected calendar day ? recorded evidence', expanded=True):
@@ -571,14 +623,19 @@ try:
         practice()
     elif page == 'Coding Challenges':
         challenges()
+    elif page == 'Tools':
+        tools_page(records, journal)
+        session_summary()
     elif page == 'Question Bank':
         text = st.text_input('Filter by topic, mode, source or evidence ID',value=journal.get('settings','bank-filter',''),key='bank-filter',on_change=lambda:journal.put('settings','bank-filter',st.session_state['bank-filter']))
+        matches = 0
         for row in records.csv('revision-queue.csv'):
             q = question(records, row['item_id'], today)
             linked = [e for e in records.events() if e['item_id'] == q.item_id]
             blob = json.dumps({'question': q.dict(), 'evidence': linked})
             if text.lower() not in blob.lower():
                 continue
+            matches += 1
             with st.expander(q.title + ' · ' + q.item_id + ' · ' + q.mode):
                 st.markdown(q.prompt)
                 st.caption('Sources: ' + '; '.join(s['path'] + ' / ' + s['key'] for s in q.sources))
@@ -586,6 +643,8 @@ try:
                     st.session_state['practice_item'] = q.item_id
                     st.session_state['next_route'] = "Today's Session"
                     st.rerun()
+        if not matches:
+            st.info('No questions match this filter. Try a technology, concept or shorter phrase.')
     elif page == 'Notes Browser':
         paths = records.notes()
         if st.query_params.get('recommended'):
@@ -606,14 +665,37 @@ try:
             matches = [(p, records.path(p, True).read_text(encoding='utf-8-sig')) for p in records.notes()]
             found = [(p, t) for p, t in matches if query.casefold() in t.casefold() or query.casefold() in p.casefold()]
             st.caption(f'{len(found)} matching notes')
+            if not found:
+                st.info('No notes match yet. Try a shorter phrase, a function name or a technology.')
             for path, content in found:
                 with st.expander(path):
-                    st.markdown(content, unsafe_allow_html=False)
+                    st.markdown(render_links(records, path, content), unsafe_allow_html=False)
+        else:
+            st.info('Search a concept such as LEFT JOIN, Decimal or dictionary to find your own explanations and examples.')
     elif page == 'Mistakes & Weak Topics':
-        for m in records.json('tracking/mistakes.json')['mistakes']:
+        mistakes = records.json('tracking/mistakes.json')['mistakes']
+        mistake_filter = st.text_input('Find a mistake or concept',placeholder='Search the observed gap, topic or mistake ID')
+        visible = [m for m in mistakes if mistake_filter.casefold() in json.dumps(m).casefold()]
+        st.caption(f'{len(visible)} observed gaps · recurrence counts refer to actual saved attempts')
+        due_rows = {r['item_id']:r for r in records.csv('revision-queue.csv')}
+        if not visible:
+            st.info('No observed mistakes match this search. New gaps appear here only after an evidenced assessment.')
+        for m in visible:
             with st.expander(m['mistake_id'] + ' · ' + m['status'] + ' · ' + m['observed_behaviour']):
-                st.write(m['expected_behaviour']); st.write(m['follow_up_task'])
-                st.caption('Cause confidence: ' + m['cause']['confidence'])
+                st.markdown('**What to aim for**')
+                st.write(m['expected_behaviour'])
+                st.write(m.get('correction_and_assistance','No correction has been verified yet.'))
+                st.caption('Observed on '+m['latest_observed']+' · '+str(m['recurrence_count'])+' distinct observed attempts')
+                st.markdown('**Next practice**')
+                st.write(m['follow_up_task'])
+                linked = [due_rows[item] for item in m['linked_review_items'] if item in due_rows]
+                dates = sorted({r['next_review_date_ist'] for r in linked if r['next_review_date_ist']})
+                st.caption('Next scheduled review: '+(dates[0] if dates else 'Not yet assessed / scheduled'))
+                st.caption('Possible cause ('+m['cause']['confidence']+'): '+m['cause']['description'])
+                if linked and st.button('Revisit this concept',key='mistake-retry-'+m['mistake_id'],icon=':material/replay:'):
+                    st.session_state['practice_item'] = linked[-1]['item_id']
+                    st.session_state['next_route'] = "Today's Session"
+                    st.rerun()
                 st.dataframe(m['observations'], hide_index=True)
         st.subheader('Current concept states')
         st.dataframe([{k: t.get(k) for k in ('id', 'state', 'prerequisites')} for t in state['topics']], hide_index=True)

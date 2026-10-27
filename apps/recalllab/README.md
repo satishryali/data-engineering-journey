@@ -1,6 +1,47 @@
 # RecallLab
 
+## Expanded bank checkpoint, 27 October 2026
+
+**4,213 published problems; the 4,200 allocated target is met.** 243 draft candidates are excluded from counters and selection. The original 53 problems and their IDs are preserved. The existing Tools page now supports /problem, /hint, /stuck, /solved, /next, /review, /progress and /why; hints count as assistance. It shows current level, next challenge, per-tool/overall actual progress, a published challenge browser and a 209-problem curated Job-Ready pathway with four practical assessments. [Actual counts, validation and review limits](BANK-EXPANSION.md); [machine-readable manifest](../../tools/problem-bank/manifest.json). The older 53-problem description below records the initial batch.
+
 Local daily revision over this repository's existing learning records. Website: **http://127.0.0.1:8501**. No new repository, cloud account or database server is needed.
+
+## Problem-first Tools practice, 26 October 2026
+
+Open **Tools**, choose a technology, type /problem, implement the bounded business task, then type /solved. Submit your approach, all help sources, code/file contents and actual output. SQL problems run bounded read-only SQLite fixtures; their results show actual versus expected rows. Python, PostgreSQL, Spark and cloud artifacts require an explicit human review of actual results, edge cases and acceptance criteria. RecallLab does not automatically execute those submissions. A declaration alone never completes a problem.
+
+Version 2026.10.26.1 publishes **53 problems across 32 technologies**: Python 12, SQL 8, PostgreSQL 4, and one starting task for each other tool. Every technology has Level 0–10 stage plans; unpublished stages are clearly excluded from totals. The bank expands in reviewed versioned batches. Existing folder IDs, PL/SQL and SAP HANA are retained; advanced tools remain available for later development. [The manifest](../../tools/curriculum.json) owns exact problem IDs, priorities, dependencies, published totals and official references.
+
+Verified assisted work counts as completed. Independent mastery needs separate explicit no-help evidence; after assisted completion use a later changed-input followup. **Verify existing skills** offers bounded diagnostics where published: independent verification may cover specific earlier prerequisite skills without adding unsubmitted problems to the completed count. Pending/failed attempts retain their original evidence and never erase prior progress. Version changes display old/new totals for acknowledgement. Optional aggregate practice totals do not claim a readiness percentage.
+
+Submissions/drafts save to the existing journal. **End session / save checkpoint** uses the existing bridge: immutable evidence, actual exercise review items, mistake observations, skill dimensions and the coach scheduling rule. Unsaved followup dates are provisional; checkpointed review dates come from the canonical queue. No new scheduler or timer is added. Checkpointed problem progress is recovered from canonical events on another computer, while unfinished drafts still need the existing journal export/import. Use Tools for problem verification and completion counters; existing Question Bank/revision pages can display registered exercise briefs without inventing note concepts.
+
+The [single roadmap](../../plan/learning-and-revision-plan.md) now targets **20 January 2027**, with November 15 foundation, December 6 PySpark and December 27 Azure assessments. Applications can begin now using truthful demonstrated skills. Infrastructure changes add no learner scores or RDS-001 acceptance.
+
+## Revision-first redesign, 26 October 2026
+
+All thirteen pages share charcoal surfaces, mint actions, readable spacing, visible
+keyboard focus and reduced-motion support. The dashboard leads with Start Today's
+Revision; annual activity and the learning plan are secondary. Counts come from
+saved evidence. Coding uses problem/editor panes with an adjustable width control;
+on phones the panes stack. Notes and original learner attempts remain unchanged.
+
+Daily sessions support durable pause/resume, answer reveal after a submitted recall
+attempt and attestation, and separate difficulty self-reports. Ctrl+Enter submits
+or resumes; Ctrl+Shift+Enter reveals; Ctrl+Right advances a submitted task. Shortcuts
+are displayed by supported Streamlit versions. Pause saves app state and does not
+operate the study timer. Settings' daily task limit bounds new plans; saved work is
+never truncated. The existing coach remains the scheduler; no FSRS is claimed.
+
+Mistakes now offer search, saved correction/help, recurrence evidence, actual next
+review dates and a practice link. Search and question filters explain empty results.
+Analytics separates concept coverage, assessed outcomes and activity. Existing
+database upgrades create a consistent pre-migration backup and refuse newer schemas.
+
+See [design plan](REDESIGN-PLAN.md), [research and audit](REDESIGN-QA.md),
+[final verification](REDESIGN-RESULTS.md) and [actual screenshots](screenshots/).
+Python execution remains unavailable without containment; SQLite challenges retain
+their tested runner. Browser screenshots/tests use disposable copies of records.
 
 ## Azure preparation upgrade, 22 October 2026
 

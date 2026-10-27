@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "version": "2026.10.26.2",
+  "author": "foundations-batch2",
+  "status": "partial_expansion_targets_unmet",
+  "tools": {
+    "python": {
+      "previous_published": 145,
+      "new_published": 66,
+      "actual_published": 211,
+      "target": 450,
+      "remaining": 239,
+      "next_id": "RLP-PY-212",
+      "sha256": "ec3da5ec4bbf7958cd04219970bf4a7c9eae69913ed58e42bd68f6cd24405ecc",
+      "levels": {
+        "0": 6,
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6,
+        "6": 6,
+        "7": 6,
+        "8": 6,
+        "9": 6,
+        "10": 6
+      }
+    },
+    "sql": {
+      "previous_published": 141,
+      "new_published": 66,
+      "actual_published": 207,
+      "target": 450,
+      "remaining": 243,
+      "next_id": "RLP-SQL-208",
+      "sha256": "1167a1246405b465f0739c6890068221a2d805234d9defb8d3b162039be2ebfc",
+      "levels": {
+        "0": 6,
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6,
+        "6": 6,
+        "7": 6,
+        "8": 6,
+        "9": 6,
+        "10": 6
+      }
+    },
+    "postgresql": {
+      "previous_published": 92,
+      "new_published": 88,
+      "actual_published": 180,
+      "target": 180,
+      "remaining": 0,
+      "next_id": "RLP-PG-181",
+      "sha256": "830e48a917f19f96572090805155471296f40936c8a2144af2d1d95b8502572c",
+      "levels": {
+        "0": 8,
+        "1": 8,
+        "2": 8,
+        "3": 8,
+        "4": 8,
+        "5": 8,
+        "6": 8,
+        "7": 8,
+        "8": 8,
+        "9": 8,
+        "10": 8
+      }
+    }
+  },
+  "method": "Explicit distinct task contracts; deterministic prose spacing does not create new problems.",
+  "resume": "Append new explicit task rows preserving existing row order and IDs; never substitute planned counts for published arrays."
+}

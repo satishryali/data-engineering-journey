@@ -1,0 +1,2286 @@
+[
+  {
+    "id": "RLP-PY-322",
+    "tool_id": "python",
+    "title": "Check one observed transformation result",
+    "level": 0,
+    "difficulty": "level_0",
+    "scenario": "A pipeline reviewer needs one executable check that a supplied pure transformation produced the expected integer result.",
+    "task": "A pipeline reviewer needs one executable check that a supplied pure transformation produced the expected integer result.",
+    "learning_objective": "Check one observed transformation result",
+    "inputs": {
+      "fixture_contract": "Supplied transform returns6 for input units2, unit_cents3.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "One passing executable check compares observed6 with expected 6."
+    },
+    "constraints": [
+      "Writing the expected number in a comment is not an executed check.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: One passing executable check compares observed6 with expected 6.",
+      "Verify this boundary: Writing the expected number in a comment is not an executed check.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-221"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Writing the expected number in a comment is not an executed check.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Check one observed transformation result is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 10,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "initial",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 322,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-323",
+    "tool_id": "python",
+    "title": "Make a deliberately failing smoke check visible",
+    "level": 0,
+    "difficulty": "level_0",
+    "scenario": "Demonstrate how a local smoke check exposes an incorrect output before it reaches a consumer.",
+    "task": "Demonstrate how a local smoke check exposes an incorrect output before it reaches a consumer.",
+    "learning_objective": "Make a deliberately failing smoke check visible",
+    "inputs": {
+      "fixture_contract": "Supplied faulty transform returns5 where the contract requires6.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Check fails with expected 6 and observed 5 visible; local test command exits nonzero."
+    },
+    "constraints": [
+      "Preserve the failed result; do not change the expected value merely to make the test pass.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Check fails with expected 6 and observed 5 visible; local test command exits nonzero.",
+      "Verify this boundary: Preserve the failed result; do not change the expected value merely to make the test pass.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-322"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Preserve the failed result; do not change the expected value merely to make the test pass.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Make a deliberately failing smoke check visible is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 10,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "initial",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 323,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-324",
+    "tool_id": "python",
+    "title": "Discover two local ETL checks",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "Place two independent local checks so one documented standard-library test command discovers and runs both.",
+    "task": "Place two independent local checks so one documented standard-library test command discovers and runs both.",
+    "learning_objective": "Discover two local ETL checks",
+    "inputs": {
+      "fixture_contract": "CheckA validates a sale result6; checkB validates an empty batch result0.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Runner reports2executed checks and both pass."
+    },
+    "constraints": [
+      "Importing a module without discovering its checks is not evidence that they ran.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Runner reports2executed checks and both pass.",
+      "Verify this boundary: Importing a module without discovering its checks is not evidence that they ran.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-323"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Importing a module without discovering its checks is not evidence that they ran.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Discover two local ETL checks is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1324,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-325",
+    "tool_id": "python",
+    "title": "Keep a caller's input unchanged",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "Test a transformation's promise that it will not modify the input record supplied by another stage.",
+    "task": "Test a transformation's promise that it will not modify the input record supplied by another stage.",
+    "learning_objective": "Keep a caller's input unchanged",
+    "inputs": {
+      "fixture_contract": "Input={id:A, units:'2'}; normalized output requires integer units2.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Output units2; original input still has text'2' and the same other fields."
+    },
+    "constraints": [
+      "A shallow alias of the original object is not an independent before-image.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Output units2; original input still has text'2' and the same other fields.",
+      "Verify this boundary: A shallow alias of the original object is not an independent before-image.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-324"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A shallow alias of the original object is not an independent before-image.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Keep a caller's input unchanged is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1325,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-326",
+    "tool_id": "python",
+    "title": "Compare complete structured output",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "Check an export row's full required shape rather than only its row count.",
+    "task": "Check an export row's full required shape rather than only its row count.",
+    "learning_objective": "Compare complete structured output",
+    "inputs": {
+      "fixture_contract": "Expected={id:A, cents:10, currency:INR}; faulty output omits currency.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "The check fails and identifies missing currency."
+    },
+    "constraints": [
+      "A one-row output does not prove that the row has the required values or fields.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: The check fails and identifies missing currency.",
+      "Verify this boundary: A one-row output does not prove that the row has the required values or fields.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-325"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A one-row output does not prove that the row has the required values or fields.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Compare complete structured output is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1326,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-327",
+    "tool_id": "python",
+    "title": "Test an explicit exception category",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "A validator rejects a negative batch size before doing any I/O. Verify that exact failure boundary.",
+    "task": "A validator rejects a negative batch size before doing any I/O. Verify that exact failure boundary.",
+    "learning_objective": "Test an explicit exception category",
+    "inputs": {
+      "fixture_contract": "batch_size=-1; fake reader records calls.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Expected validation exception raised; reader calls0."
+    },
+    "constraints": [
+      "Catching every exception and calling the test successful hides unrelated implementation failures.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Expected validation exception raised; reader calls0.",
+      "Verify this boundary: Catching every exception and calling the test successful hides unrelated implementation failures.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-326"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Catching every exception and calling the test successful hides unrelated implementation failures.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Test an explicit exception category is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1327,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-328",
+    "tool_id": "python",
+    "title": "Cover all sides of an inclusive threshold",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "Write bounded checks around the exact rejection-rate threshold used by an ETL gate.",
+    "task": "Write bounded checks around the exact rejection-rate threshold used by an ETL gate.",
+    "learning_objective": "Cover all sides of an inclusive threshold",
+    "inputs": {
+      "fixture_contract": "Rule allows rejection fraction<=0.1; cases9/100,10/100,11/100.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "First two allowed; third blocked."
+    },
+    "constraints": [
+      "A test far above the threshold does not check whether the boundary itself is correct.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: First two allowed; third blocked.",
+      "Verify this boundary: A test far above the threshold does not check whether the boundary itself is correct.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-327"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A test far above the threshold does not check whether the boundary itself is correct.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Cover all sides of an inclusive threshold is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2328,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-329",
+    "tool_id": "python",
+    "title": "Check missing,blank and null separately",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "Create a table-driven check for a required source identifier under a supplied validation contract.",
+    "task": "Create a table-driven check for a required source identifier under a supplied validation contract.",
+    "learning_objective": "Check missing,blank and null separately",
+    "inputs": {
+      "fixture_contract": "Records omitid, haveid='', haveid=NULL, haveid='A'.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Reasons absent_id, blank_id, null_id, accepted respectively."
+    },
+    "constraints": [
+      "Do not collapse distinguishable source failures into one invented generic expected reason.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Reasons absent_id, blank_id, null_id, accepted respectively.",
+      "Verify this boundary: Do not collapse distinguishable source failures into one invented generic expected reason.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-328"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not collapse distinguishable source failures into one invented generic expected reason.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Check missing,blank and null separately is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2329,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-330",
+    "tool_id": "python",
+    "title": "Verify deterministic output ordering",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "Test that a report uses its declared sort keys independently of incoming row order.",
+    "task": "Test that a report uses its declared sort keys independently of incoming row order.",
+    "learning_objective": "Verify deterministic output ordering",
+    "inputs": {
+      "fixture_contract": "RowsBpriority1, Apriority1, Cpriority2; output priority descending thenidascending.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Expected orderC, A, B for each supplied input permutation."
+    },
+    "constraints": [
+      "Compare ordered outputs when order is contractual; converting both sides to sets would hide a defect.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Expected orderC, A, B for each supplied input permutation.",
+      "Verify this boundary: Compare ordered outputs when order is contractual; converting both sides to sets would hide a defect.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-329"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Compare ordered outputs when order is contractual; converting both sides to sets would hide a defect.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Verify deterministic output ordering is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2330,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-331",
+    "tool_id": "python",
+    "title": "Keep test cases independent",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "A batch counter must reset between runs. Demonstrate the defect caused by shared mutable fixture state and isolate each test.",
+    "task": "A batch counter must reset between runs. Demonstrate the defect caused by shared mutable fixture state and isolate each test.",
+    "learning_objective": "Keep test cases independent",
+    "inputs": {
+      "fixture_contract": "First run processes2rows; separate second run processes1row.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Each isolated result reports2and1; test execution order does not change outcomes."
+    },
+    "constraints": [
+      "Do not make a test pass only by forcing another test to run first.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Each isolated result reports2and1; test execution order does not change outcomes.",
+      "Verify this boundary: Do not make a test pass only by forcing another test to run first.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-330"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not make a test pass only by forcing another test to run first.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Keep test cases independent is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2331,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-332",
+    "tool_id": "python",
+    "title": "Test a CSV round trip with quoted fields",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "Verify a CSV writer and reader preserve a customer name containing a comma and a newline.",
+    "task": "Verify a CSV writer and reader preserve a customer name containing a comma and a newline.",
+    "learning_objective": "Test a CSV round trip with quoted fields",
+    "inputs": {
+      "fixture_contract": "Record{id:A, name:'North, Ltd\\nBranch2'}.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Round trip returns exactly one record with the original complete name."
+    },
+    "constraints": [
+      "Counting physical newlines is not a valid record-count oracle for quoted CSV.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Round trip returns exactly one record with the original complete name.",
+      "Verify this boundary: Counting physical newlines is not a valid record-count oracle for quoted CSV.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-331"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Counting physical newlines is not a valid record-count oracle for quoted CSV.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Test a CSV round trip with quoted fields is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3332,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-333",
+    "tool_id": "python",
+    "title": "Use a temporary workspace for ETL checks",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "Run a file-export check entirely inside a generated temporary directory.",
+    "task": "Run a file-export check entirely inside a generated temporary directory.",
+    "learning_objective": "Use a temporary workspace for ETL checks",
+    "inputs": {
+      "fixture_contract": "One input rowAunits2; exporter creates accepted.csv.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Expected artifact exists during the check and its contents match; temporary workspace removed afterward."
+    },
+    "constraints": [
+      "A test must not overwrite the learner's actual exercise or persistent output files.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Expected artifact exists during the check and its contents match; temporary workspace removed afterward.",
+      "Verify this boundary: A test must not overwrite the learner's actual exercise or persistent output files.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-332"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A test must not overwrite the learner's actual exercise or persistent output files.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Use a temporary workspace for ETL checks is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3333,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-334",
+    "tool_id": "python",
+    "title": "Capture a warning without printing private rows",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "Verify a validator emits a safe warning for one invalid country while omitting email and token values.",
+    "task": "Verify a validator emits a safe warning for one invalid country while omitting email and token values.",
+    "learning_objective": "Capture a warning without printing private rows",
+    "inputs": {
+      "fixture_contract": "Row{id:C1, country:INVALID, email:person@example.test, token:dummy}.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Captured warning containsC1 and invalid_country; raw email/token absent."
+    },
+    "constraints": [
+      "Inspect captured exception text and debug output as well as the main warning.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Captured warning containsC1 and invalid_country; raw email/token absent.",
+      "Verify this boundary: Inspect captured exception text and debug output as well as the main warning.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-333"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Inspect captured exception text and debug output as well as the main warning.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Capture a warning without printing private rows is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3334,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-335",
+    "tool_id": "python",
+    "title": "Freeze the business clock in an age check",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "Inject a fixed clock so an age-based expiry check is reproducible on another day.",
+    "task": "Inject a fixed clock so an age-based expiry check is reproducible on another day.",
+    "learning_objective": "Freeze the business clock in an age check",
+    "inputs": {
+      "fixture_contract": "As-of2026-10-26; lotexpires2026-10-25.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Outcome expired with age1day under the declared rule."
+    },
+    "constraints": [
+      "The expected result must not depend on the actual date the test is executed.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Outcome expired with age1day under the declared rule.",
+      "Verify this boundary: The expected result must not depend on the actual date the test is executed.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-334"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: The expected result must not depend on the actual date the test is executed.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Freeze the business clock in an age check is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3335,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-336",
+    "tool_id": "python",
+    "title": "Replace a source transport at its boundary",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "Test API ingestion through an injected transport that returns one valid and one invalid record.",
+    "task": "Test API ingestion through an injected transport that returns one valid and one invalid record.",
+    "learning_objective": "Replace a source transport at its boundary",
+    "inputs": {
+      "fixture_contract": "Fake response itemsAunits2, Bunits'bad'; no live endpoint configured.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "AcceptedA2; rejectedBinvalid_units; live request count0."
+    },
+    "constraints": [
+      "Patching an unrelated helper does not prove the source boundary was isolated.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: AcceptedA2; rejectedBinvalid_units; live request count0.",
+      "Verify this boundary: Patching an unrelated helper does not prove the source boundary was isolated.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-335"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Patching an unrelated helper does not prove the source boundary was isolated.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Replace a source transport at its boundary is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4336,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-337",
+    "tool_id": "python",
+    "title": "Verify ordered adapter interactions",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "A pipeline must begin, write and commit in order, then publish its success marker.",
+    "task": "A pipeline must begin, write and commit in order, then publish its success marker.",
+    "learning_objective": "Verify ordered adapter interactions",
+    "inputs": {
+      "fixture_contract": "Fake adapter and marker writer record an ordered event log.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Observed order begin, write, commit, publish_marker."
+    },
+    "constraints": [
+      "Checking that all four calls occurred without checking order misses publication before durable commit.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Observed order begin, write, commit, publish_marker.",
+      "Verify this boundary: Checking that all four calls occurred without checking order misses publication before durable commit.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-336"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Checking that all four calls occurred without checking order misses publication before durable commit.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Verify ordered adapter interactions is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4337,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-338",
+    "tool_id": "python",
+    "title": "Simulate a target failure without a real database",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "Inject a write failure and verify rollback plus truthful failed status.",
+    "task": "Inject a write failure and verify rollback plus truthful failed status.",
+    "learning_objective": "Simulate a target failure without a real database",
+    "inputs": {
+      "fixture_contract": "Fake target begins transaction; firstwrite succeeds; secondwrite raises.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Rollback once; commit0; success marker0; failed status retained."
+    },
+    "constraints": [
+      "A test that only checks an exception was raised misses leaked partial state or false-success artifacts.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Rollback once; commit0; success marker0; failed status retained.",
+      "Verify this boundary: A test that only checks an exception was raised misses leaked partial state or false-success artifacts.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-337"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A test that only checks an exception was raised misses leaked partial state or false-success artifacts.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Simulate a target failure without a real database is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4338,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-339",
+    "tool_id": "python",
+    "title": "Test a configuration environment override safely",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "Apply one temporary environment override during a check and restore the prior process environment afterward.",
+    "task": "Apply one temporary environment override during a check and restore the prior process environment afterward.",
+    "learning_objective": "Test a configuration environment override safely",
+    "inputs": {
+      "fixture_contract": "Defaultbatch_size100; temporary LAB_BATCH_SIZE='25'.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Effective25inside check; original environment restored afterward."
+    },
+    "constraints": [
+      "Do not leave test-specific environment settings active for unrelated checks.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Effective25inside check; original environment restored afterward.",
+      "Verify this boundary: Do not leave test-specific environment settings active for unrelated checks.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-338"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not leave test-specific environment settings active for unrelated checks.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Test a configuration environment override safely is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4339,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-340",
+    "tool_id": "python",
+    "title": "Check full and incremental builds against one oracle",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Compare a complete source rebuild with two incremental applications including a correction.",
+    "task": "Compare a complete source rebuild with two incremental applications including a correction.",
+    "learning_objective": "Check full and incremental builds against one oracle",
+    "inputs": {
+      "fixture_contract": "Batch1A10, B20; batch2A11, C30; full latest-state oracleA11, B20, C30.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Both paths produce the same keys and values as the oracle."
+    },
+    "constraints": [
+      "Equal row counts or equal grand totals alone do not establish state equality.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Both paths produce the same keys and values as the oracle.",
+      "Verify this boundary: Equal row counts or equal grand totals alone do not establish state equality.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-339"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Equal row counts or equal grand totals alone do not establish state equality.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Check full and incremental builds against one oracle is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5340,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-341",
+    "tool_id": "python",
+    "title": "Test idempotency under exact replay",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Apply an explicit event batch twice and compare final state plus audit classifications.",
+    "task": "Apply an explicit event batch twice and compare final state plus audit classifications.",
+    "learning_objective": "Test idempotency under exact replay",
+    "inputs": {
+      "fixture_contract": "E1receiptA10, E2issueA3; replayE1/E2.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "FinalA7after both runs; second run reports2replays and0new events."
+    },
+    "constraints": [
+      "A new event with the same amount but a different authoritative ID must not be skipped automatically.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: FinalA7after both runs; second run reports2replays and0new events.",
+      "Verify this boundary: A new event with the same amount but a different authoritative ID must not be skipped automatically.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-340"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A new event with the same amount but a different authoritative ID must not be skipped automatically.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Test idempotency under exact replay is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5341,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-342",
+    "tool_id": "python",
+    "title": "Verify a restart checkpoint after a crash",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Fail a staged pipeline after a committed chunk and reconstruct it from durable state.",
+    "task": "Fail a staged pipeline after a committed chunk and reconstruct it from durable state.",
+    "learning_objective": "Verify a restart checkpoint after a crash",
+    "inputs": {
+      "fixture_contract": "Chunks[A, B],[C, D]; firstchunk committed; crash before second commit.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Restart begins secondchunk; finalA, B, C, D once each; checkpoint final chunk complete."
+    },
+    "constraints": [
+      "An in-memory counter lost on restart is not a durable checkpoint.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Restart begins secondchunk; finalA, B, C, D once each; checkpoint final chunk complete.",
+      "Verify this boundary: An in-memory counter lost on restart is not a durable checkpoint.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-341"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: An in-memory counter lost on restart is not a durable checkpoint.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Verify a restart checkpoint after a crash is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5342,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-343",
+    "tool_id": "python",
+    "title": "Build one command that tests a mini-pipeline contract",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Provide a local test command covering ingestion, validation, export and restart for a bounded fixture.",
+    "task": "Provide a local test command covering ingestion, validation, export and restart for a bounded fixture.",
+    "learning_objective": "Build one command that tests a mini-pipeline contract",
+    "inputs": {
+      "fixture_contract": "InputA2, Bbad, C3; one injected output failure; temporary output root.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Command checks acceptedA/C, rejectedB, failed-attempt evidence and successful restart; nonzero if any assertion fails."
+    },
+    "constraints": [
+      "A test report claiming all checks passed must retain the actual runner output.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Command checks acceptedA/C, rejectedB, failed-attempt evidence and successful restart; nonzero if any assertion fails.",
+      "Verify this boundary: A test report claiming all checks passed must retain the actual runner output.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-342"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A test report claiming all checks passed must retain the actual runner output.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Build one command that tests a mini-pipeline contract is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5343,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-344",
+    "tool_id": "python",
+    "title": "Check failure at every durable boundary",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "Inject one failure at each of read-complete, write-started and pre-commit boundaries of a small pipeline.",
+    "task": "Inject one failure at each of read-complete, write-started and pre-commit boundaries of a small pipeline.",
+    "learning_objective": "Check failure at every durable boundary",
+    "inputs": {
+      "fixture_contract": "Two-row batchA, B; old committed outputOLD.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Every failed case preserves the promised old state; only successful run publishesA, B."
+    },
+    "constraints": [
+      "Do not test only the easiest failure location and extrapolate recovery to every boundary.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Every failed case preserves the promised old state; only successful run publishesA, B.",
+      "Verify this boundary: Do not test only the easiest failure location and extrapolate recovery to every boundary.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-343"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not test only the easiest failure location and extrapolate recovery to every boundary.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Check failure at every durable boundary is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6344,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-345",
+    "tool_id": "python",
+    "title": "Test resource cleanup on exceptional exit",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "Verify the source handle and target adapter close after a transformation raises.",
+    "task": "Verify the source handle and target adapter close after a transformation raises.",
+    "learning_objective": "Test resource cleanup on exceptional exit",
+    "inputs": {
+      "fixture_contract": "Fake source/target track opened/closed; middle row raises validation-internal-error.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Both resources closed; run failed; internal error distinguished from a normal row rejection."
+    },
+    "constraints": [
+      "Closing only on the happy path leaves the operational contract untested.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Both resources closed; run failed; internal error distinguished from a normal row rejection.",
+      "Verify this boundary: Closing only on the happy path leaves the operational contract untested.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-344"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Closing only on the happy path leaves the operational contract untested.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Test resource cleanup on exceptional exit is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6345,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-346",
+    "tool_id": "python",
+    "title": "Prevent a retry check from hanging",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "Use an injected fake clock and an attempt limit to test permanent transient failure deterministically.",
+    "task": "Use an injected fake clock and an attempt limit to test permanent transient failure deterministically.",
+    "learning_objective": "Prevent a retry check from hanging",
+    "inputs": {
+      "fixture_contract": "Adapter always returns transient_failure; maxattempts3; delays1and2seconds.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Exactly3attempts; planned delay total3seconds; finalfailure; no real waiting."
+    },
+    "constraints": [
+      "A test must not sleep indefinitely waiting for a success that the fixture never returns.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Exactly3attempts; planned delay total3seconds; finalfailure; no real waiting.",
+      "Verify this boundary: A test must not sleep indefinitely waiting for a success that the fixture never returns.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-345"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A test must not sleep indefinitely waiting for a success that the fixture never returns.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Prevent a retry check from hanging is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6346,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-347",
+    "tool_id": "python",
+    "title": "Expose a swallowed exception as a false-success defect",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "A supplied faulty wrapper catches an output error and returns success. Write a check that rejects it.",
+    "task": "A supplied faulty wrapper catches an output error and returns success. Write a check that rejects it.",
+    "learning_objective": "Expose a swallowed exception as a false-success defect",
+    "inputs": {
+      "fixture_contract": "Writer raises IOError; wrapper returns{status:success, exported:10}.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Contract check fails because no commit occurred; corrected wrapper returns failed with exported0orunknown as justified."
+    },
+    "constraints": [
+      "Do not change the failure fixture into a successful write to avoid diagnosing the defect.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Contract check fails because no commit occurred; corrected wrapper returns failed with exported0orunknown as justified.",
+      "Verify this boundary: Do not change the failure fixture into a successful write to avoid diagnosing the defect.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-346"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not change the failure fixture into a successful write to avoid diagnosing the defect.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Expose a swallowed exception as a false-success defect is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6347,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-348",
+    "tool_id": "python",
+    "title": "Check a useful transformation invariant",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "For nonnegative integer units, verify partitioned batch totals equal the whole-batch total across reproducible generated inputs.",
+    "task": "For nonnegative integer units, verify partitioned batch totals equal the whole-batch total across reproducible generated inputs.",
+    "learning_objective": "Check a useful transformation invariant",
+    "inputs": {
+      "fixture_contract": "Seeded generator creates100bounded batches; each split at a deterministic position.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "For every batch, total(left)+total(right)=total(whole), including empty parts."
+    },
+    "constraints": [
+      "Document the invariant's input domain; it does not automatically hold for nonadditive metrics or floating approximations.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: For every batch, total(left)+total(right)=total(whole), including empty parts.",
+      "Verify this boundary: Document the invariant's input domain; it does not automatically hold for nonadditive metrics or floating approximations.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-347"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Document the invariant's input domain; it does not automatically hold for nonadditive metrics or floating approximations.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Check a useful transformation invariant is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7348,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-349",
+    "tool_id": "python",
+    "title": "Test monotonic authoritative versions",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "For one entity, processing an older version after a newer one must not regress state.",
+    "task": "For one entity, processing an older version after a newer one must not regress state.",
+    "learning_objective": "Test monotonic authoritative versions",
+    "inputs": {
+      "fixture_contract": "Aversions1value10,3value30,2value20; several declared arrival orders.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "FinalAvalue30version3for each order; stale versions classified."
+    },
+    "constraints": [
+      "Equal-version conflicting payloads need a separate ambiguity check rather than silently using the last arrival.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: FinalAvalue30version3for each order; stale versions classified.",
+      "Verify this boundary: Equal-version conflicting payloads need a separate ambiguity check rather than silently using the last arrival.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-348"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Equal-version conflicting payloads need a separate ambiguity check rather than silently using the last arrival.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Test monotonic authoritative versions is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7349,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-350",
+    "tool_id": "python",
+    "title": "Create a consumer contract check before refactoring",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "Capture the consumer-required output schema and semantics, then evaluate a candidate implementation.",
+    "task": "Capture the consumer-required output schema and semantics, then evaluate a candidate implementation.",
+    "learning_objective": "Create a consumer contract check before refactoring",
+    "inputs": {
+      "fixture_contract": "Consumer requires idTEXT, centsINTEGER, currencyTEXT; candidate emits amount FLOAT instead ofcents.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Candidate rejected with missingcents and wrongcontract evidence."
+    },
+    "constraints": [
+      "A visually similar CSV preview does not establish type or column compatibility.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Candidate rejected with missingcents and wrongcontract evidence.",
+      "Verify this boundary: A visually similar CSV preview does not establish type or column compatibility.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-349"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A visually similar CSV preview does not establish type or column compatibility.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Create a consumer contract check before refactoring is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7350,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-351",
+    "tool_id": "python",
+    "title": "Test concurrent ownership with a synchronization barrier",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "Verify only one worker claims a batch when two workers reach the claim boundary together.",
+    "task": "Verify only one worker claims a batch when two workers reach the claim boundary together.",
+    "learning_objective": "Test concurrent ownership with a synchronization barrier",
+    "inputs": {
+      "fixture_contract": "Two fake workers share batchB1and a controlled barrier; claim store enforces one owner.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Exactly one owner; loser getsalready_claimed; no double commit."
+    },
+    "constraints": [
+      "Two sequential calls are not evidence that the concurrent race is handled.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Exactly one owner; loser getsalready_claimed; no double commit.",
+      "Verify this boundary: Two sequential calls are not evidence that the concurrent race is handled.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-350"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Two sequential calls are not evidence that the concurrent race is handled.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Test concurrent ownership with a synchronization barrier is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7351,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-352",
+    "tool_id": "python",
+    "title": "Measure test fixture memory as well as pipeline memory",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Build a large test generator and show the fixture itself does not allocate the entire source.",
+    "task": "Build a large test generator and show the fixture itself does not allocate the entire source.",
+    "learning_objective": "Measure test fixture memory as well as pipeline memory",
+    "inputs": {
+      "fixture_contract": "One million deterministic records; pipeline and fixture measured under64MiB.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Exact count1000000; observed peak below64MiB; fixture construction included in measurement."
+    },
+    "constraints": [
+      "Measuring only transformation memory after allocating a huge fixture hides the true test resource cost.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Exact count1000000; observed peak below64MiB; fixture construction included in measurement.",
+      "Verify this boundary: Measuring only transformation memory after allocating a huge fixture hides the true test resource cost.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-351"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Measuring only transformation memory after allocating a huge fixture hides the true test resource cost.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Measure test fixture memory as well as pipeline memory is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8352,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-353",
+    "tool_id": "python",
+    "title": "Use operation counts to catch an accidental quadratic path",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Instrument a customer-reference lookup used for10000orders against1000customers.",
+    "task": "Instrument a customer-reference lookup used for10000orders against1000customers.",
+    "learning_objective": "Use operation counts to catch an accidental quadratic path",
+    "inputs": {
+      "fixture_contract": "All orders reference a known customer; reference access counter supplied.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Correct matches; bounded lookup work linear in input/reference size under the declared method."
+    },
+    "constraints": [
+      "Do not impose an arbitrary elapsed-millisecond threshold that flakes across machines.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Correct matches; bounded lookup work linear in input/reference size under the declared method.",
+      "Verify this boundary: Do not impose an arbitrary elapsed-millisecond threshold that flakes across machines.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-352"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not impose an arbitrary elapsed-millisecond threshold that flakes across machines.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Use operation counts to catch an accidental quadratic path is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8353,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-354",
+    "tool_id": "python",
+    "title": "Prove a performance change preserves exact outputs",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Compare an old and optimized transform on adversarial monetary and missing-value fixtures.",
+    "task": "Compare an old and optimized transform on adversarial monetary and missing-value fixtures.",
+    "learning_objective": "Prove a performance change preserves exact outputs",
+    "inputs": {
+      "fixture_contract": "Amounts include0, largecents, NULLand refundevents; authoritative expected outputs supplied.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Both implementations match exact oracle or candidate is blocked; observed timings kept separately."
+    },
+    "constraints": [
+      "A faster incorrect result is not an accepted optimization.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Both implementations match exact oracle or candidate is blocked; observed timings kept separately.",
+      "Verify this boundary: A faster incorrect result is not an accepted optimization.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-353"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A faster incorrect result is not an accepted optimization.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Prove a performance change preserves exact outputs is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8354,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-355",
+    "tool_id": "python",
+    "title": "Bound the scope of a smoke test",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Separate a quick deployment check from a larger generated regression suite and state what each proves.",
+    "task": "Separate a quick deployment check from a larger generated regression suite and state what each proves.",
+    "learning_objective": "Bound the scope of a smoke test",
+    "inputs": {
+      "fixture_contract": "Smoke usesA2andBbad; regression includes10000rows, duplicates and failure injection.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Both commands executable; smoke result labelled bounded; regression evidence reported independently."
+    },
+    "constraints": [
+      "A passing two-row smoke test is not reported as proof of large-volume or concurrency behavior.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Both commands executable; smoke result labelled bounded; regression evidence reported independently.",
+      "Verify this boundary: A passing two-row smoke test is not reported as proof of large-volume or concurrency behavior.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-354"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A passing two-row smoke test is not reported as proof of large-volume or concurrency behavior.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Bound the scope of a smoke test is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8355,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-356",
+    "tool_id": "python",
+    "title": "Make test output a reproducible release artifact",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "Record code version, fixture digest, command, runtime version and actual result for a local release check.",
+    "task": "Record code version, fixture digest, command, runtime version and actual result for a local release check.",
+    "learning_objective": "Make test output a reproducible release artifact",
+    "inputs": {
+      "fixture_contract": "One fixtureA2, Bbad; supplied codeversionV1; runner output captured.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Artifact linksV1andfixture digest to executed checks and finalexitcode."
+    },
+    "constraints": [
+      "Do not write a successful exit code before the command has actually finished.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Artifact linksV1andfixture digest to executed checks and finalexitcode.",
+      "Verify this boundary: Do not write a successful exit code before the command has actually finished.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-355"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not write a successful exit code before the command has actually finished.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Make test output a reproducible release artifact is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9356,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-357",
+    "tool_id": "python",
+    "title": "Gate a release on expected failure coverage",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "A release requires correct happy-path behavior plus rollback, redaction and changed-input checks.",
+    "task": "A release requires correct happy-path behavior plus rollback, redaction and changed-input checks.",
+    "learning_objective": "Gate a release on expected failure coverage",
+    "inputs": {
+      "fixture_contract": "Candidate passes happy-path but rollback case leaks one targetrow.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Release blocked with rollback evidence; passing checks retained."
+    },
+    "constraints": [
+      "A high pass percentage does not override a failed required integrity contract.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Release blocked with rollback evidence; passing checks retained.",
+      "Verify this boundary: A high pass percentage does not override a failed required integrity contract.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-356"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A high pass percentage does not override a failed required integrity contract.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Gate a release on expected failure coverage is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9357,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-358",
+    "tool_id": "python",
+    "title": "Restore test isolation after a failed run",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "Kill or fail a sandbox check midway and verify its cleanup policy before rerunning unrelated checks.",
+    "task": "Kill or fail a sandbox check midway and verify its cleanup policy before rerunning unrelated checks.",
+    "learning_objective": "Restore test isolation after a failed run",
+    "inputs": {
+      "fixture_contract": "Owned temporary fileR1and fake worker active; unrelated fileR2mustremain.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "R1owned resources cleaned or explicitly reported; R2unchanged; next test does not inherit stale state."
+    },
+    "constraints": [
+      "Cleanup must verify ownership and root containment rather than deleting every matching filename.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: R1owned resources cleaned or explicitly reported; R2unchanged; next test does not inherit stale state.",
+      "Verify this boundary: Cleanup must verify ownership and root containment rather than deleting every matching filename.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-357"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Cleanup must verify ownership and root containment rather than deleting every matching filename.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Restore test isolation after a failed run is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9358,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-359",
+    "tool_id": "python",
+    "title": "Audit assistance and independent review evidence separately",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "Design a verification record that preserves passing code checks without inventing independent mastery.",
+    "task": "Design a verification record that preserves passing code checks without inventing independent mastery.",
+    "learning_objective": "Audit assistance and independent review evidence separately",
+    "inputs": {
+      "fixture_contract": "Solution passes all fixtures; learner reports significant AI help; no independent changed-case yet.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Verified completion eligible; independent mastery pending; later independent transfer scheduled."
+    },
+    "constraints": [
+      "Passing automated checks and an assistance disclosure do not themselves demonstrate independent reconstruction.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Verified completion eligible; independent mastery pending; later independent transfer scheduled.",
+      "Verify this boundary: Passing automated checks and an assistance disclosure do not themselves demonstrate independent reconstruction.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-358"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Passing automated checks and an assistance disclosure do not themselves demonstrate independent reconstruction.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Audit assistance and independent review evidence separately is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9359,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-360",
+    "tool_id": "python",
+    "title": "Independently build a failure-injection ETL test suite",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Create and run a bounded suite for one file-to-target pipeline with explicit correctness, replay, recovery and privacy contracts.",
+    "task": "Create and run a bounded suite for one file-to-target pipeline with explicit correctness, replay, recovery and privacy contracts.",
+    "learning_objective": "Independently build a failure-injection ETL test suite",
+    "inputs": {
+      "fixture_contract": "Three synthetic batches; malformedrow; duplicateevent; targetfault; token bearing row; changed review fixture.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Executed checks expose each injected defect; corrected pipeline passes; evidence links fixture/code versions."
+    },
+    "constraints": [
+      "Reviewer alters one failure boundary after the initial successful submission.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Executed checks expose each injected defect; corrected pipeline passes; evidence links fixture/code versions.",
+      "Verify this boundary: Reviewer alters one failure boundary after the initial successful submission.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-359"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Reviewer alters one failure boundary after the initial successful submission.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently build a failure-injection ETL test suite is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10360,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-361",
+    "tool_id": "python",
+    "title": "Independently defend a test oracle for incremental state",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Build an independent reference implementation or manually justified oracle for a versioned incremental feed and compare it with the production path.",
+    "task": "Build an independent reference implementation or manually justified oracle for a versioned incremental feed and compare it with the production path.",
+    "learning_objective": "Independently defend a test oracle for incremental state",
+    "inputs": {
+      "fixture_contract": "Creates, updates, deletes, replays, lateversions andequal-version conflicts.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "State comparisons identify every intended conflict and match the oracle for valid histories."
+    },
+    "constraints": [
+      "Copying the production implementation into the expected-value calculation is not an independent oracle.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: State comparisons identify every intended conflict and match the oracle for valid histories.",
+      "Verify this boundary: Copying the production implementation into the expected-value calculation is not an independent oracle.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-360"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Copying the production implementation into the expected-value calculation is not an independent oracle.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently defend a test oracle for incremental state is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10361,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-362",
+    "tool_id": "python",
+    "title": "Independently verify concurrent pipeline safety",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Test claim ownership, transactional publication, cancellation and recovery under controlled overlapping workers.",
+    "task": "Test claim ownership, transactional publication, cancellation and recovery under controlled overlapping workers.",
+    "learning_objective": "Independently verify concurrent pipeline safety",
+    "inputs": {
+      "fixture_contract": "Two workers; sharedbatch; injected commit failure; cancellation whilequeued.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "One logicalcommit; no leakedworker/permit; restart equals clean state; observed overlap evidence."
+    },
+    "constraints": [
+      "Explain which interleavings were tested and which remain unproven.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: One logicalcommit; no leakedworker/permit; restart equals clean state; observed overlap evidence.",
+      "Verify this boundary: Explain which interleavings were tested and which remain unproven.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-361"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Explain which interleavings were tested and which remain unproven.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently verify concurrent pipeline safety is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10362,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-363",
+    "tool_id": "python",
+    "title": "Independently validate a pipeline contract migration",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Build compatibility tests across old/new producer and consumer contracts, including rollback and new source events during the test.",
+    "task": "Build compatibility tests across old/new producer and consumer contracts, including rollback and new source events during the test.",
+    "learning_objective": "Independently validate a pipeline contract migration",
+    "inputs": {
+      "fixture_contract": "Oldcents; new amount_minor/currency; one unsupported version; late validrecord.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Supported contracts work; unsupported blocked; rollback preserves late validdata; measured checks recorded."
+    },
+    "constraints": [
+      "Do not declare compatibility solely from equal column counts.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Supported contracts work; unsupported blocked; rollback preserves late validdata; measured checks recorded.",
+      "Verify this boundary: Do not declare compatibility solely from equal column counts.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-362"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not declare compatibility solely from equal column counts.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently validate a pipeline contract migration is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10363,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-364",
+    "tool_id": "python",
+    "title": "Independently diagnose false confidence in a passing suite",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Investigate a supplied suite that passes despite a wrong currency total and skipped failure checks, then repair its evidence gaps.",
+    "task": "Investigate a supplied suite that passes despite a wrong currency total and skipped failure checks, then repair its evidence gaps.",
+    "learning_objective": "Independently diagnose false confidence in a passing suite",
+    "inputs": {
+      "fixture_contract": "Suite compares onlycounts; candidate swapsA10/B20toA20/B10; rollback test skipped.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "New checks catch value swap; required skipped check preventsrelease; corrected suite result truthful."
+    },
+    "constraints": [
+      "A rewritten test suite is not evidence the original learner solution had been independently correct.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: New checks catch value swap; required skipped check preventsrelease; corrected suite result truthful.",
+      "Verify this boundary: A rewritten test suite is not evidence the original learner solution had been independently correct.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-363"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A rewritten test suite is not evidence the original learner solution had been independently correct.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently diagnose false confidence in a passing suite is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10364,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-PY-365",
+    "tool_id": "python",
+    "title": "Independently create a portable engineering assessment harness",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Package a bounded ETL brief, synthetic fixtures, hidden changedcase entrypoint, resource budgets and reproducible test commands.",
+    "task": "Package a bounded ETL brief, synthetic fixtures, hidden changedcase entrypoint, resource budgets and reproducible test commands.",
+    "learning_objective": "Independently create a portable engineering assessment harness",
+    "inputs": {
+      "fixture_contract": "Brief includes validation, replay, rollback, privacy andrestart; grader changes one fixture.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Harness runs in a clean temporary root; checks are meaningful; results preserve assistance and independent evidence dimensions."
+    },
+    "constraints": [
+      "Designing the harness and independently solving its tasks are separate achievements.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Harness runs in a clean temporary root; checks are meaningful; results preserve assistance and independent evidence dimensions.",
+      "Verify this boundary: Designing the harness and independently solving its tasks are separate achievements.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-PY-364"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "python bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Designing the harness and independently solving its tasks are separate achievements.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently create a portable engineering assessment harness is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://docs.python.org/3/library/unittest.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10365,
+    "authoring_batch": "foundations-explicit-004"
+  }
+]

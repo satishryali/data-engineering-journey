@@ -1,0 +1,2624 @@
+[
+  {
+    "id": "RLP-ADF-111",
+    "tool_id": "adf",
+    "title": "Inspect the effective CSV quote character",
+    "level": 1,
+    "prerequisites": [
+      "RLP-ADF-076"
+    ],
+    "scenario": "A vendor quotes text with a declared quote character. Verify a tiny source preview and actual copy agree.",
+    "task": "A vendor quotes text with a declared quote character. Verify a tiny source preview and actual copy agree.",
+    "learning_objective": "Inspect the effective CSV quote character",
+    "inputs": {
+      "fixture": "CSV customer,amount with \"North, West\",5; approved delimited-text dataset.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "One row with customerNorth, West and amount5; preview and copied sink agree."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "One row with customerNorth, West and amount5; preview and copied sink agree.",
+      "Demonstrate this additional boundary: An unmatched opening quote produces a visible parse/failure outcome,not two accepted columns guessed from fragments.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Inspect the effective CSV quote character protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For inspect the effective csv quote character, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: One row with customerNorth, West and amount5; preview and copied sink agree.",
+      "Test the actual parser settings and sink,not only the visual preview."
+    ],
+    "sequence": 111,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "CSV customer,amount with \"North, West\",5; approved delimited-text dataset.",
+        "changed_input_check": "An unmatched opening quote produces a visible parse/failure outcome,not two accepted columns guessed from fragments."
+      },
+      "expected_output": {
+        "contract": "An unmatched opening quote produces a visible parse/failure outcome,not two accepted columns guessed from fragments."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-112",
+    "tool_id": "adf",
+    "title": "Preserve a source column's null marker",
+    "level": 1,
+    "prerequisites": [
+      "RLP-ADF-111"
+    ],
+    "scenario": "A source uses the literal token NULL for missing region under a documented dataset contract.",
+    "task": "A source uses the literal token NULL for missing region under a documented dataset contract.",
+    "learning_objective": "Preserve a source column's null marker",
+    "inputs": {
+      "fixture": "Rows A/NULL,B/west,C/emptystring; exact null-marker policy supplied.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "A maps to null; Bwest; C follows declared empty-string policy and is not guessed from A."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "A maps to null; Bwest; C follows declared empty-string policy and is not guessed from A.",
+      "Demonstrate this additional boundary: Real regionNULL-NORTH remains a nonmissing value.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Preserve a source column's null marker protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Preserve a source column's null marker. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Configure the exact missing marker and test it against legitimate similar text."
+    ],
+    "sequence": 112,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Rows A/NULL,B/west,C/emptystring; exact null-marker policy supplied.",
+        "changed_input_check": "Real regionNULL-NORTH remains a nonmissing value."
+      },
+      "expected_output": {
+        "contract": "Real regionNULL-NORTH remains a nonmissing value."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-113",
+    "tool_id": "adf",
+    "title": "Expose a resolved sink filename",
+    "level": 1,
+    "prerequisites": [
+      "RLP-ADF-112"
+    ],
+    "scenario": "A support operator must identify the exact destination filename produced by a small copy.",
+    "task": "A support operator must identify the exact destination filename produced by a small copy.",
+    "learning_objective": "Expose a resolved sink filename",
+    "inputs": {
+      "fixture": "Inputa.csvA/5; sink templatebatch_<batchId>.csv with batchIdB1.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Observed outputbatch_B1.csv containsA/5; audit records resolved path rather than only the expression text."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Observed outputbatch_B1.csv containsA/5; audit records resolved path rather than only the expression text.",
+      "Demonstrate this additional boundary: Invalid batchId containing a slash is rejected before path construction.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Expose a resolved sink filename protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For expose a resolved sink filename, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Observed outputbatch_B1.csv containsA/5; audit records resolved path rather than only the expression text.",
+      "Validate tokens before interpolation and inspect the actual destination."
+    ],
+    "sequence": 113,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Inputa.csvA/5; sink templatebatch_<batchId>.csv with batchIdB1.",
+        "changed_input_check": "Invalid batchId containing a slash is rejected before path construction."
+      },
+      "expected_output": {
+        "contract": "Invalid batchId containing a slash is rejected before path construction."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-114",
+    "tool_id": "adf",
+    "title": "Keep boolean parameters boolean",
+    "level": 1,
+    "prerequisites": [
+      "RLP-ADF-113"
+    ],
+    "scenario": "A training pipeline has dryRun:boolean and must not treat any nonempty string as true.",
+    "task": "A training pipeline has dryRun:boolean and must not treat any nonempty string as true.",
+    "learning_objective": "Keep boolean parameters boolean",
+    "inputs": {
+      "fixture": "Calls dryRun=true,false and invalidtext'falseish'; isolated no-production workflow.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "True produces plan-only branch; false runs permitted fixture; invalid type/value rejected."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "True produces plan-only branch; false runs permitted fixture; invalid type/value rejected.",
+      "Demonstrate this additional boundary: String'false' is accepted only through an explicitly validated conversion contract.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Keep boolean parameters boolean protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For keep boolean parameters boolean, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: True produces plan-only branch; false runs permitted fixture; invalid type/value rejected.",
+      "A text representation of a boolean and an actual boolean parameter are different interfaces."
+    ],
+    "sequence": 114,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Calls dryRun=true,false and invalidtext'falseish'; isolated no-production workflow.",
+        "changed_input_check": "String'false' is accepted only through an explicitly validated conversion contract."
+      },
+      "expected_output": {
+        "contract": "String'false' is accepted only through an explicitly validated conversion contract."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-115",
+    "tool_id": "adf",
+    "title": "Build a permitted entity filename from two tokens",
+    "level": 2,
+    "prerequisites": [
+      "RLP-ADF-080"
+    ],
+    "scenario": "A control-driven copy combines an approved entity and a validated date into one filename.",
+    "task": "A control-driven copy combines an approved entity and a validated date into one filename.",
+    "learning_objective": "Build a permitted entity filename from two tokens",
+    "inputs": {
+      "fixture": "entitysales,date2026-10-26 maps sales_2026-10-26.csv; fileexistsA/5.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Exactly declared file copied; tokens separately audited; no unvalidated path concatenation."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Exactly declared file copied; tokens separately audited; no unvalidated path concatenation.",
+      "Demonstrate this additional boundary: Entitysales/../../private is rejected before source access.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Build a permitted entity filename from two tokens protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For build a permitted entity filename from two tokens, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Exactly declared file copied; tokens separately audited; no unvalidated path concatenation.",
+      "Construct only after validating each token against its own contract."
+    ],
+    "sequence": 115,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "entitysales,date2026-10-26 maps sales_2026-10-26.csv; fileexistsA/5.",
+        "changed_input_check": "Entitysales/../../private is rejected before source access."
+      },
+      "expected_output": {
+        "contract": "Entitysales/../../private is rejected before source access."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-116",
+    "tool_id": "adf",
+    "title": "Read an empty Lookup list deliberately",
+    "level": 2,
+    "prerequisites": [
+      "RLP-ADF-115"
+    ],
+    "scenario": "An authorized control query may return no active entities. Handle it as an explicit no-work run.",
+    "task": "An authorized control query may return no active entities. Handle it as an explicit no-work run.",
+    "learning_objective": "Read an empty Lookup list deliberately",
+    "inputs": {
+      "fixture": "Lookup returns empty array; required batchB1; no source files needed.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "No child activities launched; auditno_work,count0; no fabricated successful data delivery."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "No child activities launched; auditno_work,count0; no fabricated successful data delivery.",
+      "Demonstrate this additional boundary: A malformed missing-array output is a contract failure rather than ordinary no_work.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Read an empty Lookup list deliberately protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Read an empty Lookup list deliberately. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Write down which fixture represents zero, missing data, an empty string and an absent object; these are different states.",
+      "An empty valid collection and an invalid control response are different states."
+    ],
+    "sequence": 116,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Lookup returns empty array; required batchB1; no source files needed.",
+        "changed_input_check": "A malformed missing-array output is a contract failure rather than ordinary no_work."
+      },
+      "expected_output": {
+        "contract": "A malformed missing-array output is a contract failure rather than ordinary no_work."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-117",
+    "tool_id": "adf",
+    "title": "Compare numbers without lexical ordering",
+    "level": 2,
+    "prerequisites": [
+      "RLP-ADF-116"
+    ],
+    "scenario": "A threshold check must compare numeric row counts,not string sort order.",
+    "task": "A threshold check must compare numeric row counts,not string sort order.",
+    "learning_objective": "Compare numbers without lexical ordering",
+    "inputs": {
+      "fixture": "Expectedcount'10',observedcount'2'; approved numeric conversion.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Mismatch and shortage8; never interpret2asgreaterthan10 because of text ordering."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Mismatch and shortage8; never interpret2asgreaterthan10 because of text ordering.",
+      "Demonstrate this additional boundary: Invalid count'two' fails parsing before comparison.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Compare numbers without lexical ordering protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Compare numbers without lexical ordering. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "Validate and convert metric values once before arithmetic or comparison."
+    ],
+    "sequence": 117,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Expectedcount'10',observedcount'2'; approved numeric conversion.",
+        "changed_input_check": "Invalid count'two' fails parsing before comparison."
+      },
+      "expected_output": {
+        "contract": "Invalid count'two' fails parsing before comparison."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-118",
+    "tool_id": "adf",
+    "title": "Build an audit string without leaking secrets",
+    "level": 2,
+    "prerequisites": [
+      "RLP-ADF-117"
+    ],
+    "scenario": "A local/test audit message needs batch,entity and run ID only.",
+    "task": "A local/test audit message needs batch,entity and run ID only.",
+    "learning_objective": "Build an audit string without leaking secrets",
+    "inputs": {
+      "fixture": "B1,sales,R1; linked-service secret reference available but not a message field.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Message includesB1,sales,R1; no secret reference value or raw connection string."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Message includesB1,sales,R1; no secret reference value or raw connection string.",
+      "Demonstrate this additional boundary: A fake secret marker in nested error text is redacted before audit output.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 15,
+    "engineering_relevance": "Build an audit string without leaking secrets protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For build an audit string without leaking secrets, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Message includesB1,sales,R1; no secret reference value or raw connection string.",
+      "Use a small structured allowlist of fields rather than serializing all pipeline context."
+    ],
+    "sequence": 118,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "B1,sales,R1; linked-service secret reference available but not a message field.",
+        "changed_input_check": "A fake secret marker in nested error text is redacted before audit output."
+      },
+      "expected_output": {
+        "contract": "A fake secret marker in nested error text is redacted before audit output."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-119",
+    "tool_id": "adf",
+    "title": "Trim and normalize data-flow region values",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADF-084"
+    ],
+    "scenario": "A curated output requires trimmed lowercase region values with blank/null classified separately.",
+    "task": "A curated output requires trimmed lowercase region values with blank/null classified separately.",
+    "learning_objective": "Trim and normalize data-flow region values",
+    "inputs": {
+      "fixture": "Existing approved mapping data flow; ' West ','EAST',' ',null.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "west,east accepted; blank/null produce missing_region; rawvalue retained for review."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "west,east accepted; blank/null produce missing_region; rawvalue retained for review.",
+      "Demonstrate this additional boundary: 'north-west' keeps its internal hyphen.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Trim and normalize data-flow region values protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For trim and normalize data-flow region values, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: west,east accepted; blank/null produce missing_region; rawvalue retained for review.",
+      "Apply normalization in a declared order and preserve the original field for diagnostics."
+    ],
+    "sequence": 119,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Existing approved mapping data flow; ' West ','EAST',' ',null.",
+        "changed_input_check": "'north-west' keeps its internal hyphen."
+      },
+      "expected_output": {
+        "contract": "'north-west' keeps its internal hyphen."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-120",
+    "tool_id": "adf",
+    "title": "Split data-flow valid and invalid branches exclusively",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADF-119"
+    ],
+    "scenario": "A data-flow quality rule separates valid amount rows from rejects without duplication.",
+    "task": "A data-flow quality rule separates valid amount rows from rejects without duplication.",
+    "learning_objective": "Split data-flow valid and invalid branches exclusively",
+    "inputs": {
+      "fixture": "A/5,B/-1,C/null; contractnonnegative amount required.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Aaccepted; Brejectnegative; Crejectmissing; branches disjoint and total3."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Aaccepted; Brejectnegative; Crejectmissing; branches disjoint and total3.",
+      "Demonstrate this additional boundary: Zero amount is accepted and appears in only one branch.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Split data-flow valid and invalid branches exclusively protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For split data-flow valid and invalid branches exclusively, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Aaccepted; Brejectnegative; Crejectmissing; branches disjoint and total3.",
+      "Check conditional-split matching semantics and reconcile all branch counts."
+    ],
+    "sequence": 120,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "A/5,B/-1,C/null; contractnonnegative amount required.",
+        "changed_input_check": "Zero amount is accepted and appears in only one branch."
+      },
+      "expected_output": {
+        "contract": "Zero amount is accepted and appears in only one branch."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-121",
+    "tool_id": "adf",
+    "title": "Check data-flow membership without adding payload columns",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADF-120"
+    ],
+    "scenario": "A transaction is eligible only if its customer is in the approved key list.",
+    "task": "A transaction is eligible only if its customer is in the approved key list.",
+    "learning_objective": "Check data-flow membership without adding payload columns",
+    "inputs": {
+      "fixture": "TransactionsA/C1/5,B/C9/7; approvedC1,C1 duplicate; existence-only contract.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Aeligible once; Bineligible; duplicate approvedkey does not multiply A."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Aeligible once; Bineligible; duplicate approvedkey does not multiply A.",
+      "Demonstrate this additional boundary: Empty approved list gives zero eligible rows and two ineligible.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Check data-flow membership without adding payload columns protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Check data-flow membership without adding payload columns. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Use membership semantics and inspect duplicate behavior rather than an unconstrained enrichment join."
+    ],
+    "sequence": 121,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "TransactionsA/C1/5,B/C9/7; approvedC1,C1 duplicate; existence-only contract.",
+        "changed_input_check": "Empty approved list gives zero eligible rows and two ineligible."
+      },
+      "expected_output": {
+        "contract": "Empty approved list gives zero eligible rows and two ineligible."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-122",
+    "tool_id": "adf",
+    "title": "Use a controlled data-flow lookup miss policy",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADF-121"
+    ],
+    "scenario": "A small reference maps currency codes to allowed decimal scale. Expose missing lookup codes.",
+    "task": "A small reference maps currency codes to allowed decimal scale. Expose missing lookup codes.",
+    "learning_objective": "Use a controlled data-flow lookup miss policy",
+    "inputs": {
+      "fixture": "CurrenciesINR,JPY,XXX; lookupINR2,JPY0.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "INRscale2,JPY0; XXXmissing_currency_reference visible; three rows retained for reconciliation."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "INRscale2,JPY0; XXXmissing_currency_reference visible; three rows retained for reconciliation.",
+      "Demonstrate this additional boundary: DuplicatelookupINRwithdifferent scale blocks deterministic output.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Use a controlled data-flow lookup miss policy protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For use a controlled data-flow lookup miss policy, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: INRscale2,JPY0; XXXmissing_currency_reference visible; three rows retained for reconciliation.",
+      "A lookup needs explicit missing-key and duplicate-key contracts."
+    ],
+    "sequence": 122,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "CurrenciesINR,JPY,XXX; lookupINR2,JPY0.",
+        "changed_input_check": "DuplicatelookupINRwithdifferent scale blocks deterministic output."
+      },
+      "expected_output": {
+        "contract": "DuplicatelookupINRwithdifferent scale blocks deterministic output."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-123",
+    "tool_id": "adf",
+    "title": "Select the latest data-flow event with a tie-break",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADF-088"
+    ],
+    "scenario": "A shipment feed contains multiple status events. Select one deterministic current event per shipment.",
+    "task": "A shipment feed contains multiple status events. Select one deterministic current event per shipment.",
+    "learning_objective": "Select the latest data-flow event with a tie-break",
+    "inputs": {
+      "fixture": "S1 at10:00/E1/packed,11:00/E2/shipped,11:00/E3/delivered; E3wins.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "One currentS1/delivered; stable under source ordering; all arrivals preserved in raw."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "One currentS1/delivered; stable under source ordering; all arrivals preserved in raw.",
+      "Demonstrate this additional boundary: SameeventID with different payload is rejected as conflict.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Select the latest data-flow event with a tie-break protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Select the latest data-flow event with a tie-break. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Count rows per business key before the requested operation. Identify whether repeated keys are identical or genuinely conflicting.",
+      "Use a complete ordering key before selecting a current row."
+    ],
+    "sequence": 123,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "S1 at10:00/E1/packed,11:00/E2/shipped,11:00/E3/delivered; E3wins.",
+        "changed_input_check": "SameeventID with different payload is rejected as conflict."
+      },
+      "expected_output": {
+        "contract": "SameeventID with different payload is rejected as conflict."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-124",
+    "tool_id": "adf",
+    "title": "Pivot an approved fixed data-flow category list",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADF-123"
+    ],
+    "scenario": "A report needs accepted and rejected counts per source under a fixed schema.",
+    "task": "A report needs accepted and rejected counts per source under a fixed schema.",
+    "learning_objective": "Pivot an approved fixed data-flow category list",
+    "inputs": {
+      "fixture": "a/accepted2,a/rejected1,b/accepted3; categoriesaccepted,rejected.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "a2/1,b3/0; fixed output columns; total6 reconciles."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "a2/1,b3/0; fixed output columns; total6 reconciles.",
+      "Demonstrate this additional boundary: Unexpectedcategorypending gets a diagnostic,not silent omission.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Pivot an approved fixed data-flow category list protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For pivot an approved fixed data-flow category list, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: a2/1,b3/0; fixed output columns; total6 reconciles.",
+      "Declare pivot categories and reconcile the source categories before reshaping."
+    ],
+    "sequence": 124,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "a/accepted2,a/rejected1,b/accepted3; categoriesaccepted,rejected.",
+        "changed_input_check": "Unexpectedcategorypending gets a diagnostic,not silent omission."
+      },
+      "expected_output": {
+        "contract": "Unexpectedcategorypending gets a diagnostic,not silent omission."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-125",
+    "tool_id": "adf",
+    "title": "Generate a deterministic data-flow surrogate mapping",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADF-124"
+    ],
+    "scenario": "A training dimension needs stable surrogate assignment or a persisted mapping,not run-dependent IDs used as business keys.",
+    "task": "A training dimension needs stable surrogate assignment or a persisted mapping,not run-dependent IDs used as business keys.",
+    "learning_objective": "Generate a deterministic data-flow surrogate mapping",
+    "inputs": {
+      "fixture": "CustomerkeysC1,C2; rerun with inputorderreversed; approved mapping output.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both runs preserve each customer's accepted surrogate mapping or explicitly persist/reuse a mapping; no assumed stability from generated IDs alone."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both runs preserve each customer's accepted surrogate mapping or explicitly persist/reuse a mapping; no assumed stability from generated IDs alone.",
+      "Demonstrate this additional boundary: New C3 receives a noncolliding mapping without reassigning C1/C2.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Generate a deterministic data-flow surrogate mapping protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Generate a deterministic data-flow surrogate mapping. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Count rows per business key before the requested operation. Identify whether repeated keys are identical or genuinely conflicting.",
+      "Generated surrogate values need a lifecycle contract across runs."
+    ],
+    "sequence": 125,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "CustomerkeysC1,C2; rerun with inputorderreversed; approved mapping output.",
+        "changed_input_check": "New C3 receives a noncolliding mapping without reassigning C1/C2."
+      },
+      "expected_output": {
+        "contract": "New C3 receives a noncolliding mapping without reassigning C1/C2."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-126",
+    "tool_id": "adf",
+    "title": "Align data-flow arrays under a length contract",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADF-125"
+    ],
+    "scenario": "A vendor sends parallel product and quantity arrays. Expand only aligned records.",
+    "task": "A vendor sends parallel product and quantity arrays. Expand only aligned records.",
+    "learning_objective": "Align data-flow arrays under a length contract",
+    "inputs": {
+      "fixture": "O1products[A,B],qty[2,3]; O2products[C,D],qty[1].",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "O1lineA2,B3; O2rejectedlength_mismatch; no guessed quantity."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "O1lineA2,B3; O2rejectedlength_mismatch; no guessed quantity.",
+      "Demonstrate this additional boundary: Both empty arrays produce an explicit no_items outcome rather than malformed alignment.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 25,
+    "engineering_relevance": "Align data-flow arrays under a length contract protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Align data-flow arrays under a length contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Validate array lengths before expansion; row multiplication can otherwise hide missing positions."
+    ],
+    "sequence": 126,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "O1products[A,B],qty[2,3]; O2products[C,D],qty[1].",
+        "changed_input_check": "Both empty arrays produce an explicit no_items outcome rather than malformed alignment."
+      },
+      "expected_output": {
+        "contract": "Both empty arrays produce an explicit no_items outcome rather than malformed alignment."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-127",
+    "tool_id": "adf",
+    "title": "Alter sink rows using explicit operation policies",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADF-092"
+    ],
+    "scenario": "Rehearse supported data-flow sink row actions against an isolated authorized training table.",
+    "task": "Rehearse supported data-flow sink row actions against an isolated authorized training table.",
+    "learning_objective": "Alter sink rows using explicit operation policies",
+    "inputs": {
+      "fixture": "TargetA5,B7; eventsAupdate6,Bdelete,Cinsert2; sink supports selected action options.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "FinalA6,C2; unknown operation rejected; required keys and update/delete permissions evidenced."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "FinalA6,C2; unknown operation rejected; required keys and update/delete permissions evidenced.",
+      "Demonstrate this additional boundary: Repeated identical batch yields same logical target state.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Alter sink rows using explicit operation policies protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For alter sink rows using explicit operation policies, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: FinalA6,C2; unknown operation rejected; required keys and update/delete permissions evidenced.",
+      "Check the selected sink's actual insert/update/delete capability and key requirements."
+    ],
+    "sequence": 127,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "TargetA5,B7; eventsAupdate6,Bdelete,Cinsert2; sink supports selected action options.",
+        "changed_input_check": "Repeated identical batch yields same logical target state."
+      },
+      "expected_output": {
+        "contract": "Repeated identical batch yields same logical target state."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-128",
+    "tool_id": "adf",
+    "title": "Compare a quality assertion with its error-row output",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADF-127"
+    ],
+    "scenario": "Use supported data-flow assertion diagnostics to identify failed rows without counting them as accepted.",
+    "task": "Use supported data-flow assertion diagnostics to identify failed rows without counting them as accepted.",
+    "learning_objective": "Compare a quality assertion with its error-row output",
+    "inputs": {
+      "fixture": "A/5,A/7,B/2; uniqueIDrequired; approved assertionconfiguration.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "DuplicateAvisible in assertion/error evidence; acceptedpublicationblocked or routed under explicit contract; Bnotmisclassified."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "DuplicateAvisible in assertion/error evidence; acceptedpublicationblocked or routed under explicit contract; Bnotmisclassified.",
+      "Demonstrate this additional boundary: All-unique fixture passes; assertion transport success alone does not prove all rows passed.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Compare a quality assertion with its error-row output protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Compare a quality assertion with its error-row output. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "Inspect assertion row status and sink policy,not just whether the activity ran."
+    ],
+    "sequence": 128,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "A/5,A/7,B/2; uniqueIDrequired; approved assertionconfiguration.",
+        "changed_input_check": "All-unique fixture passes; assertion transport success alone does not prove all rows passed."
+      },
+      "expected_output": {
+        "contract": "All-unique fixture passes; assertion transport success alone does not prove all rows passed."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-129",
+    "tool_id": "adf",
+    "title": "Keep a multi-output data flow's publication atomic at the application boundary",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADF-128"
+    ],
+    "scenario": "Publish accepted data only after its companion reject/audit outputs are verified.",
+    "task": "Publish accepted data only after its companion reject/audit outputs are verified.",
+    "learning_objective": "Keep a multi-output data flow's publication atomic at the application boundary",
+    "inputs": {
+      "fixture": "A5,Bbad; simulate failure writing reject output after accepted staging exists.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "No complete batch marker on failure; recovery yields acceptedA/rejectB once; multi-sink atomicity not assumed."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "No complete batch marker on failure; recovery yields acceptedA/rejectB once; multi-sink atomicity not assumed.",
+      "Demonstrate this additional boundary: Successful data sink with missing audit sink remains incomplete.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Keep a multi-output data flow's publication atomic at the application boundary protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For keep a multi-output data flow's publication atomic at the application boundary, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: No complete batch marker on failure; recovery yields acceptedA/rejectB once; multi-sink atomicity not assumed.",
+      "Stage outputs under one batch and make completion a separate verified handoff."
+    ],
+    "sequence": 129,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "A5,Bbad; simulate failure writing reject output after accepted staging exists.",
+        "changed_input_check": "Successful data sink with missing audit sink remains incomplete."
+      },
+      "expected_output": {
+        "contract": "Successful data sink with missing audit sink remains incomplete."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-130",
+    "tool_id": "adf",
+    "title": "Build an entity-specific source-query contract",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADF-129"
+    ],
+    "scenario": "Use approved parameter values in a controlled incremental SQL extraction without allowing arbitrary query fragments.",
+    "task": "Use approved parameter values in a controlled incremental SQL extraction without allowing arbitrary query fragments.",
+    "learning_objective": "Build an entity-specific source-query contract",
+    "inputs": {
+      "fixture": "SourceIDs1..5; lower2,upper4; entity maps approved table; authorized training SQL.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "IDs3,4 only; invalid bounds/types rejected; query identity and cursor recorded without credentials."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "IDs3,4 only; invalid bounds/types rejected; query identity and cursor recorded without credentials.",
+      "Demonstrate this additional boundary: Malicious text in a numeric bound is rejected before query construction.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Build an entity-specific source-query contract protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Build an entity-specific source-query contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Validate types and source mapping; dynamic text is not authorization to execute arbitrary SQL."
+    ],
+    "sequence": 130,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "SourceIDs1..5; lower2,upper4; entity maps approved table; authorized training SQL.",
+        "changed_input_check": "Malicious text in a numeric bound is rejected before query construction."
+      },
+      "expected_output": {
+        "contract": "Malicious text in a numeric bound is rejected before query construction."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-131",
+    "tool_id": "adf",
+    "title": "Reject a control query with duplicate active configurations",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADF-096"
+    ],
+    "scenario": "An active entity must have one authoritative source/sink configuration.",
+    "task": "An active entity must have one authoritative source/sink configuration.",
+    "learning_objective": "Reject a control query with duplicate active configurations",
+    "inputs": {
+      "fixture": "Two active sales rows map different paths; one inactive historical sales row.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Ambiguous active sales blocks launch; inactive history is not itself an error."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Ambiguous active sales blocks launch; inactive history is not itself an error.",
+      "Demonstrate this additional boundary: One active plus one inactive passes and uses the active version only.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Reject a control query with duplicate active configurations protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Reject a control query with duplicate active configurations. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Count rows per business key before the requested operation. Identify whether repeated keys are identical or genuinely conflicting.",
+      "Filter lifecycle state first,then check configuration uniqueness."
+    ],
+    "sequence": 131,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Two active sales rows map different paths; one inactive historical sales row.",
+        "changed_input_check": "One active plus one inactive passes and uses the active version only."
+      },
+      "expected_output": {
+        "contract": "One active plus one inactive passes and uses the active version only."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-132",
+    "tool_id": "adf",
+    "title": "Handle a data-flow sink deadlock with a bounded policy",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADF-131"
+    ],
+    "scenario": "Rehearse retry behavior for a controlled transient sink error without assuming every failure is retryable.",
+    "task": "Rehearse retry behavior for a controlled transient sink error without assuming every failure is retryable.",
+    "learning_objective": "Handle a data-flow sink deadlock with a bounded policy",
+    "inputs": {
+      "fixture": "Approved training SQL/mock error fixture; transient deadlock then success; stablebatchIDB1.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Bounded retry reaches correct one logical output; attempt audit preserved; permanent constraint failure stops."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Bounded retry reaches correct one logical output; attempt audit preserved; permanent constraint failure stops.",
+      "Demonstrate this additional boundary: Retry exhaustion leaves batchunaccepted and cursor unchanged.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Handle a data-flow sink deadlock with a bounded policy protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For handle a data-flow sink deadlock with a bounded policy, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Bounded retry reaches correct one logical output; attempt audit preserved; permanent constraint failure stops.",
+      "Separate transient transport/database failures from permanent data-contract errors."
+    ],
+    "sequence": 132,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Approved training SQL/mock error fixture; transient deadlock then success; stablebatchIDB1.",
+        "changed_input_check": "Retry exhaustion leaves batchunaccepted and cursor unchanged."
+      },
+      "expected_output": {
+        "contract": "Retry exhaustion leaves batchunaccepted and cursor unchanged."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-133",
+    "tool_id": "adf",
+    "title": "Fail a parent after a child times out",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADF-132"
+    ],
+    "scenario": "A child ingestion exceeds the allowed training duration. Preserve timeout status and suppress downstream acceptance.",
+    "task": "A child ingestion exceeds the allowed training duration. Preserve timeout status and suppress downstream acceptance.",
+    "learning_objective": "Fail a parent after a child times out",
+    "inputs": {
+      "fixture": "Controlled child delay; supported timeout configuration; isolatedoutput.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Parent failed/timed_out with childrunID; no ready marker/cursor advance; cleanupstatusseparate."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Parent failed/timed_out with childrunID; no ready marker/cursor advance; cleanupstatusseparate.",
+      "Demonstrate this additional boundary: Normal short child succeeds with correctcount and completion evidence.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Fail a parent after a child times out protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For fail a parent after a child times out, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Parent failed/timed_out with childrunID; no ready marker/cursor advance; cleanupstatusseparate.",
+      "Timeout handling must preserve the failed dependency rather than catching it as success."
+    ],
+    "sequence": 133,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Controlled child delay; supported timeout configuration; isolatedoutput.",
+        "changed_input_check": "Normal short child succeeds with correctcount and completion evidence."
+      },
+      "expected_output": {
+        "contract": "Normal short child succeeds with correctcount and completion evidence."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-134",
+    "tool_id": "adf",
+    "title": "Recognize a source permission change mid-batch",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADF-133"
+    ],
+    "scenario": "A later file read fails authorization after one file already copied. Keep the batch incomplete.",
+    "task": "A later file read fails authorization after one file already copied. Keep the batch incomplete.",
+    "learning_objective": "Recognize a source permission change mid-batch",
+    "inputs": {
+      "fixture": "Manifest a,b; a copied; b returns controlled403; isolatedtrainingtarget.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Batchauthorization_failed; partiala recorded; no acceptedcompletebatch; reauthorizedrerunreconcilesonce."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Batchauthorization_failed; partiala recorded; no acceptedcompletebatch; reauthorizedrerunreconcilesonce.",
+      "Demonstrate this additional boundary: Missingb404 is classified as missing source rather than permission loss.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 40,
+    "engineering_relevance": "Recognize a source permission change mid-batch protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Recognize a source permission change mid-batch. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "Error categories guide recovery; retrying authorization failures blindly is not a complete policy."
+    ],
+    "sequence": 134,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Manifest a,b; a copied; b returns controlled403; isolatedtrainingtarget.",
+        "changed_input_check": "Missingb404 is classified as missing source rather than permission loss."
+      },
+      "expected_output": {
+        "contract": "Missingb404 is classified as missing source rather than permission loss."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-135",
+    "tool_id": "adf",
+    "title": "Coordinate independent entity watermarks",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADF-100"
+    ],
+    "scenario": "A parent runs two entities with independent source cursors. One failure must not roll another cursor forward or backward.",
+    "task": "A parent runs two entities with independent source cursors. One failure must not roll another cursor forward or backward.",
+    "learning_objective": "Coordinate independent entity watermarks",
+    "inputs": {
+      "fixture": "Salesold1 loads2,3 successfully; returnsold4 fails beforeloading5.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Salescursor3; returnscursor4; auditpartialparent; retryreturnsloads5 once."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Salescursor3; returnscursor4; auditpartialparent; retryreturnsloads5 once.",
+      "Demonstrate this additional boundary: Globalparentfailuredoes not erase sales's verifiedaccepted evidence.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Coordinate independent entity watermarks protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Coordinate independent entity watermarks. Identify the one observable difference between the supplied normal and boundary cases.",
+      "List the old accepted cursor/version and order every supplied arrival by the contract, rather than by arrival time alone.",
+      "Store cursor ownership at the entity boundary that actually commits data."
+    ],
+    "sequence": 135,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Salesold1 loads2,3 successfully; returnsold4 fails beforeloading5.",
+        "changed_input_check": "Globalparentfailuredoes not erase sales's verifiedaccepted evidence."
+      },
+      "expected_output": {
+        "contract": "Globalparentfailuredoes not erase sales's verifiedaccepted evidence."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-136",
+    "tool_id": "adf",
+    "title": "Handle an optional source without weakening required ones",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADF-135"
+    ],
+    "scenario": "A batch requires sales and customers while an optional promotions file may be absent.",
+    "task": "A batch requires sales and customers while an optional promotions file may be absent.",
+    "learning_objective": "Handle an optional source without weakening required ones",
+    "inputs": {
+      "fixture": "sales2rows,customers1row,promotionsmissing; manifestoptional flag explicit.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Batchcanacceptrequiredresults withoptional_missingdiagnostic; requiredmissingcustomers blocks."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Batchcanacceptrequiredresults withoptional_missingdiagnostic; requiredmissingcustomers blocks.",
+      "Demonstrate this additional boundary: An optional file present but malformed follows an explicit failure/rejectpolicy,not silently skipped.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Handle an optional source without weakening required ones protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For handle an optional source without weakening required ones, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Batchcanacceptrequiredresults withoptional_missingdiagnostic; requiredmissingcustomers blocks.",
+      "Optionality is a declared completeness rule,not a general ignore-errors setting."
+    ],
+    "sequence": 136,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "sales2rows,customers1row,promotionsmissing; manifestoptional flag explicit.",
+        "changed_input_check": "An optional file present but malformed follows an explicit failure/rejectpolicy,not silently skipped."
+      },
+      "expected_output": {
+        "contract": "An optional file present but malformed follows an explicit failure/rejectpolicy,not silently skipped."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-137",
+    "tool_id": "adf",
+    "title": "Validate a REST extraction's completeness claim",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADF-136"
+    ],
+    "scenario": "An API returns a total-count header that disagrees with the received unique records.",
+    "task": "An API returns a total-count header that disagrees with the received unique records.",
+    "learning_objective": "Validate a REST extraction's completeness claim",
+    "inputs": {
+      "fixture": "Two pages A,B thenC; declaredtotal4; allnextlinks exhausted.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Reconciliation fails expected4/actual3; no complete publication; request evidence retained."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Reconciliation fails expected4/actual3; no complete publication; request evidence retained.",
+      "Demonstrate this additional boundary: Total3 passes; duplicatedB across pages does not inflate unique actualcount.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Validate a REST extraction's completeness claim protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For validate a rest extraction's completeness claim, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Reconciliation fails expected4/actual3; no complete publication; request evidence retained.",
+      "End of pagination is not sufficient when the source also promises a complete count."
+    ],
+    "sequence": 137,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Two pages A,B thenC; declaredtotal4; allnextlinks exhausted.",
+        "changed_input_check": "Total3 passes; duplicatedB across pages does not inflate unique actualcount."
+      },
+      "expected_output": {
+        "contract": "Total3 passes; duplicatedB across pages does not inflate unique actualcount."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-138",
+    "tool_id": "adf",
+    "title": "Separate change tracking from source deletion semantics",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADF-137"
+    ],
+    "scenario": "An increment contains updates but does not explicitly represent deletes. Refuse to infer deletion from absent keys.",
+    "task": "An increment contains updates but does not explicitly represent deletes. Refuse to infer deletion from absent keys.",
+    "learning_objective": "Separate change tracking from source deletion semantics",
+    "inputs": {
+      "fixture": "TargetA5,B7; incomingA6 only; sourcecontractupdate-onlyincrement.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "FinalA6,B7; absentBretained; limitationaboutdeletesdocumented."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "FinalA6,B7; absentBretained; limitationaboutdeletesdocumented.",
+      "Demonstrate this additional boundary: An explicit complete-snapshot contract would require a different bounded deletion policy.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Separate change tracking from source deletion semantics protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For separate change tracking from source deletion semantics, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: FinalA6,B7; absentBretained; limitationaboutdeletesdocumented.",
+      "Source absence means deletion only under the appropriate snapshot or CDC contract."
+    ],
+    "sequence": 138,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "TargetA5,B7; incomingA6 only; sourcecontractupdate-onlyincrement.",
+        "changed_input_check": "An explicit complete-snapshot contract would require a different bounded deletion policy."
+      },
+      "expected_output": {
+        "contract": "An explicit complete-snapshot contract would require a different bounded deletion policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-139",
+    "tool_id": "adf",
+    "title": "Measure a data-flow shuffle before tuning partitions",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADF-104"
+    ],
+    "scenario": "Compare two approved data-flow partition settings on a fixed grouped fixture.",
+    "task": "Compare two approved data-flow partition settings on a fixed grouped fixture.",
+    "learning_objective": "Measure a data-flow shuffle before tuning partitions",
+    "inputs": {
+      "fixture": "10000syntheticrows,knownkeydistribution; same runtime and sinkcontract.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Identicalgroupcounts/totals; availablepartition/skew/runtime metrics recorded; no universal best-setting claim."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Identicalgroupcounts/totals; availablepartition/skew/runtime metrics recorded; no universal best-setting claim.",
+      "Demonstrate this additional boundary: Tinyfixture showing no measurable improvement is reported honestly.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Measure a data-flow shuffle before tuning partitions protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Measure a data-flow shuffle before tuning partitions. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "Measure the transformation requiring redistribution before changing partition settings."
+    ],
+    "sequence": 139,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "10000syntheticrows,knownkeydistribution; same runtime and sinkcontract.",
+        "changed_input_check": "Tinyfixture showing no measurable improvement is reported honestly."
+      },
+      "expected_output": {
+        "contract": "Tinyfixture showing no measurable improvement is reported honestly."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-140",
+    "tool_id": "adf",
+    "title": "Evaluate a reference lookup broadcast safely",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADF-139"
+    ],
+    "scenario": "Assess supported data-flow broadcast/lookup options against a small and an oversized declared reference.",
+    "task": "Assess supported data-flow broadcast/lookup options against a small and an oversized declared reference.",
+    "learning_objective": "Evaluate a reference lookup broadcast safely",
+    "inputs": {
+      "fixture": "Smallreference10keys; largerpayloadfixtureexceedsdeclaredmemorybudget; fixedfacts.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Correctresultsforboth under safe supported configuration; size/plan metrics justify choice; no uncontrolledforcedbroadcast."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Correctresultsforboth under safe supported configuration; size/plan metrics justify choice; no uncontrolledforcedbroadcast.",
+      "Demonstrate this additional boundary: Duplicate referencekeysstill fail correctness regardlessofperformanceoption.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Evaluate a reference lookup broadcast safely protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For evaluate a reference lookup broadcast safely, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Correctresultsforboth under safe supported configuration; size/plan metrics justify choice; no uncontrolledforcedbroadcast.",
+      "A performance hint cannot fix incorrect reference cardinality or exceed a safe memory budget."
+    ],
+    "sequence": 140,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Smallreference10keys; largerpayloadfixtureexceedsdeclaredmemorybudget; fixedfacts.",
+        "changed_input_check": "Duplicate referencekeysstill fail correctness regardlessofperformanceoption."
+      },
+      "expected_output": {
+        "contract": "Duplicate referencekeysstill fail correctness regardlessofperformanceoption."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-141",
+    "tool_id": "adf",
+    "title": "Separate source and sink throughput evidence",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADF-140"
+    ],
+    "scenario": "Diagnose a training copy where reads are fast but writes are throttled using actual available metrics.",
+    "task": "Diagnose a training copy where reads are fast but writes are throttled using actual available metrics.",
+    "learning_objective": "Separate source and sink throughput evidence",
+    "inputs": {
+      "fixture": "Controlled fixedfixture; approvedsource/sink; provided/observedstage metrics.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Attribute the bottleneck only when evidence supports it. Change one tuning factor and preserve row counts and totals."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Attribute the bottleneck only when evidence supports it. Change one tuning factor and preserve row counts and totals.",
+      "Demonstrate this additional boundary: Insufficientmetricsmustleavethecauseuncertainratherthanlabelingthenetwork.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Separate source and sink throughput evidence protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For separate source and sink throughput evidence, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Attribute the bottleneck only when evidence supports it. Change one tuning factor and preserve row counts and totals.",
+      "A single total duration does not identify which boundary is slow."
+    ],
+    "sequence": 141,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Controlled fixedfixture; approvedsource/sink; provided/observedstage metrics.",
+        "changed_input_check": "Insufficientmetricsmustleavethecauseuncertainratherthanlabelingthenetwork."
+      },
+      "expected_output": {
+        "contract": "Insufficientmetricsmustleavethecauseuncertainratherthanlabelingthenetwork."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-142",
+    "tool_id": "adf",
+    "title": "Evaluate a staged-copy contract",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADF-141"
+    ],
+    "scenario": "Compare supported direct and staged copy in an isolated approved connector scenario.",
+    "task": "Compare supported direct and staged copy in an isolated approved connector scenario.",
+    "learning_objective": "Evaluate a staged-copy contract",
+    "inputs": {
+      "fixture": "Deterministictrainingdatasetcount1000,total4500; approvedstagingprefixandcredentialreferences.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both business outputs reconcile. Record staging identity,lifecycle and available throughput metrics. Check connector compatibility."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both business outputs reconcile. Record staging identity,lifecycle and available throughput metrics. Check connector compatibility.",
+      "Demonstrate this additional boundary: Stagingwritefailureleavesnoacceptedfinalbatch and no silent fallbacktocurrentdata.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 60,
+    "engineering_relevance": "Evaluate a staged-copy contract protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Evaluate a staged-copy contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "An intermediate stage adds a failure/access boundary that must be tested as well as timed."
+    ],
+    "sequence": 142,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Deterministictrainingdatasetcount1000,total4500; approvedstagingprefixandcredentialreferences.",
+        "changed_input_check": "Stagingwritefailureleavesnoacceptedfinalbatch and no silent fallbacktocurrentdata."
+      },
+      "expected_output": {
+        "contract": "Stagingwritefailureleavesnoacceptedfinalbatch and no silent fallbacktocurrentdata."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-143",
+    "tool_id": "adf",
+    "title": "Review a complete deployment diff",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADF-108"
+    ],
+    "scenario": "Identify whether a candidate training factory change affects pipeline,dataset,linkedservice and trigger parameters.",
+    "task": "Identify whether a candidate training factory change affects pipeline,dataset,linkedservice and trigger parameters.",
+    "learning_objective": "Review a complete deployment diff",
+    "inputs": {
+      "fixture": "Baselinea.csv/testA; candidatereferencesb.csv/testB andmissingtriggerdate.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Diff/review lists all changed dependencies; missingbindingblocksrelease; no productiondeploy."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Diff/review lists all changed dependencies; missingbindingblocksrelease; no productiondeploy.",
+      "Demonstrate this additional boundary: An unchangedpipelinewithchangedlinkedserviceendpointstillappearsasmaterialdependencychange.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Review a complete deployment diff protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Review a complete deployment diff. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Review resolved dependencies,not only the edited activity box."
+    ],
+    "sequence": 143,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Baselinea.csv/testA; candidatereferencesb.csv/testB andmissingtriggerdate.",
+        "changed_input_check": "An unchangedpipelinewithchangedlinkedserviceendpointstillappearsasmaterialdependencychange."
+      },
+      "expected_output": {
+        "contract": "An unchangedpipelinewithchangedlinkedserviceendpointstillappearsasmaterialdependencychange."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-144",
+    "tool_id": "adf",
+    "title": "Guard a bounded cleanup activity's scope",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADF-143"
+    ],
+    "scenario": "Rehearse cleanup using a dry-run inventory before any permitted disposable-file deletion.",
+    "task": "Rehearse cleanup using a dry-run inventory before any permitted disposable-file deletion.",
+    "learning_objective": "Guard a bounded cleanup activity's scope",
+    "inputs": {
+      "fixture": "Ownedstaging/B1oldfiles; staging/B2andpublishedsentinels; configuredprefixB1.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "The candidate inventory contains only artifacts owned by B1. Reject paths outside its prefix. Broad deletion execution is not required."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "The candidate inventory contains only artifacts owned by B1. Reject paths outside its prefix. Broad deletion execution is not required.",
+      "Demonstrate this additional boundary: A prefix B1-evil is not treated as insideB1's resolved directory boundary.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Guard a bounded cleanup activity's scope protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Guard a bounded cleanup activity's scope. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "Prefix matching needs a directory/ownership boundary,not an arbitrary substring."
+    ],
+    "sequence": 144,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Ownedstaging/B1oldfiles; staging/B2andpublishedsentinels; configuredprefixB1.",
+        "changed_input_check": "A prefix B1-evil is not treated as insideB1's resolved directory boundary."
+      },
+      "expected_output": {
+        "contract": "A prefix B1-evil is not treated as insideB1's resolved directory boundary."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-145",
+    "tool_id": "adf",
+    "title": "Correlate an activity failure across systems",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADF-144"
+    ],
+    "scenario": "Create an operational timeline linking pipeline,child,source request and sink audit IDs.",
+    "task": "Create an operational timeline linking pipeline,child,source request and sink audit IDs.",
+    "learning_objective": "Correlate an activity failure across systems",
+    "inputs": {
+      "fixture": "SyntheticB1,parentP1,childC1,requestR1,sinkattemptS1; onefailedcopy.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "The timeline connects identities and actual statuses without secrets. Label missing external diagnostics unavailable."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "The timeline connects identities and actual statuses without secrets. Label missing external diagnostics unavailable.",
+      "Demonstrate this additional boundary: A similar timestampaloneisnotclaimedtoproveacross-systemmatch.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Correlate an activity failure across systems protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Correlate an activity failure across systems. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Draw the point at which data becomes accepted. Inject the supplied failure on one side of that boundary and inspect the durable state.",
+      "Use stable correlation IDs and state which links are observed versus inferred."
+    ],
+    "sequence": 145,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "SyntheticB1,parentP1,childC1,requestR1,sinkattemptS1; onefailedcopy.",
+        "changed_input_check": "A similar timestampaloneisnotclaimedtoproveacross-systemmatch."
+      },
+      "expected_output": {
+        "contract": "A similar timestampaloneisnotclaimedtoproveacross-systemmatch."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-146",
+    "tool_id": "adf",
+    "title": "Test an assessment's recovery requirement",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADF-145"
+    ],
+    "scenario": "Prepare a bounded evaluation for an existing ingestion that includes one forced failure after partial work.",
+    "task": "Prepare a bounded evaluation for an existing ingestion that includes one forced failure after partial work.",
+    "learning_objective": "Test an assessment's recovery requirement",
+    "inputs": {
+      "fixture": "Fixturesvalid2,duplicatedelivery,missingrequiredsource,partialtargetthenretry; authorizedtrainingonly.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Each case has an expected and observed outcome. Recovery ends with correct unique keys and unchanged accepted history. Unexecuted cases remain unverified."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Each case has an expected and observed outcome. Recovery ends with correct unique keys and unchanged accepted history. Unexecuted cases remain unverified.",
+      "Demonstrate this additional boundary: A workinghappypathcannotstandinforthefailed-retrytest.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Test an assessment's recovery requirement protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Test an assessment's recovery requirement. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Draw the point at which data becomes accepted. Inject the supplied failure on one side of that boundary and inspect the durable state.",
+      "Job-like verification needs state before failure,after failure and after recovery."
+    ],
+    "sequence": 146,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "Fixturesvalid2,duplicatedelivery,missingrequiredsource,partialtargetthenretry; authorizedtrainingonly.",
+        "changed_input_check": "A workinghappypathcannotstandinforthefailed-retrytest."
+      },
+      "expected_output": {
+        "contract": "A workinghappypathcannotstandinforthefailed-retrytest."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-147",
+    "tool_id": "adf",
+    "title": "Independent returns authorisation transfer",
+    "level": 10,
+    "prerequisites": [
+      "RLP-ADF-110"
+    ],
+    "scenario": "Build ingestion for returns where an approved negative adjustment must link to a known original sale.",
+    "task": "Build ingestion for returns where an approved negative adjustment must link to a known original sale.",
+    "learning_objective": "Independent returns authorisation transfer",
+    "inputs": {
+      "fixture": "SaleS1amount20; returnsR1/S1/-5,R2/unknown/-3,duplicateR1; twofilesandmanifest.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "The accepted net adjustment is-5. Reject R2 because its original sale is unknown. Count the duplicate once. Audit missing-file,failed-sink and retry states."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "The accepted net adjustment is-5. Reject R2 because its original sale is unknown. Count the duplicate once. Audit missing-file,failed-sink and retry states.",
+      "Demonstrate this additional boundary: A positive restocking credit follows its own explicit operation rule instead of blanket negative-only validation.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Independent returns authorisation transfer protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For independent returns authorisation transfer, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: The accepted net adjustment is-5. Reject R2 because its original sale is unknown. Count the duplicate once. Audit missing-file,failed-sink and retry states.",
+      "Preserve original-sale linkage and distinguish source event identity from sale identity."
+    ],
+    "sequence": 147,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "SaleS1amount20; returnsR1/S1/-5,R2/unknown/-3,duplicateR1; twofilesandmanifest.",
+        "changed_input_check": "A positive restocking credit follows its own explicit operation rule instead of blanket negative-only validation."
+      },
+      "expected_output": {
+        "contract": "A positive restocking credit follows its own explicit operation rule instead of blanket negative-only validation."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADF-148",
+    "tool_id": "adf",
+    "title": "Independent multi-tenant ingestion boundary",
+    "level": 10,
+    "prerequisites": [
+      "RLP-ADF-147"
+    ],
+    "scenario": "Build a bounded approved tenant-aware ingestion where tenant IDs are part of paths,keys and cursors.",
+    "task": "Build a bounded approved tenant-aware ingestion where tenant IDs are part of paths,keys and cursors.",
+    "learning_objective": "Independent multi-tenant ingestion boundary",
+    "inputs": {
+      "fixture": "TenantAevent1amount5,TenantBevent1amount7; oneTenantBfailure; separateauthorizedprefixes.",
+      "environment": "Existing supported local or authorized cloud training environment; only isolated synthetic artifacts. Record runtime and actual executed observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both logical keys remain distinct. Preserve A acceptance and cursor while B is blocked. Retrying B does not read or write A. Totals are5 for A and7 for B."
+    },
+    "constraints": [
+      "Preserve source data,existing attempts and accepted batches; use only the bounded synthetic fixtures.",
+      "No production mutation,new paid resource provisioning,credential disclosure or actual external notification to people.",
+      "Unsupported runtime feature or unavailable authorization means environment_blocked; a plan/simulation alone is not verified cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both logical keys remain distinct. Preserve A acceptance and cursor while B is blocked. Retrying B does not read or write A. Totals are5 for A and7 for B.",
+      "Demonstrate this additional boundary: Anunknown tenant or path traversal token is rejected before connector access.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure; only a reviewer can verify acceptance."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Independent multi-tenant ingestion boundary protects a concrete data contract or operating boundary. After review,explain which downstream decision depends on the demonstrated behavior and one remaining limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities",
+      "https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified prerequisite evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For independent multi-tenant ingestion boundary, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adf environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Both logical keys remain distinct. Preserve A acceptance and cursor while B is blocked. Retrying B does not read or write A. Totals are5 for A and7 for B.",
+      "Tenant isolation includes configuration and recovery state,not just a column added after copying."
+    ],
+    "sequence": 148,
+    "authoring_batch": "cloud-explicit-003",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check; explain the observed result and disclose help.",
+      "inputs": {
+        "base_fixture": "TenantAevent1amount5,TenantBevent1amount7; oneTenantBfailure; separateauthorizedprefixes.",
+        "changed_input_check": "Anunknown tenant or path traversal token is rejected before connector access."
+      },
+      "expected_output": {
+        "contract": "Anunknown tenant or path traversal token is rejected before connector access."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the prior implementation closed; preserve independent attempt and actual outputs."
+      ]
+    }
+  }
+]

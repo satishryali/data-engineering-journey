@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "partial_explicit_third_batch",
+  "tracks": {
+    "pyspark": {
+      "target": 400,
+      "preserved_previous_additions": 112,
+      "batch3_additions": 38,
+      "prepared_total_including_seed": 151,
+      "remaining": 249,
+      "next_id": "RLP-PYSPARK-152",
+      "next_action": "Author a distinct explicit capability fixture and validate its prerequisites; no count-padding."
+    },
+    "adf": {
+      "target": 350,
+      "preserved_previous_additions": 109,
+      "batch3_additions": 38,
+      "prepared_total_including_seed": 148,
+      "remaining": 202,
+      "next_id": "RLP-ADF-149",
+      "next_action": "Author a distinct explicit capability fixture and validate its prerequisites; no count-padding."
+    },
+    "adls": {
+      "target": 180,
+      "preserved_previous_additions": 110,
+      "batch3_additions": 38,
+      "prepared_total_including_seed": 149,
+      "remaining": 31,
+      "next_id": "RLP-ADLS-150",
+      "next_action": "Author a distinct explicit capability fixture and validate its prerequisites; no count-padding."
+    }
+  }
+}

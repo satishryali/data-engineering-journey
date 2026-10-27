@@ -1,9 +1,9 @@
 [theme]
 base = "dark"
-primaryColor = "#4d8eff"
-backgroundColor = "#0b1120"
-secondaryBackgroundColor = "#131e31"
-textColor = "#e4ecf8"
+primaryColor = "#a8e4cd"
+backgroundColor = "#111313"
+secondaryBackgroundColor = "#191c1c"
+textColor = "#edf2ef"
 [server]
 address = "127.0.0.1"
 port = 8501

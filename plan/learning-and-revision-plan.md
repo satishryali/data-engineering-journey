@@ -1,6 +1,6 @@
 # Azure Data Engineer learning and revision plan
 
-Agreed 22 October 2026. Preparation: **22 October 2026–22 January 2027**, Asia/Kolkata (IST). Goal: independently solve practical Azure Data Engineer and interview problems for India, especially Hyderabad. The date is an assessment target, not a job, salary or mastery promise.
+Revised 26 October 2026. Preparation: **22 October 2026–20 January 2027**, Asia/Kolkata (IST). Goal: independently solve practical Data Engineer and interview problems for India, especially Hyderabad. January 20 supersedes the earlier January 22 target. It is an assessment target, not a job, salary or mastery promise.
 
 This file owns curriculum, weekly milestones and activity allocation. [study-targets.json](../tracking/study-targets.json) owns date-effective hour targets for reporting code. [weekly-learning-plan.csv](weekly-learning-plan.csv) is generated with `python tracking/study_plan.py --refresh-roadmap`; never maintain a second plan there. Actual progress comes from [current checkpoint](../progress/current.md), project acceptance and canonical tracking records.
 
@@ -27,7 +27,24 @@ From **22 October** use seven hours Monday–Friday and ten hours Saturday/Sunda
 
 Arrange duration blocks around actual availability, with breaks outside focused time. No new reminders or fixed clock slots are assumed. Start revision with about ten minutes of weak/due retrieval and at most five minutes for one diagnostic, then use the rest for reconstruction, changed examples and interviews. Docker stays inside this budget. The old one-Azure-concept-per-week limit is superseded by this prerequisite-based sequence.
 
-Curriculum weeks are Thursday–Wednesday. Hour reports stay Monday–Sunday: historical 15–18 October target **32 h**; transition week 19–25 October **52 h** (three old weekdays, two new weekdays and weekend); new preparation portion 22–25 October **34 h**. Ordinary weeks **55 h**; final preparation week 18–22 January **35 h**. Thirteen curriculum weeks total **715 h**, plus **14 h** for 21–22 January: **729 planned preparation hours**, never actual attendance.
+Curriculum weeks are Thursday–Wednesday. Hour reports stay Monday–Sunday: historical 15–18 October target **32 h**; transition week 19–25 October **52 h** (three old weekdays, two new weekdays and weekend); new preparation portion 22–25 October **34 h**. Ordinary weeks **55 h**; final preparation partial week 18–20 January **21 h**. Thirteen curriculum weeks total **715 planned preparation hours**, never actual attendance. Learning continues after the assessment toward advanced independent engineering.
+
+## Problem-first progression and job assessments
+
+[The versioned Tools curriculum](../tools/curriculum.json) owns published problem IDs, dependencies, tool priorities and denominators; this document remains the single calendar roadmap. Every tool progresses through Level 0 first success, Level 1 realistic fundamentals, Level 2 combined basics, Level 3 small business tasks, Level 4 multiple inputs/systems, Level 5 mini-pipelines, Level 6 recovery, Level 7 engineering complexity, Level 8 measured optimization, Level 9 production operations and Level 10 independent advanced challenges. Unpublished stages are expansion plans, not counted problems. Publish quality batches with version changes and preserve all prior IDs/completions. Verify an independent prerequisite challenge to accelerate; familiarity alone cannot waive prerequisites. Use small bridges before a larger step.
+
+In RecallLab Tools, select a technology and request `/problem`; implement before `/solved`. Record approach, sources/help, code and actual results. Output checks cover only their fixtures; human review requires observed verification and remains labelled as such. Significant help can earn verified completion, with independent practice later. Unknown help cannot earn independence. Pending, failed and partial attempts never remove earlier completions. Only the canonical coach schedules retention at checkpoint boundaries. Do not reveal future solutions or prescribe the intended approach in prompts.
+
+| Target date IST | Assessment | Evidence required |
+| --- | --- | --- |
+| 2026-11-15 | SQL, Python ETL and PostgreSQL foundations | Changed-input SQL, small file validation/load, stored-row and transaction checks, stated help and independent retry where needed |
+| 2026-12-06 | PySpark and transformations | Correct schemas, joins/aggregations and null/duplicate handling; explain and verify changed inputs |
+| 2026-12-27 | Azure end-to-end demonstration | Small working source-to-storage-to-transformation flow, reconciliation, rerun/failure evidence and redacted run logs; label local substitutes |
+| 2027-01-20 | Independent interview and pipeline-building readiness | Unfamiliar coding task, bounded pipeline build, failure diagnosis and explanation of actual project decisions; report gaps by observed dimension |
+
+Dates never bypass prerequisites. Prioritize SQL/advanced SQL, applied Python ETL, PostgreSQL, modelling/warehousing, ETL/ELT/incremental/CDC, PySpark/Spark SQL, ADF, ADLS Gen2, Azure Databricks, Delta and testing/debugging. Supporting practice covers Git, Linux, Docker basics, Airflow, dbt, Snowflake, security/monitoring and CI/CD. Retain PL/SQL and SAP HANA. Preserve progressive later development for Kubernetes/K3s, advanced streaming/Kafka, Jenkins administration, Vault, Prometheus/Grafana, infrastructure as code, advanced Power BI/Fabric/Azure, AI and GenAI; their advanced scope must not displace January prerequisites.
+
+Start applications now for SQL/PLSQL, ETL and Python Data Engineer roles. Within existing interview time, inspect suitable vacancies, tailor a truthful CV to demonstrated skills and record application/interview gaps at existing checkpoints. Submission of applications or external messages still needs the learner's instruction. Support/database employment stays separate from simulated DE project work.
 
 ## Thirteen-week curriculum
 
@@ -49,7 +66,7 @@ All rows are planned. Calendar advancement does not complete a milestone. Carry 
 | 12 | 2027-01-07 | 2027-01-13 | Git, Azure DevOps, CI/CD, Monitor and testing | Delivery and alerts | Validate a change in CI; rehearse rollback; inspect monitoring for a labelled failure | 55 |
 | 13 | 2027-01-14 | 2027-01-20 | RRDAP integration, revision and timed mocks | Architecture tradeoffs | Independently rebuild/repair an unfamiliar slice; give timed coding, design and project explanations | 55 |
 
-**21–22 January: verification buffer and final assessment (14 planned hours).** Re-run acceptance, reconcile counts, inspect security/cost cleanup and repair priority gaps. Assess on 22 January from actual evidence and document unfinished work. Do not convert planned rows into completions.
+**By 20 January: independent readiness assessment within week 13.** Re-run acceptance, reconcile counts, inspect security/cost cleanup and repair priority gaps within the existing budget. Document unfinished work and use it for subsequent development. Do not convert planned rows into completions.
 
 ## Technology requirements
 

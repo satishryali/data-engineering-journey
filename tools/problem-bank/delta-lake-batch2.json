@@ -1,0 +1,2758 @@
+[
+  {
+    "id": "RLP-DELTA-LAKE-072",
+    "tool_id": "delta-lake",
+    "title": "Distinguish a Delta location from an ordinary data folder",
+    "level": 0,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-006"
+    ],
+    "scenario": "A support analyst must identify the format of two disposable training locations using supported readers/metadata.",
+    "task": "A support analyst must identify the format of two disposable training locations using supported readers/metadata.",
+    "learning_objective": "Distinguish a Delta location from an ordinary data folder",
+    "inputs": {
+      "fixture": "One isolated Delta fixtureA/5; one ordinary Parquet fixtureB/7; runtime compatible.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Format evidence correctly distinguishes both; no claim that every Parquet file folder is a transactional table."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Format evidence correctly distinguishes both; no claim that every Parquet file folder is a transactional table.",
+      "Demonstrate the additional boundary: A nonexistent location produces missing-location evidence,not an empty Delta table.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Distinguish a Delta location from an ordinary data folder supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_0",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "For distinguish a delta location from an ordinary data folder, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Format evidence correctly distinguishes both; no claim that every Parquet file folder is a transactional table.",
+      "Use the table's documented metadata/reader contract rather than the filename extension alone."
+    ],
+    "sequence": 72,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "One isolated Delta fixtureA/5; one ordinary Parquet fixtureB/7; runtime compatible.",
+        "changed_input_check": "A nonexistent location produces missing-location evidence,not an empty Delta table."
+      },
+      "expected_output": {
+        "contract": "A nonexistent location produces missing-location evidence,not an empty Delta table."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-073",
+    "tool_id": "delta-lake",
+    "title": "Read a selected field without changing a table",
+    "level": 0,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-072"
+    ],
+    "scenario": "A downstream support request needs invoice IDs only from an approved training Delta table.",
+    "task": "A downstream support request needs invoice IDs only from an approved training Delta table.",
+    "learning_objective": "Read a selected field without changing a table",
+    "inputs": {
+      "fixture": "Table I1/5,I2/7 with invoice_id,amount.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Returned schema has invoice_id only,values I1,I2; table still has amount and two rows."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Returned schema has invoice_id only,values I1,I2; table still has amount and two rows.",
+      "Demonstrate the additional boundary: Requesting nonexistent field fails clearly instead of returning a fabricated null column.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read a selected field without changing a table supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_0",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "For read a selected field without changing a table, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Returned schema has invoice_id only,values I1,I2; table still has amount and two rows.",
+      "Projection changes the read result,not the stored table schema."
+    ],
+    "sequence": 73,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Table I1/5,I2/7 with invoice_id,amount.",
+        "changed_input_check": "Requesting nonexistent field fails clearly instead of returning a fabricated null column."
+      },
+      "expected_output": {
+        "contract": "Requesting nonexistent field fails clearly instead of returning a fabricated null column."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-074",
+    "tool_id": "delta-lake",
+    "title": "Append reordered fields by a declared schema",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-013"
+    ],
+    "scenario": "A vendor reorders named fields in a delivery. Verify the chosen Delta write API's mapping behavior before accepting it.",
+    "task": "A vendor reorders named fields in a delivery. Verify the chosen Delta write API's mapping behavior before accepting it.",
+    "learning_objective": "Append reordered fields by a declared schema",
+    "inputs": {
+      "fixture": "Targetid:string,amount:integer; incoming columns amount,id with row7,B; targetA/5.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Final A/5,B/7 under the selected explicit named mapping; no amount/id corruption."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Final A/5,B/7 under the selected explicit named mapping; no amount/id corruption.",
+      "Demonstrate the additional boundary: A deliberately positional API path must be tested or avoided rather than assumed name-safe.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Append reordered fields by a declared schema supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Append reordered fields by a declared schema. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Different write APIs can have different schema-resolution rules; inspect and assert the result."
+    ],
+    "sequence": 74,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Targetid:string,amount:integer; incoming columns amount,id with row7,B; targetA/5.",
+        "changed_input_check": "A deliberately positional API path must be tested or avoided rather than assumed name-safe."
+      },
+      "expected_output": {
+        "contract": "A deliberately positional API path must be tested or avoided rather than assumed name-safe."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-075",
+    "tool_id": "delta-lake",
+    "title": "Read a partition field as data",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-074"
+    ],
+    "scenario": "An analyst needs the business_date column after reading a partitioned table through Delta.",
+    "task": "An analyst needs the business_date column after reading a partitioned table through Delta.",
+    "learning_objective": "Read a partition field as data",
+    "inputs": {
+      "fixture": "Rows A/Oct26/5,B/Oct27/7; partitioned bybusiness_date.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Reader returns both dates with their rows; date filtering returns correct single-date keys; table metadata inspected."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Reader returns both dates with their rows; date filtering returns correct single-date keys; table metadata inspected.",
+      "Demonstrate the additional boundary: A file-level manual read is not substituted for the table reader contract.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read a partition field as data supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For read a partition field as data, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Reader returns both dates with their rows; date filtering returns correct single-date keys; table metadata inspected.",
+      "Partition directory structure and logical table columns are related but should be read through the table API."
+    ],
+    "sequence": 75,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Rows A/Oct26/5,B/Oct27/7; partitioned bybusiness_date.",
+        "changed_input_check": "A file-level manual read is not substituted for the table reader contract."
+      },
+      "expected_output": {
+        "contract": "A file-level manual read is not substituted for the table reader contract."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-076",
+    "tool_id": "delta-lake",
+    "title": "Use an explicit order for a small audit extract",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-075"
+    ],
+    "scenario": "An auditor requires a stable two-row sample,not arbitrary partition order.",
+    "task": "An auditor requires a stable two-row sample,not arbitrary partition order.",
+    "learning_objective": "Use an explicit order for a small audit extract",
+    "inputs": {
+      "fixture": "Training table C/3,A/1,B/2; samplelimit 2 orderedbyid.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "ExtractA/1,B/2 across repeated runs; table remains three rows."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "ExtractA/1,B/2 across repeated runs; table remains three rows.",
+      "Demonstrate the additional boundary: A sample without the ordering contract is labeled nondeterministic rather than accepted as stable.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Use an explicit order for a small audit extract supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For use an explicit order for a small audit extract, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: ExtractA/1,B/2 across repeated runs; table remains three rows.",
+      "Limit alone does not define which business rows appear."
+    ],
+    "sequence": 76,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Training table C/3,A/1,B/2; samplelimit 2 orderedbyid.",
+        "changed_input_check": "A sample without the ordering contract is labeled nondeterministic rather than accepted as stable."
+      },
+      "expected_output": {
+        "contract": "A sample without the ordering contract is labeled nondeterministic rather than accepted as stable."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-077",
+    "tool_id": "delta-lake",
+    "title": "Filter an exact decimal boundary",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-076"
+    ],
+    "scenario": "A quality check needs invoices greater than 0.10 with exact cents.",
+    "task": "A quality check needs invoices greater than 0.10 with exact cents.",
+    "learning_objective": "Filter an exact decimal boundary",
+    "inputs": {
+      "fixture": "Decimal amounts A/0.10,B/0.11,C/0.00,D/null.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Only B qualifies; null counted separately; decimal schema retained."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Only B qualifies; null counted separately; decimal schema retained.",
+      "Demonstrate the additional boundary: Amount 0.1000 is equal to0.10 and does not qualify.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Filter an exact decimal boundary supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For filter an exact decimal boundary, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Only B qualifies; null counted separately; decimal schema retained.",
+      "Use a compatible decimal comparison and inspect schema,not display formatting alone."
+    ],
+    "sequence": 77,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Decimal amounts A/0.10,B/0.11,C/0.00,D/null.",
+        "changed_input_check": "Amount 0.1000 is equal to0.10 and does not qualify."
+      },
+      "expected_output": {
+        "contract": "Amount 0.1000 is equal to0.10 and does not qualify."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-078",
+    "tool_id": "delta-lake",
+    "title": "Correct an amount with a bounded expression",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-020"
+    ],
+    "scenario": "A finance adjustment adds 2.00 to one invoice while leaving all other rows unchanged.",
+    "task": "A finance adjustment adds 2.00 to one invoice while leaving all other rows unchanged.",
+    "learning_objective": "Correct an amount with a bounded expression",
+    "inputs": {
+      "fixture": "I1/5.00,I2/7.00; approved adjustment I2+2.00; isolated table.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "I1/5.00,I2/9.00,total 14.00; rowcount 2; history records bounded operation."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "I1/5.00,I2/9.00,total 14.00; rowcount 2; history records bounded operation.",
+      "Demonstrate the additional boundary: Missing requested I9 changeszero rows and is reported as not_found rather than success.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Correct an amount with a bounded expression supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For correct an amount with a bounded expression, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: I1/5.00,I2/9.00,total 14.00; rowcount 2; history records bounded operation.",
+      "Verify affected key/count before accepting an update; the predicate is part of correctness."
+    ],
+    "sequence": 78,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "I1/5.00,I2/7.00; approved adjustment I2+2.00; isolated table.",
+        "changed_input_check": "Missing requested I9 changeszero rows and is reported as not_found rather than success."
+      },
+      "expected_output": {
+        "contract": "Missing requested I9 changeszero rows and is reported as not_found rather than success."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-079",
+    "tool_id": "delta-lake",
+    "title": "Handle nulls in a deletion predicate explicitly",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-078"
+    ],
+    "scenario": "A disposable cleanup removes only explicitly canceled synthetic invoices,not unknown statuses.",
+    "task": "A disposable cleanup removes only explicitly canceled synthetic invoices,not unknown statuses.",
+    "learning_objective": "Handle nulls in a deletion predicate explicitly",
+    "inputs": {
+      "fixture": "A/active/5,B/canceled/7,C/null/2.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Current A,Cremain,total 7; Bremoved; null status not interpreted as canceled."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Current A,Cremain,total 7; Bremoved; null status not interpreted as canceled.",
+      "Demonstrate the additional boundary: Status CANCELLED with different spelling follows the stated exact-match policy.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Handle nulls in a deletion predicate explicitly supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Handle nulls in a deletion predicate explicitly. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Write down which fixture represents zero, missing data, an empty string and an absent object; these are different states.",
+      "Three-valued logic and business status spelling must be intentional."
+    ],
+    "sequence": 79,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "A/active/5,B/canceled/7,C/null/2.",
+        "changed_input_check": "Status CANCELLED with different spelling follows the stated exact-match policy."
+      },
+      "expected_output": {
+        "contract": "Status CANCELLED with different spelling follows the stated exact-match policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-080",
+    "tool_id": "delta-lake",
+    "title": "Check uniqueness beyond built-in table constraints",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-079"
+    ],
+    "scenario": "An invoice table requires unique IDs. Demonstrate a separate uniqueness gate rather than assuming Delta enforces primary keys.",
+    "task": "An invoice table requires unique IDs. Demonstrate a separate uniqueness gate rather than assuming Delta enforces primary keys.",
+    "learning_objective": "Check uniqueness beyond built-in table constraints",
+    "inputs": {
+      "fixture": "Incoming A/5,A/7; isolated target B/2; runtime capabilities recorded.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Duplicate A rejected before acceptance; Bunchanged; report does not claim automatic primary-key enforcement."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Duplicate A rejected before acceptance; Bunchanged; report does not claim automatic primary-key enforcement.",
+      "Demonstrate the additional boundary: DistinctA/5,C/7 passes under the same gate.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Check uniqueness beyond built-in table constraints supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For check uniqueness beyond built-in table constraints, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Duplicate A rejected before acceptance; Bunchanged; report does not claim automatic primary-key enforcement.",
+      "Storage constraints and application/business-key uniqueness are not interchangeable."
+    ],
+    "sequence": 80,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Incoming A/5,A/7; isolated target B/2; runtime capabilities recorded.",
+        "changed_input_check": "DistinctA/5,C/7 passes under the same gate."
+      },
+      "expected_output": {
+        "contract": "DistinctA/5,C/7 passes under the same gate."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-081",
+    "tool_id": "delta-lake",
+    "title": "Test required-field nullability at write time",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-080"
+    ],
+    "scenario": "An approved training table has a supported NOT NULL requirement for invoice_id. Test its actual enforcement.",
+    "task": "An approved training table has a supported NOT NULL requirement for invoice_id. Test its actual enforcement.",
+    "learning_objective": "Test required-field nullability at write time",
+    "inputs": {
+      "fixture": "ExistingI1/5; incoming null ID/7; supported runtime and table definition.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Invalid write fails with useful constraint diagnostic; table contents remain I1/5; definition evidenced."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Invalid write fails with useful constraint diagnostic; table contents remain I1/5; definition evidenced.",
+      "Demonstrate the additional boundary: Empty string ID is a separate business validation case,not automatically NOT NULL failure.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Test required-field nullability at write time supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Test required-field nullability at write time. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Write down which fixture represents zero, missing data, an empty string and an absent object; these are different states.",
+      "Nullability rejects nulls,not every semantically invalid identifier."
+    ],
+    "sequence": 81,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "ExistingI1/5; incoming null ID/7; supported runtime and table definition.",
+        "changed_input_check": "Empty string ID is a separate business validation case,not automatically NOT NULL failure."
+      },
+      "expected_output": {
+        "contract": "Empty string ID is a separate business validation case,not automatically NOT NULL failure."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-082",
+    "tool_id": "delta-lake",
+    "title": "Apply operation-specific merge behavior",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-027"
+    ],
+    "scenario": "A bounded change feed uses INSERT,UPDATE andDELETE flags with different acceptance rules.",
+    "task": "A bounded change feed uses INSERT,UPDATE andDELETE flags with different acceptance rules.",
+    "learning_objective": "Apply operation-specific merge behavior",
+    "inputs": {
+      "fixture": "Target I1/5,I2/7; sourceI1UPDATE6,I2DELETE,I3INSERT2.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Current I1/6,I3/2,total 8; unknown operation rejected before mutation."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Current I1/6,I3/2,total 8; unknown operation rejected before mutation.",
+      "Demonstrate the additional boundary: UPDATE for absent I9 follows declared reject policy rather than being inserted accidentally.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Apply operation-specific merge behavior supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For apply operation-specific merge behavior, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Current I1/6,I3/2,total 8; unknown operation rejected before mutation.",
+      "Translate each source operation into explicit matched/unmatched behavior."
+    ],
+    "sequence": 82,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Target I1/5,I2/7; sourceI1UPDATE6,I2DELETE,I3INSERT2.",
+        "changed_input_check": "UPDATE for absent I9 follows declared reject policy rather than being inserted accidentally."
+      },
+      "expected_output": {
+        "contract": "UPDATE for absent I9 follows declared reject policy rather than being inserted accidentally."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-083",
+    "tool_id": "delta-lake",
+    "title": "Preserve original creation metadata during correction",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-082"
+    ],
+    "scenario": "A corrected invoice must retain its original created_at while recording a new updated_at.",
+    "task": "A corrected invoice must retain its original created_at while recording a new updated_at.",
+    "learning_objective": "Preserve original creation metadata during correction",
+    "inputs": {
+      "fixture": "Target I1/5 createdOct1,updatedOct1; correctionI1/6 eventOct26.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "I1 amount 6,createdOct1,updatedOct26; no rewritten creation history."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "I1 amount 6,createdOct1,updatedOct26; no rewritten creation history.",
+      "Demonstrate the additional boundary: An insertedI2 gets its own source created_at,notI1'svalue.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Preserve original creation metadata during correction supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For preserve original creation metadata during correction, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: I1 amount 6,createdOct1,updatedOct26; no rewritten creation history.",
+      "Select update assignments explicitly instead of overwriting every field from the source."
+    ],
+    "sequence": 83,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Target I1/5 createdOct1,updatedOct1; correctionI1/6 eventOct26.",
+        "changed_input_check": "An insertedI2 gets its own source created_at,notI1'svalue."
+      },
+      "expected_output": {
+        "contract": "An insertedI2 gets its own source created_at,notI1'svalue."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-084",
+    "tool_id": "delta-lake",
+    "title": "Soft-delete under a current-record contract",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-083"
+    ],
+    "scenario": "A reporting table retains a deleted row for audit but hides it from the active view.",
+    "task": "A reporting table retains a deleted row for audit but hides it from the active view.",
+    "learning_objective": "Soft-delete under a current-record contract",
+    "inputs": {
+      "fixture": "Target I1/5 active,I2/7 active; delete event I2 v2.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "StoredI2 marked deleted with version 2; activeviewI1 only,total 5; audit retains I2."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "StoredI2 marked deleted with version 2; activeviewI1 only,total 5; audit retains I2.",
+      "Demonstrate the additional boundary: Replaying delete v2 does not add a second logical deletion.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Soft-delete under a current-record contract supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Soft-delete under a current-record contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Separate stored audit state from the consumer's active-record filter."
+    ],
+    "sequence": 84,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Target I1/5 active,I2/7 active; delete event I2 v2.",
+        "changed_input_check": "Replaying delete v2 does not add a second logical deletion."
+      },
+      "expected_output": {
+        "contract": "Replaying delete v2 does not add a second logical deletion."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-085",
+    "tool_id": "delta-lake",
+    "title": "Reject a stale correction with an equal version conflict",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-084"
+    ],
+    "scenario": "A source sometimes reuses a version number with a different payload. Detect the conflict instead of treating it as a retry.",
+    "task": "A source sometimes reuses a version number with a different payload. Detect the conflict instead of treating it as a retry.",
+    "learning_objective": "Reject a stale correction with an equal version conflict",
+    "inputs": {
+      "fixture": "Target I1 v2 amount 6; incomingI1 v2 amount 9.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Conflict reported; targetstays 6; incoming payload preserved in quarantine."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Conflict reported; targetstays 6; incoming payload preserved in quarantine.",
+      "Demonstrate the additional boundary: Incoming I1 v2 amount 6 is an equivalent no-opretry.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Reject a stale correction with an equal version conflict supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For reject a stale correction with an equal version conflict, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Conflict reported; targetstays 6; incoming payload preserved in quarantine.",
+      "Equal version plus unequal payload is different from an older update or an identical replay."
+    ],
+    "sequence": 85,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Target I1 v2 amount 6; incomingI1 v2 amount 9.",
+        "changed_input_check": "Incoming I1 v2 amount 6 is an equivalent no-opretry."
+      },
+      "expected_output": {
+        "contract": "Incoming I1 v2 amount 6 is an equivalent no-opretry."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-086",
+    "tool_id": "delta-lake",
+    "title": "Keep source identity in a combined ledger",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-034"
+    ],
+    "scenario": "Two approved source systems reuse invoice IDI1. Combine them without collapsing distinct invoices.",
+    "task": "Two approved source systems reuse invoice IDI1. Combine them without collapsing distinct invoices.",
+    "learning_objective": "Keep source identity in a combined ledger",
+    "inputs": {
+      "fixture": "Source A I1/5; Source B I1/7; keycontract(source_system,invoice_id).",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Two ledger rows,total 12; source identity retained; no global-ID deduplication."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Two ledger rows,total 12; source identity retained; no global-ID deduplication.",
+      "Demonstrate the additional boundary: A duplicate Source A/I1 conflicts only within Source A'skeyspace.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Keep source identity in a combined ledger supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Keep source identity in a combined ledger. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "The business key may be composite across source boundaries."
+    ],
+    "sequence": 86,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Source A I1/5; Source B I1/7; keycontract(source_system,invoice_id).",
+        "changed_input_check": "A duplicate Source A/I1 conflicts only within Source A'skeyspace."
+      },
+      "expected_output": {
+        "contract": "A duplicate Source A/I1 conflicts only within Source A'skeyspace."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-087",
+    "tool_id": "delta-lake",
+    "title": "Guard an update derived from a reference join",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-086"
+    ],
+    "scenario": "A region correction reference must have one approved row per customer before it updates a Delta table.",
+    "task": "A region correction reference must have one approved row per customer before it updates a Delta table.",
+    "learning_objective": "Guard an update derived from a reference join",
+    "inputs": {
+      "fixture": "InvoicesI1/C1/5; referenceC1/west,C1/east.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Mutation blocked with duplicate C1 diagnostic; invoice table unchanged."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Mutation blocked with duplicate C1 diagnostic; invoice table unchanged.",
+      "Demonstrate the additional boundary: UniqueC1/west updates region without changing invoice amount/count.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Guard an update derived from a reference join supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For guard an update derived from a reference join, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Mutation blocked with duplicate C1 diagnostic; invoice table unchanged.",
+      "Validate reference cardinality before using a join as an update source."
+    ],
+    "sequence": 87,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "InvoicesI1/C1/5; referenceC1/west,C1/east.",
+        "changed_input_check": "UniqueC1/west updates region without changing invoice amount/count."
+      },
+      "expected_output": {
+        "contract": "UniqueC1/west updates region without changing invoice amount/count."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-088",
+    "tool_id": "delta-lake",
+    "title": "Move a corrected row across date partitions deliberately",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-087"
+    ],
+    "scenario": "A source correction changes an invoice's business date. Apply it without leaving an old-date duplicate.",
+    "task": "A source correction changes an invoice's business date. Apply it without leaving an old-date duplicate.",
+    "learning_objective": "Move a corrected row across date partitions deliberately",
+    "inputs": {
+      "fixture": "Target I1/Oct25/5; incomingI1/Oct26/6; immutable invoice ID but mutable date contract.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Exactly one current I1/Oct26/6; Oct25 no longer contains I1; totals reconcile."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Exactly one current I1/Oct26/6; Oct25 no longer contains I1; totals reconcile.",
+      "Demonstrate the additional boundary: A date-scoped merge predicate that hidesI1Oct25 must fail the independent-keycheck.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Move a corrected row across date partitions deliberately supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For move a corrected row across date partitions deliberately, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Exactly one current I1/Oct26/6; Oct25 no longer contains I1; totals reconcile.",
+      "A partition predicate must not exclude legitimate old versions of a mutable partition key."
+    ],
+    "sequence": 88,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Target I1/Oct25/5; incomingI1/Oct26/6; immutable invoice ID but mutable date contract.",
+        "changed_input_check": "A date-scoped merge predicate that hidesI1Oct25 must fail the independent-keycheck."
+      },
+      "expected_output": {
+        "contract": "A date-scoped merge predicate that hidesI1Oct25 must fail the independent-keycheck."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-089",
+    "tool_id": "delta-lake",
+    "title": "Reject an unapproved automatic schema extension",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-088"
+    ],
+    "scenario": "A source adds an arbitrary nested field. Keep raw evidence while enforcing a fixed curated schema.",
+    "task": "A source adds an arbitrary nested field. Keep raw evidence while enforcing a fixed curated schema.",
+    "learning_objective": "Reject an unapproved automatic schema extension",
+    "inputs": {
+      "fixture": "Targetid,amount; incomingA/5,new_struct={debug:x}; schema evolution disabled by contract.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Curate d schema unchanged; incoming extra-field policy explicitly rejects or selects approved fields; no session-wide evolution enable ment."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Curate d schema unchanged; incoming extra-field policy explicitly rejects or selects approved fields; no session-wide evolution enable ment.",
+      "Demonstrate the additional boundary: An approved nullable addition requires an explicit new contract version.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Reject an unapproved automatic schema extension supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Reject an unapproved automatic schema extension. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Automatic schema evolution is a capability,not the authority to change a business contract."
+    ],
+    "sequence": 89,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Targetid,amount; incomingA/5,new_struct={debug:x}; schema evolution disabled by contract.",
+        "changed_input_check": "An approved nullable addition requires an explicit new contract version."
+      },
+      "expected_output": {
+        "contract": "An approved nullable addition requires an explicit new contract version."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-090",
+    "tool_id": "delta-lake",
+    "title": "Use supported transaction identifiers for a bounded write",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-041"
+    ],
+    "scenario": "Rehearse a documented idempotent-write option under a fixed application/batch identity in a disposable table.",
+    "task": "Rehearse a documented idempotent-write option under a fixed application/batch identity in a disposable table.",
+    "learning_objective": "Use supported transaction identifiers for a bounded write",
+    "inputs": {
+      "fixture": "Compatible Delta runtime; batch B1 rows A/5,B/7; declared txnAppId and txnVersion where supported.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Identical retry produces one logical batch,count 2,total 12; transaction identity and runtime evidenced."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Identical retry produces one logical batch,count 2,total 12; transaction identity and runtime evidenced.",
+      "Demonstrate the additional boundary: Different payload for the same identity is blocked by application checks rather than assumed valid.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Use supported transaction identifiers for a bounded write supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For use supported transaction identifiers for a bounded write, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Identical retry produces one logical batch,count 2,total 12; transaction identity and runtime evidenced.",
+      "Check the runtime's exact transaction options and keep their identity stable across retries."
+    ],
+    "sequence": 90,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Compatible Delta runtime; batch B1 rows A/5,B/7; declared txnAppId and txnVersion where supported.",
+        "changed_input_check": "Different payload for the same identity is blocked by application checks rather than assumed valid."
+      },
+      "expected_output": {
+        "contract": "Different payload for the same identity is blocked by application checks rather than assumed valid."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-091",
+    "tool_id": "delta-lake",
+    "title": "Keep microbatch merge logic idempotent",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-090"
+    ],
+    "scenario": "Apply a bounded streaming microbatch twice through the same foreachBatch-style handler or equivalent test harness.",
+    "task": "Apply a bounded streaming microbatch twice through the same foreachBatch-style handler or equivalent test harness.",
+    "learning_objective": "Keep microbatch merge logic idempotent",
+    "inputs": {
+      "fixture": "Micro batch ID7 eventsA/5,B/7; isolated current table; stable business/eventkeys.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "After two invocations current A,Bonce,total 12; audit distinguishes two attempts from one accepted microbatch."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "After two invocations current A,Bonce,total 12; audit distinguishes two attempts from one accepted microbatch.",
+      "Demonstrate the additional boundary: Micro batch ID8 withnewC/2 addsonlyC; total 14.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Keep microbatch merge logic idempotent supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For keep microbatch merge logic idempotent, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: After two invocations current A,Bonce,total 12; audit distinguishes two attempts from one accepted microbatch.",
+      "A foreachBatch callback can be retried; its sink operation must tolerate replay."
+    ],
+    "sequence": 91,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Micro batch ID7 eventsA/5,B/7; isolated current table; stable business/eventkeys.",
+        "changed_input_check": "Micro batch ID8 withnewC/2 addsonlyC; total 14."
+      },
+      "expected_output": {
+        "contract": "Micro batch ID8 withnewC/2 addsonlyC; total 14."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-092",
+    "tool_id": "delta-lake",
+    "title": "Consume a supported change feed into a separate current table",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-091"
+    ],
+    "scenario": "Apply only the intended change-feed row types to a bounded downstream current-state table.",
+    "task": "Apply only the intended change-feed row types to a bounded downstream current-state table.",
+    "learning_objective": "Consume a supported change feed into a separate current table",
+    "inputs": {
+      "fixture": "Enabled feed with I1 update 5 to6,I2 delete 7,I3 insert 2; observed commit versions.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Downstream current I1/6,I3/2; update pre images are not counted as invoices; commit boundary recorded."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Downstream current I1/6,I3/2; update pre images are not counted as invoices; commit boundary recorded.",
+      "Demonstrate the additional boundary: Replaying the same commit range leaves current state unchanged.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Consume a supported change feed into a separate current table supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For consume a supported change feed into a separate current table, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Downstream current I1/6,I3/2; update pre images are not counted as invoices; commit boundary recorded.",
+      "Interpret change types explicitly before deriving net current state."
+    ],
+    "sequence": 92,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Enabled feed with I1 update 5 to6,I2 delete 7,I3 insert 2; observed commit versions.",
+        "changed_input_check": "Replaying the same commit range leaves current state unchanged."
+      },
+      "expected_output": {
+        "contract": "Replaying the same commit range leaves current state unchanged."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-093",
+    "tool_id": "delta-lake",
+    "title": "Validate an append-stream source contract",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-092"
+    ],
+    "scenario": "Test a streaming reader's behavior when a supposedly append-only Delta source is updated.",
+    "task": "Test a streaming reader's behavior when a supposedly append-only Delta source is updated.",
+    "learning_objective": "Validate an append-stream source contract",
+    "inputs": {
+      "fixture": "Training stream initial A/5; source append B/7 then controlled A update 6; preserved checkpoint.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Observed behavior follows supported reader options; updateisnot silently described as new append; incompatible change blocks or uses approved CDC path."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Observed behavior follows supported reader options; updateisnot silently described as new append; incompatible change blocks or uses approved CDC path.",
+      "Demonstrate the additional boundary: Pure append fixture A then B works with checkpoint restart.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Validate an append-stream source contract supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Validate an append-stream source contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "An append-only stream and a change-data feed have different source semantics."
+    ],
+    "sequence": 93,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Training stream initial A/5; source append B/7 then controlled A update 6; preserved checkpoint.",
+        "changed_input_check": "Pure append fixture A then B works with checkpoint restart."
+      },
+      "expected_output": {
+        "contract": "Pure append fixture A then B works with checkpoint restart."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-094",
+    "tool_id": "delta-lake",
+    "title": "Detect an unavailable change-feed range",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-048"
+    ],
+    "scenario": "Fail a downstream replay when its required change range is not available under actual table history/retention.",
+    "task": "Fail a downstream replay when its required change range is not available under actual table history/retention.",
+    "learning_objective": "Detect an unavailable change-feed range",
+    "inputs": {
+      "fixture": "Recorded accepted version V; requested range outside available feed; disposable fixture.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Explicit feed/history_unavailable status; no fallback to current full table under CDC label; last good downstream unchanged."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Explicit feed/history_unavailable status; no fallback to current full table under CDC label; last good downstream unchanged.",
+      "Demonstrate the additional boundary: Available bounded range processes correctly and advances cursor after acceptance.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Detect an unavailable change-feed range supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For detect an unavailable change-feed range, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Explicit feed/history_unavailable status; no fallback to current full table under CDC label; last good downstream unchanged.",
+      "Validate available version history before promising replay completeness."
+    ],
+    "sequence": 94,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Recorded accepted version V; requested range outside available feed; disposable fixture.",
+        "changed_input_check": "Available bounded range processes correctly and advances cursor after acceptance."
+      },
+      "expected_output": {
+        "contract": "Available bounded range processes correctly and advances cursor after acceptance."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-095",
+    "tool_id": "delta-lake",
+    "title": "Materialize a nondeterministic merge source deliberately",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-094"
+    ],
+    "scenario": "Prevent a merge source's generated values from changing across repeated evaluation under a supported runtime policy.",
+    "task": "Prevent a merge source's generated values from changing across repeated evaluation under a supported runtime policy.",
+    "learning_objective": "Materialize a nondeterministic merge source deliberately",
+    "inputs": {
+      "fixture": "Source I1 with one generated batch timestamp captured once; isolated target; evidence of materialization or stable parameter.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "AcceptedI1 has one consistent batch timestamp; rerun of same batch preserves declared identity; no unmeasured engine assumptions."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "AcceptedI1 has one consistent batch timestamp; rerun of same batch preserves declared identity; no unmeasured engine assumptions.",
+      "Demonstrate the additional boundary: New batch with new timestamp updates only under explicit business rule.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Materialize a nondeterministic merge source deliberately supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Materialize a nondeterministic merge source deliberately. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Count rows per business key before the requested operation. Identify whether repeated keys are identical or genuinely conflicting.",
+      "Keep batch metadata stable or materialize source data before an operation may evaluate it more than once."
+    ],
+    "sequence": 95,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Source I1 with one generated batch timestamp captured once; isolated target; evidence of materialization or stable parameter.",
+        "changed_input_check": "New batch with new timestamp updates only under explicit business rule."
+      },
+      "expected_output": {
+        "contract": "New batch with new timestamp updates only under explicit business rule."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-096",
+    "tool_id": "delta-lake",
+    "title": "Recover from a source-schema mismatch before merge",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-095"
+    ],
+    "scenario": "A source changes amount to an incompatible type mid-run. Reject it without corrupting target state or cursor.",
+    "task": "A source changes amount to an incompatible type mid-run. Reject it without corrupting target state or cursor.",
+    "learning_objective": "Recover from a source-schema mismatch before merge",
+    "inputs": {
+      "fixture": "Target I1/5,cursor 1; incoming event 2 amountarray[6].",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Run fails contract,cursor 1,targetI1/5; corrected decimal 6 replay accepts and event cursor 2."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Run fails contract,cursor 1,targetI1/5; corrected decimal 6 replay accepts and event cursor 2.",
+      "Demonstrate the additional boundary: An unrelated optional field does not mask the amount type failure.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Recover from a source-schema mismatch before merge supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Recover from a source-schema mismatch before merge. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Validate source contract before entering the mutation and cursor commit boundary."
+    ],
+    "sequence": 96,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Target I1/5,cursor 1; incoming event 2 amountarray[6].",
+        "changed_input_check": "An unrelated optional field does not mask the amount type failure."
+      },
+      "expected_output": {
+        "contract": "An unrelated optional field does not mask the amount type failure."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-097",
+    "tool_id": "delta-lake",
+    "title": "Prevent transaction-version reuse after a checkpoint reset",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-096"
+    ],
+    "scenario": "Assess a replay plan that resets streaming checkpoints but reuses an incompatible transaction identity/version sequence.",
+    "task": "Assess a replay plan that resets streaming checkpoints but reuses an incompatible transaction identity/version sequence.",
+    "learning_objective": "Prevent transaction-version reuse after a checkpoint reset",
+    "inputs": {
+      "fixture": "Disposable write history appA versions 1,2; proposed new checkpoint restart version 0; docs/runtime checked.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Plan blocks unsafe identity reuse or uses documented new identity policy; no skipped valid new batch claimed accepted."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Plan blocks unsafe identity reuse or uses documented new identity policy; no skipped valid new batch claimed accepted.",
+      "Demonstrate the additional boundary: Unchanged checkpoint continuation uses existing identity correctly.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Prevent transaction-version reuse after a checkpoint reset supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For prevent transaction-version reuse after a checkpoint reset, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Plan blocks unsafe identity reuse or uses documented new identity policy; no skipped valid new batch claimed accepted.",
+      "Checkpoint state and idempotent transaction versions must be coordinated; resetting one is not a neutral operation."
+    ],
+    "sequence": 97,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Disposable write history appA versions 1,2; proposed new checkpoint restart version 0; docs/runtime checked.",
+        "changed_input_check": "Unchanged checkpoint continuation uses existing identity correctly."
+      },
+      "expected_output": {
+        "contract": "Unchanged checkpoint continuation uses existing identity correctly."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-098",
+    "tool_id": "delta-lake",
+    "title": "Reduce a commit's changes to a net business effect",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-055"
+    ],
+    "scenario": "A report needs the net amount change for one commit rather than the sum of every feed row.",
+    "task": "A report needs the net amount change for one commit rather than the sum of every feed row.",
+    "learning_objective": "Reduce a commit's changes to a net business effect",
+    "inputs": {
+      "fixture": "Commit updates I1 from 5 to8,insertsI2/2,deletesI3/4.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Net amount change+1; calculation accounts for pre image-5,postimage+8,insert+2,delete-4."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Net amount change+1; calculation accounts for pre image-5,postimage+8,insert+2,delete-4.",
+      "Demonstrate the additional boundary: Commit with only identical no-op business payload has net0 under declared policy.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Reduce a commit's changes to a net business effect supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For reduce a commit's changes to a net business effect, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Net amount change+1; calculation accounts for pre image-5,postimage+8,insert+2,delete-4.",
+      "Change-feed rows describe transitions; they are not all additive business facts."
+    ],
+    "sequence": 98,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Commit updates I1 from 5 to8,insertsI2/2,deletesI3/4.",
+        "changed_input_check": "Commit with only identical no-op business payload has net0 under declared policy."
+      },
+      "expected_output": {
+        "contract": "Commit with only identical no-op business payload has net0 under declared policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-099",
+    "tool_id": "delta-lake",
+    "title": "Handle two historical changes in one batch",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-098"
+    ],
+    "scenario": "Build non-overlapping customer history when one source batch contains two ordered effective changes.",
+    "task": "Build non-overlapping customer history when one source batch contains two ordered effective changes.",
+    "learning_objective": "Handle two historical changes in one batch",
+    "inputs": {
+      "fixture": "C1 west from Oct1; source C1 northOct10,eastOct20; exact versions.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "History west Oct1-10,northOct10-20,eastOct20-current; one current row; rerun stable."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "History west Oct1-10,northOct10-20,eastOct20-current; one current row; rerun stable.",
+      "Demonstrate the additional boundary: Two changes with same effective time and conflicting payload require explicit resolution or rejection.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Handle two historical changes in one batch supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For handle two historical changes in one batch, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: History west Oct1-10,northOct10-20,eastOct20-current; one current row; rerun stable.",
+      "Process the ordered sequence,not merely the final current value,when preserving intermediate history."
+    ],
+    "sequence": 99,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "C1 west from Oct1; source C1 northOct10,eastOct20; exact versions.",
+        "changed_input_check": "Two changes with same effective time and conflicting payload require explicit resolution or rejection."
+      },
+      "expected_output": {
+        "contract": "Two changes with same effective time and conflicting payload require explicit resolution or rejection."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-100",
+    "tool_id": "delta-lake",
+    "title": "Reject overlapping effective intervals",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-099"
+    ],
+    "scenario": "Validate a supplied history table before using it for an as-of financial join.",
+    "task": "Validate a supplied history table before using it for an as-of financial join.",
+    "learning_objective": "Reject overlapping effective intervals",
+    "inputs": {
+      "fixture": "C1 west[Oct1,Oct20),east[Oct10,infinity); event Oct15 amount 5.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "OverlapC1Oct10-20 reported; as-of join blocked before duplicating amount 5."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "OverlapC1Oct10-20 reported; as-of join blocked before duplicating amount 5.",
+      "Demonstrate the additional boundary: Adjacent half-open intervals[Oct1,Oct10),[Oct10,infinity)pass.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Reject overlapping effective intervals supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For reject overlapping effective intervals, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: OverlapC1Oct10-20 reported; as-of join blocked before duplicating amount 5.",
+      "A temporal join assumes at most one valid dimension row at the event instant."
+    ],
+    "sequence": 100,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "C1 west[Oct1,Oct20),east[Oct10,infinity); event Oct15 amount 5.",
+        "changed_input_check": "Adjacent half-open intervals[Oct1,Oct10),[Oct10,infinity)pass."
+      },
+      "expected_output": {
+        "contract": "Adjacent half-open intervals[Oct1,Oct10),[Oct10,infinity)pass."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-101",
+    "tool_id": "delta-lake",
+    "title": "Rehearse concurrent disjoint partition writes",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-100"
+    ],
+    "scenario": "Observe two bounded writers updating separate date slices under the actual table/runtime isolation behavior.",
+    "task": "Observe two bounded writers updating separate date slices under the actual table/runtime isolation behavior.",
+    "learning_objective": "Rehearse concurrent disjoint partition writes",
+    "inputs": {
+      "fixture": "Disposable table Oct25A5,Oct26B7; writers correct A6 andB8 in controlled sessions.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Final A6,B8 or bounded retry that reaches it; observed conflicts/serialization documented; no claim all partition writes never conflict."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Final A6,B8 or bounded retry that reaches it; observed conflicts/serialization documented; no claim all partition writes never conflict.",
+      "Demonstrate the additional boundary: Overlapping writes use a separate conflict/retry policy and test.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Rehearse concurrent disjoint partition writes supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For rehearse concurrent disjoint partition writes, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Final A6,B8 or bounded retry that reaches it; observed conflicts/serialization documented; no claim all partition writes never conflict.",
+      "Concurrency guarantees depend on operation predicates,features and runtime; measure the exact fixture."
+    ],
+    "sequence": 101,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Disposable table Oct25A5,Oct26B7; writers correct A6 andB8 in controlled sessions.",
+        "changed_input_check": "Overlapping writes use a separate conflict/retry policy and test."
+      },
+      "expected_output": {
+        "contract": "Overlapping writes use a separate conflict/retry policy and test."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-102",
+    "tool_id": "delta-lake",
+    "title": "Compare changed-row and rewritten-file metrics",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-061"
+    ],
+    "scenario": "Measure a sparse update's logical row change separately from physical rewrite work.",
+    "task": "Measure a sparse update's logical row change separately from physical rewrite work.",
+    "learning_objective": "Compare changed-row and rewritten-file metrics",
+    "inputs": {
+      "fixture": "Disposable table 10000 fixedrows; update 10 knownkeys; supported history/scanmetrics.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Exactly 10 business rows changed; available files/bytes/operation metrics recorded with definitions; no equality assumed between rows changed and files rewritten."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Exactly 10 business rows changed; available files/bytes/operation metrics recorded with definitions; no equality assumed between rows changed and files rewritten.",
+      "Demonstrate the additional boundary: An unchanged payload must not be claimed as10 business changes just because a commit exists.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Compare changed-row and rewritten-file metrics supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Compare changed-row and rewritten-file metrics. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "Logical mutation scope and storage rewrite scope are different metrics."
+    ],
+    "sequence": 102,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Disposable table 10000 fixedrows; update 10 knownkeys; supported history/scanmetrics.",
+        "changed_input_check": "An unchanged payload must not be claimed as10 business changes just because a commit exists."
+      },
+      "expected_output": {
+        "contract": "An unchanged payload must not be claimed as10 business changes just because a commit exists."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-103",
+    "tool_id": "delta-lake",
+    "title": "Evaluate statistics coverage before data-skipping claims",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-102"
+    ],
+    "scenario": "Inspect supported table statistics/configuration before attributing a selective query's behavior to data skipping.",
+    "task": "Inspect supported table statistics/configuration before attributing a selective query's behavior to data skipping.",
+    "learning_objective": "Evaluate statistics coverage before data-skipping claims",
+    "inputs": {
+      "fixture": "Fixed fixture id,day,amount,payload; selective predicate on one field; compatible metadata access.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Report states actual statistics coverage and s can/plan observations; unsupported/missing stats means no proved skipping claim."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Report states actual statistics coverage and s can/plan observations; unsupported/missing stats means no proved skipping claim.",
+      "Demonstrate the additional boundary: A predicate on a field without available metrics is reported within that limitation.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Evaluate statistics coverage before data-skipping claims supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For evaluate statistics coverage before data-skipping claims, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Report states actual statistics coverage and s can/plan observations; unsupported/missing stats means no proved skipping claim.",
+      "A declared table format does not prove that every column has useful skipping statistics."
+    ],
+    "sequence": 103,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Fixed fixture id,day,amount,payload; selective predicate on one field; compatible metadata access.",
+        "changed_input_check": "A predicate on a field without available metrics is reported within that limitation."
+      },
+      "expected_output": {
+        "contract": "A predicate on a field without available metrics is reported within that limitation."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-104",
+    "tool_id": "delta-lake",
+    "title": "Verify compaction preserves retained snapshot reads",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-103"
+    ],
+    "scenario": "Compact a disposable table using a supported method while retaining a recorded older version for a reader test.",
+    "task": "Compact a disposable table using a supported method while retaining a recorded older version for a reader test.",
+    "learning_objective": "Verify compaction preserves retained snapshot reads",
+    "inputs": {
+      "fixture": "Version V with A/5,B/7; subsequent controlled writes; no cleanup/vacuum.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Current logical state unchanged by compaction; retained V read still matches its original fixture where supported; file count metrics recorded."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Current logical state unchanged by compaction; retained V read still matches its original fixture where supported; file count metrics recorded.",
+      "Demonstrate the additional boundary: A missing retained snapshot blocks recovery claim rather than being filled from current data.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Verify compaction preserves retained snapshot reads supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Verify compaction preserves retained snapshot reads. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "Compaction and historical-data cleanup are separate operations with different reader effects."
+    ],
+    "sequence": 104,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Version V with A/5,B/7; subsequent controlled writes; no cleanup/vacuum.",
+        "changed_input_check": "A missing retained snapshot blocks recovery claim rather than being filled from current data."
+      },
+      "expected_output": {
+        "contract": "A missing retained snapshot blocks recovery claim rather than being filled from current data."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-105",
+    "tool_id": "delta-lake",
+    "title": "Benchmark a selective merge with mutable-key safeguards",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-104"
+    ],
+    "scenario": "Compare scoped and unscoped merges only after proving the scoping predicate preserves all valid key matches.",
+    "task": "Compare scoped and unscoped merges only after proving the scoping predicate preserves all valid key matches.",
+    "learning_objective": "Benchmark a selective merge with mutable-key safeguards",
+    "inputs": {
+      "fixture": "Target four dates; source changes 10 keys whose business date contract immutable; separate mutable-date counterexample.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Optimized fixture matches trusted final state; counterexample prevents reusing unsafe assumption; plans/metrics reported."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Optimized fixture matches trusted final state; counterexample prevents reusing unsafe assumption; plans/metrics reported.",
+      "Demonstrate the additional boundary: A changed business date case cannot pass using the same immutable-date optimization.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Benchmark a selective merge with mutable-key safeguards supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For benchmark a selective merge with mutable-key safeguards, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Optimized fixture matches trusted final state; counterexample prevents reusing unsafe assumption; plans/metrics reported.",
+      "An optimization is valid only under its source/target key invariants."
+    ],
+    "sequence": 105,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Target four dates; source changes 10 keys whose business date contract immutable; separate mutable-date counterexample.",
+        "changed_input_check": "A changed business date case cannot pass using the same immutable-date optimization."
+      },
+      "expected_output": {
+        "contract": "A changed business date case cannot pass using the same immutable-date optimization."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-106",
+    "tool_id": "delta-lake",
+    "title": "Gate a protocol-affecting feature change",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-067"
+    ],
+    "scenario": "Prepare a test promotion decision for a feature requiring a newer table protocol/reader capability.",
+    "task": "Prepare a test promotion decision for a feature requiring a newer table protocol/reader capability.",
+    "learning_objective": "Gate a protocol-affecting feature change",
+    "inputs": {
+      "fixture": "Disposable candidate; current reader requirements and feature docs; no production upgrade.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Compatibility matrix and actual bounded read tests where available; unsupported reader blocks promotion; rollback limitations stated."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Compatibility matrix and actual bounded read tests where available; unsupported reader blocks promotion; rollback limitations stated.",
+      "Demonstrate the additional boundary: A failed old reader cannot be labeled compatible just because a new reader works.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Gate a protocol-affecting feature change supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For gate a protocol-affecting feature change, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Compatibility matrix and actual bounded read tests where available; unsupported reader blocks promotion; rollback limitations stated.",
+      "Protocol changes can affect every consumer,not only the writer enabling the feature."
+    ],
+    "sequence": 106,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Disposable candidate; current reader requirements and feature docs; no production upgrade.",
+        "changed_input_check": "A failed old reader cannot be labeled compatible just because a new reader works."
+      },
+      "expected_output": {
+        "contract": "A failed old reader cannot be labeled compatible just because a new reader works."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-107",
+    "tool_id": "delta-lake",
+    "title": "Protect accepted data from a repair script's scope error",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-106"
+    ],
+    "scenario": "Test a repair entry point that receives a table/date and must refuse unrelated output roots.",
+    "task": "Test a repair entry point that receives a table/date and must refuse unrelated output roots.",
+    "learning_objective": "Protect accepted data from a repair script's scope error",
+    "inputs": {
+      "fixture": "Assigned training table and date Oct26; requested unrelated table or invalid date; sentinels.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Invalid scope blocked before mutation; valid repair touches only approved slice; sentinels unchanged."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Invalid scope blocked before mutation; valid repair touches only approved slice; sentinels unchanged.",
+      "Demonstrate the additional boundary: An unqualified short table name does not bypass the approved namespace check.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Protect accepted data from a repair script's scope error supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Protect accepted data from a repair script's scope error. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "Resolve and validate the complete target identity before a repair action."
+    ],
+    "sequence": 107,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Assigned training table and date Oct26; requested unrelated table or invalid date; sentinels.",
+        "changed_input_check": "An unqualified short table name does not bypass the approved namespace check."
+      },
+      "expected_output": {
+        "contract": "An unqualified short table name does not bypass the approved namespace check."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-108",
+    "tool_id": "delta-lake",
+    "title": "Reconcile a restored table with downstream cursors",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-107"
+    ],
+    "scenario": "Rehearse the operational consequence of restoring a table while a downstream consumer tracks versions.",
+    "task": "Rehearse the operational consequence of restoring a table while a downstream consumer tracks versions.",
+    "learning_objective": "Reconcile a restored table with downstream cursors",
+    "inputs": {
+      "fixture": "Disposable table good V,incorrectV+1; supported restore/reconstruction; downstream cursor recorded.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Recovery plan and tests reconcile current data and consumer state; no assumption that restore erases history or rewinds every consumer automatically."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Recovery plan and tests reconcile current data and consumer state; no assumption that restore erases history or rewinds every consumer automatically.",
+      "Demonstrate the additional boundary: A downstream feed replay must not double apply the correction.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Reconcile a restored table with downstream cursors supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Reconcile a restored table with downstream cursors. Identify the one observable difference between the supplied normal and boundary cases.",
+      "List the old accepted cursor/version and order every supplied arrival by the contract, rather than by arrival time alone.",
+      "Restoring current table contents and reconciling every consumer's accepted position are separate tasks."
+    ],
+    "sequence": 108,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Disposable table good V,incorrectV+1; supported restore/reconstruction; downstream cursor recorded.",
+        "changed_input_check": "A downstream feed replay must not double apply the correction."
+      },
+      "expected_output": {
+        "contract": "A downstream feed replay must not double apply the correction."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-109",
+    "tool_id": "delta-lake",
+    "title": "Keep audit claims tied to exact retained evidence",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-108"
+    ],
+    "scenario": "Build an incident bundle for a bounded update using actual versions,operation metrics and business checks.",
+    "task": "Build an incident bundle for a bounded update using actual versions,operation metrics and business checks.",
+    "learning_objective": "Keep audit claims tied to exact retained evidence",
+    "inputs": {
+      "fixture": "I1 changed 5 to6 inbatch B1; fake P II in restricted raw; record history availability.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Bundle links B1,version range,changedkey,total and observed tests; norawPII; unavailable history explicit."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Bundle links B1,version range,changedkey,total and observed tests; norawPII; unavailable history explicit.",
+      "Demonstrate the additional boundary: A copied screenshot without version/batch identity cannot prove which state was checked.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Keep audit claims tied to exact retained evidence supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For keep audit claims tied to exact retained evidence, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Bundle links B1,version range,changedkey,total and observed tests; norawPII; unavailable history explicit.",
+      "Operational history supports an audit only when it connects to the actual business acceptance evidence."
+    ],
+    "sequence": 109,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "I1 changed 5 to6 inbatch B1; fake P II in restricted raw; record history availability.",
+        "changed_input_check": "A copied screenshot without version/batch identity cannot prove which state was checked."
+      },
+      "expected_output": {
+        "contract": "A copied screenshot without version/batch identity cannot prove which state was checked."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-110",
+    "tool_id": "delta-lake",
+    "title": "Independent reservation-ledger transfer",
+    "level": 10,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-071"
+    ],
+    "scenario": "Build a bounded current reservation store with capacity conservation,ordered cancellations and replay-safe events.",
+    "task": "Build a bounded current reservation store with capacity conservation,ordered cancellations and replay-safe events.",
+    "learning_objective": "Independent reservation-ledger transfer",
+    "inputs": {
+      "fixture": "Room R capacity 2; E1 reserveB1 one,E2 reserveB2 one,E3 reserveB3 one exceeds capacity,E4 cancelB1; duplicateE2; versions provided.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "B3 rejected when full; final active B2 one,available 1; duplicate once; current/history/restart and late-event tests provided."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "B3 rejected when full; final active B2 one,available 1; duplicate once; current/history/restart and late-event tests provided.",
+      "Demonstrate the additional boundary: Cancellation of an unknown reservation does not create capacity out of nothing.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Independent reservation-ledger transfer supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For independent reservation-ledger transfer, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: B3 rejected when full; final active B2 one,available 1; duplicate once; current/history/restart and late-event tests provided.",
+      "Model conservation and operation semantics before adapting invoice-style upserts."
+    ],
+    "sequence": 110,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Room R capacity 2; E1 reserveB1 one,E2 reserveB2 one,E3 reserveB3 one exceeds capacity,E4 cancelB1; duplicateE2; versions provided.",
+        "changed_input_check": "Cancellation of an unknown reservation does not create capacity out of nothing."
+      },
+      "expected_output": {
+        "contract": "Cancellation of an unknown reservation does not create capacity out of nothing."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DELTA-LAKE-111",
+    "tool_id": "delta-lake",
+    "title": "Independent effective-price history transfer",
+    "level": 10,
+    "prerequisites": [
+      "RLP-DELTA-LAKE-110"
+    ],
+    "scenario": "Build a product-price history and reproducible as-of invoice valuation under late corrections.",
+    "task": "Build a product-price history and reproducible as-of invoice valuation under late corrections.",
+    "learning_objective": "Independent effective-price history transfer",
+    "inputs": {
+      "fixture": "P1 price 10 from Oct1,12 from Oct10; late corrected 11 from Oct5 arrives Oct20; invoices Oct3 qty2,Oct7 qty1,Oct12 qty1.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Effective-time valuations 20,11,12 under declared policy; intervals non-overlap; replay stable; retained report version explains late restatement."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Effective-time valuations 20,11,12 under declared policy; intervals non-overlap; replay stable; retained report version explains late restatement.",
+      "Demonstrate the additional boundary: A missing price interval quarantines invoice instead of using current price.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Independent effective-price history transfer supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://docs.delta.io/delta-update/",
+      "https://docs.delta.io/delta-batch/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For independent effective-price history transfer, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing delta-lake environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Effective-time valuations 20,11,12 under declared policy; intervals non-overlap; replay stable; retained report version explains late restatement.",
+      "An as-of business price differs from the price visible at ingestion time; state which contract you implement."
+    ],
+    "sequence": 111,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "P1 price 10 from Oct1,12 from Oct10; late corrected 11 from Oct5 arrives Oct20; invoices Oct3 qty2,Oct7 qty1,Oct12 qty1.",
+        "changed_input_check": "A missing price interval quarantines invoice instead of using current price."
+      },
+      "expected_output": {
+        "contract": "A missing price interval quarantines invoice instead of using current price."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "author_files_frozen_pending_parent_publication",
+  "tracks": {
+    "pyspark": {
+      "target": 400,
+      "preserved_prior": 151,
+      "batch5_additions": 34,
+      "prepared_total": 185,
+      "remaining": 215,
+      "next_id": "RLP-PYSPARK-186",
+      "sha256": "8bf1127937ee196ae7fa119ba9ac955c40590fdb4148cb43ed0a2e77e80299f5"
+    },
+    "adf": {
+      "target": 350,
+      "preserved_prior": 148,
+      "batch5_additions": 32,
+      "prepared_total": 180,
+      "remaining": 170,
+      "next_id": "RLP-ADF-181",
+      "sha256": "57dd1344d459fe68cf2ddd076ae88e0e390d705a2ec86a586681475a10fd9b9c"
+    },
+    "databricks": {
+      "target": 250,
+      "preserved_prior": 151,
+      "batch5_additions": 26,
+      "prepared_total": 177,
+      "remaining": 73,
+      "next_id": "RLP-DATABRICKS-178",
+      "sha256": "a5626e37f5985847ca91f2497a70c83400c3e41b15d899ad42eb1e833a3eb266"
+    }
+  }
+}

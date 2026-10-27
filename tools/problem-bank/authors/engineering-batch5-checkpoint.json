@@ -1,0 +1,17 @@
+{
+  "state": "prepared_not_published",
+  "proposed": 143,
+  "published_added": 0,
+  "counts": {
+    "dbt": 45,
+    "snowflake": 45,
+    "cicd": 53
+  },
+  "proposal_sha256": "0bc0c4f5490aa7d3f77b2fa3868f5def19d455df7758558e9eb058b7d3b166dd",
+  "source_files_sha256": {
+    "dbt": "ecd6f78b442dedc82aeecc0e75e3937acaea2f0a51e95904ba94b3b13807c805",
+    "snowflake": "03e070560fc820a928f38f47ac0230d421b19c048972062b1dd997b60651229e",
+    "cicd": "5bb4944d5a24168f48502a9aa593a5d97a8feb71f907f980bd987583813c1bca"
+  },
+  "errors": []
+}

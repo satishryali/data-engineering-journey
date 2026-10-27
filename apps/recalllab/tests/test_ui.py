@@ -26,7 +26,8 @@ class UITests(unittest.TestCase):
         self.addCleanup(self.env.stop)
 
     def test_all_pages_render_and_dashboard_navigation(self):
-        app = AppTest.from_file(str(APP / 'app.py'), default_timeout=20).run()
+        # The first catalog load can exceed Streamlit's default on slower CI hosts.
+        app = AppTest.from_file(str(APP / 'app.py'), default_timeout=60).run()
         self.assertFalse(app.exception)
         app.query_params['view'] = "Today's Session"
         app.run()

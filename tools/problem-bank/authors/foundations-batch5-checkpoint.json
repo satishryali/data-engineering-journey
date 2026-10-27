@@ -1,0 +1,21 @@
+{
+  "status": "new_append_only_content_frozen",
+  "tools": {
+    "python": {
+      "new": 85,
+      "first_id": "RLP-PY-366",
+      "last_id": "RLP-PY-450",
+      "total_if_registered": 450,
+      "target": 450,
+      "sha256": "a1934e317c9dc1ef67534785653aaa15d3fda6d860bfc7b854ce7b0bf002aa4b"
+    },
+    "sql": {
+      "new": 99,
+      "first_id": "RLP-SQL-352",
+      "last_id": "RLP-SQL-450",
+      "total_if_registered": 450,
+      "target": 450,
+      "sha256": "cabd6be886ce54ca23c03b0d4f27f57d75277ce15efbdb1a56e9e20a5d03ee37"
+    }
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "curriculum_version": "2026.10.27.7",
+  "published_total": 4213,
+  "content_batches": [
+    {
+      "path": "tools/problem-bank/python.json",
+      "authored": 133,
+      "published": 133,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/sql.json",
+      "authored": 133,
+      "published": 133,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/postgresql.json",
+      "authored": 88,
+      "published": 88,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark.json",
+      "authored": 72,
+      "published": 72,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf.json",
+      "authored": 69,
+      "published": 69,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adls.json",
+      "authored": 70,
+      "published": 70,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/databricks.json",
+      "authored": 70,
+      "published": 70,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/delta-lake.json",
+      "authored": 70,
+      "published": 70,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/data-modelling.json",
+      "authored": 199,
+      "published": 199,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pipeline-reliability.json",
+      "authored": 49,
+      "published": 49,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/data-quality.json",
+      "authored": 180,
+      "published": 180,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/airflow.json",
+      "authored": 179,
+      "published": 179,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/dbt.json",
+      "authored": 149,
+      "published": 149,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/snowflake.json",
+      "authored": 149,
+      "published": 149,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/git.json",
+      "authored": 69,
+      "published": 69,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/shell.json",
+      "authored": 69,
+      "published": 69,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/docker.json",
+      "authored": 79,
+      "published": 79,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/azure.json",
+      "authored": 89,
+      "published": 89,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/cloud-security.json",
+      "authored": 89,
+      "published": 89,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/cicd.json",
+      "authored": 129,
+      "published": 129,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/integrated-pipelines.json",
+      "authored": 350,
+      "published": 107,
+      "draft": 243
+    },
+    {
+      "path": "tools/problem-bank/assessments.json",
+      "authored": 4,
+      "published": 4,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/python-batch2.json",
+      "authored": 66,
+      "published": 66,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/sql-batch2.json",
+      "authored": 66,
+      "published": 66,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/postgresql-batch2.json",
+      "authored": 88,
+      "published": 88,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch2.json",
+      "authored": 40,
+      "published": 40,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf-batch2.json",
+      "authored": 40,
+      "published": 40,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adls-batch2.json",
+      "authored": 40,
+      "published": 40,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/databricks-batch2.json",
+      "authored": 40,
+      "published": 40,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/delta-lake-batch2.json",
+      "authored": 40,
+      "published": 40,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/python-batch3.json",
+      "authored": 110,
+      "published": 110,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/sql-batch3.json",
+      "authored": 100,
+      "published": 100,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch3.json",
+      "authored": 38,
+      "published": 38,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf-batch3.json",
+      "authored": 38,
+      "published": 38,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adls-batch3.json",
+      "authored": 38,
+      "published": 38,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/integrated-bridges.json",
+      "authored": 80,
+      "published": 80,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/python-batch4.json",
+      "authored": 44,
+      "published": 44,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/sql-batch4.json",
+      "authored": 44,
+      "published": 44,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adls-batch4.json",
+      "authored": 31,
+      "published": 31,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/delta-lake-batch4.json",
+      "authored": 39,
+      "published": 39,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/databricks-batch4.json",
+      "authored": 40,
+      "published": 40,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/python-batch5.json",
+      "authored": 85,
+      "published": 85,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/sql-batch5.json",
+      "authored": 99,
+      "published": 99,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch5.json",
+      "authored": 34,
+      "published": 34,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf-batch5.json",
+      "authored": 32,
+      "published": 32,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/databricks-batch5.json",
+      "authored": 26,
+      "published": 26,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch6.json",
+      "authored": 22,
+      "published": 22,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf-batch6.json",
+      "authored": 20,
+      "published": 20,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/databricks-batch6.json",
+      "authored": 17,
+      "published": 17,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch7.json",
+      "authored": 20,
+      "published": 20,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf-batch7.json",
+      "authored": 19,
+      "published": 19,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/databricks-batch7.json",
+      "authored": 23,
+      "published": 23,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/integrated-bridges-batch2.json",
+      "authored": 159,
+      "published": 159,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch8.json",
+      "authored": 25,
+      "published": 25,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf-batch8.json",
+      "authored": 19,
+      "published": 19,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/databricks-batch8.json",
+      "authored": 33,
+      "published": 33,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch9.json",
+      "authored": 40,
+      "published": 40,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch10.json",
+      "authored": 55,
+      "published": 55,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/pyspark-batch11.json",
+      "authored": 53,
+      "published": 53,
+      "draft": 0
+    },
+    {
+      "path": "tools/problem-bank/adf-batch9.json",
+      "authored": 112,
+      "published": 112,
+      "draft": 0
+    }
+  ],
+  "draft_total": 243,
+  "independent_followups_requiring_learner_chosen_input": 2436,
+  "independent_followup_policy": "These problems require an exact new input and expected result supplied before implementation, then human review. This variant does not inflate published totals.",
+  "target_total": 4200,
+  "allocated_target_total": 4200,
+  "target_note": "The requested numeric allocation totals 4,000. Integrated Pipeline Projects includes 200 additional bridge/transfer challenges.",
+  "technology_counts": {
+    "adf": 350,
+    "adls": 180,
+    "ai-genai": 1,
+    "airflow": 180,
+    "azure": 90,
+    "azure-advanced": 1,
+    "cicd": 130,
+    "cloud-security": 90,
+    "data-modelling": 200,
+    "data-quality": 180,
+    "databricks": 250,
+    "dbt": 150,
+    "delta-lake": 150,
+    "docker": 80,
+    "fabric": 1,
+    "git": 70,
+    "grafana": 1,
+    "infrastructure-as-code": 1,
+    "integrated-pipelines": 350,
+    "jenkins": 1,
+    "kafka": 1,
+    "kubernetes": 1,
+    "pipeline-reliability": 50,
+    "plsql": 1,
+    "postgresql": 180,
+    "powerbi": 1,
+    "prometheus": 1,
+    "pyspark": 400,
+    "python": 450,
+    "sap-hana": 1,
+    "shell": 70,
+    "snowflake": 150,
+    "sql": 450,
+    "vault": 1
+  },
+  "track_counts": [
+    {
+      "track": "Python for Data Engineering",
+      "technology_ids": [
+        "python"
+      ],
+      "target": 450,
+      "published": 450,
+      "remaining": 0
+    },
+    {
+      "track": "SQL and advanced SQL",
+      "technology_ids": [
+        "sql"
+      ],
+      "target": 450,
+      "published": 450,
+      "remaining": 0
+    },
+    {
+      "track": "PostgreSQL",
+      "technology_ids": [
+        "postgresql"
+      ],
+      "target": 180,
+      "published": 180,
+      "remaining": 0
+    },
+    {
+      "track": "PySpark and Spark SQL",
+      "technology_ids": [
+        "pyspark"
+      ],
+      "target": 400,
+      "published": 400,
+      "remaining": 0
+    },
+    {
+      "track": "Azure Data Factory",
+      "technology_ids": [
+        "adf"
+      ],
+      "target": 350,
+      "published": 350,
+      "remaining": 0
+    },
+    {
+      "track": "ADLS Gen2 and Azure Storage",
+      "technology_ids": [
+        "adls"
+      ],
+      "target": 180,
+      "published": 180,
+      "remaining": 0
+    },
+    {
+      "track": "Azure Databricks",
+      "technology_ids": [
+        "databricks"
+      ],
+      "target": 250,
+      "published": 250,
+      "remaining": 0
+    },
+    {
+      "track": "Delta Lake",
+      "technology_ids": [
+        "delta-lake"
+      ],
+      "target": 150,
+      "published": 150,
+      "remaining": 0
+    },
+    {
+      "track": "Data Modeling and ETL/ELT",
+      "technology_ids": [
+        "data-modelling",
+        "pipeline-reliability"
+      ],
+      "target": 250,
+      "published": 250,
+      "remaining": 0
+    },
+    {
+      "track": "Data Quality and Testing",
+      "technology_ids": [
+        "data-quality"
+      ],
+      "target": 180,
+      "published": 180,
+      "remaining": 0
+    },
+    {
+      "track": "Apache Airflow",
+      "technology_ids": [
+        "airflow"
+      ],
+      "target": 180,
+      "published": 180,
+      "remaining": 0
+    },
+    {
+      "track": "dbt",
+      "technology_ids": [
+        "dbt"
+      ],
+      "target": 150,
+      "published": 150,
+      "remaining": 0
+    },
+    {
+      "track": "Snowflake",
+      "technology_ids": [
+        "snowflake"
+      ],
+      "target": 150,
+      "published": 150,
+      "remaining": 0
+    },
+    {
+      "track": "Git, Linux and Docker",
+      "technology_ids": [
+        "docker",
+        "git",
+        "shell"
+      ],
+      "target": 220,
+      "published": 220,
+      "remaining": 0
+    },
+    {
+      "track": "Azure Fundamentals, Security and Monitoring",
+      "technology_ids": [
+        "azure",
+        "cloud-security"
+      ],
+      "target": 180,
+      "published": 180,
+      "remaining": 0
+    },
+    {
+      "track": "CI/CD and Deployment",
+      "technology_ids": [
+        "cicd"
+      ],
+      "target": 130,
+      "published": 130,
+      "remaining": 0
+    },
+    {
+      "track": "Integrated Pipeline Projects",
+      "technology_ids": [
+        "integrated-pipelines"
+      ],
+      "target": 350,
+      "published": 350,
+      "remaining": 0
+    }
+  ],
+  "remaining_target_problems": 0,
+  "missing_fields": [],
+  "duplicates": [],
+  "similar_task_candidates": [],
+  "broken_prerequisites_and_structure": [],
+  "job_ready_pathway_errors": [],
+  "job_ready_pathway_count": 209,
+  "schema_valid": true,
+  "quantity_complete": true,
+  "release_checks": {
+    "app_tests_passed": true,
+    "app_tests_count": 102,
+    "tracking_tests_passed": true,
+    "tracking_tests_count": 27,
+    "coach_validation_passed": true,
+    "specialist_content_review_recorded": true,
+    "manual_review_limitation_disclosed": true
+  },
+  "pedagogical_quality": "Automated checks detect structural defects and duplicate candidates; they do not prove 4,200 meaningful pedagogical distinctions.",
+  "acceptance_complete": true
+}

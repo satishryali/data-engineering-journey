@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "author_files_frozen_pending_parent_publication",
+  "tracks": {
+    "pyspark": {
+      "target": 400,
+      "preserved_prior": 347,
+      "batch11_additions": 53,
+      "prepared_total": 400,
+      "remaining": 0,
+      "next_id": "RLP-PYSPARK-401",
+      "sha256": "d8b9b496214d5bea18fa423743e2db44629fa52197425b05bf55c79885d05403"
+    }
+  }
+}

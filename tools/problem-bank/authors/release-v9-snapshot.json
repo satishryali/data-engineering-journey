@@ -1,0 +1,12 @@
+{
+  "version": "2026.10.27.4",
+  "status": "frozen_after_specialized_agent_qa",
+  "file_sha256": {
+    "engineering-promotions11.json": "d3b32f0c317b5f2f56a4bbb4d8e071d0d88dafe4081f86c1eda73083e9a9a003",
+    "engineering-promotions12.json": "e4e140c5120e908d547bdea1d079d27b7953a7700dbf47632507c55fa7d2be40",
+    "integrated-bridges-batch2.json": "48f6814bde33f9273041edd2dc40774c92aebff5875f4116ac6173fdcb197b36",
+    "pyspark-batch8.json": "682e6450d270b3b72403c692230c4996215acde1ef6996af4495546ed4a2cb0d",
+    "adf-batch8.json": "856ef843bf55b3f378f7de9abdd8c5727b88d5d3ce4bdbed235d496f0f5d7f0f",
+    "databricks-batch8.json": "969d25f5ad6c9d90ef9c2f10b439599578a43be65db56a0cb94a5c7dc757455f"
+  }
+}

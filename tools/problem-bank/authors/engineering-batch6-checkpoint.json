@@ -1,0 +1,15 @@
+{
+  "state": "prepared_not_published",
+  "proposed": 35,
+  "published_added": 0,
+  "counts": {
+    "cloud-security": 13,
+    "integrated-pipelines": 22
+  },
+  "proposal_sha256": "d0d2a7db0039659aa234b31c80fdd620f36f2aa0cc476b6d6e61147afe5cb862",
+  "source_files_sha256": {
+    "cloud-security": "a21dab0a0489e74d1a85fb0427997e229f2872624b348c895245747cb0c333cb",
+    "integrated-pipelines": "a03ff0c2f734417e60f738e3a0db784a003bb2a07bda52767fa51e9b14a29316"
+  },
+  "errors": []
+}

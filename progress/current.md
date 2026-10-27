@@ -1,5 +1,13 @@
 # Current tutoring checkpoint - Python notes saved, 25 October 2026 (IST)
 
+## RecallLab bank expansion, 27 October 2026
+
+Infrastructure status: **4,213 published problems** meet all 4,200 allocated targets; 243 drafts remain excluded. [Actual counts and verification limits](../apps/recalllab/BANK-EXPANSION.md) are recorded separately. This adds no learner completion, score, review date or study time; the exact pending Python and RDS-001 tasks below remain unchanged.
+
+## RecallLab implementation revision, 26 October 2026
+
+The learner revised the job-readiness target to **20 January 2027**, superseding January 22. The existing roadmap now includes November 15 foundation, December 6 transformation and December 27 Azure assessments. Tools problem practice is infrastructure work: published IDs/counters, assistance and verified evidence remain separate. No learner completion, proficiency, retention date or timer change is implied. Preserve the Python follow-up below and RDS-001 acceptance; see [RecallLab handoff](../apps/recalllab/HANDOFF.md) for implementation verification.
+
 <!-- CP-20261026-dataclass-special-method-notes -->
 Dataclass and special-method reference notes saved, 26 October 2026. Added Notes/Python/Concepts/dataclasses.md and special-methods.md with one standalone example per method; updated objects-and-printing.md, Python index and separate recall prompts. Inspected practice/Dataclass/dataclass.ipynb and its saved outputs (string order_id, equality, reversed __lt__, negative __len__, item access); assistance/independent understanding unknown. Attached snapshots were inaccessible and unchanged. No scored review, timer change or task acceptance. Two new concepts remain unassessed with adjustable initial slots, not retention due dates. Examples were not rerun during the original note save. Publishing verification on 26 October refreshed the note inventory and passed coach validation; no learner assessment was added. Next Python step: practise one method at a time, starting with __repr__ and __str__, and explain actual output/help used. Earlier returned-summary verification remains pending; RDS-001 remains the pending project task.
 

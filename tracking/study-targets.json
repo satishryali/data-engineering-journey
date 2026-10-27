@@ -2,7 +2,7 @@
   "timezone": "Asia/Kolkata",
   "tracking_start": "2026-10-15",
   "preparation_start": "2026-10-22",
-  "preparation_deadline": "2027-01-22",
+  "preparation_deadline": "2027-01-20",
   "targets": [
     {"effective_date": "2026-10-15", "weekday_hours": 6, "weekend_hours": 10},
     {"effective_date": "2026-10-22", "weekday_hours": 7, "weekend_hours": 10}

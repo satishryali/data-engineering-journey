@@ -1,0 +1,161 @@
+{
+  "version": "2026.10.26.2",
+  "tracks": {
+    "data-modelling": {
+      "state": "partial_publication",
+      "candidate_additions": 199,
+      "published_additions": 44,
+      "draft_candidates": 155,
+      "actual_published_total_including_seed": 45,
+      "target_total": 200,
+      "sha256": "f42eb26ebbf49068b150d44730ca00e4ca99b7f564371d6e97935e546153d5b3",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "pipeline-reliability": {
+      "state": "partial_publication",
+      "candidate_additions": 49,
+      "published_additions": 44,
+      "draft_candidates": 5,
+      "actual_published_total_including_seed": 45,
+      "target_total": 50,
+      "sha256": "ca543afac4174c7186783a6ec5ba2678d899be7cb2564e4a9da92b56d0343da4",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "data-quality": {
+      "state": "partial_publication",
+      "candidate_additions": 180,
+      "published_additions": 44,
+      "draft_candidates": 136,
+      "actual_published_total_including_seed": 44,
+      "target_total": 180,
+      "sha256": "259a88f94157dd408fe691e9557ea00775de359bfbc8c6db5f784e29a401423c",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "airflow": {
+      "state": "partial_publication",
+      "candidate_additions": 179,
+      "published_additions": 44,
+      "draft_candidates": 135,
+      "actual_published_total_including_seed": 45,
+      "target_total": 180,
+      "sha256": "404ecae9f5a21ea043f4d19cee705c378d98927cfc9aefc61512b5d827ecb8c3",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "dbt": {
+      "state": "partial_publication",
+      "candidate_additions": 149,
+      "published_additions": 44,
+      "draft_candidates": 105,
+      "actual_published_total_including_seed": 45,
+      "target_total": 150,
+      "sha256": "fc2e8478f2a5633779d603e4ac07ea90e7b2e61cce9b1ae3fac583ecc7b74b51",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "snowflake": {
+      "state": "partial_publication",
+      "candidate_additions": 149,
+      "published_additions": 44,
+      "draft_candidates": 105,
+      "actual_published_total_including_seed": 45,
+      "target_total": 150,
+      "sha256": "47d5419347a9a274c659755f9b4ee6105458e21020a6034851aaf5f177bf3434",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "git": {
+      "state": "partial_publication",
+      "candidate_additions": 69,
+      "published_additions": 38,
+      "draft_candidates": 31,
+      "actual_published_total_including_seed": 39,
+      "target_total": 70,
+      "sha256": "586ae6872186dd781156559a8173bcdf6977d7d8556669da957575d53053e51e",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "shell": {
+      "state": "partial_publication",
+      "candidate_additions": 69,
+      "published_additions": 44,
+      "draft_candidates": 25,
+      "actual_published_total_including_seed": 45,
+      "target_total": 70,
+      "sha256": "57cb87e8a28e6e881542dbdc2cc4e4da9d5cc45b613f893958256ef1bd90c5ae",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "docker": {
+      "state": "partial_publication",
+      "candidate_additions": 79,
+      "published_additions": 44,
+      "draft_candidates": 35,
+      "actual_published_total_including_seed": 45,
+      "target_total": 80,
+      "sha256": "5ee83358631dcfd9f85f2b1a9a036caf65bfc33c227067315044579319bbdceb",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "azure": {
+      "state": "partial_publication",
+      "candidate_additions": 89,
+      "published_additions": 44,
+      "draft_candidates": 45,
+      "actual_published_total_including_seed": 45,
+      "target_total": 90,
+      "sha256": "83729e0240c1c1f17448992bc1966ec903337345a13cee95aed2cb1b8af7d7e4",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "cloud-security": {
+      "state": "partial_publication",
+      "candidate_additions": 89,
+      "published_additions": 44,
+      "draft_candidates": 45,
+      "actual_published_total_including_seed": 45,
+      "target_total": 90,
+      "sha256": "65402c90b83232d48d94904f269a4eac5b7575f95c80a685daa3b57fcb1a1ae5",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "cicd": {
+      "state": "partial_publication",
+      "candidate_additions": 129,
+      "published_additions": 44,
+      "draft_candidates": 85,
+      "actual_published_total_including_seed": 45,
+      "target_total": 130,
+      "sha256": "d621a6da8d022bb36e8ca1e1495d0dbb3a2d7a5aed439564817246ed88103405",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    },
+    "integrated-pipelines": {
+      "state": "partial_publication",
+      "candidate_additions": 350,
+      "published_additions": 44,
+      "draft_candidates": 306,
+      "actual_published_total_including_seed": 44,
+      "target_total": 350,
+      "sha256": "e8872326c2286a0055747db093371f3d8ce2c9c1e98fbf41b663d0728a88bef2",
+      "schema_errors": 0,
+      "duplicate_contracts": 0,
+      "semantic_limit": "Schema and contract distinction checked; meaningfulness requires pedagogical review."
+    }
+  }
+}

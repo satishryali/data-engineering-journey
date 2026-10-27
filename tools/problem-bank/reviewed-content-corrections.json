@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "status": "unregistered_corrections",
+  "source_version": "2026.10.27.4",
+  "proposals": [
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-366",
+      "original_sha256": "ce155372716b6deaa4c88bafc63d1fbb9d7f0d12f906868b38c86b9bb9a35731",
+      "problem": {
+        "id": "RLP-PY-366",
+        "tool_id": "python",
+        "title": "Read a delivery event identifier",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 366,
+        "scenario": "A courier feed preview needs to show one supplied event ID before processing its payload.",
+        "task": "From the courier event, return only the literal ID as text. For a changed status value, verify the ID is unchanged; do not claim the status passed validation.",
+        "learning_objective": "Read a delivery event identifier",
+        "inputs": {
+          "fixture_contract": "event={'id':'EV7','status':'picked_up'}",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "EV7"
+        },
+        "constraints": [
+          "Reading the ID does not prove the status is valid.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: EV7",
+          "Check this business boundary with a separate case: Reading the ID does not prove the status is valid.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-323"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Reading the ID does not prove the status is valid.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-367",
+      "original_sha256": "d298d30ce21ec16662a7b392cba4ebbee25b1b45155cfe8fc1a8f78745590f3c",
+      "problem": {
+        "id": "RLP-PY-367",
+        "tool_id": "python",
+        "title": "Read a supplied event status",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 367,
+        "scenario": "An operator wants the original status text from a single courier event.",
+        "task": "Return the courier status exactly as supplied. In a changed case, preserve the different spelling PICKED_UP rather than silently normalizing it.",
+        "learning_objective": "Read a supplied event status",
+        "inputs": {
+          "fixture_contract": "event={'id':'EV7','status':'picked_up'}",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "picked_up"
+        },
+        "constraints": [
+          "Preserve source spelling instead of silently changing the status.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: picked_up",
+          "Check this business boundary with a separate case: Preserve source spelling instead of silently changing the status.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-366"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Preserve source spelling instead of silently changing the status.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-368",
+      "original_sha256": "01a1754da8a3b4695c8907922b3ee9425124c92ee46f7377e73e02c63d5636e6",
+      "problem": {
+        "id": "RLP-PY-368",
+        "tool_id": "python",
+        "title": "Read an event source name",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 368,
+        "scenario": "A multi-courier inbox must retain which provider sent a sample record.",
+        "task": "Report the provider from its own field. Change the event ID in a second input and verify the provider is still taken from the provider field.",
+        "learning_objective": "Read an event source name",
+        "inputs": {
+          "fixture_contract": "event={'id':'EV7','provider':'north'}",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "north"
+        },
+        "constraints": [
+          "Do not infer the provider from the event ID.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: north",
+          "Check this business boundary with a separate case: Do not infer the provider from the event ID.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-367"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Do not infer the provider from the event ID.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-369",
+      "original_sha256": "3bece9956d1bc1cab3983c9ffafb2afaf12938525cdf061392af574614840d64",
+      "problem": {
+        "id": "RLP-PY-369",
+        "tool_id": "python",
+        "title": "Read the declared event version",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 369,
+        "scenario": "A receiver previews one envelope before deciding how to interpret it.",
+        "task": "Return the envelope version separately from its nested event. Change the nested event ID and verify the envelope version remains 1.",
+        "learning_objective": "Read the declared event version",
+        "inputs": {
+          "fixture_contract": "envelope={'version':1,'payload':{'id':'EV7'}}",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "1"
+        },
+        "constraints": [
+          "A version value is metadata, not evidence that parsing succeeded.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: 1",
+          "Check this business boundary with a separate case: A version value is metadata, not evidence that parsing succeeded.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-368"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: A version value is metadata, not evidence that parsing succeeded.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-370",
+      "original_sha256": "ccafb37fc7bddb540f1292fab6b40b59f8ee50ddb02b30453fb18f13fdebbcda",
+      "problem": {
+        "id": "RLP-PY-370",
+        "tool_id": "python",
+        "title": "Count a supplied batch",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 370,
+        "scenario": "A shift report first needs the number of event records handed to the processor.",
+        "task": "Count courier event records, including the two supplied rows. Add one event with extra fields and verify the count becomes three, not the number of fields.",
+        "learning_objective": "Count a supplied batch",
+        "inputs": {
+          "fixture_contract": "events=[{'id':'EV7'},{'id':'EV8'}]",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "2"
+        },
+        "constraints": [
+          "Count records, not the number of dictionary fields.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: 2",
+          "Check this business boundary with a separate case: Count records, not the number of dictionary fields.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-369"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Count records, not the number of dictionary fields.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-371",
+      "original_sha256": "5f1f3476066710c9af0c24c203483a04b11e6d463d5018eb7a59fa03ecf21f24",
+      "problem": {
+        "id": "RLP-PY-371",
+        "tool_id": "python",
+        "title": "Keep the source sequence position",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 371,
+        "scenario": "A reviewer needs the one-based position of an event in its incoming batch.",
+        "task": "Report each event ID with its one-based arrival position. Reverse a changed input and show that positions change while event IDs remain the same.",
+        "learning_objective": "Keep the source sequence position",
+        "inputs": {
+          "fixture_contract": "events=[{'id':'EV7'},{'id':'EV8'}]",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "EV7 position 1; EV8 position 2"
+        },
+        "constraints": [
+          "Sequence position is diagnostic metadata, not a replacement for event ID.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: EV7 position 1; EV8 position 2",
+          "Check this business boundary with a separate case: Sequence position is diagnostic metadata, not a replacement for event ID.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-370"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Sequence position is diagnostic metadata, not a replacement for event ID.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-372",
+      "original_sha256": "dcf9034fd0bfcbed63c003cab20819ea37ae0d479de4712fe737b1cff4b5036f",
+      "problem": {
+        "id": "RLP-PY-372",
+        "tool_id": "python",
+        "title": "Echo a declared source file name",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 372,
+        "scenario": "A local import preview must show which input file the operator selected.",
+        "task": "Return the configured source filename exactly as text. Try a different filename without creating a file; a preview must not claim the path exists.",
+        "learning_objective": "Echo a declared source file name",
+        "inputs": {
+          "fixture_contract": "source_file='courier-monday.csv'",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "courier-monday.csv"
+        },
+        "constraints": [
+          "Do not claim the file exists merely because its name was supplied.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: courier-monday.csv",
+          "Check this business boundary with a separate case: Do not claim the file exists merely because its name was supplied.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-371"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Do not claim the file exists merely because its name was supplied.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "python-batch5.json",
+      "original_published_id": "RLP-PY-373",
+      "original_sha256": "ba4792a3dc840127c07cdd64cdbd191776c0007b420411699a2ef15303cbaa09",
+      "problem": {
+        "id": "RLP-PY-373",
+        "tool_id": "python",
+        "title": "Separate one event from its payload",
+        "level": 0,
+        "difficulty": "level_0",
+        "sequence": 373,
+        "scenario": "A receiver displays the envelope ID and nested delivery ID as distinct values.",
+        "task": "Report message MSG4 and delivery D9 as separate, labeled identifiers. Change only the nested delivery ID and verify the message ID stays MSG4.",
+        "learning_objective": "Separate one event from its payload",
+        "inputs": {
+          "fixture_contract": "envelope={'id':'MSG4','payload':{'delivery_id':'D9'}}",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "message MSG4; delivery D9"
+        },
+        "constraints": [
+          "The message ID and business delivery ID have different meanings.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual Python implementation, its execution result and how the result matches: message MSG4; delivery D9",
+          "Check this business boundary with a separate case: The message ID and business delivery ID have different meanings.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-PY-372"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: The message ID and business delivery ID have different meanings.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 10,
+        "official_docs": [
+          "https://docs.python.org/3/library/csv.html",
+          "https://docs.python.org/3/library/datetime.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "sql-batch5.json",
+      "original_published_id": "RLP-SQL-366",
+      "original_sha256": "95f8013468c53cdc790d317a379e8e1e21f0b8178640654b5ac797b1f61d5de6",
+      "problem": {
+        "id": "RLP-SQL-366",
+        "tool_id": "sql",
+        "title": "Count all movement rows",
+        "level": 1,
+        "difficulty": "level_1",
+        "sequence": 1366,
+        "scenario": "A file-to-table check needs the number of loaded rows.",
+        "task": "Count all three movement rows even though one note is NULL. Add a fourth row with a NULL note and verify the movement count increases to four.",
+        "learning_objective": "Count all movement rows",
+        "inputs": {
+          "fixture_contract": "three movement rows including one with NULL note",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "3"
+        },
+        "constraints": [
+          "Counting a nullable note would undercount.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual SQL query or script, its execution result and how the result matches: 3",
+          "Check this business boundary with a separate case: Counting a nullable note would undercount.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-SQL-365"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Counting a nullable note would undercount.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 23,
+        "official_docs": [
+          "https://www.postgresql.org/docs/current/queries.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "sql-batch5.json",
+      "original_published_id": "RLP-SQL-367",
+      "original_sha256": "de064d1cf0a4c81f370cdb3d9ede405dac520014ab1aa3cb3aecc06a4f348ef0",
+      "problem": {
+        "id": "RLP-SQL-367",
+        "tool_id": "sql",
+        "title": "Count distinct SKU values",
+        "level": 1,
+        "difficulty": "level_1",
+        "sequence": 1367,
+        "scenario": "A manager asks how many SKUs appear in a movement sample.",
+        "task": "Count the two distinct SKUs in the three supplied movements. Add a new S3 movement and verify the distinct count becomes three while a repeated S1 does not increase it.",
+        "learning_objective": "Count distinct SKU values",
+        "inputs": {
+          "fixture_contract": "SKUs S1,S1,S2",
+          "environment": "Use only synthetic data and learner-owned disposable resources."
+        },
+        "expected_output": {
+          "contract": "2"
+        },
+        "constraints": [
+          "Distinct SKUs are not movement rows.",
+          "Retain original source rows and identify the output grain."
+        ],
+        "acceptance_criteria": [
+          "Show the actual SQL query or script, its execution result and how the result matches: 2",
+          "Check this business boundary with a separate case: Distinct SKUs are not movement rows.",
+          "State any assistance used; an expected answer without executed evidence does not verify completion."
+        ],
+        "prerequisites": [
+          "RLP-SQL-366"
+        ],
+        "independent_prerequisites": [],
+        "skill_prerequisites": [],
+        "progressive_hints": [
+          "Write the exact output for the first supplied row before changing anything.",
+          "Keep the field identity and the changed-input boundary separate: Distinct SKUs are not movement rows.",
+          "Compare the first and changed results, then explain which source value actually changed."
+        ],
+        "engineering_relevance": "A data-pipeline intake or reconciliation preview uses this result to trace a source record without claiming that unrelated validation has passed.",
+        "estimated_minutes": 23,
+        "official_docs": [
+          "https://www.postgresql.org/docs/current/queries.html"
+        ],
+        "verification": {
+          "kind": "artifact_review"
+        },
+        "challenge_kind": "transfer",
+        "topic_id": null,
+        "publication_status": "published",
+        "published_version": "2026.10.27.6",
+        "authoring_batch": "foundations-explicit-005",
+        "followup": {
+          "inputs": "Learner receives a changed row/key and boundary value after submitting the first solution.",
+          "expected_output": "Predict the changed result before rerunning; review observed output and assistance separately."
+        },
+        "transfer_boundary": "Apply an earlier read/count skill to a courier or inventory contract with the specified changed-input check.",
+        "correction_reason": "Reviewed transfer labeling and focused task wording; stable ID and prerequisites."
+      }
+    },
+    {
+      "source_file": "dbt.json",
+      "original_published_id": "RLP-DBT-002",
+      "original_sha256": "00df4b45006411236301ea4c1190ac54fac87ec351ac8cba89e7e9a18c6ce769",
+      "problem": {
+        "id": "RLP-DBT-002",
+        "tool_id": "dbt",
+        "title": "Run one supplied model - build",
+        "level": 0,
+        "difficulty": "level_0",
+        "scenario": "A distributor has a tiny approved training dbt project and needs to confirm that a supplied staging model produces both order rows.",
+        "task": "Copy the supplied seed and model into the existing isolated dbt project. Run the seed and only this model, then query the staging relation and show its actual rows and command results.",
+        "inputs": {
+          "environment": "An already configured dbt Core training project with a disposable database/schema and supported adapter. If unavailable, report environment_blocked; a plan is not an executed result.",
+          "starter_files": {
+            "seeds/orders_seed.csv": "order_id,amount\nO1,40.00\nO2,20.00\n",
+            "models/stg_orders.sql": "select order_id, cast(amount as numeric(12,2)) as amount from {{ ref('orders_seed') }}\n"
+          },
+          "commands_to_run": [
+            "dbt seed --select orders_seed",
+            "dbt run --select stg_orders"
+          ]
+        },
+        "expected_output": {
+          "relation": "stg_orders",
+          "order_ids": [
+            "O1",
+            "O2"
+          ],
+          "row_count": 2,
+          "decimal_amounts": [
+            "40.00",
+            "20.00"
+          ]
+        },
+        "constraints": [
+          "Use only an isolated training target and the supplied synthetic seed.",
+          "Keep project/profile credentials outside submitted code and output.",
+          "Show actual adapter/version and command/query output; an unavailable target is not completion."
+        ],
+        "acceptance_criteria": [
+          "The seed and model commands finish in the isolated target; submit their actual results.",
+          "Query stg_orders and show exactly O1 and O2 with their decimal amounts.",
+          "A changed seed with O3 must remain a separate later independent exercise.",
+          "Report all assistance; do not treat model SQL alone as proof of execution."
+        ],
+        "estimated_minutes": 25,
+        "engineering_relevance": "A small staging build verifies that a source seed is visible through dbt and that a downstream relation actually contains the contracted rows.",
+        "official_docs": [
+          "https://docs.getdbt.com/docs/build/seeds",
+          "https://docs.getdbt.com/docs/build/models"
+        ],
+        "learning_objective": "Run a supplied two-row dbt seed/model and inspect the built relation.",
+        "progressive_hints": [
+          "Check that the configured training project can see both supplied starter files.",
+          "Run the seed first; the model reads that seed by its declared reference.",
+          "If the run fails, compare the exact adapter error with the model and seed names before retrying."
+        ],
+        "prerequisites": [
+          "RLP-DBT-001"
+        ],
+        "skill_prerequisites": [],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "build",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "observed_result",
+            "assistance_disclosure"
+          ],
+          "note": "Human review is required. No automatic correctness or cloud-execution claim is made."
+        },
+        "published_version": "2026.10.26.2",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "family": "dbt:0:0",
+          "contract": "regional distribution",
+          "batch": "engineering:dbt:L0",
+          "semantic_review": "Explicit bounded operation family with synthetic fixture contract; learner correctness remains unassessed."
+        },
+        "followup": {
+          "task": "With a changed seed that adds O3 amount 5.00, rerun the supplied staging model independently and verify all three rows.",
+          "inputs": {
+            "starter_files": {
+              "seeds/orders_seed.csv": "order_id,amount\nO1,40.00\nO2,20.00\nO3,5.00\n",
+              "models/stg_orders.sql": "select order_id, cast(amount as numeric(12,2)) as amount from {{ ref('orders_seed') }}\n"
+            }
+          },
+          "expected_output": {
+            "order_ids": [
+              "O1",
+              "O2",
+              "O3"
+            ],
+            "row_count": 3
+          },
+          "verification": {
+            "kind": "artifact_review"
+          }
+        },
+        "correction_reason": "Supplied model and seed artifacts were missing; focused beginner run contract added."
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_published_id": "RLP-AIRFLOW-002",
+      "original_sha256": "25bf819c87325ef2dc2c6117a4f161016f2efe1d6b485d43a89d9411677794b7",
+      "problem": {
+        "id": "RLP-AIRFLOW-002",
+        "tool_id": "airflow",
+        "title": "Find one task log - build",
+        "level": 0,
+        "difficulty": "level_0",
+        "scenario": "A distributor uses an approved local Airflow training instance to make one courier delivery traceable by run and task log.",
+        "task": "Place the supplied single-task Airflow 3 DAG in the isolated training DAG folder, trigger it once, and find the task log for that exact run. Submit the run ID and observed log line.",
+        "inputs": {
+          "environment": "Existing authorized Airflow 3 training instance and isolated DAG folder. If access or supported version is unavailable, report environment_blocked; a pasted DAG is not execution evidence.",
+          "starter_files": {
+            "dags/training_delivery_log.py": "import pendulum\nfrom airflow.sdk import dag, task\n\n@dag(dag_id=\"training_delivery_log\", schedule=None,\n     start_date=pendulum.datetime(2026, 10, 20, tz=\"UTC\"), catchup=False)\ndef delivery_log():\n    @task()\n    def report():\n        print(\"delivery=D1 rows=1\")\n    report()\n\ndelivery_log()\n"
+          },
+          "dag_id": "training_delivery_log",
+          "task_id": "report"
+        },
+        "expected_output": {
+          "dag_id": "training_delivery_log",
+          "task_id": "report",
+          "task_log_contains": "delivery=D1 rows=1",
+          "run_id": "actual triggered run ID, supplied by observed Airflow output"
+        },
+        "constraints": [
+          "Trigger only in the isolated training instance; no external notification or production run.",
+          "Use the supplied source; the task is locating its actual run and log, not inventing a new DAG.",
+          "If the installed Airflow version differs, record the version and use its official API or report environment_blocked."
+        ],
+        "acceptance_criteria": [
+          "The supplied DAG is discovered in the authorized training instance.",
+          "One triggered run identifies task report and its actual run ID.",
+          "The log from that run contains delivery=D1 rows=1; another run log does not substitute.",
+          "Submit observed task state, log evidence and all assistance used."
+        ],
+        "estimated_minutes": 25,
+        "engineering_relevance": "Task-level logs tie an orchestrated batch outcome to a specific run, helping support staff investigate a failed or disputed delivery.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/taskflow.html",
+          "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/fundamentals.html"
+        ],
+        "learning_objective": "Trigger a supplied Airflow training DAG and locate the correct task log.",
+        "progressive_hints": [
+          "Check the DAG ID and task ID in the supplied file before triggering.",
+          "Use the triggered run ID to narrow the log lookup to one task instance.",
+          "Compare the exact log line and task state with the expected result; preserve a failed run for review."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-001"
+        ],
+        "skill_prerequisites": [],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "build",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "observed_result",
+            "assistance_disclosure"
+          ],
+          "note": "Human review is required. No automatic correctness or cloud-execution claim is made."
+        },
+        "published_version": "2026.10.26.2",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "family": "airflow:0:0",
+          "contract": "regional distribution",
+          "batch": "engineering:airflow:L0",
+          "semantic_review": "Explicit bounded operation family with synthetic fixture contract; learner correctness remains unassessed."
+        },
+        "followup": {
+          "task": "Run the same training DAG after changing the fixture line to delivery=D2 rows=0; locate the new run log independently.",
+          "inputs": {
+            "changed_log_line": "delivery=D2 rows=0",
+            "starter_dag": "import pendulum\nfrom airflow.sdk import dag, task\n\n@dag(dag_id=\"training_delivery_log\", schedule=None,\n     start_date=pendulum.datetime(2026, 10, 20, tz=\"UTC\"), catchup=False)\ndef delivery_log():\n    @task()\n    def report():\n        print(\"delivery=D1 rows=1\")\n    report()\n\ndelivery_log()\n"
+          },
+          "expected_output": {
+            "task_log_contains": "delivery=D2 rows=0",
+            "run_id": "new observed run ID"
+          },
+          "verification": {
+            "kind": "artifact_review"
+          }
+        },
+        "correction_reason": "Supplied DAG artifact was missing; focused log-lookup first success added."
+      }
+    }
+  ],
+  "review": "Stable-ID transfer labeling plus two executable starter-artifact repairs. Actual learner runs remain unverified."
+}

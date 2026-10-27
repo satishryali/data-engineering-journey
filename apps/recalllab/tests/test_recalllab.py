@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import sqlite3
 import sys
 import tempfile
 import unittest
@@ -18,9 +19,32 @@ from services.journal import Journal
 from services.bridge import end_session
 from services.sql_runner import run_sql
 from components.calendar import heatmap
+from components.learning import next_task
+
+
+class JournalMigrationTests(unittest.TestCase):
+    def test_legacy_sessions_table_is_migrated_without_losing_rows(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'legacy.sqlite3'
+            db = sqlite3.connect(path)
+            db.execute('CREATE TABLE sessions(id TEXT PRIMARY KEY, created TEXT NOT NULL, state TEXT NOT NULL DEFAULT \'open\')')
+            db.execute('INSERT INTO sessions VALUES(?,?,?)', ('RL-' + 'a' * 32, '2026-10-17T10:00:00+05:30', 'open'))
+            db.commit(); db.close()
+
+            journal = Journal(path)
+            with journal.db() as migrated:
+                columns = {row['name'] for row in migrated.execute('PRAGMA table_info(sessions)')}
+                version = migrated.execute('PRAGMA user_version').fetchone()[0]
+            self.assertIn('batch', columns)
+            self.assertEqual(version, Journal.SCHEMA_VERSION)
+            self.assertEqual(journal.session(), 'RL-' + 'a' * 32)
 
 
 class ReadTests(unittest.TestCase):
+    def test_pending_task_is_plain_text_not_a_broken_local_link(self):
+        task = next_task(Records())
+        self.assertNotIn('](', task)
+
     def test_heatmap_uses_date_effective_study_targets(self):
         values = {'seconds': 6*3600, 'events': [], 'revisions': [], 'coding': [], 'intervals': []}
         self.assertEqual(level((date(2026,10,21), values), 'All Learning'), 4)
@@ -64,7 +88,7 @@ class ReadTests(unittest.TestCase):
             j = Journal(Path(tmp)/'journal.sqlite3')
             day = date(2026, 10, 17)
             rendered = dashboard(r, j, day, {'session_minutes':20, 'study_thresholds':[.25,.5,1,1.25], 'attempt_thresholds':[1,3,5,8]})
-            self.assertIn('Welcome back, Satish!', rendered)
+            self.assertIn('Make room for what stays.', rendered)
             self.assertIn(f'{metrics(r.activity(day))["hours"]:.1f} hrs', rendered)
             self.assertIn('Unassessed', rendered)
             self.assertIn('view=Today%27s+Session', rendered)

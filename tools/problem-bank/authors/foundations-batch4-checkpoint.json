@@ -1,0 +1,23 @@
+{
+  "status": "new_append_only_content_frozen",
+  "tools": {
+    "python": {
+      "new": 44,
+      "first_id": "RLP-PY-322",
+      "last_id": "RLP-PY-365",
+      "total_if_all_prior_promotions_publish": 365,
+      "target": 450,
+      "remaining_if_all_prior_promotions_publish": 85,
+      "sha256": "13814779671befd744c12cac4c531530f215ce5255d0eeced35c697a7f5d06de"
+    },
+    "sql": {
+      "new": 44,
+      "first_id": "RLP-SQL-308",
+      "last_id": "RLP-SQL-351",
+      "total_if_all_prior_promotions_publish": 351,
+      "target": 450,
+      "remaining_if_all_prior_promotions_publish": 99,
+      "sha256": "e2eb88d4fe431ec69066b597ce38c19c3ee4307f9dd6f026c50ef0c61afa3ba3"
+    }
+  }
+}

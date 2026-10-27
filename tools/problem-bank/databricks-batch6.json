@@ -1,0 +1,1175 @@
+[
+  {
+    "id": "RLP-DATABRICKS-178",
+    "tool_id": "databricks",
+    "title": "Read one governed training table by full name",
+    "level": 3,
+    "sequence": 178,
+    "prerequisites": [
+      "RLP-DATABRICKS-154"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An analyst notebook must read the intended catalog table rather than a same-named table in another schema.",
+    "task": "An analyst notebook must read the intended catalog table rather than a same-named table in another schema.",
+    "learning_objective": "Read one governed training table by full name",
+    "inputs": {
+      "fixture": "training.sales.orders has A5; scratch.sales.orders has A9; approved fully qualified target.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Notebook reads A5 and records exact catalog.schema.table; no A9 contamination."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Notebook reads A5 and records exact catalog.schema.table; no A9 contamination.",
+      "Demonstrate the additional boundary: A missing permission is blocked, not worked around with an ungoverned copy.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises read one governed training table by full name in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_3",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Notebook reads A5 and records exact catalog.schema.table; no A9 contamination.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A missing permission is blocked, not worked around with an ungoverned copy.",
+      "Resolve and display the full table identity before computing a result."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "training.sales.orders has A5; scratch.sales.orders has A9; approved fully qualified target.",
+        "changed_input_check": "A missing permission is blocked, not worked around with an ungoverned copy."
+      },
+      "expected_output": {
+        "contract": "A missing permission is blocked, not worked around with an ungoverned copy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-179",
+    "tool_id": "databricks",
+    "title": "Pass a business date into a Jobs task",
+    "level": 3,
+    "sequence": 179,
+    "prerequisites": [
+      "RLP-DATABRICKS-178"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A scheduled task needs the source date as an explicit parameter.",
+    "task": "A scheduled task needs the source date as an explicit parameter.",
+    "learning_objective": "Pass a business date into a Jobs task",
+    "inputs": {
+      "fixture": "Job date Oct26; file Oct26 A5; execution starts Oct27.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Curated output marks Oct26 and A5; run records resolved parameter."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Curated output marks Oct26 and A5; run records resolved parameter.",
+      "Demonstrate the additional boundary: A manual Oct28 rerun for Oct26 still reads Oct26.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises pass a business date into a jobs task in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Curated output marks Oct26 and A5; run records resolved parameter.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A manual Oct28 rerun for Oct26 still reads Oct26.",
+      "Bind the job parameter into the task and verify its actual resolved value."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Job date Oct26; file Oct26 A5; execution starts Oct27.",
+        "changed_input_check": "A manual Oct28 rerun for Oct26 still reads Oct26."
+      },
+      "expected_output": {
+        "contract": "A manual Oct28 rerun for Oct26 still reads Oct26."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-180",
+    "tool_id": "databricks",
+    "title": "Give two jobs distinct output ownership",
+    "level": 4,
+    "sequence": 180,
+    "prerequisites": [
+      "RLP-DATABRICKS-158"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "Two entity jobs use one shared output path by mistake. Stop before parallel execution.",
+    "task": "Two entity jobs use one shared output path by mistake. Stop before parallel execution.",
+    "learning_objective": "Give two jobs distinct output ownership",
+    "inputs": {
+      "fixture": "Sales A5 and returns R2; candidate both write curated/current.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Preflight flags shared path; separate outputs or controlled merge produce both entities once."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Preflight flags shared path; separate outputs or controlled merge produce both entities once.",
+      "Demonstrate the additional boundary: Different notebook names do not prove output isolation.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises give two jobs distinct output ownership in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_4",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Preflight flags shared path; separate outputs or controlled merge produce both entities once.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Different notebook names do not prove output isolation.",
+      "Inspect resolved physical table/path identities for all writers."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Sales A5 and returns R2; candidate both write curated/current.",
+        "changed_input_check": "Different notebook names do not prove output isolation."
+      },
+      "expected_output": {
+        "contract": "Different notebook names do not prove output isolation."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-181",
+    "tool_id": "databricks",
+    "title": "Test a view's reader role separately from writer role",
+    "level": 4,
+    "sequence": 181,
+    "prerequisites": [
+      "RLP-DATABRICKS-180"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A notebook owner can read a curated view, but the consumer may lack privileges.",
+    "task": "A notebook owner can read a curated view, but the consumer may lack privileges.",
+    "learning_objective": "Test a view's reader role separately from writer role",
+    "inputs": {
+      "fixture": "Owner reads report total12; consumer principal granted intended catalog/schema/view rights.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Consumer query returns12; restricted raw table stays denied; identities recorded."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Consumer query returns12; restricted raw table stays denied; identities recorded.",
+      "Demonstrate the additional boundary: Owner success alone cannot pass the consumer handoff.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises test a view's reader role separately from writer role in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Consumer query returns12; restricted raw table stays denied; identities recorded.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Owner success alone cannot pass the consumer handoff.",
+      "Test the exact consumer principal and each required parent usage privilege."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Owner reads report total12; consumer principal granted intended catalog/schema/view rights.",
+        "changed_input_check": "Owner success alone cannot pass the consumer handoff."
+      },
+      "expected_output": {
+        "contract": "Owner success alone cannot pass the consumer handoff."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-182",
+    "tool_id": "databricks",
+    "title": "Make a notebook's expected parameters explicit",
+    "level": 4,
+    "sequence": 182,
+    "prerequisites": [
+      "RLP-DATABRICKS-181"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A manual run omits batch ID; the notebook should fail before writing.",
+    "task": "A manual run omits batch ID; the notebook should fail before writing.",
+    "learning_objective": "Make a notebook's expected parameters explicit",
+    "inputs": {
+      "fixture": "Required batch_id B1,date Oct26; input A5; candidate missing batch_id.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Missing parameter produces clear preflight failure; no output; complete run writes A5 under B1."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Missing parameter produces clear preflight failure; no output; complete run writes A5 under B1.",
+      "Demonstrate the additional boundary: Whitespace-only batch ID is invalid too.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises make a notebook's expected parameters explicit in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Missing parameter produces clear preflight failure; no output; complete run writes A5 under B1.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Whitespace-only batch ID is invalid too.",
+      "Validate widget/job parameter presence and shape at notebook start."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Required batch_id B1,date Oct26; input A5; candidate missing batch_id.",
+        "changed_input_check": "Whitespace-only batch ID is invalid too."
+      },
+      "expected_output": {
+        "contract": "Whitespace-only batch ID is invalid too."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-183",
+    "tool_id": "databricks",
+    "title": "Branch after a quality count in a job",
+    "level": 5,
+    "sequence": 183,
+    "prerequisites": [
+      "RLP-DATABRICKS-162"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "Curation should run only if raw validation reports zero severe errors.",
+    "task": "Curation should run only if raw validation reports zero severe errors.",
+    "learning_objective": "Branch after a quality count in a job",
+    "inputs": {
+      "fixture": "B1 A5,Bbad; validation task emits bad_count1; approved if/else behavior.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Reject/incident path runs; publish task skipped; raw and reject retained."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Reject/incident path runs; publish task skipped; raw and reject retained.",
+      "Demonstrate the additional boundary: With corrected B7 and bad_count0, publish A,B,total12.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises branch after a quality count in a job in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_5",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Reject/incident path runs; publish task skipped; raw and reject retained.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: With corrected B7 and bad_count0, publish A,B,total12.",
+      "Use an actual task value from validation and inspect the evaluated branch in run details."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "B1 A5,Bbad; validation task emits bad_count1; approved if/else behavior.",
+        "changed_input_check": "With corrected B7 and bad_count0, publish A,B,total12."
+      },
+      "expected_output": {
+        "contract": "With corrected B7 and bad_count0, publish A,B,total12."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-184",
+    "tool_id": "databricks",
+    "title": "Join a late dimension to an existing curated fact",
+    "level": 5,
+    "sequence": 184,
+    "prerequisites": [
+      "RLP-DATABRICKS-183"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A customer region arrives after a sale; a controlled restatement should repair the report.",
+    "task": "A customer region arrives after a sale; a controlled restatement should repair the report.",
+    "learning_objective": "Join a late dimension to an existing curated fact",
+    "inputs": {
+      "fixture": "Fact F1/C9/5 initially unmatched; later dimension C9 west.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "After restatement F1 west5; fact count remains1; original unmatched state retained for audit."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "After restatement F1 west5; fact count remains1; original unmatched state retained for audit.",
+      "Demonstrate the additional boundary: A conflicting second C9 dimension row blocks promotion.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises join a late dimension to an existing curated fact in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: After restatement F1 west5; fact count remains1; original unmatched state retained for audit.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A conflicting second C9 dimension row blocks promotion.",
+      "Check reference uniqueness and affected-fact scope before rebuilding output."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Fact F1/C9/5 initially unmatched; later dimension C9 west.",
+        "changed_input_check": "A conflicting second C9 dimension row blocks promotion."
+      },
+      "expected_output": {
+        "contract": "A conflicting second C9 dimension row blocks promotion."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-185",
+    "tool_id": "databricks",
+    "title": "Keep raw and curated table names distinct in a job",
+    "level": 5,
+    "sequence": 185,
+    "prerequisites": [
+      "RLP-DATABRICKS-184"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A parameterized notebook accidentally writes transformed data back to the raw source table.",
+    "task": "A parameterized notebook accidentally writes transformed data back to the raw source table.",
+    "learning_objective": "Keep raw and curated table names distinct in a job",
+    "inputs": {
+      "fixture": "Raw table contains A amount text5; intended curated decimal A5; candidate target resolves raw.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Candidate blocked; raw retains original text and curated contains typed A5 after correction."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Candidate blocked; raw retains original text and curated contains typed A5 after correction.",
+      "Demonstrate the additional boundary: A successful write to raw is not accepted curation.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises keep raw and curated table names distinct in a job in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Candidate blocked; raw retains original text and curated contains typed A5 after correction.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A successful write to raw is not accepted curation.",
+      "Resolve source and target table identities and assert they differ before mutation."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Raw table contains A amount text5; intended curated decimal A5; candidate target resolves raw.",
+        "changed_input_check": "A successful write to raw is not accepted curation."
+      },
+      "expected_output": {
+        "contract": "A successful write to raw is not accepted curation."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-186",
+    "tool_id": "databricks",
+    "title": "Recover a failed downstream task without rerunning good ingestion",
+    "level": 6,
+    "sequence": 186,
+    "prerequisites": [
+      "RLP-DATABRICKS-165"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "Ingest finished and preserved state, but the summary task failed. Retry only required work.",
+    "task": "Ingest finished and preserved state, but the summary task failed. Retry only required work.",
+    "learning_objective": "Recover a failed downstream task without rerunning good ingestion",
+    "inputs": {
+      "fixture": "Raw B1 A5,B7 accepted; summary missing; ingest checkpoint current.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Recovery creates summary count2,total12; raw remains A,B once; task/run linkage preserved."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Recovery creates summary count2,total12; raw remains A,B once; task/run linkage preserved.",
+      "Demonstrate the additional boundary: If raw reconciliation fails, summary retry is blocked.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises recover a failed downstream task without rerunning good ingestion in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_6",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Recovery creates summary count2,total12; raw remains A,B once; task/run linkage preserved.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: If raw reconciliation fails, summary retry is blocked.",
+      "Jobs task repair should start from verified persisted upstream output."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Raw B1 A5,B7 accepted; summary missing; ingest checkpoint current.",
+        "changed_input_check": "If raw reconciliation fails, summary retry is blocked."
+      },
+      "expected_output": {
+        "contract": "If raw reconciliation fails, summary retry is blocked."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-187",
+    "tool_id": "databricks",
+    "title": "Detect a condition task comparing strings instead of numbers",
+    "level": 6,
+    "sequence": 187,
+    "prerequisites": [
+      "RLP-DATABRICKS-186"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A job branch checks whether bad_count exceeds a threshold. Type semantics matter.",
+    "task": "A job branch checks whether bad_count exceeds a threshold. Type semantics matter.",
+    "learning_objective": "Detect a condition task comparing strings instead of numbers",
+    "inputs": {
+      "fixture": "bad_count task value 10; threshold2; candidate uses equality/string assumption.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Numeric greater-than condition routes to reject branch; actual evaluated operands recorded."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Numeric greater-than condition routes to reject branch; actual evaluated operands recorded.",
+      "Demonstrate the additional boundary: bad_count2 at threshold2 follows the declared equal boundary.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises detect a condition task comparing strings instead of numbers in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Numeric greater-than condition routes to reject branch; actual evaluated operands recorded.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: bad_count2 at threshold2 follows the declared equal boundary.",
+      "Choose the documented numeric comparison operator and test two boundary values."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "bad_count task value 10; threshold2; candidate uses equality/string assumption.",
+        "changed_input_check": "bad_count2 at threshold2 follows the declared equal boundary."
+      },
+      "expected_output": {
+        "contract": "bad_count2 at threshold2 follows the declared equal boundary."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-188",
+    "tool_id": "databricks",
+    "title": "Reconcile a late file after a published daily summary",
+    "level": 7,
+    "sequence": 188,
+    "prerequisites": [
+      "RLP-DATABRICKS-168"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A file for Oct20 arrives after Oct20 summary was published. Correct that partition safely.",
+    "task": "A file for Oct20 arrives after Oct20 summary was published. Correct that partition safely.",
+    "learning_objective": "Reconcile a late file after a published daily summary",
+    "inputs": {
+      "fixture": "Published Oct20 A5; late file B7 for Oct20; unrelated Oct21 C2.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Candidate Oct20 total12 then promoted; Oct21 remains2; raw file lineage retained."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Candidate Oct20 total12 then promoted; Oct21 remains2; raw file lineage retained.",
+      "Demonstrate the additional boundary: Duplicate late B file has no second business effect.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises reconcile a late file after a published daily summary in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_7",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Candidate Oct20 total12 then promoted; Oct21 remains2; raw file lineage retained.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Duplicate late B file has no second business effect.",
+      "Track discovery state and affected business partition separately."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Published Oct20 A5; late file B7 for Oct20; unrelated Oct21 C2.",
+        "changed_input_check": "Duplicate late B file has no second business effect."
+      },
+      "expected_output": {
+        "contract": "Duplicate late B file has no second business effect."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-189",
+    "tool_id": "databricks",
+    "title": "Compare file identity and event identity in a retry",
+    "level": 7,
+    "sequence": 189,
+    "prerequisites": [
+      "RLP-DATABRICKS-188"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An identical event appears in two distinct files. Raw receipt and business effect need different counts.",
+    "task": "An identical event appears in two distinct files. Raw receipt and business effect need different counts.",
+    "learning_objective": "Compare file identity and event identity in a retry",
+    "inputs": {
+      "fixture": "a.json E1/A5; b.json E1/A5; both discovered by Auto Loader.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Raw arrivals2; accepted event count1,total5; both file paths retained."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Raw arrivals2; accepted event count1,total5; both file paths retained.",
+      "Demonstrate the additional boundary: b.json E1/A6 is conflict, not another legitimate event.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises compare file identity and event identity in a retry in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Raw arrivals2; accepted event count1,total5; both file paths retained.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: b.json E1/A6 is conflict, not another legitimate event.",
+      "Auto Loader file progress does not replace business-event deduplication."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "a.json E1/A5; b.json E1/A5; both discovered by Auto Loader.",
+        "changed_input_check": "b.json E1/A6 is conflict, not another legitimate event."
+      },
+      "expected_output": {
+        "contract": "b.json E1/A6 is conflict, not another legitimate event."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-190",
+    "tool_id": "databricks",
+    "title": "Measure an ingestion batch's file discovery lag",
+    "level": 8,
+    "sequence": 190,
+    "prerequisites": [
+      "RLP-DATABRICKS-171"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A small file arrived before its rows appeared in curated output. Quantify the phases.",
+    "task": "A small file arrived before its rows appeared in curated output. Quantify the phases.",
+    "learning_objective": "Measure an ingestion batch's file discovery lag",
+    "inputs": {
+      "fixture": "File a.json arrival10:00,discovered10:03,curated10:05; A5.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Discovery lag3m,curation lag2m,end-to-end5m; A5 accepted; metric sources named."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Discovery lag3m,curation lag2m,end-to-end5m; A5 accepted; metric sources named.",
+      "Demonstrate the additional boundary: A missing arrival timestamp makes end-to-end latency unknown.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "This task exercises measure an ingestion batch's file discovery lag in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_8",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Discovery lag3m,curation lag2m,end-to-end5m; A5 accepted; metric sources named.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A missing arrival timestamp makes end-to-end latency unknown.",
+      "Keep storage arrival,stream discovery and curated commit timestamps separate."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "File a.json arrival10:00,discovered10:03,curated10:05; A5.",
+        "changed_input_check": "A missing arrival timestamp makes end-to-end latency unknown."
+      },
+      "expected_output": {
+        "contract": "A missing arrival timestamp makes end-to-end latency unknown."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-191",
+    "tool_id": "databricks",
+    "title": "Compare a job cluster warm-start and processing interval",
+    "level": 8,
+    "sequence": 191,
+    "prerequisites": [
+      "RLP-DATABRICKS-190"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A periodic notebook job is slow because of startup. Measure it.",
+    "task": "A periodic notebook job is slow because of startup. Measure it.",
+    "learning_objective": "Compare a job cluster warm-start and processing interval",
+    "inputs": {
+      "fixture": "Run submitted10:00,cluster ready10:06,processing ends10:07; A5.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Startup6m,processing1m,total7m; recommendation fits actual schedule/cost limits."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Startup6m,processing1m,total7m; recommendation fits actual schedule/cost limits.",
+      "Demonstrate the additional boundary: A later run with warm cluster and 5m processing is a different bottleneck.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "This task exercises compare a job cluster warm-start and processing interval in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Startup6m,processing1m,total7m; recommendation fits actual schedule/cost limits.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A later run with warm cluster and 5m processing is a different bottleneck.",
+      "Use actual job timeline phases before changing compute sizing."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Run submitted10:00,cluster ready10:06,processing ends10:07; A5.",
+        "changed_input_check": "A later run with warm cluster and 5m processing is a different bottleneck."
+      },
+      "expected_output": {
+        "contract": "A later run with warm cluster and 5m processing is a different bottleneck."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-192",
+    "tool_id": "databricks",
+    "title": "Check a service principal's least-privilege table access",
+    "level": 9,
+    "sequence": 192,
+    "prerequisites": [
+      "RLP-DATABRICKS-174"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An automation principal must append to staging but cannot read restricted rejects.",
+    "task": "An automation principal must append to staging but cannot read restricted rejects.",
+    "learning_objective": "Check a service principal's least-privilege table access",
+    "inputs": {
+      "fixture": "Principal P expected staging write and curated read; reject table restricted; isolated fixtures.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "P performs allowed operations and is denied reject read; grants and actual identity recorded."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "P performs allowed operations and is denied reject read; grants and actual identity recorded.",
+      "Demonstrate the additional boundary: An admin's success is not evidence for P.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "This task exercises check a service principal's least-privilege table access in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_9",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: P performs allowed operations and is denied reject read; grants and actual identity recorded.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: An admin's success is not evidence for P.",
+      "Inspect grants and run both allowed and denied operations as the intended principal."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Principal P expected staging write and curated read; reject table restricted; isolated fixtures.",
+        "changed_input_check": "An admin's success is not evidence for P."
+      },
+      "expected_output": {
+        "contract": "An admin's success is not evidence for P."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-193",
+    "tool_id": "databricks",
+    "title": "Keep a job release's data and configuration versions linked",
+    "level": 9,
+    "sequence": 193,
+    "prerequisites": [
+      "RLP-DATABRICKS-192"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A run's result should be traceable to notebook/config version and source manifest.",
+    "task": "A run's result should be traceable to notebook/config version and source manifest.",
+    "learning_objective": "Keep a job release's data and configuration versions linked",
+    "inputs": {
+      "fixture": "B1 source hashes H1,H2; job config V2; notebook revision N3; output A5,B7.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Accepted total12 audit links H1,H2,V2,N3 and run ID."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Accepted total12 audit links H1,H2,V2,N3 and run ID.",
+      "Demonstrate the additional boundary: Rerun with N4 under same B1 is explicitly compared, not silently labeled identical.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "This task exercises keep a job release's data and configuration versions linked in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Accepted total12 audit links H1,H2,V2,N3 and run ID.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Rerun with N4 under same B1 is explicitly compared, not silently labeled identical.",
+      "Persist public version IDs beside accepted result and validate their provenance."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "B1 source hashes H1,H2; job config V2; notebook revision N3; output A5,B7.",
+        "changed_input_check": "Rerun with N4 under same B1 is explicitly compared, not silently labeled identical."
+      },
+      "expected_output": {
+        "contract": "Rerun with N4 under same B1 is explicitly compared, not silently labeled identical."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-194",
+    "tool_id": "databricks",
+    "title": "Independent food-lot recall transfer",
+    "level": 10,
+    "sequence": 194,
+    "prerequisites": [
+      "RLP-DATABRICKS-177"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "Build a governed ingestion and report for lot receipts, shipments and a recall event.",
+    "task": "Build a governed ingestion and report for lot receipts, shipments and a recall event.",
+    "learning_objective": "Independent food-lot recall transfer",
+    "inputs": {
+      "fixture": "Lot L1 receive10,ship3,recall effective Oct20; L2 receive5; duplicate ship; malformed lot ID.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "L1 shipped3 and remaining7 restricted by recall; L2 available5; duplicate once; invalid isolated."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "L1 shipped3 and remaining7 restricted by recall; L2 available5; duplicate once; invalid isolated.",
+      "Demonstrate the additional boundary: Late shipment before recall effective time needs explicit correction policy.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 120,
+    "engineering_relevance": "This task exercises independent food-lot recall transfer in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/ingestion/cloud-object-storage/auto-loader/",
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.2",
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: L1 shipped3 and remaining7 restricted by recall; L2 available5; duplicate once; invalid isolated.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Late shipment before recall effective time needs explicit correction policy.",
+      "Demonstrate source-file,lot,event,time and consumer-access identities together."
+    ],
+    "authoring_batch": "cloud-explicit-006",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Lot L1 receive10,ship3,recall effective Oct20; L2 receive5; duplicate ship; malformed lot ID.",
+        "changed_input_check": "Late shipment before recall effective time needs explicit correction policy."
+      },
+      "expected_output": {
+        "contract": "Late shipment before recall effective time needs explicit correction policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  }
+]

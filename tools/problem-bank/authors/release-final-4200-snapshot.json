@@ -1,0 +1,11 @@
+{
+  "version": "2026.10.27.7",
+  "status": "frozen_after_author_and_blocker_qa",
+  "file_sha256": {
+    "reviewed-content-corrections.json": "5dc213329385b52e878326758eafe02b317fafad9e7709daf8a518f695714754",
+    "pyspark-batch9.json": "5b5685849a0877b84bace7fb529dd96a96456cb378bee33f33a75b1f594248e7",
+    "pyspark-batch10.json": "5fb616ed277904e1d71f5878d13ee72d5890723f00ae6b97ce7b4ae040722d4d",
+    "pyspark-batch11.json": "d8b9b496214d5bea18fa423743e2db44629fa52197425b05bf55c79885d05403",
+    "adf-batch9.json": "618793c478dbf016a48427afd296a64ada9897b4d7bb91829293792ea1288973"
+  }
+}

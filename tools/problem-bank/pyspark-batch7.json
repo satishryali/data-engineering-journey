@@ -1,0 +1,1382 @@
+[
+  {
+    "id": "RLP-PYSPARK-208",
+    "tool_id": "pyspark",
+    "title": "Add a source label before combining two feeds",
+    "level": 2,
+    "sequence": 208,
+    "prerequisites": [
+      "RLP-PYSPARK-188"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A finance extract combines retail and wholesale rows while preserving where each came from.",
+    "task": "A finance extract combines retail and wholesale rows while preserving where each came from.",
+    "learning_objective": "Add a source label before combining two feeds",
+    "inputs": {
+      "fixture": "Retail A5; wholesale B7; common id,amount schema.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Combined A/retail/B/wholesale count2,total12."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Combined A/retail/B/wholesale count2,total12.",
+      "Demonstrate the additional boundary: The same invoice ID in both feeds is flagged under global identity policy.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises add a source label before combining two feeds in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_2",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Combined A/retail/B/wholesale count2,total12.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: The same invoice ID in both feeds is flagged under global identity policy.",
+      "Create provenance before union so it cannot be guessed later."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Retail A5; wholesale B7; common id,amount schema.",
+        "changed_input_check": "The same invoice ID in both feeds is flagged under global identity policy."
+      },
+      "expected_output": {
+        "contract": "The same invoice ID in both feeds is flagged under global identity policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-209",
+    "tool_id": "pyspark",
+    "title": "Filter a report by an inclusive date contract",
+    "level": 2,
+    "sequence": 209,
+    "prerequisites": [
+      "RLP-PYSPARK-208"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An operations user asks for events on Oct26 only.",
+    "task": "An operations user asks for events on Oct26 only.",
+    "learning_objective": "Filter a report by an inclusive date contract",
+    "inputs": {
+      "fixture": "Rows A Oct25/5,B Oct26/7,C Oct27/2; business date typed DATE.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Only B7; source count3 and selected count1 recorded."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Only B7; source count3 and selected count1 recorded.",
+      "Demonstrate the additional boundary: Timestamp Oct26 23:59 in UTC belongs Oct26 under declared timezone.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises filter a report by an inclusive date contract in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Only B7; source count3 and selected count1 recorded.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Timestamp Oct26 23:59 in UTC belongs Oct26 under declared timezone.",
+      "Define whether input is a date or timestamp before filtering boundaries."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Rows A Oct25/5,B Oct26/7,C Oct27/2; business date typed DATE.",
+        "changed_input_check": "Timestamp Oct26 23:59 in UTC belongs Oct26 under declared timezone."
+      },
+      "expected_output": {
+        "contract": "Timestamp Oct26 23:59 in UTC belongs Oct26 under declared timezone."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-210",
+    "tool_id": "pyspark",
+    "title": "Count malformed dates before dropping them",
+    "level": 2,
+    "sequence": 210,
+    "prerequisites": [
+      "RLP-PYSPARK-209"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A source export has one impossible date; operations needs it for repair.",
+    "task": "A source export has one impossible date; operations needs it for repair.",
+    "learning_objective": "Count malformed dates before dropping them",
+    "inputs": {
+      "fixture": "A 2026-10-26/5,B 2026-02-30/7.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "A accepted5; B rejected invalid_date with raw text."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "A accepted5; B rejected invalid_date with raw text.",
+      "Demonstrate the additional boundary: Blank date is missing_date rather than invalid_date.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises count malformed dates before dropping them in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: A accepted5; B rejected invalid_date with raw text.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Blank date is missing_date rather than invalid_date.",
+      "Parse into a candidate field and retain the original string for reject evidence."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "A 2026-10-26/5,B 2026-02-30/7.",
+        "changed_input_check": "Blank date is missing_date rather than invalid_date."
+      },
+      "expected_output": {
+        "contract": "Blank date is missing_date rather than invalid_date."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-211",
+    "tool_id": "pyspark",
+    "title": "Calculate a weekly subtotal without losing daily rows",
+    "level": 3,
+    "sequence": 211,
+    "prerequisites": [
+      "RLP-PYSPARK-192"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A manager wants daily revenue and a week total on every daily row.",
+    "task": "A manager wants daily revenue and a week total on every daily row.",
+    "learning_objective": "Calculate a weekly subtotal without losing daily rows",
+    "inputs": {
+      "fixture": "Mon5,Tue7,Wed2 within one declared week.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Three daily rows retained with weekly_total14 each."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Three daily rows retained with weekly_total14 each.",
+      "Demonstrate the additional boundary: A Sunday event under Monday-start week is assigned by explicit calendar rule.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises calculate a weekly subtotal without losing daily rows in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_3",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Three daily rows retained with weekly_total14 each.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A Sunday event under Monday-start week is assigned by explicit calendar rule.",
+      "A window aggregate can add group context without collapsing each daily row."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Mon5,Tue7,Wed2 within one declared week.",
+        "changed_input_check": "A Sunday event under Monday-start week is assigned by explicit calendar rule."
+      },
+      "expected_output": {
+        "contract": "A Sunday event under Monday-start week is assigned by explicit calendar rule."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-212",
+    "tool_id": "pyspark",
+    "title": "Choose the last nonmissing status under policy",
+    "level": 3,
+    "sequence": 212,
+    "prerequisites": [
+      "RLP-PYSPARK-211"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An event sequence has a null status that means no new status, not a reset.",
+    "task": "An event sequence has a null status that means no new status, not a reset.",
+    "learning_objective": "Choose the last nonmissing status under policy",
+    "inputs": {
+      "fixture": "Order O1 seq1 new,seq2 null,seq3 shipped.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Effective statuses new,new,shipped; raw seq2 null preserved."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Effective statuses new,new,shipped; raw seq2 null preserved.",
+      "Demonstrate the additional boundary: An explicit reset event uses a separate reset marker and must not be ignored.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises choose the last nonmissing status under policy in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Effective statuses new,new,shipped; raw seq2 null preserved.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: An explicit reset event uses a separate reset marker and must not be ignored.",
+      "Define null semantics before using a last-value window with null handling."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Order O1 seq1 new,seq2 null,seq3 shipped.",
+        "changed_input_check": "An explicit reset event uses a separate reset marker and must not be ignored."
+      },
+      "expected_output": {
+        "contract": "An explicit reset event uses a separate reset marker and must not be ignored."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-213",
+    "tool_id": "pyspark",
+    "title": "Separate row count from distinct customer count",
+    "level": 3,
+    "sequence": 213,
+    "prerequisites": [
+      "RLP-PYSPARK-212"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A marketing feed has repeated purchases from one customer.",
+    "task": "A marketing feed has repeated purchases from one customer.",
+    "learning_objective": "Separate row count from distinct customer count",
+    "inputs": {
+      "fixture": "Orders O1/C1/5,O2/C1/7,O3/C2/2.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Orders3,customers2,revenue14."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Orders3,customers2,revenue14.",
+      "Demonstrate the additional boundary: A null customer ID is rejected or counted under an explicit unknown policy.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "This task exercises separate row count from distinct customer count in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Orders3,customers2,revenue14.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A null customer ID is rejected or counted under an explicit unknown policy.",
+      "Name the grain of each metric before choosing count or distinct count."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Orders O1/C1/5,O2/C1/7,O3/C2/2.",
+        "changed_input_check": "A null customer ID is rejected or counted under an explicit unknown policy."
+      },
+      "expected_output": {
+        "contract": "A null customer ID is rejected or counted under an explicit unknown policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-214",
+    "tool_id": "pyspark",
+    "title": "Test a case-insensitive reference match explicitly",
+    "level": 4,
+    "sequence": 214,
+    "prerequisites": [
+      "RLP-PYSPARK-196"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A supplier sends mixed-case product codes; reference keys are uppercase.",
+    "task": "A supplier sends mixed-case product codes; reference keys are uppercase.",
+    "learning_objective": "Test a case-insensitive reference match explicitly",
+    "inputs": {
+      "fixture": "Sales A code p1 amount5,B code P2 amount7; reference P1,P2.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "A and B match after approved normalization; total12; raw codes retained."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "A and B match after approved normalization; total12; raw codes retained.",
+      "Demonstrate the additional boundary: P1 and p1 as two distinct reference rows create a normalization collision error.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises test a case-insensitive reference match explicitly in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_4",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: A and B match after approved normalization; total12; raw codes retained.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: P1 and p1 as two distinct reference rows create a normalization collision error.",
+      "Normalize both sides under one rule and validate post-normalization uniqueness."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Sales A code p1 amount5,B code P2 amount7; reference P1,P2.",
+        "changed_input_check": "P1 and p1 as two distinct reference rows create a normalization collision error."
+      },
+      "expected_output": {
+        "contract": "P1 and p1 as two distinct reference rows create a normalization collision error."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-215",
+    "tool_id": "pyspark",
+    "title": "Detect accidental duplicate columns after a join",
+    "level": 4,
+    "sequence": 215,
+    "prerequisites": [
+      "RLP-PYSPARK-214"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "Two DataFrames both contain status and an ambiguous output can hide the wrong one.",
+    "task": "Two DataFrames both contain status and an ambiguous output can hide the wrong one.",
+    "learning_objective": "Detect accidental duplicate columns after a join",
+    "inputs": {
+      "fixture": "Orders A status new amount5; shipping A status delivered.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Output order_status=new,shipping_status=delivered,amount5."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Output order_status=new,shipping_status=delivered,amount5.",
+      "Demonstrate the additional boundary: Unmatched shipping row retains null shipping_status and order status.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises detect accidental duplicate columns after a join in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Output order_status=new,shipping_status=delivered,amount5.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Unmatched shipping row retains null shipping_status and order status.",
+      "Alias or select columns explicitly after joining."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Orders A status new amount5; shipping A status delivered.",
+        "changed_input_check": "Unmatched shipping row retains null shipping_status and order status."
+      },
+      "expected_output": {
+        "contract": "Unmatched shipping row retains null shipping_status and order status."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-216",
+    "tool_id": "pyspark",
+    "title": "Match a fact to an exact reference version",
+    "level": 4,
+    "sequence": 216,
+    "prerequisites": [
+      "RLP-PYSPARK-215"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An invoice records tariff version V2; using latest V3 would be wrong.",
+    "task": "An invoice records tariff version V2; using latest V3 would be wrong.",
+    "learning_objective": "Match a fact to an exact reference version",
+    "inputs": {
+      "fixture": "Tariff V2 rate2,V3 rate3; invoice I1/V2 qty5.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "I1 amount10 and chosen V2 recorded."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "I1 amount10 and chosen V2 recorded.",
+      "Demonstrate the additional boundary: Unknown V9 is held rather than silently taking V3.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises match a fact to an exact reference version in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: I1 amount10 and chosen V2 recorded.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Unknown V9 is held rather than silently taking V3.",
+      "Join on both business key and version, then audit unmatched versions."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Tariff V2 rate2,V3 rate3; invoice I1/V2 qty5.",
+        "changed_input_check": "Unknown V9 is held rather than silently taking V3."
+      },
+      "expected_output": {
+        "contract": "Unknown V9 is held rather than silently taking V3."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-217",
+    "tool_id": "pyspark",
+    "title": "Compute a batch-level source-to-sink balance",
+    "level": 5,
+    "sequence": 217,
+    "prerequisites": [
+      "RLP-PYSPARK-199"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An ETL run accepts some records and rejects others; counts and money must reconcile.",
+    "task": "An ETL run accepts some records and rejects others; counts and money must reconcile.",
+    "learning_objective": "Compute a batch-level source-to-sink balance",
+    "inputs": {
+      "fixture": "Source A5,Bbad,C7; accepted A,C; reject B.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Source count3=accepted2+reject1; accepted total12; raw invalid amount excluded from numeric total."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Source count3=accepted2+reject1; accepted total12; raw invalid amount excluded from numeric total.",
+      "Demonstrate the additional boundary: An unclassified row makes the batch pending.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises compute a batch-level source-to-sink balance in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_5",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Source count3=accepted2+reject1; accepted total12; raw invalid amount excluded from numeric total.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: An unclassified row makes the batch pending.",
+      "Compute reconciliation independently from the sink rows and reject rows."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Source A5,Bbad,C7; accepted A,C; reject B.",
+        "changed_input_check": "An unclassified row makes the batch pending."
+      },
+      "expected_output": {
+        "contract": "An unclassified row makes the batch pending."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-218",
+    "tool_id": "pyspark",
+    "title": "Promote a snapshot only when keys remain unique",
+    "level": 5,
+    "sequence": 218,
+    "prerequisites": [
+      "RLP-PYSPARK-217"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A candidate current-state table includes a duplicate invoice after a merge.",
+    "task": "A candidate current-state table includes a duplicate invoice after a merge.",
+    "learning_objective": "Promote a snapshot only when keys remain unique",
+    "inputs": {
+      "fixture": "Accepted A5,B7; candidate A6,A6,B7.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Candidate blocked; accepted A5,B7 retained."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Candidate blocked; accepted A5,B7 retained.",
+      "Demonstrate the additional boundary: Correct candidate A6,B7 promotes total13.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises promote a snapshot only when keys remain unique in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Candidate blocked; accepted A5,B7 retained.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Correct candidate A6,B7 promotes total13.",
+      "Validate candidate key uniqueness and count before replacing consumer state."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Accepted A5,B7; candidate A6,A6,B7.",
+        "changed_input_check": "Correct candidate A6,B7 promotes total13."
+      },
+      "expected_output": {
+        "contract": "Correct candidate A6,B7 promotes total13."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-219",
+    "tool_id": "pyspark",
+    "title": "Reconstruct an inventory balance from ordered events",
+    "level": 5,
+    "sequence": 219,
+    "prerequisites": [
+      "RLP-PYSPARK-218"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "An inventory pipeline needs stock by product and warehouse after receipts and issues.",
+    "task": "An inventory pipeline needs stock by product and warehouse after receipts and issues.",
+    "learning_objective": "Reconstruct an inventory balance from ordered events",
+    "inputs": {
+      "fixture": "W1/P1 opening10,receipt3,issue4 with sequence1,2.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Balance after receipt13,after issue9; final9."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Balance after receipt13,after issue9; final9.",
+      "Demonstrate the additional boundary: An issue of20 would breach nonnegative policy.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "This task exercises reconstruct an inventory balance from ordered events in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Balance after receipt13,after issue9; final9.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: An issue of20 would breach nonnegative policy.",
+      "Use event order and a running sum at warehouse-product grain."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "W1/P1 opening10,receipt3,issue4 with sequence1,2.",
+        "changed_input_check": "An issue of20 would breach nonnegative policy."
+      },
+      "expected_output": {
+        "contract": "An issue of20 would breach nonnegative policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-220",
+    "tool_id": "pyspark",
+    "title": "Handle a malformed nested array element",
+    "level": 6,
+    "sequence": 220,
+    "prerequisites": [
+      "RLP-PYSPARK-201"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A JSON order contains one line item with invalid amount while other lines are valid.",
+    "task": "A JSON order contains one line item with invalid amount while other lines are valid.",
+    "learning_objective": "Handle a malformed nested array element",
+    "inputs": {
+      "fixture": "O1 items A5,Bbad,C7; raw order retained.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Valid lines A,C total12; invalid line B quarantined; order-level completeness policy explicit."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Valid lines A,C total12; invalid line B quarantined; order-level completeness policy explicit.",
+      "Demonstrate the additional boundary: A missing items array is a different source error.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises handle a malformed nested array element in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_6",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Valid lines A,C total12; invalid line B quarantined; order-level completeness policy explicit.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A missing items array is a different source error.",
+      "Attach order and item positions to rejects after array expansion."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "O1 items A5,Bbad,C7; raw order retained.",
+        "changed_input_check": "A missing items array is a different source error."
+      },
+      "expected_output": {
+        "contract": "A missing items array is a different source error."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-221",
+    "tool_id": "pyspark",
+    "title": "Prevent a schema change from turning a key null",
+    "level": 6,
+    "sequence": 221,
+    "prerequisites": [
+      "RLP-PYSPARK-220"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A vendor changes an identifier field to a struct. A permissive cast might erase it.",
+    "task": "A vendor changes an identifier field to a struct. A permissive cast might erase it.",
+    "learning_objective": "Prevent a schema change from turning a key null",
+    "inputs": {
+      "fixture": "Old id A amount5; new id {value:B} amount7; approved id string.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Old A accepted5; new row rejected with raw struct and schema reason."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Old A accepted5; new row rejected with raw struct and schema reason.",
+      "Demonstrate the additional boundary: Optional note addition is allowed separately.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises prevent a schema change from turning a key null in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Old A accepted5; new row rejected with raw struct and schema reason.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Optional note addition is allowed separately.",
+      "Check actual field shape before casting required keys."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Old id A amount5; new id {value:B} amount7; approved id string.",
+        "changed_input_check": "Optional note addition is allowed separately."
+      },
+      "expected_output": {
+        "contract": "Optional note addition is allowed separately."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-222",
+    "tool_id": "pyspark",
+    "title": "Bound a late-event correction to one historical window",
+    "level": 7,
+    "sequence": 222,
+    "prerequisites": [
+      "RLP-PYSPARK-203"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A corrected payment arrives after its original day was summarized.",
+    "task": "A corrected payment arrives after its original day was summarized.",
+    "learning_objective": "Bound a late-event correction to one historical window",
+    "inputs": {
+      "fixture": "Oct20 P1 5; Oct26 correction P1 to6 effective Oct20; Oct26 P2 7.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Oct20 restated6,Oct26 remains7; combined13."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Oct20 restated6,Oct26 remains7; combined13.",
+      "Demonstrate the additional boundary: Correction effective Oct26 does not alter Oct20.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises bound a late-event correction to one historical window in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_7",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Oct20 restated6,Oct26 remains7; combined13.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: Correction effective Oct26 does not alter Oct20.",
+      "Separate effective time from receipt time and recompute only impacted windows."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Oct20 P1 5; Oct26 correction P1 to6 effective Oct20; Oct26 P2 7.",
+        "changed_input_check": "Correction effective Oct26 does not alter Oct20."
+      },
+      "expected_output": {
+        "contract": "Correction effective Oct26 does not alter Oct20."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-223",
+    "tool_id": "pyspark",
+    "title": "Reconcile stream output against raw event counts",
+    "level": 7,
+    "sequence": 223,
+    "prerequisites": [
+      "RLP-PYSPARK-222"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A streaming job writes current state and raw event arrival metrics; duplicates make counts differ.",
+    "task": "A streaming job writes current state and raw event arrival metrics; duplicates make counts differ.",
+    "learning_objective": "Reconcile stream output against raw event counts",
+    "inputs": {
+      "fixture": "Raw E1/A5,E1/A5,E2/B7; current A5,B7.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Raw count3,unique event count2,current total12; difference explained."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Raw count3,unique event count2,current total12; difference explained.",
+      "Demonstrate the additional boundary: E1/A6 is conflict, not harmless duplicate.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "This task exercises reconcile stream output against raw event counts in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Raw count3,unique event count2,current total12; difference explained.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: E1/A6 is conflict, not harmless duplicate.",
+      "Report both transport observations and logical event effects."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Raw E1/A5,E1/A5,E2/B7; current A5,B7.",
+        "changed_input_check": "E1/A6 is conflict, not harmless duplicate."
+      },
+      "expected_output": {
+        "contract": "E1/A6 is conflict, not harmless duplicate."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-224",
+    "tool_id": "pyspark",
+    "title": "Compare sort-before-write cost to read benefit",
+    "level": 8,
+    "sequence": 224,
+    "prerequisites": [
+      "RLP-PYSPARK-205"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A dataset is repeatedly filtered by customer; proposed ordering may improve reads but costs writes.",
+    "task": "A dataset is repeatedly filtered by customer; proposed ordering may improve reads but costs writes.",
+    "learning_objective": "Compare sort-before-write cost to read benefit",
+    "inputs": {
+      "fixture": "1000 synthetic rows over10 customers; baseline and ordered candidate; same schema/results.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both output exact counts/totals; write and repeated read metrics observed; recommendation workload-specific."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Both output exact counts/totals; write and repeated read metrics observed; recommendation workload-specific.",
+      "Demonstrate the additional boundary: One query is insufficient to claim an amortized benefit.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "This task exercises compare sort-before-write cost to read benefit in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_8",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Both output exact counts/totals; write and repeated read metrics observed; recommendation workload-specific.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: One query is insufficient to claim an amortized benefit.",
+      "Measure both layout creation and representative consumer reads."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "1000 synthetic rows over10 customers; baseline and ordered candidate; same schema/results.",
+        "changed_input_check": "One query is insufficient to claim an amortized benefit."
+      },
+      "expected_output": {
+        "contract": "One query is insufficient to claim an amortized benefit."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-225",
+    "tool_id": "pyspark",
+    "title": "Check approximate quantile error on a small oracle",
+    "level": 8,
+    "sequence": 225,
+    "prerequisites": [
+      "RLP-PYSPARK-224"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A percentile report uses an approximation. Verify its permitted error against exact tiny data.",
+    "task": "A percentile report uses an approximation. Verify its permitted error against exact tiny data.",
+    "learning_objective": "Check approximate quantile error on a small oracle",
+    "inputs": {
+      "fixture": "Amounts 1,2,3,4,5; median target3; selected approximation setting.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Approximate result compared to exact3 with declared error; no exactness claim beyond test."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Approximate result compared to exact3 with declared error; no exactness claim beyond test.",
+      "Demonstrate the additional boundary: A skewed fixture 1,1,1,1,100 is tested separately.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "This task exercises check approximate quantile error on a small oracle in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Approximate result compared to exact3 with declared error; no exactness claim beyond test.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A skewed fixture 1,1,1,1,100 is tested separately.",
+      "Use a small exact oracle and document approximation bounds/settings."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Amounts 1,2,3,4,5; median target3; selected approximation setting.",
+        "changed_input_check": "A skewed fixture 1,1,1,1,100 is tested separately."
+      },
+      "expected_output": {
+        "contract": "A skewed fixture 1,1,1,1,100 is tested separately."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-226",
+    "tool_id": "pyspark",
+    "title": "Protect a release from stale broadcast reference data",
+    "level": 9,
+    "sequence": 226,
+    "prerequisites": [
+      "RLP-PYSPARK-206"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "A cached reference map changes mid-run; output must use a pinned version.",
+    "task": "A cached reference map changes mid-run; output must use a pinned version.",
+    "learning_objective": "Protect a release from stale broadcast reference data",
+    "inputs": {
+      "fixture": "Rate V1 P=2; new V2 P=3; fact P qty5; batch B1 pinned V1.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "B1 amount10 with V1 provenance even if V2 appears before retry."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "B1 amount10 with V1 provenance even if V2 appears before retry.",
+      "Demonstrate the additional boundary: New batch B2 pinned V2 yields15.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "This task exercises protect a release from stale broadcast reference data in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_9",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: B1 amount10 with V1 provenance even if V2 appears before retry.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: New batch B2 pinned V2 yields15.",
+      "Pin or materialize the reference version at batch start; cache alone is not versioning."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "Rate V1 P=2; new V2 P=3; fact P qty5; batch B1 pinned V1.",
+        "changed_input_check": "New batch B2 pinned V2 yields15."
+      },
+      "expected_output": {
+        "contract": "New batch B2 pinned V2 yields15."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-PYSPARK-227",
+    "tool_id": "pyspark",
+    "title": "Independent fisheries-quota transfer",
+    "level": 10,
+    "sequence": 227,
+    "prerequisites": [
+      "RLP-PYSPARK-207"
+    ],
+    "independent_prerequisites": [],
+    "scenario": "Build a Spark pipeline for vessel landings, quota changes and late corrections.",
+    "task": "Build a Spark pipeline for vessel landings, quota changes and late corrections.",
+    "learning_objective": "Independent fisheries-quota transfer",
+    "inputs": {
+      "fixture": "V1 catch5 under quota10; later catch4; duplicate catch; correction first catch6; unknown species record.",
+      "environment": "Existing supported local or authorized cloud training environment; isolated synthetic inputs and outputs; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Current catch10 and quota remaining0; duplicate once; unknown species rejected; replay and lineage."
+    },
+    "constraints": [
+      "Preserve sources, prior attempts and accepted evidence; use the bounded synthetic fixture and isolated outputs.",
+      "Do not mutate production, provision new paid resources, expose credentials or notify external people.",
+      "Verify actual runtime and permission support; an inaccessible cloud run is environment_blocked rather than verified."
+    ],
+    "acceptance_criteria": [
+      "Current catch10 and quota remaining0; duplicate once; unknown species rejected; replay and lineage.",
+      "Demonstrate the additional boundary: A quota change effective after the catch cannot retroactively permit it without policy.",
+      "Submit implementation/configuration, observed outputs and assistance disclosure for human review."
+    ],
+    "estimated_minutes": 120,
+    "engineering_relevance": "This task exercises independent fisheries-quota transfer in an actual data processing or operational contract. Explain the downstream effect and one limitation after review.",
+    "official_docs": [
+      "https://spark.apache.org/docs/latest/sql-programming-guide.html",
+      "https://spark.apache.org/docs/latest/streaming/index.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.27.3",
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or an exact-skill diagnostic approved by a reviewer."
+    ],
+    "progressive_hints": [
+      "For this fixture, first write the exact expected records or statuses: Current catch10 and quota remaining0; duplicate once; unknown species rejected; replay and lineage.",
+      "Inspect the first intermediate result and compare it with the changed-input boundary: A quota change effective after the catch cannot retroactively permit it without policy.",
+      "Define vessel,species,event and quota-version identities."
+    ],
+    "authoring_batch": "cloud-explicit-007",
+    "followup": {
+      "task": "Independently reconstruct the bounded solution with the changed-input check and disclose assistance.",
+      "inputs": {
+        "base_fixture": "V1 catch5 under quota10; later catch4; duplicate catch; correction first catch6; unknown species record.",
+        "changed_input_check": "A quota change effective after the catch cannot retroactively permit it without policy."
+      },
+      "expected_output": {
+        "contract": "A quota change effective after the catch cannot retroactively permit it without policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Preserve the fresh independent attempt and actual observed outputs."
+      ]
+    }
+  }
+]

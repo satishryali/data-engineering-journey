@@ -1,0 +1,3422 @@
+[
+  {
+    "id": "RLP-SQL-142",
+    "tool_id": "sql",
+    "title": "Read a plan's monthly price",
+    "level": 0,
+    "prerequisites": [
+      "RLP-SQL-001"
+    ],
+    "scenario": "A subscription support clerk needs the monthly price in cents of one supplied plan.",
+    "task": "A subscription support clerk needs the monthly price in cents of one supplied plan. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "plans(plan_code,monthly_cents):('BASIC',900)",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "monthly_cents900"
+    },
+    "constraints": [
+      "Do not convert cents to a formatted currency string in this result.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: monthly_cents900",
+      "Demonstrate this specific boundary/failure check: Do not convert cents to a formatted currency string in this result.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read a plan's monthly price is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Read a plan's monthly price",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not convert cents to a formatted currency string in this result.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 142,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-143",
+    "tool_id": "sql",
+    "title": "Keep a trial flag as a boolean",
+    "level": 0,
+    "prerequisites": [
+      "RLP-SQL-142"
+    ],
+    "scenario": "A subscriber record contains a literal boolean trial flag. Return it unchanged.",
+    "task": "A subscriber record contains a literal boolean trial flag. Return it unchanged. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "subscribers(id,is_trial):('S1',true)",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "is_trial=true"
+    },
+    "constraints": [
+      "Boolean true is not a date or a text label.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: is_trial=true",
+      "Demonstrate this specific boundary/failure check: Boolean true is not a date or a text label.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Keep a trial flag as a boolean is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Keep a trial flag as a boolean",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Boolean true is not a date or a text label.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 143,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-144",
+    "tool_id": "sql",
+    "title": "Read one billing period boundary",
+    "level": 0,
+    "prerequisites": [
+      "RLP-SQL-143"
+    ],
+    "scenario": "A billing preview needs the explicit period_start from one supplied subscription.",
+    "task": "A billing preview needs the explicit period_start from one supplied subscription. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "subscriptions(id,period_start):('S1','2026-10-01')",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "period_start2026-10-01"
+    },
+    "constraints": [
+      "Do not substitute the query execution date.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: period_start2026-10-01",
+      "Demonstrate this specific boundary/failure check: Do not substitute the query execution date.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read one billing period boundary is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Read one billing period boundary",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not substitute the query execution date.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 144,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-145",
+    "tool_id": "sql",
+    "title": "Read a nullable cancellation date",
+    "level": 0,
+    "prerequisites": [
+      "RLP-SQL-144"
+    ],
+    "scenario": "Inspect a subscription that has no cancellation date and preserve NULL in the result.",
+    "task": "Inspect a subscription that has no cancellation date and preserve NULL in the result. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "subscriptions(id,cancelled_on):('S1',NULL)",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "S1,cancelled_onNULL"
+    },
+    "constraints": [
+      "An unknown date must not be replaced by today's date.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: S1,cancelled_onNULL",
+      "Demonstrate this specific boundary/failure check: An unknown date must not be replaced by today's date.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read a nullable cancellation date is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Read a nullable cancellation date",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An unknown date must not be replaced by today's date.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 145,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-146",
+    "tool_id": "sql",
+    "title": "Select a consumer-approved subscription key",
+    "level": 0,
+    "prerequisites": [
+      "RLP-SQL-145"
+    ],
+    "scenario": "Return public_subscription_id while excluding internal_notes from a customer-facing lookup.",
+    "task": "Return public_subscription_id while excluding internal_notes from a customer-facing lookup. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "subscriptions(public_subscription_id,internal_notes):('SUB7','manual-review')",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "public_subscription_idSUB7"
+    },
+    "constraints": [
+      "No internal_notes column or content may appear in the result.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: public_subscription_idSUB7",
+      "Demonstrate this specific boundary/failure check: No internal_notes column or content may appear in the result.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Select a consumer-approved subscription key is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Select a consumer-approved subscription key",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: No internal_notes column or content may appear in the result.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 146,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-147",
+    "tool_id": "sql",
+    "title": "Inspect an empty invoice result",
+    "level": 0,
+    "prerequisites": [
+      "RLP-SQL-146"
+    ],
+    "scenario": "A new subscriber has no invoices yet. Return its invoice IDs from an empty fixture.",
+    "task": "A new subscriber has no invoices yet. Return its invoice IDs from an empty fixture. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoices(id,subscriber_id):empty",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "zero rows with an invoice id column"
+    },
+    "constraints": [
+      "Do not fabricate an invoice with amount0.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: zero rows with an invoice id column",
+      "Demonstrate this specific boundary/failure check: Do not fabricate an invoice with amount0.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Inspect an empty invoice result is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Inspect an empty invoice result",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not fabricate an invoice with amount0.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 147,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-148",
+    "tool_id": "sql",
+    "title": "Select active subscriptions at a date",
+    "level": 1,
+    "prerequisites": [
+      "RLP-SQL-147"
+    ],
+    "scenario": "Return subscriptions started on/before a supplied date and not cancelled on/before it.",
+    "task": "Return subscriptions started on/before a supplied date and not cancelled on/before it. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "AstartOct1cancelNULL;BstartOct1cancelOct10;CstartNov1;asofOct20",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Aonly"
+    },
+    "constraints": [
+      "Cancellation is exclusive of service from the cancellation date onward under this contract.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Aonly",
+      "Demonstrate this specific boundary/failure check: Cancellation is exclusive of service from the cancellation date onward under this contract.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Select active subscriptions at a date is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Select active subscriptions at a date",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Cancellation is exclusive of service from the cancellation date onward under this contract.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_0_bounded_sql_operations"
+    ],
+    "sequence": 1148,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-149",
+    "tool_id": "sql",
+    "title": "Find prices outside a supported range",
+    "level": 1,
+    "prerequisites": [
+      "RLP-SQL-148"
+    ],
+    "scenario": "Return plans whose monthly_cents is negative or exceeds100000.",
+    "task": "Return plans whose monthly_cents is negative or exceeds100000. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "plans A0,B900,C-1,D100001",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "C,D"
+    },
+    "constraints": [
+      "NULL price is reported separately as missing,not forced into the range.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: C,D",
+      "Demonstrate this specific boundary/failure check: NULL price is reported separately as missing,not forced into the range.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Find prices outside a supported range is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Find prices outside a supported range",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: NULL price is reported separately as missing,not forced into the range.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_sql_operations"
+    ],
+    "sequence": 1149,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-150",
+    "tool_id": "sql",
+    "title": "Build a human-readable invoice reference",
+    "level": 1,
+    "prerequisites": [
+      "RLP-SQL-149"
+    ],
+    "scenario": "Combine a fixed INV- prefix with a text external reference without re moving zeros.",
+    "task": "Combine a fixed INV- prefix with a text external reference without re moving zeros. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "external_ref='00042'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "invoice_ref='INV-00042'"
+    },
+    "constraints": [
+      "The final reference is text even though its suffix contains digits.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: invoice_ref='INV-00042'",
+      "Demonstrate this specific boundary/failure check: The final reference is text even though its suffix contains digits.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Build a human-readable invoice reference is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Build a human-readable invoice reference",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The final reference is text even though its suffix contains digits.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_sql_operations"
+    ],
+    "sequence": 1150,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-151",
+    "tool_id": "sql",
+    "title": "Find subscriptions ending within seven days",
+    "level": 1,
+    "prerequisites": [
+      "RLP-SQL-150"
+    ],
+    "scenario": "Return end dates at least report_day and strictly earlier than report_day+7days.",
+    "task": "Return end dates at least report_day and strictly earlier than report_day+7days. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "reportOct20;endsOct19,Oct20,Oct26,Oct27",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Oct20andOct26"
+    },
+    "constraints": [
+      "The next window's first dayOct27is excluded.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Oct20andOct26",
+      "Demonstrate this specific boundary/failure check: The next window's first dayOct27is excluded.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Find subscriptions ending within seven days is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Find subscriptions ending within seven days",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The next window's first dayOct27is excluded.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_sql_operations"
+    ],
+    "sequence": 1151,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-152",
+    "tool_id": "sql",
+    "title": "Label paid and unpaid invoices",
+    "level": 1,
+    "prerequisites": [
+      "RLP-SQL-151"
+    ],
+    "scenario": "Classify payment_status='paid' as paid,explicit'open' as unpaid,and NULL as unknown.",
+    "task": "Classify payment_status='paid' as paid,explicit'open' as unpaid,and NULL as unknown. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoices Apaid,Bopen,CNULL",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Apaid,Bunpaid,Cunknown"
+    },
+    "constraints": [
+      "An unrecognized status must produce unsupported_status,not unpaid.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Apaid,Bunpaid,Cunknown",
+      "Demonstrate this specific boundary/failure check: An unrecognized status must produce unsupported_status,not unpaid.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Label paid and unpaid invoices is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Label paid and unpaid invoices",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An unrecognized status must produce unsupported_status,not unpaid.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_sql_operations"
+    ],
+    "sequence": 1152,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-153",
+    "tool_id": "sql",
+    "title": "Compare an invoice amount with a threshold",
+    "level": 1,
+    "prerequisites": [
+      "RLP-SQL-152"
+    ],
+    "scenario": "Return invoices above a supplied integer-cent approval threshold.",
+    "task": "Return invoices above a supplied integer-cent approval threshold. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoice cents A999,B1000,C1001;threshold1000",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Conly"
+    },
+    "constraints": [
+      "Avoid floating-point currency conversion before comparing exact cents.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Conly",
+      "Demonstrate this specific boundary/failure check: Avoid floating-point currency conversion before comparing exact cents.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Compare an invoice amount with a threshold is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Compare an invoice amount with a threshold",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Avoid floating-point currency conversion before comparing exact cents.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_sql_operations"
+    ],
+    "sequence": 1153,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-154",
+    "tool_id": "sql",
+    "title": "Keep a defined whitespace cleanup boundary",
+    "level": 2,
+    "prerequisites": [
+      "RLP-SQL-153"
+    ],
+    "scenario": "Trim customer display names but preserve invoice reference text exactly.",
+    "task": "Trim customer display names but preserve invoice reference text exactly. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "display_name='  Asha  ';invoice_ref=' 007 '",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "display_name='Asha';invoice_ref=' 007 '"
+    },
+    "constraints": [
+      "A cleanup rule for one field must not silently propagate to business identifiers.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: display_name='Asha';invoice_ref=' 007 '",
+      "Demonstrate this specific boundary/failure check: A cleanup rule for one field must not silently propagate to business identifiers.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Keep a defined whitespace cleanup boundary is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Keep a defined whitespace cleanup boundary",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A cleanup rule for one field must not silently propagate to business identifiers.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_1_bounded_sql_operations"
+    ],
+    "sequence": 2154,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-155",
+    "tool_id": "sql",
+    "title": "Compare subscription counts by plan",
+    "level": 2,
+    "prerequisites": [
+      "RLP-SQL-154"
+    ],
+    "scenario": "Count subscribers per plan,including a plan with no subscribers.",
+    "task": "Count subscribers per plan,including a plan with no subscribers. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "plansBasic,Pro,Enterprise; subscriptionsBasicA,BasicB,ProC",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Basic2,Pro1,Enterprise0"
+    },
+    "constraints": [
+      "Do not count an outer-join placeholder as a subscriber.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Basic2,Pro1,Enterprise0",
+      "Demonstrate this specific boundary/failure check: Do not count an outer-join placeholder as a subscriber.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Compare subscription counts by plan is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Compare subscription counts by plan",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not count an outer-join placeholder as a subscriber.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_sql_operations"
+    ],
+    "sequence": 2155,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-156",
+    "tool_id": "sql",
+    "title": "Separate zero-charge and unknown-charge invoices",
+    "level": 2,
+    "prerequisites": [
+      "RLP-SQL-155"
+    ],
+    "scenario": "Count invoices with known zero,known positive and NULL charges.",
+    "task": "Count invoices with known zero,known positive and NULL charges. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoices A0,B10,CNULL,D0",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "zero2;positive1;unknown1"
+    },
+    "constraints": [
+      "A zero invoice is a valid known value,not missing data.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: zero2;positive1;unknown1",
+      "Demonstrate this specific boundary/failure check: A zero invoice is a valid known value,not missing data.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Separate zero-charge and unknown-charge invoices is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Separate zero-charge and unknown-charge invoices",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A zero invoice is a valid known value,not missing data.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_sql_operations"
+    ],
+    "sequence": 2156,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-157",
+    "tool_id": "sql",
+    "title": "Flag an invoice without line items",
+    "level": 2,
+    "prerequisites": [
+      "RLP-SQL-156"
+    ],
+    "scenario": "Return invoices that exist but have no detail lines.",
+    "task": "Return invoices that exist but have no detail lines. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoicesI1,I2;linesI1L1,I1L2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "I2"
+    },
+    "constraints": [
+      "A line with units0still exists and must not be mistaken for no line.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: I2",
+      "Demonstrate this specific boundary/failure check: A line with units0still exists and must not be mistaken for no line.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Flag an invoice without line items is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Flag an invoice without line items",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A line with units0still exists and must not be mistaken for no line.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_sql_operations"
+    ],
+    "sequence": 2157,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-158",
+    "tool_id": "sql",
+    "title": "Find plans used by every required region",
+    "level": 2,
+    "prerequisites": [
+      "RLP-SQL-157"
+    ],
+    "scenario": "Return plan codes offered in both required regions north and south.",
+    "task": "Return plan codes offered in both required regions north and south. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "offersBasicnorth,Basicsouth,Pronorth;requirednorth,south",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Basic"
+    },
+    "constraints": [
+      "Adding a third required region changes the qualifying plans;do not hard-code the count2.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Basic",
+      "Demonstrate this specific boundary/failure check: Adding a third required region changes the qualifying plans;do not hard-code the count2.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Find plans used by every required region is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Find plans used by every required region",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Adding a third required region changes the qualifying plans;do not hard-code the count2.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_sql_operations"
+    ],
+    "sequence": 2158,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-159",
+    "tool_id": "sql",
+    "title": "Detect subscribers with conflicting home countries",
+    "level": 2,
+    "prerequisites": [
+      "RLP-SQL-158"
+    ],
+    "scenario": "Return subscriber IDs associated with more than one distinct nonnull home country.",
+    "task": "Return subscriber IDs associated with more than one distinct nonnull home country. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "addressesAIN,AIN,BIN,BUS,CNULL",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "B"
+    },
+    "constraints": [
+      "Repeated identical addresses do not create a conflict.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: B",
+      "Demonstrate this specific boundary/failure check: Repeated identical addresses do not create a conflict.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Detect subscribers with conflicting home countries is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Detect subscribers with conflicting home countries",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Repeated identical addresses do not create a conflict.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_sql_operations"
+    ],
+    "sequence": 2159,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-160",
+    "tool_id": "sql",
+    "title": "Allocate a prepaid amount across service days",
+    "level": 3,
+    "prerequisites": [
+      "RLP-SQL-159"
+    ],
+    "scenario": "Compute a daily integer-cent allocation for a three-day prepaid service,putting remainder on earliest dates.",
+    "task": "Compute a daily integer-cent allocation for a three-day prepaid service,putting remainder on earliest dates. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "total100cents;servicedaysOct1,Oct2,Oct3",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Oct134,Oct233,Oct333"
+    },
+    "constraints": [
+      "Daily allocations sum exactly to100and never use fractional cents.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Oct134,Oct233,Oct333",
+      "Demonstrate this specific boundary/failure check: Daily allocations sum exactly to100and never use fractional cents.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Allocate a prepaid amount across service days is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Allocate a prepaid amount across service days",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Daily allocations sum exactly to100and never use fractional cents.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_2_bounded_sql_operations"
+    ],
+    "sequence": 3160,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-161",
+    "tool_id": "sql",
+    "title": "Calculate bounded proration",
+    "level": 3,
+    "prerequisites": [
+      "RLP-SQL-160"
+    ],
+    "scenario": "Prorate a3000cent monthly price for10active days in an explicit30day billing period,using a stated rounding rule.",
+    "task": "Prorate a3000cent monthly price for10active days in an explicit30day billing period,using a stated rounding rule. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "monthly3000;active_days10;period_days30",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "prorated1000cents"
+    },
+    "constraints": [
+      "Reject active_days greater than period_daysinstead of silently capping.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: prorated1000cents",
+      "Demonstrate this specific boundary/failure check: Reject active_days greater than period_daysinstead of silently capping.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Calculate bounded proration is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Calculate bounded proration",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Reject active_days greater than period_daysinstead of silently capping.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_sql_operations"
+    ],
+    "sequence": 3161,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-162",
+    "tool_id": "sql",
+    "title": "Separate invoices and credit notes",
+    "level": 3,
+    "prerequisites": [
+      "RLP-SQL-161"
+    ],
+    "scenario": "Report gross invoice cents,credit cents and net cents per subscriber without treating a credit as a second sale.",
+    "task": "Report gross invoice cents,credit cents and net cents per subscriber without treating a credit as a second sale. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "documents S1invoice100,S1credit30,S1invoice50",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "S1gross150,credits30,net120"
+    },
+    "constraints": [
+      "An unknown document kind is surfaced separately.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: S1gross150,credits30,net120",
+      "Demonstrate this specific boundary/failure check: An unknown document kind is surfaced separately.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Separate invoices and credit notes is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Separate invoices and credit notes",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An unknown document kind is surfaced separately.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_sql_operations"
+    ],
+    "sequence": 3162,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-163",
+    "tool_id": "sql",
+    "title": "Apply a free-trial billing boundary",
+    "level": 3,
+    "prerequisites": [
+      "RLP-SQL-162"
+    ],
+    "scenario": "Bill only service dates after the trial's exclusive end boundary.",
+    "task": "Bill only service dates after the trial's exclusive end boundary. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "serviceOct1..Oct5;trialendsOct4exclusive;dailyprice10",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "billableOct4,Oct5;total20"
+    },
+    "constraints": [
+      "State whether the trial end instant itself is trial or paid time.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: billableOct4,Oct5;total20",
+      "Demonstrate this specific boundary/failure check: State whether the trial end instant itself is trial or paid time.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Apply a free-trial billing boundary is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Apply a free-trial billing boundary",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: State whether the trial end instant itself is trial or paid time.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_sql_operations"
+    ],
+    "sequence": 3163,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-164",
+    "tool_id": "sql",
+    "title": "Reconcile invoice and line tax totals",
+    "level": 3,
+    "prerequisites": [
+      "RLP-SQL-163"
+    ],
+    "scenario": "Compare invoice tax control totals with summed line tax at invoice grain.",
+    "task": "Compare invoice tax control totals with summed line tax at invoice grain. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "I1declaredtax12;lines5,7;I2declaredtax10;lines4,5",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "I1balanced;I2difference-1"
+    },
+    "constraints": [
+      "Do not hide differences by rounding a summed control again.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: I1balanced;I2difference-1",
+      "Demonstrate this specific boundary/failure check: Do not hide differences by rounding a summed control again.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Reconcile invoice and line tax totals is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Reconcile invoice and line tax totals",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not hide differences by rounding a summed control again.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_sql_operations"
+    ],
+    "sequence": 3164,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-165",
+    "tool_id": "sql",
+    "title": "Find expired discounts still being applied",
+    "level": 3,
+    "prerequisites": [
+      "RLP-SQL-164"
+    ],
+    "scenario": "Return invoice lines whose discount was applied outside its closed-open valid date interval.",
+    "task": "Return invoice lines whose discount was applied outside its closed-open valid date interval. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "discountDvalidOct1..Oct10;linesOct9discountD,Oct10discountD",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Oct10lineinvalid_discount_period"
+    },
+    "constraints": [
+      "The validity test uses service date,not ingestion date.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Oct10lineinvalid_discount_period",
+      "Demonstrate this specific boundary/failure check: The validity test uses service date,not ingestion date.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Find expired discounts still being applied is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Find expired discounts still being applied",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The validity test uses service date,not ingestion date.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_sql_operations"
+    ],
+    "sequence": 3165,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-166",
+    "tool_id": "sql",
+    "title": "Match subscription plan history to invoice service dates",
+    "level": 4,
+    "prerequisites": [
+      "RLP-SQL-165"
+    ],
+    "scenario": "Attach the price effective at each line's service date,not today's plan price.",
+    "task": "Attach the price effective at each line's service date,not today's plan price. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "planBasic900untilOct15,1200fromOct15;linesOct14,Oct15",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Oct14price900;Oct15price1200"
+    },
+    "constraints": [
+      "Overlapping plan history rows must block ambiguous pricing.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Oct14price900;Oct15price1200",
+      "Demonstrate this specific boundary/failure check: Overlapping plan history rows must block ambiguous pricing.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Match subscription plan history to invoice service dates is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Match subscription plan history to invoice service dates",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Overlapping plan history rows must block ambiguous pricing.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_3_bounded_sql_operations"
+    ],
+    "sequence": 4166,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-167",
+    "tool_id": "sql",
+    "title": "Reconcile payment gateway and billing references",
+    "level": 4,
+    "prerequisites": [
+      "RLP-SQL-166"
+    ],
+    "scenario": "Use an explicit gateway reference mapping and report unmatched records on each side.",
+    "task": "Use an explicit gateway reference mapping and report unmatched records on each side. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoiceI1->gatewayG1;invoiceI2unmapped;gatewayG1,G9",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "I1matched;I2billing_only;G9gateway_only"
+    },
+    "constraints": [
+      "A failed gateway payment does not count as settled money.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: I1matched;I2billing_only;G9gateway_only",
+      "Demonstrate this specific boundary/failure check: A failed gateway payment does not count as settled money.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Reconcile payment gateway and billing references is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Reconcile payment gateway and billing references",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A failed gateway payment does not count as settled money.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_sql_operations"
+    ],
+    "sequence": 4167,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-168",
+    "tool_id": "sql",
+    "title": "Compare original and corrected invoice lines",
+    "level": 4,
+    "prerequisites": [
+      "RLP-SQL-167"
+    ],
+    "scenario": "Report inserted,removed and amount-changed lines for the same immutable invoice revision pair.",
+    "task": "Report inserted,removed and amount-changed lines for the same immutable invoice revision pair. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "v1 L110,L220;v2 L111,L330",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "L1changed10to11;L2removed;L3added30"
+    },
+    "constraints": [
+      "Compare at linekey grain,not only invoice total.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: L1changed10to11;L2removed;L3added30",
+      "Demonstrate this specific boundary/failure check: Compare at linekey grain,not only invoice total.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Compare original and corrected invoice lines is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Compare original and corrected invoice lines",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Compare at linekey grain,not only invoice total.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_sql_operations"
+    ],
+    "sequence": 4168,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-169",
+    "tool_id": "sql",
+    "title": "Combine signed account movements across sources",
+    "level": 4,
+    "prerequisites": [
+      "RLP-SQL-168"
+    ],
+    "scenario": "Combine invoice charges,payments and credits with explicit sign conventions into one account ledger.",
+    "task": "Combine invoice charges,payments and credits with explicit sign conventions into one account ledger. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoice100;payment40;credit10",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "movements+100,-40,-10;balance50"
+    },
+    "constraints": [
+      "Do not deduplicate equal-valued independent movements.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: movements+100,-40,-10;balance50",
+      "Demonstrate this specific boundary/failure check: Do not deduplicate equal-valued independent movements.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Combine signed account movements across sources is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Combine signed account movements across sources",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not deduplicate equal-valued independent movements.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_sql_operations"
+    ],
+    "sequence": 4169,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-170",
+    "tool_id": "sql",
+    "title": "Attach an explicit exchange-rate version",
+    "level": 4,
+    "prerequisites": [
+      "RLP-SQL-169"
+    ],
+    "scenario": "Convert one USD invoice using the documented rate effective on service day and retain the rate ID.",
+    "task": "Convert one USD invoice using the documented rate effective on service day and retain the rate ID. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "USD100minorunits;rateR1=80INRperUSD;servicedayrateR1",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "INR8000minorunits;rate_idR1"
+    },
+    "constraints": [
+      "A missing rate blocks conversion;do not use today's rate silently.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: INR8000minorunits;rate_idR1",
+      "Demonstrate this specific boundary/failure check: A missing rate blocks conversion;do not use today's rate silently.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Attach an explicit exchange-rate version is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Attach an explicit exchange-rate version",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A missing rate blocks conversion;do not use today's rate silently.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_sql_operations"
+    ],
+    "sequence": 4170,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-171",
+    "tool_id": "sql",
+    "title": "Build a subscriber coverage discrepancy report",
+    "level": 4,
+    "prerequisites": [
+      "RLP-SQL-170"
+    ],
+    "scenario": "Reconcile an authoritative subscriber registry with invoice coverage for a period.",
+    "task": "Reconcile an authoritative subscriber registry with invoice coverage for a period. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "registryA,B,C;invoiceA,ADuplicate,D",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Acovered;B,C missing invoice;D unknown subscriber;duplicate A identified"
+    },
+    "constraints": [
+      "A duplicate invoice does not compensate for a missing subscriber.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Acovered;B,C missing invoice;D unknown subscriber;duplicate A identified",
+      "Demonstrate this specific boundary/failure check: A duplicate invoice does not compensate for a missing subscriber.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Build a subscriber coverage discrepancy report is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Build a subscriber coverage discrepancy report",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A duplicate invoice does not compensate for a missing subscriber.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_sql_operations"
+    ],
+    "sequence": 4171,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-172",
+    "tool_id": "sql",
+    "title": "Calculate subscription expansion and contraction",
+    "level": 5,
+    "prerequisites": [
+      "RLP-SQL-171"
+    ],
+    "scenario": "Compare recurring monthly cents between two explicit snapshots at subscriber grain.",
+    "task": "Compare recurring monthly cents between two explicit snapshots at subscriber grain. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "oldA100,B200,C50;newA150,B100,D80",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Aexpansion50;Bcontraction100;Cchurn50;Dnew80"
+    },
+    "constraints": [
+      "A missing snapshot row is meaningful only when snapshot completeness is verified.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Aexpansion50;Bcontraction100;Cchurn50;Dnew80",
+      "Demonstrate this specific boundary/failure check: A missing snapshot row is meaningful only when snapshot completeness is verified.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Calculate subscription expansion and contraction is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Calculate subscription expansion and contraction",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A missing snapshot row is meaningful only when snapshot completeness is verified.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_4_bounded_sql_operations"
+    ],
+    "sequence": 5172,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-173",
+    "tool_id": "sql",
+    "title": "Derive a monthly account balance",
+    "level": 5,
+    "prerequisites": [
+      "RLP-SQL-172"
+    ],
+    "scenario": "Return opening balance plus period charges minus settled payments and credits.",
+    "task": "Return opening balance plus period charges minus settled payments and credits. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "opening50;charges100;payments70;credits10",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "closing70"
+    },
+    "constraints": [
+      "Unsettled payment attempts are excluded from settled payments.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: closing70",
+      "Demonstrate this specific boundary/failure check: Unsettled payment attempts are excluded from settled payments.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Derive a monthly account balance is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Derive a monthly account balance",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Unsettled payment attempts are excluded from settled payments.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_sql_operations"
+    ],
+    "sequence": 5173,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-174",
+    "tool_id": "sql",
+    "title": "Find a subscriber's first paid invoice",
+    "level": 5,
+    "prerequisites": [
+      "RLP-SQL-173"
+    ],
+    "scenario": "Return the earliest paid invoice by paid_at and invoice_id,excluding zero-charge trial invoices.",
+    "task": "Return the earliest paid invoice by paid_at and invoice_id,excluding zero-charge trial invoices. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "I1zeroOct1;I2paid100Oct2;I3paid200Oct3",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "I2"
+    },
+    "constraints": [
+      "A later refund does not retroactively make an invoice unpaid under this bounded definition.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: I2",
+      "Demonstrate this specific boundary/failure check: A later refund does not retroactively make an invoice unpaid under this bounded definition.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Find a subscriber's first paid invoice is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Find a subscriber's first paid invoice",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A later refund does not retroactively make an invoice unpaid under this bounded definition.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_sql_operations"
+    ],
+    "sequence": 5174,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-175",
+    "tool_id": "sql",
+    "title": "Calculate overdue aging buckets",
+    "level": 5,
+    "prerequisites": [
+      "RLP-SQL-174"
+    ],
+    "scenario": "Bucket unpaid invoices by days late using explicit boundaries0,1..30,31..60,61plus.",
+    "task": "Bucket unpaid invoices by days late using explicit boundaries0,1..30,31..60,61plus. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "asofOct31;dayslate0,1,30,31,60,61",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "current1;1to30count2;31to60count2;61pluscount1"
+    },
+    "constraints": [
+      "A future due date belongs to not_due rather than a negative aging bucket.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: current1;1to30count2;31to60count2;61pluscount1",
+      "Demonstrate this specific boundary/failure check: A future due date belongs to not_due rather than a negative aging bucket.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Calculate overdue aging buckets is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Calculate overdue aging buckets",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A future due date belongs to not_due rather than a negative aging bucket.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_sql_operations"
+    ],
+    "sequence": 5175,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-176",
+    "tool_id": "sql",
+    "title": "Find customer lifetime net collections",
+    "level": 5,
+    "prerequisites": [
+      "RLP-SQL-175"
+    ],
+    "scenario": "Sum settled payments minus actual refunds per subscriber while excluding failed attempts.",
+    "task": "Sum settled payments minus actual refunds per subscriber while excluding failed attempts. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "S1settled100,failed50,refund20;S2settled40",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "S1net80;S2net40"
+    },
+    "constraints": [
+      "Multiple status events for one payment must not count as multiple settled payments.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: S1net80;S2net40",
+      "Demonstrate this specific boundary/failure check: Multiple status events for one payment must not count as multiple settled payments.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Find customer lifetime net collections is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Find customer lifetime net collections",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Multiple status events for one payment must not count as multiple settled payments.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_sql_operations"
+    ],
+    "sequence": 5176,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-177",
+    "tool_id": "sql",
+    "title": "Produce a report-ready accrual schedule",
+    "level": 5,
+    "prerequisites": [
+      "RLP-SQL-176"
+    ],
+    "scenario": "Expand a prepaid contract into monthly service allocations across two explicit billing months.",
+    "task": "Expand a prepaid contract into monthly service allocations across two explicit billing months. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "contract6000cents;Oct15days,Nov15days;equal per-day allocation",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Oct3000;Nov3000;total6000"
+    },
+    "constraints": [
+      "Use an authoritative calendar table rather than assuming every month has30days.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Oct3000;Nov3000;total6000",
+      "Demonstrate this specific boundary/failure check: Use an authoritative calendar table rather than assuming every month has30days.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Produce a report-ready accrual schedule is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Produce a report-ready accrual schedule",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Use an authoritative calendar table rather than assuming every month has30days.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_sql_operations"
+    ],
+    "sequence": 5177,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-178",
+    "tool_id": "sql",
+    "title": "Detect invoice version reversals",
+    "level": 6,
+    "prerequisites": [
+      "RLP-SQL-177"
+    ],
+    "scenario": "Find incoming invoice revisions older than the current authoritative revision and block over writes.",
+    "task": "Find incoming invoice revisions older than the current authoritative revision and block over writes. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "targetI1version3cents100;incomingI1version2cents90",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "stale_revisionI1;target remains100"
+    },
+    "constraints": [
+      "A higher arrival timestamp does not make a lower revision authoritative.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: stale_revisionI1;target remains100",
+      "Demonstrate this specific boundary/failure check: A higher arrival timestamp does not make a lower revision authoritative.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Detect invoice version reversals is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Detect invoice version reversals",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A higher arrival timestamp does not make a lower revision authoritative.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_5_bounded_sql_operations"
+    ],
+    "sequence": 6178,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-179",
+    "tool_id": "sql",
+    "title": "Audit refund amounts exceeding settled payments",
+    "level": 6,
+    "prerequisites": [
+      "RLP-SQL-178"
+    ],
+    "scenario": "Identify payments with total accepted refunds greater than settled cents.",
+    "task": "Identify payments with total accepted refunds greater than settled cents. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "P1settled100refunds60,50;P2settled50refund20",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "P1 excess10;P2valid"
+    },
+    "constraints": [
+      "Rejected refund attempts are not included in accepted refund totals.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: P1 excess10;P2valid",
+      "Demonstrate this specific boundary/failure check: Rejected refund attempts are not included in accepted refund totals.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Audit refund amounts exceeding settled payments is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Audit refund amounts exceeding settled payments",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Rejected refund attempts are not included in accepted refund totals.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_sql_operations"
+    ],
+    "sequence": 6179,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-180",
+    "tool_id": "sql",
+    "title": "Identify duplicated service-date billing",
+    "level": 6,
+    "prerequisites": [
+      "RLP-SQL-179"
+    ],
+    "scenario": "Find subscriber/date/charge-kind keys billed more than once across accepted invoice versions.",
+    "task": "Find subscriber/date/charge-kind keys billed more than once across accepted invoice versions. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "AOct1baseI1,AOct1baseI2,AOct1addonI3",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "duplicateAOct1base;add on independent"
+    },
+    "constraints": [
+      "Do not mark legitimately different charge kinds as duplicate base billing.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: duplicateAOct1base;add on independent",
+      "Demonstrate this specific boundary/failure check: Do not mark legitimately different charge kinds as duplicate base billing.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Identify duplicated service-date billing is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Identify duplicated service-date billing",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not mark legitimately different charge kinds as duplicate base billing.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_sql_operations"
+    ],
+    "sequence": 6180,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-181",
+    "tool_id": "sql",
+    "title": "Detect inconsistent cancellation timelines",
+    "level": 6,
+    "prerequisites": [
+      "RLP-SQL-180"
+    ],
+    "scenario": "Report a reactivation preceding its cancellation or a cancellation before initial service start.",
+    "task": "Report a reactivation preceding its cancellation or a cancellation before initial service start. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "Astart10cancel9;Bcancel20reactivate19",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Ainvalid_cancellation;Binvalid_reactivation"
+    },
+    "constraints": [
+      "Equal boundaries follow an explicitly stated ordering policy.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Ainvalid_cancellation;Binvalid_reactivation",
+      "Demonstrate this specific boundary/failure check: Equal boundaries follow an explicitly stated ordering policy.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Detect inconsistent cancellation timelines is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Detect inconsistent cancellation timelines",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Equal boundaries follow an explicitly stated ordering policy.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_sql_operations"
+    ],
+    "sequence": 6181,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-182",
+    "tool_id": "sql",
+    "title": "Explain an apparent negative overdue balance",
+    "level": 6,
+    "prerequisites": [
+      "RLP-SQL-181"
+    ],
+    "scenario": "Reconcile an invoice with over payment and distinguish credit balance from a data error.",
+    "task": "Reconcile an invoice with over payment and distinguish credit balance from a data error. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoice100;settledpayment120",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "outstanding-20;classification customer_credit20"
+    },
+    "constraints": [
+      "Do not clamp the balance to0and discard the20cent liability.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: outstanding-20;classification customer_credit20",
+      "Demonstrate this specific boundary/failure check: Do not clamp the balance to0and discard the20cent liability.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Explain an apparent negative overdue balance is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Explain an apparent negative overdue balance",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not clamp the balance to0and discard the20cent liability.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_sql_operations"
+    ],
+    "sequence": 6182,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-183",
+    "tool_id": "sql",
+    "title": "Validate invoice close completeness",
+    "level": 6,
+    "prerequisites": [
+      "RLP-SQL-182"
+    ],
+    "scenario": "Block financial close if required invoice controls are missing even when observed totals reconcile.",
+    "task": "Block financial close if required invoice controls are missing even when observed totals reconcile. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "periodexpectedbatchesB1,B2;B1balanced;B2absent",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "close blocked missingB2"
+    },
+    "constraints": [
+      "A partial set of balanced batches is not complete period coverage.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: close blocked missingB2",
+      "Demonstrate this specific boundary/failure check: A partial set of balanced batches is not complete period coverage.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Validate invoice close completeness is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Validate invoice close completeness",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A partial set of balanced batches is not complete period coverage.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_sql_operations"
+    ],
+    "sequence": 6183,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-184",
+    "tool_id": "sql",
+    "title": "Resolve overlapping promotional eligibility",
+    "level": 7,
+    "prerequisites": [
+      "RLP-SQL-183"
+    ],
+    "scenario": "Apply only the highest-priority eligible promotion with deterministic ties,reporting the others as not selected.",
+    "task": "Apply only the highest-priority eligible promotion with deterministic ties,reporting the others as not selected. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "subscriberAeligibleD1priority2,D2priority1,D3priority2;tiebydiscount_id",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "D1selected;D2,D3notselected"
+    },
+    "constraints": [
+      "A larger monetary discount does not override the declared business priority.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: D1selected;D2,D3notselected",
+      "Demonstrate this specific boundary/failure check: A larger monetary discount does not override the declared business priority.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Resolve overlapping promotional eligibility is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Resolve overlapping promotional eligibility",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A larger monetary discount does not override the declared business priority.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_6_bounded_sql_operations"
+    ],
+    "sequence": 7184,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-185",
+    "tool_id": "sql",
+    "title": "Apply tiered usage pricing",
+    "level": 7,
+    "prerequisites": [
+      "RLP-SQL-184"
+    ],
+    "scenario": "Price the first100units at10cents and additional units at8cents without applying the cheaper rate to all units.",
+    "task": "Price the first100units at10cents and additional units at8cents without applying the cheaper rate to all units. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "usage120units",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "100*10+20*8=1160cents"
+    },
+    "constraints": [
+      "Boundary100costs1000;usage0costs0.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: 100*10+20*8=1160cents",
+      "Demonstrate this specific boundary/failure check: Boundary100costs1000;usage0costs0.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Apply tiered usage pricing is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Apply tiered usage pricing",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Boundary100costs1000;usage0costs0.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_sql_operations"
+    ],
+    "sequence": 7185,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-186",
+    "tool_id": "sql",
+    "title": "Calculate moving collection conversion",
+    "level": 7,
+    "prerequisites": [
+      "RLP-SQL-185"
+    ],
+    "scenario": "For each cohort day,compare subscribers billed with those paying within7days,including cohorts notyetmature.",
+    "task": "For each cohort day,compare subscribers billed with those paying within7days,including cohorts notyetmature. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "cohortOct1A,B;ApaidOct5;Bunpaid;reportOct10",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Oct1eligible2,paidwithin7days1,conversion0.5"
+    },
+    "constraints": [
+      "A cohort less than7daysold is labelled immature rather than scored as a final failure.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Oct1eligible2,paidwithin7days1,conversion0.5",
+      "Demonstrate this specific boundary/failure check: A cohort less than7daysold is labelled immature rather than scored as a final failure.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Calculate moving collection conversion is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Calculate moving collection conversion",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A cohort less than7daysold is labelled immature rather than scored as a final failure.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_sql_operations"
+    ],
+    "sequence": 7186,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-187",
+    "tool_id": "sql",
+    "title": "Allocate a payment across oldest invoices",
+    "level": 7,
+    "prerequisites": [
+      "RLP-SQL-186"
+    ],
+    "scenario": "Allocate150cents against invoicesI1=100dueearlier,I2=100duelater in FIFO order.",
+    "task": "Allocate150cents against invoicesI1=100dueearlier,I2=100duelater in FIFO order. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "payment150;I1dueOct1;I2dueOct2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "I1allocated100;I2allocated50;unallocated0"
+    },
+    "constraints": [
+      "Equal due dates require a deterministic invoice_id tiebreaker.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: I1allocated100;I2allocated50;unallocated0",
+      "Demonstrate this specific boundary/failure check: Equal due dates require a deterministic invoice_id tiebreaker.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Allocate a payment across oldest invoices is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Allocate a payment across oldest invoices",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Equal due dates require a deterministic invoice_id tiebreaker.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_sql_operations"
+    ],
+    "sequence": 7187,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-188",
+    "tool_id": "sql",
+    "title": "Model invoice lineage through reversals",
+    "level": 7,
+    "prerequisites": [
+      "RLP-SQL-187"
+    ],
+    "scenario": "Follow an invoice's reversal and replacement chain and identify the active unreversed document.",
+    "task": "Follow an invoice's reversal and replacement chain and identify the active unreversed document. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "I1reversedbyR1;I2replacesI1;I2notreversed",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "activeI2;history includesI1,R1,I2"
+    },
+    "constraints": [
+      "Detect a circular replacement reference rather than recursing indefinitely.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: activeI2;history includesI1,R1,I2",
+      "Demonstrate this specific boundary/failure check: Detect a circular replacement reference rather than recursing indefinitely.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Model invoice lineage through reversals is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Model invoice lineage through reversals",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Detect a circular replacement reference rather than recursing indefinitely.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_sql_operations"
+    ],
+    "sequence": 7188,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-189",
+    "tool_id": "sql",
+    "title": "Measure net revenue retention by a fixed cohort",
+    "level": 7,
+    "prerequisites": [
+      "RLP-SQL-188"
+    ],
+    "scenario": "Compute ending recurring revenue from the same starting cohort,excluding newly acquired subscribers.",
+    "task": "Compute ending recurring revenue from the same starting cohort,excluding newly acquired subscribers. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "startA100,B100;endA150,B0,C200new",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "starting200;endingcohort150;NRR0.75"
+    },
+    "constraints": [
+      "New customer C must not inflate existing cohort retention.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: starting200;endingcohort150;NRR0.75",
+      "Demonstrate this specific boundary/failure check: New customer C must not inflate existing cohort retention.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Measure net revenue retention by a fixed cohort is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Measure net revenue retention by a fixed cohort",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: New customer C must not inflate existing cohort retention.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_sql_operations"
+    ],
+    "sequence": 7189,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-190",
+    "tool_id": "sql",
+    "title": "Reduce invoice-line scans with bounded reuse",
+    "level": 8,
+    "prerequisites": [
+      "RLP-SQL-189"
+    ],
+    "scenario": "Compare three revenue reports that rescan the same generated lines against a shared bounded intermediate.",
+    "task": "Compare three revenue reports that rescan the same generated lines against a shared bounded intermediate. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "100000lines;threeaggregationsbyplan,region,month",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "identical business results; scans/intermediate costs and plans recorded"
+    },
+    "constraints": [
+      "Include intermediate materialization cost and do not assume reuse is alwaysfaster.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: identical business results; scans/intermediate costs and plans recorded",
+      "Demonstrate this specific boundary/failure check: Include intermediate materialization cost and do not assume reuse is alwaysfaster.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Reduce invoice-line scans with bounded reuse is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Reduce invoice-line scans with bounded reuse",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Include intermediate materialization cost and do not assume reuse is alwaysfaster.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_7_bounded_sql_operations"
+    ],
+    "sequence": 8190,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-191",
+    "tool_id": "sql",
+    "title": "Measure distinct-count cost at the right grain",
+    "level": 8,
+    "prerequisites": [
+      "RLP-SQL-190"
+    ],
+    "scenario": "Compare counting raw payment status events with first reducing to one payment record under a declared latest status contract.",
+    "task": "Compare counting raw payment status events with first reducing to one payment record under a declared latest status contract. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "10000payments each10statusevents",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "correct settled payment count matches; input/intermediate cardinalities reported"
+    },
+    "constraints": [
+      "A count distinct payment ID alone is wrong if the latest status is failed.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: correct settled payment count matches; input/intermediate cardinalities reported",
+      "Demonstrate this specific boundary/failure check: A count distinct payment ID alone is wrong if the latest status is failed.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Measure distinct-count cost at the right grain is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Measure distinct-count cost at the right grain",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A count distinct payment ID alone is wrong if the latest status is failed.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_sql_operations"
+    ],
+    "sequence": 8191,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-192",
+    "tool_id": "sql",
+    "title": "Optimize an aging report without changing boundaries",
+    "level": 8,
+    "prerequisites": [
+      "RLP-SQL-191"
+    ],
+    "scenario": "Compare candidate plans for unpaid invoices due before asof while retaining all aging bucket edges.",
+    "task": "Compare candidate plans for unpaid invoices due before asof while retaining all aging bucket edges. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "generated100000invoices;as of date;edgecases0,1,30,31,60,61",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "all edge classifications identical;actual plans and timings recorded"
+    },
+    "constraints": [
+      "Do not change current unpaid status to historical paid status just to use an index.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: all edge classifications identical;actual plans and timings recorded",
+      "Demonstrate this specific boundary/failure check: Do not change current unpaid status to historical paid status just to use an index.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Optimize an aging report without changing boundaries is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Optimize an aging report without changing boundaries",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not change current unpaid status to historical paid status just to use an index.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_sql_operations"
+    ],
+    "sequence": 8192,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-193",
+    "tool_id": "sql",
+    "title": "Quantify currency conversion rounding differences",
+    "level": 8,
+    "prerequisites": [
+      "RLP-SQL-192"
+    ],
+    "scenario": "Compare rounding per line with rounding after invoice aggregation under a supplied rate.",
+    "task": "Compare rounding per line with rounding after invoice aggregation under a supplied rate. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "twolines1centUSD each;rate0.5INRperUSD;roundhalfup",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "perlineINR2minorunits;invoicelevelINR1minorunit"
+    },
+    "constraints": [
+      "Choose the business required policy and retain the observed1unit difference.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: perlineINR2minorunits;invoicelevelINR1minorunit",
+      "Demonstrate this specific boundary/failure check: Choose the business required policy and retain the observed1unit difference.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Quantify currency conversion rounding differences is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Quantify currency conversion rounding differences",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Choose the business required policy and retain the observed1unit difference.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_sql_operations"
+    ],
+    "sequence": 8193,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-194",
+    "tool_id": "sql",
+    "title": "Inspect heavy-subscriber skew in billing joins",
+    "level": 8,
+    "prerequisites": [
+      "RLP-SQL-193"
+    ],
+    "scenario": "Profile usage event counts before joining each subscriber'spricingterms.",
+    "task": "Profile usage event counts before joining each subscriber'spricingterms. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "100000events;subscriberHOT90000;others10000",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "hotshare0.9;distinct counts and plan/cardinality evidence"
+    },
+    "constraints": [
+      "Do not infer balancedwork from evenly distributed subscriber reference rows.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: hotshare0.9;distinct counts and plan/cardinality evidence",
+      "Demonstrate this specific boundary/failure check: Do not infer balancedwork from evenly distributed subscriber reference rows.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Inspect heavy-subscriber skew in billing joins is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Inspect heavy-subscriber skew in billing joins",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not infer balancedwork from evenly distributed subscriber reference rows.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_sql_operations"
+    ],
+    "sequence": 8194,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-195",
+    "tool_id": "sql",
+    "title": "Bound recursive replacement traversal",
+    "level": 8,
+    "prerequisites": [
+      "RLP-SQL-194"
+    ],
+    "scenario": "Compare a cycle-safe traversal to a depth budget with an unrestricted proposal on a synthetic chain.",
+    "task": "Compare a cycle-safe traversal to a depth budget with an unrestricted proposal on a synthetic chain. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoicechainlength1000;maxdepth100;onecyclefixture",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "chain reports depth_budget_exceeded;cycle fixture terminates with cycle evidence"
+    },
+    "constraints": [
+      "A truncated chain must not be labelled fully reconciled.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: chain reports depth_budget_exceeded;cycle fixture terminates with cycle evidence",
+      "Demonstrate this specific boundary/failure check: A truncated chain must not be labelled fully reconciled.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Bound recursive replacement traversal is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Bound recursive replacement traversal",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A truncated chain must not be labelled fully reconciled.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_sql_operations"
+    ],
+    "sequence": 8195,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-196",
+    "tool_id": "sql",
+    "title": "Publish a versioned financial metric contract",
+    "level": 9,
+    "prerequisites": [
+      "RLP-SQL-195"
+    ],
+    "scenario": "Create explicit grosscharges,net collections and recurring revenue definitions with traceable source filters.",
+    "task": "Create explicit grosscharges,net collections and recurring revenue definitions with traceable source filters. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "invoice100;settled80;refund10;monthlyplan90",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "grosscharges100;net collections70;recurring90"
+    },
+    "constraints": [
+      "These are different metrics;do not label one revenue without its definition.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: grosscharges100;net collections70;recurring90",
+      "Demonstrate this specific boundary/failure check: These are different metrics;do not label one revenue without its definition.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Publish a versioned financial metric contract is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Publish a versioned financial metric contract",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: These are different metrics;do not label one revenue without its definition.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_8_bounded_sql_operations"
+    ],
+    "sequence": 9196,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-197",
+    "tool_id": "sql",
+    "title": "Reconcile a billing release against an approved snapshot",
+    "level": 9,
+    "prerequisites": [
+      "RLP-SQL-196"
+    ],
+    "scenario": "Compare candidate financial reports at subscriber,invoice,currency and period grain before release.",
+    "task": "Compare candidate financial reports at subscriber,invoice,currency and period grain before release. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "approvedA100INR,B200INR;candidateA110INR,B190INR",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "overall total unchanged;A+10,B-10reported;release blocked unexplained differences"
+    },
+    "constraints": [
+      "A matching grandtotal does not satisfy reconciliation.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: overall total unchanged;A+10,B-10reported;release blocked unexplained differences",
+      "Demonstrate this specific boundary/failure check: A matching grandtotal does not satisfy reconciliation.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Reconcile a billing release against an approved snapshot is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Reconcile a billing release against an approved snapshot",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A matching grandtotal does not satisfy reconciliation.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_sql_operations"
+    ],
+    "sequence": 9197,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-198",
+    "tool_id": "sql",
+    "title": "Maintain close and adjustment ledgers",
+    "level": 9,
+    "prerequisites": [
+      "RLP-SQL-197"
+    ],
+    "scenario": "Keep a closed month's amounts immutable while posting late corrections as separately linked adjustments.",
+    "task": "Keep a closed month's amounts immutable while posting late corrections as separately linked adjustments. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "Octoberclosed100;Novemberlatecredit20forOctober",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "Octoberclose100;linked adjustment-20;current operational net80"
+    },
+    "constraints": [
+      "An adjustment must retain original period and posting period separately.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: Octoberclose100;linked adjustment-20;current operational net80",
+      "Demonstrate this specific boundary/failure check: An adjustment must retain original period and posting period separately.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Maintain close and adjustment ledgers is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Maintain close and adjustment ledgers",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An adjustment must retain original period and posting period separately.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_sql_operations"
+    ],
+    "sequence": 9198,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-199",
+    "tool_id": "sql",
+    "title": "Validate a subscription model rollback",
+    "level": 9,
+    "prerequisites": [
+      "RLP-SQL-198"
+    ],
+    "scenario": "Demonstrate returning to an approved model version after a failed candidate while preserving new sourceevents.",
+    "task": "Demonstrate returning to an approved model version after a failed candidate while preserving new sourceevents. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "approvedv1;candidatev2bad;newpaymentP3arrivesduringtest",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "v1restored;P3retained and replayed once;candidate evidence retained"
+    },
+    "constraints": [
+      "Rollback of code must not silently rollback legitimate new businessdata.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: v1restored;P3retained and replayed once;candidate evidence retained",
+      "Demonstrate this specific boundary/failure check: Rollback of code must not silently rollback legitimate new businessdata.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Validate a subscription model rollback is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Validate a subscription model rollback",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Rollback of code must not silently rollback legitimate new businessdata.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_sql_operations"
+    ],
+    "sequence": 9199,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-200",
+    "tool_id": "sql",
+    "title": "Audit a billing data retention exception",
+    "level": 9,
+    "prerequisites": [
+      "RLP-SQL-199"
+    ],
+    "scenario": "Plan removal of expired detail rows while retaining invoices under dispute or legal hold.",
+    "task": "Plan removal of expired detail rows while retaining invoices under dispute or legal hold. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "I1expiredordinary;I2expireddisputed;I3expiredheld;I4recent",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "I1eligible;I2,I3,I4retained with reasons"
+    },
+    "constraints": [
+      "Aggregate retention alone is insufficient if a hold requires row-level evidence.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: I1eligible;I2,I3,I4retained with reasons",
+      "Demonstrate this specific boundary/failure check: Aggregate retention alone is insufficient if a hold requires row-level evidence.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Audit a billing data retention exception is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Audit a billing data retention exception",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Aggregate retention alone is insufficient if a hold requires row-level evidence.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_sql_operations"
+    ],
+    "sequence": 9200,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-201",
+    "tool_id": "sql",
+    "title": "Gate an independent billing assessment",
+    "level": 9,
+    "prerequisites": [
+      "RLP-SQL-200"
+    ],
+    "scenario": "Create a fixture-driven assessment checklist requiring code,observed outputs,assistance disclosure and changed-input test.",
+    "task": "Create a fixture-driven assessment checklist requiring code,observed outputs,assistance disclosure and changed-input test. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "submitted querymatchesonefixture;nochangedinputorhelpdisclosure",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "assessment pending,not independently mastered"
+    },
+    "constraints": [
+      "Completion of the checklist itself does not count as a verified learner problem solution.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: assessment pending,not independently mastered",
+      "Demonstrate this specific boundary/failure check: Completion of the checklist itself does not count as a verified learner problem solution.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Gate an independent billing assessment is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Gate an independent billing assessment",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Completion of the checklist itself does not count as a verified learner problem solution.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_sql_operations"
+    ],
+    "sequence": 9201,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-202",
+    "tool_id": "sql",
+    "title": "Independently build a subscription revenue mart",
+    "level": 10,
+    "prerequisites": [
+      "RLP-SQL-201"
+    ],
+    "scenario": "Implement subscriber history,usage pricing,invoices,payments,credits and period reports with reconciliation.",
+    "task": "Implement subscriber history,usage pricing,invoices,payments,credits and period reports with reconciliation. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "fixtureincludesplanchange,trial,over payment,late credit and duplicates",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "declared metrics reconcile;issues traceable;incremental replay equals full re build"
+    },
+    "constraints": [
+      "Reviewer adds a tied effective price record after first submission.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: declared metrics reconcile;issues traceable;incremental replay equals full re build",
+      "Demonstrate this specific boundary/failure check: Reviewer adds a tied effective price record after first submission.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently build a subscription revenue mart is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently build a subscription revenue mart",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Reviewer adds a tied effective price record after first submission.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_9_bounded_sql_operations"
+    ],
+    "sequence": 10202,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-203",
+    "tool_id": "sql",
+    "title": "Independently investigate a billing leakage incident",
+    "level": 10,
+    "prerequisites": [
+      "RLP-SQL-202"
+    ],
+    "scenario": "Find unbilled service,duplicate charges and unapplied payments across a bounded period,then quantify separately.",
+    "task": "Find unbilled service,duplicate charges and unapplied payments across a bounded period,then quantify separately. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "Aservice10nobill;Btwobasecharges;Csettledpaymentunmapped",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "eachclass identified with sourcekeys;financial impact separated;safe repair plan"
+    },
+    "constraints": [
+      "Do not add different issueamounts into one lossfigure without checking overlap.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: eachclass identified with sourcekeys;financial impact separated;safe repair plan",
+      "Demonstrate this specific boundary/failure check: Do not add different issueamounts into one lossfigure without checking overlap.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently investigate a billing leakage incident is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently investigate a billing leakage incident",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not add different issueamounts into one lossfigure without checking overlap.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_sql_operations"
+    ],
+    "sequence": 10203,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-204",
+    "tool_id": "sql",
+    "title": "Independently defend a prepaid allocation engine",
+    "level": 10,
+    "prerequisites": [
+      "RLP-SQL-203"
+    ],
+    "scenario": "Build day/month allocations with exact cents,partial periods,cancellations and closed period adjustments.",
+    "task": "Build day/month allocations with exact cents,partial periods,cancellations and closed period adjustments. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "contract10001cents;service crosses three months;midperiod cancel;late correction",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "allocations sum exactly;closed period preserved;refund/adjustment policy tested"
+    },
+    "constraints": [
+      "No working solution or prescribed data structure is supplied.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: allocations sum exactly;closed period preserved;refund/adjustment policy tested",
+      "Demonstrate this specific boundary/failure check: No working solution or prescribed data structure is supplied.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently defend a prepaid allocation engine is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently defend a prepaid allocation engine",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: No working solution or prescribed data structure is supplied.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_sql_operations"
+    ],
+    "sequence": 10204,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-205",
+    "tool_id": "sql",
+    "title": "Independently migrate billing currency contracts",
+    "level": 10,
+    "prerequisites": [
+      "RLP-SQL-204"
+    ],
+    "scenario": "Support integer-minorunit and decimal majorunit consumers during a staged migration across currency precisions.",
+    "task": "Support integer-minorunit and decimal majorunit consumers during a staged migration across currency precisions. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "INR2decimal,JPY0decimal;legacytextamounts;one ambiguous precision",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "exact roundtrips for valid records;ambiguous records blocked;both consumer contracts tested"
+    },
+    "constraints": [
+      "Do not infer currency from a numeric amount's formatting.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: exact roundtrips for valid records;ambiguous records blocked;both consumer contracts tested",
+      "Demonstrate this specific boundary/failure check: Do not infer currency from a numeric amount's formatting.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently migrate billing currency contracts is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently migrate billing currency contracts",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not infer currency from a numeric amount's formatting.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_sql_operations"
+    ],
+    "sequence": 10205,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-206",
+    "tool_id": "sql",
+    "title": "Independently prove revenue report reproducibility",
+    "level": 10,
+    "prerequisites": [
+      "RLP-SQL-205"
+    ],
+    "scenario": "Re build a frozen financial report from immutable inputs,versioned rules and calendar metadata,then explain a later revision.",
+    "task": "Re build a frozen financial report from immutable inputs,versioned rules and calendar metadata,then explain a later revision. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "closedOctober;later credit;changed pricing rule;retained raw batches",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "originalreport re produced;new revision differences attributed to specific sources/rules"
+    },
+    "constraints": [
+      "A similar grand total is not proof of reproducing the originalreport.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: originalreport re produced;new revision differences attributed to specific sources/rules",
+      "Demonstrate this specific boundary/failure check: A similar grand total is not proof of reproducing the originalreport.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently prove revenue report reproducibility is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently prove revenue report reproducibility",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A similar grand total is not proof of reproducing the originalreport.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_sql_operations"
+    ],
+    "sequence": 10206,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-SQL-207",
+    "tool_id": "sql",
+    "title": "Independently tune a billing workload under correctness gates",
+    "level": 10,
+    "prerequisites": [
+      "RLP-SQL-206"
+    ],
+    "scenario": "Build and optimize a generated million-row billing report while preserving grain,decimal precision,permissions and idempotent replay.",
+    "task": "Build and optimize a generated million-row billing report while preserving grain,decimal precision,permissions and idempotent replay. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "skewed usage,late payments,duplicate events,limited resource budget",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "verified equal outputs;measured plans/runtime;access checks;restart drill"
+    },
+    "constraints": [
+      "Explain a rejected optimization and the concrete contract it would violate.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: verified equal outputs;measured plans/runtime;access checks;restart drill",
+      "Demonstrate this specific boundary/failure check: Explain a rejected optimization and the concrete contract it would violate.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently tune a billing workload under correctness gates is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/queries.html",
+      "https://www.postgresql.org/docs/current/functions.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently tune a billing workload under correctness gates",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Explain a rejected optimization and the concrete contract it would violate.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_sql_operations"
+    ],
+    "sequence": 10207,
+    "authoring_batch": "foundations-explicit-002"
+  }
+]

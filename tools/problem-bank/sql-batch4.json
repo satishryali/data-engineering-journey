@@ -1,0 +1,2330 @@
+[
+  {
+    "id": "RLP-SQL-308",
+    "tool_id": "sql",
+    "title": "Inspect one raw feed line before parsing",
+    "level": 0,
+    "difficulty": "level_0",
+    "scenario": "A staging analyst needs the unchanged raw text of one vendor event before deciding how to interpret it.",
+    "task": "A staging analyst needs the unchanged raw text of one vendor event before deciding how to interpret it.",
+    "learning_objective": "Inspect one raw feed line before parsing",
+    "inputs": {
+      "fixture_contract": "raw_feed(source_row, raw_text):(2,'A;002; ready')",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "source_row2 and exact raw_text'A;002; ready'."
+    },
+    "constraints": [
+      "A raw staging preview must not silently normalize leading zeros or separators.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: source_row2 and exact raw_text'A;002; ready'.",
+      "Verify this boundary: A raw staging preview must not silently normalize leading zeros or separators.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-209"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A raw staging preview must not silently normalize leading zeros or separators.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Inspect one raw feed line before parsing is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 10,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "initial",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 308,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-309",
+    "tool_id": "sql",
+    "title": "Measure an empty source string",
+    "level": 0,
+    "difficulty": "level_0",
+    "scenario": "Distinguish an empty text field from SQL NULL before applying a parsing contract.",
+    "task": "Distinguish an empty text field from SQL NULL before applying a parsing contract.",
+    "learning_objective": "Measure an empty source string",
+    "inputs": {
+      "fixture_contract": "raw_values(id, value):('A',''),('B', NULL)",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "A character_length0; B character_lengthNULL."
+    },
+    "constraints": [
+      "An empty value and an absent measurement are not interchangeable evidence.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: A character_length0; B character_lengthNULL.",
+      "Verify this boundary: An empty value and an absent measurement are not interchangeable evidence.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-308"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: An empty value and an absent measurement are not interchangeable evidence.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Measure an empty source string is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 10,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "initial",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 309,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-310",
+    "tool_id": "sql",
+    "title": "Extract a fixed vendor prefix",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "A vendor event reference consists of a three-character source prefix followed by its local code. Return both parts.",
+    "task": "A vendor event reference consists of a three-character source prefix followed by its local code. Return both parts.",
+    "learning_objective": "Extract a fixed vendor prefix",
+    "inputs": {
+      "fixture_contract": "refs='SAP0007','WEB12'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "SAP/local0007; WEB/local12."
+    },
+    "constraints": [
+      "A reference shorter than3characters is rejected rather than accepted with a truncated prefix.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: SAP/local0007; WEB/local12.",
+      "Verify this boundary: A reference shorter than3characters is rejected rather than accepted with a truncated prefix.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-309"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A reference shorter than3characters is rejected rather than accepted with a truncated prefix.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Extract a fixed vendor prefix is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1310,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-311",
+    "tool_id": "sql",
+    "title": "Remove only a declared transport padding character",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "Trim trailing spaces from a fixed-width status field while preserving leading spaces and internal separators.",
+    "task": "Trim trailing spaces from a fixed-width status field while preserving leading spaces and internal separators.",
+    "learning_objective": "Remove only a declared transport padding character",
+    "inputs": {
+      "fixture_contract": "status=' READY  '",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "normalized=' READY'."
+    },
+    "constraints": [
+      "A global trim would violate the contract by removing the meaningful leading space.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: normalized=' READY'.",
+      "Verify this boundary: A global trim would violate the contract by removing the meaningful leading space.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-310"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A global trim would violate the contract by removing the meaningful leading space.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Remove only a declared transport padding character is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1311,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-312",
+    "tool_id": "sql",
+    "title": "Find a literal percent sign in a source code",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "Select source codes containing a literal percent character under the declared query dialect.",
+    "task": "Select source codes containing a literal percent character under the declared query dialect.",
+    "learning_objective": "Find a literal percent sign in a source code",
+    "inputs": {
+      "fixture_contract": "codes='A%1','AB1','100percent'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "'A%1'only."
+    },
+    "constraints": [
+      "The pattern wildcard must not turn this into a match for every code.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: 'A%1'only.",
+      "Verify this boundary: The pattern wildcard must not turn this into a match for every code.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-311"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: The pattern wildcard must not turn this into a match for every code.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Find a literal percent sign in a source code is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1312,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-313",
+    "tool_id": "sql",
+    "title": "Keep a source code's internal whitespace",
+    "level": 1,
+    "difficulty": "level_1",
+    "scenario": "Normalize only outer transport whitespace around a department code.",
+    "task": "Normalize only outer transport whitespace around a department code.",
+    "learning_objective": "Keep a source code's internal whitespace",
+    "inputs": {
+      "fixture_contract": "codes='  NORTH  EAST  'and'NORTH EAST'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "first='NORTH  EAST'; second='NORTH EAST'; remain distinct."
+    },
+    "constraints": [
+      "Do not collapse internal spaces without an authoritative identity rule.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: first='NORTH  EAST'; second='NORTH EAST'; remain distinct.",
+      "Verify this boundary: Do not collapse internal spaces without an authoritative identity rule.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-312"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 0"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not collapse internal spaces without an authoritative identity rule.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Keep a source code's internal whitespace is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 27,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 1313,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-314",
+    "tool_id": "sql",
+    "title": "Validate a numeric token before casting",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "Classify a raw quantity token as a permitted nonnegative whole number before converting it.",
+    "task": "Classify a raw quantity token as a permitted nonnegative whole number before converting it.",
+    "learning_objective": "Validate a numeric token before casting",
+    "inputs": {
+      "fixture_contract": "tokens='12','0','-1','1.5','x'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "12and0accepted as integers; others rejected with invalid_quantity."
+    },
+    "constraints": [
+      "A bad token must not abort the complete batch by triggering an uncontrolled cast.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: 12and0accepted as integers; others rejected with invalid_quantity.",
+      "Verify this boundary: A bad token must not abort the complete batch by triggering an uncontrolled cast.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-313"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A bad token must not abort the complete batch by triggering an uncontrolled cast.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Validate a numeric token before casting is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2314,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-315",
+    "tool_id": "sql",
+    "title": "Keep repeated delimiters as missing fields",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "Split a vendor line with exactly three semicolon-separated fields, retaining an empty middle value.",
+    "task": "Split a vendor line with exactly three semicolon-separated fields, retaining an empty middle value.",
+    "learning_objective": "Keep repeated delimiters as missing fields",
+    "inputs": {
+      "fixture_contract": "raw='A;; ready'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "field1A; field2empty; field3ready; missing_quantity flagged."
+    },
+    "constraints": [
+      "Removing empty tokens would shift ready into the wrong field.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: field1A; field2empty; field3ready; missing_quantity flagged.",
+      "Verify this boundary: Removing empty tokens would shift ready into the wrong field.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-314"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Removing empty tokens would shift ready into the wrong field.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Keep repeated delimiters as missing fields is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2315,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-316",
+    "tool_id": "sql",
+    "title": "Detect a delimiter-count contract failure",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "Require exactly two delimiters in a three-field unquoted transport format.",
+    "task": "Require exactly two delimiters in a three-field unquoted transport format.",
+    "learning_objective": "Detect a delimiter-count contract failure",
+    "inputs": {
+      "fixture_contract": "lines'A;2; ready','A;2','A;2; ready; extra'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "firstvalid; secondfield_count2; thirdfield_count4."
+    },
+    "constraints": [
+      "Do not apply this simple count rule to a quoted format where delimiters may appear inside fields.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: firstvalid; secondfield_count2; thirdfield_count4.",
+      "Verify this boundary: Do not apply this simple count rule to a quoted format where delimiters may appear inside fields.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-315"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not apply this simple count rule to a quoted format where delimiters may appear inside fields.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Detect a delimiter-count contract failure is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2316,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-317",
+    "tool_id": "sql",
+    "title": "Classify a source-date token without guessing formats",
+    "level": 2,
+    "difficulty": "level_2",
+    "scenario": "Accept only valid ISO calendar dates in a staged token.",
+    "task": "Accept only valid ISO calendar dates in a staged token.",
+    "learning_objective": "Classify a source-date token without guessing formats",
+    "inputs": {
+      "fixture_contract": "tokens'2026-10-26','2026-02-30','26/10/2026'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "firstaccepted; secondinvalid_calendar_date; third unsupported_format."
+    },
+    "constraints": [
+      "A permissive conversion function's automatic normalization does not establish source validity.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: firstaccepted; secondinvalid_calendar_date; third unsupported_format.",
+      "Verify this boundary: A permissive conversion function's automatic normalization does not establish source validity.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-316"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 1"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A permissive conversion function's automatic normalization does not establish source validity.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Classify a source-date token without guessing formats is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 39,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 2317,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-318",
+    "tool_id": "sql",
+    "title": "Parse a known log envelope with an optional tail",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "A vendor line contains severity, reference and an optional free-text note after the first two delimiters.",
+    "task": "A vendor line contains severity, reference and an optional free-text note after the first two delimiters.",
+    "learning_objective": "Parse a known log envelope with an optional tail",
+    "inputs": {
+      "fixture_contract": "raw='WARN; A7; customer; requested retry'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "severityWARN; referenceA7; note'customer; requested retry'."
+    },
+    "constraints": [
+      "Only the first two delimiters define the envelope; later delimiters belong to the note.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: severityWARN; referenceA7; note'customer; requested retry'.",
+      "Verify this boundary: Only the first two delimiters define the envelope; later delimiters belong to the note.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-317"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Only the first two delimiters define the envelope; later delimiters belong to the note.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Parse a known log envelope with an optional tail is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3318,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-319",
+    "tool_id": "sql",
+    "title": "Validate a tagged money field",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "Parse a token whose explicit contract is three-letter currency, colon, nonnegative two-decimal amount.",
+    "task": "Parse a token whose explicit contract is three-letter currency, colon, nonnegative two-decimal amount.",
+    "learning_objective": "Validate a tagged money field",
+    "inputs": {
+      "fixture_contract": "tokens'INR:1.20','USD:0.00','INR:1.234','1.20'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "first twoaccepted as120and0minorunits; lattertwo rejected."
+    },
+    "constraints": [
+      "Do not infer a missing currency from the analyst's locale.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: first twoaccepted as120and0minorunits; lattertwo rejected.",
+      "Verify this boundary: Do not infer a missing currency from the analyst's locale.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-318"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not infer a missing currency from the analyst's locale.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Validate a tagged money field is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3319,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-320",
+    "tool_id": "sql",
+    "title": "Preserve the original token beside its normalized value",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "Normalize outer whitespace and case for an approved country field while retaining raw evidence.",
+    "task": "Normalize outer whitespace and case for an approved country field while retaining raw evidence.",
+    "learning_objective": "Preserve the original token beside its normalized value",
+    "inputs": {
+      "fixture_contract": "rawcountry=' in '; second rowraw NULL",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "firstraw' in ', cleanIN; secondraw NULL, cleanNULL."
+    },
+    "constraints": [
+      "A normalized field cannot replace raw evidence needed to explain a rejection or source defect.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: firstraw' in ', cleanIN; secondraw NULL, cleanNULL.",
+      "Verify this boundary: A normalized field cannot replace raw evidence needed to explain a rejection or source defect.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-319"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A normalized field cannot replace raw evidence needed to explain a rejection or source defect.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Preserve the original token beside its normalized value is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3320,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-321",
+    "tool_id": "sql",
+    "title": "Detect a source-reference normalization collision",
+    "level": 3,
+    "difficulty": "level_3",
+    "scenario": "Before adopting case-insensitive matching, report distinct raw identifiers mapping to one normalized code.",
+    "task": "Before adopting case-insensitive matching, report distinct raw identifiers mapping to one normalized code.",
+    "learning_objective": "Detect a source-reference normalization collision",
+    "inputs": {
+      "fixture_contract": "rawrefs'ab','AB','cd'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "normalized AB has raw refs ab, AB; collision blocks automatic merge."
+    },
+    "constraints": [
+      "Do not resolve the collision by selecting whichever record arrived last.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: normalized AB has raw refs ab, AB; collision blocks automatic merge.",
+      "Verify this boundary: Do not resolve the collision by selecting whichever record arrived last.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-320"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 2"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not resolve the collision by selecting whichever record arrived last.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Detect a source-reference normalization collision is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 51,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 3321,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-322",
+    "tool_id": "sql",
+    "title": "Expand a JSON event array with ordinality",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "Turn a bounded JSON array into event rows while retaining original array positions.",
+    "task": "Turn a bounded JSON array into event rows while retaining original array positions.",
+    "learning_objective": "Expand a JSON event array with ordinality",
+    "inputs": {
+      "fixture_contract": "documentitems=[{id:B},{id:A},{id:B}]",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "positions1B,2A,3B."
+    },
+    "constraints": [
+      "Repeated IDs may be separate positions; deduplication requires a separate event-identity contract.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: positions1B,2A,3B.",
+      "Verify this boundary: Repeated IDs may be separate positions; deduplication requires a separate event-identity contract.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-321"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Repeated IDs may be separate positions; deduplication requires a separate event-identity contract.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Expand a JSON event array with ordinality is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4322,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-323",
+    "tool_id": "sql",
+    "title": "Distinguish missing JSON keys from JSON null",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "Classify a document field as absent, presentnull or presentvalue before typed staging.",
+    "task": "Classify a document field as absent, presentnull or presentvalue before typed staging.",
+    "learning_objective": "Distinguish missing JSON keys from JSON null",
+    "inputs": {
+      "fixture_contract": "documents{}, {qty:null}, {qty:0}",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "absent_qty, present_null, known_zero respectively."
+    },
+    "constraints": [
+      "A text extraction returning SQLNULL for multiple cases must not erase the source distinction.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: absent_qty, present_null, known_zero respectively.",
+      "Verify this boundary: A text extraction returning SQLNULL for multiple cases must not erase the source distinction.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-322"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A text extraction returning SQLNULL for multiple cases must not erase the source distinction.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Distinguish missing JSON keys from JSON null is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4323,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-324",
+    "tool_id": "sql",
+    "title": "Compare numeric and textual JSON values",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "Require a JSON quantity to be numeric, not numeric-looking text or boolean.",
+    "task": "Require a JSON quantity to be numeric, not numeric-looking text or boolean.",
+    "learning_objective": "Compare numeric and textual JSON values",
+    "inputs": {
+      "fixture_contract": "docs{qty:2},{qty:'2'},{qty:true}",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "firstaccepted; secondwrong_type_text; thirdwrong_type_boolean."
+    },
+    "constraints": [
+      "Do not silently coerce the other types under this contract.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: firstaccepted; secondwrong_type_text; thirdwrong_type_boolean.",
+      "Verify this boundary: Do not silently coerce the other types under this contract.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-323"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not silently coerce the other types under this contract.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Compare numeric and textual JSON values is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4324,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-325",
+    "tool_id": "sql",
+    "title": "Reassemble child records into a deterministic JSON export",
+    "level": 4,
+    "difficulty": "level_4",
+    "scenario": "Aggregate each order's lines in explicitline_idorder and include empty arrays for orders without lines.",
+    "task": "Aggregate each order's lines in explicitline_idorder and include empty arrays for orders without lines.",
+    "learning_objective": "Reassemble child records into a deterministic JSON export",
+    "inputs": {
+      "fixture_contract": "ordersO1, O2; linesO1L2units3, O1L1units2",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "O1items[L1units2, L2units3]; O2items[]."
+    },
+    "constraints": [
+      "Array order must not depend on an unspecified scan order or aggregation plan.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: O1items[L1units2, L2units3]; O2items[].",
+      "Verify this boundary: Array order must not depend on an unspecified scan order or aggregation plan.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-324"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 3"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Array order must not depend on an unspecified scan order or aggregation plan.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Reassemble child records into a deterministic JSON export is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 63,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 4325,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-326",
+    "tool_id": "sql",
+    "title": "Build a raw-to-typed vendor staging report",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Parse the declared three-field unquoted format, validate ID and integer units, and retain reasons by source row.",
+    "task": "Parse the declared three-field unquoted format, validate ID and integer units, and retain reasons by source row.",
+    "learning_objective": "Build a raw-to-typed vendor staging report",
+    "inputs": {
+      "fixture_contract": "row2'A;2; ready'; row3'B; x; ready'; row4';3; ready'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "acceptedA2; rejectedrow3invalid_units, row4missing_id; counts1/2."
+    },
+    "constraints": [
+      "A malformed record remains traceable to raw text and source row.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: acceptedA2; rejectedrow3invalid_units, row4missing_id; counts1/2.",
+      "Verify this boundary: A malformed record remains traceable to raw text and source row.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-325"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A malformed record remains traceable to raw text and source row.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Build a raw-to-typed vendor staging report is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5326,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-327",
+    "tool_id": "sql",
+    "title": "Separate document-level and item-level rejection",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Process a JSON envelope only if its required batch ID is valid, then classify individual item quantities.",
+    "task": "Process a JSON envelope only if its required batch ID is valid, then classify individual item quantities.",
+    "learning_objective": "Separate document-level and item-level rejection",
+    "inputs": {
+      "fixture_contract": "docB1itemsA2, Bbad; seconddocmissingbatchwithitemC3",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "B1acceptA/rejectB; second do cblocked before item publication."
+    },
+    "constraints": [
+      "A rejected envelope is not an empty successful business batch.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: B1acceptA/rejectB; second do cblocked before item publication.",
+      "Verify this boundary: A rejected envelope is not an empty successful business batch.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-326"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A rejected envelope is not an empty successful business batch.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Separate document-level and item-level rejection is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5327,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-328",
+    "tool_id": "sql",
+    "title": "Build a source-quality metric at the correct denominator",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Report invalid item fraction separately from malformed document fraction.",
+    "task": "Report invalid item fraction separately from malformed document fraction.",
+    "learning_objective": "Build a source-quality metric at the correct denominator",
+    "inputs": {
+      "fixture_contract": "10documents;1malformed;9validdocumentscontain90itemswith9invalid.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "document_failure_rate0.1; item_invalid_rate0.1among90observeditems."
+    },
+    "constraints": [
+      "The malformed document's unknown item count is not guessed or added to the item denominator.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: document_failure_rate0.1; item_invalid_rate0.1among90observeditems.",
+      "Verify this boundary: The malformed document's unknown item count is not guessed or added to the item denominator.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-327"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: The malformed document's unknown item count is not guessed or added to the item denominator.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Build a source-quality metric at the correct denominator is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5328,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-329",
+    "tool_id": "sql",
+    "title": "Compare a parsed incremental feed with a full typed rebuild",
+    "level": 5,
+    "difficulty": "level_5",
+    "scenario": "Rebuild latest state from all raw events and compare with two parsed incremental applications.",
+    "task": "Rebuild latest state from all raw events and compare with two parsed incremental applications.",
+    "learning_objective": "Compare a parsed incremental feed with a full typed rebuild",
+    "inputs": {
+      "fixture_contract": "rawA:v1:10, B:v1:20 thenA:v2:11, C:v1:30; defined envelope contract.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Both targetsA11version2, B20version1, C30version1."
+    },
+    "constraints": [
+      "Compare entity keys, versions and values, not only record counts or total amounts.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Both targetsA11version2, B20version1, C30version1.",
+      "Verify this boundary: Compare entity keys, versions and values, not only record counts or total amounts.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-328"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 4"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Compare entity keys, versions and values, not only record counts or total amounts.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Compare a parsed incremental feed with a full typed rebuild is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 75,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 5329,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-330",
+    "tool_id": "sql",
+    "title": "Detect duplicate properties before losing raw JSON evidence",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "Show why an ambiguous raw object must be rejected before a representation discards duplicate keys.",
+    "task": "Show why an ambiguous raw object must be rejected before a representation discards duplicate keys.",
+    "learning_objective": "Detect duplicate properties before losing raw JSON evidence",
+    "inputs": {
+      "fixture_contract": "raw text'{\"id\":\"A\",\"qty\":2,\"qty\":9}' plus a normal object.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Ambiguous object duplicate_propertyqty rejected by a supported raw-validation step; normalobject accepted."
+    },
+    "constraints": [
+      "If the database representation already discarded the duplicate, report that limitation and preserve the raw input for an appropriate validator.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Ambiguous object duplicate_propertyqty rejected by a supported raw-validation step; normalobject accepted.",
+      "Verify this boundary: If the database representation already discarded the duplicate, report that limitation and preserve the raw input for an appropriate validator.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-329"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: If the database representation already discarded the duplicate, report that limitation and preserve the raw input for an appropriate validator.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Detect duplicate properties before losing raw JSON evidence is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6330,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-331",
+    "tool_id": "sql",
+    "title": "Report invalid encoding separately from bad JSON syntax",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "Classify a supplied transport-validation result independently of the SQL parser's item rules.",
+    "task": "Classify a supplied transport-validation result independently of the SQL parser's item rules.",
+    "learning_objective": "Report invalid encoding separately from bad JSON syntax",
+    "inputs": {
+      "fixture_contract": "row A transport invalid_utf8; rowBvalidUTF8butinvalidJSON; row C valid JSON with invalid qty.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Aencoding_error; Bjson_syntax_error; Citem_validation_error."
+    },
+    "constraints": [
+      "Do not force undecodable bytes into a text column and claim their original form survived.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Aencoding_error; Bjson_syntax_error; Citem_validation_error.",
+      "Verify this boundary: Do not force undecodable bytes into a text column and claim their original form survived.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-330"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not force undecodable bytes into a text column and claim their original form survived.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Report invalid encoding separately from bad JSON syntax is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6331,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-332",
+    "tool_id": "sql",
+    "title": "Reject an unapproved parser version",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "Require the declared record-schema version to choose the parser even when the payload resembles an earlier format.",
+    "task": "Require the declared record-schema version to choose the parser even when the payload resembles an earlier format.",
+    "learning_objective": "Reject an unapproved parser version",
+    "inputs": {
+      "fixture_contract": "version1'A;2; ready'; version9'A;2; ready'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "version1accepted; version9unsupported_versionblocked."
+    },
+    "constraints": [
+      "A familiar separator layout is not proof of compatible semantics.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: version1accepted; version9unsupported_versionblocked.",
+      "Verify this boundary: A familiar separator layout is not proof of compatible semantics.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-331"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A familiar separator layout is not proof of compatible semantics.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Reject an unapproved parser version is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6332,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-333",
+    "tool_id": "sql",
+    "title": "Surface an unparseable fraction rather than returning zero",
+    "level": 6,
+    "difficulty": "level_6",
+    "scenario": "A supplied faulty report uses a conversion fallback of0for malformed quantities. Produce a report that preserves unknowns and rejection counts.",
+    "task": "A supplied faulty report uses a conversion fallback of0for malformed quantities. Produce a report that preserves unknowns and rejection counts.",
+    "learning_objective": "Surface an unparseable fraction rather than returning zero",
+    "inputs": {
+      "fixture_contract": "tokens'2','bad','0'",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "knownsum2; accepted2; rejected1; bad token not counted as zero business quantity."
+    },
+    "constraints": [
+      "A plausible grand total does not prove the malformed source was handled correctly.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: knownsum2; accepted2; rejected1; bad token not counted as zero business quantity.",
+      "Verify this boundary: A plausible grand total does not prove the malformed source was handled correctly.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-332"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 5"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A plausible grand total does not prove the malformed source was handled correctly.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Surface an unparseable fraction rather than returning zero is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 87,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 6333,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-334",
+    "tool_id": "sql",
+    "title": "Parse a versioned nested shipment contract",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "Normalize two declared JSON versions into one typed line contract while retaining source version.",
+    "task": "Normalize two declared JSON versions into one typed line contract while retaining source version.",
+    "learning_objective": "Parse a versioned nested shipment contract",
+    "inputs": {
+      "fixture_contract": "v1shipmentidS1, lines[{sku:A, qty:2}]; v2idS2, items[{product:B, units:3}].",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "typedS1/A2v1, S2/B3v2."
+    },
+    "constraints": [
+      "Conflicting fields within one declared version are rejected instead of mixing both adapters.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: typedS1/A2v1, S2/B3v2.",
+      "Verify this boundary: Conflicting fields within one declared version are rejected instead of mixing both adapters.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-333"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Conflicting fields within one declared version are rejected instead of mixing both adapters.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Parse a versioned nested shipment contract is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7334,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-335",
+    "tool_id": "sql",
+    "title": "Apply tenant-specific time interpretation explicitly",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "Parse offset-free vendor timestamps only using a supplied tenant timezone mapping and retain the raw token.",
+    "task": "Parse offset-free vendor timestamps only using a supplied tenant timezone mapping and retain the raw token.",
+    "learning_objective": "Apply tenant-specific time interpretation explicitly",
+    "inputs": {
+      "fixture_contract": "T1UTC, T2Asia/Kolkata; bothraw'2026-10-26 10:00'.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "T1instant10:00Z; T2instant04:30Z; raw text retained."
+    },
+    "constraints": [
+      "An unknown tenant timezone blocks instant conversion rather than using the database session default.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: T1instant10:00Z; T2instant04:30Z; raw text retained.",
+      "Verify this boundary: An unknown tenant timezone blocks instant conversion rather than using the database session default.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-334"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: An unknown tenant timezone blocks instant conversion rather than using the database session default.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Apply tenant-specific time interpretation explicitly is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7335,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-336",
+    "tool_id": "sql",
+    "title": "Match semi-structured events to effective parser rules",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "Select a versioned parsing rule by source and effective event date, keeping its rule ID in lineage.",
+    "task": "Select a versioned parsing rule by source and effective event date, keeping its rule ID in lineage.",
+    "learning_objective": "Match semi-structured events to effective parser rules",
+    "inputs": {
+      "fixture_contract": "sourceV1usesruleR1beforeOct10, R2fromOct10; eventOct9.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Event bindsR1; rule identity retained with parsed result."
+    },
+    "constraints": [
+      "A later parser-rule edit must not silently rewrite an already frozen historical output.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Event bindsR1; rule identity retained with parsed result.",
+      "Verify this boundary: A later parser-rule edit must not silently rewrite an already frozen historical output.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-335"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A later parser-rule edit must not silently rewrite an already frozen historical output.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Match semi-structured events to effective parser rules is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7336,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-337",
+    "tool_id": "sql",
+    "title": "Avoid duplicate facts when expanding independent arrays",
+    "level": 7,
+    "difficulty": "level_7",
+    "scenario": "A document has order lines and delivery attempts, which are separate grains. Produce both outputs without multiplying them.",
+    "task": "A document has order lines and delivery attempts, which are separate grains. Produce both outputs without multiplying them.",
+    "learning_objective": "Avoid duplicate facts when expanding independent arrays",
+    "inputs": {
+      "fixture_contract": "orderO1linesL1, L2; attemptsD1, D2, D3.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Two line facts and three attempt facts; order summarylinecount2, attemptcount3."
+    },
+    "constraints": [
+      "A direct cross expansion yields6rows and is not the intended fact grain.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Two line facts and three attempt facts; order summarylinecount2, attemptcount3.",
+      "Verify this boundary: A direct cross expansion yields6rows and is not the intended fact grain.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-336"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 6"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A direct cross expansion yields6rows and is not the intended fact grain.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Avoid duplicate facts when expanding independent arrays is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 99,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 7337,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-338",
+    "tool_id": "sql",
+    "title": "Measure an indexed parsed-field projection",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Compare a repeated JSON-path filter with a supported typed/indexed projection on a generated fixture.",
+    "task": "Compare a repeated JSON-path filter with a supported typed/indexed projection on a generated fixture.",
+    "learning_objective": "Measure an indexed parsed-field projection",
+    "inputs": {
+      "fixture_contract": "100000events; knowncustomerC7has100matches; same filtercontract.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Same100eventkeys; actualplans, timings, index size and projection maintenance observations."
+    },
+    "constraints": [
+      "Include the cost of deriving and maintaining the projection; do not report read speed alone as the full tradeoff.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Same100eventkeys; actualplans, timings, index size and projection maintenance observations.",
+      "Verify this boundary: Include the cost of deriving and maintaining the projection; do not report read speed alone as the full tradeoff.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-337"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Include the cost of deriving and maintaining the projection; do not report read speed alone as the full tradeoff.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Measure an indexed parsed-field projection is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8338,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-339",
+    "tool_id": "sql",
+    "title": "Compare guarded casts with repeated parsing",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Measure parsing each raw token once into checked staging versus repeated conversions in several reports.",
+    "task": "Measure parsing each raw token once into checked staging versus repeated conversions in several reports.",
+    "learning_objective": "Compare guarded casts with repeated parsing",
+    "inputs": {
+      "fixture_contract": "100000raw rows;1percent invalid quantities; threereports.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Samevalid/rejectedsets and business metrics; parse/evaluation cardinalities and plans recorded."
+    },
+    "constraints": [
+      "A cached intermediate must retain the parser-version boundary rather than mixing stale normalized data.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Samevalid/rejectedsets and business metrics; parse/evaluation cardinalities and plans recorded.",
+      "Verify this boundary: A cached intermediate must retain the parser-version boundary rather than mixing stale normalized data.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-338"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A cached intermediate must retain the parser-version boundary rather than mixing stale normalized data.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Compare guarded casts with repeated parsing is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8339,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-340",
+    "tool_id": "sql",
+    "title": "Bound JSON expansion before reporting",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Reject or quarantine an envelope whose item array exceeds a configured allowedsize before producing an unbounded fact expansion.",
+    "task": "Reject or quarantine an envelope whose item array exceeds a configured allowedsize before producing an unbounded fact expansion.",
+    "learning_objective": "Bound JSON expansion before reporting",
+    "inputs": {
+      "fixture_contract": "docA10items; docB100000items; maximum1000.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Aprocessed; Boversized_envelope reported; no100000rowpublication."
+    },
+    "constraints": [
+      "The size cap is a business/operational contract, not proof every large document is corrupt.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Aprocessed; Boversized_envelope reported; no100000rowpublication.",
+      "Verify this boundary: The size cap is a business/operational contract, not proof every large document is corrupt.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-339"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: The size cap is a business/operational contract, not proof every large document is corrupt.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Bound JSON expansion before reporting is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8340,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-341",
+    "tool_id": "sql",
+    "title": "Measure text-normalization selectivity and collisions",
+    "level": 8,
+    "difficulty": "level_8",
+    "scenario": "Profile a generated source before indexing a normalizedkey and compare lookupplans without dropping collisions.",
+    "task": "Profile a generated source before indexing a normalizedkey and compare lookupplans without dropping collisions.",
+    "learning_objective": "Measure text-normalization selectivity and collisions",
+    "inputs": {
+      "fixture_contract": "100000references; knowncase-collisionpairs; explicit uppercase contract.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Collision report retained; matching keys unchanged; actual plans and timings reported."
+    },
+    "constraints": [
+      "A faster normalized lookup does not authorize merging distinct raw identities.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Collision report retained; matching keys unchanged; actual plans and timings reported.",
+      "Verify this boundary: A faster normalized lookup does not authorize merging distinct raw identities.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-340"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 7"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A faster normalized lookup does not authorize merging distinct raw identities.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Measure text-normalization selectivity and collisions is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 111,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 8341,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-342",
+    "tool_id": "sql",
+    "title": "Publish a parser contract with explicit raw retention",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "Version the expected envelope, typedcolumns, rejection reasons and raw retention link for one source release.",
+    "task": "Version the expected envelope, typedcolumns, rejection reasons and raw retention link for one source release.",
+    "learning_objective": "Publish a parser contract with explicit raw retention",
+    "inputs": {
+      "fixture_contract": "source contractV2requiresid, units, currency; candidate omits raw lineage.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Release blocked missing raw lineage; requiredtyped contract and fixture checks reported."
+    },
+    "constraints": [
+      "A parser that outputs correct samplevalues still needs the required diagnostic lineage contract.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Release blocked missing raw lineage; requiredtyped contract and fixture checks reported.",
+      "Verify this boundary: A parser that outputs correct samplevalues still needs the required diagnostic lineage contract.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-341"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A parser that outputs correct samplevalues still needs the required diagnostic lineage contract.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Publish a parser contract with explicit raw retention is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9342,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-343",
+    "tool_id": "sql",
+    "title": "Check a sanitized staging review view",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "Expose source row, reason and safe identifiers while excluding raw tokens and personal contact fields.",
+    "task": "Expose source row, reason and safe identifiers while excluding raw tokens and personal contact fields.",
+    "learning_objective": "Check a sanitized staging review view",
+    "inputs": {
+      "fixture_contract": "raw rowcontainsidA, email person@example.test, token DUMMY; reasoninvalid_units.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "ReviewviewidA, sourcerow, reason; email/tokenabsent; authorized raw access separate."
+    },
+    "constraints": [
+      "A UI preview hiding columns is not proof that the view or role blocks direct access.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: ReviewviewidA, sourcerow, reason; email/tokenabsent; authorized raw access separate.",
+      "Verify this boundary: A UI preview hiding columns is not proof that the view or role blocks direct access.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-342"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A UI preview hiding columns is not proof that the view or role blocks direct access.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Check a sanitized staging review view is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9343,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-344",
+    "tool_id": "sql",
+    "title": "Reproduce a frozen parsed report under a later rule",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "Retain raw inputs and parserversion so an old report can be rebuilt after a parsingrule changes.",
+    "task": "Retain raw inputs and parserversion so an old report can be rebuilt after a parsingrule changes.",
+    "learning_objective": "Reproduce a frozen parsed report under a later rule",
+    "inputs": {
+      "fixture_contract": "raw'001'; R1preserves as text; R2interpretsnumeric1; old reportusesR1.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Oldreportstill'001'; R2candidate1reported as separate revision."
+    },
+    "constraints": [
+      "Do not overwrite stable business identifiers merely because a newer parser converts them differently.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Oldreportstill'001'; R2candidate1reported as separate revision.",
+      "Verify this boundary: Do not overwrite stable business identifiers merely because a newer parser converts them differently.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-343"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not overwrite stable business identifiers merely because a newer parser converts them differently.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Reproduce a frozen parsed report under a later rule is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9344,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-345",
+    "tool_id": "sql",
+    "title": "Gate a parser rollout with adversarial fixtures",
+    "level": 9,
+    "difficulty": "level_9",
+    "scenario": "Run required fixtures covering quotes, emptytokens, unknown versions, oversizedarrays andprivacy before release.",
+    "task": "Run required fixtures covering quotes, emptytokens, unknown versions, oversizedarrays andprivacy before release.",
+    "learning_objective": "Gate a parser rollout with adversarial fixtures",
+    "inputs": {
+      "fixture_contract": "Candidate passes normal rows but drops an empty required token and logs a secret.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Release blocked with both defects; other passing checks retained."
+    },
+    "constraints": [
+      "A high overall pass percentage does not override a failed required correctness or privacy contract.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Release blocked with both defects; other passing checks retained.",
+      "Verify this boundary: A high overall pass percentage does not override a failed required correctness or privacy contract.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-344"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 8"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: A high overall pass percentage does not override a failed required correctness or privacy contract.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Gate a parser rollout with adversarial fixtures is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 123,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 9345,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-346",
+    "tool_id": "sql",
+    "title": "Independently build a versioned raw-to-typed SQL staging layer",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Implement explicit source contracts, raw lineage, typedoutputs, rejections and deterministic replay.",
+    "task": "Implement explicit source contracts, raw lineage, typedoutputs, rejections and deterministic replay.",
+    "learning_objective": "Independently build a versioned raw-to-typed SQL staging layer",
+    "inputs": {
+      "fixture_contract": "Delimited and JSON sources; unknownversion; badquantity; null/absentfields; latecorrection.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Valid facts replay correctly; every reject traceable; schema/versions retained; changed case handled."
+    },
+    "constraints": [
+      "Reviewer changes an envelope field after submission without prescribing a query strategy.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Valid facts replay correctly; every reject traceable; schema/versions retained; changed case handled.",
+      "Verify this boundary: Reviewer changes an envelope field after submission without prescribing a query strategy.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-345"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Reviewer changes an envelope field after submission without prescribing a query strategy.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently build a versioned raw-to-typed SQL staging layer is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10346,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-347",
+    "tool_id": "sql",
+    "title": "Independently diagnose a silent parsing-loss incident",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Investigate why a report's counts andmoney changed after a parserupgrade.",
+    "task": "Investigate why a report's counts andmoney changed after a parserupgrade.",
+    "learning_objective": "Independently diagnose a silent parsing-loss incident",
+    "inputs": {
+      "fixture_contract": "Oldcodes'001'and'1'distinct; candidate casts both to1anddropsmalformedrowswithoutrejects.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Identity collision and missing coverage quantified; safe versioned repair plan; raw proof retained."
+    },
+    "constraints": [
+      "Do not merge records to force the candidate's counts to match its own assumptions.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Identity collision and missing coverage quantified; safe versioned repair plan; raw proof retained.",
+      "Verify this boundary: Do not merge records to force the candidate's counts to match its own assumptions.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-346"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not merge records to force the candidate's counts to match its own assumptions.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently diagnose a silent parsing-loss incident is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10347,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-348",
+    "tool_id": "sql",
+    "title": "Independently migrate nested event contracts",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Support old/new nested JSON contracts during overlap and keep separate line/attempt grains.",
+    "task": "Support old/new nested JSON contracts during overlap and keep separate line/attempt grains.",
+    "learning_objective": "Independently migrate nested event contracts",
+    "inputs": {
+      "fixture_contract": "v1lines; v2items; two independent child arrays; unsupportedv9; rollback required.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Supported facts consistent; no Cartesian multiplication; v9blocked; consumer contracts and rollback tested."
+    },
+    "constraints": [
+      "An equal grand total is insufficient if row identities or childgrains changed.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Supported facts consistent; no Cartesian multiplication; v9blocked; consumer contracts and rollback tested.",
+      "Verify this boundary: An equal grand total is insufficient if row identities or childgrains changed.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-347"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: An equal grand total is insufficient if row identities or childgrains changed.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently migrate nested event contracts is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10348,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-349",
+    "tool_id": "sql",
+    "title": "Independently optimize a semi-structured warehouse slice",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Compare rawpathqueries, validated staging and indexed projections on a generated bounded workload.",
+    "task": "Compare rawpathqueries, validated staging and indexed projections on a generated bounded workload.",
+    "learning_objective": "Independently optimize a semi-structured warehouse slice",
+    "inputs": {
+      "fixture_contract": "Million raw records; skewedkeys; invalidtokens; required exact money and privacy contracts.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Correctoutputs/rejectsets equal; actualplans/runtime/storage; tradeoffs defended."
+    },
+    "constraints": [
+      "Do not hide projection maintenance cost or classify unknown source counts as measuredzero.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Correctoutputs/rejectsets equal; actualplans/runtime/storage; tradeoffs defended.",
+      "Verify this boundary: Do not hide projection maintenance cost or classify unknown source counts as measuredzero.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-348"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Do not hide projection maintenance cost or classify unknown source counts as measuredzero.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently optimize a semi-structured warehouse slice is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10349,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-350",
+    "tool_id": "sql",
+    "title": "Independently restore parser-versioned reporting evidence",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Recover an old report andcurrent report from rawfixtures, versionedrules and retained lineage after targetloss.",
+    "task": "Recover an old report andcurrent report from rawfixtures, versionedrules and retained lineage after targetloss.",
+    "learning_objective": "Independently restore parser-versioned reporting evidence",
+    "inputs": {
+      "fixture_contract": "R1preservesleadingzeros; R2approved new format; one corrupt raw artifact; reader view contract.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Recoverable versions reproduced; corrupt artifact quarantined; gapsexplicit; reader access verified."
+    },
+    "constraints": [
+      "Missingrawdata cannot be reconstructed merely from a known aggregate control total.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Recoverable versions reproduced; corrupt artifact quarantined; gapsexplicit; reader access verified.",
+      "Verify this boundary: Missingrawdata cannot be reconstructed merely from a known aggregate control total.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-349"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Missingrawdata cannot be reconstructed merely from a known aggregate control total.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently restore parser-versioned reporting evidence is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10350,
+    "authoring_batch": "foundations-explicit-004"
+  },
+  {
+    "id": "RLP-SQL-351",
+    "tool_id": "sql",
+    "title": "Independently design an adversarial source-contract assessment",
+    "level": 10,
+    "difficulty": "level_10",
+    "scenario": "Build andsolve a bounded business case for a vendorfeed that changesformats, contains ambiguous records andneeds recovery.",
+    "task": "Build andsolve a bounded business case for a vendorfeed that changesformats, contains ambiguous records andneeds recovery.",
+    "learning_objective": "Independently design an adversarial source-contract assessment",
+    "inputs": {
+      "fixture_contract": "Brief defines raw retention, typedconsumer, privacy, replay, version selection and resource budget.",
+      "environment": "Synthetic fixtures and learner-owned disposable targets only."
+    },
+    "expected_output": {
+      "contract": "Working SQL artifacts; observed contract/failurechecks; assistance history; independent changed fixture evidence."
+    },
+    "constraints": [
+      "Assessment design and independently demonstrated implementation remain separate learning evidence.",
+      "Preserve raw inputs,actual attempts and unrelated files."
+    ],
+    "acceptance_criteria": [
+      "Demonstrate this output: Working SQL artifacts; observed contract/failurechecks; assistance history; independent changed fixture evidence.",
+      "Verify this boundary: Assessment design and independently demonstrated implementation remain separate learning evidence.",
+      "Submit actual implementation,observed outputs and all help used; expected results are not execution evidence."
+    ],
+    "prerequisites": [
+      "RLP-SQL-350"
+    ],
+    "independent_prerequisites": [],
+    "skill_prerequisites": [
+      "sql bounded level 9"
+    ],
+    "progressive_hints": [
+      "Trace the smallest fixture and state the required output grain before coding.",
+      "Check this boundary separately: Assessment design and independently demonstrated implementation remain separate learning evidence.",
+      "Reduce the first failing fixture,compare expected with observed results,and reconstruct the task one checked step at a time."
+    ],
+    "engineering_relevance": "Independently design an adversarial source-contract assessment is a bounded data-platform responsibility. After review,connect it to an upstream producer and downstream consumer,and identify one limitation.",
+    "estimated_minutes": 135,
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/functions-json.html",
+      "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "challenge_kind": "transfer",
+    "topic_id": null,
+    "publication_status": "published",
+    "published_version": "2026.10.26.5",
+    "sequence": 10351,
+    "authoring_batch": "foundations-explicit-004"
+  }
+]

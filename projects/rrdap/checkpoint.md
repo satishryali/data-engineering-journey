@@ -1,5 +1,7 @@
 # RRDAP checkpoint - 22 October 2026 (IST)
 
+Planning revision, 26 October 2026: job-readiness assessment moved to **20 January 2027**; older January 22 references below are historical. RecallLab problem-first infrastructure is separate from learner evidence. RDS-001, its six acceptance criteria, PostgreSQL verification and exact next action remain unchanged. No timer or assessment added.
+
 Learner selected Docker as today's study focus. Three self-reported 25-minute intervals are pending clock-time confirmation in the shared log; their 5-minute breaks are excluded. No Docker or RDS-001 implementation was submitted. RDS-001 remains in progress with the same next project action and acceptance criteria. No running timer.
 
 Planning-only upgrade: the [Azure interview roadmap](../../plan/learning-and-revision-plan.md) targets 22 January 2027 with 55-hour full weeks from 22 October. November 30 stays a minimal-flow stretch; deeper Azure integration may continue in December. No learner task completed or new proficiency assessed. RDS-001 and its next action remain unchanged. Timer is still paused since 17 October; no gap credited. [Engineering simulation](../../reference/engineering-simulation.md) provides templates, not future assignments.

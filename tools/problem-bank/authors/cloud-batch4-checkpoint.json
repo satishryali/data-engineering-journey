@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "author_files_frozen_parent_sample_qa_completed",
+  "tracks": {
+    "delta-lake": {
+      "target": 150,
+      "preserved_previous_additions": 110,
+      "batch4_additions": 39,
+      "prepared_total_including_seed": 150,
+      "remaining": 0,
+      "next_id": "RLP-DELTA-LAKE-151",
+      "next_action": "Continue explicit distinct capability authoring if target remains; never multiply generic modes.",
+      "source_sha256": "439b34b70e88f66c608ca29ef1cc2ca8bc7ff764248122f5d87492eec43e098d",
+      "sha256": "439b34b70e88f66c608ca29ef1cc2ca8bc7ff764248122f5d87492eec43e098d"
+    },
+    "adls": {
+      "target": 180,
+      "preserved_previous_additions": 148,
+      "batch4_additions": 31,
+      "prepared_total_including_seed": 180,
+      "remaining": 0,
+      "next_id": "RLP-ADLS-181",
+      "next_action": "Continue explicit distinct capability authoring if target remains; never multiply generic modes.",
+      "source_sha256": "38e8fc016ce8877cdcb71945b04f8e3b5568ab0d35ab9b4fac19fa336afdaf6d",
+      "sha256": "38e8fc016ce8877cdcb71945b04f8e3b5568ab0d35ab9b4fac19fa336afdaf6d"
+    },
+    "databricks": {
+      "target": 250,
+      "preserved_previous_additions": 110,
+      "batch4_additions": 40,
+      "prepared_total_including_seed": 151,
+      "remaining": 99,
+      "next_id": "RLP-DATABRICKS-152",
+      "next_action": "Continue explicit distinct capability authoring if target remains; never multiply generic modes.",
+      "sha256": "4ab67f2a568288bd29008fbd44c942e491ac808588d76587a5e117cf0dbe4d78"
+    }
+  }
+}

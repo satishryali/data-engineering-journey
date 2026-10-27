@@ -1,0 +1,585 @@
+{
+  "RLP-PY-001": {
+    "learning_objective": "Write solve(record), returning the amount of this one sale. Include a short explanation and observed output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-002": {
+    "learning_objective": "Write solve(records), returning the amounts in input order. Show what happens for no records.",
+    "difficulty": "Level 1",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-003": {
+    "learning_objective": "Write solve(records), returning the total amount. An empty batch has total zero.",
+    "difficulty": "Level 1",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-004": {
+    "learning_objective": "Write solve(records), returning records with a nonnegative numeric amount. All records have an amount; booleans are not accepted amounts.",
+    "difficulty": "Level 1",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-005": {
+    "learning_objective": "Return an object with valid and invalid lists, preserving all input records and their original order within each list. Apply the rules from the preceding task.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-006": {
+    "learning_objective": "Write solve(csv_text), returning records with sale_id strings and amount integers. The supplied file has valid integers; preserve row order.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-007": {
+    "learning_objective": "Read the supplied CSV text and return valid converted records and invalid original rows. Missing, nonnumeric and negative amounts are invalid; never silently drop a row. Handle a header-only file.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-008": {
+    "learning_objective": "Read a local synthetic CSV using the preceding rules; write accepted.csv and rejected.csv with headers. Submit code, both files and a row-count reconciliation.",
+    "difficulty": "Level 3",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-009": {
+    "learning_objective": "Process the two named files with the same validation rules. Include source_file in each output record and report input/accepted/rejected counts per file.",
+    "difficulty": "Level 4",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-010": {
+    "learning_objective": "Extend the two-file delivery so a missing file is reported clearly. Preserve successfully produced output and show a separate failed-file report. Do not claim the whole batch succeeded.",
+    "difficulty": "Level 4",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-011": {
+    "learning_objective": "Build one callable workflow that reads the two supplied files, validates each row, writes accepted/rejected outputs and a batch summary. Reconcile every row and distinguish a failed file from a rejected row.",
+    "difficulty": "Level 5",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PY-012": {
+    "learning_objective": "Run your preceding workflow twice for the same batch identity. The final delivery must contain one copy of each accepted row, with a clear result for each run. Use files only; explain your chosen replacement or preservation rule.",
+    "difficulty": "Level 5",
+    "progressive_hints": [
+      "Trace one input record before handling the full batch.",
+      "Write down which values must be retained and which change; verify each output field.",
+      "Check the empty case and a repeated call, then compare actual output with every acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-001": {
+    "learning_objective": "Return sale_id and amount for every sale, ordered by sale_id.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-002": {
+    "learning_objective": "Return sale_id and amount for sales of at least 25, ordered by sale_id.",
+    "difficulty": "Level 1",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-003": {
+    "learning_objective": "Return one row named sale_count containing the number of sales.",
+    "difficulty": "Level 1",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-004": {
+    "learning_objective": "Return one row named total_amount containing the sum of amounts; an empty table must produce zero.",
+    "difficulty": "Level 1",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-005": {
+    "learning_objective": "Return customer_id and total_amount per customer, ordered by customer_id.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-006": {
+    "learning_objective": "Return sale_id, name and amount for sales with a matching customer, ordered by sale_id.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-007": {
+    "learning_objective": "Return customer_id and sale_count for every customer including customers with no sales. Order by customer_id.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SQL-008": {
+    "learning_objective": "Return customer_id, sale_count and total_amount for every customer, using zero for no sales; order by customer_id. Include a short explanation of why each customer appears once.",
+    "difficulty": "Level 3",
+    "progressive_hints": [
+      "Write the expected output rows by hand for the supplied data.",
+      "Check the output grain: which real-world entity should each result row represent?",
+      "Trace missing matches, duplicate keys and NULL values separately before changing the query."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PG-001": {
+    "learning_objective": "In an existing local test database, create a temporary sales table with sale_id integer and amount numeric(10,2), load the supplied row, then show a SELECT result. Submit SQL, server version and output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Use a disposable table and inspect the rows before and after the operation.",
+      "Run one operation at a time and preserve its actual database message.",
+      "Check which rows survive a failed operation and verify the exact acceptance result with SQL."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PG-002": {
+    "learning_objective": "Load the three rows into a temporary table and report row count and amount total. Keep a reproducible SQL script.",
+    "difficulty": "Level 1",
+    "progressive_hints": [
+      "Use a disposable table and inspect the rows before and after the operation.",
+      "Run one operation at a time and preserve its actual database message.",
+      "Check which rows survive a failed operation and verify the exact acceptance result with SQL."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PG-003": {
+    "learning_objective": "In a disposable table, enforce unique non-null sale IDs and nonnegative amounts. Demonstrate one valid insert, one duplicate and one negative amount; show the final retained rows and observed errors.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Use a disposable table and inspect the rows before and after the operation.",
+      "Run one operation at a time and preserve its actual database message.",
+      "Check which rows survive a failed operation and verify the exact acceptance result with SQL."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PG-004": {
+    "learning_objective": "Using your checked table, attempt a two-row delivery whose second row is invalid. Demonstrate that the first new row is also absent after recovery, while the pre-existing row remains. Explain the boundary of the operation.",
+    "difficulty": "Level 2",
+    "progressive_hints": [
+      "Use a disposable table and inspect the rows before and after the operation.",
+      "Run one operation at a time and preserve its actual database message.",
+      "Check which rows survive a failed operation and verify the exact acceptance result with SQL."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-DATA-MODELLING-001": {
+    "learning_objective": "Define one row of a sales fact table and identify its key, amount and customer reference. Do not design the whole warehouse.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PIPELINE-RELIABILITY-001": {
+    "learning_objective": "Compare source, accepted and rejected counts and produce a pass/fail report. Explain the failed case.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PYSPARK-001": {
+    "learning_objective": "In an existing local Spark environment, create a DataFrame from the supplied row, show its schema and select sale_id and amount. Submit code and observed output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Inspect the input schema and one row before transforming the full dataset.",
+      "Compare the requested output columns with the available input fields.",
+      "Check the observed schema and rows separately; a displayed plan alone does not verify the result."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-AZURE-001": {
+    "learning_objective": "In an existing training subscription, list one resource group location and two tags if present. If none is available, submit a clearly labelled unexecuted plan for review; execution completion requires observed output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-ADF-001": {
+    "learning_objective": "Given an existing training factory, configure one copy activity to copy the supplied tiny CSV between existing training storage paths. Show source, sink and observed row count.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the existing source and destination paths without changing shared resources.",
+      "Inspect the copy activity input and output, including the reported row count.",
+      "Reconcile the destination contents against the supplied source; a successful status alone is insufficient."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-ADLS-001": {
+    "learning_objective": "Using an existing training filesystem and authorized identity, upload the supplied tiny file to landing/sales.csv, read it back, and show exact path and content.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training account, container and path.",
+      "Compare uploaded bytes and the requested object path, then test the permitted read.",
+      "Preserve redacted evidence of both the object contents and access result."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-DATABRICKS-001": {
+    "learning_objective": "In an existing training workspace, create a DataFrame with the supplied row and display sale_id and amount. Submit notebook code and observed output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Confirm the permitted training compute and input data are available.",
+      "Inspect one row and the schema before running the requested transformation.",
+      "Capture actual job output and explain what would change when the input changes."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-DELTA-LAKE-001": {
+    "learning_objective": "In an existing local or training Delta environment, write the supplied sales row to a disposable Delta path and read it back. Show schema and observed rows.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Inspect the table contents and version before writing.",
+      "Compare the requested final rows against the initial data and incoming rows.",
+      "Check both the final data and transaction history; repeated inputs must be tested explicitly."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-GIT-001": {
+    "learning_objective": "In a disposable local Git repository, save the supplied file, change the amount, and show a diff. Explain which line changed. No commit or push is required.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Inspect the current working tree and the small intended change.",
+      "Separate the changed file from unrelated work before recording the change.",
+      "Inspect the resulting diff and history; do not publish credentials or unrelated files."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SHELL-001": {
+    "learning_objective": "In a disposable local folder, save the supplied CSV and use shell commands to show its name and contents. Submit commands and output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Inspect the supplied file as text before selecting the needed records.",
+      "Check how spaces, blank lines and separators affect the operation.",
+      "Compare exact output lines and exit status with the expected behavior."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-DOCKER-001": {
+    "learning_objective": "Using an already available Docker engine and a small trusted image, mount a disposable folder read-only and show the supplied file from inside the container. Submit command and output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the existing image, container and permitted training directory.",
+      "Check the relationship between the requested container behavior and the supplied configuration.",
+      "Capture observed output and resource state; a configuration file alone is not execution evidence."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-AIRFLOW-001": {
+    "learning_objective": "In an existing local training Airflow setup, create a DAG with one task that returns the number of supplied sales records. Trigger it once and show the task log and result.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the training DAG and its required task result.",
+      "Distinguish the task dependency from the time the DAG is scheduled.",
+      "Capture the actual run and task result, including the data interval."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-DBT-001": {
+    "learning_objective": "In an existing local training dbt project, use a one-row seed and one model that selects sale_id and amount. Show the model SQL and resulting row.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Inspect the supplied seed columns and expected model row.",
+      "Check how the model refers to the training input and which fields it returns.",
+      "Verify the built relation contents in addition to the command status."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SNOWFLAKE-001": {
+    "learning_objective": "In an existing authorized training account, run a read-only query over the supplied inline values. Return sale_id and amount and show query output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Confirm the authorized training database, schema and compute.",
+      "Inspect the row and column types before writing the requested query.",
+      "Capture actual query output and keep account details and credentials out of evidence."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-CLOUD-SECURITY-001": {
+    "learning_objective": "Review the supplied synthetic access matrix and identify who can read a landing file. Explain why an ingestion identity should not receive owner access for this task.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-CICD-001": {
+    "learning_objective": "Create a local check that succeeds when the supplied CSV has the required header and fails with a clear message when amount is missing. Submit both observed results before proposing a workflow.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PLSQL-001": {
+    "learning_objective": "In an existing disposable Oracle environment, run an anonymous PL/SQL block that prints the supplied numeric sale amount. Submit block and observed DBMS_OUTPUT.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-SAP-HANA-001": {
+    "learning_objective": "In an existing training HANA SQL console, select the supplied sale_id and amount from the DUMMY table using literal values and clear column aliases. Submit query and observed output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-KUBERNETES-001": {
+    "learning_objective": "In an existing disposable Kubernetes or K3s cluster, run one Job that prints the supplied batch identity. Show Job status and logs; no production cluster changes.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-KAFKA-001": {
+    "learning_objective": "In an existing disposable local Kafka setup, send one supplied JSON sale to a training topic and read it back. Submit topic configuration, producer command and observed consumer output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-JENKINS-001": {
+    "learning_objective": "In an existing disposable Jenkins setup, run a one-stage pipeline that prints the supplied batch identity. Submit pipeline and observed console output.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-VAULT-001": {
+    "learning_objective": "In an existing disposable Vault dev environment, store and retrieve the supplied fake key using an existing authorized identity. Submit redacted commands and observed key name; never use real credentials.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-PROMETHEUS-001": {
+    "learning_objective": "Using an existing local training Prometheus setup, expose and query the supplied single gauge sample. Show the query result.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-GRAFANA-001": {
+    "learning_objective": "In an existing local Grafana training setup with a datasource, display the supplied synthetic metric as one panel. Submit the query and observed value.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-INFRASTRUCTURE-AS-CODE-001": {
+    "learning_objective": "Write a minimal configuration for one training resource group and run formatting and validation locally. Submit the validated configuration and explain intended name/location. Do not apply it.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-POWERBI-001": {
+    "learning_objective": "In an existing training Power BI environment, load the supplied tiny CSV and show one table visual with sale_id and amount. Submit a screenshot and explain the row grain.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-FABRIC-001": {
+    "learning_objective": "In an existing authorized training Fabric workspace, load the supplied tiny CSV into a lakehouse and preview it. Show the path and one observed row.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-AZURE-ADVANCED-001": {
+    "learning_objective": "Using a supplied event payload, identify the event type and referenced file. Explain what work the consumer should perform without provisioning infrastructure.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  },
+  "RLP-AI-GENAI-001": {
+    "learning_objective": "From the supplied synthetic support note, answer when the sales load runs and cite the exact supporting sentence. State that missing information is unknown.",
+    "difficulty": "Level 0",
+    "progressive_hints": [
+      "Identify the exact training input or environment named in this problem.",
+      "Compare the requested observable result with the current state and isolate the smallest necessary change.",
+      "Demonstrate the changed-input check and preserve actual output for each acceptance criterion."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": []
+  }
+}

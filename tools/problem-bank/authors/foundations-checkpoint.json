@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "author": "foundations",
+  "version": "2026.10.26.2",
+  "status": "partial_expansion_targets_unmet",
+  "generated_at": "2026-10-26",
+  "method": "Explicit authored task contracts; no Cartesian scenario substitutions.",
+  "documentation_checked": [
+    "https://docs.python.org/3/library/csv.html",
+    "https://www.postgresql.org/docs/current/tutorial.html",
+    "https://www.postgresql.org/docs/current/queries.html"
+  ],
+  "resume": "Append distinct task contracts to foundations.py, preserving all previous rows and IDs; rerun and validate. Do not fill target gaps by copying templates.",
+  "tools": {
+    "python": {
+      "existing": 12,
+      "new_published": 133,
+      "actual_published": 145,
+      "target": 450,
+      "remaining": 305,
+      "next_id": "RLP-PY-146",
+      "sha256": "29a830e7c0740e6a369c634ddfa5a355de0a1d92e77dc2ba8badeed5958ceb9d",
+      "levels": {
+        "0": 8,
+        "1": 13,
+        "2": 13,
+        "3": 13,
+        "4": 13,
+        "5": 13,
+        "6": 13,
+        "7": 13,
+        "8": 13,
+        "9": 13,
+        "10": 8
+      }
+    },
+    "sql": {
+      "existing": 8,
+      "new_published": 133,
+      "actual_published": 141,
+      "target": 450,
+      "remaining": 309,
+      "next_id": "RLP-SQL-142",
+      "sha256": "85d4d697b5b93ac1ad288ff5eb89438a5481b0eda16631f03e1c34da580ae314",
+      "levels": {
+        "0": 8,
+        "1": 13,
+        "2": 13,
+        "3": 13,
+        "4": 13,
+        "5": 13,
+        "6": 13,
+        "7": 13,
+        "8": 13,
+        "9": 13,
+        "10": 8
+      }
+    },
+    "postgresql": {
+      "existing": 4,
+      "new_published": 88,
+      "actual_published": 92,
+      "target": 180,
+      "remaining": 88,
+      "next_id": "RLP-PG-093",
+      "sha256": "2f28149327c8b91cbf2bb3c715da2825e779081de865ad3aff877344584f838b",
+      "levels": {
+        "0": 8,
+        "1": 8,
+        "2": 8,
+        "3": 8,
+        "4": 8,
+        "5": 8,
+        "6": 8,
+        "7": 8,
+        "8": 8,
+        "9": 8,
+        "10": 8
+      }
+    }
+  }
+}

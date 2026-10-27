@@ -1,0 +1,31 @@
+{
+  "state": "prepared_not_published",
+  "proposed": 200,
+  "published_added": 0,
+  "counts": {
+    "data-modelling": 26,
+    "data-quality": 26,
+    "airflow": 26,
+    "dbt": 26,
+    "snowflake": 26,
+    "docker": 3,
+    "azure": 13,
+    "cloud-security": 16,
+    "cicd": 16,
+    "integrated-pipelines": 22
+  },
+  "proposal_sha256": "831a92440237ff836e387f9b736b96de809114ddf85d4b7b4dff435c67ede338",
+  "source_files_sha256": {
+    "data-modelling": "b61aa62c48df78fdb1fd80d6d33d8e96392045157eff71e0504483770c8f11e4",
+    "data-quality": "3f74f86c580687dd50b04cb48531d607e0129536e942959c5199cf3274014710",
+    "airflow": "3ba256c52f50eb550c449a0758a02c5224f397984009ef7d01786dc1f1bc6462",
+    "dbt": "41a5a058103dec928b17ba7d9b1d0797c2b9784626f012e2a6092dc6333f0d2d",
+    "snowflake": "2f359f77bf2ad3a1566d5a8ea186c2881878da6591e1e570f68c47ceb88d50d3",
+    "docker": "e5c67bfcb948c74aef3330fad1b121e061a0b273233cdb6db244b7189e75b0fc",
+    "azure": "a252ec4e1d359403a51bd3e87788e87e68cb211f3e95ee4befd28f0e75b1acee",
+    "cloud-security": "1869c22945ecdb95b2980f7571082bae33396dbc4b85b7dd613c5868c71dbfb9",
+    "cicd": "1b930ef3e64fac0e9111a970b079f282ebbe524845507747be96c584add927c6",
+    "integrated-pipelines": "60ec4e8ef62c0c8c9a85cd1183c385a550f33665e9ba62e567a05c6d874d2add"
+  },
+  "errors": []
+}

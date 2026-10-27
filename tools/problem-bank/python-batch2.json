@@ -1,0 +1,3422 @@
+[
+  {
+    "id": "RLP-PY-146",
+    "tool_id": "python",
+    "title": "Read a configured file name",
+    "level": 0,
+    "prerequisites": [
+      "RLP-PY-001"
+    ],
+    "scenario": "An operator supplies a source filename as configuration. Return it unchanged for the run preview.",
+    "task": "An operator supplies a source filename as configuration. Return it unchanged for the run preview. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "source_name='arrivals_2026-10-25.csv'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "'arrivals_2026-10-25.csv'"
+    },
+    "constraints": [
+      "Preview must not open,create or modify the named file.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: 'arrivals_2026-10-25.csv'",
+      "Demonstrate this specific boundary/failure check: Preview must not open,create or modify the named file.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read a configured file name is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Read a configured file name",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Preview must not open,create or modify the named file.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 146,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-147",
+    "tool_id": "python",
+    "title": "Recognize a supplied file extension",
+    "level": 0,
+    "prerequisites": [
+      "RLP-PY-146"
+    ],
+    "scenario": "A landing preview needs the last suffix of one filename, including its dot.",
+    "task": "A landing preview needs the last suffix of one filename, including its dot. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "name='orders.backup.csv'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "'.csv'"
+    },
+    "constraints": [
+      "A filename without a suffix returns an empty string.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: '.csv'",
+      "Demonstrate this specific boundary/failure check: A filename without a suffix returns an empty string.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Recognize a supplied file extension is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Recognize a supplied file extension",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A filename without a suffix returns an empty string.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 147,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-148",
+    "tool_id": "python",
+    "title": "Read the last component of a source path",
+    "level": 0,
+    "prerequisites": [
+      "RLP-PY-147"
+    ],
+    "scenario": "A support report needs the filename part of an explicitly supplied path, without reading the file.",
+    "task": "A support report needs the filename part of an explicitly supplied path, without reading the file. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "path='/sandbox/landing/orders.csv'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "'orders.csv'"
+    },
+    "constraints": [
+      "Do not assume the current working directory supplies missing path components.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: 'orders.csv'",
+      "Demonstrate this specific boundary/failure check: Do not assume the current working directory supplies missing path components.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read the last component of a source path is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Read the last component of a source path",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not assume the current working directory supplies missing path components.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 148,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-149",
+    "tool_id": "python",
+    "title": "Inspect one file size",
+    "level": 0,
+    "prerequisites": [
+      "RLP-PY-148"
+    ],
+    "scenario": "Create a temporary file from the supplied bytes and return its size in bytes.",
+    "task": "Create a temporary file from the supplied bytes and return its size in bytes. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "file bytes=[65,66,67,10]",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "4"
+    },
+    "constraints": [
+      "A newline byte contributes to size even though it is not a data record.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: 4",
+      "Demonstrate this specific boundary/failure check: A newline byte contributes to size even though it is not a data record.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Inspect one file size is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Inspect one file size",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A newline byte contributes to size even though it is not a data record.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 149,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-150",
+    "tool_id": "python",
+    "title": "Tell a file from a directory",
+    "level": 0,
+    "prerequisites": [
+      "RLP-PY-149"
+    ],
+    "scenario": "A landing checklist must label two supplied temporary paths as file or directory.",
+    "task": "A landing checklist must label two supplied temporary paths as file or directory. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "fixture has input.csv as a file and archive as a directory",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "input.csv:file; archive:directory"
+    },
+    "constraints": [
+      "Do not decide from a dot in the name alone.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: input.csv:file; archive:directory",
+      "Demonstrate this specific boundary/failure check: Do not decide from a dot in the name alone.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Tell a file from a directory is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Tell a file from a directory",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not decide from a dot in the name alone.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 150,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-151",
+    "tool_id": "python",
+    "title": "Read an explicit batch-size setting",
+    "level": 0,
+    "prerequisites": [
+      "RLP-PY-150"
+    ],
+    "scenario": "A run preview receives a positive batch_size integer. Return the value without processing a batch.",
+    "task": "A run preview receives a positive batch_size integer. Return the value without processing a batch. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "configuration={batch_size:25}",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "25"
+    },
+    "constraints": [
+      "Previewing configuration is not evidence that25records were processed.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: 25",
+      "Demonstrate this specific boundary/failure check: Previewing configuration is not evidence that25records were processed.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read an explicit batch-size setting is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Read an explicit batch-size setting",
+    "difficulty": "level_0",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Previewing configuration is not evidence that25records were processed.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "sequence": 151,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-152",
+    "tool_id": "python",
+    "title": "Join a temporary directory and filename",
+    "level": 1,
+    "prerequisites": [
+      "RLP-PY-151"
+    ],
+    "scenario": "Build an input path from an explicit root and base name using platform-aware path handling.",
+    "task": "Build an input path from an explicit root and base name using platform-aware path handling. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "root is a temporary directory; name='orders.csv'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "result refers to orders.csv directly beneath that root"
+    },
+    "constraints": [
+      "Do not hard-code the original repository's Windows path.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: result refers to orders.csv directly beneath that root",
+      "Demonstrate this specific boundary/failure check: Do not hard-code the original repository's Windows path.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Join a temporary directory and filename is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Join a temporary directory and filename",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not hard-code the original repository's Windows path.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_0_bounded_python_operations"
+    ],
+    "sequence": 1152,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-153",
+    "tool_id": "python",
+    "title": "Handle a final line without a newline",
+    "level": 1,
+    "prerequisites": [
+      "RLP-PY-152"
+    ],
+    "scenario": "Count logical data lines in a small text feed including a final unterminated line.",
+    "task": "Count logical data lines in a small text feed including a final unterminated line. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "UTF-8 text='A\\nB'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "2"
+    },
+    "constraints": [
+      "The absence of a final newline must not discardB.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: 2",
+      "Demonstrate this specific boundary/failure check: The absence of a final newline must not discardB.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Handle a final line without a newline is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Handle a final line without a newline",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The absence of a final newline must not discardB.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_python_operations"
+    ],
+    "sequence": 1153,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-154",
+    "tool_id": "python",
+    "title": "Skip a specified transport preamble",
+    "level": 1,
+    "prerequisites": [
+      "RLP-PY-153"
+    ],
+    "scenario": "Read a feed with exactly two preamble lines followed by a CSV header. Return the header fields.",
+    "task": "Read a feed with exactly two preamble lines followed by a CSV header. Return the header fields. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "text='vendorX\\nexport26\\nid,units\\nA,2\\n'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "['id','units']"
+    },
+    "constraints": [
+      "Do not skip arbitrary additional lines that might be real data.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: ['id','units']",
+      "Demonstrate this specific boundary/failure check: Do not skip arbitrary additional lines that might be real data.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Skip a specified transport preamble is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Skip a specified transport preamble",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not skip arbitrary additional lines that might be real data.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_python_operations"
+    ],
+    "sequence": 1154,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-155",
+    "tool_id": "python",
+    "title": "Normalize a Windows line ending",
+    "level": 1,
+    "prerequisites": [
+      "RLP-PY-154"
+    ],
+    "scenario": "Read a small text file using universal newline behavior and return records without carriage returns.",
+    "task": "Read a small text file using universal newline behavior and return records without carriage returns. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "bytes encode'A\\r\\nB\\r\\n'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "['A','B']"
+    },
+    "constraints": [
+      "Do not remove an embedded carriage return from a quoted data field in a CSV parser.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: ['A','B']",
+      "Demonstrate this specific boundary/failure check: Do not remove an embedded carriage return from a quoted data field in a CSV parser.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Normalize a Windows line ending is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Normalize a Windows line ending",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not remove an embedded carriage return from a quoted data field in a CSV parser.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_python_operations"
+    ],
+    "sequence": 1155,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-156",
+    "tool_id": "python",
+    "title": "Create a report directory once",
+    "level": 1,
+    "prerequisites": [
+      "RLP-PY-155"
+    ],
+    "scenario": "Create a nested temporary output directory and demonstrate that repeating setup succeeds.",
+    "task": "Create a nested temporary output directory and demonstrate that repeating setup succeeds. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "relative directory='reports/daily' under a temporary root",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "directory exists after both setup calls; no duplicate sibling directory"
+    },
+    "constraints": [
+      "An existing file at the same path must produce an explicit error.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: directory exists after both setup calls; no duplicate sibling directory",
+      "Demonstrate this specific boundary/failure check: An existing file at the same path must produce an explicit error.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Create a report directory once is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Create a report directory once",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An existing file at the same path must produce an explicit error.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_python_operations"
+    ],
+    "sequence": 1156,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-157",
+    "tool_id": "python",
+    "title": "Select a configured run mode",
+    "level": 1,
+    "prerequisites": [
+      "RLP-PY-156"
+    ],
+    "scenario": "Accept only dry_run or apply from a supplied configuration; reject an unknown mode before any file write.",
+    "task": "Accept only dry_run or apply from a supplied configuration; reject an unknown mode before any file write. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "modes=['dry_run','apply','repair_everything']",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "first two accepted; third rejected unknown_mode"
+    },
+    "constraints": [
+      "Case conversion is not automatic under this contract.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: first two accepted; third rejected unknown_mode",
+      "Demonstrate this specific boundary/failure check: Case conversion is not automatic under this contract.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 27,
+    "engineering_relevance": "Select a configured run mode is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Select a configured run mode",
+    "difficulty": "level_1",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Case conversion is not automatic under this contract.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_0_bounded_python_operations"
+    ],
+    "sequence": 1157,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-158",
+    "tool_id": "python",
+    "title": "Reject an absolute child path",
+    "level": 2,
+    "prerequisites": [
+      "RLP-PY-157"
+    ],
+    "scenario": "A file picker accepts a relative path beneath its configured temporary root. Reject an absolute supplied child path.",
+    "task": "A file picker accepts a relative path beneath its configured temporary root. Reject an absolute supplied child path. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "child='sub/orders.csv' then child='/outside/orders.csv'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "first accepted; second rejected absolute_child"
+    },
+    "constraints": [
+      "Do not let a joining operation silently replace the configured root.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: first accepted; second rejected absolute_child",
+      "Demonstrate this specific boundary/failure check: Do not let a joining operation silently replace the configured root.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Reject an absolute child path is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Reject an absolute child path",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not let a joining operation silently replace the configured root.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_1_bounded_python_operations"
+    ],
+    "sequence": 2158,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-159",
+    "tool_id": "python",
+    "title": "Exclude temporary producer files",
+    "level": 2,
+    "prerequisites": [
+      "RLP-PY-158"
+    ],
+    "scenario": "List ready CSV files while excluding producer suffixes .partial and .tmp even when.csv appears earlier.",
+    "task": "List ready CSV files while excluding producer suffixes .partial and .tmp even when.csv appears earlier. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "names=['a.csv','b.csv.partial','c.csv.tmp','d.txt']",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "ready=['a.csv']; others ignored"
+    },
+    "constraints": [
+      "The producer completion rule is explicit; file age is not proof of readiness.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: ready=['a.csv']; others ignored",
+      "Demonstrate this specific boundary/failure check: The producer completion rule is explicit; file age is not proof of readiness.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Exclude temporary producer files is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Exclude temporary producer files",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The producer completion rule is explicit; file age is not proof of readiness.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_python_operations"
+    ],
+    "sequence": 2159,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-160",
+    "tool_id": "python",
+    "title": "Report file permissions separately from absence",
+    "level": 2,
+    "prerequisites": [
+      "RLP-PY-159"
+    ],
+    "scenario": "Wrap a supplied fake reader to distinguish permission-denied from file-not-found outcomes.",
+    "task": "Wrap a supplied fake reader to distinguish permission-denied from file-not-found outcomes. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "fake reader returns Permission Error forA and FileNotFoundError forB",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "A:permission_denied;B:missing_file"
+    },
+    "constraints": [
+      "Do not claim changing a path fixes a permission problem.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: A:permission_denied;B:missing_file",
+      "Demonstrate this specific boundary/failure check: Do not claim changing a path fixes a permission problem.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Report file permissions separately from absence is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Report file permissions separately from absence",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not claim changing a path fixes a permission problem.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_python_operations"
+    ],
+    "sequence": 2160,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-161",
+    "tool_id": "python",
+    "title": "Choose a bounded file subset",
+    "level": 2,
+    "prerequisites": [
+      "RLP-PY-160"
+    ],
+    "scenario": "Select at most two ready files in deterministic filename order and return the remaining names separately.",
+    "task": "Select at most two ready files in deterministic filename order and return the remaining names separately. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "ready=['c.csv','a.csv','b.csv']; max_files=2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "selected=['a.csv','b.csv']; remaining=['c.csv']"
+    },
+    "constraints": [
+      "A negative file limit is rejected before listing or processing files.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: selected=['a.csv','b.csv']; remaining=['c.csv']",
+      "Demonstrate this specific boundary/failure check: A negative file limit is rejected before listing or processing files.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Choose a bounded file subset is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Choose a bounded file subset",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A negative file limit is rejected before listing or processing files.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_python_operations"
+    ],
+    "sequence": 2161,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-162",
+    "tool_id": "python",
+    "title": "Detect case-insensitive filename collisions",
+    "level": 2,
+    "prerequisites": [
+      "RLP-PY-161"
+    ],
+    "scenario": "Before exporting for a case-insensitive consumer, report names whose case-folded values collide.",
+    "task": "Before exporting for a case-insensitive consumer, report names whose case-folded values collide. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "names=['Sales.csv','sales.csv','stock.csv']",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "collision group=['Sales.csv','sales.csv']"
+    },
+    "constraints": [
+      "Do not overwrite one file merely be cause the development filesystem permits both.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: collision group=['Sales.csv','sales.csv']",
+      "Demonstrate this specific boundary/failure check: Do not overwrite one file merely be cause the development filesystem permits both.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Detect case-insensitive filename collisions is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Detect case-insensitive filename collisions",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not overwrite one file merely be cause the development filesystem permits both.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_python_operations"
+    ],
+    "sequence": 2162,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-163",
+    "tool_id": "python",
+    "title": "Check a required output directory is empty",
+    "level": 2,
+    "prerequisites": [
+      "RLP-PY-162"
+    ],
+    "scenario": "A one-time delivery requires an empty staging directory; list blocking entries if it is not empty.",
+    "task": "A one-time delivery requires an empty staging directory; list blocking entries if it is not empty. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "temporary staging contains old.csv and .marker",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "blocked entries=['.marker','old.csv']"
+    },
+    "constraints": [
+      "Hidden marker files count as entries and must not be ignored.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: blocked entries=['.marker','old.csv']",
+      "Demonstrate this specific boundary/failure check: Hidden marker files count as entries and must not be ignored.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 39,
+    "engineering_relevance": "Check a required output directory is empty is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Check a required output directory is empty",
+    "difficulty": "level_2",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Hidden marker files count as entries and must not be ignored.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_1_bounded_python_operations"
+    ],
+    "sequence": 2163,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-164",
+    "tool_id": "python",
+    "title": "Parse a fixed-width account export",
+    "level": 3,
+    "prerequisites": [
+      "RLP-PY-163"
+    ],
+    "scenario": "Read a record with account in positions1..5 and units in positions6..8, preserving leading account zeros.",
+    "task": "Read a record with account in positions1..5 and units in positions6..8, preserving leading account zeros. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "line='00017012'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "account='00017'; units=12"
+    },
+    "constraints": [
+      "A record with the wrong byte length is rejected instead of sliced silently.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: account='00017'; units=12",
+      "Demonstrate this specific boundary/failure check: A record with the wrong byte length is rejected instead of sliced silently.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Parse a fixed-width account export is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Parse a fixed-width account export",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A record with the wrong byte length is rejected instead of sliced silently.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_2_bounded_python_operations"
+    ],
+    "sequence": 3164,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-165",
+    "tool_id": "python",
+    "title": "Read a tab-delimited escaped note",
+    "level": 3,
+    "prerequisites": [
+      "RLP-PY-164"
+    ],
+    "scenario": "Parse a supplied TSV feed where a quoted note contains a tab. Return the intact note.",
+    "task": "Parse a supplied TSV feed where a quoted note contains a tab. Return the intact note. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "text='id\\tnote\\nA\\t\"first\\tsecond\"\\n'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "A note contains one embedded tab between first and second"
+    },
+    "constraints": [
+      "A plain split on tab must not turn the note into an extra column.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: A note contains one embedded tab between first and second",
+      "Demonstrate this specific boundary/failure check: A plain split on tab must not turn the note into an extra column.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Read a tab-delimited escaped note is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Read a tab-delimited escaped note",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A plain split on tab must not turn the note into an extra column.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_python_operations"
+    ],
+    "sequence": 3165,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-166",
+    "tool_id": "python",
+    "title": "Validate a supplied trailer count",
+    "level": 3,
+    "prerequisites": [
+      "RLP-PY-165"
+    ],
+    "scenario": "A flat-file trailer declares the number of detail records. Validate it before publishing details.",
+    "task": "A flat-file trailer declares the number of detail records. Validate it before publishing details. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "lines=['H:vendor','D:A','D:B','T:2']",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "details A,B; declared2; observed2; pass"
+    },
+    "constraints": [
+      "The header and trailer do not count as detail records.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: details A,B; declared2; observed2; pass",
+      "Demonstrate this specific boundary/failure check: The header and trailer do not count as detail records.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Validate a supplied trailer count is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Validate a supplied trailer count",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The header and trailer do not count as detail records.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_python_operations"
+    ],
+    "sequence": 3166,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-167",
+    "tool_id": "python",
+    "title": "Identify a UTF-8 byte-order mark",
+    "level": 3,
+    "prerequisites": [
+      "RLP-PY-166"
+    ],
+    "scenario": "Read a supplied UTF-8-with-BOM CSV so the first header is id rather than a hidden BOM plus id.",
+    "task": "Read a supplied UTF-8-with-BOM CSV so the first header is id rather than a hidden BOM plus id. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "bytes startEFBBBF then UTF-8'id,units\\nA,2'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "headers=['id','units']; acceptedA2"
+    },
+    "constraints": [
+      "Only a recognized transport BOM is removed; field text is preserved.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: headers=['id','units']; acceptedA2",
+      "Demonstrate this specific boundary/failure check: Only a recognized transport BOM is removed; field text is preserved.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Identify a UTF-8 byte-order mark is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Identify a UTF-8 byte-order mark",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Only a recognized transport BOM is removed; field text is preserved.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_python_operations"
+    ],
+    "sequence": 3167,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-168",
+    "tool_id": "python",
+    "title": "Parse a bounded XML delivery",
+    "level": 3,
+    "prerequisites": [
+      "RLP-PY-167"
+    ],
+    "scenario": "Read a small synthetic XML feed and return each item ID and quantity, rejecting missing required attributes.",
+    "task": "Read a small synthetic XML feed and return each item ID and quantity, rejecting missing required attributes. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "XML '<items><item id=\"A\" qty=\"2\"/><item qty=\"3\"/></items>'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "acceptedA2; one missing_id rejection"
+    },
+    "constraints": [
+      "Input must not allow external entity resolution or arbitrary net work/file access.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: acceptedA2; one missing_id rejection",
+      "Demonstrate this specific boundary/failure check: Input must not allow external entity resolution or arbitrary net work/file access.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Parse a bounded XML delivery is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Parse a bounded XML delivery",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Input must not allow external entity resolution or arbitrary net work/file access.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_python_operations"
+    ],
+    "sequence": 3168,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-169",
+    "tool_id": "python",
+    "title": "Check a file's declared encoding",
+    "level": 3,
+    "prerequisites": [
+      "RLP-PY-168"
+    ],
+    "scenario": "Decode using an explicit allowed encoding from the manifest and reject unknown encoding names.",
+    "task": "Decode using an explicit allowed encoding from the manifest and reject unknown encoding names. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "bytes=[99,97,102,233]; manifest encoding='latin-1'",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "text='café'"
+    },
+    "constraints": [
+      "Do not silently retry many encodings until one produces plausible-looking text.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: text='café'",
+      "Demonstrate this specific boundary/failure check: Do not silently retry many encodings until one produces plausible-looking text.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 51,
+    "engineering_relevance": "Check a file's declared encoding is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Check a file's declared encoding",
+    "difficulty": "level_3",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not silently retry many encodings until one produces plausible-looking text.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_2_bounded_python_operations"
+    ],
+    "sequence": 3169,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-170",
+    "tool_id": "python",
+    "title": "Preserve a relative directory tree in lineage",
+    "level": 4,
+    "prerequisites": [
+      "RLP-PY-169"
+    ],
+    "scenario": "Read two same-named files under different subdirectories and retain root-relative source paths.",
+    "task": "Read two same-named files under different subdirectories and retain root-relative source paths. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "north/orders.csv containsA; south/orders.csv containsB",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "A lineage north/orders.csv; B lineage south/orders.csv"
+    },
+    "constraints": [
+      "Base names alone are insufficient to distinguish these sources.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: A lineage north/orders.csv; B lineage south/orders.csv",
+      "Demonstrate this specific boundary/failure check: Base names alone are insufficient to distinguish these sources.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Preserve a relative directory tree in lineage is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Preserve a relative directory tree in lineage",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Base names alone are insufficient to distinguish these sources.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_3_bounded_python_operations"
+    ],
+    "sequence": 4170,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-171",
+    "tool_id": "python",
+    "title": "Check file-size completeness against a manifest",
+    "level": 4,
+    "prerequisites": [
+      "RLP-PY-170"
+    ],
+    "scenario": "Compare expected byte sizes with observed temporary files before opening record parsers.",
+    "task": "Compare expected byte sizes with observed temporary files before opening record parsers. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "manifest a.csv4bytes,b.csv8bytes; observed a.csv4,b.csv5",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "a complete; b size_mismatch; delivery blocked"
+    },
+    "constraints": [
+      "Matching size is only a transport check, not proof of semantic validity.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: a complete; b size_mismatch; delivery blocked",
+      "Demonstrate this specific boundary/failure check: Matching size is only a transport check, not proof of semantic validity.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Check file-size completeness against a manifest is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Check file-size completeness against a manifest",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Matching size is only a transport check, not proof of semantic validity.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_python_operations"
+    ],
+    "sequence": 4171,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-172",
+    "tool_id": "python",
+    "title": "Protect against a symbolic-link escape",
+    "level": 4,
+    "prerequisites": [
+      "RLP-PY-171"
+    ],
+    "scenario": "A local repair utility accepts regular files inside a root and rejects links resolving outside it.",
+    "task": "A local repair utility accepts regular files inside a root and rejects links resolving outside it. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "root has safe.csv and a symbolic link pointing to an external fixture",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "safe accepted; external link blocked with resolved-path evidence"
+    },
+    "constraints": [
+      "If symlink creation is unavailable, inject a resolver and label that test simulated.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: safe accepted; external link blocked with resolved-path evidence",
+      "Demonstrate this specific boundary/failure check: If symlink creation is unavailable, inject a resolver and label that test simulated.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Protect against a symbolic-link escape is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Protect against a symbolic-link escape",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: If symlink creation is unavailable, inject a resolver and label that test simulated.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_python_operations"
+    ],
+    "sequence": 4172,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-173",
+    "tool_id": "python",
+    "title": "Route matching header and detail files",
+    "level": 4,
+    "prerequisites": [
+      "RLP-PY-172"
+    ],
+    "scenario": "Pair each invoice detail file with exactly one header file using a batch key in a supplied manifest.",
+    "task": "Pair each invoice detail file with exactly one header file using a batch key in a supplied manifest. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "batchB1 headerh1/detaild1; batchB2 detaild2 only",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "B1 ready; B2 blocked missing_header"
+    },
+    "constraints": [
+      "Do not pair by directory enumeration position.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: B1 ready; B2 blocked missing_header",
+      "Demonstrate this specific boundary/failure check: Do not pair by directory enumeration position.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Route matching header and detail files is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Route matching header and detail files",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not pair by directory enumeration position.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_python_operations"
+    ],
+    "sequence": 4173,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-174",
+    "tool_id": "python",
+    "title": "Compare semantic rows across file formats",
+    "level": 4,
+    "prerequisites": [
+      "RLP-PY-173"
+    ],
+    "scenario": "Reconcile a CSV and JSON export containing the same ID/units records despite differing field order.",
+    "task": "Reconcile a CSV and JSON export containing the same ID/units records despite differing field order. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "CSV A2,B3; JSON [{units:3,id:B},{units:2,id:A}]",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "no semantic differences after declared key-based comparison"
+    },
+    "constraints": [
+      "Raw-byte in equality alone does not imply different business records.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: no semantic differences after declared key-based comparison",
+      "Demonstrate this specific boundary/failure check: Raw-byte in equality alone does not imply different business records.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Compare semantic rows across file formats is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Compare semantic rows across file formats",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Raw-byte in equality alone does not imply different business records.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_python_operations"
+    ],
+    "sequence": 4174,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-175",
+    "tool_id": "python",
+    "title": "Bound recursive directory discovery",
+    "level": 4,
+    "prerequisites": [
+      "RLP-PY-174"
+    ],
+    "scenario": "Discover ready files no deeper than two directories below the root and report ignored deeper paths.",
+    "task": "Discover ready files no deeper than two directories below the root and report ignored deeper paths. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "root/a.csv; root/x/b.csv; root/x/y/c.csv; root/x/y/z/d.csv",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "max_depth2 includes a,b,c; ignoresd"
+    },
+    "constraints": [
+      "Define root files as depth0 and do not follow directory links.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: max_depth2 includes a,b,c; ignoresd",
+      "Demonstrate this specific boundary/failure check: Define root files as depth0 and do not follow directory links.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 63,
+    "engineering_relevance": "Bound recursive directory discovery is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Bound recursive directory discovery",
+    "difficulty": "level_4",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Define root files as depth0 and do not follow directory links.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_3_bounded_python_operations"
+    ],
+    "sequence": 4175,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-176",
+    "tool_id": "python",
+    "title": "Create an export with a completion marker",
+    "level": 5,
+    "prerequisites": [
+      "RLP-PY-175"
+    ],
+    "scenario": "Publish data first, then a marker containing its digest and row count. Consumer reads only marked exports.",
+    "task": "Publish data first, then a marker containing its digest and row count. Consumer reads only marked exports. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "rowsA,B; injected failure before marker",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "unmarked output not consumable; success marker count2 and matching digest"
+    },
+    "constraints": [
+      "A stale marker from an earlier output must not certify newly written bytes.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: unmarked output not consumable; success marker count2 and matching digest",
+      "Demonstrate this specific boundary/failure check: A stale marker from an earlier output must not certify newly written bytes.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Create an export with a completion marker is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Create an export with a completion marker",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A stale marker from an earlier output must not certify newly written bytes.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_4_bounded_python_operations"
+    ],
+    "sequence": 5176,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-177",
+    "tool_id": "python",
+    "title": "Stage a multi-file report as one release",
+    "level": 5,
+    "prerequisites": [
+      "RLP-PY-176"
+    ],
+    "scenario": "Create accepted,rejected and manifest artifacts in a versioned temporary release directory before moving a pointer.",
+    "task": "Create accepted,rejected and manifest artifacts in a versioned temporary release directory before moving a pointer. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "validA; invalidB; current releaseR0",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "new releaseR1 has all3artifacts; pointer changes only after checks"
+    },
+    "constraints": [
+      "Failure while writing one artifact leaves pointerR0 unchanged.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: new releaseR1 has all3artifacts; pointer changes only after checks",
+      "Demonstrate this specific boundary/failure check: Failure while writing one artifact leaves pointerR0 unchanged.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Stage a multi-file report as one release is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Stage a multi-file report as one release",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Failure while writing one artifact leaves pointerR0 unchanged.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_python_operations"
+    ],
+    "sequence": 5177,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-178",
+    "tool_id": "python",
+    "title": "Copy accepted source files with proof",
+    "level": 5,
+    "prerequisites": [
+      "RLP-PY-177"
+    ],
+    "scenario": "Copy a temporary source into a sandbox archive, verify byte count and digest, then mark archived.",
+    "task": "Copy a temporary source into a sandbox archive, verify byte count and digest, then mark archived. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "source bytes'ABC\\n'; archive destination inside temporary root",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "archive bytes identical; digest/count match; status archived"
+    },
+    "constraints": [
+      "Do not delete the source as part of this exercise.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: archive bytes identical; digest/count match; status archived",
+      "Demonstrate this specific boundary/failure check: Do not delete the source as part of this exercise.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Copy accepted source files with proof is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Copy accepted source files with proof",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not delete the source as part of this exercise.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_python_operations"
+    ],
+    "sequence": 5178,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-179",
+    "tool_id": "python",
+    "title": "Make a local report deterministic across machines",
+    "level": 5,
+    "prerequisites": [
+      "RLP-PY-178"
+    ],
+    "scenario": "Produce an export using explicit UTF-8,newline policy,column order and business date.",
+    "task": "Produce an export using explicit UTF-8,newline policy,column order and business date. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "rowsA café units2; explicit date2026-10-25",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "same documented output bytes independent of host newline/default encoding"
+    },
+    "constraints": [
+      "Do not use the machine clock as an implicit report date.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: same documented output bytes independent of host newline/default encoding",
+      "Demonstrate this specific boundary/failure check: Do not use the machine clock as an implicit report date.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Make a local report deterministic across machines is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Make a local report deterministic across machines",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not use the machine clock as an implicit report date.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_python_operations"
+    ],
+    "sequence": 5179,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-180",
+    "tool_id": "python",
+    "title": "Build a bounded file-inspection CLI",
+    "level": 5,
+    "prerequisites": [
+      "RLP-PY-179"
+    ],
+    "scenario": "Accept one sandbox root and produce counts of ready,temporary and unsupported files without modifying any.",
+    "task": "Accept one sandbox root and produce counts of ready,temporary and unsupported files without modifying any. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "filesa.csv,b.csv.tmp,c.xml; accepted formatcsv",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "ready1;temporary1;unsupported1; exit0"
+    },
+    "constraints": [
+      "An invalid root exits nonzero with a concise error category.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: ready1;temporary1;unsupported1; exit0",
+      "Demonstrate this specific boundary/failure check: An invalid root exits nonzero with a concise error category.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Build a bounded file-inspection CLI is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Build a bounded file-inspection CLI",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An invalid root exits nonzero with a concise error category.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_python_operations"
+    ],
+    "sequence": 5180,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-181",
+    "tool_id": "python",
+    "title": "Attach artifact sizes to a run summary",
+    "level": 5,
+    "prerequisites": [
+      "RLP-PY-180"
+    ],
+    "scenario": "After successful writes, report each artifact's bytes and total bytes using actual filesystem observations.",
+    "task": "After successful writes, report each artifact's bytes and total bytes using actual filesystem observations. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "two output files containing3and5bytes",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "artifact sizes3,5; total8"
+    },
+    "constraints": [
+      "Do not calculate size from Unicode character counts.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: artifact sizes3,5; total8",
+      "Demonstrate this specific boundary/failure check: Do not calculate size from Unicode character counts.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Attach artifact sizes to a run summary is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Attach artifact sizes to a run summary",
+    "difficulty": "level_5",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not calculate size from Unicode character counts.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_4_bounded_python_operations"
+    ],
+    "sequence": 5181,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-182",
+    "tool_id": "python",
+    "title": "Detect a file that changes during reading",
+    "level": 6,
+    "prerequisites": [
+      "RLP-PY-181"
+    ],
+    "scenario": "Use supplied before/after metadata and digest evidence to reject a source modified mid-read.",
+    "task": "Use supplied before/after metadata and digest evidence to reject a source modified mid-read. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "before size10,mtime100; after size12,mtime101",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "status unstable_source; no committed report"
+    },
+    "constraints": [
+      "A retry reads a fresh consistent snapshot rather than appending to the partial result.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: status unstable_source; no committed report",
+      "Demonstrate this specific boundary/failure check: A retry reads a fresh consistent snapshot rather than appending to the partial result.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Detect a file that changes during reading is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Detect a file that changes during reading",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A retry reads a fresh consistent snapshot rather than appending to the partial result.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_5_bounded_python_operations"
+    ],
+    "sequence": 6182,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-183",
+    "tool_id": "python",
+    "title": "Handle a full output disk safely",
+    "level": 6,
+    "prerequisites": [
+      "RLP-PY-182"
+    ],
+    "scenario": "Inject an ENOSPC-like write failure and retain a failed run record without publishing a completion marker.",
+    "task": "Inject an ENOSPC-like write failure and retain a failed run record without publishing a completion marker. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "new report rowsA,B; writer fails afterA",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "status output_full; no complete marker; prior release intact"
+    },
+    "constraints": [
+      "Do not classify the failure as malformed input data.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: status output_full; no complete marker; prior release intact",
+      "Demonstrate this specific boundary/failure check: Do not classify the failure as malformed input data.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Handle a full output disk safely is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Handle a full output disk safely",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not classify the failure as malformed input data.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_python_operations"
+    ],
+    "sequence": 6183,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-184",
+    "tool_id": "python",
+    "title": "Clean only this run's temporary files",
+    "level": 6,
+    "prerequisites": [
+      "RLP-PY-183"
+    ],
+    "scenario": "After an injected failure, remove files carrying the current run's owned paths while retaining another run's files.",
+    "task": "After an injected failure, remove files carrying the current run's owned paths while retaining another run's files. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "runR1 tempa; runR2 tempb; failR1",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "R1owned temp removed;R2tempremains"
+    },
+    "constraints": [
+      "Verify every cleanup target is within the intended temporary root.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: R1owned temp removed;R2tempremains",
+      "Demonstrate this specific boundary/failure check: Verify every cleanup target is within the intended temporary root.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Clean only this run's temporary files is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Clean only this run's temporary files",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Verify every cleanup target is within the intended temporary root.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_python_operations"
+    ],
+    "sequence": 6184,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-185",
+    "tool_id": "python",
+    "title": "Make an archive retry idempotent",
+    "level": 6,
+    "prerequisites": [
+      "RLP-PY-184"
+    ],
+    "scenario": "If the destination already has identical verified bytes, return already_archived rather than creating another copy.",
+    "task": "If the destination already has identical verified bytes, return already_archived rather than creating another copy. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "sourcehashH1; destinationhashH1",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "already_archived; no extra archive file"
+    },
+    "constraints": [
+      "An existing destination with different bytes is a collision, not a successful retry.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: already_archived; no extra archive file",
+      "Demonstrate this specific boundary/failure check: An existing destination with different bytes is a collision, not a successful retry.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Make an archive retry idempotent is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Make an archive retry idempotent",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An existing destination with different bytes is a collision, not a successful retry.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_python_operations"
+    ],
+    "sequence": 6185,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-186",
+    "tool_id": "python",
+    "title": "Recover a stale local completion marker",
+    "level": 6,
+    "prerequisites": [
+      "RLP-PY-185"
+    ],
+    "scenario": "Detect when marker digest does not match its data file and block the consumer.",
+    "task": "Detect when marker digest does not match its data file and block the consumer. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "marker claimsH1; currentdatahashH2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "blocked digest_mismatch; neither file silently re written"
+    },
+    "constraints": [
+      "The repair action requires authoritative source bytes, not trusting the newest timestamp.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: blocked digest_mismatch; neither file silently re written",
+      "Demonstrate this specific boundary/failure check: The repair action requires authoritative source bytes, not trusting the newest timestamp.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Recover a stale local completion marker is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Recover a stale local completion marker",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The repair action requires authoritative source bytes, not trusting the newest timestamp.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_python_operations"
+    ],
+    "sequence": 6186,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-187",
+    "tool_id": "python",
+    "title": "Report partial-copy evidence accurately",
+    "level": 6,
+    "prerequisites": [
+      "RLP-PY-186"
+    ],
+    "scenario": "Inject copy failure after2of5bytes and distinguish copied_bytes from verified_archive_bytes.",
+    "task": "Inject copy failure after2of5bytes and distinguish copied_bytes from verified_archive_bytes. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "source5bytes; copy stops after2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "copied_bytes2; verified_archive_bytes0; status failed"
+    },
+    "constraints": [
+      "A partial destination must not be counted as a completed archive.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: copied_bytes2; verified_archive_bytes0; status failed",
+      "Demonstrate this specific boundary/failure check: A partial destination must not be counted as a completed archive.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 87,
+    "engineering_relevance": "Report partial-copy evidence accurately is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Report partial-copy evidence accurately",
+    "difficulty": "level_6",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A partial destination must not be counted as a completed archive.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_5_bounded_python_operations"
+    ],
+    "sequence": 6187,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-188",
+    "tool_id": "python",
+    "title": "Prevent two local writers racing on one release",
+    "level": 7,
+    "prerequisites": [
+      "RLP-PY-187"
+    ],
+    "scenario": "Use an explicit single-writer claim contract and show two workers cannot publish the same release concurrently.",
+    "task": "Use an explicit single-writer claim contract and show two workers cannot publish the same release concurrently. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "workersW1,W2; releaseR1; injected synchronization barrier",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "one publisher; other reports already_claimed; final manifest coherent"
+    },
+    "constraints": [
+      "An existence check followed by an unprotected create is insufficient evidence of exclusivity.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: one publisher; other reports already_claimed; final manifest coherent",
+      "Demonstrate this specific boundary/failure check: An existence check followed by an unprotected create is insufficient evidence of exclusivity.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Prevent two local writers racing on one release is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Prevent two local writers racing on one release",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: An existence check followed by an unprotected create is insufficient evidence of exclusivity.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_6_bounded_python_operations"
+    ],
+    "sequence": 7188,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-189",
+    "tool_id": "python",
+    "title": "Apply path length and name restrictions",
+    "level": 7,
+    "prerequisites": [
+      "RLP-PY-188"
+    ],
+    "scenario": "Validate portable output names before writing a cross-platform bundle.",
+    "task": "Validate portable output names before writing a cross-platform bundle. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "names good.csv,CON.csv,part:name.csv; consumer Windows contract",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "good allowed; reserved/colon names rejected with reasons"
+    },
+    "constraints": [
+      "Do not rename files silently be cause the manifest references original names.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: good allowed; reserved/colon names rejected with reasons",
+      "Demonstrate this specific boundary/failure check: Do not rename files silently be cause the manifest references original names.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Apply path length and name restrictions is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Apply path length and name restrictions",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not rename files silently be cause the manifest references original names.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_python_operations"
+    ],
+    "sequence": 7189,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-190",
+    "tool_id": "python",
+    "title": "Separate file identity from path identity",
+    "level": 7,
+    "prerequisites": [
+      "RLP-PY-189"
+    ],
+    "scenario": "Detect a rename of identical source bytes and record a new observed path without re loading the business delivery.",
+    "task": "Detect a rename of identical source bytes and record a new observed path without re loading the business delivery. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "ledgerdigestH1pathold.csv; incomingdigestH1pathnew.csv",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "no reload; lineage records new.csv as additional observation"
+    },
+    "constraints": [
+      "Different bytes at the old name remain a different input version.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: no reload; lineage records new.csv as additional observation",
+      "Demonstrate this specific boundary/failure check: Different bytes at the old name remain a different input version.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Separate file identity from path identity is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Separate file identity from path identity",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Different bytes at the old name remain a different input version.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_python_operations"
+    ],
+    "sequence": 7190,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-191",
+    "tool_id": "python",
+    "title": "Define a stable file readiness window",
+    "level": 7,
+    "prerequisites": [
+      "RLP-PY-190"
+    ],
+    "scenario": "Require unchanged size and mtime across two explicit polls before queueing a producer file.",
+    "task": "Require unchanged size and mtime across two explicit polls before queueing a producer file. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "poll1size10mtime1;poll2size12mtime2;poll3size12mtime2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "notreadyafterpoll2;readyafterpoll3"
+    },
+    "constraints": [
+      "Label this heuristic and retain final digest validation; stable metadata is not a producer transaction.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: notreadyafterpoll2;readyafterpoll3",
+      "Demonstrate this specific boundary/failure check: Label this heuristic and retain final digest validation; stable metadata is not a producer transaction.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Define a stable file readiness window is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Define a stable file readiness window",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Label this heuristic and retain final digest validation; stable metadata is not a producer transaction.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_python_operations"
+    ],
+    "sequence": 7191,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-192",
+    "tool_id": "python",
+    "title": "Check a multi-artifact consumer contract",
+    "level": 7,
+    "prerequisites": [
+      "RLP-PY-191"
+    ],
+    "scenario": "Require data,manifest and schema versions to agree before selecting a release.",
+    "task": "Require data,manifest and schema versions to agree before selecting a release. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "data version2; manifest version2; schema version1",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "release blocked inconsistent_contract_version"
+    },
+    "constraints": [
+      "Checking filenames alone does not establish contract compatibility.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: release blocked inconsistent_contract_version",
+      "Demonstrate this specific boundary/failure check: Checking filenames alone does not establish contract compatibility.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Check a multi-artifact consumer contract is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Check a multi-artifact consumer contract",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Checking filenames alone does not establish contract compatibility.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_python_operations"
+    ],
+    "sequence": 7192,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-193",
+    "tool_id": "python",
+    "title": "Resolve a local repair plan without side effects",
+    "level": 7,
+    "prerequisites": [
+      "RLP-PY-192"
+    ],
+    "scenario": "Produce a plan of safe copies,collisions and blocked paths before an explicit apply phase.",
+    "task": "Produce a plan of safe copies,collisions and blocked paths before an explicit apply phase. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "sourceaH1->destabsent; sourcebH2->destH3; sourcec->outside_root",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "copya; collisionb; blockedc; no filesystem mutation"
+    },
+    "constraints": [
+      "The apply phase must re check conditions that may have changed since planning.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: copya; collisionb; blockedc; no filesystem mutation",
+      "Demonstrate this specific boundary/failure check: The apply phase must re check conditions that may have changed since planning.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 99,
+    "engineering_relevance": "Resolve a local repair plan without side effects is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Resolve a local repair plan without side effects",
+    "difficulty": "level_7",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: The apply phase must re check conditions that may have changed since planning.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_6_bounded_python_operations"
+    ],
+    "sequence": 7193,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-194",
+    "tool_id": "python",
+    "title": "Measure directory discovery costs",
+    "level": 8,
+    "prerequisites": [
+      "RLP-PY-193"
+    ],
+    "scenario": "Compare repeated recursive scans with a single inventory reused for several checks using an injected listing counter.",
+    "task": "Compare repeated recursive scans with a single inventory reused for several checks using an injected listing counter. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "temporarytree100directories; three independent reports",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "identical report results; listing calls measured for both approaches"
+    },
+    "constraints": [
+      "Do not replace a fresh inventory with stale data without an explicit snapshot boundary.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: identical report results; listing calls measured for both approaches",
+      "Demonstrate this specific boundary/failure check: Do not replace a fresh inventory with stale data without an explicit snapshot boundary.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Measure directory discovery costs is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Measure directory discovery costs",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not replace a fresh inventory with stale data without an explicit snapshot boundary.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_7_bounded_python_operations"
+    ],
+    "sequence": 8194,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-195",
+    "tool_id": "python",
+    "title": "Copy a large file with bounded memory",
+    "level": 8,
+    "prerequisites": [
+      "RLP-PY-194"
+    ],
+    "scenario": "Generate a128MiB source and copy it using bounded buffers while recording actual peak memory and digest.",
+    "task": "Generate a128MiB source and copy it using bounded buffers while recording actual peak memory and digest. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "128MiB deterministic byte generator; memory budget32MiB",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "archive digest equals source; measured peak under32MiB"
+    },
+    "constraints": [
+      "Do not materialize the source bytes just to generate the test fixture.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: archive digest equals source; measured peak under32MiB",
+      "Demonstrate this specific boundary/failure check: Do not materialize the source bytes just to generate the test fixture.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Copy a large file with bounded memory is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Copy a large file with bounded memory",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not materialize the source bytes just to generate the test fixture.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_python_operations"
+    ],
+    "sequence": 8195,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-196",
+    "tool_id": "python",
+    "title": "Compare small-file bundling tradeoffs",
+    "level": 8,
+    "prerequisites": [
+      "RLP-PY-195"
+    ],
+    "scenario": "Package1000small synthetic reports into a bundle and compare file-open count,size and extraction costs.",
+    "task": "Package1000small synthetic reports into a bundle and compare file-open count,size and extraction costs. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "1000files each100bytes; a fixed timestamp policy",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "all member bytes preserved; operation counts and byte sizes recorded"
+    },
+    "constraints": [
+      "A bundle is not assumed faster when consumers need only one member.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: all member bytes preserved; operation counts and byte sizes recorded",
+      "Demonstrate this specific boundary/failure check: A bundle is not assumed faster when consumers need only one member.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Compare small-file bundling tradeoffs is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Compare small-file bundling tradeoffs",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A bundle is not assumed faster when consumers need only one member.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_python_operations"
+    ],
+    "sequence": 8196,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-197",
+    "tool_id": "python",
+    "title": "Calculate throughput from bytes and elapsed time",
+    "level": 8,
+    "prerequisites": [
+      "RLP-PY-196"
+    ],
+    "scenario": "Report bytes_per_second from actual committed bytes and an injected timer; distinguish attempted bytes.",
+    "task": "Report bytes_per_second from actual committed bytes and an injected timer; distinguish attempted bytes. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "attempted1200; committed1000; elapsed2seconds",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "committed_throughput500bytes/sec; attempted_throughput600 separately"
+    },
+    "constraints": [
+      "Zero elapsed time yields unknown throughput, not infinity or a fabricated value.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: committed_throughput500bytes/sec; attempted_throughput600 separately",
+      "Demonstrate this specific boundary/failure check: Zero elapsed time yields unknown throughput, not infinity or a fabricated value.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Calculate throughput from bytes and elapsed time is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Calculate throughput from bytes and elapsed time",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Zero elapsed time yields unknown throughput, not infinity or a fabricated value.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_python_operations"
+    ],
+    "sequence": 8197,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-198",
+    "tool_id": "python",
+    "title": "Avoid unbounded rejected-record retention",
+    "level": 8,
+    "prerequisites": [
+      "RLP-PY-197"
+    ],
+    "scenario": "Stream a generated feed with one million rejected rows into a rejection artifact and keep only a bounded sample in memory.",
+    "task": "Stream a generated feed with one million rejected rows into a rejection artifact and keep only a bounded sample in memory. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "1000000invalidrows; sample_limit5",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "rejected_count1000000; sample_count5; full reject artifact count1000000"
+    },
+    "constraints": [
+      "A bounded sample must not be presented as the complete rejection evidence.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: rejected_count1000000; sample_count5; full reject artifact count1000000",
+      "Demonstrate this specific boundary/failure check: A bounded sample must not be presented as the complete rejection evidence.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Avoid unbounded rejected-record retention is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Avoid unbounded rejected-record retention",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A bounded sample must not be presented as the complete rejection evidence.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_python_operations"
+    ],
+    "sequence": 8198,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-199",
+    "tool_id": "python",
+    "title": "Bound parallel compression workers",
+    "level": 8,
+    "prerequisites": [
+      "RLP-PY-198"
+    ],
+    "scenario": "Compress independent sandbox files with at most2active workers and preserve deterministic manifests.",
+    "task": "Compress independent sandbox files with at most2active workers and preserve deterministic manifests. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "six files; instrumented worker pool limit2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "maxactive<=2; six verified outputs; deterministic manifest ordering"
+    },
+    "constraints": [
+      "Worker completion order must not re order the logical manifest unpredictably.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: maxactive<=2; six verified outputs; deterministic manifest ordering",
+      "Demonstrate this specific boundary/failure check: Worker completion order must not re order the logical manifest unpredictably.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 111,
+    "engineering_relevance": "Bound parallel compression workers is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Bound parallel compression workers",
+    "difficulty": "level_8",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Worker completion order must not re order the logical manifest unpredictably.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_7_bounded_python_operations"
+    ],
+    "sequence": 8199,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-200",
+    "tool_id": "python",
+    "title": "Design a filesystem preflight gate",
+    "level": 9,
+    "prerequisites": [
+      "RLP-PY-199"
+    ],
+    "scenario": "Check root containment,available configured storage budget and writable staging before a release starts.",
+    "task": "Check root containment,available configured storage budget and writable staging before a release starts. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "planned_bytes1000; allowedbudget800; valid temporary root",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "blocked storage_budget; no output artifacts created"
+    },
+    "constraints": [
+      "Do not report the configured budget as a measurement of actual free disk space.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: blocked storage_budget; no output artifacts created",
+      "Demonstrate this specific boundary/failure check: Do not report the configured budget as a measurement of actual free disk space.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Design a filesystem preflight gate is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Design a filesystem preflight gate",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not report the configured budget as a measurement of actual free disk space.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_8_bounded_python_operations"
+    ],
+    "sequence": 9200,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-201",
+    "tool_id": "python",
+    "title": "Maintain artifact retention with legal holds",
+    "level": 9,
+    "prerequisites": [
+      "RLP-PY-200"
+    ],
+    "scenario": "Plan removal of expired sandbox releases while retaining held releases regardless of age.",
+    "task": "Plan removal of expired sandbox releases while retaining held releases regardless of age. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "R1expirednohold;R2expiredheld;R3recent",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "R1eligible;R2held;R3retained"
+    },
+    "constraints": [
+      "A held release's linked raw artifacts must also remain recoverable.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: R1eligible;R2held;R3retained",
+      "Demonstrate this specific boundary/failure check: A held release's linked raw artifacts must also remain recoverable.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Maintain artifact retention with legal holds is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Maintain artifact retention with legal holds",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A held release's linked raw artifacts must also remain recoverable.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_python_operations"
+    ],
+    "sequence": 9201,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-202",
+    "tool_id": "python",
+    "title": "Verify a portable restore bundle",
+    "level": 9,
+    "prerequisites": [
+      "RLP-PY-201"
+    ],
+    "scenario": "Restore a report bundle into a different temporary directory using only relative manifest paths.",
+    "task": "Restore a report bundle into a different temporary directory using only relative manifest paths. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "bundle with data,schema,manifest,digests; originalabsolute_rootunavailable",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "restored bytes and consumer checks match; no dependency on original root"
+    },
+    "constraints": [
+      "Reject absolute paths embedded in the restore manifest.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: restored bytes and consumer checks match; no dependency on original root",
+      "Demonstrate this specific boundary/failure check: Reject absolute paths embedded in the restore manifest.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Verify a portable restore bundle is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Verify a portable restore bundle",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Reject absolute paths embedded in the restore manifest.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_python_operations"
+    ],
+    "sequence": 9202,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-203",
+    "tool_id": "python",
+    "title": "Record artifact provenance for incident response",
+    "level": 9,
+    "prerequisites": [
+      "RLP-PY-202"
+    ],
+    "scenario": "Given a bad consumer output, traverse manifest links to source digest,transform version and run ID.",
+    "task": "Given a bad consumer output, traverse manifest links to source digest,transform version and run ID. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "outputO1 linksmanifestM1;M1 sourceH1 codeV2 runR4",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "report identifiesH1,V2,R4 and checks linked artifacts exist"
+    },
+    "constraints": [
+      "A broken link is reported as missing evidence, not filled from filename guesses.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: report identifiesH1,V2,R4 and checks linked artifacts exist",
+      "Demonstrate this specific boundary/failure check: A broken link is reported as missing evidence, not filled from filename guesses.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Record artifact provenance for incident response is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Record artifact provenance for incident response",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: A broken link is reported as missing evidence, not filled from filename guesses.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_python_operations"
+    ],
+    "sequence": 9203,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-204",
+    "tool_id": "python",
+    "title": "Rehearse release rollback with concurrent readers",
+    "level": 9,
+    "prerequisites": [
+      "RLP-PY-203"
+    ],
+    "scenario": "Use a versioned release pointer and instrumented readers while switchingR1toR2andback.",
+    "task": "Use a versioned release pointer and instrumented readers while switchingR1toR2andback. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "R1twofilesconsistentA;R2twofilesconsistentB",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "each reader sees one complete release; rollback returnsR1"
+    },
+    "constraints": [
+      "Readers must not combine one artifact fromR1andonefromR2.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: each reader sees one complete release; rollback returnsR1",
+      "Demonstrate this specific boundary/failure check: Readers must not combine one artifact fromR1andonefromR2.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Rehearse release rollback with concurrent readers is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Rehearse release rollback with concurrent readers",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Readers must not combine one artifact fromR1andonefromR2.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_python_operations"
+    ],
+    "sequence": 9204,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-205",
+    "tool_id": "python",
+    "title": "Specify a safe repair approval artifact",
+    "level": 9,
+    "prerequisites": [
+      "RLP-PY-204"
+    ],
+    "scenario": "Generate a human-reviewable repair plan with exact source/destination/digest evidence and an expiry,then test stale-plan rejection.",
+    "task": "Generate a human-reviewable repair plan with exact source/destination/digest evidence and an expiry,then test stale-plan rejection. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "plan expects desthashH1; beforeapplydestchangesH2",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "apply blocked stale_plan; no overwrite"
+    },
+    "constraints": [
+      "Approval of a plan cannot authorize a different computed destination or changed bytes.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: apply blocked stale_plan; no overwrite",
+      "Demonstrate this specific boundary/failure check: Approval of a plan cannot authorize a different computed destination or changed bytes.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 123,
+    "engineering_relevance": "Specify a safe repair approval artifact is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Specify a safe repair approval artifact",
+    "difficulty": "level_9",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Approval of a plan cannot authorize a different computed destination or changed bytes.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_8_bounded_python_operations"
+    ],
+    "sequence": 9205,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-206",
+    "tool_id": "python",
+    "title": "Independently build a safe file repair utility",
+    "level": 10,
+    "prerequisites": [
+      "RLP-PY-205"
+    ],
+    "scenario": "Build a sandbox utility that inventories,plans,copies,verifies and reports repairs with dry-run,root containment and idempotent retries.",
+    "task": "Build a sandbox utility that inventories,plans,copies,verifies and reports repairs with dry-run,root containment and idempotent retries. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "three good files;onecollision;one unsafe path;one partial copy fault",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "good files verified;collision/unsafe blocked;retry recovers without duplicate archives"
+    },
+    "constraints": [
+      "Reviewer changes one destination after the dry-run plan to test race handling.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: good files verified;collision/unsafe blocked;retry recovers without duplicate archives",
+      "Demonstrate this specific boundary/failure check: Reviewer changes one destination after the dry-run plan to test race handling.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently build a safe file repair utility is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently build a safe file repair utility",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Reviewer changes one destination after the dry-run plan to test race handling.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "level_9_bounded_python_operations"
+    ],
+    "sequence": 10206,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-207",
+    "tool_id": "python",
+    "title": "Independently create a portable report release system",
+    "level": 10,
+    "prerequisites": [
+      "RLP-PY-206"
+    ],
+    "scenario": "Implement multi-artifact staging,completion manifests,consumer selection,rollback and restore from a different directory.",
+    "task": "Implement multi-artifact staging,completion manifests,consumer selection,rollback and restore from a different directory. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "two releases; failure whilebuildingsecond; two concurrent readers",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "no partial release consumed;old release remains usable;restored artifacts verify"
+    },
+    "constraints": [
+      "Defend the limits of the chosen local filesystem atomicity assumptions.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: no partial release consumed;old release remains usable;restored artifacts verify",
+      "Demonstrate this specific boundary/failure check: Defend the limits of the chosen local filesystem atomicity assumptions.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently create a portable report release system is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently create a portable report release system",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Defend the limits of the chosen local filesystem atomicity assumptions.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_python_operations"
+    ],
+    "sequence": 10207,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-208",
+    "tool_id": "python",
+    "title": "Independently recover corrupted local delivery evidence",
+    "level": 10,
+    "prerequisites": [
+      "RLP-PY-207"
+    ],
+    "scenario": "Recover a sandbox delivery from immutable raw bytes and linked manifests after a marker mismatch and missing export.",
+    "task": "Recover a sandbox delivery from immutable raw bytes and linked manifests after a marker mismatch and missing export. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "rawA2B3 verified; export missing; markerclaimswrongdigest",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "re build matches authoritative input; mismatch retained as incident evidence"
+    },
+    "constraints": [
+      "Do not overwrite the bad evidence before recording the diagnostic facts.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: re build matches authoritative input; mismatch retained as incident evidence",
+      "Demonstrate this specific boundary/failure check: Do not overwrite the bad evidence before recording the diagnostic facts.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently recover corrupted local delivery evidence is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently recover corrupted local delivery evidence",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not overwrite the bad evidence before recording the diagnostic facts.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_python_operations"
+    ],
+    "sequence": 10208,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-209",
+    "tool_id": "python",
+    "title": "Independently handle a constrained multi-file backfill",
+    "level": 10,
+    "prerequisites": [
+      "RLP-PY-208"
+    ],
+    "scenario": "Process10000generated small files within a measured memory/file-handle budget and produce traceable reports.",
+    "task": "Process10000generated small files within a measured memory/file-handle budget and produce traceable reports. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "oneunstablefile,one bad encoding,one unsafe manifest reference,rerun",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "accepted results deterministic;issues classified;rerun does not duplicate;limits measured"
+    },
+    "constraints": [
+      "Reviewer adds a new file during discovery and expects the stated snapshot policy.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: accepted results deterministic;issues classified;rerun does not duplicate;limits measured",
+      "Demonstrate this specific boundary/failure check: Reviewer adds a new file during discovery and expects the stated snapshot policy.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently handle a constrained multi-file backfill is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently handle a constrained multi-file backfill",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Reviewer adds a new file during discovery and expects the stated snapshot policy.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_python_operations"
+    ],
+    "sequence": 10209,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-210",
+    "tool_id": "python",
+    "title": "Independently defend a cross-platform archive migration",
+    "level": 10,
+    "prerequisites": [
+      "RLP-PY-209"
+    ],
+    "scenario": "Move a synthetic archive between two root layouts while preserving relative paths,Unicode,data digests,holds and contracts.",
+    "task": "Move a synthetic archive between two root layouts while preserving relative paths,Unicode,data digests,holds and contracts. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "archive has case-collisionnames,Unicodepaths,held release,one corruptmember",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "safe artifacts restored; collisions and corruption blocked; held artifacts retained"
+    },
+    "constraints": [
+      "Explain which platform behaviors were directly tested and which were simulated.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: safe artifacts restored; collisions and corruption blocked; held artifacts retained",
+      "Demonstrate this specific boundary/failure check: Explain which platform behaviors were directly tested and which were simulated.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently defend a cross-platform archive migration is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently defend a cross-platform archive migration",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Explain which platform behaviors were directly tested and which were simulated.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_python_operations"
+    ],
+    "sequence": 10210,
+    "authoring_batch": "foundations-explicit-002"
+  },
+  {
+    "id": "RLP-PY-211",
+    "tool_id": "python",
+    "title": "Independently engineer a bounded producer-consumer handoff",
+    "level": 10,
+    "prerequisites": [
+      "RLP-PY-210"
+    ],
+    "scenario": "Design a local file handoff with ready-state evidence,consistent snapshots,consumer retries and cleanup ownership.",
+    "task": "Design a local file handoff with ready-state evidence,consistent snapshots,consumer retries and cleanup ownership. Keep the implementation and observed result for review.",
+    "inputs": {
+      "fixture_contract": "producer writes partial file thencompletes; consumercrashes after reading; secondrunstarts",
+      "environment": "Synthetic data in a learner-owned disposable sandbox only."
+    },
+    "expected_output": {
+      "contract": "no partial data accepted; replay idempotent; run-owned temps cleaned; source evidence preserved"
+    },
+    "constraints": [
+      "Do not claim exactly-once behavior without demonstrating the target-state contract.",
+      "Keep original input evidence; perform writes only in verified temporary/sandbox resources."
+    ],
+    "acceptance_criteria": [
+      "Observe this output/behavior: no partial data accepted; replay idempotent; run-owned temps cleaned; source evidence preserved",
+      "Demonstrate this specific boundary/failure check: Do not claim exactly-once behavior without demonstrating the target-state contract.",
+      "Submit code/configuration,observed checks and assistance disclosure; expected output alone is not proof of execution."
+    ],
+    "estimated_minutes": 135,
+    "engineering_relevance": "Independently engineer a bounded producer-consumer handoff is one bounded operational responsibility in a real data platform. After review, connect its output contract to a producer/consumer and identify one remaining limitation.",
+    "official_docs": [
+      "https://docs.python.org/3/library/pathlib.html",
+      "https://docs.python.org/3/library/io.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "learning_objective": "Independently engineer a bounded producer-consumer handoff",
+    "difficulty": "level_10",
+    "progressive_hints": [
+      "Trace the smallest supplied fixture and identify exactly which observable behavior must change.",
+      "Check this contract boundary in your attempt: Do not claim exactly-once behavior without demonstrating the target-state contract.",
+      "Isolate one failing case,compare expected with observed behavior,and rebuild the bounded task one checked step at a time."
+    ],
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "level_9_bounded_python_operations"
+    ],
+    "sequence": 10211,
+    "authoring_batch": "foundations-explicit-002"
+  }
+]

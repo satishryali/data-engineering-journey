@@ -1,6 +1,6 @@
 # Interview preparation
 
-Target: evidence review on **22 January 2027**, alongside the [authoritative roadmap](learning-and-revision-plan.md). All categories start from existing evidence or unassessed; this setup creates no results.
+Target: independent interview and pipeline-building evidence review on **20 January 2027**, alongside the [authoritative roadmap](learning-and-revision-plan.md). Foundation, transformation and Azure demonstrations are planned for November 15, December 6 and December 27. Apply now to suitable SQL/PLSQL, ETL and Python Data Engineer roles, describing existing employment and educational projects truthfully. All categories start from existing evidence or unassessed; this setup creates no results.
 
 ## Weekly routine
 

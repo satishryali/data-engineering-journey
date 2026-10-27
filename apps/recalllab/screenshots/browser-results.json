@@ -1,0 +1,158 @@
+[
+  {
+    "page": "Dashboard",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Today's Session",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Question Bank",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Coding Challenges",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Notes Browser",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Mistakes & Weak Topics",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Progress & Analytics",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Revision Calendar",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Search Notes",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Settings",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Learning Roadmap",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Project",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Interview Practice",
+    "viewport": "desktop",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Dashboard",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Today's Session",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Question Bank",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Coding Challenges",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Notes Browser",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Mistakes & Weak Topics",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Progress & Analytics",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Revision Calendar",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Search Notes",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Settings",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Learning Roadmap",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Project",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "Interview Practice",
+    "viewport": "mobile",
+    "exception": false,
+    "horizontal_overflow": false
+  }
+]

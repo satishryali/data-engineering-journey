@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "partial_explicit_second_batch",
+  "tracks": {
+    "pyspark": {
+      "target": 400,
+      "preserved_first_additions": 72,
+      "batch2_additions": 40,
+      "prepared_total_including_seed": 113,
+      "remaining": 287,
+      "next_id": "RLP-PYSPARK-114",
+      "next_action": "Author a distinct concrete capability fixture; do not pad to the target with mechanically varied modes."
+    },
+    "adls": {
+      "target": 180,
+      "preserved_first_additions": 70,
+      "batch2_additions": 40,
+      "prepared_total_including_seed": 111,
+      "remaining": 69,
+      "next_id": "RLP-ADLS-112",
+      "next_action": "Author a distinct concrete capability fixture; do not pad to the target with mechanically varied modes."
+    },
+    "adf": {
+      "target": 350,
+      "preserved_first_additions": 69,
+      "batch2_additions": 40,
+      "prepared_total_including_seed": 110,
+      "remaining": 240,
+      "next_id": "RLP-ADF-111",
+      "next_action": "Author a distinct concrete capability fixture; do not pad to the target with mechanically varied modes."
+    },
+    "databricks": {
+      "target": 250,
+      "preserved_first_additions": 70,
+      "batch2_additions": 40,
+      "prepared_total_including_seed": 111,
+      "remaining": 139,
+      "next_id": "RLP-DATABRICKS-112",
+      "next_action": "Author a distinct concrete capability fixture; do not pad to the target with mechanically varied modes."
+    },
+    "delta-lake": {
+      "target": 150,
+      "preserved_first_additions": 70,
+      "batch2_additions": 40,
+      "prepared_total_including_seed": 111,
+      "remaining": 39,
+      "next_id": "RLP-DELTA-LAKE-112",
+      "next_action": "Author a distinct concrete capability fixture; do not pad to the target with mechanically varied modes."
+    }
+  }
+}

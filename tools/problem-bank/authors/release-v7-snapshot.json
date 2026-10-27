@@ -1,0 +1,13 @@
+{
+  "version": "2026.10.27.2",
+  "status": "frozen_after_agent_qa",
+  "file_sha256": {
+    "engineering-promotions6.json": "d0d2a7db0039659aa234b31c80fdd620f36f2aa0cc476b6d6e61147afe5cb862",
+    "engineering-promotions7.json": "461fae2eec6af7cd1847b6c2f92165f01f7a9ec40619253ab7d062318ed3ddb2",
+    "python-batch5.json": "a1934e317c9dc1ef67534785653aaa15d3fda6d860bfc7b854ce7b0bf002aa4b",
+    "sql-batch5.json": "cabd6be886ce54ca23c03b0d4f27f57d75277ce15efbdb1a56e9e20a5d03ee37",
+    "pyspark-batch5.json": "8bf1127937ee196ae7fa119ba9ac955c40590fdb4148cb43ed0a2e77e80299f5",
+    "adf-batch5.json": "57dd1344d459fe68cf2ddd076ae88e0e390d705a2ec86a586681475a10fd9b9c",
+    "databricks-batch5.json": "a5626e37f5985847ca91f2497a70c83400c3e41b15d899ad42eb1e833a3eb266"
+  }
+}

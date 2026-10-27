@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "author_files_frozen_pending_parent_publication",
+  "tracks": {
+    "adf": {
+      "target": 350,
+      "preserved_prior": 238,
+      "batch9_additions": 112,
+      "prepared_total": 350,
+      "remaining": 0,
+      "next_id": "RLP-ADF-351",
+      "sha256": "618793c478dbf016a48427afd296a64ada9897b4d7bb91829293792ea1288973"
+    }
+  }
+}

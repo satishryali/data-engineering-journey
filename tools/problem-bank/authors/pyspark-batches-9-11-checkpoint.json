@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "author_files_frozen_pending_parent_publication",
+  "tool_id": "pyspark",
+  "published_before": 252,
+  "prepared_counts": {"batch9": 40, "batch10": 55, "batch11": 53},
+  "prepared_total": 400,
+  "files_sha256": {
+    "9": "5b5685849a0877b84bace7fb529dd96a96456cb378bee33f33a75b1f594248e7",
+    "10": "5fb616ed277904e1d71f5878d13ee72d5890723f00ae6b97ce7b4ae040722d4d",
+    "11": "d8b9b496214d5bea18fa423743e2db44629fa52197425b05bf55c79885d05403"
+  }
+}

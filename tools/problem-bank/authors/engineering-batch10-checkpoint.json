@@ -1,0 +1,17 @@
+{
+  "state": "prepared_not_published",
+  "proposed": 33,
+  "published_added": 0,
+  "counts": {
+    "data-modelling": 11,
+    "data-quality": 11,
+    "airflow": 11
+  },
+  "proposal_sha256": "50a54992056308928503f8f208c6930e74c90879f40dd306da4ea73f9511ab2f",
+  "source_files_sha256": {
+    "data-modelling": "c53aee81554ae39d790fd1dea78f05ed03f4e6d294701c3133396a228b64200c",
+    "data-quality": "580264482d3c8255670f94c5896ba12b2b6c49c15cfe8535c8927d256aae0ce6",
+    "airflow": "7362de8145d1ffad76629be7acb6859b12a71f4dca9813b1aa6cb269ea4361af"
+  },
+  "errors": []
+}

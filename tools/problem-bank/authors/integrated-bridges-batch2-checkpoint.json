@@ -1,0 +1,34 @@
+{
+  "status": "frozen_after_in_memory_qa_unregistered",
+  "published_additions": 0,
+  "authored_count": 159,
+  "levels": {
+    "0": 8,
+    "1": 12,
+    "2": 14,
+    "3": 16,
+    "4": 17,
+    "5": 17,
+    "6": 17,
+    "7": 17,
+    "8": 15,
+    "9": 14,
+    "10": 12
+  },
+  "first_id": "RLP-JOBBR-081",
+  "last_id": "RLP-JOBBR-239",
+  "source_sha256": "48f6814bde33f9273041edd2dc40774c92aebff5875f4116ac6173fdcb197b36",
+  "author_sha256": "fad0e624a03ef005b85fe609636a5d72d18f7f956b534f4d446343bcd060093a",
+  "qa_sha256": "875f3d2856760612593b6059855c7ae2de2cf2b3d58054bd450a6d096624e004",
+  "qa": {
+    "published_bank_before": 3636,
+    "combined_bank_after": 3795,
+    "combined_integrated_track": 350,
+    "missing_fields": 0,
+    "duplicates": 0,
+    "same_task_candidates": 0,
+    "broken_prerequisites_and_structure": 0,
+    "publication_dry_run_validated": true
+  },
+  "next_id": "RLP-JOBBR-240"
+}

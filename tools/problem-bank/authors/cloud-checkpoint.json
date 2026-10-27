@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "partial_explicitly_authored_batch",
+  "target_total": 1330,
+  "tracks": {
+    "pyspark": {
+      "target": 400,
+      "existing": 1,
+      "authored_new": 72,
+      "prepared_total_including_seed": 73,
+      "remaining": 327,
+      "last_authored_id": "RLP-PYSPARK-073",
+      "next_id": "RLP-PYSPARK-074"
+    },
+    "adf": {
+      "target": 350,
+      "existing": 1,
+      "authored_new": 69,
+      "prepared_total_including_seed": 70,
+      "remaining": 280,
+      "last_authored_id": "RLP-ADF-070",
+      "next_id": "RLP-ADF-071"
+    },
+    "adls": {
+      "target": 180,
+      "existing": 1,
+      "authored_new": 70,
+      "prepared_total_including_seed": 71,
+      "remaining": 109,
+      "last_authored_id": "RLP-ADLS-071",
+      "next_id": "RLP-ADLS-072"
+    },
+    "databricks": {
+      "target": 250,
+      "existing": 1,
+      "authored_new": 70,
+      "prepared_total_including_seed": 71,
+      "remaining": 179,
+      "last_authored_id": "RLP-DATABRICKS-071",
+      "next_id": "RLP-DATABRICKS-072"
+    },
+    "delta-lake": {
+      "target": 150,
+      "existing": 1,
+      "authored_new": 70,
+      "prepared_total_including_seed": 71,
+      "remaining": 79,
+      "last_authored_id": "RLP-DELTA-LAKE-071",
+      "next_id": "RLP-DELTA-LAKE-072"
+    }
+  }
+}

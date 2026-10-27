@@ -1,0 +1,13 @@
+{
+  "state": "prepared_not_published",
+  "proposed": 22,
+  "published_added": 0,
+  "counts": {
+    "data-modelling": 22
+  },
+  "proposal_sha256": "a8b59d9309d813d170aaf2d5c9c87fffc3ec2035678256470c404f51293dc2a6",
+  "source_files_sha256": {
+    "data-modelling": "c53aee81554ae39d790fd1dea78f05ed03f4e6d294701c3133396a228b64200c"
+  },
+  "errors": []
+}

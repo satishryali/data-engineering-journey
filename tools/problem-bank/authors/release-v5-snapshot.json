@@ -1,0 +1,13 @@
+{
+  "version": "2026.10.26.5",
+  "state": "frozen_author_inputs_pending_final_cloud_qa",
+  "file_sha256": {
+    "foundations-draft-promotions.json": "ae57aa3efdb4c9ffe6aa30441712a46ea7ffe771baa03902dfde143b446a418d",
+    "engineering-promotions4.json": "831a92440237ff836e387f9b736b96de809114ddf85d4b7b4dff435c67ede338",
+    "authors/cloud-batch3-readability-proposal.json": "6bee1baa4ab94130f081942b5532215532386c81bd960ee9fdb8248a446960a8",
+    "python-batch4.json": "13814779671befd744c12cac4c531530f215ce5255d0eeced35c697a7f5d06de",
+    "sql-batch4.json": "e2eb88d4fe431ec69066b597ce38c19c3ee4307f9dd6f026c50ef0c61afa3ba3",
+    "adls-batch4.json": "38e8fc016ce8877cdcb71945b04f8e3b5568ab0d35ab9b4fac19fa336afdaf6d",
+    "delta-lake-batch4.json": "439b34b70e88f66c608ca29ef1cc2ca8bc7ff764248122f5d87492eec43e098d"
+  }
+}

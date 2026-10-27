@@ -1,0 +1,9 @@
+{
+  "status": "prepared_unregistered",
+  "source": "engineering_batch3.py",
+  "proposed": 146,
+  "published_added": 0,
+  "proposal_sha256": "ea9525d39933c6d682b442aa8db5812bcc4d720607e64559fe665c45f0b9cb94",
+  "errors": [],
+  "remaining_target": "Recompute after versioned publication; other draft candidates remain excluded."
+}

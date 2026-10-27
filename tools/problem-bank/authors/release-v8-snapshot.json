@@ -1,0 +1,15 @@
+{
+  "version": "2026.10.27.3",
+  "status": "frozen_after_case_specific_qa",
+  "file_sha256": {
+    "engineering-promotions8.json": "a8b59d9309d813d170aaf2d5c9c87fffc3ec2035678256470c404f51293dc2a6",
+    "engineering-promotions9.json": "9e3b66d04bd92e2fc905d7f1bf74fbf34b9d2c4d26bc525d69b3b3641789894c",
+    "engineering-promotions10.json": "50a54992056308928503f8f208c6930e74c90879f40dd306da4ea73f9511ab2f",
+    "pyspark-batch6.json": "073855d026d4bdfeb7819b9d53a1911008f25d49b4bfab11c7eda5e64befd11a",
+    "adf-batch6.json": "8d3db9ddc50169b7fbd1bb0b841e0300e044e611c07956f6e757a99d78f26d83",
+    "databricks-batch6.json": "201a97656c0ab8cb9b4a1a343571f4f3787e3905bda767a83f644873628e875d",
+    "pyspark-batch7.json": "2fe391e208fbe018ee682a6645afcdba2528add165e873eae9776fb5ab37c7f3",
+    "adf-batch7.json": "abd8d0fa43dcb5184979ff3b7a1d840873744492682e57c027b010901ddd0a8d",
+    "databricks-batch7.json": "8226afb9d4c12002b0519ee31469b95f4da29aba9c0f6abee392eed2a7b72d33"
+  }
+}

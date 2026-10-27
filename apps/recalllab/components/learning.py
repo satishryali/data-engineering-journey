@@ -15,7 +15,10 @@ def document(records, path):
 
 def next_task(records):
     text = records.path('progress/current.md').read_text(encoding='utf-8-sig')
-    return text.split('## Exact next task', 1)[1].split('\n## ', 1)[0].strip()
+    task = text.split('## Exact next task', 1)[1].split('\n## ', 1)[0].strip()
+    # This is displayed as plain status text; do not leak repository-relative
+    # Markdown links that the Streamlit app cannot serve as local files.
+    return re.sub(r'\[([^]]+)\]\([^)]*\)', r'\1', task)
 
 
 def bank(records):
@@ -50,7 +53,7 @@ def overview(records, today):
 
 
 def roadmap(records):
-    st.write('Preparation: 22 October 2026–22 January 2027. Thirteen Thursday–Wednesday weeks, then 21–22 January verification buffer.')
+    st.write('Preparation: 22 October 2026–20 January 2027. Thirteen Thursday–Wednesday weeks; the independent readiness assessment is within week 13.')
     st.caption('All milestones are planned. Actual project acceptance and assessed dimensions establish progress; elapsed dates and hours do not complete a row.')
     st.dataframe(study_plan.roadmap_rows(records.root), hide_index=True)
     st.write('Actual pending work: ' + next_task(records))

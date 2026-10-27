@@ -1,0 +1,3516 @@
+{
+  "schema_version": 1,
+  "proposal_version": "2026.10.27.engineering-batch10",
+  "publication_status": "unregistered_proposals",
+  "proposals": [
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-010",
+      "original_draft_sha256": "b643b95469235ed67b63501525480b92aa169aad57e87d9ef27186846fb8ca4e",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-010",
+        "tool_id": "data-modelling",
+        "title": "One invoice row has an invoice identity",
+        "level": 0,
+        "difficulty": "level_0",
+        "scenario": "The data delivery team must resolve a concrete operational case: one invoice row has an invoice identity. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Identify the grain and business key of the supplied invoice record.",
+        "inputs": {
+          "invoice": {
+            "invoice_id": "I1",
+            "customer": "C1",
+            "amount": 100
+          }
+        },
+        "expected_output": {
+          "grain": "one invoice",
+          "business_key": "invoice_id"
+        },
+        "constraints": [
+          "Do not assume this single invoice row is one customer.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not assume this single invoice row is one customer.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 10,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: one invoice row has an invoice identity. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "One invoice row has an invoice identity",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not assume this single invoice row is one customer.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-005"
+        ],
+        "skill_prerequisites": [],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 1,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invoice": {
+              "invoice_id": "I1",
+              "customer": "C1",
+              "amount": 100
+            }
+          },
+          "expected_output": {
+            "grain": "one invoice",
+            "business_key": "invoice_id"
+          },
+          "constraints": [
+            "Do not assume this single invoice row is one customer.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-036",
+      "original_draft_sha256": "24e605c47ed0d162a0058b86e05ce501864a7b06cc63cc791dfacc17f54e2992",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-036",
+        "tool_id": "data-modelling",
+        "title": "A credit is a separate financial event",
+        "level": 1,
+        "difficulty": "level_1",
+        "scenario": "The data delivery team must resolve a concrete operational case: a credit is a separate financial event. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Represent the supplied linked credit without changing the original invoice.",
+        "inputs": {
+          "invoice": {
+            "id": "I1",
+            "amount": 100
+          },
+          "credit": {
+            "id": "C1",
+            "invoice": "I1",
+            "amount": 20
+          }
+        },
+        "expected_output": {
+          "gross_invoice": 100,
+          "credit_amount": 20,
+          "net_receivable": 80
+        },
+        "constraints": [
+          "Preserve both invoice and credit identities.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Preserve both invoice and credit identities.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 15,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: a credit is a separate financial event. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "A credit is a separate financial event",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Preserve both invoice and credit identities.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-024"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 0 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 2,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invoice": {
+              "id": "I1",
+              "amount": 100
+            },
+            "credit": {
+              "id": "C1",
+              "invoice": "I1",
+              "amount": 20
+            }
+          },
+          "expected_output": {
+            "gross_invoice": 100,
+            "credit_amount": 20,
+            "net_receivable": 80
+          },
+          "constraints": [
+            "Preserve both invoice and credit identities.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-054",
+      "original_draft_sha256": "db7c2b18c0832935cb51319b64134b14516d66f6faec15570fac5f265df4cbf9",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-054",
+        "tool_id": "data-modelling",
+        "title": "Two credits cannot exceed the linked invoice",
+        "level": 2,
+        "difficulty": "level_2",
+        "scenario": "The data delivery team must resolve a concrete operational case: two credits cannot exceed the linked invoice. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Check the business relationship before producing a net-invoice view.",
+        "inputs": {
+          "invoice": {
+            "id": "I1",
+            "amount": 100
+          },
+          "credits": [
+            {
+              "id": "C1",
+              "amount": 60
+            },
+            {
+              "id": "C2",
+              "amount": 50
+            }
+          ]
+        },
+        "expected_output": {
+          "credit_total": 110,
+          "over_credited": true,
+          "excess": 10
+        },
+        "constraints": [
+          "Do not clip the net amount to zero without reporting the invalid credit relationship.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not clip the net amount to zero without reporting the invalid credit relationship.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 20,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: two credits cannot exceed the linked invoice. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "Two credits cannot exceed the linked invoice",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not clip the net amount to zero without reporting the invalid credit relationship.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-042"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 1 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 3,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invoice": {
+              "id": "I1",
+              "amount": 100
+            },
+            "credits": [
+              {
+                "id": "C1",
+                "amount": 60
+              },
+              {
+                "id": "C2",
+                "amount": 50
+              }
+            ]
+          },
+          "expected_output": {
+            "credit_total": 110,
+            "over_credited": true,
+            "excess": 10
+          },
+          "constraints": [
+            "Do not clip the net amount to zero without reporting the invalid credit relationship.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-072",
+      "original_draft_sha256": "c15288b1296fab93103b4d1f0126a09ca6fc0bea6af5100598ddb5b4bf174cfa",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-072",
+        "tool_id": "data-modelling",
+        "title": "An invoice line tax is computed at declared grain",
+        "level": 3,
+        "difficulty": "level_3",
+        "scenario": "The data delivery team must resolve a concrete operational case: an invoice line tax is computed at declared grain. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Calculate invoice tax from two taxable line amounts under the supplied policy.",
+        "inputs": {
+          "lines": [
+            {
+              "id": 1,
+              "taxable": 50
+            },
+            {
+              "id": 2,
+              "taxable": 20
+            }
+          ],
+          "tax_rate": "0.10",
+          "policy": "Apply rate to total taxable amount."
+        },
+        "expected_output": {
+          "taxable_total": 70,
+          "tax": "7.00"
+        },
+        "constraints": [
+          "Do not apply an order-level tax twice after joining lines to an invoice header.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not apply an order-level tax twice after joining lines to an invoice header.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 25,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: an invoice line tax is computed at declared grain. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "An invoice line tax is computed at declared grain",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not apply an order-level tax twice after joining lines to an invoice header.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-060"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 2 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 4,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "lines": [
+              {
+                "id": 1,
+                "taxable": 50
+              },
+              {
+                "id": 2,
+                "taxable": 20
+              }
+            ],
+            "tax_rate": "0.10",
+            "policy": "Apply rate to total taxable amount."
+          },
+          "expected_output": {
+            "taxable_total": 70,
+            "tax": "7.00"
+          },
+          "constraints": [
+            "Do not apply an order-level tax twice after joining lines to an invoice header.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-090",
+      "original_draft_sha256": "dbad8ebae516ef4a535a8d98ae9bacabf0e5560818d8b1b790f6701c0695e338",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-090",
+        "tool_id": "data-modelling",
+        "title": "A payment file links to a separate invoice file",
+        "level": 4,
+        "difficulty": "level_4",
+        "scenario": "The data delivery team must resolve a concrete operational case: a payment file links to a separate invoice file. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Reconcile supplied payment references against known invoice IDs.",
+        "inputs": {
+          "invoices": [
+            {
+              "id": "I1",
+              "amount": 100
+            }
+          ],
+          "payments": [
+            {
+              "id": "P1",
+              "invoice": "I1",
+              "amount": 40
+            },
+            {
+              "id": "P2",
+              "invoice": "I9",
+              "amount": 20
+            }
+          ]
+        },
+        "expected_output": {
+          "matched_payments": [
+            "P1"
+          ],
+          "unmatched_payments": [
+            "P2"
+          ],
+          "applied_amount": 40
+        },
+        "constraints": [
+          "Retain P2 as an exception; do not attach it to I1.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Retain P2 as an exception; do not attach it to I1.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 35,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: a payment file links to a separate invoice file. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "A payment file links to a separate invoice file",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Retain P2 as an exception; do not attach it to I1.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-078"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 3 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 5,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invoices": [
+              {
+                "id": "I1",
+                "amount": 100
+              }
+            ],
+            "payments": [
+              {
+                "id": "P1",
+                "invoice": "I1",
+                "amount": 40
+              },
+              {
+                "id": "P2",
+                "invoice": "I9",
+                "amount": 20
+              }
+            ]
+          },
+          "expected_output": {
+            "matched_payments": [
+              "P1"
+            ],
+            "unmatched_payments": [
+              "P2"
+            ],
+            "applied_amount": 40
+          },
+          "constraints": [
+            "Retain P2 as an exception; do not attach it to I1.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-108",
+      "original_draft_sha256": "760d084c7fd06516f7853815ec7c3d4d43ab5f74a0738b262126750feea50323",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-108",
+        "tool_id": "data-modelling",
+        "title": "An invoice correction uses the higher approved version",
+        "level": 5,
+        "difficulty": "level_5",
+        "scenario": "The data delivery team must resolve a concrete operational case: an invoice correction uses the higher approved version. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Build a current invoice model from raw versions and one replay.",
+        "inputs": {
+          "raw": [
+            {
+              "id": "I1",
+              "version": 1,
+              "amount": 100
+            },
+            {
+              "id": "I1",
+              "version": 2,
+              "amount": 90
+            }
+          ],
+          "replay_version": 2
+        },
+        "expected_output": {
+          "current_amount": 90,
+          "current_invoice_count": 1,
+          "retained_raw_versions": 2
+        },
+        "constraints": [
+          "Do not sum both versions or create a second current invoice on replay.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not sum both versions or create a second current invoice on replay.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 45,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: an invoice correction uses the higher approved version. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "An invoice correction uses the higher approved version",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not sum both versions or create a second current invoice on replay.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-096"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 4 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 6,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "raw": [
+              {
+                "id": "I1",
+                "version": 1,
+                "amount": 100
+              },
+              {
+                "id": "I1",
+                "version": 2,
+                "amount": 90
+              }
+            ],
+            "replay_version": 2
+          },
+          "expected_output": {
+            "current_amount": 90,
+            "current_invoice_count": 1,
+            "retained_raw_versions": 2
+          },
+          "constraints": [
+            "Do not sum both versions or create a second current invoice on replay.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-126",
+      "original_draft_sha256": "b2247455be39adeac1c926205f880ff2a365fe232547d8f9e08bcc706c6de0a9",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-126",
+        "tool_id": "data-modelling",
+        "title": "A failed payment load leaves invoice state reconcilable",
+        "level": 6,
+        "difficulty": "level_6",
+        "scenario": "The data delivery team must resolve a concrete operational case: a failed payment load leaves invoice state reconcilable. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Recover from a partial payment batch while keeping source payment identities.",
+        "inputs": {
+          "invoice_amount": 100,
+          "target_payments": [
+            {
+              "id": "P1",
+              "amount": 40
+            }
+          ],
+          "source_batch": [
+            {
+              "id": "P1",
+              "amount": 40
+            },
+            {
+              "id": "P2",
+              "amount": 20
+            }
+          ]
+        },
+        "expected_output": {
+          "final_applied": 60,
+          "remaining": 40,
+          "P1_target_rows": 1
+        },
+        "constraints": [
+          "Do not append P1 again during recovery.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not append P1 again during recovery.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 50,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: a failed payment load leaves invoice state reconcilable. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "A failed payment load leaves invoice state reconcilable",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not append P1 again during recovery.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-114"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 5 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 7,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invoice_amount": 100,
+            "target_payments": [
+              {
+                "id": "P1",
+                "amount": 40
+              }
+            ],
+            "source_batch": [
+              {
+                "id": "P1",
+                "amount": 40
+              },
+              {
+                "id": "P2",
+                "amount": 20
+              }
+            ]
+          },
+          "expected_output": {
+            "final_applied": 60,
+            "remaining": 40,
+            "P1_target_rows": 1
+          },
+          "constraints": [
+            "Do not append P1 again during recovery.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-144",
+      "original_draft_sha256": "4360fbc6cf8be3cc15e4f0740effa0247add07a34df4c110874c984dbce524a6",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-144",
+        "tool_id": "data-modelling",
+        "title": "A backdated credit changes historical net balance",
+        "level": 7,
+        "difficulty": "level_7",
+        "scenario": "The data delivery team must resolve a concrete operational case: a backdated credit changes historical net balance. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Apply a late credit to its effective invoice period.",
+        "inputs": {
+          "invoice": {
+            "id": "I1",
+            "day": 1,
+            "amount": 100
+          },
+          "credit": {
+            "id": "C1",
+            "effective_day": 1,
+            "arrival_day": 3,
+            "amount": 20
+          }
+        },
+        "expected_output": {
+          "corrected_day1_net": 80,
+          "day3_new_invoice_amount": 0
+        },
+        "constraints": [
+          "Keep arrival and business-effective dates distinct.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Keep arrival and business-effective dates distinct.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 60,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: a backdated credit changes historical net balance. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "A backdated credit changes historical net balance",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Keep arrival and business-effective dates distinct.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-132"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 6 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 8,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invoice": {
+              "id": "I1",
+              "day": 1,
+              "amount": 100
+            },
+            "credit": {
+              "id": "C1",
+              "effective_day": 1,
+              "arrival_day": 3,
+              "amount": 20
+            }
+          },
+          "expected_output": {
+            "corrected_day1_net": 80,
+            "day3_new_invoice_amount": 0
+          },
+          "constraints": [
+            "Keep arrival and business-effective dates distinct.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-162",
+      "original_draft_sha256": "59250860315a35343627eb6f96421e353eb7993344e49442ef77286726e3ac79",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-162",
+        "tool_id": "data-modelling",
+        "title": "A preaggregate cannot reconstruct payment chronology",
+        "level": 8,
+        "difficulty": "level_8",
+        "scenario": "The data delivery team must resolve a concrete operational case: a preaggregate cannot reconstruct payment chronology. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Assess a total-paid aggregate against a first-payment-time question.",
+        "inputs": {
+          "payments": [
+            {
+              "at": 1,
+              "amount": 40
+            },
+            {
+              "at": 2,
+              "amount": 20
+            }
+          ],
+          "stored_aggregate": {
+            "total_paid": 60
+          }
+        },
+        "expected_output": {
+          "aggregate_sufficient_for_first_payment": false,
+          "first_payment_at": 1
+        },
+        "constraints": [
+          "Do not invent the first timestamp from an amount total.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not invent the first timestamp from an amount total.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 70,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: a preaggregate cannot reconstruct payment chronology. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "A preaggregate cannot reconstruct payment chronology",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not invent the first timestamp from an amount total.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-150"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 7 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 9,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "payments": [
+              {
+                "at": 1,
+                "amount": 40
+              },
+              {
+                "at": 2,
+                "amount": 20
+              }
+            ],
+            "stored_aggregate": {
+              "total_paid": 60
+            }
+          },
+          "expected_output": {
+            "aggregate_sufficient_for_first_payment": false,
+            "first_payment_at": 1
+          },
+          "constraints": [
+            "Do not invent the first timestamp from an amount total.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-177",
+      "original_draft_sha256": "00e8ec05722622ce0f0fed601b10093296babe0a13a0520d35182e2aa3197ded",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-177",
+        "tool_id": "data-modelling",
+        "title": "An invoice export release keeps its currency label",
+        "level": 9,
+        "difficulty": "level_9",
+        "scenario": "The data delivery team must resolve a concrete operational case: an invoice export release keeps its currency label. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Validate a proposed change against a consumer expecting amount and currency.",
+        "inputs": {
+          "consumer_columns": [
+            "invoice_id",
+            "amount",
+            "currency"
+          ],
+          "candidate_columns": [
+            "invoice_id",
+            "amount"
+          ],
+          "sample_amount": 100
+        },
+        "expected_output": {
+          "compatible": false,
+          "missing_columns": [
+            "currency"
+          ]
+        },
+        "constraints": [
+          "A number without its currency is ambiguous to the consumer.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A number without its currency is ambiguous to the consumer.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 90,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: an invoice export release keeps its currency label. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "An invoice export release keeps its currency label",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A number without its currency is ambiguous to the consumer.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-168"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 8 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 10,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "consumer_columns": [
+              "invoice_id",
+              "amount",
+              "currency"
+            ],
+            "candidate_columns": [
+              "invoice_id",
+              "amount"
+            ],
+            "sample_amount": 100
+          },
+          "expected_output": {
+            "compatible": false,
+            "missing_columns": [
+              "currency"
+            ]
+          },
+          "constraints": [
+            "A number without its currency is ambiguous to the consumer.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-modelling.json",
+      "original_draft_id": "RLP-DATA-MODELLING-191",
+      "original_draft_sha256": "a2da9d2e50c6b4f4b1533cfcde933c99135cfaf24baf984e0d019316f438dd6f",
+      "problem": {
+        "id": "RLP-DATA-MODELLING-191",
+        "tool_id": "data-modelling",
+        "title": "Independent receivables model reconciles invoices and payments",
+        "level": 10,
+        "difficulty": "level_10",
+        "scenario": "The data delivery team must resolve a concrete operational case: independent receivables model reconciles invoices and payments. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Implement an executable invoice-payment-credit model with correction and rerun.",
+        "inputs": {
+          "invoice": {
+            "id": "I1",
+            "amount": 100
+          },
+          "payments": [
+            {
+              "id": "P1",
+              "amount": 40
+            }
+          ],
+          "credits": [
+            {
+              "id": "C1",
+              "amount": 20
+            }
+          ]
+        },
+        "expected_output": {
+          "remaining_receivable": 40,
+          "post_replay_remaining": 40
+        },
+        "constraints": [
+          "Show schema, event identity, actual query, correction/replay, invalid-reference test and consumer evidence.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Show schema, event identity, actual query, correction/replay, invalid-reference test and consumer evidence.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 120,
+        "engineering_relevance": "This case exercises data-modelling work needed to deliver trustworthy data: independent receivables model reconciles invoices and payments. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema"
+        ],
+        "learning_objective": "Independent receivables model reconciles invoices and payments",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Show schema, event identity, actual query, correction/replay, invalid-reference test and consumer evidence.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DATA-MODELLING-186"
+        ],
+        "skill_prerequisites": [
+          "data-modelling: level 9 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 11,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invoice": {
+              "id": "I1",
+              "amount": 100
+            },
+            "payments": [
+              {
+                "id": "P1",
+                "amount": 40
+              }
+            ],
+            "credits": [
+              {
+                "id": "C1",
+                "amount": 20
+              }
+            ]
+          },
+          "expected_output": {
+            "remaining_receivable": 40,
+            "post_replay_remaining": 40
+          },
+          "constraints": [
+            "Show schema, event identity, actual query, correction/replay, invalid-reference test and consumer evidence.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-009",
+      "original_draft_sha256": "2089212667736a84d6f0a3a4bf83d55119930b36344a0e7b68da7e72f3fe5c1a",
+      "problem": {
+        "id": "RLP-DQ-009",
+        "tool_id": "data-quality",
+        "title": "A file with only a header is visibly empty",
+        "level": 0,
+        "difficulty": "level_0",
+        "scenario": "The data delivery team must resolve a concrete operational case: a file with only a header is visibly empty. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Classify a confirmed present file under the supplied source contract.",
+        "inputs": {
+          "file_exists": true,
+          "csv": "order_id,amount\n"
+        },
+        "expected_output": {
+          "status": "valid_empty",
+          "data_rows": 0
+        },
+        "constraints": [
+          "A missing file must not be reported as this valid empty delivery.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A missing file must not be reported as this valid empty delivery.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 10,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a file with only a header is visibly empty. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A file with only a header is visibly empty",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A missing file must not be reported as this valid empty delivery.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-004"
+        ],
+        "skill_prerequisites": [],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 12,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "file_exists": true,
+            "csv": "order_id,amount\n"
+          },
+          "expected_output": {
+            "status": "valid_empty",
+            "data_rows": 0
+          },
+          "constraints": [
+            "A missing file must not be reported as this valid empty delivery.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-033",
+      "original_draft_sha256": "1f71472e45274d437fc0ef64367664c4238533cae24c7dd4bb36f3c639338ecd",
+      "problem": {
+        "id": "RLP-DQ-033",
+        "tool_id": "data-quality",
+        "title": "A malformed decimal is not a valid zero",
+        "level": 1,
+        "difficulty": "level_1",
+        "scenario": "The data delivery team must resolve a concrete operational case: a malformed decimal is not a valid zero. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Validate the supplied amount texts.",
+        "inputs": {
+          "amounts": [
+            "0.00",
+            "N/A"
+          ],
+          "decimal_policy": "Dot decimal with two fractional digits."
+        },
+        "expected_output": {
+          "valid": [
+            "0.00"
+          ],
+          "invalid": [
+            "N/A"
+          ]
+        },
+        "constraints": [
+          "Do not coerce N/A to zero to make a total computable.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not coerce N/A to zero to make a total computable.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 15,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a malformed decimal is not a valid zero. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A malformed decimal is not a valid zero",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not coerce N/A to zero to make a total computable.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-021"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 0 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 13,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "amounts": [
+              "0.00",
+              "N/A"
+            ],
+            "decimal_policy": "Dot decimal with two fractional digits."
+          },
+          "expected_output": {
+            "valid": [
+              "0.00"
+            ],
+            "invalid": [
+              "N/A"
+            ]
+          },
+          "constraints": [
+            "Do not coerce N/A to zero to make a total computable.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-050",
+      "original_draft_sha256": "dc61ba1bab6d334400aae289b2b470b6a41135a70f93852fe7ddedba1520fc4c",
+      "problem": {
+        "id": "RLP-DQ-050",
+        "tool_id": "data-quality",
+        "title": "A duplicate detection preserves source line numbers",
+        "level": 2,
+        "difficulty": "level_2",
+        "scenario": "The data delivery team must resolve a concrete operational case: a duplicate detection preserves source line numbers. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Identify all rows sharing the same business key.",
+        "inputs": {
+          "rows": [
+            {
+              "line": 2,
+              "id": "O1"
+            },
+            {
+              "line": 3,
+              "id": "O2"
+            },
+            {
+              "line": 4,
+              "id": "O1"
+            }
+          ]
+        },
+        "expected_output": {
+          "duplicate_id": "O1",
+          "source_lines": [
+            2,
+            4
+          ]
+        },
+        "constraints": [
+          "Report physical source lines rather than output array offsets.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Report physical source lines rather than output array offsets.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 20,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a duplicate detection preserves source line numbers. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A duplicate detection preserves source line numbers",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Report physical source lines rather than output array offsets.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-038"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 1 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 14,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "rows": [
+              {
+                "line": 2,
+                "id": "O1"
+              },
+              {
+                "line": 3,
+                "id": "O2"
+              },
+              {
+                "line": 4,
+                "id": "O1"
+              }
+            ]
+          },
+          "expected_output": {
+            "duplicate_id": "O1",
+            "source_lines": [
+              2,
+              4
+            ]
+          },
+          "constraints": [
+            "Report physical source lines rather than output array offsets.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-067",
+      "original_draft_sha256": "57bf526dade65e854c06139305fcea34da2e332c3ba9058aca93191614a77420",
+      "problem": {
+        "id": "RLP-DQ-067",
+        "tool_id": "data-quality",
+        "title": "An accepted-only summary excludes quarantined rows",
+        "level": 3,
+        "difficulty": "level_3",
+        "scenario": "The data delivery team must resolve a concrete operational case: an accepted-only summary excludes quarantined rows. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Reconcile a report to accepted input only.",
+        "inputs": {
+          "accepted": [
+            {
+              "id": "A",
+              "amount": 10
+            }
+          ],
+          "quarantined": [
+            {
+              "id": "B",
+              "amount": 20
+            }
+          ],
+          "report_total": 30
+        },
+        "expected_output": {
+          "correct_total": 10,
+          "report_valid": false
+        },
+        "constraints": [
+          "A numeric parse may succeed for quarantined B, but its failed status still excludes publication.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A numeric parse may succeed for quarantined B, but its failed status still excludes publication.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 25,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: an accepted-only summary excludes quarantined rows. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "An accepted-only summary excludes quarantined rows",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A numeric parse may succeed for quarantined B, but its failed status still excludes publication.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-055"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 2 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 15,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "accepted": [
+              {
+                "id": "A",
+                "amount": 10
+              }
+            ],
+            "quarantined": [
+              {
+                "id": "B",
+                "amount": 20
+              }
+            ],
+            "report_total": 30
+          },
+          "expected_output": {
+            "correct_total": 10,
+            "report_valid": false
+          },
+          "constraints": [
+            "A numeric parse may succeed for quarantined B, but its failed status still excludes publication.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-084",
+      "original_draft_sha256": "aad170519a5d3bccff7dc8c58f2b5750d489988928ee7798732f37a1569cf185",
+      "problem": {
+        "id": "RLP-DQ-084",
+        "tool_id": "data-quality",
+        "title": "A file schema check catches duplicate header names",
+        "level": 4,
+        "difficulty": "level_4",
+        "scenario": "The data delivery team must resolve a concrete operational case: a file schema check catches duplicate header names. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Validate an incoming supplier header before typed parsing.",
+        "inputs": {
+          "header": "sku,units,units",
+          "required": [
+            "sku",
+            "units"
+          ]
+        },
+        "expected_output": {
+          "schema_valid": false,
+          "duplicate_columns": [
+            "units"
+          ]
+        },
+        "constraints": [
+          "Choosing the first or last units column silently changes meaning.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Choosing the first or last units column silently changes meaning.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 35,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a file schema check catches duplicate header names. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A file schema check catches duplicate header names",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Choosing the first or last units column silently changes meaning.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-072"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 3 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 16,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "header": "sku,units,units",
+            "required": [
+              "sku",
+              "units"
+            ]
+          },
+          "expected_output": {
+            "schema_valid": false,
+            "duplicate_columns": [
+              "units"
+            ]
+          },
+          "constraints": [
+            "Choosing the first or last units column silently changes meaning.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-100",
+      "original_draft_sha256": "b49a97745fefc8cbbc045251898adb81e2cf24a095814570b5bff12851f5e37d",
+      "problem": {
+        "id": "RLP-DQ-100",
+        "tool_id": "data-quality",
+        "title": "A target checksum check follows the actual write",
+        "level": 5,
+        "difficulty": "level_5",
+        "scenario": "The data delivery team must resolve a concrete operational case: a target checksum check follows the actual write. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Verify the supplied target observation against the source ledger.",
+        "inputs": {
+          "source_ids": [
+            "A",
+            "B"
+          ],
+          "observed_target_ids": [
+            "A"
+          ],
+          "write_status": "success"
+        },
+        "expected_output": {
+          "delivery_verified": false,
+          "missing_target_ids": [
+            "B"
+          ]
+        },
+        "constraints": [
+          "A success return code is not enough to prove full target contents.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A success return code is not enough to prove full target contents.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 45,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a target checksum check follows the actual write. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A target checksum check follows the actual write",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A success return code is not enough to prove full target contents.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-088"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 4 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 17,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "source_ids": [
+              "A",
+              "B"
+            ],
+            "observed_target_ids": [
+              "A"
+            ],
+            "write_status": "success"
+          },
+          "expected_output": {
+            "delivery_verified": false,
+            "missing_target_ids": [
+              "B"
+            ]
+          },
+          "constraints": [
+            "A success return code is not enough to prove full target contents.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-116",
+      "original_draft_sha256": "05de90d3b27be29b835c67a41787ad8086b3573f81606cc72bbe3d41ce81148b",
+      "problem": {
+        "id": "RLP-DQ-116",
+        "tool_id": "data-quality",
+        "title": "A repair does not erase its earlier failed assertion",
+        "level": 6,
+        "difficulty": "level_6",
+        "scenario": "The data delivery team must resolve a concrete operational case: a repair does not erase its earlier failed assertion. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Reconcile before-and-after test evidence for one corrected row.",
+        "inputs": {
+          "attempt1": {
+            "id": "A",
+            "status": "failed",
+            "reason": "bad_amount"
+          },
+          "attempt2": {
+            "id": "A",
+            "status": "passed"
+          }
+        },
+        "expected_output": {
+          "current_status": "passed",
+          "failed_attempt_retained": true
+        },
+        "constraints": [
+          "The correction changes current status but not historical evidence.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "The correction changes current status but not historical evidence.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 50,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a repair does not erase its earlier failed assertion. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A repair does not erase its earlier failed assertion",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: The correction changes current status but not historical evidence.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-104"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 5 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 18,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "attempt1": {
+              "id": "A",
+              "status": "failed",
+              "reason": "bad_amount"
+            },
+            "attempt2": {
+              "id": "A",
+              "status": "passed"
+            }
+          },
+          "expected_output": {
+            "current_status": "passed",
+            "failed_attempt_retained": true
+          },
+          "constraints": [
+            "The correction changes current status but not historical evidence.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-132",
+      "original_draft_sha256": "f08820e63c515002b56a364a86d4e59ff90cb6191e996fecaaeb4ac49deddabe",
+      "problem": {
+        "id": "RLP-DQ-132",
+        "tool_id": "data-quality",
+        "title": "A correction must share a known source identity",
+        "level": 7,
+        "difficulty": "level_7",
+        "scenario": "The data delivery team must resolve a concrete operational case: a correction must share a known source identity. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Validate a supplied correction against retained raw order IDs.",
+        "inputs": {
+          "known_orders": [
+            "O1"
+          ],
+          "correction": {
+            "order": "O9",
+            "amount": 12
+          }
+        },
+        "expected_output": {
+          "correction_applied": false,
+          "unknown_order": "O9"
+        },
+        "constraints": [
+          "Do not create a new O9 order through a correction-only channel.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not create a new O9 order through a correction-only channel.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 60,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a correction must share a known source identity. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A correction must share a known source identity",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not create a new O9 order through a correction-only channel.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-120"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 6 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 19,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "known_orders": [
+              "O1"
+            ],
+            "correction": {
+              "order": "O9",
+              "amount": 12
+            }
+          },
+          "expected_output": {
+            "correction_applied": false,
+            "unknown_order": "O9"
+          },
+          "constraints": [
+            "Do not create a new O9 order through a correction-only channel.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-148",
+      "original_draft_sha256": "7105422b1a1a4c15e762d1ef298948989716051531d64a27c4da8489d41de043",
+      "problem": {
+        "id": "RLP-DQ-148",
+        "tool_id": "data-quality",
+        "title": "An approximate percentile cannot enforce a hard maximum",
+        "level": 8,
+        "difficulty": "level_8",
+        "scenario": "The data delivery team must resolve a concrete operational case: an approximate percentile cannot enforce a hard maximum. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Assess a percentile summary against an all-row latency limit.",
+        "inputs": {
+          "latency_seconds": [
+            1,
+            1,
+            1,
+            100
+          ],
+          "reported_p50": 1,
+          "maximum_allowed": 10
+        },
+        "expected_output": {
+          "all_rows_pass": false,
+          "violating_values": [
+            100
+          ]
+        },
+        "constraints": [
+          "A central percentile can hide a severe outlier.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A central percentile can hide a severe outlier.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 70,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: an approximate percentile cannot enforce a hard maximum. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "An approximate percentile cannot enforce a hard maximum",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A central percentile can hide a severe outlier.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-136"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 7 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 20,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "latency_seconds": [
+              1,
+              1,
+              1,
+              100
+            ],
+            "reported_p50": 1,
+            "maximum_allowed": 10
+          },
+          "expected_output": {
+            "all_rows_pass": false,
+            "violating_values": [
+              100
+            ]
+          },
+          "constraints": [
+            "A central percentile can hide a severe outlier.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-161",
+      "original_draft_sha256": "93e46b4e6bc8cde55f1ce905751cd84c35be5d041bd20225ee7640af85d8eaaf",
+      "problem": {
+        "id": "RLP-DQ-161",
+        "tool_id": "data-quality",
+        "title": "A quality incident lists exact affected outputs",
+        "level": 9,
+        "difficulty": "level_9",
+        "scenario": "The data delivery team must resolve a concrete operational case: a quality incident lists exact affected outputs. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Map an invalid rule version to published artifacts.",
+        "inputs": {
+          "outputs": [
+            {
+              "id": "P1",
+              "rule": "v1"
+            },
+            {
+              "id": "P2",
+              "rule": "v2-bad"
+            },
+            {
+              "id": "P3",
+              "rule": "v2-bad"
+            }
+          ]
+        },
+        "expected_output": {
+          "affected_output_ids": [
+            "P2",
+            "P3"
+          ],
+          "unaffected_output_ids": [
+            "P1"
+          ]
+        },
+        "constraints": [
+          "Do not mark every output bad simply because the current rule is bad.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not mark every output bad simply because the current rule is bad.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 90,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: a quality incident lists exact affected outputs. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "A quality incident lists exact affected outputs",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not mark every output bad simply because the current rule is bad.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-152"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 8 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 21,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "outputs": [
+              {
+                "id": "P1",
+                "rule": "v1"
+              },
+              {
+                "id": "P2",
+                "rule": "v2-bad"
+              },
+              {
+                "id": "P3",
+                "rule": "v2-bad"
+              }
+            ]
+          },
+          "expected_output": {
+            "affected_output_ids": [
+              "P2",
+              "P3"
+            ],
+            "unaffected_output_ids": [
+              "P1"
+            ]
+          },
+          "constraints": [
+            "Do not mark every output bad simply because the current rule is bad.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "data-quality.json",
+      "original_draft_id": "RLP-DQ-173",
+      "original_draft_sha256": "1d333487b20527b304d9a262028fd1d729399fec81b2e89a771c52520adaaf98",
+      "problem": {
+        "id": "RLP-DQ-173",
+        "tool_id": "data-quality",
+        "title": "Independent test suite rejects both key and amount defects",
+        "level": 10,
+        "difficulty": "level_10",
+        "scenario": "The data delivery team must resolve a concrete operational case: independent test suite rejects both key and amount defects. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Build a runnable contract suite for the supplied valid and invalid order rows.",
+        "inputs": {
+          "rows": [
+            {
+              "id": "A",
+              "amount": "10.00"
+            },
+            {
+              "id": null,
+              "amount": "5.00"
+            },
+            {
+              "id": "B",
+              "amount": "bad"
+            }
+          ]
+        },
+        "expected_output": {
+          "accepted_ids": [
+            "A"
+          ],
+          "key_fail_rows": [
+            2
+          ],
+          "amount_fail_rows": [
+            3
+          ]
+        },
+        "constraints": [
+          "Supply actual test runs, clear exception outputs, rerun safety and a changed input challenge.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Supply actual test runs, clear exception outputs, rerun safety and a changed input challenge.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 120,
+        "engineering_relevance": "This case exercises data-quality work needed to deliver trustworthy data: independent test suite rejects both key and amount defects. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://docs.pytest.org/en/stable/how-to/assert.html"
+        ],
+        "learning_objective": "Independent test suite rejects both key and amount defects",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Supply actual test runs, clear exception outputs, rerun safety and a changed input challenge.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-DQ-168"
+        ],
+        "skill_prerequisites": [
+          "data-quality: level 9 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 22,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "rows": [
+              {
+                "id": "A",
+                "amount": "10.00"
+              },
+              {
+                "id": null,
+                "amount": "5.00"
+              },
+              {
+                "id": "B",
+                "amount": "bad"
+              }
+            ]
+          },
+          "expected_output": {
+            "accepted_ids": [
+              "A"
+            ],
+            "key_fail_rows": [
+              2
+            ],
+            "amount_fail_rows": [
+              3
+            ]
+          },
+          "constraints": [
+            "Supply actual test runs, clear exception outputs, rerun safety and a changed input challenge.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-010",
+      "original_draft_sha256": "1a66889e3096d022a97b38c17210101ff0a86524fdbb893968030bd982d5a5be",
+      "problem": {
+        "id": "RLP-AIRFLOW-010",
+        "tool_id": "airflow",
+        "title": "A DAG identifier is distinct from its Python filename",
+        "level": 0,
+        "difficulty": "level_0",
+        "scenario": "The data delivery team must resolve a concrete operational case: a dag identifier is distinct from its python filename. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Read the supplied file metadata and name the DAG.",
+        "inputs": {
+          "file": "daily_orders.py",
+          "dag_id": "warehouse_orders"
+        },
+        "expected_output": {
+          "dag_id": "warehouse_orders"
+        },
+        "constraints": [
+          "A file name alone is not the scheduler DAG identifier.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A file name alone is not the scheduler DAG identifier.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 10,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a dag identifier is distinct from its python filename. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A DAG identifier is distinct from its Python filename",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A file name alone is not the scheduler DAG identifier.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-005"
+        ],
+        "skill_prerequisites": [],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 23,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "file": "daily_orders.py",
+            "dag_id": "warehouse_orders"
+          },
+          "expected_output": {
+            "dag_id": "warehouse_orders"
+          },
+          "constraints": [
+            "A file name alone is not the scheduler DAG identifier.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-034",
+      "original_draft_sha256": "e43b1b4a7f1ba9bff30869305de4ebf57e45767bb9a37ef6a796895f2ac6fe63",
+      "problem": {
+        "id": "RLP-AIRFLOW-034",
+        "tool_id": "airflow",
+        "title": "A task without a run has no completion evidence",
+        "level": 1,
+        "difficulty": "level_1",
+        "scenario": "The data delivery team must resolve a concrete operational case: a task without a run has no completion evidence. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Classify the supplied training DAG inventory.",
+        "inputs": {
+          "task_ids": [
+            "extract",
+            "load"
+          ],
+          "dag_runs": []
+        },
+        "expected_output": {
+          "tasks_defined": 2,
+          "completed_runs": 0
+        },
+        "constraints": [
+          "A graph definition is not a run result.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A graph definition is not a run result.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 15,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a task without a run has no completion evidence. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A task without a run has no completion evidence",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A graph definition is not a run result.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-022"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 0 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 24,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "task_ids": [
+              "extract",
+              "load"
+            ],
+            "dag_runs": []
+          },
+          "expected_output": {
+            "tasks_defined": 2,
+            "completed_runs": 0
+          },
+          "constraints": [
+            "A graph definition is not a run result.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-051",
+      "original_draft_sha256": "783c4742d5de0de9d3ebd086ee62cfbff7fd74a7844f12faad1f08a088d2c50c",
+      "problem": {
+        "id": "RLP-AIRFLOW-051",
+        "tool_id": "airflow",
+        "title": "A task dependency is directional",
+        "level": 2,
+        "difficulty": "level_2",
+        "scenario": "The data delivery team must resolve a concrete operational case: a task dependency is directional. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Inspect the supplied two-task edge and identify which task waits.",
+        "inputs": {
+          "edge": [
+            "extract",
+            "load"
+          ]
+        },
+        "expected_output": {
+          "upstream": "extract",
+          "downstream": "load"
+        },
+        "constraints": [
+          "The inverse edge would make extraction wait for loading.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "The inverse edge would make extraction wait for loading.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 20,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a task dependency is directional. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A task dependency is directional",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: The inverse edge would make extraction wait for loading.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-039"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 1 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 25,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "edge": [
+              "extract",
+              "load"
+            ]
+          },
+          "expected_output": {
+            "upstream": "extract",
+            "downstream": "load"
+          },
+          "constraints": [
+            "The inverse edge would make extraction wait for loading.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-068",
+      "original_draft_sha256": "daeac07da57b7934d062ff5d8630401784d7d18948840e6239fa124aed2cf682",
+      "problem": {
+        "id": "RLP-AIRFLOW-068",
+        "tool_id": "airflow",
+        "title": "A branch result names only one chosen path",
+        "level": 3,
+        "difficulty": "level_3",
+        "scenario": "The data delivery team must resolve a concrete operational case: a branch result names only one chosen path. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Route the supplied zero-invalid quality result.",
+        "inputs": {
+          "invalid_count": 0,
+          "branches": [
+            "publish",
+            "quarantine"
+          ]
+        },
+        "expected_output": {
+          "chosen": "publish",
+          "unchosen": "quarantine"
+        },
+        "constraints": [
+          "Do not run both branches for a single exclusive decision.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Do not run both branches for a single exclusive decision.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 25,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a branch result names only one chosen path. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A branch result names only one chosen path",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Do not run both branches for a single exclusive decision.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-056"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 2 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 26,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "invalid_count": 0,
+            "branches": [
+              "publish",
+              "quarantine"
+            ]
+          },
+          "expected_output": {
+            "chosen": "publish",
+            "unchosen": "quarantine"
+          },
+          "constraints": [
+            "Do not run both branches for a single exclusive decision.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-084",
+      "original_draft_sha256": "d809e342b1b6d454ab42d65434f45aa0bbbacc14a10dd7fafd6e1ce57f27d7f6",
+      "problem": {
+        "id": "RLP-AIRFLOW-084",
+        "tool_id": "airflow",
+        "title": "A cross-DAG dependency matches the same interval",
+        "level": 4,
+        "difficulty": "level_4",
+        "scenario": "The data delivery team must resolve a concrete operational case: a cross-dag dependency matches the same interval. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Check whether the supplied upstream success satisfies the report run.",
+        "inputs": {
+          "upstream": {
+            "day": "2026-10-19",
+            "state": "success"
+          },
+          "report_day": "2026-10-20"
+        },
+        "expected_output": {
+          "dependency_satisfied": false
+        },
+        "constraints": [
+          "Successful work for yesterday does not satisfy today.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Successful work for yesterday does not satisfy today.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 35,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a cross-dag dependency matches the same interval. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A cross-DAG dependency matches the same interval",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Successful work for yesterday does not satisfy today.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-072"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 3 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 27,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "upstream": {
+              "day": "2026-10-19",
+              "state": "success"
+            },
+            "report_day": "2026-10-20"
+          },
+          "expected_output": {
+            "dependency_satisfied": false
+          },
+          "constraints": [
+            "Successful work for yesterday does not satisfy today.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-100",
+      "original_draft_sha256": "a38a6b04ef18e16621f382997cd954c21ac3c9ace31da27be73df620669c0c6c",
+      "problem": {
+        "id": "RLP-AIRFLOW-100",
+        "tool_id": "airflow",
+        "title": "A load task and report task share one committed artifact",
+        "level": 5,
+        "difficulty": "level_5",
+        "scenario": "The data delivery team must resolve a concrete operational case: a load task and report task share one committed artifact. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Validate the supplied artifact handoff for a logical run.",
+        "inputs": {
+          "load": {
+            "run": "R1",
+            "artifact_digest": "A"
+          },
+          "report": {
+            "run": "R1",
+            "artifact_digest": "B"
+          }
+        },
+        "expected_output": {
+          "handoff_valid": false,
+          "mismatch": "artifact_digest"
+        },
+        "constraints": [
+          "Matching run labels cannot repair a changed artifact identity.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Matching run labels cannot repair a changed artifact identity.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 45,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a load task and report task share one committed artifact. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A load task and report task share one committed artifact",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Matching run labels cannot repair a changed artifact identity.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-088"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 4 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 28,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "load": {
+              "run": "R1",
+              "artifact_digest": "A"
+            },
+            "report": {
+              "run": "R1",
+              "artifact_digest": "B"
+            }
+          },
+          "expected_output": {
+            "handoff_valid": false,
+            "mismatch": "artifact_digest"
+          },
+          "constraints": [
+            "Matching run labels cannot repair a changed artifact identity.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-116",
+      "original_draft_sha256": "899c58ddf6ea175f8e7822b7447c7a0a456ffe7afd06148ab117392de250e2dc",
+      "problem": {
+        "id": "RLP-AIRFLOW-116",
+        "tool_id": "airflow",
+        "title": "A failed callback cannot mark the business run successful",
+        "level": 6,
+        "difficulty": "level_6",
+        "scenario": "The data delivery team must resolve a concrete operational case: a failed callback cannot mark the business run successful. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Inspect supplied task and callback results.",
+        "inputs": {
+          "task_state": "failed",
+          "failure_callback_state": "success",
+          "published_report": false
+        },
+        "expected_output": {
+          "business_run_success": false,
+          "callback_observed": true
+        },
+        "constraints": [
+          "The callback succeeding merely records/handles failure.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "The callback succeeding merely records/handles failure.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 50,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a failed callback cannot mark the business run successful. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A failed callback cannot mark the business run successful",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: The callback succeeding merely records/handles failure.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-104"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 5 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 29,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "task_state": "failed",
+            "failure_callback_state": "success",
+            "published_report": false
+          },
+          "expected_output": {
+            "business_run_success": false,
+            "callback_observed": true
+          },
+          "constraints": [
+            "The callback succeeding merely records/handles failure.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-132",
+      "original_draft_sha256": "be91833e48764d22524a0b43b0017537481ea13edd303136059d8025bf4cd03d",
+      "problem": {
+        "id": "RLP-AIRFLOW-132",
+        "tool_id": "airflow",
+        "title": "A repaired prior interval should not trigger an unrelated day",
+        "level": 7,
+        "difficulty": "level_7",
+        "scenario": "The data delivery team must resolve a concrete operational case: a repaired prior interval should not trigger an unrelated day. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Select the exact logical run for a late file.",
+        "inputs": {
+          "late_file_business_day": "2026-10-20",
+          "current_scheduler_day": "2026-10-23"
+        },
+        "expected_output": {
+          "repair_run_day": "2026-10-20",
+          "unrelated_current_day_replayed": false
+        },
+        "constraints": [
+          "Use data interval identity, not arrival-day convenience.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Use data interval identity, not arrival-day convenience.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 60,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a repaired prior interval should not trigger an unrelated day. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A repaired prior interval should not trigger an unrelated day",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Use data interval identity, not arrival-day convenience.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-120"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 6 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 30,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "late_file_business_day": "2026-10-20",
+            "current_scheduler_day": "2026-10-23"
+          },
+          "expected_output": {
+            "repair_run_day": "2026-10-20",
+            "unrelated_current_day_replayed": false
+          },
+          "constraints": [
+            "Use data interval identity, not arrival-day convenience.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-148",
+      "original_draft_sha256": "edac55c1b7d897afee68375b78bea7640c79079a4207374f34b1d3531d1a86d9",
+      "problem": {
+        "id": "RLP-AIRFLOW-148",
+        "tool_id": "airflow",
+        "title": "Dynamic mapping preserves one status per source file",
+        "level": 8,
+        "difficulty": "level_8",
+        "scenario": "The data delivery team must resolve a concrete operational case: dynamic mapping preserves one status per source file. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Assess a mapped loader result before fan-in publication.",
+        "inputs": {
+          "files": [
+            "a.csv",
+            "b.csv",
+            "c.csv"
+          ],
+          "states": [
+            "success",
+            "failed",
+            "success"
+          ]
+        },
+        "expected_output": {
+          "all_sources_succeeded": false,
+          "failed_files": [
+            "b.csv"
+          ]
+        },
+        "constraints": [
+          "Two out of three successes cannot publish a complete three-file report.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Two out of three successes cannot publish a complete three-file report.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 70,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: dynamic mapping preserves one status per source file. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "Dynamic mapping preserves one status per source file",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Two out of three successes cannot publish a complete three-file report.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-136"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 7 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 31,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "files": [
+              "a.csv",
+              "b.csv",
+              "c.csv"
+            ],
+            "states": [
+              "success",
+              "failed",
+              "success"
+            ]
+          },
+          "expected_output": {
+            "all_sources_succeeded": false,
+            "failed_files": [
+              "b.csv"
+            ]
+          },
+          "constraints": [
+            "Two out of three successes cannot publish a complete three-file report.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-161",
+      "original_draft_sha256": "7e88e67bfb214e3de627978d14f28d906931bd3ca743b0c11cb2cc81b6e411c1",
+      "problem": {
+        "id": "RLP-AIRFLOW-161",
+        "tool_id": "airflow",
+        "title": "A new DAG release checks an old queued run contract",
+        "level": 9,
+        "difficulty": "level_9",
+        "scenario": "The data delivery team must resolve a concrete operational case: a new dag release checks an old queued run contract. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Gate supplied v2 activation against a still-pending v1 run.",
+        "inputs": {
+          "queued": {
+            "run": "R1",
+            "contract": "v1"
+          },
+          "candidate": "v2",
+          "compatibility_test": "missing"
+        },
+        "expected_output": {
+          "safe_to_activate_without_review": false,
+          "pending_run": "R1"
+        },
+        "constraints": [
+          "A queued run may execute under the newly loaded code; establish its behavior deliberately.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "A queued run may execute under the newly loaded code; establish its behavior deliberately.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 90,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: a new dag release checks an old queued run contract. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "A new DAG release checks an old queued run contract",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: A queued run may execute under the newly loaded code; establish its behavior deliberately.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-152"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 8 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 32,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "queued": {
+              "run": "R1",
+              "contract": "v1"
+            },
+            "candidate": "v2",
+            "compatibility_test": "missing"
+          },
+          "expected_output": {
+            "safe_to_activate_without_review": false,
+            "pending_run": "R1"
+          },
+          "constraints": [
+            "A queued run may execute under the newly loaded code; establish its behavior deliberately.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    },
+    {
+      "source_file": "airflow.json",
+      "original_draft_id": "RLP-AIRFLOW-173",
+      "original_draft_sha256": "93254cf63935071e242cd063fa7ece1ef54599ca3353c89f48e9c4e7219dd750",
+      "problem": {
+        "id": "RLP-AIRFLOW-173",
+        "tool_id": "airflow",
+        "title": "Independent DAG proves data result after a retry",
+        "level": 10,
+        "difficulty": "level_10",
+        "scenario": "The data delivery team must resolve a concrete operational case: independent dag proves data result after a retry. The supplied synthetic artifacts describe the exact business or operating boundary to preserve.",
+        "task": "Implement a tiny scheduled pipeline with one injected extract failure and a successful bounded retry.",
+        "inputs": {
+          "orders": [
+            {
+              "id": "A",
+              "amount": 10
+            }
+          ],
+          "first_extract": "temporary_error",
+          "second_extract": "success"
+        },
+        "expected_output": {
+          "attempts": 2,
+          "published_total": 10,
+          "logical_rows": 1
+        },
+        "constraints": [
+          "Provide actual task states and persisted report, not only a green DAG screenshot.",
+          "Preserve the original attempt and observed execution evidence; disclose AI, documentation and other assistance.",
+          "Use only synthetic data and owned disposable training resources."
+        ],
+        "acceptance_criteria": [
+          "The supplied fixture produces the exact expected logical outcome, with unordered record collections compared by their business identity.",
+          "Provide actual task states and persisted report, not only a green DAG screenshot.",
+          "Supply implementation or configuration, actual commands or test probes, and observed results sufficient to check each expected field.",
+          "State which checks actually ran. A local policy simulation does not establish real cloud or orchestration execution."
+        ],
+        "estimated_minutes": 120,
+        "engineering_relevance": "This case exercises airflow work needed to deliver trustworthy data: independent dag proves data result after a retry. After verification, explain the consequence of the incorrect behavior for a pipeline consumer.",
+        "official_docs": [
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+        ],
+        "learning_objective": "Independent DAG proves data result after a retry",
+        "progressive_hints": [
+          "First identify the exact supplied artifact and the observable before-and-after result required by this case.",
+          "Keep the rest of the fixture fixed while checking this boundary: Provide actual task states and persisted report, not only a green DAG screenshot.",
+          "Use the linked official documentation for your installed version. Add an observation or failing test that would expose the incorrect result before changing the implementation."
+        ],
+        "prerequisites": [
+          "RLP-AIRFLOW-168"
+        ],
+        "skill_prerequisites": [
+          "airflow: level 9 bounded operations"
+        ],
+        "independent_prerequisites": [],
+        "challenge_kind": "skill_build",
+        "activity_mode": "case_specific_technical_challenge",
+        "verification": {
+          "kind": "artifact_review",
+          "evidence_required": [
+            "implementation_or_configuration",
+            "actual_result",
+            "assistance_disclosure"
+          ],
+          "note": "Case oracle supplied; tutor must review actual implementation and safely run applicable tests. No learner completion or cloud execution is inferred."
+        },
+        "published_version": "pending-versioned-release",
+        "publication_status": "published",
+        "draft_reason": null,
+        "authoring": {
+          "batch": "engineering-batch10",
+          "case_number": 33,
+          "replaces_generic_candidate": true,
+          "specific_fixture": true,
+          "review_scope": "Authored technical fixture and explicit expected result; runtime verification of learner work remains required."
+        },
+        "followup": {
+          "task": "After a delay, reconstruct this case independently with the supplied fixture and explain the outcome without referring to your prior implementation.",
+          "inputs": {
+            "orders": [
+              {
+                "id": "A",
+                "amount": 10
+              }
+            ],
+            "first_extract": "temporary_error",
+            "second_extract": "success"
+          },
+          "expected_output": {
+            "attempts": 2,
+            "published_total": 10,
+            "logical_rows": 1
+          },
+          "constraints": [
+            "Provide actual task states and persisted report, not only a green DAG screenshot.",
+            "Disclose assistance. Independent mastery needs reviewed code, results and reasoning, not self-report."
+          ],
+          "verification": {
+            "kind": "artifact_review"
+          }
+        }
+      }
+    }
+  ],
+  "counts": {
+    "proposed_promotions": 33,
+    "published_added": 0,
+    "by_technology": {
+      "data-modelling": 11,
+      "data-quality": 11,
+      "airflow": 11
+    }
+  },
+  "validation": {
+    "structural_errors": [],
+    "runtime_claim": "Learner implementations remain unverified."
+  }
+}

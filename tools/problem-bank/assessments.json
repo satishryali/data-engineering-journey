@@ -1,0 +1,397 @@
+[
+  {
+    "id": "RLP-JOB-FOUNDATION",
+    "tool_id": "integrated-pipelines",
+    "title": "Assess the daily order delivery",
+    "level": 3,
+    "difficulty": "Level 3 assessment",
+    "scenario": "An Indian distributor needs an auditable daily order feed for operations and reporting. This is a bounded job-readiness assessment, separate from RDS-001 acceptance.",
+    "task": "Independently read the CSV, separate rejected records, load accepted orders into a disposable PostgreSQL table and produce customer totals including customers with no accepted orders. Show actual rerun and invalid-input results and explain your decisions.",
+    "learning_objective": "Build and explain a small validated file-to-relational load and customer-preserving reconciliation.",
+    "inputs": {
+      "orders.csv": "order_id,customer_id,unit_price,quantity\n1001,C1,10.50,2\n1002,C2,bad,1\n1003,C1,0.00,5\n",
+      "customers": [
+        [
+          "C1",
+          "Asha"
+        ],
+        [
+          "C2",
+          "Devi"
+        ]
+      ]
+    },
+    "expected_output": {
+      "accepted_order_ids": [
+        1001,
+        1003
+      ],
+      "rejected_order_ids": [
+        1002
+      ],
+      "stored_rows_after_first_and_repeat": 2,
+      "customer_totals": [
+        [
+          "C1",
+          "21.00"
+        ],
+        [
+          "C2",
+          "0.00"
+        ]
+      ]
+    },
+    "acceptance_criteria": [
+      "Exactly the two valid orders are stored after both first and repeated runs.",
+      "Rejected record 1002 is preserved with an explicit amount error.",
+      "Money remains exact; C2 appears with zero accepted sales.",
+      "Show code, SQL output and a separate changed-input check without hints or AI assistance for independent credit."
+    ],
+    "constraints": [
+      "Use only an isolated training schema and supplied synthetic records.",
+      "Do not alter RDS-001 implementation, reveal credentials, or swallow rejected rows."
+    ],
+    "prerequisites": [
+      "RLP-PY-011",
+      "RLP-SQL-008",
+      "RLP-PG-004"
+    ],
+    "independent_prerequisites": [
+      "RLP-PY-011",
+      "RLP-SQL-008",
+      "RLP-PG-004"
+    ],
+    "skill_prerequisites": [],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Data engineers must demonstrate correct ingestion, reconciliation, rerun safety and explainable operational behavior. Passing this assessment is evidence for this slice, not employment or senior-level mastery.",
+    "progressive_hints": [
+      "First state which input rows should be accepted and why.",
+      "Reconcile acceptance, rejection and stored-row counts separately before retrying the load.",
+      "Investigate the identity used for reruns and verify customers without accepted orders are retained."
+    ],
+    "challenge_kind": "assessment",
+    "assessment_target_date": "2026-11-15",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/tutorial.html",
+      "https://learn.microsoft.com/en-us/azure/data-factory/copy-activity-overview",
+      "https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "published_version": "2026.10.26.2"
+  },
+  {
+    "id": "RLP-JOB-SPARK",
+    "tool_id": "integrated-pipelines",
+    "title": "Assess the changed sales transformation",
+    "level": 4,
+    "difficulty": "Level 4 assessment",
+    "scenario": "An Indian distributor needs an auditable daily order feed for operations and reporting. This is a bounded job-readiness assessment, separate from RDS-001 acceptance.",
+    "task": "Independently transform the supplied sales and customer records using PySpark and Spark SQL. Quarantine invalid amounts, retain the latest version per sale and report all customers. Compare both implementations and demonstrate shuffled input order does not change the business result.",
+    "learning_objective": "Reconcile two transformation APIs under duplicate versions, nulls and invalid values.",
+    "inputs": {
+      "sales_columns": [
+        "sale_id",
+        "customer_id",
+        "amount",
+        "version"
+      ],
+      "sales": [
+        [
+          "S1",
+          "C1",
+          "10",
+          1
+        ],
+        [
+          "S1",
+          "C1",
+          "12",
+          2
+        ],
+        [
+          "S2",
+          "C2",
+          null,
+          1
+        ],
+        [
+          "S3",
+          "C1",
+          "bad",
+          1
+        ]
+      ],
+      "customers": [
+        [
+          "C1",
+          "Asha"
+        ],
+        [
+          "C2",
+          "Devi"
+        ],
+        [
+          "C3",
+          "Nila"
+        ]
+      ]
+    },
+    "expected_output": {
+      "current_sales": [
+        [
+          "S1",
+          "C1",
+          12,
+          2
+        ],
+        [
+          "S2",
+          "C2",
+          null,
+          1
+        ]
+      ],
+      "quarantined": [
+        "S3"
+      ],
+      "customer_totals": [
+        [
+          "C1",
+          12
+        ],
+        [
+          "C2",
+          0
+        ],
+        [
+          "C3",
+          0
+        ]
+      ]
+    },
+    "acceptance_criteria": [
+      "S1 version 2 contributes 12 exactly once.",
+      "S3 is quarantined; S2 null amount remains distinct from an invalid string.",
+      "Both APIs produce identical customer-level results including C3.",
+      "Submit executed schema, results, changed-input output and plan explanation."
+    ],
+    "constraints": [
+      "Use an existing local or permitted training Spark environment.",
+      "Document null semantics and deterministic ordering; no unbounded collect on large data."
+    ],
+    "prerequisites": [
+      "RLP-JOB-FOUNDATION",
+      "RLP-PYSPARK-001"
+    ],
+    "independent_prerequisites": [
+      "RLP-JOB-FOUNDATION",
+      "RLP-PYSPARK-001"
+    ],
+    "skill_prerequisites": [],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Data engineers must demonstrate correct ingestion, reconciliation, rerun safety and explainable operational behavior. Passing this assessment is evidence for this slice, not employment or senior-level mastery.",
+    "progressive_hints": [
+      "List the expected current sale IDs before selecting any transformation.",
+      "Check whether invalid strings and missing amounts require the same business treatment.",
+      "Compare the results after reordering the input and separately verify every customer survives."
+    ],
+    "challenge_kind": "assessment",
+    "assessment_target_date": "2026-12-06",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/tutorial.html",
+      "https://learn.microsoft.com/en-us/azure/data-factory/copy-activity-overview",
+      "https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "published_version": "2026.10.26.2"
+  },
+  {
+    "id": "RLP-JOB-AZURE",
+    "tool_id": "integrated-pipelines",
+    "title": "Demonstrate the Azure delivery and recovery",
+    "level": 5,
+    "difficulty": "Level 5 assessment",
+    "scenario": "An Indian distributor needs an auditable daily order feed for operations and reporting. This is a bounded job-readiness assessment, separate from RDS-001 acceptance.",
+    "task": "Build and execute a small end-to-end Azure training pipeline that lands the supplied file in ADLS Gen2, copies or orchestrates it with ADF, transforms it in Azure Databricks and writes a Delta result. Show first run, rerun and a controlled permission or malformed-input failure followed by recovery. Reconcile rows at each boundary.",
+    "learning_objective": "Demonstrate actual source-to-lake-to-transform Azure behavior with rerun and failure evidence.",
+    "inputs": {
+      "delivery_id": "D1",
+      "sales.csv": "sale_id,amount\nS1,25\nS2,10\n",
+      "failed_delivery": "sale_id,amount\nS3,bad\n",
+      "environment": "Existing authorized Azure training storage, factory and workspace; exact resource names chosen by learner."
+    },
+    "expected_output": {
+      "first_run_rows": 2,
+      "rerun_business_rows": 2,
+      "total_amount": 35,
+      "invalid_delivery_rows_published": 0,
+      "recovered_successful_delivery_total": 35
+    },
+    "acceptance_criteria": [
+      "Actual redacted Azure run IDs and output reconcile two business rows and total 35.",
+      "Rerun preserves exactly two business rows.",
+      "A controlled failure remains observable and cannot publish an unverified result.",
+      "Recovery preserves the earlier good result and includes a repeatable cleanup/cost plan."
+    ],
+    "constraints": [
+      "Provision or spend only within separately authorized training resources and budget.",
+      "No account secrets or shared production data.",
+      "A local substitute or architecture diagram is useful evidence but cannot verify this Azure execution assessment."
+    ],
+    "prerequisites": [
+      "RLP-JOB-SPARK",
+      "RLP-ADF-001",
+      "RLP-ADLS-001",
+      "RLP-DATABRICKS-001",
+      "RLP-DELTA-LAKE-001",
+      "RLP-AZURE-001"
+    ],
+    "independent_prerequisites": [
+      "RLP-JOB-SPARK"
+    ],
+    "skill_prerequisites": [],
+    "estimated_minutes": 150,
+    "engineering_relevance": "Data engineers must demonstrate correct ingestion, reconciliation, rerun safety and explainable operational behavior. Passing this assessment is evidence for this slice, not employment or senior-level mastery.",
+    "progressive_hints": [
+      "Draw only the boundaries that must move or transform this two-row delivery.",
+      "Reconcile each boundary before treating the final success status as sufficient.",
+      "Preserve the first good result while investigating the controlled failure; verify recovery with the same checks."
+    ],
+    "challenge_kind": "assessment",
+    "assessment_target_date": "2026-12-27",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/tutorial.html",
+      "https://learn.microsoft.com/en-us/azure/data-factory/copy-activity-overview",
+      "https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "published_version": "2026.10.26.2"
+  },
+  {
+    "id": "RLP-JOB-FINAL",
+    "tool_id": "integrated-pipelines",
+    "title": "Build an unfamiliar pipeline independently",
+    "level": 6,
+    "difficulty": "Level 6 assessment",
+    "scenario": "An Indian distributor needs an auditable daily order feed for operations and reporting. This is a bounded job-readiness assessment, separate from RDS-001 acceptance.",
+    "task": "Independently implement and explain the changed partner delivery below in the demonstrated Azure slice. Keep the latest order version, reject invalid quantities, retain customers without accepted orders, and show rerun and recovery. Then diagnose a controlled row-count mismatch and defend your actual project decisions in an interview. Submit code, executed evidence and all assistance used.",
+    "learning_objective": "Demonstrate independently transferable pipeline building, troubleshooting and technical explanation.",
+    "inputs": {
+      "columns": [
+        "order_id",
+        "customer_id",
+        "quantity",
+        "unit_cents",
+        "version"
+      ],
+      "orders": [
+        [
+          "O1",
+          "C1",
+          2,
+          500,
+          1
+        ],
+        [
+          "O1",
+          "C1",
+          3,
+          500,
+          2
+        ],
+        [
+          "O2",
+          "C2",
+          -1,
+          100,
+          1
+        ],
+        [
+          "O3",
+          "C1",
+          1,
+          250,
+          1
+        ]
+      ],
+      "customers": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "controlled_incident": "A training output count differs from the accepted current-order count; create and label the smallest safe reproducer."
+    },
+    "expected_output": {
+      "current_accepted_orders": [
+        "O1",
+        "O3"
+      ],
+      "rejected": [
+        "O2"
+      ],
+      "customer_cents": [
+        [
+          "C1",
+          1750
+        ],
+        [
+          "C2",
+          0
+        ],
+        [
+          "C3",
+          0
+        ]
+      ],
+      "business_rows_after_rerun": 2,
+      "incident_evidence": [
+        "expected_vs_actual",
+        "isolated_cause",
+        "verified_fix",
+        "regression_check"
+      ]
+    },
+    "acceptance_criteria": [
+      "Executed output matches the changed partner contract and survives a repeat run.",
+      "Independent implementation and reasoning are verified, not inferred from self-report.",
+      "Explain source keys, failure boundaries, data quality checks and one measured limitation.",
+      "Investigate the incident with evidence and distinguish educational project work from prior employment."
+    ],
+    "constraints": [
+      "Use an isolated authorized target and bounded data.",
+      "No worked answer, AI-generated implementation, hints or source-note consultation for independent credit; record any help honestly.",
+      "Report remaining gaps by assessed dimension; completion never guarantees an interview or job."
+    ],
+    "prerequisites": [
+      "RLP-JOB-AZURE"
+    ],
+    "independent_prerequisites": [
+      "RLP-JOB-AZURE"
+    ],
+    "skill_prerequisites": [],
+    "estimated_minutes": 180,
+    "engineering_relevance": "Data engineers must demonstrate correct ingestion, reconciliation, rerun safety and explainable operational behavior. Passing this assessment is evidence for this slice, not employment or senior-level mastery.",
+    "progressive_hints": [
+      "State the output contract and trace one order through its versions.",
+      "Compare acceptance, current-order and customer-report counts as separate quantities.",
+      "Use the smallest reproducer to establish the incident cause, then repeat the same checks after the correction."
+    ],
+    "challenge_kind": "assessment",
+    "assessment_target_date": "2027-01-20",
+    "official_docs": [
+      "https://www.postgresql.org/docs/current/tutorial.html",
+      "https://learn.microsoft.com/en-us/azure/data-factory/copy-activity-overview",
+      "https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "published_version": "2026.10.26.2"
+  }
+]

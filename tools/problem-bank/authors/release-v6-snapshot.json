@@ -1,0 +1,8 @@
+{
+  "version": "2026.10.27.1",
+  "state": "frozen_parent_prepublication_qa",
+  "file_sha256": {
+    "databricks-batch4.json": "4ab67f2a568288bd29008fbd44c942e491ac808588d76587a5e117cf0dbe4d78",
+    "engineering-promotions5.json": "0bc0c4f5490aa7d3f77b2fa3868f5def19d455df7758558e9eb058b7d3b166dd"
+  }
+}

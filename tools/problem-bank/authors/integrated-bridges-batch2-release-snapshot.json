@@ -1,0 +1,12 @@
+{
+  "version": "2026.10.27.4",
+  "status": "frozen_after_in_memory_qa_unregistered",
+  "file_sha256": {
+    "integrated-bridges-batch2.json": "48f6814bde33f9273041edd2dc40774c92aebff5875f4116ac6173fdcb197b36"
+  },
+  "author_sha256": "fad0e624a03ef005b85fe609636a5d72d18f7f956b534f4d446343bcd060093a",
+  "qa_sha256": "875f3d2856760612593b6059855c7ae2de2cf2b3d58054bd450a6d096624e004",
+  "authored_count": 159,
+  "published_additions": 0,
+  "id_span": ["RLP-JOBBR-081", "RLP-JOBBR-239"]
+}

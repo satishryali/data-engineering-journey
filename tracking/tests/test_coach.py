@@ -64,6 +64,15 @@ class RecordTests(unittest.TestCase):
         fields, _ = coach.read_csv(self.root, 'tracking/revision-history.csv')
         (self.root / 'tracking/revision-history.csv').write_text(coach.csv_text(fields, []), encoding='utf-8')
         registry = coach.note_revision.sync(self.root, coach.read_json(self.root, 'tracking/topic-map.json'), '2026-10-17')
+        # The checked-in learner registry may contain real, unresolved source
+        # changes.  Test fixtures need a clean inventory baseline so each test
+        # exercises only the edit it makes, without mutating learner records.
+        for topic in registry['topics']:
+            topic.pop('needs_reassessment', None)
+            topic.pop('content_changes', None)
+        for item in registry['note_inventory']:
+            for section in item.get('sections', []):
+                section.pop('changed', None)
         (self.root / 'tracking/topic-map.json').write_text(coach.dump(registry), encoding='utf-8')
         self.batch = {'checkpoint_id': 'CP-test-001', 'date_ist': '2026-10-20',
                       'kind': 'learning', 'summary': 'Fixture outcome, not real study.',

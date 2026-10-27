@@ -1,0 +1,175 @@
+{
+  "status": "proposal_only_not_applied",
+  "registered_batch": "cloud-explicit-003",
+  "items": [
+    {
+      "id": "RLP-PYSPARK-144",
+      "field": "expected_output.observed_behavior",
+      "old": "Key-frequencyandfile-sizeevidenceseparatescauses; proposedstrategytestsonebottleneck; totalsstable.",
+      "revised": "Key-frequency and file-size evidence separates the causes. The proposed strategy tests one bottleneck, and business totals remain unchanged.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-PYSPARK-145",
+      "field": "expected_output.observed_behavior",
+      "old": "Correctoutputsunchanged; observedcache/storage/stagemetricsrecorded; no guaranteedreuseclaimwithout evidence; cache released.",
+      "revised": "Correct outputs remain unchanged. Record observed cache,storage and stage metrics; claim reuse only when the evidence supports it. Release the cache afterwards.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-PYSPARK-146",
+      "field": "expected_output.observed_behavior",
+      "old": "OnlyeligibleclosedoldR1candidate; R2protected,R3new; noactualdeletion.",
+      "revised": "Only closed,old R1 is an eligible candidate. R2 is protected and R3 is too new. Do not delete anything.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-PYSPARK-147",
+      "field": "expected_output.observed_behavior",
+      "old": "Alloweddiagnosticspresent; fakeemail/account valuesabsentfromsuccessandfailureexports; schemafieldpolicyexplicit.",
+      "revised": "Allowed diagnostics are present. Fake email and account values are absent from both success and failure exports. The schema-field policy is explicit.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-PYSPARK-148",
+      "field": "expected_output.observed_behavior",
+      "old": "Reportsretainbothsourceandcodereferences; changedresultnotmisattributedtonewsource; promotionrequireschecks.",
+      "revised": "Reports retain both source and code references. The changed result is not misattributed to a new source. Promotion requires the acceptance checks.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-PYSPARK-149",
+      "field": "expected_output.observed_behavior",
+      "old": "Generatedcount,distinctkeycount,hotkeyfrequencyandtotalsverified; benchmarkclaimsconfinedtofixtureandresources.",
+      "revised": "Verify generated row count,distinct-key count,hot-key frequency and totals. Limit benchmark claims to the tested fixture and resources.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-PYSPARK-150",
+      "field": "expected_output.observed_behavior",
+      "old": "Consumptionbefore reset32 plusafterreset5 underprovidedresetcontract; duplicateonce; invalidunflaggeddecreasequarantined; replay/latecorrectionevidence.",
+      "revised": "Consumption is32 before the reset plus5 after the reset under the supplied reset contract. Count a duplicate once. Quarantine an invalid decrease without a reset flag. Preserve replay and late-correction evidence.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-PYSPARK-151",
+      "field": "task",
+      "old": "Match purchaseorders,receiptsandinvoiceswithone-to-manyquantitiesandapprovedtolerances.",
+      "revised": "Match purchase orders,receipts and invoices with one-to-many quantities and the approved tolerances.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADF-141",
+      "field": "expected_output.observed_behavior",
+      "old": "Reportattributesbottleneckonlywithevidence; tuningchangesonefactorandpreservesrows/totals.",
+      "revised": "Attribute the bottleneck only when evidence supports it. Change one tuning factor and preserve row counts and totals.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADF-142",
+      "field": "expected_output.observed_behavior",
+      "old": "Bothbusinessoutputsreconcile; stagingidentity/lifecycleandavailablethroughputrecorded; connectorcompatibilitychecked.",
+      "revised": "Both business outputs reconcile. Record staging identity,lifecycle and available throughput metrics. Check connector compatibility.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADF-144",
+      "field": "expected_output.observed_behavior",
+      "old": "CandidateinventorycontainsB1-ownedartifacts only; outsideprefixrejected; no broad deleteexecutionrequired.",
+      "revised": "The candidate inventory contains only artifacts owned by B1. Reject paths outside its prefix. Broad deletion execution is not required.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADF-145",
+      "field": "expected_output.observed_behavior",
+      "old": "Timelineconnectsidentitiesandactualstatus withoutsecrets; missingexternaldiagnostics labeledunavailable.",
+      "revised": "The timeline connects identities and actual statuses without secrets. Label missing external diagnostics unavailable.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADF-146",
+      "field": "expected_output.observed_behavior",
+      "old": "Eachcasehasexpectedandobservedoutcome; recoveryendswithcorrectunique keysandunchangedacceptedhistory; unexecutedcasesremainunverified.",
+      "revised": "Each case has an expected and observed outcome. Recovery ends with correct unique keys and unchanged accepted history. Unexecuted cases remain unverified.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADF-147",
+      "field": "expected_output.observed_behavior",
+      "old": "Acceptednetadjustment-5; R2unknowns alerejected; duplicateonce; missingfile/failedsink/retrystatesaudited.",
+      "revised": "The accepted net adjustment is-5. Reject R2 because its original sale is unknown. Count the duplicate once. Audit missing-file,failed-sink and retry states.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADF-148",
+      "field": "expected_output.observed_behavior",
+      "old": "Bothlogicalkeysremain distinct; Aaccepted/cursorpreserved whileBblocked; retryBdoesnotreadorwriteA; totals5and7.",
+      "revised": "Both logical keys remain distinct. Preserve A acceptance and cursor while B is blocked. Retrying B does not read or write A. Totals are5 for A and7 for B.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-142",
+      "field": "expected_output.observed_behavior",
+      "old": "Routingheaderidentifiedwithinprobe; finalbatchnotaccepteduntilfullvalidationcatchesbadlastrow.",
+      "revised": "Identify the routing header within the bounded probe. Do not accept the batch until full validation detects the bad last row.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-143",
+      "field": "expected_output.observed_behavior",
+      "old": "Oversizedplanrejectedwithcountdiagnosticbeforelaunch; validplanbounded; no thousands-of-requestexecutionrequired.",
+      "revised": "Reject the oversized plan with a count diagnostic before launch. Keep the valid plan bounded. Thousands of actual service requests are not required.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-144",
+      "field": "expected_output.observed_behavior",
+      "old": "Runbookmarks eachsupported/unsupported/untestedwithsourceandactualprobeavailability; no blanketBlobfeatureassumption.",
+      "revised": "The runbook labels every operation supported,unsupported or untested,with its source and actual probe availability. Do not assume all Blob features work with HNS.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-145",
+      "field": "expected_output.observed_behavior",
+      "old": "Storageverifiedstatepreserved; consumer_readyfalseuntilallowedreadtested; no broadpublicaccessworkaround.",
+      "revised": "Preserve the storage-verified state. Keep consumer_ready false until an allowed consumer read is tested. Do not use broad public access as a workaround.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-146",
+      "field": "expected_output.observed_behavior",
+      "old": "Before/after/rollbackentriesandeffectiveoperationsrecorded; G2unchanged; no account-widegrant.",
+      "revised": "Record before,after and rollback entries and effective operations. G2 remains unchanged. Do not grant account-wide access.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-147",
+      "field": "expected_output.observed_behavior",
+      "old": "Claimunverified/blocked; oldH1notinvented; reportexactmissingartifactandpossibleauthorizednextcheck.",
+      "revised": "The claim remains unverified or blocked. Do not invent historical H1. Identify the exact missing artifact and the next possible authorized check.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-148",
+      "field": "task",
+      "old": "Build a bounded landing/handoff forlabresultswheremeasurementunit,methodversionandcalibrationaremandatorycontractfields.",
+      "revised": "Build a bounded landing and handoff for lab results where measurement unit,method version and calibration are mandatory contract fields.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-148",
+      "field": "expected_output.observed_behavior",
+      "old": "Rawartifactsandunitsretained; R3quarantined; onlyverifiedcompletebatchespublish; method/calibrationinmanifest; restart/permissiontests.",
+      "revised": "Retain raw artifacts and units. Quarantine R3. Publish only verified complete batches. Include method and calibration in the manifest,and demonstrate restart and permission checks.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    },
+    {
+      "id": "RLP-ADLS-149",
+      "field": "expected_output.observed_behavior",
+      "old": "Incompleteattemptblocked; recoveredallthreehashesmatch; consumerreadsverifiedmanifest; auditshowsattempts and sourceidentity.",
+      "revised": "Block the incomplete attempt. Verify that all three recovered hashes match. Read the verified manifest as the consumer. The audit records attempts and source identity.",
+      "scope": "Readability only; preserve IDs,fixture values,prerequisites and acceptance semantics. Mirror identical old prose in scenario/acceptance/followup fields when appropriate."
+    }
+  ],
+  "note": "Parent may apply during a versioned release after exact-old-value checks; this file does not modify published arrays."
+}

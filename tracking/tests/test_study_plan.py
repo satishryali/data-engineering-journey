@@ -43,8 +43,10 @@ class TargetTests(unittest.TestCase):
         self.assertEqual(self.hours('2026-12-28', '2027-01-03'), 55)
         self.assertEqual(self.hours('2027-01-18', '2027-01-22'), 35)
         self.assertEqual(self.hours('2026-10-22', '2027-01-22'), 729)
-        self.assertEqual(plan.summary(ROOT, '2027-01-22')['weekly_target_hours'], 35)
-        self.assertEqual(plan.summary(ROOT, '2027-01-24')['weekly_target_hours'], 35)
+        self.assertEqual(self.hours('2027-01-18', '2027-01-20'), 21)
+        self.assertEqual(self.hours('2026-10-22', '2027-01-20'), 715)
+        self.assertEqual(plan.summary(ROOT, '2027-01-22')['weekly_target_hours'], 21)
+        self.assertEqual(plan.summary(ROOT, '2027-01-24')['weekly_target_hours'], 21)
         self.assertEqual(plan.summary(ROOT, '2027-01-25')['weekly_target_hours'], 55)
         allocations = plan.activity_rows(ROOT)
         for row in allocations:

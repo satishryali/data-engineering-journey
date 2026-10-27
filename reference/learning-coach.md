@@ -106,7 +106,7 @@ scope when time is limited. Unassessed inventory is not an overdue backlog.
 
 ## Requests
 
-Follow [the Azure roadmap](../plan/learning-and-revision-plan.md) from 22 October 2026 to 22 January 2027: 7-hour weekdays, 10-hour weekends, 55-hour full weeks. Preserve older targets via tracking/study-targets.json. This supersedes the old one-Azure-concept weekly limit. Continue the learner's pending RDS-001 before advancing project dependencies; weeks are planning, never proficiency.
+Follow [the Azure roadmap](../plan/learning-and-revision-plan.md) from 22 October 2026 to the revised 20 January 2027 assessment: 7-hour weekdays, 10-hour weekends, 55-hour full weeks. Preserve older targets via tracking/study-targets.json. This supersedes the old one-Azure-concept weekly limit and January 22 deadline. Continue the learner's pending RDS-001 before advancing project dependencies; weeks are planning, never proficiency. RecallLab Tools uses published problem-first curricula with separate verified completion and independent counters; infrastructure work adds no learner evidence.
 
 Today's schedule includes daily/weekly target and confirmed progress, actual versus planned primary technology, pending RRDAP task, one independent practice assignment, bounded due reviews, an interview exercise and carried work. Use `python tracking/study_plan.py --date YYYY-MM-DD` or coach status for current target calculations; no timer starts.
 

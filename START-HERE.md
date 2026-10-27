@@ -1,5 +1,13 @@
 # Start here - Python notes saved, 25 October 2026 (IST)
 
+## RecallLab bank expansion, 27 October 2026
+
+Infrastructure status: **4,213 published problems** meet all 4,200 allocated targets; 243 drafts remain excluded. [Actual counts and verification limits](apps/recalllab/BANK-EXPANSION.md) are recorded separately. This adds no learner completion, score, review date or study time; the exact pending Python and RDS-001 tasks below remain unchanged.
+
+## Current planning revision, 26 October 2026
+
+Job-readiness assessment is now **20 January 2027**, superseding the January 22 dates in older entries below. Foundation, PySpark and Azure demonstrations target November 15, December 6 and December 27. [The existing roadmap](plan/learning-and-revision-plan.md) remains authoritative. RecallLab Tools implementation creates no learner evidence, study time or RDS-001 acceptance. Continue the exact pending Python/RRDAP work below; implementation state is in [the app handoff](apps/recalllab/HANDOFF.md).
+
 <!-- CP-20261026-dataclass-special-method-notes -->
 Dataclass and special-method reference notes saved, 26 October 2026. Added Notes/Python/Concepts/dataclasses.md and special-methods.md with one standalone example per method; updated objects-and-printing.md, Python index and separate recall prompts. Inspected practice/Dataclass/dataclass.ipynb and its saved outputs (string order_id, equality, reversed __lt__, negative __len__, item access); assistance/independent understanding unknown. Attached snapshots were inaccessible and unchanged. No scored review, timer change or task acceptance. Two new concepts remain unassessed with adjustable initial slots, not retention due dates. Examples were not rerun during the original note save. Publishing verification on 26 October refreshed the note inventory and passed coach validation; no learner assessment was added. Next Python step: practise one method at a time, starting with __repr__ and __str__, and explain actual output/help used. Earlier returned-summary verification remains pending; RDS-001 remains the pending project task.
 

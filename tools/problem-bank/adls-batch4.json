@@ -1,0 +1,2141 @@
+[
+  {
+    "id": "RLP-ADLS-150",
+    "tool_id": "adls",
+    "title": "Reject a manifest with a circular dependency",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADLS-123"
+    ],
+    "scenario": "A published batch can reference a shared reference manifest. Detect cycles before fetching data recursively.",
+    "task": "A published batch can reference a shared reference manifest. Detect cycles before fetching data recursively.",
+    "learning_objective": "Reject a manifest with a circular dependency",
+    "inputs": {
+      "fixture": "ManifestB1 references R1; R1 references R2; invalidR2 references B1; bounded local manifest fixtures.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Cycle B1->R1->R2->B1 reported; no infinite traversal or accepted complete batch."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Cycle B1->R1->R2->B1 reported; no infinite traversal or accepted complete batch.",
+      "Demonstrate the additional boundary: Valid R2 with no dependency yields each member exactly once with source-manifest lineage.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Reject a manifest with a circular dependency protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Reject a manifest with a circular dependency. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Write the exact expected paths, record counts and byte/content checks from the fixture before running the operation.",
+      "Track manifest identity in the active traversal path and separately track already verified shared dependencies."
+    ],
+    "sequence": 150,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "ManifestB1 references R1; R1 references R2; invalidR2 references B1; bounded local manifest fixtures.",
+        "changed_input_check": "Valid R2 with no dependency yields each member exactly once with source-manifest lineage."
+      },
+      "expected_output": {
+        "contract": "Valid R2 with no dependency yields each member exactly once with source-manifest lineage."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-151",
+    "tool_id": "adls",
+    "title": "Resolve a missing referenced contract explicitly",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADLS-150"
+    ],
+    "scenario": "A batch's file hashes are correct but its declared schema-contract artifact is absent. Keep integrity and semantic readiness distinct.",
+    "task": "A batch's file hashes are correct but its declared schema-contract artifact is absent. Keep integrity and semantic readiness distinct.",
+    "learning_objective": "Resolve a missing referenced contract explicitly",
+    "inputs": {
+      "fixture": "B1 filesa,b verified; declared contractv2 path missing; approved consumer requires that exact version.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Data integrity verified but semantic acceptance blocked missing_contract; no fallback to nearby v1."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Data integrity verified but semantic acceptance blocked missing_contract; no fallback to nearby v1.",
+      "Demonstrate the additional boundary: When v2 appears with the declared hash, verification can continue without rewriting raw files.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Resolve a missing referenced contract explicitly protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Resolve a missing referenced contract explicitly. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "A complete delivery includes required interpretation artifacts as well as data files."
+    ],
+    "sequence": 151,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "B1 filesa,b verified; declared contractv2 path missing; approved consumer requires that exact version.",
+        "changed_input_check": "When v2 appears with the declared hash, verification can continue without rewriting raw files."
+      },
+      "expected_output": {
+        "contract": "When v2 appears with the declared hash, verification can continue without rewriting raw files."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-152",
+    "tool_id": "adls",
+    "title": "Bound decompression output before parsing",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADLS-151"
+    ],
+    "scenario": "An intake job accepts compressed uploads only when decompressed data stays within an explicit training budget.",
+    "task": "An intake job accepts compressed uploads only when decompressed data stays within an explicit training budget.",
+    "learning_objective": "Bound decompression output before parsing",
+    "inputs": {
+      "fixture": "Small deterministicgzip expands to1024bytes; second fixture expands to4096; budget2048bytes; isolated local checks.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "First proceeds; second stops with expanded_size_limit before full downstream materialization; raw bytes retained."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "First proceeds; second stops with expanded_size_limit before full downstream materialization; raw bytes retained.",
+      "Demonstrate the additional boundary: A truncated archive reports decompression_error rather than expanded_size_limit.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Bound decompression output before parsing protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For bound decompression output before parsing, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: First proceeds; second stops with expanded_size_limit before full downstream materialization; raw bytes retained.",
+      "Apply the output-byte budget while decompressing,not only after loading all expanded bytes into memory."
+    ],
+    "sequence": 152,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Small deterministicgzip expands to1024bytes; second fixture expands to4096; budget2048bytes; isolated local checks.",
+        "changed_input_check": "A truncated archive reports decompression_error rather than expanded_size_limit."
+      },
+      "expected_output": {
+        "contract": "A truncated archive reports decompression_error rather than expanded_size_limit."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-153",
+    "tool_id": "adls",
+    "title": "Keep newline characters out of operational path logs",
+    "level": 3,
+    "prerequisites": [
+      "RLP-ADLS-152"
+    ],
+    "scenario": "A synthetic filename contains a newline. Preserve its exact identity in storage metadata while making logs unambiguous.",
+    "task": "A synthetic filename contains a newline. Preserve its exact identity in storage metadata while making logs unambiguous.",
+    "learning_objective": "Keep newline characters out of operational path logs",
+    "inputs": {
+      "fixture": "Path text'landing/a'+newline+'b.csv'; harmless local/redacted identity fixture; no shell execution.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Structured log encodes newline safely; one event remains one event; canonical source identity is recoverable."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Structured log encodes newline safely; one event remains one event; canonical source identity is recoverable.",
+      "Demonstrate the additional boundary: A normal path with spaces remains readable and is not falsely treated as multiple objects.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Keep newline characters out of operational path logs protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For keep newline characters out of operational path logs, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Structured log encodes newline safely; one event remains one event; canonical source identity is recoverable.",
+      "Use structured serialization for untrusted path text instead of interpolating it into plain log lines."
+    ],
+    "sequence": 153,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Path text'landing/a'+newline+'b.csv'; harmless local/redacted identity fixture; no shell execution.",
+        "changed_input_check": "A normal path with spaces remains readable and is not falsely treated as multiple objects."
+      },
+      "expected_output": {
+        "contract": "A normal path with spaces remains readable and is not falsely treated as multiple objects."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-154",
+    "tool_id": "adls",
+    "title": "Explain owner and named-user ACL precedence",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADLS-127"
+    ],
+    "scenario": "An authorized test identity is both the file owner and a named ACL entry. Diagnose access using the documented precedence.",
+    "task": "An authorized test identity is both the file owner and a named ACL entry. Diagnose access using the documented precedence.",
+    "learning_objective": "Explain owner and named-user ACL precedence",
+    "inputs": {
+      "fixture": "Disposable file owner U1read-only; namedU1read/write; no bypassing broad role; authorized test setup.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Actual owner permissions govern the ACL outcome; evidence names both entries and effective identity; no claim named entry always wins."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Actual owner permissions govern the ACL outcome; evidence names both entries and effective identity; no claim named entry always wins.",
+      "Demonstrate the additional boundary: Testing a different named non-owner identity applies the appropriate mask rules.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Explain owner and named-user ACL precedence protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Explain owner and named-user ACL precedence. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "Determine which identity category is evaluated first before interpreting its effective permissions."
+    ],
+    "sequence": 154,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Disposable file owner U1read-only; namedU1read/write; no bypassing broad role; authorized test setup.",
+        "changed_input_check": "Testing a different named non-owner identity applies the appropriate mask rules."
+      },
+      "expected_output": {
+        "contract": "Testing a different named non-owner identity applies the appropriate mask rules."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-155",
+    "tool_id": "adls",
+    "title": "Test a shared-directory delete restriction",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADLS-154"
+    ],
+    "scenario": "An advanced training handoff requires one writer not to rename/delete another writer's child while owners retain their own operations.",
+    "task": "An advanced training handoff requires one writer not to rename/delete another writer's child while owners retain their own operations.",
+    "learning_objective": "Test a shared-directory delete restriction",
+    "inputs": {
+      "fixture": "Disposable directory with documented sticky-bit support; childA ownedU1,childB ownedU2; authorized bounded identities.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Observed rename/delete rights match documented sticky-directory policy; source sentinels protected; no production administrative changes."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Observed rename/delete rights match documented sticky-directory policy; source sentinels protected; no production administrative changes.",
+      "Demonstrate the additional boundary: Unavailable identity/setup is blocked,not proven by a written ACL alone.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Test a shared-directory delete restriction protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For test a shared-directory delete restriction, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Observed rename/delete rights match documented sticky-directory policy; source sentinels protected; no production administrative changes.",
+      "The sticky bit is a specialized directory restriction; verify support and ownership under the exact API."
+    ],
+    "sequence": 155,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Disposable directory with documented sticky-bit support; childA ownedU1,childB ownedU2; authorized bounded identities.",
+        "changed_input_check": "Unavailable identity/setup is blocked,not proven by a written ACL alone."
+      },
+      "expected_output": {
+        "contract": "Unavailable identity/setup is blocked,not proven by a written ACL alone."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-156",
+    "tool_id": "adls",
+    "title": "Use the service principal's actual object identity",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADLS-155"
+    ],
+    "scenario": "An ACL setup uses an application registration ID where the tenant's service-principal object ID is required. Diagnose the mismatch.",
+    "task": "An ACL setup uses an application registration ID where the tenant's service-principal object ID is required. Diagnose the mismatch.",
+    "learning_objective": "Use the service principal's actual object identity",
+    "inputs": {
+      "fixture": "Authorized training principal metadata or redacted fixtures containing applicationID,appObjectID,servicePrincipalObjectID.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Correct tenant service-principal identity selected; approved file-read test uses that principal; wrong identity not claimed equivalent."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Correct tenant service-principal identity selected; approved file-read test uses that principal; wrong identity not claimed equivalent.",
+      "Demonstrate the additional boundary: A principal in another tenant is not assumed authorized by a same-looking application name.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Use the service principal's actual object identity protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Use the service principal's actual object identity. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "App IDs,registration object IDs and tenant service-principal object IDs are distinct identifiers."
+    ],
+    "sequence": 156,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Authorized training principal metadata or redacted fixtures containing applicationID,appObjectID,servicePrincipalObjectID.",
+        "changed_input_check": "A principal in another tenant is not assumed authorized by a same-looking application name."
+      },
+      "expected_output": {
+        "contract": "A principal in another tenant is not assumed authorized by a same-looking application name."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-157",
+    "tool_id": "adls",
+    "title": "Audit orphaned ACL entries without deleting them blindly",
+    "level": 4,
+    "prerequisites": [
+      "RLP-ADLS-156"
+    ],
+    "scenario": "A directory ACL contains an unresolved GUID. Produce a bounded review that separates stale identity evidence from active permissions.",
+    "task": "A directory ACL contains an unresolved GUID. Produce a bounded review that separates stale identity evidence from active permissions.",
+    "learning_objective": "Audit orphaned ACL entries without deleting them blindly",
+    "inputs": {
+      "fixture": "Disposable ACL fixture with known activegroupG1 and unresolvedGUIDG2; authorized identity lookup evidence.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "G1 retained; G2 flagged unresolved with lookup result and review action; no automatic broad ACL deletion."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "G1 retained; G2 flagged unresolved with lookup result and review action; no automatic broad ACL deletion.",
+      "Demonstrate the additional boundary: Lookup permission failure is not proof the principal no longer exists.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Audit orphaned ACL entries without deleting them blindly protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Audit orphaned ACL entries without deleting them blindly. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "An unresolved display name needs identity evidence before a destructive permission change."
+    ],
+    "sequence": 157,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Disposable ACL fixture with known activegroupG1 and unresolvedGUIDG2; authorized identity lookup evidence.",
+        "changed_input_check": "Lookup permission failure is not proof the principal no longer exists."
+      },
+      "expected_output": {
+        "contract": "Lookup permission failure is not proof the principal no longer exists."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-158",
+    "tool_id": "adls",
+    "title": "Build a shared-reference delivery graph",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADLS-131"
+    ],
+    "scenario": "Two daily manifests share one verified customer reference. Resolve dependencies without double-counting reference rows as sales.",
+    "task": "Two daily manifests share one verified customer reference. Resolve dependencies without double-counting reference rows as sales.",
+    "learning_objective": "Build a shared-reference delivery graph",
+    "inputs": {
+      "fixture": "B1 dataA5 references R1; B2 dataB7 references R1; R1 customerC1/west.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both batches verify R1; sales total12; reference artifact checked once per accepted immutable identity where justified; lineage names both relationships."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both batches verify R1; sales total12; reference artifact checked once per accepted immutable identity where justified; lineage names both relationships.",
+      "Demonstrate the additional boundary: Different R1 hashes under the same declared immutable ID create a conflict.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Build a shared-reference delivery graph protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Build a shared-reference delivery graph. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Write the exact expected paths, record counts and byte/content checks from the fixture before running the operation.",
+      "A dependency graph contains multiple artifact roles; not every verified file contributes additive business rows."
+    ],
+    "sequence": 158,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "B1 dataA5 references R1; B2 dataB7 references R1; R1 customerC1/west.",
+        "changed_input_check": "Different R1 hashes under the same declared immutable ID create a conflict."
+      },
+      "expected_output": {
+        "contract": "Different R1 hashes under the same declared immutable ID create a conflict."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-159",
+    "tool_id": "adls",
+    "title": "Connect an approved Spark reader to the lake contract",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADLS-158"
+    ],
+    "scenario": "Read one authorized ADLS training file from an existing compatible Spark environment using approved identity configuration.",
+    "task": "Read one authorized ADLS training file from an existing compatible Spark environment using approved identity configuration.",
+    "learning_objective": "Connect an approved Spark reader to the lake contract",
+    "inputs": {
+      "fixture": "Governed/approved URI to sales.csv withA5,B7; no embedded key or token; existing compute.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Actual Spark read count2,total12; full source identity and principal/runtime evidence; no credential value in notebook."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Actual Spark read count2,total12; full source identity and principal/runtime evidence; no credential value in notebook.",
+      "Demonstrate the additional boundary: Storage permission denial is recorded as blocked execution,not replaced by a local file while claiming Azure success.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Connect an approved Spark reader to the lake contract protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Connect an approved Spark reader to the lake contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "The lake permission and the compute identity must meet at the actual reader boundary."
+    ],
+    "sequence": 159,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Governed/approved URI to sales.csv withA5,B7; no embedded key or token; existing compute.",
+        "changed_input_check": "Storage permission denial is recorded as blocked execution,not replaced by a local file while claiming Azure success."
+      },
+      "expected_output": {
+        "contract": "Storage permission denial is recorded as blocked execution,not replaced by a local file while claiming Azure success."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-160",
+    "tool_id": "adls",
+    "title": "Connect an approved PostgreSQL staging consumer through a verified download",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADLS-159"
+    ],
+    "scenario": "A local database loader should receive only a fully verified downloaded batch,not partially transferred rows.",
+    "task": "A local database loader should receive only a fully verified downloaded batch,not partially transferred rows.",
+    "learning_objective": "Connect an approved PostgreSQL staging consumer through a verified download",
+    "inputs": {
+      "fixture": "ManifestA5,B7; approved storage source; disposable local staging table; separate rejected partial-download fixture.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Verified batch loads exactlyA,B,total12; partial download never enters accepted database state; transfer/load audits link batch identity."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Verified batch loads exactlyA,B,total12; partial download never enters accepted database state; transfer/load audits link batch identity.",
+      "Demonstrate the additional boundary: Rerunning the same accepted batch follows an explicit no-duplicate staging policy.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Connect an approved PostgreSQL staging consumer through a verified download protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For connect an approved postgresql staging consumer through a verified download, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Verified batch loads exactlyA,B,total12; partial download never enters accepted database state; transfer/load audits link batch identity.",
+      "Keep storage-transfer completion and database-load acceptance as separate connected gates."
+    ],
+    "sequence": 160,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "ManifestA5,B7; approved storage source; disposable local staging table; separate rejected partial-download fixture.",
+        "changed_input_check": "Rerunning the same accepted batch follows an explicit no-duplicate staging policy."
+      },
+      "expected_output": {
+        "contract": "Rerunning the same accepted batch follows an explicit no-duplicate staging policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-161",
+    "tool_id": "adls",
+    "title": "Verify a signed-contract reference without inventing cryptographic trust",
+    "level": 5,
+    "prerequisites": [
+      "RLP-ADLS-160"
+    ],
+    "scenario": "A producer supplies a manifest signature reference. Distinguish actual signature verification from merely hashing bytes.",
+    "task": "A producer supplies a manifest signature reference. Distinguish actual signature verification from merely hashing bytes.",
+    "learning_objective": "Verify a signed-contract reference without inventing cryptographic trust",
+    "inputs": {
+      "fixture": "Synthetic manifest,public test key and documented local signature tool/library already available,or explicit blocked setup; no real credentials.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Valid test signature verified by the stated method; tampered manifest fails; report names trust/key provenance limits."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Valid test signature verified by the stated method; tampered manifest fails; report names trust/key provenance limits.",
+      "Demonstrate the additional boundary: A matching SHA-256 alone is not described as proof of publisher identity.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Verify a signed-contract reference without inventing cryptographic trust protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Verify a signed-contract reference without inventing cryptographic trust. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Integrity hashing and authenticating a publisher are different claims; use a genuine test verification operation."
+    ],
+    "sequence": 161,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Synthetic manifest,public test key and documented local signature tool/library already available,or explicit blocked setup; no real credentials.",
+        "changed_input_check": "A matching SHA-256 alone is not described as proof of publisher identity."
+      },
+      "expected_output": {
+        "contract": "A matching SHA-256 alone is not described as proof of publisher identity."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-162",
+    "tool_id": "adls",
+    "title": "Resume a paginated listing after a controlled transport failure",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADLS-135"
+    ],
+    "scenario": "A bounded inventory fails while retrieving its second page. Preserve scope and cursor without repeating accepted output rows.",
+    "task": "A bounded inventory fails while retrieving its second page. Preserve scope and cursor without repeating accepted output rows.",
+    "learning_objective": "Resume a paginated listing after a controlled transport failure",
+    "inputs": {
+      "fixture": "Mock pages a,b then c,d; first page2request503; stable continuation tokens; maxretries2.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Final inventorya,b,c,d once; attempts recorded; page cursor advances only after page acceptance."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Final inventorya,b,c,d once; attempts recorded; page cursor advances only after page acceptance.",
+      "Demonstrate the additional boundary: A permanently failing page leaves coveragepartial and no complete manifest.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Resume a paginated listing after a controlled transport failure protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Resume a paginated listing after a controlled transport failure. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Draw the point at which data becomes accepted. Inject the supplied failure on one side of that boundary and inspect the durable state.",
+      "Persist page acceptance and continuation together; do not advance beyond unseen members."
+    ],
+    "sequence": 162,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Mock pages a,b then c,d; first page2request503; stable continuation tokens; maxretries2.",
+        "changed_input_check": "A permanently failing page leaves coveragepartial and no complete manifest."
+      },
+      "expected_output": {
+        "contract": "A permanently failing page leaves coveragepartial and no complete manifest."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-163",
+    "tool_id": "adls",
+    "title": "Detect a repeated continuation token",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADLS-162"
+    ],
+    "scenario": "A buggy provider/mock returns the same nonterminal continuation token indefinitely. Stop discovery safely.",
+    "task": "A buggy provider/mock returns the same nonterminal continuation token indefinitely. Stop discovery safely.",
+    "learning_objective": "Detect a repeated continuation token",
+    "inputs": {
+      "fixture": "Page1a,nextT1; page2b,nextT1 again; maxpages5.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Cycle detected within bound; inventorypartial; no accepted complete batch; a,b identities retained once."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Cycle detected within bound; inventorypartial; no accepted complete batch; a,b identities retained once.",
+      "Demonstrate the additional boundary: A terminal empty next token completes a legitimate two-page listing.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Detect a repeated continuation token protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For detect a repeated continuation token, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Cycle detected within bound; inventorypartial; no accepted complete batch; a,b identities retained once.",
+      "Continuation tokens are opaque but their repeated use can still be detected as a traversal cycle."
+    ],
+    "sequence": 163,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Page1a,nextT1; page2b,nextT1 again; maxpages5.",
+        "changed_input_check": "A terminal empty next token completes a legitimate two-page listing."
+      },
+      "expected_output": {
+        "contract": "A terminal empty next token completes a legitimate two-page listing."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-164",
+    "tool_id": "adls",
+    "title": "Handle a local disk limit during a verified download",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADLS-163"
+    ],
+    "scenario": "A training mirror runs out of its declared local output budget before transfer completion.",
+    "task": "A training mirror runs out of its declared local output budget before transfer completion.",
+    "learning_objective": "Handle a local disk limit during a verified download",
+    "inputs": {
+      "fixture": "Two fixed files600bytes each; localbudget1000bytes; isolated disposable root; no actual disk exhaustion required.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Preflight or streaming budget blocks full batch acceptance; partial artifacts separated; existing accepted data unchanged."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Preflight or streaming budget blocks full batch acceptance; partial artifacts separated; existing accepted data unchanged.",
+      "Demonstrate the additional boundary: Budget1200 permits verification and publication if all hashes match.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Handle a local disk limit during a verified download protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For handle a local disk limit during a verified download, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Preflight or streaming budget blocks full batch acceptance; partial artifacts separated; existing accepted data unchanged.",
+      "An application byte budget can test this boundary without filling the user's physical disk."
+    ],
+    "sequence": 164,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Two fixed files600bytes each; localbudget1000bytes; isolated disposable root; no actual disk exhaustion required.",
+        "changed_input_check": "Budget1200 permits verification and publication if all hashes match."
+      },
+      "expected_output": {
+        "contract": "Budget1200 permits verification and publication if all hashes match."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-165",
+    "tool_id": "adls",
+    "title": "Reconcile a rename's destination conflict after an uncertain retry",
+    "level": 6,
+    "prerequisites": [
+      "RLP-ADLS-164"
+    ],
+    "scenario": "A prior rename may have succeeded before the response was lost,so the retry now sees an occupied destination.",
+    "task": "A prior rename may have succeeded before the response was lost,so the retry now sees an occupied destination.",
+    "learning_objective": "Reconcile a rename's destination conflict after an uncertain retry",
+    "inputs": {
+      "fixture": "Sourceincoming/B1 absent; ready/B1 present withexpectedhash; secondfixturewronghash.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Matching destination is reconciled as already completed; conflicting destination is blocked; no blind overwrite or duplicate batch."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Matching destination is reconciled as already completed; conflicting destination is blocked; no blind overwrite or duplicate batch.",
+      "Demonstrate the additional boundary: Both source and destination absent is missing_state,not a successful retry.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Reconcile a rename's destination conflict after an uncertain retry protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Reconcile a rename's destination conflict after an uncertain retry. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Draw the point at which data becomes accepted. Inject the supplied failure on one side of that boundary and inspect the durable state.",
+      "Check durable source/destination contents before interpreting a conflict as ordinary failure."
+    ],
+    "sequence": 165,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Sourceincoming/B1 absent; ready/B1 present withexpectedhash; secondfixturewronghash.",
+        "changed_input_check": "Both source and destination absent is missing_state,not a successful retry."
+      },
+      "expected_output": {
+        "contract": "Both source and destination absent is missing_state,not a successful retry."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-166",
+    "tool_id": "adls",
+    "title": "Keep a tenant's manifest dependency inside approved scope",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADLS-139"
+    ],
+    "scenario": "A tenant manifest must not reference another tenant's raw prefix even when both are reachable by the service identity.",
+    "task": "A tenant manifest must not reference another tenant's raw prefix even when both are reachable by the service identity.",
+    "learning_objective": "Keep a tenant's manifest dependency inside approved scope",
+    "inputs": {
+      "fixture": "TenantA B1 references approvedA/reference.json; invalidfixture referencesTenantB/private.csv.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Cross-tenant reference rejected before file access; actual service privilege does not override application scope."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Cross-tenant reference rejected before file access; actual service privilege does not override application scope.",
+      "Demonstrate the additional boundary: A shared reference is allowed only through an explicit approved shared-artifact mapping.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Keep a tenant's manifest dependency inside approved scope protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Keep a tenant's manifest dependency inside approved scope. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "The manifest is untrusted control data; validate dependency scope before using powerful credentials to follow it."
+    ],
+    "sequence": 166,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "TenantA B1 references approvedA/reference.json; invalidfixture referencesTenantB/private.csv.",
+        "changed_input_check": "A shared reference is allowed only through an explicit approved shared-artifact mapping."
+      },
+      "expected_output": {
+        "contract": "A shared reference is allowed only through an explicit approved shared-artifact mapping."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-167",
+    "tool_id": "adls",
+    "title": "Classify metadata and data access independently for a handoff",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADLS-166"
+    ],
+    "scenario": "An operations principal can list metadata while the consumer can read a specific file but cannot enumerate the folder. Produce an accurate access report.",
+    "task": "An operations principal can list metadata while the consumer can read a specific file but cannot enumerate the folder. Produce an accurate access report.",
+    "learning_objective": "Classify metadata and data access independently for a handoff",
+    "inputs": {
+      "fixture": "Approved isolated identities and actual ACL/role evidence; one fileA5; no broad-grant changes.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Report each principal/operation outcome separately; a list failure does not automatically imply direct-read failure or vice versa."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Report each principal/operation outcome separately; a list failure does not automatically imply direct-read failure or vice versa.",
+      "Demonstrate the additional boundary: Any broader RBAC grant is included in the explanation of the observed result.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Classify metadata and data access independently for a handoff protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Classify metadata and data access independently for a handoff. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "Access is a matrix of principal and operation,not a single yes/no property of a path."
+    ],
+    "sequence": 167,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Approved isolated identities and actual ACL/role evidence; one fileA5; no broad-grant changes.",
+        "changed_input_check": "Any broader RBAC grant is included in the explanation of the observed result."
+      },
+      "expected_output": {
+        "contract": "Any broader RBAC grant is included in the explanation of the observed result."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-168",
+    "tool_id": "adls",
+    "title": "Validate a schema-contract dependency's backwards compatibility",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADLS-167"
+    ],
+    "scenario": "A landing batch references an approved schema version whose newly required field is absent from old data.",
+    "task": "A landing batch references an approved schema version whose newly required field is absent from old data.",
+    "learning_objective": "Validate a schema-contract dependency's backwards compatibility",
+    "inputs": {
+      "fixture": "v1id,amount; v2requirescurrency; oldA5 lacks currency; newB7/INR.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Old batch retains v1 interpretation; new v2 batch requires currency; no silent reinterpretation of old raw files."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Old batch retains v1 interpretation; new v2 batch requires currency; no silent reinterpretation of old raw files.",
+      "Demonstrate the additional boundary: A nullable optionalfieldaddition can pass a concrete compatibility fixture.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Validate a schema-contract dependency's backwards compatibility protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Validate a schema-contract dependency's backwards compatibility. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Versioned interpretation preserves historical meaning; the newest contract is not automatically valid for every retained file."
+    ],
+    "sequence": 168,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "v1id,amount; v2requirescurrency; oldA5 lacks currency; newB7/INR.",
+        "changed_input_check": "A nullable optionalfieldaddition can pass a concrete compatibility fixture."
+      },
+      "expected_output": {
+        "contract": "A nullable optionalfieldaddition can pass a concrete compatibility fixture."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-169",
+    "tool_id": "adls",
+    "title": "Keep evidence of a policy waiver bounded",
+    "level": 7,
+    "prerequisites": [
+      "RLP-ADLS-168"
+    ],
+    "scenario": "An authorized business exception permits one incomplete optional reference for one batch only. Record its scope without weakening future validation.",
+    "task": "An authorized business exception permits one incomplete optional reference for one batch only. Record its scope without weakening future validation.",
+    "learning_objective": "Keep evidence of a policy waiver bounded",
+    "inputs": {
+      "fixture": "B1 optionalpromotionmissing with approvedwaiverW1validforB1; B2sameconditionnowaiver.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "B1 accepted only under explicit limited rule with W1 evidence; B2 follows normal policy and remains blocked/warned as specified."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "B1 accepted only under explicit limited rule with W1 evidence; B2 follows normal policy and remains blocked/warned as specified.",
+      "Demonstrate the additional boundary: A waiver for another tenant/date cannot be reused by substring matching.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Keep evidence of a policy waiver bounded protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For keep evidence of a policy waiver bounded, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: B1 accepted only under explicit limited rule with W1 evidence; B2 follows normal policy and remains blocked/warned as specified.",
+      "An exception is data with identity,scope and expiry,not a permanent code branch that ignores the failure."
+    ],
+    "sequence": 169,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "B1 optionalpromotionmissing with approvedwaiverW1validforB1; B2sameconditionnowaiver.",
+        "changed_input_check": "A waiver for another tenant/date cannot be reused by substring matching."
+      },
+      "expected_output": {
+        "contract": "A waiver for another tenant/date cannot be reused by substring matching."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-170",
+    "tool_id": "adls",
+    "title": "Measure bounded manifest graph traversal",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADLS-143"
+    ],
+    "scenario": "Compare repeated dependency fetching with verified immutable-reference reuse on a fixed graph.",
+    "task": "Compare repeated dependency fetching with verified immutable-reference reuse on a fixed graph.",
+    "learning_objective": "Measure bounded manifest graph traversal",
+    "inputs": {
+      "fixture": "Ten batch manifests each reference sharedR1 and distinctdata; R1hashfixed; mockrequestcounter.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Same member/lineage results; request counts show actual reuse; mutable reference variants are revalidated."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Same member/lineage results; request counts show actual reuse; mutable reference variants are revalidated.",
+      "Demonstrate the additional boundary: A changed R1hash invalidates cached verification rather than serving stale interpretation.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Measure bounded manifest graph traversal protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Measure bounded manifest graph traversal. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "Reuse only a verified immutable artifact identity; request reduction must preserve dependency correctness."
+    ],
+    "sequence": 170,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Ten batch manifests each reference sharedR1 and distinctdata; R1hashfixed; mockrequestcounter.",
+        "changed_input_check": "A changed R1hash invalidates cached verification rather than serving stale interpretation."
+      },
+      "expected_output": {
+        "contract": "A changed R1hash invalidates cached verification rather than serving stale interpretation."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-171",
+    "tool_id": "adls",
+    "title": "Keep line parsing memory bounded",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADLS-170"
+    ],
+    "scenario": "A raw CSV validator must stop or quarantine a record exceeding its declared byte-length budget without reading an entire huge line into memory.",
+    "task": "A raw CSV validator must stop or quarantine a record exceeding its declared byte-length budget without reading an entire huge line into memory.",
+    "learning_objective": "Keep line parsing memory bounded",
+    "inputs": {
+      "fixture": "Synthetic stream with normal20byte row and oversized4096byte row; maxrecord1024bytes; isolated local test.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Normal row processed; oversized flagged record_too_large with bounded buffering evidence; rawsource retained."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Normal row processed; oversized flagged record_too_large with bounded buffering evidence; rawsource retained.",
+      "Demonstrate the additional boundary: A quoted multiline field must follow an explicit parser-aware length rule,not naïve newline splitting.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Keep line parsing memory bounded protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For keep line parsing memory bounded, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Normal row processed; oversized flagged record_too_large with bounded buffering evidence; rawsource retained.",
+      "Byte-stream limits and CSV record boundaries require a parser-aware contract."
+    ],
+    "sequence": 171,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Synthetic stream with normal20byte row and oversized4096byte row; maxrecord1024bytes; isolated local test.",
+        "changed_input_check": "A quoted multiline field must follow an explicit parser-aware length rule,not naïve newline splitting."
+      },
+      "expected_output": {
+        "contract": "A quoted multiline field must follow an explicit parser-aware length rule,not naïve newline splitting."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-172",
+    "tool_id": "adls",
+    "title": "Benchmark integrity checking with explicit byte counts",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADLS-171"
+    ],
+    "scenario": "Compare one-pass transfer-plus-hash with a separate post-download hash over the same deterministic fixture.",
+    "task": "Compare one-pass transfer-plus-hash with a separate post-download hash over the same deterministic fixture.",
+    "learning_objective": "Benchmark integrity checking with explicit byte counts",
+    "inputs": {
+      "fixture": "1MiBsynthetic file; two isolated methods; fixed SHA256expected.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both matchinghashes; bytesread,elapsed and availablememory recorded; no fabricated speedup; finalconsumerartifactsame."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both matchinghashes; bytesread,elapsed and availablememory recorded; no fabricated speedup; finalconsumerartifactsame.",
+      "Demonstrate the additional boundary: Injected byte corruption is detected by both methods.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Benchmark integrity checking with explicit byte counts protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For benchmark integrity checking with explicit byte counts, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Both matchinghashes; bytesread,elapsed and availablememory recorded; no fabricated speedup; finalconsumerartifactsame.",
+      "Count actual passes and bytes through the client; algorithm names alone do not establish cost."
+    ],
+    "sequence": 172,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "1MiBsynthetic file; two isolated methods; fixed SHA256expected.",
+        "changed_input_check": "Injected byte corruption is detected by both methods."
+      },
+      "expected_output": {
+        "contract": "Injected byte corruption is detected by both methods."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-173",
+    "tool_id": "adls",
+    "title": "Bound a consumer's whole-batch byte budget",
+    "level": 8,
+    "prerequisites": [
+      "RLP-ADLS-172"
+    ],
+    "scenario": "A training consumer must reject a batch whose members individually fit but whose total exceeds the approved budget.",
+    "task": "A training consumer must reject a batch whose members individually fit but whose total exceeds the approved budget.",
+    "learning_objective": "Bound a consumer's whole-batch byte budget",
+    "inputs": {
+      "fixture": "Files600,600bytes; perfilelimit1000,totalbatchlimit1000; manifest sizesverified.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Each passes per-file limit but whole batch blocked1200>1000; no accepted partial batch."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Each passes per-file limit but whole batch blocked1200>1000; no accepted partial batch.",
+      "Demonstrate the additional boundary: Total exactly1000 passes the inclusive budget if hashes also match.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Bound a consumer's whole-batch byte budget protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For bound a consumer's whole-batch byte budget, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Each passes per-file limit but whole batch blocked1200>1000; no accepted partial batch.",
+      "Resource constraints apply at multiple grains; per-object checks do not enforce a batch-wide bound."
+    ],
+    "sequence": 173,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Files600,600bytes; perfilelimit1000,totalbatchlimit1000; manifest sizesverified.",
+        "changed_input_check": "Total exactly1000 passes the inclusive budget if hashes also match."
+      },
+      "expected_output": {
+        "contract": "Total exactly1000 passes the inclusive budget if hashes also match."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-174",
+    "tool_id": "adls",
+    "title": "Rehearse a storage account-name mapping change",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADLS-147"
+    ],
+    "scenario": "A test environment moves to another approved account. Validate resolved data endpoints and lineage without rewriting historical references.",
+    "task": "A test environment moves to another approved account. Validate resolved data endpoints and lineage without rewriting historical references.",
+    "learning_objective": "Rehearse a storage account-name mapping change",
+    "inputs": {
+      "fixture": "OldaccountA B1hashH1; newaccountB B2hashH2; approvedconfigmapping; no production changes.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "New run uses B; old B1 reference still namesA; exports contain no secret; consumer test proves intended endpoint."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "New run uses B; old B1 reference still namesA; exports contain no secret; consumer test proves intended endpoint.",
+      "Demonstrate the additional boundary: A stale dfs endpoint or mismatched blob endpoint is caught by preflight/actual bounded access.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Rehearse a storage account-name mapping change protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For rehearse a storage account-name mapping change, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: New run uses B; old B1 reference still namesA; exports contain no secret; consumer test proves intended endpoint.",
+      "Endpoint mapping is an environment interface; historical source identity remains part of lineage."
+    ],
+    "sequence": 174,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "OldaccountA B1hashH1; newaccountB B2hashH2; approvedconfigmapping; no production changes.",
+        "changed_input_check": "A stale dfs endpoint or mismatched blob endpoint is caught by preflight/actual bounded access."
+      },
+      "expected_output": {
+        "contract": "A stale dfs endpoint or mismatched blob endpoint is caught by preflight/actual bounded access."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-175",
+    "tool_id": "adls",
+    "title": "Review a source-reader contract after an SDK change",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADLS-174"
+    ],
+    "scenario": "Compare two permitted client versions or deterministic transport adapters on the same controlled storage responses.",
+    "task": "Compare two permitted client versions or deterministic transport adapters on the same controlled storage responses.",
+    "learning_objective": "Review a source-reader contract after an SDK change",
+    "inputs": {
+      "fixture": "Fixtures200withbytes,404,403,429Retry-After andpagination; no uncontrolled network traffic.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both clients/adapters satisfy documented error/content/cursor contracts or candidate promotion blocked with concrete diff."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both clients/adapters satisfy documented error/content/cursor contracts or candidate promotion blocked with concrete diff.",
+      "Demonstrate the additional boundary: A changed exception class cannot silently turn missing data into accepted zero rows.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Review a source-reader contract after an SDK change protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Review a source-reader contract after an SDK change. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Upgrade compatibility includes failure behavior and metadata interpretation,not only a successful download."
+    ],
+    "sequence": 175,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Fixtures200withbytes,404,403,429Retry-After andpagination; no uncontrolled network traffic.",
+        "changed_input_check": "A changed exception class cannot silently turn missing data into accepted zero rows."
+      },
+      "expected_output": {
+        "contract": "A changed exception class cannot silently turn missing data into accepted zero rows."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-176",
+    "tool_id": "adls",
+    "title": "Prove a least-scope recovery drill",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADLS-175"
+    ],
+    "scenario": "Restore a synthetic batch with a recovery identity allowed only on its assigned prefixes and verify consumer access separately.",
+    "task": "Restore a synthetic batch with a recovery identity allowed only on its assigned prefixes and verify consumer access separately.",
+    "learning_objective": "Prove a least-scope recovery drill",
+    "inputs": {
+      "fixture": "SourceB1manifesttwofiles; assignedrecovery/B1; unrelatedprefixsentinel; approvedactualidentities.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Recovery hashes match; writes remain inassignedprefix; unrelated unchanged; consumerread verified; permissions evidenced."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Recovery hashes match; writes remain inassignedprefix; unrelated unchanged; consumerread verified; permissions evidenced.",
+      "Demonstrate the additional boundary: Missing source read scope is blocked rather than broadened by using an unreviewed account key.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Prove a least-scope recovery drill protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Prove a least-scope recovery drill. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "A recovery procedure should work under its declared operational identity and scope."
+    ],
+    "sequence": 176,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "SourceB1manifesttwofiles; assignedrecovery/B1; unrelatedprefixsentinel; approvedactualidentities.",
+        "changed_input_check": "Missing source read scope is blocked rather than broadened by using an unreviewed account key."
+      },
+      "expected_output": {
+        "contract": "Missing source read scope is blocked rather than broadened by using an unreviewed account key."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-177",
+    "tool_id": "adls",
+    "title": "Audit a claimed immutable raw zone",
+    "level": 9,
+    "prerequisites": [
+      "RLP-ADLS-176"
+    ],
+    "scenario": "Test the actual application and effective storage permission policy behind a training raw-zone immutability claim.",
+    "task": "Test the actual application and effective storage permission policy behind a training raw-zone immutability claim.",
+    "learning_objective": "Audit a claimed immutable raw zone",
+    "inputs": {
+      "fixture": "Existing syntheticrawA/hashH1; approvedproducerandconsumeridentities; isolated update probe where authorized.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Report distinguishes convention,permission restriction and actual supported immutable policy; no assertion based only on a foldernamedraw."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Report distinguishes convention,permission restriction and actual supported immutable policy; no assertion based only on a foldernamedraw.",
+      "Demonstrate the additional boundary: An overwrite-capable producer means the claim must explicitly acknowledge that capability or enforce a stronger approved boundary.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 75,
+    "engineering_relevance": "Audit a claimed immutable raw zone protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For audit a claimed immutable raw zone, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Report distinguishes convention,permission restriction and actual supported immutable policy; no assertion based only on a foldernamedraw.",
+      "A naming convention cannot establish immutability; gather the enforcement evidence behind the claim."
+    ],
+    "sequence": 177,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Existing syntheticrawA/hashH1; approvedproducerandconsumeridentities; isolated update probe where authorized.",
+        "changed_input_check": "An overwrite-capable producer means the claim must explicitly acknowledge that capability or enforce a stronger approved boundary."
+      },
+      "expected_output": {
+        "contract": "An overwrite-capable producer means the claim must explicitly acknowledge that capability or enforce a stronger approved boundary."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-178",
+    "tool_id": "adls",
+    "title": "Independent survey-evidence landing transfer",
+    "level": 10,
+    "prerequisites": [
+      "RLP-ADLS-149"
+    ],
+    "scenario": "Build a bounded survey delivery contract where respondent IDs,consent version and file integrity must remain traceable without exposing answers in logs.",
+    "task": "Build a bounded survey delivery contract where respondent IDs,consent version and file integrity must remain traceable without exposing answers in logs.",
+    "learning_objective": "Independent survey-evidence landing transfer",
+    "inputs": {
+      "fixture": "Two complete files with three syntheticrespondents; one missingconsentversion; duplicatearrival; one partialupload; restrictedrawpaths.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Onlycompleteverifiedbatchespublish; missingconsentrejected; logs containcounts/reasonswithoutanswers; rawlineage,permissions,replayandfailurechecks demonstrated."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Onlycompleteverifiedbatchespublish; missingconsentrejected; logs containcounts/reasonswithoutanswers; rawlineage,permissions,replayandfailurechecks demonstrated.",
+      "Demonstrate the additional boundary: Same respondent may legitimately answer in a later wave; delivery deduplication must not erase that separate event.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 120,
+    "engineering_relevance": "Independent survey-evidence landing transfer protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For independent survey-evidence landing transfer, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Onlycompleteverifiedbatchespublish; missingconsentrejected; logs containcounts/reasonswithoutanswers; rawlineage,permissions,replayandfailurechecks demonstrated.",
+      "Distinguish respondent identity,wave/event identity and transport-batch identity before choosing deduplication keys."
+    ],
+    "sequence": 178,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "Two complete files with three syntheticrespondents; one missingconsentversion; duplicatearrival; one partialupload; restrictedrawpaths.",
+        "changed_input_check": "Same respondent may legitimately answer in a later wave; delivery deduplication must not erase that separate event."
+      },
+      "expected_output": {
+        "contract": "Same respondent may legitimately answer in a later wave; delivery deduplication must not erase that separate event."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-179",
+    "tool_id": "adls",
+    "title": "Independent shared-reference recovery transfer",
+    "level": 10,
+    "prerequisites": [
+      "RLP-ADLS-178"
+    ],
+    "scenario": "Restore two synthetic sales batches that share a historical customer contract while preserving exact source interpretation.",
+    "task": "Restore two synthetic sales batches that share a historical customer contract while preserving exact source interpretation.",
+    "learning_objective": "Independent shared-reference recovery transfer",
+    "inputs": {
+      "fixture": "B1A5,B2B7both referenceR1/hashH1; currentR1pathhasH2; retainedH1copyinitiallymissing then supplied.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Both blocked until requiredH1verified; recovery then yieldstotals5,7withR1H1lineage; no substitutionofcurrentH2; hashes/access/restarttests."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both blocked until requiredH1verified; recovery then yieldstotals5,7withR1H1lineage; no substitutionofcurrentH2; hashes/access/restarttests.",
+      "Demonstrate the additional boundary: A same-named current contract is not accepted as historical evidence merely because it parses.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 120,
+    "engineering_relevance": "Independent shared-reference recovery transfer protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Independent shared-reference recovery transfer. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Draw the point at which data becomes accepted. Inject the supplied failure on one side of that boundary and inspect the durable state.",
+      "Recover the complete dependency graph,not just the data files closest to the batch directory."
+    ],
+    "sequence": 179,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "B1A5,B2B7both referenceR1/hashH1; currentR1pathhasH2; retainedH1copyinitiallymissing then supplied.",
+        "changed_input_check": "A same-named current contract is not accepted as historical evidence merely because it parses."
+      },
+      "expected_output": {
+        "contract": "A same-named current contract is not accepted as historical evidence merely because it parses."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  },
+  {
+    "id": "RLP-ADLS-180",
+    "tool_id": "adls",
+    "title": "Independent binary-asset and sidecar handoff",
+    "level": 10,
+    "prerequisites": [
+      "RLP-ADLS-179"
+    ],
+    "scenario": "Build a bounded landing contract for binary assets paired with JSON metadata,without attempting to execute or decode the binary content.",
+    "task": "Build a bounded landing contract for binary assets paired with JSON metadata,without attempting to execute or decode the binary content.",
+    "learning_objective": "Independent binary-asset and sidecar handoff",
+    "inputs": {
+      "fixture": "AssetA bytesABC and sidecar{id:A,sha256:actualABC}; assetB bytesDEF lacks sidecar; assetC bytesGHI sidecar declares wrong hash; isolated approved paths.",
+      "environment": "Existing compatible local or authorized cloud training environment; isolated synthetic artifacts; record runtime and actual observations."
+    },
+    "expected_output": {
+      "observed_behavior": "Only assetA becomes consumer-ready with both artifacts and matching identity/hash; B missing_sidecar,C hash_mismatch; all originals retained; retry and access tests demonstrated."
+    },
+    "constraints": [
+      "Preserve raw sources,learner attempts and accepted historical evidence. Use only the bounded synthetic fixture and isolated outputs.",
+      "No production mutation,new paid resource provisioning,credential disclosure or external notifications to people.",
+      "Verify capability/protocol compatibility before a feature change. Unsupported or inaccessible execution is environment_blocked,not passed; plans/simulations do not prove cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Only assetA becomes consumer-ready with both artifacts and matching identity/hash; B missing_sidecar,C hash_mismatch; all originals retained; retry and access tests demonstrated.",
+      "Demonstrate the additional boundary: A repeated identical A arrival is a transport retry; a new approved asset revision needs its own version identity rather than silent overwrite.",
+      "Submit implementation/configuration,actual observed results and assistance disclosure for independent review."
+    ],
+    "estimated_minutes": 120,
+    "engineering_relevance": "Independent binary-asset and sidecar handoff protects a real storage,processing or operational contract. After review,explain its downstream consequence and one limitation of the implementation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.4",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified prerequisite implementation evidence or a reviewer-approved exact-skill diagnostic."
+    ],
+    "progressive_hints": [
+      "For independent binary-asset and sidecar handoff, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing adls environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Only assetA becomes consumer-ready with both artifacts and matching identity/hash; B missing_sidecar,C hash_mismatch; all originals retained; retry and access tests demonstrated.",
+      "Validate the pair's identity and referenced content hash before treating either nearby file as a complete asset delivery."
+    ],
+    "sequence": 180,
+    "authoring_batch": "cloud-explicit-004",
+    "followup": {
+      "task": "Independently reconstruct the bounded implementation using the changed-input check; explain observed behavior and disclose help.",
+      "inputs": {
+        "base_fixture": "AssetA bytesABC and sidecar{id:A,sha256:actualABC}; assetB bytesDEF lacks sidecar; assetC bytesGHI sidecar declares wrong hash; isolated approved paths.",
+        "changed_input_check": "A repeated identical A arrival is a transport retry; a new approved asset revision needs its own version identity rather than silent overwrite."
+      },
+      "expected_output": {
+        "contract": "A repeated identical A arrival is a transport retry; a new approved asset revision needs its own version identity rather than silent overwrite."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "Keep the previous solution closed and preserve the independent attempt and actual outputs."
+      ]
+    }
+  }
+]

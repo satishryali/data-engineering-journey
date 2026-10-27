@@ -29,6 +29,8 @@ airflow.db
 *.db
 *.sqlite*
 data/raw/
+# Local source dataset and generated copy for CSV/threading practice.
+/practice/Sync/Async/amazon*.csv
 data/warehouse/
 postgres-data/
 .DS_Store

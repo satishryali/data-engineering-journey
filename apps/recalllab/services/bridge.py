@@ -56,11 +56,37 @@ def immutable_evidence(root, relative, payload):
             os.unlink(tmp)
 
 
+def register_problem_items(records, coach, attempts):
+    """Register actual published exercise attempts at a checkpoint, without scoring concepts."""
+    fields, queue = coach.read_csv(records.root, 'tracking/revision-queue.csv')
+    known = {row['item_id'] for row in queue}
+    added = False
+    for attempt in attempts:
+        if attempt.get('kind') != 'problem' or attempt['item_id'] in known:
+            continue
+        from services.curriculum import get_problem
+        problem = get_problem(attempt['item_id'])
+        if not problem or attempt.get('problem_id') != problem['id']:
+            raise ValueError('Problem identity differs from published curriculum')
+        row = dict.fromkeys(fields, '')
+        row.update(item_id=problem['id'], skill=problem['title'],
+                   retrieval_task='Reconstruct this business result on changed input; record all help used.',
+                   last_result='not_attempted', status='unassessed',
+                   notes='RecallLab published exercise; concept mastery is assessed separately.')
+        queue.append(row)
+        known.add(problem['id'])
+        added = True
+    if added:
+        coach.transaction(records.root, {'tracking/revision-queue.csv': coach.csv_text(fields, queue),
+                                        **coach.views(records.root, queue=queue)})
+
+
 def end_session(records, journal, session):
     root = records.root
     with writer_lock(root):
         coach = load_coach(root)
         coach.recover(root)
+        register_problem_items(records, coach, journal.effective_attempts(session))
         with journal.db() as db:
             db.execute('BEGIN IMMEDIATE')
             row = db.execute('SELECT * FROM sessions WHERE id=?', (session,)).fetchone()
@@ -100,10 +126,10 @@ def end_session(records, journal, session):
                             m = copy.deepcopy(existing)
                             m['observations'] = []
                         else:
-                            is_concept = a['item_id'] not in ('PY-001', 'PY-002', 'SQL-001', 'SQL-002', 'SQL-003')
+                            is_concept = a['item_id'] in {t['id'] for t in records.json('tracking/topic-map.json')['topics']}
                             m = {'mistake_id': mistake_id, 'category': 'conceptual',
                                  'topic_ids': [a['item_id']] if is_concept else [],
-                                 'exercise_ids': [] if is_concept else [a['item_id']], 'wording': 'Observed automatic fixture/output mismatch',
+                                 'exercise_ids': [] if is_concept else [a['item_id']], 'wording': 'Observed verification mismatch',
                                  'observed_behaviour': a['feedback'], 'expected_behaviour': 'Match the controlled task output and explain the result.',
                                  'cause': {'confidence': 'hypothesis', 'description': 'Cause not established by output comparison alone.'},
                                  'correction_and_assistance': 'Help is recorded on the assessment; no correction verified.',

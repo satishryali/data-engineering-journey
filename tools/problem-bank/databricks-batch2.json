@@ -1,0 +1,2758 @@
+[
+  {
+    "id": "RLP-DATABRICKS-072",
+    "tool_id": "databricks",
+    "title": "Inspect a notebook's language boundary",
+    "level": 0,
+    "prerequisites": [
+      "RLP-DATABRICKS-006"
+    ],
+    "scenario": "A teammate is reading a mixed-language training notebook. Run one tiny Python cell and one SQL cell against the same temporary fixture.",
+    "task": "A teammate is reading a mixed-language training notebook. Run one tiny Python cell and one SQL cell against the same temporary fixture.",
+    "learning_objective": "Inspect a notebook's language boundary",
+    "inputs": {
+      "fixture": "Python creates temp view recall_two with IDs A,B; SQL counts it in the same notebook session.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Python and SQL observations refer to the same two rows; cell languages are identified in evidence."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Python and SQL observations refer to the same two rows; cell languages are identified in evidence.",
+      "Demonstrate the additional boundary: A SQL cell using a nonexistent view fails clearly rather than being reported as a Python syntax problem.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Inspect a notebook's language boundary supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_0",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "Focus on the current bounded request: Inspect a notebook's language boundary. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "The notebook cell's language determines how its content is interpreted."
+    ],
+    "sequence": 72,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Python creates temp view recall_two with IDs A,B; SQL counts it in the same notebook session.",
+        "changed_input_check": "A SQL cell using a nonexistent view fails clearly rather than being reported as a Python syntax problem."
+      },
+      "expected_output": {
+        "contract": "A SQL cell using a nonexistent view fails clearly rather than being reported as a Python syntax problem."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-073",
+    "tool_id": "databricks",
+    "title": "Locate a run's effective parameters",
+    "level": 0,
+    "prerequisites": [
+      "RLP-DATABRICKS-072"
+    ],
+    "scenario": "A support analyst must identify the parameter values actually used by an existing training run.",
+    "task": "A support analyst must identify the parameter values actually used by an existing training run.",
+    "learning_objective": "Locate a run's effective parameters",
+    "inputs": {
+      "fixture": "Job definition defaults business_dateOct25; submitted run overrideOct26.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Run evidence reports effective Oct26 and distinguishes it from the saved default; no data write required."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Run evidence reports effective Oct26 and distinguishes it from the saved default; no data write required.",
+      "Demonstrate the additional boundary: A run without override reports the actual default rather than copying the prior run's value.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Locate a run's effective parameters supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_0",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [],
+    "progressive_hints": [
+      "For locate a run's effective parameters, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Run evidence reports effective Oct26 and distinguishes it from the saved default; no data write required.",
+      "Inspect the run record as well as the saved job definition."
+    ],
+    "sequence": 73,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Job definition defaults business_dateOct25; submitted run overrideOct26.",
+        "changed_input_check": "A run without override reports the actual default rather than copying the prior run's value."
+      },
+      "expected_output": {
+        "contract": "A run without override reports the actual default rather than copying the prior run's value."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-074",
+    "tool_id": "databricks",
+    "title": "Use a quoted SQL identifier deliberately",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DATABRICKS-013"
+    ],
+    "scenario": "An approved training export contains a field with a space in its name. Query it without accidentally querying two identifiers.",
+    "task": "An approved training export contains a field with a space in its name. Query it without accidentally querying two identifiers.",
+    "learning_objective": "Use a quoted SQL identifier deliberately",
+    "inputs": {
+      "fixture": "Temporary fixture columns invoice id and amount; rowI1/5.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "SQL selects invoice id=I1 and amount 5 under correct identifier quoting; no column rename is silently assumed."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "SQL selects invoice id=I1 and amount 5 under correct identifier quoting; no column rename is silently assumed.",
+      "Demonstrate the additional boundary: A string literal containing invoice id must not be confused with the field value.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Use a quoted SQL identifier deliberately supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For use a quoted sql identifier deliberately, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: SQL selects invoice id=I1 and amount 5 under correct identifier quoting; no column rename is silently assumed.",
+      "Identifiers and string values use different quoting rules."
+    ],
+    "sequence": 74,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Temporary fixture columns invoice id and amount; rowI1/5.",
+        "changed_input_check": "A string literal containing invoice id must not be confused with the field value."
+      },
+      "expected_output": {
+        "contract": "A string literal containing invoice id must not be confused with the field value."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-075",
+    "tool_id": "databricks",
+    "title": "Keep notebook markdown separate from execution evidence",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DATABRICKS-074"
+    ],
+    "scenario": "A runbook cell states an expected count. Execute the actual check and label both values.",
+    "task": "A runbook cell states an expected count. Execute the actual check and label both values.",
+    "learning_objective": "Keep notebook markdown separate from execution evidence",
+    "inputs": {
+      "fixture": "Markdown says expected_count 2; fixture contains IDs A,B,C.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Observed_count 3 is reported as a failed expectation, not silently copied as2."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Observed_count 3 is reported as a failed expectation, not silently copied as2.",
+      "Demonstrate the additional boundary: With fixtureA,B the same check passes count 2.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Keep notebook markdown separate from execution evidence supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Keep notebook markdown separate from execution evidence. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Text in a notebook is documentation; only executed checks establish results."
+    ],
+    "sequence": 75,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Markdown says expected_count 2; fixture contains IDs A,B,C.",
+        "changed_input_check": "With fixtureA,B the same check passes count 2."
+      },
+      "expected_output": {
+        "contract": "With fixtureA,B the same check passes count 2."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-076",
+    "tool_id": "databricks",
+    "title": "Import a local helper reproducibly",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DATABRICKS-075"
+    ],
+    "scenario": "A small training notebook must use a committed helper function rather than a copied hidden cell.",
+    "task": "A small training notebook must use a committed helper function rather than a copied hidden cell.",
+    "learning_objective": "Import a local helper reproducibly",
+    "inputs": {
+      "fixture": "Approved local module normalize_region(value); inputs' west ',null; fresh session.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Outputswest,UNKNOWN; import path/module revision recorded; fresh top-to-bottom run works."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Outputswest,UNKNOWN; import path/module revision recorded; fresh top-to-bottom run works.",
+      "Demonstrate the additional boundary: A missing helper dependency fails before writing curated output.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Import a local helper reproducibly supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For import a local helper reproducibly, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Outputswest,UNKNOWN; import path/module revision recorded; fresh top-to-bottom run works.",
+      "Keep module location and import assumptions explicit in the notebook's execution context."
+    ],
+    "sequence": 76,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Approved local module normalize_region(value); inputs' west ',null; fresh session.",
+        "changed_input_check": "A missing helper dependency fails before writing curated output."
+      },
+      "expected_output": {
+        "contract": "A missing helper dependency fails before writing curated output."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-077",
+    "tool_id": "databricks",
+    "title": "Read a governed small text artifact",
+    "level": 1,
+    "prerequisites": [
+      "RLP-DATABRICKS-076"
+    ],
+    "scenario": "Inspect an authorized training volume/file location and read a tiny configuration text without embedding credentials.",
+    "task": "Inspect an authorized training volume/file location and read a tiny configuration text without embedding credentials.",
+    "learning_objective": "Read a governed small text artifact",
+    "inputs": {
+      "fixture": "Existing supported governed volume contains policy.json with max_rejects 1.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Content parsed as max_rejects 1; exact governed artifact identity recorded; no account key in notebook."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Content parsed as max_rejects 1; exact governed artifact identity recorded; no account key in notebook.",
+      "Demonstrate the additional boundary: Malformed JSON is reported as config_error before data processing.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 10,
+    "engineering_relevance": "Read a governed small text artifact supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_1",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Read a governed small text artifact. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "Check the actual supported path syntax and access rights for your runtime."
+    ],
+    "sequence": 77,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Existing supported governed volume contains policy.json with max_rejects 1.",
+        "changed_input_check": "Malformed JSON is reported as config_error before data processing."
+      },
+      "expected_output": {
+        "contract": "Malformed JSON is reported as config_error before data processing."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-078",
+    "tool_id": "databricks",
+    "title": "Validate mutually dependent parameters",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DATABRICKS-020"
+    ],
+    "scenario": "A replay notebook requires both start_date and end_date and refuses reversed ranges.",
+    "task": "A replay notebook requires both start_date and end_date and refuses reversed ranges.",
+    "learning_objective": "Validate mutually dependent parameters",
+    "inputs": {
+      "fixture": "ValidOct24..Oct26; invalidOct27..Oct26; omittedend_date.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Valid produces exactly three calendar dates; invalid/omitted fail before I/O."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Valid produces exactly three calendar dates; invalid/omitted fail before I/O.",
+      "Demonstrate the additional boundary: Same start/endOct26 produces one date.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Validate mutually dependent parameters supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For validate mutually dependent parameters, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Valid produces exactly three calendar dates; invalid/omitted fail before I/O.",
+      "Parameter validation includes relationships between fields, not only individual syntax."
+    ],
+    "sequence": 78,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "ValidOct24..Oct26; invalidOct27..Oct26; omittedend_date.",
+        "changed_input_check": "Same start/endOct26 produces one date."
+      },
+      "expected_output": {
+        "contract": "Same start/endOct26 produces one date."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-079",
+    "tool_id": "databricks",
+    "title": "Separate parameter values from secret references",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DATABRICKS-078"
+    ],
+    "scenario": "A training job needs a connection reference and a public batch label without printing secret contents.",
+    "task": "A training job needs a connection reference and a public batch label without printing secret contents.",
+    "learning_objective": "Separate parameter values from secret references",
+    "inputs": {
+      "fixture": "Approved secret-scope/reference identity; batch B1; fake marker used only in tests.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "BatchB1 visible in audit; only secret reference identity recorded; real secret never echoed."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "BatchB1 visible in audit; only secret reference identity recorded; real secret never echoed.",
+      "Demonstrate the additional boundary: An exception path must also avoid printing the resolved value.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Separate parameter values from secret references supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For separate parameter values from secret references, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: BatchB1 visible in audit; only secret reference identity recorded; real secret never echoed.",
+      "Read secrets only at the required boundary and keep them out of display/return objects."
+    ],
+    "sequence": 79,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Approved secret-scope/reference identity; batch B1; fake marker used only in tests.",
+        "changed_input_check": "An exception path must also avoid printing the resolved value."
+      },
+      "expected_output": {
+        "contract": "An exception path must also avoid printing the resolved value."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-080",
+    "tool_id": "databricks",
+    "title": "Check a table's qualified namespace",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DATABRICKS-079"
+    ],
+    "scenario": "A training schema and another schema contain the same short table name. Read only the approved one.",
+    "task": "A training schema and another schema contain the same short table name. Read only the approved one.",
+    "learning_objective": "Check a table's qualified namespace",
+    "inputs": {
+      "fixture": "approved.sales totals 12; other.sales totals 99; authorized metadata/read scope.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Result 12 and fully qualified approved identity; changing current schema does not silently select 99."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Result 12 and fully qualified approved identity; changing current schema does not silently select 99.",
+      "Demonstrate the additional boundary: Unknown configured schema is rejected by the source mapping.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Check a table's qualified namespace supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For check a table's qualified namespace, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Result 12 and fully qualified approved identity; changing current schema does not silently select 99.",
+      "A short table name depends on session context; a contract should identify its namespace."
+    ],
+    "sequence": 80,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "approved.sales totals 12; other.sales totals 99; authorized metadata/read scope.",
+        "changed_input_check": "Unknown configured schema is rejected by the source mapping."
+      },
+      "expected_output": {
+        "contract": "Unknown configured schema is rejected by the source mapping."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-081",
+    "tool_id": "databricks",
+    "title": "Persist a human-readable configuration fingerprint",
+    "level": 2,
+    "prerequisites": [
+      "RLP-DATABRICKS-080"
+    ],
+    "scenario": "Create a small run manifest containing approved config fields and a deterministic hash.",
+    "task": "Create a small run manifest containing approved config fields and a deterministic hash.",
+    "learning_objective": "Persist a human-readable configuration fingerprint",
+    "inputs": {
+      "fixture": "Config entity sales,dateOct26,rule_versionv 1; field order shuffled in second copy.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Equivalent config hashes match; changing rule_versionv 2 changes hash; no secret included."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Equivalent config hashes match; changing rule_versionv 2 changes hash; no secret included.",
+      "Demonstrate the additional boundary: A secret field is excluded/redacted rather than hashed into a public manifest.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Persist a human-readable configuration fingerprint supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_2",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For persist a human-readable configuration fingerprint, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Equivalent config hashes match; changing rule_versionv 2 changes hash; no secret included.",
+      "Canonical serialization and the public/private field boundary are separate decisions."
+    ],
+    "sequence": 81,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Config entity sales,dateOct26,rule_versionv 1; field order shuffled in second copy.",
+        "changed_input_check": "A secret field is excluded/redacted rather than hashed into a public manifest."
+      },
+      "expected_output": {
+        "contract": "A secret field is excluded/redacted rather than hashed into a public manifest."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-082",
+    "tool_id": "databricks",
+    "title": "Test ordered notebook execution from a clean state",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DATABRICKS-027"
+    ],
+    "scenario": "Repair a bounded notebook whose result depends on cells run out of order.",
+    "task": "Repair a bounded notebook whose result depends on cells run out of order.",
+    "learning_objective": "Test ordered notebook execution from a clean state",
+    "inputs": {
+      "fixture": "Cell2 expects transformed data never created in Cell1; sourceA/5,B/7; fresh-session execution.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Top-to-bottom execution produces total 12; no stale variable from a prior interactive session needed."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Top-to-bottom execution produces total 12; no stale variable from a prior interactive session needed.",
+      "Demonstrate the additional boundary: Running the check against sourceA/5 only produces 5 rather than stale 12.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Test ordered notebook execution from a clean state supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Test ordered notebook execution from a clean state. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Use explicit data dependencies and a clean-session check to expose hidden state."
+    ],
+    "sequence": 82,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Cell2 expects transformed data never created in Cell1; sourceA/5,B/7; fresh-session execution.",
+        "changed_input_check": "Running the check against sourceA/5 only produces 5 rather than stale 12."
+      },
+      "expected_output": {
+        "contract": "Running the check against sourceA/5 only produces 5 rather than stale 12."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-083",
+    "tool_id": "databricks",
+    "title": "Create an explainable reject summary",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DATABRICKS-082"
+    ],
+    "scenario": "An operations summary needs counts by reject reason without leaking rejected customer data.",
+    "task": "An operations summary needs counts by reject reason without leaking rejected customer data.",
+    "learning_objective": "Create an explainable reject summary",
+    "inputs": {
+      "fixture": "Rejected rowsR1/bad_amount/fakeemail,R2/missing_id/fakeemail,R3/bad_amount/fakeemail.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Summary bad_amount 2,missing_id1; no email/row payloads; reject details remain in restricted artifact."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Summary bad_amount 2,missing_id1; no email/row payloads; reject details remain in restricted artifact.",
+      "Demonstrate the additional boundary: An empty reject set yields an explicit zero total with stable report schema.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Create an explainable reject summary supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For create an explainable reject summary, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Summary bad_amount 2,missing_id1; no email/row payloads; reject details remain in restricted artifact.",
+      "Aggregate allowed diagnostic fields rather than displaying the full reject table."
+    ],
+    "sequence": 83,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Rejected rowsR1/bad_amount/fakeemail,R2/missing_id/fakeemail,R3/bad_amount/fakeemail.",
+        "changed_input_check": "An empty reject set yields an explicit zero total with stable report schema."
+      },
+      "expected_output": {
+        "contract": "An empty reject set yields an explicit zero total with stable report schema."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-084",
+    "tool_id": "databricks",
+    "title": "Preserve an approved transformation's decimal type",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DATABRICKS-083"
+    ],
+    "scenario": "A sales notebook must keep decimal cents through an SQL expression and a DataFrame output.",
+    "task": "A sales notebook must keep decimal cents through an SQL expression and a DataFrame output.",
+    "learning_objective": "Preserve an approved transformation's decimal type",
+    "inputs": {
+      "fixture": "Amounts 0.10,0.20,0.30 as decimal(10,2); approved sum contract.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Total 0.60 and decimal schema preserved across both interfaces; no float artifact."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Total 0.60 and decimal schema preserved across both interfaces; no float artifact.",
+      "Demonstrate the additional boundary: Null amount is flagged before finance acceptance rather than silently converted to0.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Preserve an approved transformation's decimal type supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Preserve an approved transformation's decimal type. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Inspect expression result types in addition to displayed formatting."
+    ],
+    "sequence": 84,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Amounts 0.10,0.20,0.30 as decimal(10,2); approved sum contract.",
+        "changed_input_check": "Null amount is flagged before finance acceptance rather than silently converted to0."
+      },
+      "expected_output": {
+        "contract": "Null amount is flagged before finance acceptance rather than silently converted to0."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-085",
+    "tool_id": "databricks",
+    "title": "Detect an invalid partition in a parameterized write",
+    "level": 3,
+    "prerequisites": [
+      "RLP-DATABRICKS-084"
+    ],
+    "scenario": "A daily training notebook must reject rows from a different business date before replacing its output slice.",
+    "task": "A daily training notebook must reject rows from a different business date before replacing its output slice.",
+    "learning_objective": "Detect an invalid partition in a parameterized write",
+    "inputs": {
+      "fixture": "Requested Oct26; incomingA/Oct26/5,B/Oct27/7; existingOct27 sentinel.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Run fails the date contract; October 27 sentinel unchanged; no broad overwrite."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Run fails the date contract; October 27 sentinel unchanged; no broad overwrite.",
+      "Demonstrate the additional boundary: All-Oct26 fixture passes and changes only the requested slice.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 20,
+    "engineering_relevance": "Detect an invalid partition in a parameterized write supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_3",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For detect an invalid partition in a parameterized write, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Run fails the date contract; October 27 sentinel unchanged; no broad overwrite.",
+      "Validate every row's partition value before invoking a write mode."
+    ],
+    "sequence": 85,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Requested Oct26; incomingA/Oct26/5,B/Oct27/7; existingOct27 sentinel.",
+        "changed_input_check": "All-Oct26 fixture passes and changes only the requested slice."
+      },
+      "expected_output": {
+        "contract": "All-Oct26 fixture passes and changes only the requested slice."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-086",
+    "tool_id": "databricks",
+    "title": "Pass an artifact contract across languages",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DATABRICKS-034"
+    ],
+    "scenario": "A Python task prepares a result table that a SQL task must consume using a declared batch key.",
+    "task": "A Python task prepares a result table that a SQL task must consume using a declared batch key.",
+    "learning_objective": "Pass an artifact contract across languages",
+    "inputs": {
+      "fixture": "TaskA writes batch B1 rows A/5,B/7; SQL task parameter batch B1.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "SQL returns count 2,total 12 for B1; no dependency on Python session variables."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "SQL returns count 2,total 12 for B1; no dependency on Python session variables.",
+      "Demonstrate the additional boundary: TaskB asked for absentB2 fails completeness check rather than returning an accepted zero.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Pass an artifact contract across languages supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Pass an artifact contract across languages. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Different tasks/languages should share durable named artifacts or supported parameters, not hidden local state."
+    ],
+    "sequence": 86,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "TaskA writes batch B1 rows A/5,B/7; SQL task parameter batch B1.",
+        "changed_input_check": "TaskB asked for absentB2 fails completeness check rather than returning an accepted zero."
+      },
+      "expected_output": {
+        "contract": "TaskB asked for absentB2 fails completeness check rather than returning an accepted zero."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-087",
+    "tool_id": "databricks",
+    "title": "Keep two task outputs distinct",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DATABRICKS-086"
+    ],
+    "scenario": "Two parallel training tasks produce accepted and rejected metrics. Aggregate their results without key collisions.",
+    "task": "Two parallel training tasks produce accepted and rejected metrics. Aggregate their results without key collisions.",
+    "learning_objective": "Keep two task outputs distinct",
+    "inputs": {
+      "fixture": "Task accepted returns count 2; task rejected returns count 1; same parent batch B1.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Parent reports accepted 2,rejected 1,total 3 with task identities; no single count overwriting the other."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Parent reports accepted 2,rejected 1,total 3 with task identities; no single count overwriting the other.",
+      "Demonstrate the additional boundary: A missing task result blocks a complete reconciliation claim.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Keep two task outputs distinct supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Keep two task outputs distinct. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Namespace task results by their task identity and validate the required result keys."
+    ],
+    "sequence": 87,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Task accepted returns count 2; task rejected returns count 1; same parent batch B1.",
+        "changed_input_check": "A missing task result blocks a complete reconciliation claim."
+      },
+      "expected_output": {
+        "contract": "A missing task result blocks a complete reconciliation claim."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-088",
+    "tool_id": "databricks",
+    "title": "Review a task's run-if behavior",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DATABRICKS-087"
+    ],
+    "scenario": "An optional cleanup task should run after failure while publication should require successful validation.",
+    "task": "An optional cleanup task should run after failure while publication should require successful validation.",
+    "learning_objective": "Review a task's run-if behavior",
+    "inputs": {
+      "fixture": "Training graph ingest->validate->publish plus cleanup; validation intentionally fails.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Publish skipped; cleanup runs under the selected supported dependency policy; overall failure remains visible."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Publish skipped; cleanup runs under the selected supported dependency policy; overall failure remains visible.",
+      "Demonstrate the additional boundary: Valid fixture runs publish once and cleanup once.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Review a task's run-if behavior supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Review a task's run-if behavior. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Inspect dependency/run-if semantics for every terminal path, not just the normal graph layout."
+    ],
+    "sequence": 88,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Training graph ingest->validate->publish plus cleanup; validation intentionally fails.",
+        "changed_input_check": "Valid fixture runs publish once and cleanup once."
+      },
+      "expected_output": {
+        "contract": "Valid fixture runs publish once and cleanup once."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-089",
+    "tool_id": "databricks",
+    "title": "Use an existing repository revision in a job",
+    "level": 4,
+    "prerequisites": [
+      "RLP-DATABRICKS-088"
+    ],
+    "scenario": "A training job must identify the exact code revision it ran rather than an uncommitted editor buffer.",
+    "task": "A training job must identify the exact code revision it ran rather than an uncommitted editor buffer.",
+    "learning_objective": "Use an existing repository revision in a job",
+    "inputs": {
+      "fixture": "Existing authorized Git-backed training source or immutable exported revision; helper computes total 12.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Audit names actual revision/artifact hash; local uncommitted change is not claimed deployed."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Audit names actual revision/artifact hash; local uncommitted change is not claimed deployed.",
+      "Demonstrate the additional boundary: Candidate revision computes 13 incorrectly and fails the expected 12 smoke check.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Use an existing repository revision in a job supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_4",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Use an existing repository revision in a job. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Code displayed in an editor and code used by the job can differ; record the actual run source."
+    ],
+    "sequence": 89,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Existing authorized Git-backed training source or immutable exported revision; helper computes total 12.",
+        "changed_input_check": "Candidate revision computes 13 incorrectly and fails the expected 12 smoke check."
+      },
+      "expected_output": {
+        "contract": "Candidate revision computes 13 incorrectly and fails the expected 12 smoke check."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-090",
+    "tool_id": "databricks",
+    "title": "Build a reproducible test-data generator",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DATABRICKS-041"
+    ],
+    "scenario": "Generate a bounded synthetic fixture for a notebook performance/correctness test with a declared seed.",
+    "task": "Generate a bounded synthetic fixture for a notebook performance/correctness test with a declared seed.",
+    "learning_objective": "Build a reproducible test-data generator",
+    "inputs": {
+      "fixture": "Seed7,1000 unique IDs,amount defined as id modulo10; no random production data.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Generator rerun produces identical logical checksum,count 1000,total 4500; IDs unique."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Generator rerun produces identical logical checksum,count 1000,total 4500; IDs unique.",
+      "Demonstrate the additional boundary: Seed change changes the generated auxiliary distribution while keeping declared deterministic count rules.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Build a reproducible test-data generator supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For build a reproducible test-data generator, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Generator rerun produces identical logical checksum,count 1000,total 4500; IDs unique.",
+      "Specify generator rules and invariants, not only a desired row count."
+    ],
+    "sequence": 90,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Seed7,1000 unique IDs,amount defined as id modulo10; no random production data.",
+        "changed_input_check": "Seed change changes the generated auxiliary distribution while keeping declared deterministic count rules."
+      },
+      "expected_output": {
+        "contract": "Seed change changes the generated auxiliary distribution while keeping declared deterministic count rules."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-091",
+    "tool_id": "databricks",
+    "title": "Compose raw validation and summary tests",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DATABRICKS-090"
+    ],
+    "scenario": "A bounded training job must reconcile raw rows through accepted/rejected outputs to its summary.",
+    "task": "A bounded training job must reconcile raw rows through accepted/rejected outputs to its summary.",
+    "learning_objective": "Compose raw validation and summary tests",
+    "inputs": {
+      "fixture": "A/5,B/bad,C/7,C/7 exact duplicate; stable source row IDs.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Raw4; exact duplicate 1,reject 1,accepted 2,total 12; summary matches accepted data."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Raw4; exact duplicate 1,reject 1,accepted 2,total 12; summary matches accepted data.",
+      "Demonstrate the additional boundary: A changed duplicate C/8 is conflicting and must not be silently removed as identical.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Compose raw validation and summary tests supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For compose raw validation and summary tests, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Raw4; exact duplicate 1,reject 1,accepted 2,total 12; summary matches accepted data.",
+      "Write one reconciliation equation that accounts for every raw row outcome."
+    ],
+    "sequence": 91,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "A/5,B/bad,C/7,C/7 exact duplicate; stable source row IDs.",
+        "changed_input_check": "A changed duplicate C/8 is conflicting and must not be silently removed as identical."
+      },
+      "expected_output": {
+        "contract": "A changed duplicate C/8 is conflicting and must not be silently removed as identical."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-092",
+    "tool_id": "databricks",
+    "title": "Make a replay's output version explicit",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DATABRICKS-091"
+    ],
+    "scenario": "A reporting consumer must distinguish the original accepted report from a corrected replay.",
+    "task": "A reporting consumer must distinguish the original accepted report from a corrected replay.",
+    "learning_objective": "Make a replay's output version explicit",
+    "inputs": {
+      "fixture": "OriginalB1 total 12; correction changesA5 to6 giving 13; separate report version IDs.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Both version references retained; current pointer selects corrected 13 only after checks; audit states why it changed."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both version references retained; current pointer selects corrected 13 only after checks; audit states why it changed.",
+      "Demonstrate the additional boundary: Failed correction leaves original 12 current and readable.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Make a replay's output version explicit supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For make a replay's output version explicit, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Both version references retained; current pointer selects corrected 13 only after checks; audit states why it changed.",
+      "A replay can preserve traceability even when only one report version is designated current."
+    ],
+    "sequence": 92,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "OriginalB1 total 12; correction changesA5 to6 giving 13; separate report version IDs.",
+        "changed_input_check": "Failed correction leaves original 12 current and readable."
+      },
+      "expected_output": {
+        "contract": "Failed correction leaves original 12 current and readable."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-093",
+    "tool_id": "databricks",
+    "title": "Validate a quality threshold as a configuration contract",
+    "level": 5,
+    "prerequisites": [
+      "RLP-DATABRICKS-092"
+    ],
+    "scenario": "A job uses a maximum reject count supplied by approved configuration.",
+    "task": "A job uses a maximum reject count supplied by approved configuration.",
+    "learning_objective": "Validate a quality threshold as a configuration contract",
+    "inputs": {
+      "fixture": "max_rejects 1; fixture 2 valid 1 reject; second fixture 2 rejects; no negative/decimal threshold allowed.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "First accepted with rejects visible; second fails gate; invalid threshold rejected before processing."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "First accepted with rejects visible; second fails gate; invalid threshold rejected before processing.",
+      "Demonstrate the additional boundary: max_rejects 0 blocks any rejection and accepts a fully valid fixture.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 35,
+    "engineering_relevance": "Validate a quality threshold as a configuration contract supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_5",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Validate a quality threshold as a configuration contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Validate the threshold's type/domain before comparing it with observed rejects."
+    ],
+    "sequence": 93,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "max_rejects 1; fixture 2 valid 1 reject; second fixture 2 rejects; no negative/decimal threshold allowed.",
+        "changed_input_check": "max_rejects 0 blocks any rejection and accepts a fully valid fixture."
+      },
+      "expected_output": {
+        "contract": "max_rejects 0 blocks any rejection and accepts a fully valid fixture."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-094",
+    "tool_id": "databricks",
+    "title": "Keep task retries from duplicating an audit record",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DATABRICKS-048"
+    ],
+    "scenario": "A task may retry after writing its run outcome. Make the audit update idempotent under a stable attempt/batch key.",
+    "task": "A task may retry after writing its run outcome. Make the audit update idempotent under a stable attempt/batch key.",
+    "learning_objective": "Keep task retries from duplicating an audit record",
+    "inputs": {
+      "fixture": "BatchB1,taskingest; first writes accepted count 2 then simulated client error; retry.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "One logical accepted audit outcome,distinct attempt evidence; no doubled business count."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "One logical accepted audit outcome,distinct attempt evidence; no doubled business count.",
+      "Demonstrate the additional boundary: A retry with contradictory count 3 is flagged instead of silently overwriting accepted 2.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Keep task retries from duplicating an audit record supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Keep task retries from duplicating an audit record. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Choose the audit identity and conflict policy before implementing the retry path."
+    ],
+    "sequence": 94,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "BatchB1,taskingest; first writes accepted count 2 then simulated client error; retry.",
+        "changed_input_check": "A retry with contradictory count 3 is flagged instead of silently overwriting accepted 2."
+      },
+      "expected_output": {
+        "contract": "A retry with contradictory count 3 is flagged instead of silently overwriting accepted 2."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-095",
+    "tool_id": "databricks",
+    "title": "Handle a missing job artifact clearly",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DATABRICKS-094"
+    ],
+    "scenario": "A dependent training task must fail when its required upstream artifact is absent rather than reading a previous batch.",
+    "task": "A dependent training task must fail when its required upstream artifact is absent rather than reading a previous batch.",
+    "learning_objective": "Handle a missing job artifact clearly",
+    "inputs": {
+      "fixture": "TaskB expects B2 manifest; only B1 exists with total 12.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "B2 run fails missing_artifact; no fallback to B1 and no false accepted 12."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "B2 run fails missing_artifact; no fallback to B1 and no false accepted 12.",
+      "Demonstrate the additional boundary: When verified B2 is provided, task reads only B2.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Handle a missing job artifact clearly supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Handle a missing job artifact clearly. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "A default path can accidentally reuse stale successful data; make batch identity mandatory."
+    ],
+    "sequence": 95,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "TaskB expects B2 manifest; only B1 exists with total 12.",
+        "changed_input_check": "When verified B2 is provided, task reads only B2."
+      },
+      "expected_output": {
+        "contract": "When verified B2 is provided, task reads only B2."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-096",
+    "tool_id": "databricks",
+    "title": "Preserve useful diagnostics after compute failure",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DATABRICKS-095"
+    ],
+    "scenario": "Prepare a bounded evidence strategy for a training task interrupted before its final display statement.",
+    "task": "Prepare a bounded evidence strategy for a training task interrupted before its final display statement.",
+    "learning_objective": "Preserve useful diagnostics after compute failure",
+    "inputs": {
+      "fixture": "Supplied run state and persisted batch manifest; actual isolated interruption if permitted.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Recovery can identify code/config/batch and last committed artifact; no claim that an unprinted final count was accepted."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Recovery can identify code/config/batch and last committed artifact; no claim that an unprinted final count was accepted.",
+      "Demonstrate the additional boundary: An unknown completion boundary is marked uncertain and reconciled before replay.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Preserve useful diagnostics after compute failure supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Preserve useful diagnostics after compute failure. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Draw the point at which data becomes accepted. Inject the supplied failure on one side of that boundary and inspect the durable state.",
+      "Persist acceptance evidence at the commit boundary rather than relying on the last notebook cell's output."
+    ],
+    "sequence": 96,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Supplied run state and persisted batch manifest; actual isolated interruption if permitted.",
+        "changed_input_check": "An unknown completion boundary is marked uncertain and reconciled before replay."
+      },
+      "expected_output": {
+        "contract": "An unknown completion boundary is marked uncertain and reconciled before replay."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-097",
+    "tool_id": "databricks",
+    "title": "Test a job's maximum concurrent runs policy",
+    "level": 6,
+    "prerequisites": [
+      "RLP-DATABRICKS-096"
+    ],
+    "scenario": "Use a supported training job setting to prevent overlapping ownership of the same un partitioned batch state.",
+    "task": "Use a supported training job setting to prevent overlapping ownership of the same un partitioned batch state.",
+    "learning_objective": "Test a job's maximum concurrent runs policy",
+    "inputs": {
+      "fixture": "Two permitted invocations of same job/batch; isolated target; declared max concurrency 1.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Observed queue/refusal/serialization matches policy; one accepted batch; both submissions traceable."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Observed queue/refusal/serialization matches policy; one accepted batch; both submissions traceable.",
+      "Demonstrate the additional boundary: Different allowed business-date jobs require a separate explicit ownership decision, not an automatic bypass.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Test a job's maximum concurrent runs policy supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_6",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Test a job's maximum concurrent runs policy. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "Job-level concurrency and business-key locking are related but distinct boundaries."
+    ],
+    "sequence": 97,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Two permitted invocations of same job/batch; isolated target; declared max concurrency 1.",
+        "changed_input_check": "Different allowed business-date jobs require a separate explicit ownership decision, not an automatic bypass."
+      },
+      "expected_output": {
+        "contract": "Different allowed business-date jobs require a separate explicit ownership decision, not an automatic bypass."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-098",
+    "tool_id": "databricks",
+    "title": "Audit a view's downstream contract",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DATABRICKS-055"
+    ],
+    "scenario": "Expose only approved curated columns through a training view and prove sensitive raw fields are absent from the view schema.",
+    "task": "Expose only approved curated columns through a training view and prove sensitive raw fields are absent from the view schema.",
+    "learning_objective": "Audit a view's downstream contract",
+    "inputs": {
+      "fixture": "Base fixtureidA,amount 5,fakeemail; approved viewid,amount; existing governance capabilities.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "View returns A/5 and excludes email; actual reader permissions documented; base access not assumed denied without evidence."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "View returns A/5 and excludes email; actual reader permissions documented; base access not assumed denied without evidence.",
+      "Demonstrate the additional boundary: Adding a new sensitive base column does not automatically leak through a select-star view.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Audit a view's downstream contract supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Audit a view's downstream contract. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Use an explicit projection and test effective reader grants separately from view content."
+    ],
+    "sequence": 98,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Base fixtureidA,amount 5,fakeemail; approved viewid,amount; existing governance capabilities.",
+        "changed_input_check": "Adding a new sensitive base column does not automatically leak through a select-star view."
+      },
+      "expected_output": {
+        "contract": "Adding a new sensitive base column does not automatically leak through a select-star view."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-099",
+    "tool_id": "databricks",
+    "title": "Apply a supported row-level policy in isolation",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DATABRICKS-098"
+    ],
+    "scenario": "Rehearse a supported governance policy so a test consumer sees only its approved depot.",
+    "task": "Rehearse a supported governance policy so a test consumer sees only its approved depot.",
+    "learning_objective": "Apply a supported row-level policy in isolation",
+    "inputs": {
+      "fixture": "Synthetic Pune/5,Goa/7; approved test principal and runtime/edition supporting selected policy.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Consumer sees intended allowed rows; owner/admin behavior separately recorded; no broad production policy changes."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Consumer sees intended allowed rows; owner/admin behavior separately recorded; no broad production policy changes.",
+      "Demonstrate the additional boundary: Unsupported feature/access is environment_blocked,not a passed security demonstration.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Apply a supported row-level policy in isolation supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For apply a supported row-level policy in isolation, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Consumer sees intended allowed rows; owner/admin behavior separately recorded; no broad production policy changes.",
+      "Check current platform support and evaluate under the actual consumer identity."
+    ],
+    "sequence": 99,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Synthetic Pune/5,Goa/7; approved test principal and runtime/edition supporting selected policy.",
+        "changed_input_check": "Unsupported feature/access is environment_blocked,not a passed security demonstration."
+      },
+      "expected_output": {
+        "contract": "Unsupported feature/access is environment_blocked,not a passed security demonstration."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-100",
+    "tool_id": "databricks",
+    "title": "Use a supported column mask without assuming base-data deletion",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DATABRICKS-099"
+    ],
+    "scenario": "Rehearse a training policy that masks a synthetic email for a restricted reader.",
+    "task": "Rehearse a training policy that masks a synthetic email for a restricted reader.",
+    "learning_objective": "Use a supported column mask without assuming base-data deletion",
+    "inputs": {
+      "fixture": "BaseC1/fake@example.test; approved reader and supported governed-table capability.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Restricted read shows declared masked value; raw value remains governed; no claim of physical erasure."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Restricted read shows declared masked value; raw value remains governed; no claim of physical erasure.",
+      "Demonstrate the additional boundary: Privileged identity's different result is documented rather than used as the restricted-reader test.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Use a supported column mask without assuming base-data deletion supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Use a supported column mask without assuming base-data deletion. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Masking changes the consumer view; it does not by itself remove stored raw data."
+    ],
+    "sequence": 100,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "BaseC1/fake@example.test; approved reader and supported governed-table capability.",
+        "changed_input_check": "Privileged identity's different result is documented rather than used as the restricted-reader test."
+      },
+      "expected_output": {
+        "contract": "Privileged identity's different result is documented rather than used as the restricted-reader test."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-101",
+    "tool_id": "databricks",
+    "title": "Track a schema migration across consumers",
+    "level": 7,
+    "prerequisites": [
+      "RLP-DATABRICKS-100"
+    ],
+    "scenario": "Test two notebook consumers against an approved optional-column addition and a breaking rename.",
+    "task": "Test two notebook consumers against an approved optional-column addition and a breaking rename.",
+    "learning_objective": "Track a schema migration across consumers",
+    "inputs": {
+      "fixture": "v1 id,amount; v2 addsnote; candidatev 3 renames amount to net; consumer contracts recorded.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Optional addition preserves both consumers; rename blocked until explicit migration; actual test results retained."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Optional addition preserves both consumers; rename blocked until explicit migration; actual test results retained.",
+      "Demonstrate the additional boundary: A select-star consumer's changed schema is detected even if its total stays correct.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Track a schema migration across consumers supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_7",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Track a schema migration across consumers. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Compare the actual field names, types and nullability against the supplied contract before writing anything.",
+      "Compatibility includes output shape as well as numerical values."
+    ],
+    "sequence": 101,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "v1 id,amount; v2 addsnote; candidatev 3 renames amount to net; consumer contracts recorded.",
+        "changed_input_check": "A select-star consumer's changed schema is detected even if its total stays correct."
+      },
+      "expected_output": {
+        "contract": "A select-star consumer's changed schema is detected even if its total stays correct."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-102",
+    "tool_id": "databricks",
+    "title": "Measure redundant notebook startup",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DATABRICKS-061"
+    ],
+    "scenario": "Compare one bounded multi-task design with an approved shared-compute alternative using actual timing evidence.",
+    "task": "Compare one bounded multi-task design with an approved shared-compute alternative using actual timing evidence.",
+    "learning_objective": "Measure redundant notebook startup",
+    "inputs": {
+      "fixture": "Two tiny tasks on existing permitted configurations; same inputs/counts; no new paid provisioning.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Correct outputs equal; startup/queue/task metrics compared where available; resource/security tradeoffs stated."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Correct outputs equal; startup/queue/task metrics compared where available; resource/security tradeoffs stated.",
+      "Demonstrate the additional boundary: If isolated tests cannot expose the timing phases, report insufficient evidence.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Measure redundant notebook startup supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Measure redundant notebook startup. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "Optimize from measured orchestration overhead, not an assumption that fewer notebooks are always faster."
+    ],
+    "sequence": 102,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Two tiny tasks on existing permitted configurations; same inputs/counts; no new paid provisioning.",
+        "changed_input_check": "If isolated tests cannot expose the timing phases, report insufficient evidence."
+      },
+      "expected_output": {
+        "contract": "If isolated tests cannot expose the timing phases, report insufficient evidence."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-103",
+    "tool_id": "databricks",
+    "title": "Find a predicate hidden behind a Python function",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DATABRICKS-102"
+    ],
+    "scenario": "Compare a supported built-in filter with an equivalent Python UDF filter on a fixed training table.",
+    "task": "Compare a supported built-in filter with an equivalent Python UDF filter on a fixed training table.",
+    "learning_objective": "Find a predicate hidden behind a Python function",
+    "inputs": {
+      "fixture": "10000 synthetic rows;100 qualify; fixed runtime and approved table.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Both return same 100 keys; plans show observed pushdown/Python boundary differences; timings honest."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Both return same 100 keys; plans show observed pushdown/Python boundary differences; timings honest.",
+      "Demonstrate the additional boundary: Null inputs follow the same explicit policy in both implementations.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Find a predicate hidden behind a Python function supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For find a predicate hidden behind a python function, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Both return same 100 keys; plans show observed pushdown/Python boundary differences; timings honest.",
+      "Inspect the execution plan to see where evaluation actually occurs."
+    ],
+    "sequence": 103,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "10000 synthetic rows;100 qualify; fixed runtime and approved table.",
+        "changed_input_check": "Null inputs follow the same explicit policy in both implementations."
+      },
+      "expected_output": {
+        "contract": "Null inputs follow the same explicit policy in both implementations."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-104",
+    "tool_id": "databricks",
+    "title": "Bound collection for a diagnostic sample",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DATABRICKS-103"
+    ],
+    "scenario": "Replace a driver-side full-table collection used only to show examples with a deterministic bounded sample.",
+    "task": "Replace a driver-side full-table collection used only to show examples with a deterministic bounded sample.",
+    "learning_objective": "Bound collection for a diagnostic sample",
+    "inputs": {
+      "fixture": "10000 rows; diagnostic budget 10 rows; approved orderbyID.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "At most 10 example rows collected/displayed; full business count computed distributed; no sensitive fields in sample."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "At most 10 example rows collected/displayed; full business count computed distributed; no sensitive fields in sample.",
+      "Demonstrate the additional boundary: A zero-row fixture yields empty sample and count 0 without exception.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Bound collection for a diagnostic sample supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For bound collection for a diagnostic sample, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: At most 10 example rows collected/displayed; full business count computed distributed; no sensitive fields in sample.",
+      "Separate aggregate diagnostics from human-readable samples and cap the latter explicitly."
+    ],
+    "sequence": 104,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "10000 rows; diagnostic budget 10 rows; approved orderbyID.",
+        "changed_input_check": "A zero-row fixture yields empty sample and count 0 without exception."
+      },
+      "expected_output": {
+        "contract": "A zero-row fixture yields empty sample and count 0 without exception."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-105",
+    "tool_id": "databricks",
+    "title": "Measure release-test cost sustainably",
+    "level": 8,
+    "prerequisites": [
+      "RLP-DATABRICKS-104"
+    ],
+    "scenario": "Choose a tiered bounded fixture set that catches known correctness failures before a larger permitted benchmark.",
+    "task": "Choose a tiered bounded fixture set that catches known correctness failures before a larger permitted benchmark.",
+    "learning_objective": "Measure release-test cost sustainably",
+    "inputs": {
+      "fixture": "Small fixtures nulls,duplicates,dates; deterministic 10000 row benchmark; resource/time budget recorded.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Small gates fail seeded bugs; large benchmark runs only after correctness; no bypass of required checks."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Small gates fail seeded bugs; large benchmark runs only after correctness; no bypass of required checks.",
+      "Demonstrate the additional boundary: A failed small decimal test prevents benchmark/promotion.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 50,
+    "engineering_relevance": "Measure release-test cost sustainably supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_8",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Measure release-test cost sustainably. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Freeze the fixture and correctness result before benchmarking. Record the runtime, configuration and baseline metrics.",
+      "A larger dataset is not a substitute for precise edge-case tests."
+    ],
+    "sequence": 105,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Small fixtures nulls,duplicates,dates; deterministic 10000 row benchmark; resource/time budget recorded.",
+        "changed_input_check": "A failed small decimal test prevents benchmark/promotion."
+      },
+      "expected_output": {
+        "contract": "A failed small decimal test prevents benchmark/promotion."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-106",
+    "tool_id": "databricks",
+    "title": "Validate a governed artifact's ownership after deployment",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DATABRICKS-067"
+    ],
+    "scenario": "Inspect a test deployment's actual owner/run identity and compare with the approved service ownership contract.",
+    "task": "Inspect a test deployment's actual owner/run identity and compare with the approved service ownership contract.",
+    "learning_objective": "Validate a governed artifact's ownership after deployment",
+    "inputs": {
+      "fixture": "Existing training job/table; intended service principal; candidate owned by interactive user.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Gate reports mismatch and blocks promotion until authorized correction; data behavior alone does not pass ownership check."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Gate reports mismatch and blocks promotion until authorized correction; data behavior alone does not pass ownership check.",
+      "Demonstrate the additional boundary: A correct owner with excessive unrelated write privilege still fails least-scope review.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Validate a governed artifact's ownership after deployment supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "bridge",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Validate a governed artifact's ownership after deployment. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Record the actual principal and its effective grants before changing anything. A different interactive identity can give a misleading test.",
+      "Deployment identity, object ownership and effective data permissions require separate evidence."
+    ],
+    "sequence": 106,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Existing training job/table; intended service principal; candidate owned by interactive user.",
+        "changed_input_check": "A correct owner with excessive unrelated write privilege still fails least-scope review."
+      },
+      "expected_output": {
+        "contract": "A correct owner with excessive unrelated write privilege still fails least-scope review."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-107",
+    "tool_id": "databricks",
+    "title": "Rehearse a secret-reference rotation boundary",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DATABRICKS-106"
+    ],
+    "scenario": "Test that a training job uses the approved current secret reference without exporting its value.",
+    "task": "Test that a training job uses the approved current secret reference without exporting its value.",
+    "learning_objective": "Rehearse a secret-reference rotation boundary",
+    "inputs": {
+      "fixture": "Approved reference alias; fake/stub old-vs-new credential fixtures permitted; isolated connection.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "New reference resolves in the authorized test; failed old reference gives clear auth failure; logs contain neither value."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "New reference resolves in the authorized test; failed old reference gives clear auth failure; logs contain neither value.",
+      "Demonstrate the additional boundary: A successful cached connection is not sufficient proof that a fresh run uses the new reference.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Rehearse a secret-reference rotation boundary supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For rehearse a secret-reference rotation boundary, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: New reference resolves in the authorized test; failed old reference gives clear auth failure; logs contain neither value.",
+      "Validate on a fresh authorized connection and inspect reference identity, not secret text."
+    ],
+    "sequence": 107,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Approved reference alias; fake/stub old-vs-new credential fixtures permitted; isolated connection.",
+        "changed_input_check": "A successful cached connection is not sufficient proof that a fresh run uses the new reference."
+      },
+      "expected_output": {
+        "contract": "A successful cached connection is not sufficient proof that a fresh run uses the new reference."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-108",
+    "tool_id": "databricks",
+    "title": "Keep a release artifact self-contained",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DATABRICKS-107"
+    ],
+    "scenario": "Build a training release bundle containing code revision,job config,public parameters and required contract versions.",
+    "task": "Build a training release bundle containing code revision,job config,public parameters and required contract versions.",
+    "learning_objective": "Keep a release artifact self-contained",
+    "inputs": {
+      "fixture": "Two notebooks,onehelper,job definition,contract v1; secrets by reference only.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Bundle can be validated from a clean checkout/context; missing helper/contract blocks release; exact hashes recorded."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Bundle can be validated from a clean checkout/context; missing helper/contract blocks release; exact hashes recorded.",
+      "Demonstrate the additional boundary: A locally available untracked helper does not count as bundled dependency.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Keep a release artifact self-contained supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Keep a release artifact self-contained. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "List every dependency needed by a clean execution rather than relying on the developer's workspace state."
+    ],
+    "sequence": 108,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Two notebooks,onehelper,job definition,contract v1; secrets by reference only.",
+        "changed_input_check": "A locally available untracked helper does not count as bundled dependency."
+      },
+      "expected_output": {
+        "contract": "A locally available untracked helper does not count as bundled dependency."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-109",
+    "tool_id": "databricks",
+    "title": "Defend a readiness assessment's evidence boundary",
+    "level": 9,
+    "prerequisites": [
+      "RLP-DATABRICKS-108"
+    ],
+    "scenario": "Review a proposed portfolio claim against actual training runs and independent implementation evidence.",
+    "task": "Review a proposed portfolio claim against actual training runs and independent implementation evidence.",
+    "learning_objective": "Defend a readiness assessment's evidence boundary",
+    "inputs": {
+      "fixture": "Claim Azure pipeline independent; actual evidence local simulation and A I-assisted notebook; no authorized cloudrun.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Report distinguishes assisted local completion from unverified Azure execution and schedules bounded independent follow-up; no inflated readiness."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Report distinguishes assisted local completion from unverified Azure execution and schedules bounded independent follow-up; no inflated readiness.",
+      "Demonstrate the additional boundary: A later observed authorized end-to-end run can satisfy only its demonstrated dimensions.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Defend a readiness assessment's evidence boundary supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_9",
+    "challenge_kind": "initial",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For defend a readiness assessment's evidence boundary, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Report distinguishes assisted local completion from unverified Azure execution and schedules bounded independent follow-up; no inflated readiness.",
+      "A correct design and a real deployed execution answer different assessment questions."
+    ],
+    "sequence": 109,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Claim Azure pipeline independent; actual evidence local simulation and A I-assisted notebook; no authorized cloudrun.",
+        "changed_input_check": "A later observed authorized end-to-end run can satisfy only its demonstrated dimensions."
+      },
+      "expected_output": {
+        "contract": "A later observed authorized end-to-end run can satisfy only its demonstrated dimensions."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-110",
+    "tool_id": "databricks",
+    "title": "Independent subscription-renewal analytics transfer",
+    "level": 10,
+    "prerequisites": [
+      "RLP-DATABRICKS-071"
+    ],
+    "scenario": "Build a governed daily renewal report using event identity and an explicit cancellation-time rule.",
+    "task": "Build a governed daily renewal report using event identity and an explicit cancellation-time rule.",
+    "learning_objective": "Independent subscription-renewal analytics transfer",
+    "inputs": {
+      "fixture": "S1 renew 10 onOct26; S2 renew 7 then cancel before cutoff; duplicateS1; invalid missing customer; authorized training resources.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Report accepted renewal 10; S2 excluded per contract; duplicate once; invalid quarantined; lineage,privacy,restart and late correction checks."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Report accepted renewal 10; S2 excluded per contract; duplicate once; invalid quarantined; lineage,privacy,restart and late correction checks.",
+      "Demonstrate the additional boundary: Cancellation after cutoff belongs to the next reporting correction under a documented policy.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Independent subscription-renewal analytics transfer supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "For independent subscription-renewal analytics transfer, first write down the exact expected rows, fields or operation status for the tiny supplied fixture.",
+      "Use the existing databricks environment and inspect one intermediate result before adding another operation. Compare it with the required behavior: Report accepted renewal 10; S2 excluded per contract; duplicate once; invalid quarantined; lineage,privacy,restart and late correction checks.",
+      "Define the reporting cutoff and event identity before choosing transformations."
+    ],
+    "sequence": 110,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "S1 renew 10 onOct26; S2 renew 7 then cancel before cutoff; duplicateS1; invalid missing customer; authorized training resources.",
+        "changed_input_check": "Cancellation after cutoff belongs to the next reporting correction under a documented policy."
+      },
+      "expected_output": {
+        "contract": "Cancellation after cutoff belongs to the next reporting correction under a documented policy."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  },
+  {
+    "id": "RLP-DATABRICKS-111",
+    "tool_id": "databricks",
+    "title": "Independent audit-ready release transfer",
+    "level": 10,
+    "prerequisites": [
+      "RLP-DATABRICKS-110"
+    ],
+    "scenario": "Take a working bounded training pipeline through a candidate change,failed smoke test,rollback and corrected promotion.",
+    "task": "Take a working bounded training pipeline through a candidate change,failed smoke test,rollback and corrected promotion.",
+    "learning_objective": "Independent audit-ready release transfer",
+    "inputs": {
+      "fixture": "Baseline accepted total 12; candidate incorrectly drops unmatched customer 5; approved test resources and code versions.",
+      "environment": "Existing compatible local or authorized training environment; record actual runtime/service capabilities. Cloud access unavailable means environment_blocked, not execution acceptance."
+    },
+    "expected_output": {
+      "observed_behavior": "Failure caught,total discrepancy explained,baseline restored,corrected candidate preserves required row; actual run/revision/permission evidence provided."
+    },
+    "constraints": [
+      "Use only supplied small synthetic fixtures and isolated learner-owned outputs; preserve source data and previous accepted batches.",
+      "Use existing authorized cloud resources only; do not provision paid resources, expose credentials, mutate production data or send actual notifications to people.",
+      "Report unsupported runtime features as environment_blocked; a design or local simulation alone does not establish cloud execution."
+    ],
+    "acceptance_criteria": [
+      "Failure caught,total discrepancy explained,baseline restored,corrected candidate preserves required row; actual run/revision/permission evidence provided.",
+      "Demonstrate the additional boundary: A plan-only rollback does not establish successful recovery.",
+      "Submit implementation/configuration and actual observed output with assistance disclosure; reviewer checks correctness before verified completion."
+    ],
+    "estimated_minutes": 90,
+    "engineering_relevance": "Independent audit-ready release transfer supports a specific ingestion, storage, transformation or operational contract. After verification, explain which downstream consumer depends on this behavior and one limitation.",
+    "official_docs": [
+      "https://learn.microsoft.com/en-us/azure/databricks/jobs/",
+      "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/filters-and-masks/"
+    ],
+    "verification": {
+      "kind": "artifact_review"
+    },
+    "topic_id": null,
+    "published_version": "2026.10.26.2",
+    "independent_prerequisites": [],
+    "difficulty": "level_10",
+    "challenge_kind": "transfer",
+    "skill_prerequisites": [
+      "Verified preceding problem evidence or a reviewer-approved diagnostic covering its exact prerequisite contract."
+    ],
+    "progressive_hints": [
+      "Focus on the current bounded request: Independent audit-ready release transfer. Identify the one observable difference between the supplied normal and boundary cases.",
+      "Identify the current task input, its required output and the downstream action that must wait for success.",
+      "A defensible release story connects behavior,tests,artifacts and operational recovery evidence."
+    ],
+    "sequence": 111,
+    "authoring_batch": "cloud-explicit-002",
+    "followup": {
+      "task": "Independently reconstruct this bounded task using the changed-input check. Explain and demonstrate the result without the earlier implementation open.",
+      "inputs": {
+        "base_fixture": "Baseline accepted total 12; candidate incorrectly drops unmatched customer 5; approved test resources and code versions.",
+        "changed_input_check": "A plan-only rollback does not establish successful recovery."
+      },
+      "expected_output": {
+        "contract": "A plan-only rollback does not establish successful recovery."
+      },
+      "verification": {
+        "kind": "artifact_review"
+      },
+      "constraints": [
+        "No solution reveal; disclose assistance and retain actual observed evidence."
+      ]
+    }
+  }
+]

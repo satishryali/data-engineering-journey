@@ -29,6 +29,18 @@ ALIASES = {'PY-001': 'py.records.cleaning', 'PY-002': 'py.dict.access',
 
 def question(records, item_id, day=None, retry=0):
     day = day or now().date()
+    if item_id.startswith('RLP-'):
+        from services.curriculum import get_problem, learner_prompt
+        problem = get_problem(item_id)
+        if not problem:
+            raise ValueError('Published problem is unavailable; preserve its saved evidence.')
+        prompt = ('Reconstruct this business result on changed input and state all help used. '
+                  'Use Tools for the problem submission and verified completion counter.\n\n'
+                  + json.dumps(learner_prompt(problem), ensure_ascii=False, indent=2))
+        return Question(f'Q-{item_id}-{day}-{retry}', item_id, problem['title'],
+                        'Practical application', prompt, None, [],
+                        'Compare your actual output with every acceptance criterion after attempting. '
+                        'Use Tools to review artifacts; no solution is revealed here.', [], 'building')
     topics = {t['id']: t for t in records.json('tracking/topic-map.json')['topics']}
     concept = ALIASES.get(item_id, item_id)
     topic = topics[concept]

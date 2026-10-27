@@ -1,0 +1,24 @@
+{
+  "status": "interrupted_agent_content_recovered_with_drafts",
+  "source": "foundations_batch3.py",
+  "summary": {
+    "python": {
+      "prepared": 110,
+      "publishable": 60,
+      "draft": 50,
+      "sha256": "17b65cdfc63e41501597371d251f15460005720bed2d25188c518703a07c566b",
+      "last_id": "RLP-PY-321",
+      "next_id": "RLP-PY-322"
+    },
+    "sql": {
+      "prepared": 100,
+      "publishable": 28,
+      "draft": 72,
+      "sha256": "53c26d719872464897d37717ae067fd6dc2284ead7ef65e823548fe14888e84f",
+      "last_id": "RLP-SQL-307",
+      "next_id": "RLP-SQL-308"
+    }
+  },
+  "quality_rule": "Compressed prose remains draft even when schema valid.",
+  "next_action": "Rewrite drafts with precise readable contracts before promotion; preserve all IDs."
+}

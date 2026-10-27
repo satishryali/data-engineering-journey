@@ -1,0 +1,6 @@
+{
+  "checks": 18,
+  "passed": true,
+  "data": "disposable checkout only",
+  "canonical_checkpoint": "covered by AppTest completion regressions"
+}

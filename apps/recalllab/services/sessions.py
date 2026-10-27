@@ -9,6 +9,9 @@ from challenges.catalog import PYTHON, SQL
 
 def varied_question(records, item, day, style, nonce=0):
     q = question(records, item, day, nonce)
+    if item.startswith('RLP-'):
+        # Published business prompts must not become invented generic note questions.
+        return {'question': q.dict(), 'runner': None, 'minutes': 10, 'style': 'coding'}
     concept = ALIASES.get(item,item)
     number = day.toordinal()*10 + nonce
     runner = None
@@ -58,14 +61,16 @@ def varied_question(records, item, day, style, nonce=0):
     return {'question':q.dict(), 'runner':runner, 'minutes':10 if style=='coding' else 5, 'style':style}
 
 
-def get_plan(records, journal, session, minutes=20, day=None):
+def get_plan(records, journal, session, minutes=20, day=None, max_items=None):
+    # A limit bounds new work; saved tasks and submitted evidence are never removed.
+    max_items = max(1, int(max_items)) if max_items is not None else None
     key = 'plan:'+session
     existing = journal.get('settings', key)
     if existing:
         if minutes > existing['budget_minutes']:
             used = {e.get('task_variant') for e in records.events()+journal.attempts()}
             used.update(t['question']['variant_id'] for t in existing['tasks'])
-            while sum(t['minutes'] for t in existing['tasks'])+5 <= minutes:
+            while sum(t['minutes'] for t in existing['tasks'])+5 <= minutes and (max_items is None or len(existing['tasks']) < max_items):
                 i = len(existing['tasks'])
                 style = ['prediction','debug','explain'][i%3]
                 item = existing['tasks'][i%len(existing['tasks'])]['question']['item_id']
@@ -86,6 +91,8 @@ def get_plan(records, journal, session, minutes=20, day=None):
         styles += ['explain' if styles[0]=='debug' else 'debug']
     tasks, remaining = [], minutes
     for i, style in enumerate(styles):
+        if max_items is not None and len(tasks) >= max_items:
+            break
         if not targets:
             break
         cost = 10 if style=='coding' else 5
@@ -109,5 +116,5 @@ def get_plan(records, journal, session, minutes=20, day=None):
     plan = {'session_id':session,'date_ist':str(day),'budget_minutes':planned_minutes,'targets':targets,'tasks':tasks}
     journal.put('settings',key,plan)
     if minutes > planned_minutes:
-        return get_plan(records,journal,session,minutes,day)
+        return get_plan(records,journal,session,minutes,day,max_items)
     return plan
