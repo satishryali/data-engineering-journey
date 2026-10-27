@@ -7,9 +7,9 @@ Source: topic-map + revision queue/history + mistakes. This plan does not record
 
 | Count | Meaning |
 | ---: | --- |
-| 143 | learning sections mapped |
+| 155 | learning sections mapped |
 | 7 | sections excluded |
-| 32 | topics total |
+| 33 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -69,6 +69,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | py.records.summary: Count and total orders by status after a loop | 2026-11-11 | py.list.records, py.csv.read |
 | py.decimal.money: Decimal prices and explicit money rounding | 2026-11-12 | py.csv.read |
 | py.dataclasses.basics: Dataclass records and generated methods | 2026-11-13 | py.objects.basics |
+| py.concurrency.threading: Python multithreading: Thread, start, join and ThreadPoolExecutor | 2026-11-14 | py.functions.basics |
 | py.objects.protocols: Object comparison and collection special methods | 2026-11-14 | py.objects.basics |
 
 ## Important weak topics
@@ -97,7 +98,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 29 topics await assessment. One diagnostic per suitable session needs at least 29 sessions; new notes can extend this. Replan missed slots without restarting.
+- 30 topics await assessment. One diagnostic per suitable session needs at least 30 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -135,6 +136,7 @@ Check prerequisites first. Teach missing understanding before retention practice
 | py.decimal.money | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.dataclasses.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.objects.protocols | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.concurrency.threading | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -250,6 +252,19 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Lists / Things to remember: py.list.basics, py.list.mutate
   - Lists / Questions for later: Recall navigation or source/administrative metadata; examples above are mapped.
   - Lists / Reference: Recall navigation or source/administrative metadata; examples above are mapped.
+- [Notes/Python/Concepts/multithreading.md](../../Notes/Python/Concepts/multithreading.md)
+  - Multithreading: py.concurrency.threading
+  - Multithreading / Why we need multithreading: py.concurrency.threading
+  - Multithreading / Running a background task with `threading.Thread`: py.concurrency.threading
+  - Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook: py.concurrency.threading
+  - Multithreading / Running a background task with `threading.Thread` / How the important lines work:: py.concurrency.threading
+  - Multithreading / Why `target=slow_task` has no parentheses `()`: py.concurrency.threading
+  - Multithreading / Waiting for results with `t.join()`: py.concurrency.threading
+  - Multithreading / Waiting for results with `t.join()` / Real data pipeline example: CSV copy and read-back: py.concurrency.threading
+  - Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:: py.concurrency.threading
+  - Multithreading / Managing multiple workers with `ThreadPoolExecutor`: py.concurrency.threading
+  - Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:: py.concurrency.threading
+  - Multithreading / Python's Global Interpreter Lock (GIL): py.concurrency.threading
 - [Notes/Python/Concepts/objects-and-printing.md](../../Notes/Python/Concepts/objects-and-printing.md)
   - Objects and printing: py.objects.basics
   - Objects and printing / Create an employee: py.objects.basics

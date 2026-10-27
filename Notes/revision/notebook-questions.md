@@ -31,4 +31,11 @@ Explanations are linked from [Python notes](../Python/Index.md). These questions
 6. Support batch[1] and then a for loop. Explain which method each operation uses.
 7. Write a with example that prints on entry and exit. Explain what becomes the as variable.
 
+## Multithreading — 28 October 2026
+
+1. Explain the difference between `threading.Thread(target=my_func)` and `threading.Thread(target=my_func())`.
+2. Why does the line immediately following `t.start()` execute without waiting for the background thread to finish?
+3. When reading or writing an export file (like `amazon_v1.csv`), explain why `t.join()` is necessary before attempting to read the file in the main thread.
+4. Compare `ThreadPoolExecutor.map()` with running a standard synchronous `for` loop for three 2-second tasks.
+
 These are unanswered practice prompts; no review completion or score is implied.

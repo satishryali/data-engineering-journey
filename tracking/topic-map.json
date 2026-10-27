@@ -1606,6 +1606,73 @@
           "detected_date_ist": "2026-10-26"
         }
       ]
+    },
+    {
+      "id": "py.concurrency.threading",
+      "name": "Python multithreading: Thread, start, join and ThreadPoolExecutor",
+      "prerequisites": [
+        "py.functions.basics"
+      ],
+      "initial_assessment_date_ist": "2026-11-14",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "sha256": "a05ada3b3e310a1599bec6c4a690c0053398d4fa2219706bd855cd294a752ead"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Why we need multithreading"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Running a background task with `threading.Thread`"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Running a background task with `threading.Thread` / How the important lines work:"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Why `target=slow_task` has no parentheses `()`"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Waiting for results with `t.join()`"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Waiting for results with `t.join()` / Real data pipeline example: CSV copy and read-back"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Managing multiple workers with `ThreadPoolExecutor`"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Python's Global Interpreter Lock (GIL)"
+        }
+      ]
     }
   ],
   "note_inventory": [
@@ -2423,6 +2490,108 @@
           "heading": "Lists / Reference",
           "content_hash": "97874e264ec0e45b0b4d51b0bf5258d14bf6c443809bc9025722bd250e2a8242",
           "exclusion_reason": "Recall navigation or source/administrative metadata; examples above are mapped."
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/multithreading.md",
+      "file_hash": "a05ada3b3e310a1599bec6c4a690c0053398d4fa2219706bd855cd294a752ead",
+      "sections": [
+        {
+          "key": "Multithreading",
+          "heading": "Multithreading",
+          "content_hash": "a171b966574db6985c152cdc80313ee92a997759900f23a1831288bfaf1d76e8",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Why we need multithreading",
+          "heading": "Multithreading / Why we need multithreading",
+          "content_hash": "7a74311190db4397f03cb5bf2f3a788afada5d78e82a8d73c13b268310d2686b",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Running a background task with `threading.Thread`",
+          "heading": "Multithreading / Running a background task with `threading.Thread`",
+          "content_hash": "e57b0f3e12117aa6020bc6c99ef6f8b4bbb4b8cb8aa3aabfce6bb07ab35fc12c",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook",
+          "heading": "Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook",
+          "content_hash": "9daf7c0e62e10df0ccae4ca1273ac0b9b3edf1a4030870681c7b193b9ab1b97b",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Running a background task with `threading.Thread` / How the important lines work:",
+          "heading": "Multithreading / Running a background task with `threading.Thread` / How the important lines work:",
+          "content_hash": "0a6856532b89e625065244b0af39c02217ab1d9d54ab988639a086e02800e695",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Why `target=slow_task` has no parentheses `()`",
+          "heading": "Multithreading / Why `target=slow_task` has no parentheses `()`",
+          "content_hash": "bba7958cc820000ebce45474218544bd1f1fc83406f7c830c82f36519f3208eb",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Waiting for results with `t.join()`",
+          "heading": "Multithreading / Waiting for results with `t.join()`",
+          "content_hash": "4fdb8cfd21fcb7ed0285203705b1a3ea24e26c342953138eb860b70a37330aeb",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Waiting for results with `t.join()` / Real data pipeline example: CSV copy and read-back",
+          "heading": "Multithreading / Waiting for results with `t.join()` / Real data pipeline example: CSV copy and read-back",
+          "content_hash": "5bab96b39c054481e1bf0ac4b965bfa47666d74e533c4502695c5258dd334e33",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:",
+          "heading": "Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:",
+          "content_hash": "04858d1246be9efff7e3c147ca7f7515671b22deca65196347dd8b9a5d31e090",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Managing multiple workers with `ThreadPoolExecutor`",
+          "heading": "Multithreading / Managing multiple workers with `ThreadPoolExecutor`",
+          "content_hash": "2006b85e0174f7527d4c72c1cd8b99b0452ceba78d3938441e3fcb482fc61c2a",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:",
+          "heading": "Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:",
+          "content_hash": "5e0316d8ee9efc60f30ed3e632c4e7d8009c59a3c5dab01a3ed7966c3204881f",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Python's Global Interpreter Lock (GIL)",
+          "heading": "Multithreading / Python's Global Interpreter Lock (GIL)",
+          "content_hash": "25e0c479489a93a83a045b8820d73694071acdec2e3c01886397014fa9c0a78d",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
         }
       ]
     },
