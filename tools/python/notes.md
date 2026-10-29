@@ -6,6 +6,8 @@ not establish independent proficiency. The selected dictionary refresher remains
 Keep explanations there rather than duplicating them here; preserve the exercise attempts.
 The Notes Keeper saves meaningful questions/corrections at checkpoint boundaries.
 
+Current concurrency explanations: [multithreading](../../Notes/Python/Concepts/multithreading.md), [processes and GIL](../../Notes/Python/Concepts/processes-and-gil.md), [async and await](../../Notes/Python/Concepts/async-await.md), and [API requests](../../Notes/Python/Concepts/api-requests.md). Unanswered practice is in [concurrency questions](../../Notes/revision/concurrency-questions.md).
+
 For each actual lesson record:
 - Problem encountered:
 - Why the first approach failed:

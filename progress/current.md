@@ -1,4 +1,13 @@
-# Current tutoring checkpoint - Python notes saved, 25 October 2026 (IST)
+# Current tutoring checkpoint - concurrency notes saved, 29 October 2026 IST
+
+## Python concurrency notes saved, 29 October 2026 IST
+
+<!-- CP-20261029-concurrency-notes -->
+The learner practised synchronous calls, threads and thread pools, a three-city weather API fetch, the GIL check, process pools and the Windows main guard, then async coroutines and two overlapping waits. Saved output and reported terminal results are summarized in [the attempt handoff](../progress/concurrency/2026-10-29-session.md). The tutor supplied worked code and debugging help. The initial CPU check compared `None` values before a corrected return; the corrected short thread timing was effectively a tie. The corrected process time of 0.28 seconds was learner-reported without full terminal output in this chat. No independent score, delayed review, project acceptance or new study-log interval is claimed.
+
+Explanations: [threading](../Notes/Python/Concepts/multithreading.md), [processes and GIL](../Notes/Python/Concepts/processes-and-gil.md), [async and await](../Notes/Python/Concepts/async-await.md), and [API requests](../Notes/Python/Concepts/api-requests.md). [Unanswered practice](../Notes/revision/concurrency-questions.md) is separate. The concepts are mapped as unassessed with planning slots; existing review dates remain unchanged. RRDAP RDS-001 and the earlier AI reminder collector remain pending separately.
+
+Next: Compare two scheduled async jobs using await asyncio.sleep(2) and time.sleep(2); share code, output, and why timing differs.
 
 ## AI reminder checkpoint, 28 October 2026 IST
 

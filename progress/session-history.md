@@ -439,3 +439,10 @@ Evidence: `progress/ai-reminder/2026-10-28-session.md`; `progress/ai-reminder/co
 Organized requested AI notes from the saved 28 October session under Notes/AI, with model basics, input practice, index and separate recall prompts. Source and saved notebook inspected; upper() result versus unchanged original documented. Existing session model/hardware observations were not rerun. Four concepts receive unassessed diagnostic planning slots only. No scored review, training, timer change or project acceptance. Learner source preserved. Next: Update the recurrence input to retain a lowercase answer and display task, time and recurrence; run with YES and share the actual output.
 
 Evidence: `Notes/AI/Index.md`; `Notes/AI/reminder-model-basics.md`; `Notes/AI/reminder-input-practice.md`; `progress/ai-reminder/2026-10-28-session.md`
+
+<!-- checkpoint:CP-20261029-concurrency-notes -->
+## 2026-10-29 — CP-20261029-concurrency-notes (setup)
+
+Saved guided Python concurrency and API explanations from actual notebook/script evidence. Sequential and threaded waits, real weather API fetch, GIL-enabled CPU comparison, Windows process-pool startup error/correction, and async task ordering are documented. Learner process timing 0.28 seconds was reported without full corrected output; no independence, delayed retention, timer or project acceptance inferred. Next: Compare two scheduled async jobs using await asyncio.sleep(2) and time.sleep(2); share code, output, and why timing differs.
+
+Evidence: `progress/concurrency/2026-10-29-session.md`; `practice/Sync/Async/async.ipynb#cell-f5c3148c`; `practice/Sync/Async/mulitprocess.py`; `Notes/Python/Concepts/multithreading.md`; `Notes/Python/Concepts/processes-and-gil.md`; `Notes/Python/Concepts/async-await.md`; `Notes/Python/Concepts/api-requests.md`; `Notes/revision/concurrency-questions.md`

@@ -31,6 +31,11 @@
 
 - [Dataclasses: why and how](Concepts/dataclasses.md)
 - [Special methods: one example each](Concepts/special-methods.md)
-- [Multithreading: threads, start, and join](Concepts/multithreading.md)
-- [Multithreading: threads, start, and join](Concepts/multithreading.md)
+
+## Concurrency and APIs
+
+- [Multithreading and thread pools](Concepts/multithreading.md)
+- [Processes and the GIL](Concepts/processes-and-gil.md)
+- [Async, await, and tasks](Concepts/async-await.md)
+- [Requesting API data](Concepts/api-requests.md)
 

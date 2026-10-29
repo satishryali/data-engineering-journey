@@ -323,6 +323,13 @@
       "kind": "setup",
       "sha256": "261819cf55f0bfc3e2da0c680650948643f64291f793f5db01c1611f4e3a252b",
       "evidence_key": "d0c85248d3b0e351bbdcffedc7663fe94fd139680c08d198ae19624745f09638"
+    },
+    {
+      "checkpoint_id": "CP-20261029-concurrency-notes",
+      "date_ist": "2026-10-29",
+      "kind": "setup",
+      "sha256": "edb7ab0c7e493ad08c484487205947673bb59331fe18d6e1cd101071202c7065",
+      "evidence_key": "5536c2b0abcb4a703983c8da3d7a4e24044908d78b2a257ab35fe97be37b5bb9"
     }
   ]
 }

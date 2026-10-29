@@ -1617,10 +1617,17 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/multithreading.md",
-          "sha256": "a05ada3b3e310a1599bec6c4a690c0053398d4fa2219706bd855cd294a752ead"
+          "sha256": "0c53b2bb2781ce722fd40d19e9d19ea6ad2eadd71022a28b6349a1723f16e1b2"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "sha256": "a05ada3b3e310a1599bec6c4a690c0053398d4fa2219706bd855cd294a752ead",
+          "retained_from": "prior mapped note",
+          "reason": "29 October accuracy clarification; no assessment changed"
+        }
+      ],
       "coverage": "queued",
       "exercise_ids": [],
       "note_sections": [
@@ -1638,7 +1645,7 @@
         },
         {
           "path": "Notes/Python/Concepts/multithreading.md",
-          "key": "Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook"
+          "key": "Multithreading / Running a background task with `threading.Thread` / Example output (order may vary)"
         },
         {
           "path": "Notes/Python/Concepts/multithreading.md",
@@ -1671,6 +1678,56 @@
         {
           "path": "Notes/Python/Concepts/multithreading.md",
           "key": "Multithreading / Python's Global Interpreter Lock (GIL)"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / What CPython means"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Why two API results appear together"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Why two Python calculations may not finish faster"
+        }
+      ],
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Why we need multithreading",
+          "prior_hash": "7a74311190db4397f03cb5bf2f3a788afada5d78e82a8d73c13b268310d2686b",
+          "content_hash": "76bea072ce57a121bc2d0d12df2caaa5dd314395854ac4a0a880268f51dae227",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Running a background task with `threading.Thread` / How the important lines work:",
+          "prior_hash": "0a6856532b89e625065244b0af39c02217ab1d9d54ab988639a086e02800e695",
+          "content_hash": "7c8775e50f9879d0379d394d5488de9581f3d95ce34091eb502a133916729ff2",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:",
+          "prior_hash": "04858d1246be9efff7e3c147ca7f7515671b22deca65196347dd8b9a5d31e090",
+          "content_hash": "30fbdfb797217ef8fff9a3d334a1cdfa079f8c8c58802c205a5552b59abddd6c",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:",
+          "prior_hash": "5e0316d8ee9efc60f30ed3e632c4e7d8009c59a3c5dab01a3ed7966c3204881f",
+          "content_hash": "748c4060475096b9ffd8529431b7c2c85898e555c001f82412729b54c78a7eab",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Python's Global Interpreter Lock (GIL)",
+          "prior_hash": "25e0c479489a93a83a045b8820d73694071acdec2e3c01886397014fa9c0a78d",
+          "content_hash": "59d31fd2c9393c6e78aabaa3dcab7d5d7551218a4fa12fdb08b6c2ab06020479",
+          "detected_date_ist": "2026-10-29"
         }
       ]
     },
@@ -1844,6 +1901,168 @@
         }
       ],
       "initial_assessment_date_ist": "2026-11-21"
+    },
+    {
+      "id": "py.concurrency.processes",
+      "name": "Processes, separate interpreters and virtual environments",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "sha256": "cd5ec0e4118c7fc2b7b79c8e1e24b1b970a2472a1badaf24e604b3ac63325290"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "sha256": "d83fdce3d675fe08172e5e39cb4fea95a8ca8066e6fdc046820ec85c33959912",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note expansion; no assessment changed"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "sha256": "996790e2340343555fb219c918eb2f9f1863ec5f555056f61dc909e91a415bbb",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note clarification; no assessment changed"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.functions.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Threads and processes"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Which Python and .venv do workers use?"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Small calculation example"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Why the first Windows run failed"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-22",
+      "needs_reassessment": false
+    },
+    {
+      "id": "py.concurrency.async",
+      "name": "Normal functions, coroutines and overlapping async waits",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "sha256": "2750203e6e8c552e83a7c2974964697bbe6aaf0879793f1d2e8f1a5b00a33d51"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "sha256": "bb6080078a0b9a46c140c9fcb2a4fd20329461893abf1e228f897e1cf08bc604",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note expansion; no assessment changed"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "sha256": "76686f93bd7352e8e129d3ad6a6ecdc562750650ac4f833cefa149f397969c62",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note clarification; no assessment changed"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.functions.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Calling def and async def"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Two overlapping waits"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Two pauses in each shop"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Compared with your thread pool"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-23",
+      "needs_reassessment": false
+    },
+    {
+      "id": "py.api.requests",
+      "name": "Request API data and read JSON response fields",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "sha256": "73091a85c0124c7070065b50fa7cbb83a9a1198f83d948ce15c0df81e534cc8f"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "sha256": "ef3bdc3e36a70229469de6c8faa5363577ac472b6615d3bb3a5e4d2f490f7931",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note clarification; no assessment changed"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.functions.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / Fetch one response"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / A request error in the thread pool"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / Choosing a Python tool"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / Format parameters with urlencode"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-24",
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "section": "Requesting API data / Format parameters with urlencode",
+          "prior_hash": "e335b62d6576109155935a8a27608c0d2f71520b762d93808ab66f06f4fc3b57",
+          "content_hash": "346b64bfdb354ef1302615e2189c6ba4a2790a78e83ea4939996509777d88933",
+          "detected_date_ist": "2026-10-29"
+        }
+      ]
     }
   ],
   "note_inventory": [
@@ -1861,10 +2080,6 @@
     },
     {
       "path": "Notes/.obsidian/core-plugins.json",
-      "exclusion_reason": "App configuration; no learning coverage."
-    },
-    {
-      "path": "Notes/.obsidian/graph.json",
       "exclusion_reason": "App configuration; no learning coverage."
     },
     {
@@ -1925,7 +2140,8 @@
           "heading": "A small model for reminders",
           "content_hash": "f4adbd17146ad9ff8e611a7925045d52db0d34dcc559a88665d8eaba22083030",
           "topic_ids": [
-            "ai.reminder.model"
+            "ai.reminder.model",
+            "ai.model.adaptation"
           ]
         },
         {
@@ -1933,7 +2149,8 @@
           "heading": "A small model for reminders / Running and fine-tuning",
           "content_hash": "15c6c18e5f8fa45f54fa061b1402be38465da9897c7d63156f2fa9e5217dd078",
           "topic_ids": [
-            "ai.reminder.model"
+            "ai.reminder.model",
+            "ai.model.adaptation"
           ]
         },
         {
@@ -1941,7 +2158,8 @@
           "heading": "A small model for reminders / Check the answer before training",
           "content_hash": "465ecd39c3e3a42d1c400cc8f3c440c7bf02bc6f8d1ef2ef645cf1286607b663",
           "topic_ids": [
-            "ai.reminder.evaluation"
+            "ai.reminder.evaluation",
+            "ai.reminders.evaluation"
           ]
         },
         {
@@ -1949,7 +2167,8 @@
           "heading": "A small model for reminders / Create input and answer pairs",
           "content_hash": "609f5a228bd71672bb4409acdc02158a0e48f216cb02ddb5d6b813ceceff8907",
           "topic_ids": [
-            "ai.reminder.examples"
+            "ai.reminder.examples",
+            "ai.reminders.dataset"
           ]
         },
         {
@@ -1967,7 +2186,7 @@
     },
     {
       "path": "Notes/New Syntax/dictionary-copy.md",
-      "file_hash": "a80b4d76a7090aef86547483df697155bcd32aedec338a06395fbd33e858011a",
+      "file_hash": "67d27405e819ce4ac4636d9abea468a898eecfc0d3fdbcfd568d3c9d8b11f4e3",
       "sections": [
         {
           "key": "Copy a dictionary before changing it",
@@ -1982,7 +2201,7 @@
     },
     {
       "path": "Notes/New Syntax/list-plus.md",
-      "file_hash": "41bcf2978312b5921dbf615784f7e1e42e2b08e2051d45df55f693a6b45ef54f",
+      "file_hash": "23bc5e33d4ec14511df24b815c5bc853b64205c70a9eb85832acadf2d4bde420",
       "sections": [
         {
           "key": "Join lists using +",
@@ -2059,7 +2278,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Hashicorp_vault.md",
-      "file_hash": "7c14dbb241bc7013e39db62c3cb04c567dea36341244728d824bbff4014ac3bf",
+      "file_hash": "288af3824dc21794a2822b32bb374cb5376505da71139b01b2515d013fd353ec",
       "sections": [
         {
           "key": "Step 1 : importing hvac",
@@ -2121,7 +2340,7 @@
     },
     {
       "path": "Notes/Python/Concepts/Logging.md",
-      "file_hash": "2448a74bda7aa969b615d80cd294a08a96a588507582a95213d0d0f812306a53",
+      "file_hash": "4c3fdb19ebccd67c433f1c3b92e4cbbbf2e6fa32115cb3d664af4f45244a1269",
       "sections": [
         {
           "key": "Notes / Logging Module",
@@ -2139,6 +2358,108 @@
           "topic_ids": [
             "py.logging.basics"
           ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/api-requests.md",
+      "file_hash": "73091a85c0124c7070065b50fa7cbb83a9a1198f83d948ce15c0df81e534cc8f",
+      "sections": [
+        {
+          "key": "Requesting API data",
+          "heading": "Requesting API data",
+          "content_hash": "1df6f6240d6fc9a171c4cc5a36e35fd5cc7b26bf01b993862639d2c2b58c1766",
+          "topic_ids": [
+            "py.api.requests"
+          ]
+        },
+        {
+          "key": "Requesting API data / Fetch one response",
+          "heading": "Requesting API data / Fetch one response",
+          "content_hash": "3ed158e5f5cb662e10bf817d6d793a78320f0ebe8da86f5df9c08cdd80e24428",
+          "topic_ids": [
+            "py.api.requests"
+          ]
+        },
+        {
+          "key": "Requesting API data / Format parameters with urlencode",
+          "heading": "Requesting API data / Format parameters with urlencode",
+          "content_hash": "346b64bfdb354ef1302615e2189c6ba4a2790a78e83ea4939996509777d88933",
+          "topic_ids": [
+            "py.api.requests"
+          ]
+        },
+        {
+          "key": "Requesting API data / A request error in the thread pool",
+          "heading": "Requesting API data / A request error in the thread pool",
+          "content_hash": "3147a8ccc499efe118694890cc9e9c3ee6d63b7c6127b5dc600285fe706731e6",
+          "topic_ids": [
+            "py.api.requests"
+          ]
+        },
+        {
+          "key": "Requesting API data / Choosing a Python tool",
+          "heading": "Requesting API data / Choosing a Python tool",
+          "content_hash": "733e01661ec8fe0dd131af6bb1fa483b2341e15038d462ccac03cba30f28b732",
+          "topic_ids": [
+            "py.api.requests"
+          ]
+        }
+      ],
+      "removed_sections": [
+        "Requesting API data / Format parameters with urlencode / How the important lines work",
+        "Requesting API data / Format parameters with urlencode / Why we need it"
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/async-await.md",
+      "file_hash": "2750203e6e8c552e83a7c2974964697bbe6aaf0879793f1d2e8f1a5b00a33d51",
+      "sections": [
+        {
+          "key": "Normal and async functions",
+          "heading": "Normal and async functions",
+          "content_hash": "d696922afbafb570d0dc1592b5780bfb9b7386a4b37b86cbeae53cc6e6cb9084",
+          "topic_ids": [
+            "py.concurrency.async"
+          ]
+        },
+        {
+          "key": "Normal and async functions / Calling def and async def",
+          "heading": "Normal and async functions / Calling def and async def",
+          "content_hash": "a8863356170a2f629600ce7478fa0a10f971b9c17a6c7d84ae837c87607b34ca",
+          "topic_ids": [
+            "py.concurrency.async"
+          ]
+        },
+        {
+          "key": "Normal and async functions / Two overlapping waits",
+          "heading": "Normal and async functions / Two overlapping waits",
+          "content_hash": "465b05941a132a5e61c00634bfed3d1f56a8a4cee4278cd0d43d0a7c08c2affb",
+          "topic_ids": [
+            "py.concurrency.async"
+          ]
+        },
+        {
+          "key": "Normal and async functions / Two pauses in each shop",
+          "heading": "Normal and async functions / Two pauses in each shop",
+          "content_hash": "734d83c210f0991fd98ec154e5d53f45afffaeb659b58574e4303eb83526790b",
+          "topic_ids": [
+            "py.concurrency.async"
+          ]
+        },
+        {
+          "key": "Normal and async functions / Compared with your thread pool",
+          "heading": "Normal and async functions / Compared with your thread pool",
+          "content_hash": "260900b4333712d3ce93bb9cdb4e2cf17397d019d99a80e25f53d81175819b90",
+          "topic_ids": [
+            "py.concurrency.async"
+          ]
+        },
+        {
+          "key": "Normal and async functions / Sources and learning context",
+          "heading": "Normal and async functions / Sources and learning context",
+          "content_hash": "91098fb7f5012a2ff7cfd2007c5738dcf96d3df94156c6c87a237e1dd92422f4",
+          "exclusion_reason": "Source links and administrative learning context; explanations mapped separately."
         }
       ]
     },
@@ -2264,7 +2585,7 @@
     },
     {
       "path": "Notes/Python/Concepts/dataclasses.md",
-      "file_hash": "5dffc678e9b0ab938a91c10662ebc5ab179f4d5f3c76a2021ad9bd866edc8275",
+      "file_hash": "aa4681a0649b4f5fe487d811c18b885385a25bc4273e416111947703e4f601a8",
       "sections": [
         {
           "key": "Dataclasses",
@@ -2495,7 +2816,7 @@
     },
     {
       "path": "Notes/Python/Concepts/faker.md",
-      "file_hash": "6d32ef71185cd209fe555bc389a46fc9eebd1c366db80e3217fc239ff034428c",
+      "file_hash": "ddd2e403a1e8429086c7e0de23675ca1ffe504b1dfc06c9081140d393d8cee19",
       "sections": [
         {
           "key": "Generate practice data with Faker",
@@ -2557,7 +2878,7 @@
     },
     {
       "path": "Notes/Python/Concepts/file-methods.md",
-      "file_hash": "eaf5da225fb66e1b01f7a4d2fd165b5da16a09ec00293dbd4ab5b35e44bc5c9d",
+      "file_hash": "d034e576d61d94b186cd8b69b6d41be19d566f99dbf5cfc6bff000030e9b37ce",
       "sections": [
         {
           "key": "Work with an open file",
@@ -2633,7 +2954,7 @@
     },
     {
       "path": "Notes/Python/Concepts/lists.md",
-      "file_hash": "55c4dfa6c7c0f86f4a5c5e30282267824c812fe2ca5eef88658d0654adfdf267",
+      "file_hash": "56140e5c8e47aea2006593757131e3df792ed2c016ddd8484931e7bba7c6fac6",
       "sections": [
         {
           "key": "Lists",
@@ -2756,7 +3077,7 @@
     },
     {
       "path": "Notes/Python/Concepts/multithreading.md",
-      "file_hash": "c9c0f15c682193c3556907db557dbd57fa91ed9d54649130397a2737fdcf25d3",
+      "file_hash": "0c53b2bb2781ce722fd40d19e9d19ea6ad2eadd71022a28b6349a1723f16e1b2",
       "sections": [
         {
           "key": "Multithreading",
@@ -2769,7 +3090,7 @@
         {
           "key": "Multithreading / Why we need multithreading",
           "heading": "Multithreading / Why we need multithreading",
-          "content_hash": "7a74311190db4397f03cb5bf2f3a788afada5d78e82a8d73c13b268310d2686b",
+          "content_hash": "76bea072ce57a121bc2d0d12df2caaa5dd314395854ac4a0a880268f51dae227",
           "topic_ids": [
             "py.concurrency.threading"
           ]
@@ -2783,8 +3104,8 @@
           ]
         },
         {
-          "key": "Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook",
-          "heading": "Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook",
+          "key": "Multithreading / Running a background task with `threading.Thread` / Example output (order may vary)",
+          "heading": "Multithreading / Running a background task with `threading.Thread` / Example output (order may vary)",
           "content_hash": "9daf7c0e62e10df0ccae4ca1273ac0b9b3edf1a4030870681c7b193b9ab1b97b",
           "topic_ids": [
             "py.concurrency.threading"
@@ -2793,7 +3114,7 @@
         {
           "key": "Multithreading / Running a background task with `threading.Thread` / How the important lines work:",
           "heading": "Multithreading / Running a background task with `threading.Thread` / How the important lines work:",
-          "content_hash": "0a6856532b89e625065244b0af39c02217ab1d9d54ab988639a086e02800e695",
+          "content_hash": "7c8775e50f9879d0379d394d5488de9581f3d95ce34091eb502a133916729ff2",
           "topic_ids": [
             "py.concurrency.threading"
           ]
@@ -2825,7 +3146,7 @@
         {
           "key": "Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:",
           "heading": "Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:",
-          "content_hash": "04858d1246be9efff7e3c147ca7f7515671b22deca65196347dd8b9a5d31e090",
+          "content_hash": "30fbdfb797217ef8fff9a3d334a1cdfa079f8c8c58802c205a5552b59abddd6c",
           "topic_ids": [
             "py.concurrency.threading"
           ]
@@ -2841,7 +3162,7 @@
         {
           "key": "Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:",
           "heading": "Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:",
-          "content_hash": "5e0316d8ee9efc60f30ed3e632c4e7d8009c59a3c5dab01a3ed7966c3204881f",
+          "content_hash": "748c4060475096b9ffd8529431b7c2c85898e555c001f82412729b54c78a7eab",
           "topic_ids": [
             "py.concurrency.threading"
           ]
@@ -2849,7 +3170,31 @@
         {
           "key": "Multithreading / Python's Global Interpreter Lock (GIL)",
           "heading": "Multithreading / Python's Global Interpreter Lock (GIL)",
-          "content_hash": "25e0c479489a93a83a045b8820d73694071acdec2e3c01886397014fa9c0a78d",
+          "content_hash": "59d31fd2c9393c6e78aabaa3dcab7d5d7551218a4fa12fdb08b6c2ab06020479",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / What CPython means",
+          "heading": "Multithreading / What CPython means",
+          "content_hash": "f1bdf96c43c9d5e79bafbaa67f4c1d8eb1a86b50312edab750a636f82d67bf67",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Why two API results appear together",
+          "heading": "Multithreading / Why two API results appear together",
+          "content_hash": "73b1fe3cf00058b755d976bb005abd8dda9634e110b8dd7205155c9092a64772",
+          "topic_ids": [
+            "py.concurrency.threading"
+          ]
+        },
+        {
+          "key": "Multithreading / Why two Python calculations may not finish faster",
+          "heading": "Multithreading / Why two Python calculations may not finish faster",
+          "content_hash": "0366a28699cb29913e94172d310bd5256ef36ad6e165fa50612c296c3ce5b3dd",
           "topic_ids": [
             "py.concurrency.threading"
           ]
@@ -2858,7 +3203,7 @@
     },
     {
       "path": "Notes/Python/Concepts/objects-and-printing.md",
-      "file_hash": "a218b82d01fb5a6f35552d8dacf78f08559c9b53f9853f4547415ef26183632a",
+      "file_hash": "2d647174debe48a3ea9483c2f1fdfa1bdbec4d15cdcc2f66134f42b671f64a8f",
       "sections": [
         {
           "key": "Objects and printing",
@@ -2951,8 +3296,60 @@
       ]
     },
     {
+      "path": "Notes/Python/Concepts/processes-and-gil.md",
+      "file_hash": "cd5ec0e4118c7fc2b7b79c8e1e24b1b970a2472a1badaf24e604b3ac63325290",
+      "sections": [
+        {
+          "key": "Processes and the virtual environment",
+          "heading": "Processes and the virtual environment",
+          "content_hash": "7f590871e7809cb2b7141e961453214e83314f9b554989b5469a867ef0ae09ba",
+          "topic_ids": [
+            "py.concurrency.processes"
+          ]
+        },
+        {
+          "key": "Processes and the virtual environment / Threads and processes",
+          "heading": "Processes and the virtual environment / Threads and processes",
+          "content_hash": "fd31c86ed92691a4dc04a0d8c8575fe03bda28ad65686709f32bd5f1aaf6b7d2",
+          "topic_ids": [
+            "py.concurrency.processes"
+          ]
+        },
+        {
+          "key": "Processes and the virtual environment / Which Python and .venv do workers use?",
+          "heading": "Processes and the virtual environment / Which Python and .venv do workers use?",
+          "content_hash": "68c411c43fabf24e7e1bacc914b3602c55469588a53aac9def526576fe00205b",
+          "topic_ids": [
+            "py.concurrency.processes"
+          ]
+        },
+        {
+          "key": "Processes and the virtual environment / Small calculation example",
+          "heading": "Processes and the virtual environment / Small calculation example",
+          "content_hash": "b0825340ca225473a1f884adb0299c4e36cae4f9e2125eea69eeb162d4d4d0a4",
+          "topic_ids": [
+            "py.concurrency.processes"
+          ]
+        },
+        {
+          "key": "Processes and the virtual environment / Why the first Windows run failed",
+          "heading": "Processes and the virtual environment / Why the first Windows run failed",
+          "content_hash": "c18ccc6ff30e936fed15942f88c40d734fe7b5fb75ada6760d6f49277684be51",
+          "topic_ids": [
+            "py.concurrency.processes"
+          ]
+        },
+        {
+          "key": "Processes and the virtual environment / Sources and learning context",
+          "heading": "Processes and the virtual environment / Sources and learning context",
+          "content_hash": "d4ad6494b8413a945cfd765379b1c185341df5b920cd22a8725baf39befbaf5c",
+          "exclusion_reason": "Source links and administrative learning context; explanations mapped separately."
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Concepts/random.md",
-      "file_hash": "0816540e8db073f9303971e5cfe7cddefa7abec8eca19135999916a1b06e15ac",
+      "file_hash": "2679a7164afa7a6fc97185dc65a700271a917b096233709d915cda31d116a85f",
       "sections": [
         {
           "key": "Use the random module",
@@ -2998,7 +3395,7 @@
     },
     {
       "path": "Notes/Python/Concepts/special-methods.md",
-      "file_hash": "bb9cae1cc0cb6fb70856a2c52b10b10684cabc8dfd7ec9631a98e3ac75840ed3",
+      "file_hash": "cbafbc45a08ab1065e438c30bca91db9916f8cfd51b175d46780213ada2a1b01",
       "sections": [
         {
           "key": "Special methods",
@@ -3111,7 +3508,7 @@
     },
     {
       "path": "Notes/Python/Concepts/with(Context_Manager).md",
-      "file_hash": "91d92a8b7e13322e98cc5fb45ada0ce01925d639857018138dc6649c79b0a829",
+      "file_hash": "f7f0b80b399d8749a8474da8f267ceebc1276311fab18312a1b5cb3b1e28c644",
       "sections": [
         {
           "key": "using with (Automatic Cleanup)",
@@ -3125,7 +3522,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/Exeucting Commands.md",
-      "file_hash": "14d49671c20352a06ef8bc9f16048178fd395e338866e22fc6e6e07632dad3d6",
+      "file_hash": "eec116c38b586780012a7c30f034d5fc4ccafb7f8dc04a05d124d9eb2cef2cac",
       "sections": [
         {
           "key": "Execution of Commands in Postgres",
@@ -3139,7 +3536,7 @@
     },
     {
       "path": "Notes/Python/Database Connections/postgres_connection.md",
-      "file_hash": "03095e6e496d97eaad4522f38dd25145b9643967144131a6f87be531310e5d4f",
+      "file_hash": "747cb52d8d764e893d99f9d8fd687e48bfc5f83cff3d0d245fcc8996b9a66466",
       "sections": [
         {
           "key": "Postgres Connection / Install the PostgreSQL Driver",
@@ -3232,7 +3629,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
-      "file_hash": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c",
+      "file_hash": "d5f8f0fe82173d1849b3bab314aafef4e5d6b44c81cf1a2ae7a0b0e3ec5a9341",
       "sections": [
         {
           "key": "PATH ERROR",
@@ -3250,7 +3647,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Pending Tasks/Pending.md",
-      "file_hash": "fa122de79baa414e18daaaaee14efb06c66179b4356538f8dcff3acab78bcd66",
+      "file_hash": "c31baab4c16010d8260c6ae51a20a599ed4423661a2ecd3e36d61bbd02d485ca",
       "sections": [
         {
           "key": "Pending Tasks",
@@ -3264,7 +3661,7 @@
     },
     {
       "path": "Notes/Python/Lessons/Understandings.md",
-      "file_hash": "c4dd5ba7ec703771c17745d67ea93f7ebe74802002dd73ea938b8868cb38c54a",
+      "file_hash": "aa9d57515277febf0cfa9abc3d482690ec3c35d930ff4d0e18b023b00cf827da",
       "sections": [
         {
           "key": "Key Findings",
@@ -3278,7 +3675,7 @@
     },
     {
       "path": "Notes/Python/Lessons/tips.md",
-      "file_hash": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345",
+      "file_hash": "9dd7f987fa977cad88356bf010bab7710b74a594c985d2cb65059132475e508e",
       "sections": [
         {
           "key": "Tips to follow when creating dbt models,transformations or anything",
@@ -3438,7 +3835,7 @@
     },
     {
       "path": "Notes/SQL/learning-notes.md",
-      "file_hash": "b7c12513ccf0564ccb5e6772ba4cd0c7cbd99f8c68c169713bb482933903e73b",
+      "file_hash": "7bc4211fe72d8c8e52cceaddddfde4df89b6d6e42c843e7b9e6cfc4d064f28ca",
       "sections": [
         {
           "key": "sql learning notes",
@@ -3484,6 +3881,10 @@
     },
     {
       "path": "Notes/revision/ai-reminder-questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
+      "path": "Notes/revision/concurrency-questions.md",
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
     {
@@ -3571,8 +3972,8 @@
     },
     {
       "path": "tools/python/notes.md",
-      "file_hash": "30635721d9ede835487bee521677b96d6b2c4b97a09311d35a87332624605681",
-      "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
+      "file_hash": "1abb64784408a94858032a0de5809562bfcf03ad117022a62411b83229f450e1",
+      "exclusion_reason": "Navigation links to canonical Python vault notes and an empty lesson template; no duplicate explanation content."
     },
     {
       "path": "tools/shell/notes.md",
@@ -3590,7 +3991,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-28",
+  "inventory_date_ist": "2026-10-29",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

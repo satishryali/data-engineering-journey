@@ -1,4 +1,11 @@
-# Start here - Python notes saved, 25 October 2026 (IST)
+# Start here - concurrency notes saved, 29 October 2026 IST
+
+## Python concurrency notes saved, 29 October 2026 IST
+
+<!-- CP-20261029-concurrency-notes -->
+Saved guided concurrency/API practice and explanations are summarized in [the attempt handoff](progress/concurrency/2026-10-29-session.md). Notes: [threads](Notes/Python/Concepts/multithreading.md), [processes and GIL](Notes/Python/Concepts/processes-and-gil.md), [async and await](Notes/Python/Concepts/async-await.md), and [API requests](Notes/Python/Concepts/api-requests.md). [Recall questions](Notes/revision/concurrency-questions.md) are unanswered. No independent review score, retention due date, RDS-001 acceptance or timer event was added. The AI reminder collector and RDS-001 remain separately pending.
+
+Next: Compare two scheduled async jobs using await asyncio.sleep(2) and time.sleep(2); share code, output, and why timing differs.
 
 ## AI reminder checkpoint, 28 October 2026 IST
 

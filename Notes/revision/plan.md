@@ -1,15 +1,15 @@
 # Revision plan (generated)
 
-As of 2026-10-28 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-10-29 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 162 | learning sections mapped |
-| 9 | sections excluded |
-| 40 | topics total |
+| 180 | learning sections mapped |
+| 11 | sections excluded |
+| 43 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -78,6 +78,9 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | ai.reminder.evaluation: Checking reminder model fields against a baseline | 2026-11-19 | ai.reminder.model |
 | ai.reminder.examples: Reminder input and target example pairs | 2026-11-20 | ai.reminder.evaluation |
 | py.strings.returned-text: String cleanup and returned case conversions | 2026-11-21 | None |
+| py.concurrency.processes: Processes, separate interpreters and virtual environments | 2026-11-22 | py.functions.basics |
+| py.concurrency.async: Normal functions, coroutines and overlapping async waits | 2026-11-23 | py.functions.basics |
+| py.api.requests: Request API data and read JSON response fields | 2026-11-24 | py.functions.basics |
 
 ## Important weak topics
 
@@ -96,8 +99,10 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 
 ## Coverage gaps
 
+- Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
+- Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
+- Neglected topics: py.dict.access, py.dict.mutate, py.modules.main, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
 - Reassessment flags: py.objects.protocols
 
 ## Manageable session
@@ -105,7 +110,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 37 topics await assessment. One diagnostic per suitable session needs at least 37 sessions; new notes can extend this. Replan missed slots without restarting.
+- 40 topics await assessment. One diagnostic per suitable session needs at least 40 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -151,6 +156,9 @@ Check prerequisites first. Teach missing understanding before retention practice
 | ai.reminder.evaluation | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | ai.reminder.examples | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.strings.returned-text | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.concurrency.processes | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.concurrency.async | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.api.requests | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -161,7 +169,6 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/.obsidian/app.json](../../Notes/.obsidian/app.json): App configuration; no learning coverage.
 - [Notes/.obsidian/appearance.json](../../Notes/.obsidian/appearance.json): App configuration; no learning coverage.
 - [Notes/.obsidian/core-plugins.json](../../Notes/.obsidian/core-plugins.json): App configuration; no learning coverage.
-- [Notes/.obsidian/graph.json](../../Notes/.obsidian/graph.json): App configuration; no learning coverage.
 - [Notes/.obsidian/workspace.json](../../Notes/.obsidian/workspace.json): App configuration; no learning coverage.
 - [Notes/AI/Index.md](../../Notes/AI/Index.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/AI/recall-questions.md](../../Notes/AI/recall-questions.md): Answer-free retrieval prompts; explanations mapped from AI notes.
@@ -171,10 +178,10 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Collecting reminder inputs / A string method returns new text: py.strings.returned-text
   - Collecting reminder inputs / Sources and next step: Sources, provenance and pending task links; no extra concept.
 - [Notes/AI/reminder-model-basics.md](../../Notes/AI/reminder-model-basics.md)
-  - A small model for reminders: ai.reminder.model
-  - A small model for reminders / Running and fine-tuning: ai.reminder.model
-  - A small model for reminders / Check the answer before training: ai.reminder.evaluation
-  - A small model for reminders / Create input and answer pairs: ai.reminder.examples
+  - A small model for reminders: ai.reminder.model, ai.model.adaptation
+  - A small model for reminders / Running and fine-tuning: ai.reminder.model, ai.model.adaptation
+  - A small model for reminders / Check the answer before training: ai.reminder.evaluation, ai.reminders.evaluation
+  - A small model for reminders / Create input and answer pairs: ai.reminder.examples, ai.reminders.dataset
   - A small model for reminders / Sources and session evidence: Sources, provenance and pending task links; no extra concept.
 - [Notes/New Syntax/README.md](../../Notes/New%20Syntax/README.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/New Syntax/dictionary-copy.md](../../Notes/New%20Syntax/dictionary-copy.md)
@@ -200,6 +207,19 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/Python/Concepts/Logging.md](../../Notes/Python/Concepts/Logging.md)
   - Notes / Logging Module: py.logging.basics, py.paths.imports
   - When you are not sure about the error using logging.exception in the except section.: py.logging.basics
+- [Notes/Python/Concepts/api-requests.md](../../Notes/Python/Concepts/api-requests.md)
+  - Requesting API data: py.api.requests
+  - Requesting API data / Fetch one response: py.api.requests
+  - Requesting API data / Format parameters with urlencode: py.api.requests
+  - Requesting API data / A request error in the thread pool: py.api.requests
+  - Requesting API data / Choosing a Python tool: py.api.requests
+- [Notes/Python/Concepts/async-await.md](../../Notes/Python/Concepts/async-await.md)
+  - Normal and async functions: py.concurrency.async
+  - Normal and async functions / Calling def and async def: py.concurrency.async
+  - Normal and async functions / Two overlapping waits: py.concurrency.async
+  - Normal and async functions / Two pauses in each shop: py.concurrency.async
+  - Normal and async functions / Compared with your thread pool: py.concurrency.async
+  - Normal and async functions / Sources and learning context: Source links and administrative learning context; explanations mapped separately.
 - [Notes/Python/Concepts/csv-reading.md](../../Notes/Python/Concepts/csv-reading.md)
   - Read a CSV file: py.csv.read
   - Read a CSV file / Read rows with DictReader: py.csv.read
@@ -283,7 +303,7 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Multithreading: py.concurrency.threading
   - Multithreading / Why we need multithreading: py.concurrency.threading
   - Multithreading / Running a background task with `threading.Thread`: py.concurrency.threading
-  - Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook: py.concurrency.threading
+  - Multithreading / Running a background task with `threading.Thread` / Example output (order may vary): py.concurrency.threading
   - Multithreading / Running a background task with `threading.Thread` / How the important lines work:: py.concurrency.threading
   - Multithreading / Why `target=slow_task` has no parentheses `()`: py.concurrency.threading
   - Multithreading / Waiting for results with `t.join()`: py.concurrency.threading
@@ -292,6 +312,9 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Multithreading / Managing multiple workers with `ThreadPoolExecutor`: py.concurrency.threading
   - Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:: py.concurrency.threading
   - Multithreading / Python's Global Interpreter Lock (GIL): py.concurrency.threading
+  - Multithreading / What CPython means: py.concurrency.threading
+  - Multithreading / Why two API results appear together: py.concurrency.threading
+  - Multithreading / Why two Python calculations may not finish faster: py.concurrency.threading
 - [Notes/Python/Concepts/objects-and-printing.md](../../Notes/Python/Concepts/objects-and-printing.md)
   - Objects and printing: py.objects.basics
   - Objects and printing / Create an employee: py.objects.basics
@@ -304,6 +327,13 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Objects and printing / Indexing, looping and searching with `__getitem__`: py.objects.basics
   - Objects and printing / Indexing, looping and searching with `__getitem__` / Three superpowers unlocked by `__getitem__`: py.objects.basics
   - Objects and printing / Separate practice examples: py.objects.basics
+- [Notes/Python/Concepts/processes-and-gil.md](../../Notes/Python/Concepts/processes-and-gil.md)
+  - Processes and the virtual environment: py.concurrency.processes
+  - Processes and the virtual environment / Threads and processes: py.concurrency.processes
+  - Processes and the virtual environment / Which Python and .venv do workers use?: py.concurrency.processes
+  - Processes and the virtual environment / Small calculation example: py.concurrency.processes
+  - Processes and the virtual environment / Why the first Windows run failed: py.concurrency.processes
+  - Processes and the virtual environment / Sources and learning context: Source links and administrative learning context; explanations mapped separately.
 - [Notes/Python/Concepts/random.md](../../Notes/Python/Concepts/random.md)
   - Use the random module: py.random.basics
   - Use the random module / Generate numbers: py.random.basics
@@ -376,6 +406,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/learning-and-revision-plan.md](../../Notes/learning-and-revision-plan.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/revision/README.md](../../Notes/revision/README.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/ai-reminder-questions.md](../../Notes/revision/ai-reminder-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/concurrency-questions.md](../../Notes/revision/concurrency-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/mistakes.md](../../Notes/revision/mistakes.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/notebook-questions.md](../../Notes/revision/notebook-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
@@ -394,7 +425,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [tools/postgresql/notes.md](../../tools/postgresql/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/powerbi/notes.md](../../tools/powerbi/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/pyspark/notes.md](../../tools/pyspark/notes.md): Empty lesson template; no substantive learning content yet.
-- [tools/python/notes.md](../../tools/python/notes.md): Links to canonical vault explanations; no duplicate coverage.
+- [tools/python/notes.md](../../tools/python/notes.md): Navigation links to canonical Python vault notes and an empty lesson template; no duplicate explanation content.
 - [tools/shell/notes.md](../../tools/shell/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/snowflake/notes.md](../../tools/snowflake/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/sql/notes.md](../../tools/sql/notes.md): Links to canonical vault explanations; no duplicate coverage.

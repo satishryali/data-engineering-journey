@@ -1944,10 +1944,17 @@
       "sources": [
         {
           "path": "Notes/Python/Concepts/multithreading.md",
-          "sha256": "a05ada3b3e310a1599bec6c4a690c0053398d4fa2219706bd855cd294a752ead"
+          "sha256": "0c53b2bb2781ce722fd40d19e9d19ea6ad2eadd71022a28b6349a1723f16e1b2"
         }
       ],
-      "source_history": [],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "sha256": "a05ada3b3e310a1599bec6c4a690c0053398d4fa2219706bd855cd294a752ead",
+          "retained_from": "prior mapped note",
+          "reason": "29 October accuracy clarification; no assessment changed"
+        }
+      ],
       "coverage": "queued",
       "exercise_ids": [],
       "note_sections": [
@@ -1965,7 +1972,7 @@
         },
         {
           "path": "Notes/Python/Concepts/multithreading.md",
-          "key": "Multithreading / Running a background task with `threading.Thread` / Output verified by running in notebook"
+          "key": "Multithreading / Running a background task with `threading.Thread` / Example output (order may vary)"
         },
         {
           "path": "Notes/Python/Concepts/multithreading.md",
@@ -1998,6 +2005,56 @@
         {
           "path": "Notes/Python/Concepts/multithreading.md",
           "key": "Multithreading / Python's Global Interpreter Lock (GIL)"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / What CPython means"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Why two API results appear together"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "key": "Multithreading / Why two Python calculations may not finish faster"
+        }
+      ],
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Why we need multithreading",
+          "prior_hash": "7a74311190db4397f03cb5bf2f3a788afada5d78e82a8d73c13b268310d2686b",
+          "content_hash": "76bea072ce57a121bc2d0d12df2caaa5dd314395854ac4a0a880268f51dae227",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Running a background task with `threading.Thread` / How the important lines work:",
+          "prior_hash": "0a6856532b89e625065244b0af39c02217ab1d9d54ab988639a086e02800e695",
+          "content_hash": "7c8775e50f9879d0379d394d5488de9581f3d95ce34091eb502a133916729ff2",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Waiting for results with `t.join()` / Why `t.join()` matters here:",
+          "prior_hash": "04858d1246be9efff7e3c147ca7f7515671b22deca65196347dd8b9a5d31e090",
+          "content_hash": "30fbdfb797217ef8fff9a3d334a1cdfa079f8c8c58802c205a5552b59abddd6c",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Managing multiple workers with `ThreadPoolExecutor` / Expected output:",
+          "prior_hash": "5e0316d8ee9efc60f30ed3e632c4e7d8009c59a3c5dab01a3ed7966c3204881f",
+          "content_hash": "748c4060475096b9ffd8529431b7c2c85898e555c001f82412729b54c78a7eab",
+          "detected_date_ist": "2026-10-29"
+        },
+        {
+          "path": "Notes/Python/Concepts/multithreading.md",
+          "section": "Multithreading / Python's Global Interpreter Lock (GIL)",
+          "prior_hash": "25e0c479489a93a83a045b8820d73694071acdec2e3c01886397014fa9c0a78d",
+          "content_hash": "59d31fd2c9393c6e78aabaa3dcab7d5d7551218a4fa12fdb08b6c2ab06020479",
+          "detected_date_ist": "2026-10-29"
         }
       ],
       "assessment_status": "unassessed",
@@ -2234,6 +2291,195 @@
         }
       ],
       "initial_assessment_date_ist": "2026-11-21",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.concurrency.processes",
+      "name": "Processes, separate interpreters and virtual environments",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "sha256": "cd5ec0e4118c7fc2b7b79c8e1e24b1b970a2472a1badaf24e604b3ac63325290"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "sha256": "d83fdce3d675fe08172e5e39cb4fea95a8ca8066e6fdc046820ec85c33959912",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note expansion; no assessment changed"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "sha256": "996790e2340343555fb219c918eb2f9f1863ec5f555056f61dc909e91a415bbb",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note clarification; no assessment changed"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.functions.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Threads and processes"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Which Python and .venv do workers use?"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Small calculation example"
+        },
+        {
+          "path": "Notes/Python/Concepts/processes-and-gil.md",
+          "key": "Processes and the virtual environment / Why the first Windows run failed"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-22",
+      "needs_reassessment": false,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.concurrency.async",
+      "name": "Normal functions, coroutines and overlapping async waits",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "sha256": "2750203e6e8c552e83a7c2974964697bbe6aaf0879793f1d2e8f1a5b00a33d51"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "sha256": "bb6080078a0b9a46c140c9fcb2a4fd20329461893abf1e228f897e1cf08bc604",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note expansion; no assessment changed"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "sha256": "76686f93bd7352e8e129d3ad6a6ecdc562750650ac4f833cefa149f397969c62",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note clarification; no assessment changed"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.functions.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Calling def and async def"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Two overlapping waits"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Two pauses in each shop"
+        },
+        {
+          "path": "Notes/Python/Concepts/async-await.md",
+          "key": "Normal and async functions / Compared with your thread pool"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-23",
+      "needs_reassessment": false,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.api.requests",
+      "name": "Request API data and read JSON response fields",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "sha256": "73091a85c0124c7070065b50fa7cbb83a9a1198f83d948ce15c0df81e534cc8f"
+        }
+      ],
+      "source_history": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "sha256": "ef3bdc3e36a70229469de6c8faa5363577ac472b6615d3bb3a5e4d2f490f7931",
+          "retained_from": "prior mapped note",
+          "reason": "29 October note clarification; no assessment changed"
+        }
+      ],
+      "coverage": "queued",
+      "prerequisites": [
+        "py.functions.basics"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / Fetch one response"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / A request error in the thread pool"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / Choosing a Python tool"
+        },
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "key": "Requesting API data / Format parameters with urlencode"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-24",
+      "needs_reassessment": false,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/api-requests.md",
+          "section": "Requesting API data / Format parameters with urlencode",
+          "prior_hash": "e335b62d6576109155935a8a27608c0d2f71520b762d93808ab66f06f4fc3b57",
+          "content_hash": "346b64bfdb354ef1302615e2189c6ba4a2790a78e83ea4939996509777d88933",
+          "detected_date_ist": "2026-10-29"
+        }
+      ],
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
