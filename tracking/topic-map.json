@@ -2063,6 +2063,87 @@
           "detected_date_ist": "2026-10-29"
         }
       ]
+    },
+    {
+      "id": "py.json.basics",
+      "name": "JSON text and Python object conversion",
+      "prerequisites": [
+        "py.dict.access"
+      ],
+      "initial_assessment_date_ist": "2026-11-25",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "sha256": "311fb9bbfda252214d029ca361c5d881cfe05b3ce061d403d48a8f9b7869cfe5"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / JSON and dictionaries"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / Four main functions"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / loads - read a string"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / dumps - create a string"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / Read decimal numbers as Decimal"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / Invalid JSON"
+        }
+      ],
+      "planning_note": "Requested notes from guided practice; extra help unknown. Initial slot adjustable; no independent score or retention due date."
+    },
+    {
+      "id": "py.json.files",
+      "name": "JSON files and CSV conversion",
+      "prerequisites": [
+        "py.json.basics",
+        "py.csv.read"
+      ],
+      "initial_assessment_date_ist": "2026-11-26",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "sha256": "311fb9bbfda252214d029ca361c5d881cfe05b3ce061d403d48a8f9b7869cfe5"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / dump and load - save and read a file"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / read versus load"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / CSV to JSON practice"
+        }
+      ],
+      "planning_note": "Requested notes from guided practice; extra help unknown. Initial slot adjustable; no independent score or retention due date."
     }
   ],
   "note_inventory": [
@@ -2949,6 +3030,98 @@
           "topic_ids": [
             "py.functions.basics"
           ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/Python/Concepts/json.md",
+      "file_hash": "311fb9bbfda252214d029ca361c5d881cfe05b3ce061d403d48a8f9b7869cfe5",
+      "sections": [
+        {
+          "key": "JSON",
+          "heading": "JSON",
+          "content_hash": "3fbfe86029f7a5af3e62ed0528d3f50a442d5b4b58698ed1ae2345d6a28d668a",
+          "topic_ids": [
+            "py.json.basics"
+          ]
+        },
+        {
+          "key": "JSON / JSON and dictionaries",
+          "heading": "JSON / JSON and dictionaries",
+          "content_hash": "d903eafd7454bfbfd0a41c07c7d391ca3c79e221ff83d8efa9feb981876d4bfb",
+          "topic_ids": [
+            "py.json.basics"
+          ]
+        },
+        {
+          "key": "JSON / Four main functions",
+          "heading": "JSON / Four main functions",
+          "content_hash": "0fdb6fcc3d93682bd0ea766da951fa0a3b51af91209ab35a3027e55b65011e47",
+          "topic_ids": [
+            "py.json.basics"
+          ]
+        },
+        {
+          "key": "JSON / loads - read a string",
+          "heading": "JSON / loads - read a string",
+          "content_hash": "f6540157b2530bd227d8dbdce096ed4df152c2794155aaaa0f84ad32db300578",
+          "topic_ids": [
+            "py.json.basics"
+          ]
+        },
+        {
+          "key": "JSON / dumps - create a string",
+          "heading": "JSON / dumps - create a string",
+          "content_hash": "07c1d833b94d5589513b16fcba02d845b55f04ea464cce7fbb37b00d725b2b95",
+          "topic_ids": [
+            "py.json.basics"
+          ]
+        },
+        {
+          "key": "JSON / dump and load - save and read a file",
+          "heading": "JSON / dump and load - save and read a file",
+          "content_hash": "20c02a1d1df03fb3af2864c52498d5c19fc22930c18f7ad23ddfd9830b620833",
+          "topic_ids": [
+            "py.json.files"
+          ]
+        },
+        {
+          "key": "JSON / read versus load",
+          "heading": "JSON / read versus load",
+          "content_hash": "1e59dd274e89208abffedc2448853765559a3672e4d906c095595ca34b5b0831",
+          "topic_ids": [
+            "py.json.files"
+          ]
+        },
+        {
+          "key": "JSON / Read decimal numbers as Decimal",
+          "heading": "JSON / Read decimal numbers as Decimal",
+          "content_hash": "3265d7464d2ea2191790502b86d3d1699cc127c4c09410984f106e59f9d746c7",
+          "topic_ids": [
+            "py.json.basics"
+          ]
+        },
+        {
+          "key": "JSON / Invalid JSON",
+          "heading": "JSON / Invalid JSON",
+          "content_hash": "6a833ff4de4b38ab8995f88a54656da426ebb79dad49dffbd3ebcd0cb8efb9d4",
+          "topic_ids": [
+            "py.json.basics"
+          ]
+        },
+        {
+          "key": "JSON / CSV to JSON practice",
+          "heading": "JSON / CSV to JSON practice",
+          "content_hash": "35bce8dfdb5740690aa7fdd9f8441b0d1f47d71ed4e41876e4a9844c9de37160",
+          "topic_ids": [
+            "py.json.files"
+          ]
+        },
+        {
+          "key": "JSON / Practice evidence and links",
+          "heading": "JSON / Practice evidence and links",
+          "content_hash": "ea9ba9ad4acafdaf5c57868c8aca85967ece1d22f35a2277f3184ed9fe3ebefc",
+          "exclusion_reason": "Evidence and navigation only; no additional learning section."
         }
       ]
     },
@@ -3888,6 +4061,10 @@
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
     {
+      "path": "Notes/revision/json-questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
       "path": "Notes/revision/list-questions.md",
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
@@ -3972,8 +4149,8 @@
     },
     {
       "path": "tools/python/notes.md",
-      "file_hash": "1abb64784408a94858032a0de5809562bfcf03ad117022a62411b83229f450e1",
-      "exclusion_reason": "Navigation links to canonical Python vault notes and an empty lesson template; no duplicate explanation content."
+      "file_hash": "e9655720c5e9e6b0ddc5fb18757085c26fa08e381cdd5c9cfa1066f892749e9a",
+      "exclusion_reason": "Link-only tool note pointing to canonical explanations and recall prompts; no separate learning content."
     },
     {
       "path": "tools/shell/notes.md",
@@ -3991,7 +4168,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-29",
+  "inventory_date_ist": "2026-10-30",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

@@ -1,4 +1,15 @@
-# Start here - concurrency notes saved, 29 October 2026 IST
+# Start here - JSON notes saved, 30 October 2026 IST
+
+## JSON notes saved, 30 October 2026 IST
+
+<!-- CP-20261030-json-notes -->
+JSON notes saved, 30 October 2026: JSON versus dictionaries/text/files, four conversion functions, nested access, useful formatting/number options, invalid JSON and completed CSV-to-JSON conversion. Saved notebook and orders.json show integer IDs, float amounts, four records and earlier order total 650. Tutor examples and feedback supplied; extra help unknown, no independent or delayed score. Decimal parsing was explained but not demonstrated in learner code; changed-customer follow-up unverified. Two concepts mapped with unassessed diagnostic planning slots only. Existing review dates, timers and RDS-001 acceptance unchanged.
+
+Notes: [JSON](Notes/Python/Concepts/json.md). Evidence: [saved practice](progress/json/2026-10-30-session.md).
+
+Next: Choose one next JSON task on missing fields and invalid values, or explicitly switch to pandas; no new exercise has been selected.
+
+Previous concurrency, AI and RRDAP pending tasks are preserved below; no completion is implied.
 
 ## Python concurrency notes saved, 29 October 2026 IST
 

@@ -330,6 +330,13 @@
       "kind": "setup",
       "sha256": "edb7ab0c7e493ad08c484487205947673bb59331fe18d6e1cd101071202c7065",
       "evidence_key": "5536c2b0abcb4a703983c8da3d7a4e24044908d78b2a257ab35fe97be37b5bb9"
+    },
+    {
+      "checkpoint_id": "CP-20261030-json-notes",
+      "date_ist": "2026-10-30",
+      "kind": "setup",
+      "sha256": "e7e348d934ae452d1d44b2b66670d98e27cc4f52d8cd07b2f2a3f14f750fdf81",
+      "evidence_key": "3de7ba47fe8b7eee28049d4a9581482eaf1db2b6cd08f5fafbc211f30e318160"
     }
   ]
 }

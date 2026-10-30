@@ -2489,6 +2489,105 @@
       "last_review_id": null,
       "learning_state": "Unassessed",
       "linked_mistakes": []
+    },
+    {
+      "id": "py.json.basics",
+      "name": "JSON text and Python object conversion",
+      "prerequisites": [
+        "py.dict.access"
+      ],
+      "initial_assessment_date_ist": "2026-11-25",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "sha256": "311fb9bbfda252214d029ca361c5d881cfe05b3ce061d403d48a8f9b7869cfe5"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / JSON and dictionaries"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / Four main functions"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / loads - read a string"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / dumps - create a string"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / Read decimal numbers as Decimal"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / Invalid JSON"
+        }
+      ],
+      "planning_note": "Requested notes from guided practice; extra help unknown. Initial slot adjustable; no independent score or retention due date.",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "py.json.files",
+      "name": "JSON files and CSV conversion",
+      "prerequisites": [
+        "py.json.basics",
+        "py.csv.read"
+      ],
+      "initial_assessment_date_ist": "2026-11-26",
+      "sources": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "sha256": "311fb9bbfda252214d029ca361c5d881cfe05b3ce061d403d48a8f9b7869cfe5"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / dump and load - save and read a file"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / read versus load"
+        },
+        {
+          "path": "Notes/Python/Concepts/json.md",
+          "key": "JSON / CSV to JSON practice"
+        }
+      ],
+      "planning_note": "Requested notes from guided practice; extra help unknown. Initial slot adjustable; no independent score or retention due date.",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     }
   ],
   "session": {

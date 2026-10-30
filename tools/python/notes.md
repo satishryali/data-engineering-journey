@@ -1,5 +1,7 @@
 # python learning notes
 
+JSON explanations and completed CSV conversion: [JSON notes](../../Notes/Python/Concepts/json.md). Answer-free practice: [JSON questions](../../Notes/revision/json-questions.md).
+
 Use the existing [dictionary notes](../../Notes/Python/Concepts/dictionaries.md) and
 [Python index](../../Notes/Python/Index.md) in the Obsidian vault. Topic presence does
 not establish independent proficiency. The selected dictionary refresher remains pending.

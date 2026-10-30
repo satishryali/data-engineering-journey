@@ -1,0 +1,26 @@
+[
+  {
+    "order_id": 1001,
+    "customer_name": "Anu",
+    "amount": 250.5,
+    "status": "completed"
+  },
+  {
+    "order_id": 1002,
+    "customer_name": "Ravi",
+    "amount": 400.0,
+    "status": "pending"
+  },
+  {
+    "order_id": 1003,
+    "customer_name": "Meena",
+    "amount": 125.75,
+    "status": "completed"
+  },
+  {
+    "order_id": 1004,
+    "customer_name": "Arun",
+    "amount": 80.0,
+    "status": "cancelled"
+  }
+]

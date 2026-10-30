@@ -1,15 +1,15 @@
 # Revision plan (generated)
 
-As of 2026-10-29 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-10-30 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 180 | learning sections mapped |
-| 11 | sections excluded |
-| 43 | topics total |
+| 190 | learning sections mapped |
+| 12 | sections excluded |
+| 45 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -81,6 +81,8 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | py.concurrency.processes: Processes, separate interpreters and virtual environments | 2026-11-22 | py.functions.basics |
 | py.concurrency.async: Normal functions, coroutines and overlapping async waits | 2026-11-23 | py.functions.basics |
 | py.api.requests: Request API data and read JSON response fields | 2026-11-24 | py.functions.basics |
+| py.json.basics: JSON text and Python object conversion | 2026-11-25 | py.dict.access |
+| py.json.files: JSON files and CSV conversion | 2026-11-26 | py.json.basics, py.csv.read |
 
 ## Important weak topics
 
@@ -102,7 +104,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, py.modules.main, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
+- Neglected topics: py.dict.access, py.dict.mutate, py.paths.imports, py.modules.main, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
 - Reassessment flags: py.objects.protocols
 
 ## Manageable session
@@ -110,7 +112,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 40 topics await assessment. One diagnostic per suitable session needs at least 40 sessions; new notes can extend this. Replan missed slots without restarting.
+- 42 topics await assessment. One diagnostic per suitable session needs at least 42 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -159,6 +161,8 @@ Check prerequisites first. Teach missing understanding before retention practice
 | py.concurrency.processes | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.concurrency.async | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.api.requests | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.json.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| py.json.files | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -283,6 +287,18 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Functions: py.functions.basics
   - Functions / Input and return: py.functions.basics
   - Functions / Fresh lists for each call: py.functions.basics
+- [Notes/Python/Concepts/json.md](../../Notes/Python/Concepts/json.md)
+  - JSON: py.json.basics
+  - JSON / JSON and dictionaries: py.json.basics
+  - JSON / Four main functions: py.json.basics
+  - JSON / loads - read a string: py.json.basics
+  - JSON / dumps - create a string: py.json.basics
+  - JSON / dump and load - save and read a file: py.json.files
+  - JSON / read versus load: py.json.files
+  - JSON / Read decimal numbers as Decimal: py.json.basics
+  - JSON / Invalid JSON: py.json.basics
+  - JSON / CSV to JSON practice: py.json.files
+  - JSON / Practice evidence and links: Evidence and navigation only; no additional learning section.
 - [Notes/Python/Concepts/lists.md](../../Notes/Python/Concepts/lists.md)
   - Lists: py.list.basics
   - Lists / Why we use lists: py.list.basics
@@ -407,6 +423,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/revision/README.md](../../Notes/revision/README.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/ai-reminder-questions.md](../../Notes/revision/ai-reminder-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/concurrency-questions.md](../../Notes/revision/concurrency-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/json-questions.md](../../Notes/revision/json-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/mistakes.md](../../Notes/revision/mistakes.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/notebook-questions.md](../../Notes/revision/notebook-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
@@ -425,7 +442,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [tools/postgresql/notes.md](../../tools/postgresql/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/powerbi/notes.md](../../tools/powerbi/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/pyspark/notes.md](../../tools/pyspark/notes.md): Empty lesson template; no substantive learning content yet.
-- [tools/python/notes.md](../../tools/python/notes.md): Navigation links to canonical Python vault notes and an empty lesson template; no duplicate explanation content.
+- [tools/python/notes.md](../../tools/python/notes.md): Link-only tool note pointing to canonical explanations and recall prompts; no separate learning content.
 - [tools/shell/notes.md](../../tools/shell/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/snowflake/notes.md](../../tools/snowflake/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/sql/notes.md](../../tools/sql/notes.md): Links to canonical vault explanations; no duplicate coverage.

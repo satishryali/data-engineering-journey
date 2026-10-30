@@ -446,3 +446,10 @@ Evidence: `Notes/AI/Index.md`; `Notes/AI/reminder-model-basics.md`; `Notes/AI/re
 Saved guided Python concurrency and API explanations from actual notebook/script evidence. Sequential and threaded waits, real weather API fetch, GIL-enabled CPU comparison, Windows process-pool startup error/correction, and async task ordering are documented. Learner process timing 0.28 seconds was reported without full corrected output; no independence, delayed retention, timer or project acceptance inferred. Next: Compare two scheduled async jobs using await asyncio.sleep(2) and time.sleep(2); share code, output, and why timing differs.
 
 Evidence: `progress/concurrency/2026-10-29-session.md`; `practice/Sync/Async/async.ipynb#cell-f5c3148c`; `practice/Sync/Async/mulitprocess.py`; `Notes/Python/Concepts/multithreading.md`; `Notes/Python/Concepts/processes-and-gil.md`; `Notes/Python/Concepts/async-await.md`; `Notes/Python/Concepts/api-requests.md`; `Notes/revision/concurrency-questions.md`
+
+<!-- checkpoint:CP-20261030-json-notes -->
+## 2026-10-30 — CP-20261030-json-notes (setup)
+
+JSON notes saved, 30 October 2026: JSON versus dictionaries/text/files, four conversion functions, nested access, useful formatting/number options, invalid JSON and completed CSV-to-JSON conversion. Saved notebook and orders.json show integer IDs, float amounts, four records and earlier order total 650. Tutor examples and feedback supplied; extra help unknown, no independent or delayed score. Decimal parsing was explained but not demonstrated in learner code; changed-customer follow-up unverified. Two concepts mapped with unassessed diagnostic planning slots only. Existing review dates, timers and RDS-001 acceptance unchanged. Next: Choose one next JSON task on missing fields and invalid values, or explicitly switch to pandas; no new exercise has been selected.
+
+Evidence: `progress/json/2026-10-30-session.md`; `practice/json/json.ipynb`; `practice/json/orders.json`; `Notes/Python/Concepts/json.md`; `Notes/revision/json-questions.md`

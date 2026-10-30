@@ -23,6 +23,7 @@
 8. [Use the random module](Concepts/random.md)
 9. [Generate practice data with Faker](Concepts/faker.md)
 10. [Decimal for prices and totals](Concepts/decimal-money.md)
+11. [JSON: strings, files and CSV conversion](Concepts/json.md)
 
 # Logic
 
