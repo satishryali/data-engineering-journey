@@ -1,5 +1,7 @@
 # python learning notes
 
+Paths and folder creation: [pathlib notes](../../Notes/Python/Concepts/pathlib.md). Answer-free practice: [pathlib questions](../../Notes/revision/pathlib-questions.md).
+
 JSON explanations and completed CSV conversion: [JSON notes](../../Notes/Python/Concepts/json.md). Answer-free practice: [JSON questions](../../Notes/revision/json-questions.md).
 
 Use the existing [dictionary notes](../../Notes/Python/Concepts/dictionaries.md) and

@@ -1,13 +1,13 @@
 # Revision plan (generated)
 
-As of 2026-10-30 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-11-03 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 190 | learning sections mapped |
+| 202 | learning sections mapped |
 | 12 | sections excluded |
 | 45 | topics total |
 | 3 | topics assessed |
@@ -104,8 +104,8 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, py.paths.imports, py.modules.main, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
-- Reassessment flags: py.objects.protocols
+- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, py.logging.shared, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
+- Reassessment flags: py.paths.imports, py.objects.protocols
 
 ## Manageable session
 
@@ -343,6 +343,19 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Objects and printing / Indexing, looping and searching with `__getitem__`: py.objects.basics
   - Objects and printing / Indexing, looping and searching with `__getitem__` / Three superpowers unlocked by `__getitem__`: py.objects.basics
   - Objects and printing / Separate practice examples: py.objects.basics
+- [Notes/Python/Concepts/pathlib.md](../../Notes/Python/Concepts/pathlib.md)
+  - Paths with pathlib: py.paths.imports
+  - Paths with pathlib / Create a path: py.paths.imports
+  - Paths with pathlib / Absolute and relative paths: py.paths.imports
+  - Paths with pathlib / Join folders and filenames: py.paths.imports
+  - Paths with pathlib / Get parts of a path: py.paths.imports
+  - Paths with pathlib / Check what exists: py.paths.imports
+  - Paths with pathlib / Create folders with mkdir: py.paths.imports
+  - Paths with pathlib / Write and read text: py.paths.imports
+  - Paths with pathlib / List files and folders: py.paths.imports
+  - Paths with pathlib / Change an address without changing the file: py.paths.imports
+  - Paths with pathlib / Show a path relative to another folder: py.paths.imports
+  - Paths with pathlib / Sources and practice: py.paths.imports
 - [Notes/Python/Concepts/processes-and-gil.md](../../Notes/Python/Concepts/processes-and-gil.md)
   - Processes and the virtual environment: py.concurrency.processes
   - Processes and the virtual environment / Threads and processes: py.concurrency.processes
@@ -427,6 +440,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/mistakes.md](../../Notes/revision/mistakes.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/notebook-questions.md](../../Notes/revision/notebook-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/pathlib-questions.md](../../Notes/revision/pathlib-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/plan.md](../../Notes/revision/plan.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/questions.md](../../Notes/revision/questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/reviews.jsonl](../../Notes/revision/reviews.jsonl): Image, asset or machine-readable view; learning is mapped from its explanation note.
@@ -442,7 +456,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [tools/postgresql/notes.md](../../tools/postgresql/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/powerbi/notes.md](../../tools/powerbi/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/pyspark/notes.md](../../tools/pyspark/notes.md): Empty lesson template; no substantive learning content yet.
-- [tools/python/notes.md](../../tools/python/notes.md): Link-only tool note pointing to canonical explanations and recall prompts; no separate learning content.
+- [tools/python/notes.md](../../tools/python/notes.md): Links to canonical vault explanations and administrative learning-record template; no separate lesson content.
 - [tools/shell/notes.md](../../tools/shell/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/snowflake/notes.md](../../tools/snowflake/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/sql/notes.md](../../tools/sql/notes.md): Links to canonical vault explanations; no duplicate coverage.

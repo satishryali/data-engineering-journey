@@ -1,4 +1,36 @@
-# Current tutoring checkpoint - JSON notes saved, 30 October 2026 IST
+# Current tutoring checkpoint - API paused for SQL, 3 November 2026 IST
+
+## API paused; SQL selected - 3 November 2026 IST
+
+Saved the 12-lesson API course and paused API-L01 after tutor explanation; the request/response exercise is unanswered. Learner reports Python study finished and SQL study now; no SQL task/output, duration, independent assessment or review event supplied. No running study-log row; timers unchanged. Next API step: Resume API-L01 by answering the saved order request/response task.
+
+[API course](../plan/api-lessons.md); [session evidence](api/2026-11-03-session.md).
+Earlier pathlib follow-up and RDS-001 remain pending. SQL task not specified in this chat.
+
+## API lesson preparation, 3 November 2026 IST
+
+At the learner's request, prepared [12 API lessons](../plan/api-lessons.md): request/response,
+Python calls, JSON, HTTP methods, authentication, pagination, failures/retries, files,
+PostgreSQL reruns, a small local API and an independent challenge. Preparation only;
+no lesson attempted, assessment, timer or review-date change. Course entry: API-L01,
+interpret the fictional order request/response and change its query. Existing pathlib
+follow-up below and RDS-001 remain pending; preparing the course does not complete or
+replace either task. Say "Teach API lesson 1" to begin the course without starting a timer.
+
+## pathlib follow-up notes saved, 3 November 2026 IST
+
+<!-- CP-20261103-pathlib-followup-notes -->
+Expanded the existing pathlib note from this chat: path object versus open file, pathlib classes, Windows separators/raw strings, directly defined relative paths, cwd versus resolve, and same-location file/folder collisions with mkdir. Tutor explanations supplied; collision behaviour checked in a temporary directory. No new learner execution, independent score, delayed review or timer event. Existing notebook evidence and py.paths.imports review dates preserved; RDS-001 unchanged. Next: Using an existing notebook path, print its full address, parent, name, stem, suffix, is_file and is_dir; share the output and explain where relative paths start, stating any help used.
+
+## pathlib notes saved, 3 November 2026 IST
+
+<!-- CP-20261103-pathlib-notes -->
+Saved pathlib notes covering absolute/relative paths, cwd/resolve, joining, path properties, existence/type checks, mkdir parameters, text reading/writing, searches, changed addresses and relative_to. Working notebook outputs show practice; its inconsistent earlier backslash cell is preserved without claiming successful execution. Tutor examples/help supplied; other assistance unknown. No independent score, delayed review, timer event or RDS-001 acceptance. Existing concept py.paths.imports reused; review dates preserved. Next: Using an existing notebook path, print its full address, parent, name, stem, suffix, is_file and is_dir; share the output and explain where relative paths start, stating any help used.
+
+Notes: [pathlib](../Notes/Python/Concepts/pathlib.md). Evidence: [saved practice](pathlib/2026-11-03-session.md).
+
+Earlier JSON, concurrency, AI and RDS-001 pending work is preserved below.
+
 
 ## JSON notes saved, 30 October 2026 IST
 

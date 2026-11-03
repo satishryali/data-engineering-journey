@@ -336,6 +336,10 @@
         {
           "path": "Notes/Python/Lessons/Errors & Resolutions/path.md",
           "sha256": "01e6781046c89ca5f8b32ebbf793b1da6d3e84f3552696744f2b4f500185132c"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "sha256": "464b88a3fb6d0b15ebe37e92a522b98a1ea2bb21c1bb38030c8ad4a1da37d88f"
         }
       ],
       "source_history": [
@@ -362,10 +366,82 @@
         {
           "path": "Notes/Python/Lessons/tips.md",
           "key": "Path :"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Create a path"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Absolute and relative paths"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Join folders and filenames"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Get parts of a path"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Check what exists"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Create folders with mkdir"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Write and read text"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / List files and folders"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Change an address without changing the file"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Show a path relative to another folder"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "key": "Paths with pathlib / Sources and practice"
         }
       ],
       "initial_assessment_date_ist": "2026-10-29",
-      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes."
+      "source_check_before_teaching": "Verify questionable claims against official documentation before teaching; source-note issues are not demonstrated learner mistakes.",
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "section": "Paths with pathlib / Create a path",
+          "prior_hash": "011a9eb6a38ad896da131debfa8ebd49be54f78e59bce57894c36a75dc14ea3d",
+          "content_hash": "69da6eeabbb2d5cf7b6ed13b8e8ac72e820dd67aeaf14f816855909d741e969f",
+          "detected_date_ist": "2026-11-03"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "section": "Paths with pathlib / Absolute and relative paths",
+          "prior_hash": "ee2086fdc92070dcf0045f5955223847a39f21622f688636b0fbb595b3c35944",
+          "content_hash": "61e7364315d90dd3993b380bf1fcb2f8b6f0136701401d5a796aedc019ced4f2",
+          "detected_date_ist": "2026-11-03"
+        },
+        {
+          "path": "Notes/Python/Concepts/pathlib.md",
+          "section": "Paths with pathlib / Create folders with mkdir",
+          "prior_hash": "24d703a34d9f8134c6312613ba4e577edfd26af09b365e0be0e2a36b881d5b54",
+          "content_hash": "05cd0ea6ad121805e22df456364bf969baa444e796e6cc77240b0c267ac381d9",
+          "detected_date_ist": "2026-11-03"
+        }
+      ]
     },
     {
       "id": "py.modules.main",
@@ -3469,6 +3545,111 @@
       ]
     },
     {
+      "path": "Notes/Python/Concepts/pathlib.md",
+      "file_hash": "034bdeb6c62f3b3f0c31c5809c04caa58a4cc46eb893704386ef2b3b83fedac8",
+      "sections": [
+        {
+          "key": "Paths with pathlib",
+          "heading": "Paths with pathlib",
+          "content_hash": "46f6f7e1803e301fc01032f23d2b01aed9e071f2e2c054a97d2c7240287a7cfd",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / Create a path",
+          "heading": "Paths with pathlib / Create a path",
+          "content_hash": "69da6eeabbb2d5cf7b6ed13b8e8ac72e820dd67aeaf14f816855909d741e969f",
+          "topic_ids": [
+            "py.paths.imports"
+          ],
+          "changed": true
+        },
+        {
+          "key": "Paths with pathlib / Absolute and relative paths",
+          "heading": "Paths with pathlib / Absolute and relative paths",
+          "content_hash": "61e7364315d90dd3993b380bf1fcb2f8b6f0136701401d5a796aedc019ced4f2",
+          "topic_ids": [
+            "py.paths.imports"
+          ],
+          "changed": true
+        },
+        {
+          "key": "Paths with pathlib / Join folders and filenames",
+          "heading": "Paths with pathlib / Join folders and filenames",
+          "content_hash": "a0d2dff18eea5f2de7c217c059465e25483b9abab35f35c6d50a852731d856c7",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / Get parts of a path",
+          "heading": "Paths with pathlib / Get parts of a path",
+          "content_hash": "38d5cb6705b064ab422a50c389e98194a7d429df60a91a334e608697c59c6fe4",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / Check what exists",
+          "heading": "Paths with pathlib / Check what exists",
+          "content_hash": "fec329a89fc1c917f5d6126a0ccc56a69cb202a1eaa99d6cfcdc00eec0e69a4a",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / Create folders with mkdir",
+          "heading": "Paths with pathlib / Create folders with mkdir",
+          "content_hash": "05cd0ea6ad121805e22df456364bf969baa444e796e6cc77240b0c267ac381d9",
+          "topic_ids": [
+            "py.paths.imports"
+          ],
+          "changed": true
+        },
+        {
+          "key": "Paths with pathlib / Write and read text",
+          "heading": "Paths with pathlib / Write and read text",
+          "content_hash": "6383f8fca74bcc0acadf79034c2aff30745ea842dd2d0b4d774cdda6c977ffcf",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / List files and folders",
+          "heading": "Paths with pathlib / List files and folders",
+          "content_hash": "a03a3063dd732e0f54dfca91bbbc8bf389ce8a3f7ed3335fc97adc51401ca580",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / Change an address without changing the file",
+          "heading": "Paths with pathlib / Change an address without changing the file",
+          "content_hash": "d454ab08339f224edb81782aad1d435da3a6edfef6d800c51fba870f5f81c69c",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / Show a path relative to another folder",
+          "heading": "Paths with pathlib / Show a path relative to another folder",
+          "content_hash": "8a3e2f7249b93310737a4c2519058299a0b9e1612eb6048dd9d0811b18cfec6c",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        },
+        {
+          "key": "Paths with pathlib / Sources and practice",
+          "heading": "Paths with pathlib / Sources and practice",
+          "content_hash": "7a3182005fb1e21456f68607ff364d2e9bd04d7eee021362666543084d58cdb5",
+          "topic_ids": [
+            "py.paths.imports"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/Python/Concepts/processes-and-gil.md",
       "file_hash": "cd5ec0e4118c7fc2b7b79c8e1e24b1b970a2472a1badaf24e604b3ac63325290",
       "sections": [
@@ -4077,6 +4258,10 @@
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
     {
+      "path": "Notes/revision/pathlib-questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
       "path": "Notes/revision/plan.md",
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
@@ -4149,8 +4334,8 @@
     },
     {
       "path": "tools/python/notes.md",
-      "file_hash": "e9655720c5e9e6b0ddc5fb18757085c26fa08e381cdd5c9cfa1066f892749e9a",
-      "exclusion_reason": "Link-only tool note pointing to canonical explanations and recall prompts; no separate learning content."
+      "file_hash": "92f4fb0c180aa1891597acf5287a168bac8c37875b01a4d54b2efae5d944dfcd",
+      "exclusion_reason": "Links to canonical vault explanations and administrative learning-record template; no separate lesson content."
     },
     {
       "path": "tools/shell/notes.md",
@@ -4168,7 +4353,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-10-30",
+  "inventory_date_ist": "2026-11-03",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

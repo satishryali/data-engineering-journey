@@ -337,6 +337,27 @@
       "kind": "setup",
       "sha256": "e7e348d934ae452d1d44b2b66670d98e27cc4f52d8cd07b2f2a3f14f750fdf81",
       "evidence_key": "3de7ba47fe8b7eee28049d4a9581482eaf1db2b6cd08f5fafbc211f30e318160"
+    },
+    {
+      "checkpoint_id": "CP-20261103-pathlib-notes",
+      "date_ist": "2026-11-03",
+      "kind": "setup",
+      "sha256": "db511557a8bc7609399e3df4a6e39991f302189a100ee109c5211e28b88680cc",
+      "evidence_key": "cf431687b9a6f9271c0bbf50fe249db3d11c98ff269b05c3b69b5a5a81d46961"
+    },
+    {
+      "checkpoint_id": "CP-20261103-pathlib-followup-notes",
+      "date_ist": "2026-11-03",
+      "kind": "learning",
+      "sha256": "92bfd67b4de4341fc0b36f9d662868b1a4262358c98673e03ff02a40ec3e9c6c",
+      "evidence_key": "af0e413fec20522e10bd0be3bf0fc1d25c27d92ff0df7533cd6a0c8f78a2ccdc"
+    },
+    {
+      "checkpoint_id": "CP-20261103-api-l01-pause-sql",
+      "date_ist": "2026-11-03",
+      "kind": "learning",
+      "sha256": "9192882aafe3df5d5a4420dc1109d923917c1990a9520afd78a7dade927373e4",
+      "evidence_key": "cb375e0c518b334bb60dd9b4fcd63cc67fe15e43962d432acfce8935cb91aa2a"
     }
   ]
 }

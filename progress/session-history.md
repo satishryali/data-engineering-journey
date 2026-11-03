@@ -453,3 +453,24 @@ Evidence: `progress/concurrency/2026-10-29-session.md`; `practice/Sync/Async/asy
 JSON notes saved, 30 October 2026: JSON versus dictionaries/text/files, four conversion functions, nested access, useful formatting/number options, invalid JSON and completed CSV-to-JSON conversion. Saved notebook and orders.json show integer IDs, float amounts, four records and earlier order total 650. Tutor examples and feedback supplied; extra help unknown, no independent or delayed score. Decimal parsing was explained but not demonstrated in learner code; changed-customer follow-up unverified. Two concepts mapped with unassessed diagnostic planning slots only. Existing review dates, timers and RDS-001 acceptance unchanged. Next: Choose one next JSON task on missing fields and invalid values, or explicitly switch to pandas; no new exercise has been selected.
 
 Evidence: `progress/json/2026-10-30-session.md`; `practice/json/json.ipynb`; `practice/json/orders.json`; `Notes/Python/Concepts/json.md`; `Notes/revision/json-questions.md`
+
+<!-- checkpoint:CP-20261103-pathlib-notes -->
+## 2026-11-03 — CP-20261103-pathlib-notes (setup)
+
+Saved pathlib notes covering absolute/relative paths, cwd/resolve, joining, path properties, existence/type checks, mkdir parameters, text reading/writing, searches, changed addresses and relative_to. Working notebook outputs show practice; its inconsistent earlier backslash cell is preserved without claiming successful execution. Tutor examples/help supplied; other assistance unknown. No independent score, delayed review, timer event or RDS-001 acceptance. Existing concept py.paths.imports reused; review dates preserved. Next: Using an existing notebook path, print its full address, parent, name, stem, suffix, is_file and is_dir; share the output and explain where relative paths start, stating any help used.
+
+Evidence: `progress/pathlib/2026-11-03-session.md#ATT-PATHLIB-20261103-NOTEBOOK`; `progress/pathlib/2026-11-03-practice.ipynb`; `Notes/Python/Concepts/pathlib.md`; `Notes/revision/pathlib-questions.md`
+
+<!-- checkpoint:CP-20261103-pathlib-followup-notes -->
+## 2026-11-03 — CP-20261103-pathlib-followup-notes (learning)
+
+Expanded the existing pathlib note from this chat: path object versus open file, pathlib classes, Windows separators/raw strings, directly defined relative paths, cwd versus resolve, and same-location file/folder collisions with mkdir. Tutor explanations supplied; collision behaviour checked in a temporary directory. No new learner execution, independent score, delayed review or timer event. Existing notebook evidence and py.paths.imports review dates preserved; RDS-001 unchanged. Next: Using an existing notebook path, print its full address, parent, name, stem, suffix, is_file and is_dir; share the output and explain where relative paths start, stating any help used.
+
+Evidence: `progress/pathlib/2026-11-03-session.md#EVID-PATHLIB-20261103-FOLLOWUP`
+
+<!-- checkpoint:CP-20261103-api-l01-pause-sql -->
+## 2026-11-03 — CP-20261103-api-l01-pause-sql (learning)
+
+Saved the 12-lesson API course and paused API-L01 after tutor explanation; the request/response exercise is unanswered. Learner reports Python study finished and SQL study now; no SQL task/output, duration, independent assessment or review event supplied. No running study-log row; timers unchanged. Next API step: Resume API-L01 by answering the saved order request/response task.
+
+Evidence: `progress/api/2026-11-03-session.md#EVID-API-20261103-L01-PAUSE`
