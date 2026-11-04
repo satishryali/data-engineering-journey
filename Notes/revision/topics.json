@@ -658,6 +658,10 @@
         {
           "path": "Notes/Python/Lessons/tips.md",
           "sha256": "25cbc15c569294d7cccb5d166e8eff074346e67592563c9ea043d42acc339345"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "sha256": "33067f873e9ecf91662e04fc092197add6bc03c89999477fd6141aec9cf59872"
         }
       ],
       "source_history": [
@@ -676,6 +680,10 @@
         {
           "path": "Notes/Python/Lessons/tips.md",
           "key": "Tips to follow when creating dbt models,transformations or anything"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Load one small CSV seed"
         }
       ],
       "initial_assessment_date_ist": "2026-11-03",
@@ -2150,6 +2158,10 @@
         {
           "path": "Notes/AI/reminder-model-basics.md",
           "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "sha256": "6b81807b990ea4174086d692cd5bd5b336235c1010b48153a7dadd810fa23f84"
         }
       ],
       "source_history": [],
@@ -2164,6 +2176,22 @@
         {
           "path": "Notes/AI/reminder-model-basics.md",
           "key": "A small model for reminders / Running and fine-tuning"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Starting model and weights"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Full fine-tuning, LoRA and QLoRA"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Checkpoints and export"
         }
       ],
       "initial_assessment_date_ist": "2026-11-15",
@@ -2184,6 +2212,10 @@
         {
           "path": "Notes/AI/reminder-model-basics.md",
           "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "sha256": "6b81807b990ea4174086d692cd5bd5b336235c1010b48153a7dadd810fa23f84"
         }
       ],
       "source_history": [],
@@ -2196,6 +2228,10 @@
         {
           "path": "Notes/AI/reminder-model-basics.md",
           "key": "A small model for reminders / Check the answer before training"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Evaluation and common training problems"
         }
       ],
       "initial_assessment_date_ist": "2026-11-16",
@@ -2216,6 +2252,10 @@
         {
           "path": "Notes/AI/reminder-model-basics.md",
           "sha256": "440fa97b893c9e72c858eb9d686487d6914e103ad249a3a2888fcc3b173d4503"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "sha256": "6b81807b990ea4174086d692cd5bd5b336235c1010b48153a7dadd810fa23f84"
         }
       ],
       "source_history": [],
@@ -2228,6 +2268,10 @@
         {
           "path": "Notes/AI/reminder-model-basics.md",
           "key": "A small model for reminders / Create input and answer pairs"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Dataset and tokens"
         }
       ],
       "initial_assessment_date_ist": "2026-11-17",
@@ -2655,6 +2699,374 @@
         }
       ],
       "planning_note": "Requested notes from guided practice; extra help unknown. Initial slot adjustable; no independent score or retention due date.",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.model.quantization",
+      "name": "Weight quantization and numerical approximation",
+      "sources": [
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "sha256": "6b81807b990ea4174086d692cd5bd5b336235c1010b48153a7dadd810fa23f84"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.model.adaptation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Full fine-tuning, LoRA and QLoRA"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Quantization and four bits"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-27",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.model.memory",
+      "name": "Model memory: system RAM VRAM and KV cache",
+      "sources": [
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "sha256": "6b81807b990ea4174086d692cd5bd5b336235c1010b48153a7dadd810fa23f84"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.model.quantization"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / RAM, VRAM and conversation memory"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / This desktop's measured hardware"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-28",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "ai.training.updates",
+      "name": "Fine-tuning updates: loss gradients batches and epochs",
+      "sources": [
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "sha256": "6b81807b990ea4174086d692cd5bd5b336235c1010b48153a7dadd810fa23f84"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "ai.model.adaptation"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Loss and learning updates"
+        },
+        {
+          "path": "Notes/AI/fine-tuning-and-model-memory.md",
+          "key": "Fine-tuning, quantization and model memory / Batches, steps and epochs"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-29",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "dbt.foundations.roles",
+      "name": "dbt transformation and tool responsibilities",
+      "sources": [
+        {
+          "path": "Notes/dbt/lesson-01-what-dbt-does.md",
+          "sha256": "0f5982e7ad6357c0ec39d6a51e666f781950ee29c9239212ee589db7c70f1d69"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/dbt/lesson-01-what-dbt-does.md",
+          "key": "Lesson 1: What dbt does"
+        },
+        {
+          "path": "Notes/dbt/lesson-01-what-dbt-does.md",
+          "key": "Lesson 1: What dbt does / The three tools"
+        },
+        {
+          "path": "Notes/dbt/lesson-01-what-dbt-does.md",
+          "key": "Lesson 1: What dbt does / Extract, load, transform"
+        },
+        {
+          "path": "Notes/dbt/lesson-01-what-dbt-does.md",
+          "key": "Lesson 1: What dbt does / A small transformation"
+        },
+        {
+          "path": "Notes/dbt/lesson-01-what-dbt-does.md",
+          "key": "Lesson 1: What dbt does / Why use dbt with SQL"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-11-30",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "dbt.connections.profiles",
+      "name": "dbt profiles targets and output schemas",
+      "sources": [
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "sha256": "796fa5c0d4a44667c8815ecfd5788233a1afc5bb5b6caf59c7ac3608694d4726"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "dbt.foundations.roles"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "key": "Lesson 2: Connections and profiles"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "key": "Lesson 2: Connections and profiles / Project selects a profile"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "key": "Lesson 2: Connections and profiles / Profile selects a target"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "key": "Lesson 2: Connections and profiles / Database and schema"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "key": "Lesson 2: Connections and profiles / What dbt debug checks"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "key": "Lesson 2: Connections and profiles / Multiple connections and the default"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "key": "Lesson 2: Connections and profiles / Source and destination use the connection"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-12-01",
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "section": "Lesson 2: Connections and profiles / Profile selects a target",
+          "prior_hash": "11e69e68cbfd7abab06e8b684c09b99fd9a24e7336481118f7ddd824c98d686a",
+          "content_hash": "507f605743a5a7adf2cc71e86882cab29b300874b544f3fd5c96757a20471c6d",
+          "detected_date_ist": "2026-11-04"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "section": "Lesson 2: Connections and profiles / Database and schema",
+          "prior_hash": "9f03f6e279b922354d572d32838bd1eb092e2114f2c43de7f31eef2b1aebb15d",
+          "content_hash": "614a85fecc67eb5e3f144e24909dcaf840d12ceba7ae2ca44048a819a7d681f9",
+          "detected_date_ist": "2026-11-04"
+        },
+        {
+          "path": "Notes/dbt/lesson-02-connections.md",
+          "section": "Lesson 2: Connections and profiles / What dbt debug checks",
+          "prior_hash": "a5298faf913f1fdd149472098244e68f766e2ae56441ae2e7f3515924e1c48ea",
+          "content_hash": "64bcdc05c53bdb34f1b22801d43e0dab86d2ba51f65a0de225d97c5b8e56f63e",
+          "detected_date_ist": "2026-11-04"
+        }
+      ],
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "dbt.project.structure",
+      "name": "dbt project structure and model dependencies",
+      "sources": [
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "sha256": "7a24233643363f8b49dc1058e3706f34a02863582a97f9ac566447ba0989f4ef"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "dbt.connections.profiles"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Files and folders"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Second starter model"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Project name, folder name, and version"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Analyses are saved investigation queries"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Where target and logs appear"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-12-02",
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "dbt.models.materialization",
+      "name": "dbt table and view materialization basics",
+      "sources": [
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "sha256": "7a24233643363f8b49dc1058e3706f34a02863582a97f9ac566447ba0989f4ef"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "dbt.project.structure"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / First starter model and materialization"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-12-03",
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "section": "Lesson 3: Project structure and starter models / First starter model and materialization",
+          "prior_hash": "66bf11f59ec4ffdee0ef51f3fdafbd53e814ef4ec985d10d8e4240d4a6d62c8b",
+          "content_hash": "75e37c261267dac251eee075f8bcc59d28c183d311e36a1173e55c77f55c919c",
+          "detected_date_ist": "2026-11-04"
+        }
+      ],
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
+    },
+    {
+      "id": "dbt.tests.properties",
+      "name": "dbt properties YAML and basic data tests",
+      "sources": [
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "sha256": "7a24233643363f8b49dc1058e3706f34a02863582a97f9ac566447ba0989f4ef"
+        }
+      ],
+      "source_history": [],
+      "coverage": "queued",
+      "prerequisites": [
+        "dbt.project.structure"
+      ],
+      "exercise_ids": [],
+      "note_sections": [
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Why schema.yml exists"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Unique and not-null tests"
+        },
+        {
+          "path": "Notes/dbt/lesson-03-project-structure.md",
+          "key": "Lesson 3: Project structure and starter models / Where test results are stored"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-12-04",
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,

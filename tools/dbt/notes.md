@@ -1,6 +1,7 @@
 # dbt learning notes
 
-No completed lesson notes yet.
+Lessons 1-3 are saved in [the dbt notes](../../Notes/dbt/Index.md).
+Learner explanations/predictions are recorded separately from model execution or independent mastery. See those notes for evidence limits.
 
 For each actual lesson record:
 - Problem encountered:

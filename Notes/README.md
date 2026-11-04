@@ -6,6 +6,7 @@ learning repository as the vault, and do not create another `Notes` folder insid
 - [AI reminder model notes](AI/reminder-model-basics.md)
 - [AI notes](AI/Index.md)
 - [Python notes](Python/Index.md)
+- [dbt lessons](dbt/Index.md)
 - [New syntax collection](New%20Syntax/README.md)
 - [Revision records](revision/README.md)
 - [Learning plan](learning-and-revision-plan.md)

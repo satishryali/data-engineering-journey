@@ -1,4 +1,40 @@
+## dbt connection and project follow-up saved - 4 November 2026 IST
+
+<!-- CP-20261104-dbt-followup-notes -->
+Saved dbt Lessons 2-3 follow-up notes from the chat: connection fields, default/overridden/missing targets, source versus destination, object creation, project names/version, seeds, analyses, generated files, test failure storage, and table materialization. Learner restated the destination-schema role; other examples and commands were tutor explanations. Read-only TESTING inspection verified project metadata and absent target folder. No dbt/database execution, scored assessment, mistake event, task acceptance or timer change. Existing concept IDs and review schedules preserved.
+
+Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+[Updated lesson notes](Notes/dbt/Index.md); [session evidence](progress/dbt/2026-11-04-followup.md).
+
+## dbt Lessons 1-3 notes saved - 4 November 2026 IST
+
+<!-- CP-20261104-dbt-lessons-01-03-notes -->
+Saved the requested three lesson notes under Notes/dbt with an index and separate answer-free recall prompts. Three lessons are not three verified study days. Learner explained dbt/PostgreSQL/Airflow roles and answered profile/target/schema questions. Tutor refined execution responsibilities and schema-creation permissions. Learner identified model dependency; materialization and YAML version/purpose needed explanation. Immediate predictions: not_null fails for 1/NULL; unique passes. Help beyond the conversation is unknown; no independent model execution, scored review or delayed retention claimed. Five note concepts have unassessed diagnostic planning slots only; older review schedules preserved. Project-local log inspected in the TESTING checkout shows successful connection check at 18:38:48 on 4 November, superseding the older pending-connection summary. No fresh connection/test execution during this save.
+
+Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts. Lesson 3 predictions were reviewed; materializations and tests remain practical work for later lessons. Airbnb plan has 40 lessons (36 practical plus 4 extensions), separate from preserved RRDAP/API/Python work. Timer unchanged by this notes-only save; read canonical study-log.csv before any timer action.
+
+Notes: [dbt index](Notes/dbt/Index.md). Project location: C:/Users/SATISH/GIT/TESTING/dbt_practice/airbnb_dbt.
+
+## dbt study started - 4 November 2026 IST
+
+<!-- CP-20261104-dbt-start -->
+Study interval DBT-20261104T184454 started at 18:44:54 IST on the learner's explicit start instruction. Running time is excluded from confirmed totals. Earlier uncertain intervals remain excluded; no overlap with a running session.
+
+Learner selected dbt on the laptop with PostgreSQL at 192.168.1.195 on the reported home server. Tutor explained dbt debug and profile/target selection. Logs showed an initial password authentication failure, then debug invoked from the parent folder with an internal missing-profile error. Correct project directory identified as C:/Users/SATISH/GIT/TESTING/dbt_practice/airbnb_dbt. No later successful connection output or independent assessment verified. Course name/link not supplied. No credentials copied into learning records.
+
+Exact next step: run dbt debug inside the airbnb_dbt project directory and inspect the connection result; supply the course name/link to align the next practical task. Earlier API, Python and RDS-001 work stays pending.
+
 # Start here - API paused for SQL, 3 November 2026 IST
+
+## AI fine-tuning notes saved, 3 November 2026 IST
+
+<!-- CP-20261103-finetuning-memory-notes -->
+Saved requested fine-tuning terminology, quantization and RAM/VRAM explanations from this conversation. Desktop hardware inspected: i7-12700K, 16 GB RAM and RTX 3050 with 6 GB VRAM verified by nvidia-smi. Learner reports using Qwen3 4B; no model benchmark, training run, independent concept assessment or answered epoch prompt supplied. Three new concepts receive unassessed diagnostic planning slots only; existing review dates and timers preserved. API/SQL, pathlib, reminder collector and RDS-001 pending work remain unchanged.
+
+[Explanation note](Notes/AI/fine-tuning-and-model-memory.md); [unanswered recall questions](Notes/revision/fine-tuning-questions.md).
+
+Optional AI follow-up: explain why a four-bit 4B model keeps its parameter count and needs more runtime memory than its download size, stating help used.
 
 ## API paused; SQL selected - 3 November 2026 IST
 

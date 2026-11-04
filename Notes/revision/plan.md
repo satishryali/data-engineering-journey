@@ -1,15 +1,15 @@
 # Revision plan (generated)
 
-As of 2026-11-03 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-11-04 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 202 | learning sections mapped |
-| 12 | sections excluded |
-| 45 | topics total |
+| 236 | learning sections mapped |
+| 16 | sections excluded |
+| 53 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -83,6 +83,14 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | py.api.requests: Request API data and read JSON response fields | 2026-11-24 | py.functions.basics |
 | py.json.basics: JSON text and Python object conversion | 2026-11-25 | py.dict.access |
 | py.json.files: JSON files and CSV conversion | 2026-11-26 | py.json.basics, py.csv.read |
+| ai.model.quantization: Weight quantization and numerical approximation | 2026-11-27 | ai.model.adaptation |
+| ai.model.memory: Model memory: system RAM VRAM and KV cache | 2026-11-28 | ai.model.quantization |
+| ai.training.updates: Fine-tuning updates: loss gradients batches and epochs | 2026-11-29 | ai.model.adaptation |
+| dbt.foundations.roles: dbt transformation and tool responsibilities | 2026-11-30 | None |
+| dbt.connections.profiles: dbt profiles targets and output schemas | 2026-12-01 | dbt.foundations.roles |
+| dbt.project.structure: dbt project structure and model dependencies | 2026-12-02 | dbt.connections.profiles |
+| dbt.models.materialization: dbt table and view materialization basics | 2026-12-03 | dbt.project.structure |
+| dbt.tests.properties: dbt properties YAML and basic data tests | 2026-12-04 | dbt.project.structure |
 
 ## Important weak topics
 
@@ -101,18 +109,34 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 
 ## Coverage gaps
 
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Practice table
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Select columns and filter rows
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / AND, OR and IN
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Sort rows
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / BETWEEN and LIKE
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / NULL and filtering
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / DISTINCT and counting
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / GROUP BY and HAVING
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / WHERE before grouping
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / AVG and NVL
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / CASE and condition order
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Count only matching rows
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / SUM with CASE: follow each row
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Add matching salaries
+- Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Sources and practice
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, py.logging.shared, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
-- Reassessment flags: py.paths.imports, py.objects.protocols
+- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
+- Reassessment flags: py.paths.imports, py.objects.protocols, dbt.connections.profiles, dbt.models.materialization
 
 ## Manageable session
 
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 42 topics await assessment. One diagnostic per suitable session needs at least 42 sessions; new notes can extend this. Replan missed slots without restarting.
+- 50 topics await assessment. One diagnostic per suitable session needs at least 50 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -163,6 +187,14 @@ Check prerequisites first. Teach missing understanding before retention practice
 | py.api.requests | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.json.basics | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | py.json.files | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.model.quantization | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.model.memory | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| ai.training.updates | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| dbt.foundations.roles | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| dbt.connections.profiles | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| dbt.project.structure | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| dbt.models.materialization | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| dbt.tests.properties | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -173,8 +205,23 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/.obsidian/app.json](../../Notes/.obsidian/app.json): App configuration; no learning coverage.
 - [Notes/.obsidian/appearance.json](../../Notes/.obsidian/appearance.json): App configuration; no learning coverage.
 - [Notes/.obsidian/core-plugins.json](../../Notes/.obsidian/core-plugins.json): App configuration; no learning coverage.
+- [Notes/.obsidian/graph.json](../../Notes/.obsidian/graph.json): App configuration; no learning coverage.
 - [Notes/.obsidian/workspace.json](../../Notes/.obsidian/workspace.json): App configuration; no learning coverage.
+- [Notes/2026-11-03.md](../../Notes/2026-11-03.md)
 - [Notes/AI/Index.md](../../Notes/AI/Index.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/AI/fine-tuning-and-model-memory.md](../../Notes/AI/fine-tuning-and-model-memory.md)
+  - Fine-tuning, quantization and model memory: ai.model.adaptation
+  - Fine-tuning, quantization and model memory / Starting model and weights: ai.model.adaptation
+  - Fine-tuning, quantization and model memory / Dataset and tokens: ai.reminders.dataset
+  - Fine-tuning, quantization and model memory / Loss and learning updates: ai.training.updates
+  - Fine-tuning, quantization and model memory / Batches, steps and epochs: ai.training.updates
+  - Fine-tuning, quantization and model memory / Full fine-tuning, LoRA and QLoRA: ai.model.adaptation, ai.model.quantization
+  - Fine-tuning, quantization and model memory / Quantization and four bits: ai.model.quantization
+  - Fine-tuning, quantization and model memory / RAM, VRAM and conversation memory: ai.model.memory
+  - Fine-tuning, quantization and model memory / This desktop's measured hardware: ai.model.memory
+  - Fine-tuning, quantization and model memory / Evaluation and common training problems: ai.reminders.evaluation
+  - Fine-tuning, quantization and model memory / Checkpoints and export: ai.model.adaptation
+  - Fine-tuning, quantization and model memory / Sources and learning status: Sources, related-note navigation and evidence status; no additional learning concept.
 - [Notes/AI/recall-questions.md](../../Notes/AI/recall-questions.md): Answer-free retrieval prompts; explanations mapped from AI notes.
 - [Notes/AI/reminder-input-practice.md](../../Notes/AI/reminder-input-practice.md)
   - Collecting reminder inputs: py.strings.returned-text
@@ -431,11 +478,62 @@ Related sections share topic IDs. Empty container headings are not counted.
   - sql learning notes: sql.count.nulls, sql.join.keys, sql.group.grain
   - sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001): sql.join.preservation
   - sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002): sql.count.nulls, sql.join.keys, sql.group.grain
+- [Notes/SQL/oracle-sql-revision-2026-11-03.md](../../Notes/SQL/oracle-sql-revision-2026-11-03.md)
+  - Oracle SQL revision — 3 November 2026: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / Practice table: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / Select columns and filter rows: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / AND, OR and IN: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / Sort rows: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / BETWEEN and LIKE: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / NULL and filtering: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / DISTINCT and counting: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / GROUP BY and HAVING: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / WHERE before grouping: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / AVG and NVL: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / CASE and condition order: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / Count only matching rows: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / SUM with CASE: follow each row: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / Add matching salaries: MAPPING NEEDED
+  - Oracle SQL revision — 3 November 2026 / Sources and practice: MAPPING NEEDED
+- [Notes/Untitled.base](../../Notes/Untitled.base): Image, asset or machine-readable view; learning is mapped from its explanation note.
+- [Notes/Untitled.canvas](../../Notes/Untitled.canvas): Image, asset or machine-readable view; learning is mapped from its explanation note.
 - [Notes/Welcome.md](../../Notes/Welcome.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/dbt/Index.md](../../Notes/dbt/Index.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/dbt/lesson-01-what-dbt-does.md](../../Notes/dbt/lesson-01-what-dbt-does.md)
+  - Lesson 1: What dbt does: dbt.foundations.roles
+  - Lesson 1: What dbt does / The three tools: dbt.foundations.roles
+  - Lesson 1: What dbt does / Extract, load, transform: dbt.foundations.roles
+  - Lesson 1: What dbt does / A small transformation: dbt.foundations.roles
+  - Lesson 1: What dbt does / Why use dbt with SQL: dbt.foundations.roles
+  - Lesson 1: What dbt does / Learning evidence and references: Administrative evidence and reference links; substantive explanations mapped separately.
+- [Notes/dbt/lesson-02-connections.md](../../Notes/dbt/lesson-02-connections.md)
+  - Lesson 2: Connections and profiles: dbt.connections.profiles
+  - Lesson 2: Connections and profiles / Project selects a profile: dbt.connections.profiles
+  - Lesson 2: Connections and profiles / Profile selects a target: dbt.connections.profiles
+  - Lesson 2: Connections and profiles / Multiple connections and the default: dbt.connections.profiles
+  - Lesson 2: Connections and profiles / Database and schema: dbt.connections.profiles
+  - Lesson 2: Connections and profiles / Source and destination use the connection: dbt.connections.profiles
+  - Lesson 2: Connections and profiles / What dbt debug checks: dbt.connections.profiles
+  - Lesson 2: Connections and profiles / Learning evidence and references: Session provenance and official references; not separate learning content.
+- [Notes/dbt/lesson-03-project-structure.md](../../Notes/dbt/lesson-03-project-structure.md)
+  - Lesson 3: Project structure and starter models: dbt.project.structure
+  - Lesson 3: Project structure and starter models / Files and folders: dbt.project.structure
+  - Lesson 3: Project structure and starter models / Project name, folder name, and version: dbt.project.structure
+  - Lesson 3: Project structure and starter models / Load one small CSV seed: de.ingest.seeds
+  - Lesson 3: Project structure and starter models / Analyses are saved investigation queries: dbt.project.structure
+  - Lesson 3: Project structure and starter models / Where target and logs appear: dbt.project.structure
+  - Lesson 3: Project structure and starter models / First starter model and materialization: dbt.models.materialization
+  - Lesson 3: Project structure and starter models / Second starter model: dbt.project.structure
+  - Lesson 3: Project structure and starter models / Why schema.yml exists: dbt.tests.properties
+  - Lesson 3: Project structure and starter models / Unique and not-null tests: dbt.tests.properties
+  - Lesson 3: Project structure and starter models / Where test results are stored: dbt.tests.properties
+  - Lesson 3: Project structure and starter models / Learning evidence and references: Session provenance and official references; not separate learning content.
+- [Notes/dbt/recall-questions.md](../../Notes/dbt/recall-questions.md): Answer-free recall prompts; explanations are mapped in the dbt lesson notes.
 - [Notes/learning-and-revision-plan.md](../../Notes/learning-and-revision-plan.md): Index, vault setup or curriculum administration; no assessed lesson content.
 - [Notes/revision/README.md](../../Notes/revision/README.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/ai-reminder-questions.md](../../Notes/revision/ai-reminder-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/concurrency-questions.md](../../Notes/revision/concurrency-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/fine-tuning-questions.md](../../Notes/revision/fine-tuning-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/json-questions.md](../../Notes/revision/json-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/mistakes.md](../../Notes/revision/mistakes.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
@@ -448,7 +546,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [tools/airflow/notes.md](../../tools/airflow/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/azure/notes.md](../../tools/azure/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/data-modelling/notes.md](../../tools/data-modelling/notes.md): Empty lesson template; no substantive learning content yet.
-- [tools/dbt/notes.md](../../tools/dbt/notes.md): Empty lesson template; no substantive learning content yet.
+- [tools/dbt/notes.md](../../tools/dbt/notes.md): Answer-free recall prompts or navigation to canonical lesson explanations; no separate learning content.
 - [tools/docker/notes.md](../../tools/docker/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/git/notes.md](../../tools/git/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/pipeline-reliability/notes.md](../../tools/pipeline-reliability/notes.md): Empty lesson template; no substantive learning content yet.

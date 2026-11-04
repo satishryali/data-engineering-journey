@@ -358,6 +358,20 @@
       "kind": "learning",
       "sha256": "9192882aafe3df5d5a4420dc1109d923917c1990a9520afd78a7dade927373e4",
       "evidence_key": "cb375e0c518b334bb60dd9b4fcd63cc67fe15e43962d432acfce8935cb91aa2a"
+    },
+    {
+      "checkpoint_id": "CP-20261103-finetuning-memory-notes",
+      "date_ist": "2026-11-03",
+      "kind": "learning",
+      "sha256": "264ba5356340b1e1c65845f22419e362ac29489c3a723e7169955cc55353cb4c",
+      "evidence_key": "c43c32777509a61b7d291ab948fd52132c0297902880cb1c476302ac1935aac2"
+    },
+    {
+      "checkpoint_id": "CP-20261104-dbt-followup-notes",
+      "date_ist": "2026-11-04",
+      "kind": "learning",
+      "sha256": "2b44b6b6565e5b1bb2425b5dadb6c6fc558d0cd109fce4beb6a02d54c7f518e4",
+      "evidence_key": "8b827e25a7846c6f7f0c43e37475a23b9c0948c9b98355a218cc519948fdaf08"
     }
   ]
 }
