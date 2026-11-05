@@ -1,13 +1,13 @@
 # Revision plan (generated)
 
-As of 2026-11-04 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-11-05 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 236 | learning sections mapped |
+| 245 | learning sections mapped |
 | 16 | sections excluded |
 | 53 | topics total |
 | 3 | topics assessed |
@@ -128,7 +128,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
+- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, vault.kv.read, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
 - Reassessment flags: py.paths.imports, py.objects.protocols, dbt.connections.profiles, dbt.models.materialization
 
 ## Manageable session
@@ -478,6 +478,15 @@ Related sections share topic IDs. Empty container headings are not counted.
   - sql learning notes: sql.count.nulls, sql.join.keys, sql.group.grain
   - sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001): sql.join.preservation
   - sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002): sql.count.nulls, sql.join.keys, sql.group.grain
+  - sql learning notes / SQL joins: a small reference: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / Small input: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / INNER JOIN: keep matching pairs: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / LEFT JOIN: keep every customer: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / RIGHT JOIN and FULL OUTER JOIN: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / Self join: use the same table twice: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / Filtering after LEFT JOIN: sql.join.preservation, sql.join.keys
+  - sql learning notes / SQL joins: a small reference / Remember: sql.join.preservation, sql.join.keys, sql.count.nulls
 - [Notes/SQL/oracle-sql-revision-2026-11-03.md](../../Notes/SQL/oracle-sql-revision-2026-11-03.md)
   - Oracle SQL revision — 3 November 2026: MAPPING NEEDED
   - Oracle SQL revision — 3 November 2026 / Practice table: MAPPING NEEDED

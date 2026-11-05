@@ -372,6 +372,13 @@
       "kind": "learning",
       "sha256": "2b44b6b6565e5b1bb2425b5dadb6c6fc558d0cd109fce4beb6a02d54c7f518e4",
       "evidence_key": "8b827e25a7846c6f7f0c43e37475a23b9c0948c9b98355a218cc519948fdaf08"
+    },
+    {
+      "checkpoint_id": "CP-20261105-sql-join-reference",
+      "date_ist": "2026-11-05",
+      "kind": "setup",
+      "sha256": "3080aba3eb4af915a771f25da62f550d79369abdbe6f98648416cbc42ede2f66",
+      "evidence_key": "fa6095c603ee9e7afba993e692eed938c562b0a0ce5dc964ef107c2dc9b13812"
     }
   ]
 }

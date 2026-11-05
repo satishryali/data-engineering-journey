@@ -506,3 +506,10 @@ Notes: [dbt index](../Notes/dbt/Index.md). Project location: C:/Users/SATISH/GIT
 Saved dbt Lessons 2-3 follow-up notes from the chat: connection fields, default/overridden/missing targets, source versus destination, object creation, project names/version, seeds, analyses, generated files, test failure storage, and table materialization. Learner restated the destination-schema role; other examples and commands were tutor explanations. Read-only TESTING inspection verified project metadata and absent target folder. No dbt/database execution, scored assessment, mistake event, task acceptance or timer change. Existing concept IDs and review schedules preserved. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
 
 Evidence: `progress/dbt/2026-11-04-followup.md#EVID-DBT-20261104-FOLLOWUP`
+
+<!-- checkpoint:CP-20261105-sql-join-reference -->
+## 2026-11-05 — CP-20261105-sql-join-reference (setup)
+
+Prepared requested SQL join reference: INNER, LEFT, RIGHT, FULL OUTER, CROSS and self joins, matching keys, repeated matches, NULLs and ON versus WHERE, with small PostgreSQL examples and expected output. Reference preparation only; no learner attempt, execution, score, review schedule or timer change. Existing SQL concepts reused. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+Evidence: `Notes/SQL/learning-notes.md#sql-joins-a-small-reference`

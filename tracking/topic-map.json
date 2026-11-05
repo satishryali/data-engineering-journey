@@ -622,6 +622,42 @@
         {
           "path": "Notes/SQL/learning-notes.md",
           "key": "sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001)"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Small input"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / INNER JOIN: keep matching pairs"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / LEFT JOIN: keep every customer"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / RIGHT JOIN and FULL OUTER JOIN"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Self join: use the same table twice"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Filtering after LEFT JOIN"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Remember"
         }
       ],
       "initial_assessment_date_ist": "2026-10-21"
@@ -652,6 +688,10 @@
         {
           "path": "Notes/SQL/learning-notes.md",
           "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Remember"
         }
       ],
       "initial_assessment_date_ist": "2026-10-23"
@@ -683,6 +723,42 @@
         {
           "path": "Notes/SQL/learning-notes.md",
           "key": "sql learning notes / 15 October 2026 — counting orders after LEFT JOIN (SQL-002)"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Small input"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / INNER JOIN: keep matching pairs"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / LEFT JOIN: keep every customer"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / RIGHT JOIN and FULL OUTER JOIN"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Self join: use the same table twice"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Filtering after LEFT JOIN"
+        },
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "key": "sql learning notes / SQL joins: a small reference / Remember"
         }
       ],
       "initial_assessment_date_ist": "2026-10-22"
@@ -4639,7 +4715,7 @@
     },
     {
       "path": "Notes/SQL/learning-notes.md",
-      "file_hash": "7bc4211fe72d8c8e52cceaddddfde4df89b6d6e42c843e7b9e6cfc4d064f28ca",
+      "file_hash": "3d7d7ba55953642ebac3da38d20a5e5a3c1d482949b34a469fb8bc97056f9f61",
       "sections": [
         {
           "key": "sql learning notes",
@@ -4667,6 +4743,88 @@
             "sql.count.nulls",
             "sql.join.keys",
             "sql.group.grain"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference",
+          "heading": "sql learning notes / SQL joins: a small reference",
+          "content_hash": "b03229481883c36e8ba542c94a2b77a758289d1eae2bf2db29049b133020ec65",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / Small input",
+          "heading": "sql learning notes / SQL joins: a small reference / Small input",
+          "content_hash": "972b56dc2836dc5f3761d3c7e9ef898ef3b9d6c56d28f25c4e0167582c8fb7ac",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / INNER JOIN: keep matching pairs",
+          "heading": "sql learning notes / SQL joins: a small reference / INNER JOIN: keep matching pairs",
+          "content_hash": "e7cb3012cdd8e36152901c14ec6bcd8d6b4f5b3ffcbdae3592028f820843de75",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / LEFT JOIN: keep every customer",
+          "heading": "sql learning notes / SQL joins: a small reference / LEFT JOIN: keep every customer",
+          "content_hash": "3596742a42c466503c651ea2cf471d47658be67882b52ea88bee51afacfa18f1",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / RIGHT JOIN and FULL OUTER JOIN",
+          "heading": "sql learning notes / SQL joins: a small reference / RIGHT JOIN and FULL OUTER JOIN",
+          "content_hash": "16815ea16ae0a51f6ccc146087c1c1f8a97cea42f28e0ab2e307448db0e23269",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
+          "heading": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
+          "content_hash": "5a941e7578705e7322c75afe030e1ec5c6e73d2fa464abdb212c2fc04c2fc63b",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / Self join: use the same table twice",
+          "heading": "sql learning notes / SQL joins: a small reference / Self join: use the same table twice",
+          "content_hash": "5c61fd9f305166d35f5ff65a7b79b2c8354cfd11d3d8d6c73e6b66392813707a",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / Filtering after LEFT JOIN",
+          "heading": "sql learning notes / SQL joins: a small reference / Filtering after LEFT JOIN",
+          "content_hash": "f04bada33b88ed9d48d6a1077390e2edc9abf73743c58c7bf3fe6fac2e689705",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys"
+          ]
+        },
+        {
+          "key": "sql learning notes / SQL joins: a small reference / Remember",
+          "heading": "sql learning notes / SQL joins: a small reference / Remember",
+          "content_hash": "5cd3d77f3806a0587c97d4727ded99f56b0b353cff25ed3920d14374a41242b2",
+          "topic_ids": [
+            "sql.join.preservation",
+            "sql.join.keys",
+            "sql.count.nulls"
           ]
         }
       ]
@@ -5138,7 +5296,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-11-04",
+  "inventory_date_ist": "2026-11-05",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

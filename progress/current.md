@@ -1,3 +1,10 @@
+## SQL join reference saved - 5 November 2026 IST
+
+<!-- CP-20261105-sql-join-reference -->
+Prepared requested SQL join reference: INNER, LEFT, RIGHT, FULL OUTER, CROSS and self joins, matching keys, repeated matches, NULLs and ON versus WHERE, with small PostgreSQL examples and expected output. Reference preparation only; no learner attempt, execution, score, review schedule or timer change. Existing SQL concepts reused. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+[SQL notes](../Notes/SQL/learning-notes.md). Earlier pending work remains below.
+
 ## dbt connection and project follow-up saved - 4 November 2026 IST
 
 <!-- CP-20261104-dbt-followup-notes -->
