@@ -757,6 +757,16 @@
         }
       ],
       "initial_assessment_date_ist": "2026-10-21",
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "section": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
+          "prior_hash": "5a941e7578705e7322c75afe030e1ec5c6e73d2fa464abdb212c2fc04c2fc63b",
+          "content_hash": "835d6b133ef572d0b6e1ee2466766b254b68f82017bdc20d6222706f3f65c897",
+          "detected_date_ist": "2026-11-09"
+        }
+      ],
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,
@@ -878,6 +888,16 @@
         }
       ],
       "initial_assessment_date_ist": "2026-10-22",
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "section": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
+          "prior_hash": "5a941e7578705e7322c75afe030e1ec5c6e73d2fa464abdb212c2fc04c2fc63b",
+          "content_hash": "835d6b133ef572d0b6e1ee2466766b254b68f82017bdc20d6222706f3f65c897",
+          "detected_date_ist": "2026-11-09"
+        }
+      ],
       "assessment_status": "unassessed",
       "interval_stage": null,
       "next_review_date": null,

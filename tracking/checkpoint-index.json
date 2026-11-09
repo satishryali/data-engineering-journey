@@ -379,6 +379,13 @@
       "kind": "setup",
       "sha256": "3080aba3eb4af915a771f25da62f550d79369abdbe6f98648416cbc42ede2f66",
       "evidence_key": "fa6095c603ee9e7afba993e692eed938c562b0a0ce5dc964ef107c2dc9b13812"
+    },
+    {
+      "checkpoint_id": "CP-20261109-cross-join-details",
+      "date_ist": "2026-11-09",
+      "kind": "setup",
+      "sha256": "10e0f7866e39783e7bba32cd87aef548143313b06af35ec453a5f623808a5b68",
+      "evidence_key": "1c4ad2830518548d52c139ba0de233f38ad47a3c6c12dc47a02499920bb6d86e"
     }
   ]
 }

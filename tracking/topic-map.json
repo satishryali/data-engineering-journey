@@ -660,7 +660,17 @@
           "key": "sql learning notes / SQL joins: a small reference / Remember"
         }
       ],
-      "initial_assessment_date_ist": "2026-10-21"
+      "initial_assessment_date_ist": "2026-10-21",
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "section": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
+          "prior_hash": "5a941e7578705e7322c75afe030e1ec5c6e73d2fa464abdb212c2fc04c2fc63b",
+          "content_hash": "835d6b133ef572d0b6e1ee2466766b254b68f82017bdc20d6222706f3f65c897",
+          "detected_date_ist": "2026-11-09"
+        }
+      ]
     },
     {
       "id": "sql.count.nulls",
@@ -761,7 +771,17 @@
           "key": "sql learning notes / SQL joins: a small reference / Remember"
         }
       ],
-      "initial_assessment_date_ist": "2026-10-22"
+      "initial_assessment_date_ist": "2026-10-22",
+      "needs_reassessment": true,
+      "content_changes": [
+        {
+          "path": "Notes/SQL/learning-notes.md",
+          "section": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
+          "prior_hash": "5a941e7578705e7322c75afe030e1ec5c6e73d2fa464abdb212c2fc04c2fc63b",
+          "content_hash": "835d6b133ef572d0b6e1ee2466766b254b68f82017bdc20d6222706f3f65c897",
+          "detected_date_ist": "2026-11-09"
+        }
+      ]
     },
     {
       "id": "sql.group.grain",
@@ -4715,7 +4735,7 @@
     },
     {
       "path": "Notes/SQL/learning-notes.md",
-      "file_hash": "3d7d7ba55953642ebac3da38d20a5e5a3c1d482949b34a469fb8bc97056f9f61",
+      "file_hash": "9fa36ade2d667cedf74b090288d110ade2e87f673e73b8b256c24f6ef95182df",
       "sections": [
         {
           "key": "sql learning notes",
@@ -4793,11 +4813,12 @@
         {
           "key": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
           "heading": "sql learning notes / SQL joins: a small reference / CROSS JOIN: every combination",
-          "content_hash": "5a941e7578705e7322c75afe030e1ec5c6e73d2fa464abdb212c2fc04c2fc63b",
+          "content_hash": "835d6b133ef572d0b6e1ee2466766b254b68f82017bdc20d6222706f3f65c897",
           "topic_ids": [
             "sql.join.preservation",
             "sql.join.keys"
-          ]
+          ],
+          "changed": true
         },
         {
           "key": "sql learning notes / SQL joins: a small reference / Self join: use the same table twice",
@@ -4826,6 +4847,72 @@
             "sql.join.keys",
             "sql.count.nulls"
           ]
+        }
+      ]
+    },
+    {
+      "path": "Notes/SQL/left-join.md",
+      "file_hash": "a60d22d38ac4e4a8d71b9cfc3fb5928898bf54c632cc7ae3ec26c73936126b86",
+      "sections": [
+        {
+          "key": "LEFT JOIN / Why we need it",
+          "heading": "LEFT JOIN / Why we need it",
+          "content_hash": "71e85634c2ac98c99040ebc76311dbb552c3ed0841218712727af06c0e08c034"
+        },
+        {
+          "key": "LEFT JOIN / Small input",
+          "heading": "LEFT JOIN / Small input",
+          "content_hash": "76d6c5247f850a19122d3f6ac0cc9aff68a107217006d3aa026a6cb2e1b4d395"
+        },
+        {
+          "key": "LEFT JOIN / Keep every customer",
+          "heading": "LEFT JOIN / Keep every customer",
+          "content_hash": "c327cbd34526ae8f5ed1d4a15f20b53aea38894dbb867a3f19fa5f200368928f"
+        },
+        {
+          "key": "LEFT JOIN / One row for each match",
+          "heading": "LEFT JOIN / One row for each match",
+          "content_hash": "b97f6731dc53b9adae6cf46df20a3a1934988c1a749d65ee70bd966b50cad08f"
+        },
+        {
+          "key": "LEFT JOIN / Count real orders",
+          "heading": "LEFT JOIN / Count real orders",
+          "content_hash": "5490e778ea32b2a0f2dda3c4ef333f5c97787c30763cea49ce78a529f8d01e75"
+        },
+        {
+          "key": "LEFT JOIN / Put conditions in ON or WHERE",
+          "heading": "LEFT JOIN / Put conditions in ON or WHERE",
+          "content_hash": "ac73af222c6733240d2c38a46001361b36a91a524342fd03609dc6f55e647c30"
+        },
+        {
+          "key": "LEFT JOIN / Put conditions in ON or WHERE / Condition in ON: keep every customer",
+          "heading": "LEFT JOIN / Put conditions in ON or WHERE / Condition in ON: keep every customer",
+          "content_hash": "9b78126558711db864b92d5e4c270d97cd93f1178ab1e787283a9ff656a0c5e7"
+        },
+        {
+          "key": "LEFT JOIN / Put conditions in ON or WHERE / Condition in WHERE: remove unmatched rows",
+          "heading": "LEFT JOIN / Put conditions in ON or WHERE / Condition in WHERE: remove unmatched rows",
+          "content_hash": "05f8475225ad78c40f13d7d38486817be7980f11c4e47d8d5fb9cd1a8ccc86b0"
+        },
+        {
+          "key": "LEFT JOIN / RIGHT JOIN: keep every row from the right table",
+          "heading": "LEFT JOIN / RIGHT JOIN: keep every row from the right table",
+          "content_hash": "b68d1f4f7f8f66ceffe4b28c91b62e9eafe63bf8a0eaed45d6381813e8e42b5b"
+        },
+        {
+          "key": "LEFT JOIN / Find customers without orders",
+          "heading": "LEFT JOIN / Find customers without orders",
+          "content_hash": "a84d35316626fa4f5cc3770b9ab64c3e6717dac81c4412515dc370a0afd02b56"
+        },
+        {
+          "key": "LEFT JOIN / Common mistakes",
+          "heading": "LEFT JOIN / Common mistakes",
+          "content_hash": "dd950417683c14985912f9b6a24c7e4243977385c2b2c76a16893e263af0f577"
+        },
+        {
+          "key": "LEFT JOIN / Remember",
+          "heading": "LEFT JOIN / Remember",
+          "content_hash": "4a01f2bbbe87c552627fff0ebeb7ac8de40828a20fa60517436faca52c0fbb1e"
         }
       ]
     },
@@ -5296,7 +5383,7 @@
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-11-05",
+  "inventory_date_ist": "2026-11-09",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

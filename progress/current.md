@@ -1,3 +1,10 @@
+## CROSS JOIN details saved - 9 November 2026 IST
+
+<!-- CP-20261109-cross-join-details -->
+Expanded the requested CROSS JOIN reference with every-pair output, row-count multiplication, empty inputs, duplicates, NULL values, WHERE filtering, INNER JOIN comparison and practical uses. Tutor-prepared reference with expected output only; no SQL execution, learner attempt, score, review-date change, task acceptance or timer change. Existing SQL concept mappings reused; content expansion flagged for future assessment. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+[SQL notes](../Notes/SQL/learning-notes.md#cross-join-every-combination). Earlier pending work remains below.
+
 ## SQL join reference saved - 5 November 2026 IST
 
 <!-- CP-20261105-sql-join-reference -->

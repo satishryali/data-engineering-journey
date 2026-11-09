@@ -1,6 +1,6 @@
 # Revision plan (generated)
 
-As of 2026-11-05 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-11-09 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
@@ -109,6 +109,18 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 
 ## Coverage gaps
 
+- Notes/SQL/left-join.md / LEFT JOIN / Why we need it
+- Notes/SQL/left-join.md / LEFT JOIN / Small input
+- Notes/SQL/left-join.md / LEFT JOIN / Keep every customer
+- Notes/SQL/left-join.md / LEFT JOIN / One row for each match
+- Notes/SQL/left-join.md / LEFT JOIN / Count real orders
+- Notes/SQL/left-join.md / LEFT JOIN / Put conditions in ON or WHERE
+- Notes/SQL/left-join.md / LEFT JOIN / Put conditions in ON or WHERE / Condition in ON: keep every customer
+- Notes/SQL/left-join.md / LEFT JOIN / Put conditions in ON or WHERE / Condition in WHERE: remove unmatched rows
+- Notes/SQL/left-join.md / LEFT JOIN / RIGHT JOIN: keep every row from the right table
+- Notes/SQL/left-join.md / LEFT JOIN / Find customers without orders
+- Notes/SQL/left-join.md / LEFT JOIN / Common mistakes
+- Notes/SQL/left-join.md / LEFT JOIN / Remember
 - Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026
 - Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Practice table
 - Notes/SQL/oracle-sql-revision-2026-11-03.md / Oracle SQL revision — 3 November 2026 / Select columns and filter rows
@@ -128,8 +140,8 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, vault.kv.read, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records
-- Reassessment flags: py.paths.imports, py.objects.protocols, dbt.connections.profiles, dbt.models.materialization
+- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, vault.kv.read, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records, py.str.split, py.csv.write, py.files.methods, py.objects.basics
+- Reassessment flags: py.paths.imports, sql.join.preservation, sql.join.keys, py.objects.protocols, dbt.connections.profiles, dbt.models.materialization
 
 ## Manageable session
 
@@ -487,6 +499,19 @@ Related sections share topic IDs. Empty container headings are not counted.
   - sql learning notes / SQL joins: a small reference / Self join: use the same table twice: sql.join.preservation, sql.join.keys
   - sql learning notes / SQL joins: a small reference / Filtering after LEFT JOIN: sql.join.preservation, sql.join.keys
   - sql learning notes / SQL joins: a small reference / Remember: sql.join.preservation, sql.join.keys, sql.count.nulls
+- [Notes/SQL/left-join.md](../../Notes/SQL/left-join.md)
+  - LEFT JOIN / Why we need it: MAPPING NEEDED
+  - LEFT JOIN / Small input: MAPPING NEEDED
+  - LEFT JOIN / Keep every customer: MAPPING NEEDED
+  - LEFT JOIN / One row for each match: MAPPING NEEDED
+  - LEFT JOIN / Count real orders: MAPPING NEEDED
+  - LEFT JOIN / Put conditions in ON or WHERE: MAPPING NEEDED
+  - LEFT JOIN / Put conditions in ON or WHERE / Condition in ON: keep every customer: MAPPING NEEDED
+  - LEFT JOIN / Put conditions in ON or WHERE / Condition in WHERE: remove unmatched rows: MAPPING NEEDED
+  - LEFT JOIN / RIGHT JOIN: keep every row from the right table: MAPPING NEEDED
+  - LEFT JOIN / Find customers without orders: MAPPING NEEDED
+  - LEFT JOIN / Common mistakes: MAPPING NEEDED
+  - LEFT JOIN / Remember: MAPPING NEEDED
 - [Notes/SQL/oracle-sql-revision-2026-11-03.md](../../Notes/SQL/oracle-sql-revision-2026-11-03.md)
   - Oracle SQL revision — 3 November 2026: MAPPING NEEDED
   - Oracle SQL revision — 3 November 2026 / Practice table: MAPPING NEEDED

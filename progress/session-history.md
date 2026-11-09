@@ -513,3 +513,10 @@ Evidence: `progress/dbt/2026-11-04-followup.md#EVID-DBT-20261104-FOLLOWUP`
 Prepared requested SQL join reference: INNER, LEFT, RIGHT, FULL OUTER, CROSS and self joins, matching keys, repeated matches, NULLs and ON versus WHERE, with small PostgreSQL examples and expected output. Reference preparation only; no learner attempt, execution, score, review schedule or timer change. Existing SQL concepts reused. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
 
 Evidence: `Notes/SQL/learning-notes.md#sql-joins-a-small-reference`
+
+<!-- checkpoint:CP-20261109-cross-join-details -->
+## 2026-11-09 — CP-20261109-cross-join-details (setup)
+
+Expanded the requested CROSS JOIN reference with every-pair output, row-count multiplication, empty inputs, duplicates, NULL values, WHERE filtering, INNER JOIN comparison and practical uses. Tutor-prepared reference with expected output only; no SQL execution, learner attempt, score, review-date change, task acceptance or timer change. Existing SQL concept mappings reused; content expansion flagged for future assessment. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+Evidence: `Notes/SQL/learning-notes.md#cross-join-every-combination`

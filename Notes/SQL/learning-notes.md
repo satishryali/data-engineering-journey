@@ -148,6 +148,12 @@ It is useful for comparing two sources and finding missing records.
 
 ### CROSS JOIN: every combination
 
+Use `CROSS JOIN` when you want every possible pair, such as all size and colour
+options for a product. Each row from the first input is paired with every row
+from the second input. This is called a **Cartesian product**.
+
+Small input: sizes are S and M; colours are Blue and Red.
+
 ```sql
 WITH sizes(size) AS (VALUES ('S'), ('M')),
 colours(colour) AS (VALUES ('Blue'), ('Red'))
@@ -157,10 +163,71 @@ CROSS JOIN colours AS c
 ORDER BY s.size, c.colour;
 ```
 
-**Expected output:** M / Blue, M / Red, S / Blue, S / Red.
+**Expected output**
 
-There is no match condition. Two sizes times two colours gives four combinations.
-Check the row count before using this with large tables.
+| size | colour |
+| --- | --- |
+| M | Blue |
+| M | Red |
+| S | Blue |
+| S | Red |
+
+`M` pairs with both colours, then `S` pairs with both colours. `ORDER BY` puts
+M before S here; without it, SQL does not promise the displayed row order.
+`CROSS JOIN` does not use `ON` or `USING`. The values do not need to match and
+the inputs do not need a shared column.
+
+**Counting rows**
+
+- Before filtering, rows = first input rows multiplied by second input rows.
+- Two sizes times two colours = four rows. Adding a third colour gives six.
+- With three inputs, multiply all three counts: 2 sizes x 3 colours x 2 shops = 12.
+- If either input has zero rows, the result has zero rows. Unlike `LEFT JOIN`,
+  it does not preserve the other side with a NULL placeholder.
+- Repeated input rows produce repeated combinations; they are not removed.
+- A NULL value is still part of a row and pairs with every row on the other side.
+  This does not require `NULL = NULL` to be true because there is no match test.
+
+**Keeping only some combinations**
+
+Suppose we want every option except small red:
+
+```sql
+WITH sizes(size) AS (VALUES ('S'), ('M')),
+colours(colour) AS (VALUES ('Blue'), ('Red'))
+SELECT s.size, c.colour
+FROM sizes AS s
+CROSS JOIN colours AS c
+WHERE NOT (s.size = 'S' AND c.colour = 'Red')
+ORDER BY s.size, c.colour;
+```
+
+**Expected output:** M / Blue, M / Red, S / Blue.
+
+Think of `WHERE` as filtering the combinations. PostgreSQL may choose a faster
+execution plan; it does not have to store every pair before applying the filter.
+
+**CROSS JOIN versus INNER JOIN**
+
+For the customer/order sample above, a cross join gives 2 x 3 = 6 pairs,
+including Nila paired with every order. An inner join on customer ID gives only
+Asha / 101 and Asha / 102. Use `INNER JOIN ... ON` when you want related records.
+
+For two inputs, `CROSS JOIN` gives the same pairs as `INNER JOIN ... ON TRUE`.
+`FROM sizes AS s, colours AS c` also gives all pairs, but explicit `CROSS JOIN`
+makes the intention clearer. An accidentally missing condition in a comma join
+can create many unwanted rows.
+
+**Practical uses and checks**
+
+- Build every product/date pair for a daily report, then join actual sales so
+  missing activity can be displayed separately.
+- Generate small combinations for testing, such as shops and delivery options.
+- Pair every row with a settings result that contains exactly one row. If that
+  result is empty, all rows disappear; if it has two rows, each row is repeated twice.
+- Check the input counts first: 10,000 rows x 10,000 rows = 100 million pairs.
+  Select only the needed columns and filter inputs where appropriate. Adding
+  `DISTINCT` afterwards does not repair the wrong choice of join.
 
 ### Self join: use the same table twice
 
