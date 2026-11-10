@@ -1,13 +1,13 @@
 # Revision plan (generated)
 
-As of 2026-11-09 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-11-10 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 245 | learning sections mapped |
+| 255 | learning sections mapped |
 | 16 | sections excluded |
 | 53 | topics total |
 | 3 | topics assessed |
@@ -140,7 +140,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, vault.kv.read, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records, py.str.split, py.csv.write, py.files.methods, py.objects.basics
+- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, vault.kv.read, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records, py.str.split, py.csv.write, py.files.methods, py.objects.basics, py.random.basics
 - Reassessment flags: py.paths.imports, sql.join.preservation, sql.join.keys, py.objects.protocols, dbt.connections.profiles, dbt.models.materialization
 
 ## Manageable session
@@ -486,6 +486,17 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Count orders and write the summary after the loop / Keep separate orders before summarising: py.list.records, py.records.summary
   - Count orders and write the summary after the loop / Learning context: Provenance and pending-practice status; no additional concept coverage.
 - [Notes/README.md](../../Notes/README.md): Index, vault setup or curriculum administration; no assessed lesson content.
+- [Notes/SQL/cursors.md](../../Notes/SQL/cursors.md)
+  - SQL cursors / Why we need them: pg.cursor.results
+  - SQL cursors / Small input: pg.cursor.results
+  - SQL cursors / PostgreSQL: fetch rows in parts: pg.cursor.results
+  - SQL cursors / PostgreSQL: other fetch choices: pg.cursor.results
+  - SQL cursors / PostgreSQL: transaction and memory checks: pg.cursor.results
+  - SQL cursors / Oracle: explicit cursor with a loop: pg.cursor.results
+  - SQL cursors / Oracle: shorter cursor FOR loop: pg.cursor.results
+  - SQL cursors / SQL cursor versus Python cursor: pg.cursor.results
+  - SQL cursors / Remember: pg.cursor.results
+  - SQL cursors / References and practice: pg.cursor.results
 - [Notes/SQL/learning-notes.md](../../Notes/SQL/learning-notes.md)
   - sql learning notes: sql.count.nulls, sql.join.keys, sql.group.grain
   - sql learning notes / 15 October 2026 — LEFT JOIN preservation (SQL-001): sql.join.preservation
@@ -567,6 +578,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/revision/README.md](../../Notes/revision/README.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/ai-reminder-questions.md](../../Notes/revision/ai-reminder-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/concurrency-questions.md](../../Notes/revision/concurrency-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/cursor-questions.md](../../Notes/revision/cursor-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/fine-tuning-questions.md](../../Notes/revision/fine-tuning-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/json-questions.md](../../Notes/revision/json-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/list-questions.md](../../Notes/revision/list-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.

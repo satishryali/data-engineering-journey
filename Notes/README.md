@@ -11,6 +11,7 @@ learning repository as the vault, and do not create another `Notes` folder insid
 - [Revision records](revision/README.md)
 - [Learning plan](learning-and-revision-plan.md)
 - [SQL learning notes](SQL/learning-notes.md)
+- [SQL cursors: PostgreSQL and Oracle](SQL/cursors.md)
 - [Recall questions, without answers](revision/questions.md)
 - [Mistake index](revision/mistakes.md)
 

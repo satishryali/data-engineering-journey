@@ -1,3 +1,10 @@
+## SQL cursor reference saved - 10 November 2026 IST
+
+<!-- CP-20261110-sql-cursor-reference -->
+Created requested SQL cursor notes: PostgreSQL DECLARE/FETCH/CLOSE, batches, position, transaction lifetime and memory limits; Oracle explicit and FOR loops; distinction from Python cursors. Runnable examples with expected output and separate unanswered recall prompts. Official documentation checked; no live database execution, learner attempt, scored review, timer change or task acceptance. Reused unassessed pg.cursor.results mapping and preserved existing review dates. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+[Cursor notes](../Notes/SQL/cursors.md). Earlier pending work remains below.
+
 ## CROSS JOIN details saved - 9 November 2026 IST
 
 <!-- CP-20261109-cross-join-details -->

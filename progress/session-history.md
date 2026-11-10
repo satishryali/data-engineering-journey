@@ -520,3 +520,10 @@ Evidence: `Notes/SQL/learning-notes.md#sql-joins-a-small-reference`
 Expanded the requested CROSS JOIN reference with every-pair output, row-count multiplication, empty inputs, duplicates, NULL values, WHERE filtering, INNER JOIN comparison and practical uses. Tutor-prepared reference with expected output only; no SQL execution, learner attempt, score, review-date change, task acceptance or timer change. Existing SQL concept mappings reused; content expansion flagged for future assessment. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
 
 Evidence: `Notes/SQL/learning-notes.md#cross-join-every-combination`
+
+<!-- checkpoint:CP-20261110-sql-cursor-reference -->
+## 2026-11-10 — CP-20261110-sql-cursor-reference (setup)
+
+Created requested SQL cursor notes: PostgreSQL DECLARE/FETCH/CLOSE, batches, position, transaction lifetime and memory limits; Oracle explicit and FOR loops; distinction from Python cursors. Runnable examples with expected output and separate unanswered recall prompts. Official documentation checked; no live database execution, learner attempt, scored review, timer change or task acceptance. Reused unassessed pg.cursor.results mapping and preserved existing review dates. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+Evidence: `Notes/SQL/cursors.md#sql-cursors`

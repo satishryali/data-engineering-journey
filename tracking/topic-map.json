@@ -223,6 +223,10 @@
         {
           "path": "Notes/Python/Lessons/Doubts/Connection.md",
           "sha256": "aa38b75b0bf2d6bd5a52bbec4e8cf6d7eb6c32c3bab959fd07c15550bf10eb7f"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "sha256": "56bc3d137d5e24575aff651ee9acf3f8b4da4ab58cbd875b32c9be98d4845024"
         }
       ],
       "source_history": [
@@ -283,6 +287,46 @@
         {
           "path": "Notes/Python/Lessons/Doubts/Connection.md",
           "key": "If you wanted to check whether the connection is closed or not using a simple statement you can use this"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Why we need them"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Small input"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / PostgreSQL: fetch rows in parts"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / PostgreSQL: other fetch choices"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / PostgreSQL: transaction and memory checks"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Oracle: explicit cursor with a loop"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Oracle: shorter cursor FOR loop"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / SQL cursor versus Python cursor"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Remember"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / References and practice"
         }
       ],
       "initial_assessment_date_ist": "2026-11-01"
@@ -4734,6 +4778,92 @@
       "exclusion_reason": "Index, vault setup or curriculum administration; no assessed lesson content."
     },
     {
+      "path": "Notes/SQL/cursors.md",
+      "file_hash": "56bc3d137d5e24575aff651ee9acf3f8b4da4ab58cbd875b32c9be98d4845024",
+      "sections": [
+        {
+          "key": "SQL cursors / Why we need them",
+          "heading": "SQL cursors / Why we need them",
+          "content_hash": "9e3546e120ab6f51d020d94ea2ac6950a82f7da5687fe3f0991b2373731648ad",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / Small input",
+          "heading": "SQL cursors / Small input",
+          "content_hash": "625434eb07eb1ddd2bc86f9272c01f85f669971a5b2b2e27faad3faf98670ad9",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / PostgreSQL: fetch rows in parts",
+          "heading": "SQL cursors / PostgreSQL: fetch rows in parts",
+          "content_hash": "0c9768f72c0e411545e47ec9597fd96d30015d637e4553b1d262d1cece354e69",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / PostgreSQL: other fetch choices",
+          "heading": "SQL cursors / PostgreSQL: other fetch choices",
+          "content_hash": "d81c7f935f30d92b00eb5af4dc80ef34fb72adcb392285467a7993d06919fbe2",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / PostgreSQL: transaction and memory checks",
+          "heading": "SQL cursors / PostgreSQL: transaction and memory checks",
+          "content_hash": "2349a51dde24662d8e11792bec27ca18af97e6d3ff618f4c6b35102bde450e33",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / Oracle: explicit cursor with a loop",
+          "heading": "SQL cursors / Oracle: explicit cursor with a loop",
+          "content_hash": "346a61627e39fe0f4cbc959fa5643d235ff9966bb1bb04079e5271f26860994c",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / Oracle: shorter cursor FOR loop",
+          "heading": "SQL cursors / Oracle: shorter cursor FOR loop",
+          "content_hash": "1ecda082d33a05fc3253072643d5c15d99883e545d6e7d9af42f9543b32acc3f",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / SQL cursor versus Python cursor",
+          "heading": "SQL cursors / SQL cursor versus Python cursor",
+          "content_hash": "b9ce475303a8dbceadec973590afa4a8cca26198cf45438468f5e6f3c3c1c3fe",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / Remember",
+          "heading": "SQL cursors / Remember",
+          "content_hash": "9a3dcfbd8c77adcfe88194570f12dda5b35054d3b5e98b7309c81c2abb6c5f87",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        },
+        {
+          "key": "SQL cursors / References and practice",
+          "heading": "SQL cursors / References and practice",
+          "content_hash": "51852d06f01af9620df3d00cfdce5accc010a96118d6186a9e24bb114db727e2",
+          "topic_ids": [
+            "pg.cursor.results"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/SQL/learning-notes.md",
       "file_hash": "9fa36ade2d667cedf74b090288d110ade2e87f673e73b8b256c24f6ef95182df",
       "sections": [
@@ -5268,6 +5398,10 @@
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
     {
+      "path": "Notes/revision/cursor-questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
       "path": "Notes/revision/fine-tuning-questions.md",
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
@@ -5379,11 +5513,11 @@
     },
     {
       "path": "tools/sql/notes.md",
-      "file_hash": "8392458b0c09fcbc3ca36e3c8741b7596114365b60de8a9ea54940a098bafd9a",
+      "file_hash": "1df50c92b081b75e0e6d7f3b271d95f3514be9e1fa750d7598eae0e183137858",
       "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
     }
   ],
-  "inventory_date_ist": "2026-11-09",
+  "inventory_date_ist": "2026-11-10",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

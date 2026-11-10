@@ -256,6 +256,10 @@
         {
           "path": "Notes/Python/Lessons/Doubts/Connection.md",
           "sha256": "aa38b75b0bf2d6bd5a52bbec4e8cf6d7eb6c32c3bab959fd07c15550bf10eb7f"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "sha256": "56bc3d137d5e24575aff651ee9acf3f8b4da4ab58cbd875b32c9be98d4845024"
         }
       ],
       "source_history": [
@@ -316,6 +320,46 @@
         {
           "path": "Notes/Python/Lessons/Doubts/Connection.md",
           "key": "If you wanted to check whether the connection is closed or not using a simple statement you can use this"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Why we need them"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Small input"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / PostgreSQL: fetch rows in parts"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / PostgreSQL: other fetch choices"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / PostgreSQL: transaction and memory checks"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Oracle: explicit cursor with a loop"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Oracle: shorter cursor FOR loop"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / SQL cursor versus Python cursor"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / Remember"
+        },
+        {
+          "path": "Notes/SQL/cursors.md",
+          "key": "SQL cursors / References and practice"
         }
       ],
       "initial_assessment_date_ist": "2026-11-01",
