@@ -1,3 +1,10 @@
+## SQL stored-procedure reference saved - 12 November 2026 IST
+
+<!-- CP-20261112-sql-procedure-reference -->
+Prepared requested stored-procedure reference: PostgreSQL and Oracle creation/calls, IN/OUT/INOUT parameters, missing-order errors, caller-owned rollback, functions versus cursors, cleanup and permissions. Official documentation checked; examples show expected output only, with separate unanswered recall prompts. No live database execution, learner attempt, assessment, review completion, timer change or RDS-001 acceptance. Added one unassessed concept with an adjustable initial diagnostic slot; existing review dates preserved. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+[Stored procedure notes](Notes/SQL/stored-procedures.md). Earlier pending work remains below.
+
 ## SQL cursor reference saved - 10 November 2026 IST
 
 <!-- CP-20261110-sql-cursor-reference -->

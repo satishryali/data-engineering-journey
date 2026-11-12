@@ -3216,6 +3216,70 @@
       "last_review_id": null,
       "learning_state": "Unassessed",
       "linked_mistakes": []
+    },
+    {
+      "id": "sql.stored.procedures",
+      "name": "Stored procedures: calls, parameters and transactions",
+      "sources": [
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "sha256": "e87d82ac68c09018519177cfddd19bd15b8ab7f31b14108da06ae3f240afcd0e"
+        }
+      ],
+      "source_history": [],
+      "coverage": "active",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Why we need them"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: small input"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: create and call"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: IN, OUT and INOUT"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: transactions"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Procedure, function and cursor"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Oracle: create and call"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Change, remove and permissions"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Sources and practice"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-12-05",
+      "needs_reassessment": false,
+      "assessment_status": "unassessed",
+      "interval_stage": null,
+      "next_review_date": null,
+      "last_reviewed_date": null,
+      "recent_scores": [],
+      "help_needed": null,
+      "last_review_id": null,
+      "learning_state": "Unassessed",
+      "linked_mistakes": []
     }
   ],
   "session": {

@@ -393,6 +393,13 @@
       "kind": "setup",
       "sha256": "0b905f4a891d227f0ef70253f350a7272a8894b5b722eadbe5e8796e2769b086",
       "evidence_key": "12addbb3ba2556794d0328b515de956c49bd4725d18dda1cf9a5d675b66d9273"
+    },
+    {
+      "checkpoint_id": "CP-20261112-sql-procedure-reference",
+      "date_ist": "2026-11-12",
+      "kind": "setup",
+      "sha256": "c1c961e953ce42edb26131281b00d51745bc6f9b653f8bc88014f6f31475406f",
+      "evidence_key": "37aa45f99447b537d491efdb1791a8ef7692109cfb4f8164127cc3b85c811b9a"
     }
   ]
 }

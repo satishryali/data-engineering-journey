@@ -2700,6 +2700,61 @@
         }
       ],
       "initial_assessment_date_ist": "2026-12-04"
+    },
+    {
+      "id": "sql.stored.procedures",
+      "name": "Stored procedures: calls, parameters and transactions",
+      "sources": [
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "sha256": "e87d82ac68c09018519177cfddd19bd15b8ab7f31b14108da06ae3f240afcd0e"
+        }
+      ],
+      "source_history": [],
+      "coverage": "active",
+      "prerequisites": [],
+      "exercise_ids": [],
+      "legacy_id": null,
+      "note_sections": [
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Why we need them"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: small input"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: create and call"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: IN, OUT and INOUT"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / PostgreSQL: transactions"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Procedure, function and cursor"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Oracle: create and call"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Change, remove and permissions"
+        },
+        {
+          "path": "Notes/SQL/stored-procedures.md",
+          "key": "SQL stored procedures / Sources and practice"
+        }
+      ],
+      "initial_assessment_date_ist": "2026-12-05",
+      "needs_reassessment": false
     }
   ],
   "note_inventory": [
@@ -5133,6 +5188,84 @@
       ]
     },
     {
+      "path": "Notes/SQL/stored-procedures.md",
+      "file_hash": "e87d82ac68c09018519177cfddd19bd15b8ab7f31b14108da06ae3f240afcd0e",
+      "sections": [
+        {
+          "key": "SQL stored procedures / Why we need them",
+          "heading": "SQL stored procedures / Why we need them",
+          "content_hash": "ed969ac6e920797bdcb0748a5bbf8bd1fb96d074b2d637bdf881b81d5aea1186",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / PostgreSQL: small input",
+          "heading": "SQL stored procedures / PostgreSQL: small input",
+          "content_hash": "774564ac428ec0abf3ba31b8e21854fc49e6a0dc573622b7948a6b032bf19153",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / PostgreSQL: create and call",
+          "heading": "SQL stored procedures / PostgreSQL: create and call",
+          "content_hash": "2649b882a890cafc77009866a56f45fdd32c35e4386e863387f10a6e27880a76",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / PostgreSQL: IN, OUT and INOUT",
+          "heading": "SQL stored procedures / PostgreSQL: IN, OUT and INOUT",
+          "content_hash": "a733bef70087c5db8a26a986e9a6df441a55018d1619b839310190ea4f6b7b4b",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / PostgreSQL: transactions",
+          "heading": "SQL stored procedures / PostgreSQL: transactions",
+          "content_hash": "db00941ffdae5ccb95afd65eba31b77fd181477af7b1bb17c397f549c4c582ae",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / Procedure, function and cursor",
+          "heading": "SQL stored procedures / Procedure, function and cursor",
+          "content_hash": "24108355ff34e07249447f4c4c9d8063b79eb93b45376322c1598efdbff472e3",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / Oracle: create and call",
+          "heading": "SQL stored procedures / Oracle: create and call",
+          "content_hash": "003d49779981ef992886854b43dff240486526503a7311ef4255c64309afa02d",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / Change, remove and permissions",
+          "heading": "SQL stored procedures / Change, remove and permissions",
+          "content_hash": "c30a47894c33d6297f89fa21acfef459523c2de472727c3ee76d17a778724363",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        },
+        {
+          "key": "SQL stored procedures / Sources and practice",
+          "heading": "SQL stored procedures / Sources and practice",
+          "content_hash": "322af15be13031cc678baa0d583a5ec25e1f69148d9d70cf8b3dcc4d7a7ead6e",
+          "topic_ids": [
+            "sql.stored.procedures"
+          ]
+        }
+      ]
+    },
+    {
       "path": "Notes/Untitled.base",
       "exclusion_reason": "Image, asset or machine-readable view; learning is mapped from its explanation note."
     },
@@ -5430,6 +5563,10 @@
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
     {
+      "path": "Notes/revision/procedure-questions.md",
+      "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
+    },
+    {
       "path": "Notes/revision/questions.md",
       "exclusion_reason": "Revision instructions, generated view or answer-free prompts; original explanations are mapped."
     },
@@ -5513,11 +5650,11 @@
     },
     {
       "path": "tools/sql/notes.md",
-      "file_hash": "1df50c92b081b75e0e6d7f3b271d95f3514be9e1fa750d7598eae0e183137858",
-      "exclusion_reason": "Links to canonical vault explanations; no duplicate coverage."
+      "file_hash": "6e5bd50d4af6a9a0f0c8fcfadba9c03f3812f8bdcd245fc24e4ff8c6b93745f4",
+      "exclusion_reason": "Navigation links only; explanations are mapped in Notes/SQL/."
     }
   ],
-  "inventory_date_ist": "2026-11-10",
+  "inventory_date_ist": "2026-11-12",
   "diagnostic_policy": {
     "max_new_topics_per_suitable_session": 1,
     "slot_minutes": 5,

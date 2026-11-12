@@ -1,15 +1,15 @@
 # Revision plan (generated)
 
-As of 2026-11-10 IST. Refresh at revision planning or checkpoint boundaries.
+As of 2026-11-12 IST. Refresh at revision planning or checkpoint boundaries.
 Source: topic-map + revision queue/history + mistakes. This plan does not record an attempt.
 
 ## Coverage
 
 | Count | Meaning |
 | ---: | --- |
-| 255 | learning sections mapped |
+| 264 | learning sections mapped |
 | 16 | sections excluded |
-| 53 | topics total |
+| 54 | topics total |
 | 3 | topics assessed |
 | 0 | topics practised on delayed review |
 | 3 | topics needing help |
@@ -91,6 +91,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 | dbt.project.structure: dbt project structure and model dependencies | 2026-12-02 | dbt.connections.profiles |
 | dbt.models.materialization: dbt table and view materialization basics | 2026-12-03 | dbt.project.structure |
 | dbt.tests.properties: dbt properties YAML and basic data tests | 2026-12-04 | dbt.project.structure |
+| sql.stored.procedures: Stored procedures: calls, parameters and transactions | 2026-12-05 | None |
 
 ## Important weak topics
 
@@ -140,7 +141,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / How the important lines work
 - Removed section: Notes/Python/Concepts/api-requests.md / Requesting API data / Format parameters with urlencode / Why we need it
 - Removed section: Notes/Python/Concepts/special-methods.md / Special methods / __getitem__ - support square brackets / What makes `__getitem__` special
-- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, vault.kv.read, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records, py.str.split, py.csv.write, py.files.methods, py.objects.basics, py.random.basics
+- Neglected topics: py.dict.access, py.dict.mutate, py.context.resources, pg.cursor.results, py.logging.basics, py.paths.imports, py.modules.main, vault.kv.read, py.logging.shared, de.ingest.seeds, sql.join.preservation, sql.count.nulls, sql.join.keys, sql.group.grain, sql.sum.nulls, py.dict.remove, py.list.basics, py.list.mutate, py.list.records, py.str.split, py.csv.write, py.files.methods, py.objects.basics, py.random.basics, py.faker.basics, py.records.summary
 - Reassessment flags: py.paths.imports, sql.join.preservation, sql.join.keys, py.objects.protocols, dbt.connections.profiles, dbt.models.materialization
 
 ## Manageable session
@@ -148,7 +149,7 @@ Dates below are adjustable planning slots, not completed reviews or overdue rete
 Default: 15–20 minutes; one meaningful task at a time, at most one new diagnostic concept.
 Check prerequisites first. Teach missing understanding before retention practice. No timer starts from planning.
 - sql.join.preservation: prerequisite check; teach if needed, about 10 minutes.
-- 50 topics await assessment. One diagnostic per suitable session needs at least 50 sessions; new notes can extend this. Replan missed slots without restarting.
+- 51 topics await assessment. One diagnostic per suitable session needs at least 51 sessions; new notes can extend this. Replan missed slots without restarting.
 
 ## Topic evidence
 
@@ -207,6 +208,7 @@ Check prerequisites first. Teach missing understanding before retention practice
 | dbt.project.structure | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | dbt.models.materialization | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 | dbt.tests.properties | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
+| sql.stored.procedures | Unassessed | None | None | No concept assessment; help=None, notes=None, hints=None |
 
 ## Source sections and exclusions
 
@@ -540,6 +542,16 @@ Related sections share topic IDs. Empty container headings are not counted.
   - Oracle SQL revision — 3 November 2026 / SUM with CASE: follow each row: MAPPING NEEDED
   - Oracle SQL revision — 3 November 2026 / Add matching salaries: MAPPING NEEDED
   - Oracle SQL revision — 3 November 2026 / Sources and practice: MAPPING NEEDED
+- [Notes/SQL/stored-procedures.md](../../Notes/SQL/stored-procedures.md)
+  - SQL stored procedures / Why we need them: sql.stored.procedures
+  - SQL stored procedures / PostgreSQL: small input: sql.stored.procedures
+  - SQL stored procedures / PostgreSQL: create and call: sql.stored.procedures
+  - SQL stored procedures / PostgreSQL: IN, OUT and INOUT: sql.stored.procedures
+  - SQL stored procedures / PostgreSQL: transactions: sql.stored.procedures
+  - SQL stored procedures / Procedure, function and cursor: sql.stored.procedures
+  - SQL stored procedures / Oracle: create and call: sql.stored.procedures
+  - SQL stored procedures / Change, remove and permissions: sql.stored.procedures
+  - SQL stored procedures / Sources and practice: sql.stored.procedures
 - [Notes/Untitled.base](../../Notes/Untitled.base): Image, asset or machine-readable view; learning is mapped from its explanation note.
 - [Notes/Untitled.canvas](../../Notes/Untitled.canvas): Image, asset or machine-readable view; learning is mapped from its explanation note.
 - [Notes/Welcome.md](../../Notes/Welcome.md): Index, vault setup or curriculum administration; no assessed lesson content.
@@ -586,6 +598,7 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [Notes/revision/notebook-questions.md](../../Notes/revision/notebook-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/pathlib-questions.md](../../Notes/revision/pathlib-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/plan.md](../../Notes/revision/plan.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
+- [Notes/revision/procedure-questions.md](../../Notes/revision/procedure-questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/questions.md](../../Notes/revision/questions.md): Revision instructions, generated view or answer-free prompts; original explanations are mapped.
 - [Notes/revision/reviews.jsonl](../../Notes/revision/reviews.jsonl): Image, asset or machine-readable view; learning is mapped from its explanation note.
 - [Notes/revision/topics.json](../../Notes/revision/topics.json): Image, asset or machine-readable view; learning is mapped from its explanation note.
@@ -603,4 +616,4 @@ Related sections share topic IDs. Empty container headings are not counted.
 - [tools/python/notes.md](../../tools/python/notes.md): Links to canonical vault explanations and administrative learning-record template; no separate lesson content.
 - [tools/shell/notes.md](../../tools/shell/notes.md): Empty lesson template; no substantive learning content yet.
 - [tools/snowflake/notes.md](../../tools/snowflake/notes.md): Empty lesson template; no substantive learning content yet.
-- [tools/sql/notes.md](../../tools/sql/notes.md): Links to canonical vault explanations; no duplicate coverage.
+- [tools/sql/notes.md](../../tools/sql/notes.md): Navigation links only; explanations are mapped in Notes/SQL/.

@@ -527,3 +527,10 @@ Evidence: `Notes/SQL/learning-notes.md#cross-join-every-combination`
 Created requested SQL cursor notes: PostgreSQL DECLARE/FETCH/CLOSE, batches, position, transaction lifetime and memory limits; Oracle explicit and FOR loops; distinction from Python cursors. Runnable examples with expected output and separate unanswered recall prompts. Official documentation checked; no live database execution, learner attempt, scored review, timer change or task acceptance. Reused unassessed pg.cursor.results mapping and preserved existing review dates. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
 
 Evidence: `Notes/SQL/cursors.md#sql-cursors`
+
+<!-- checkpoint:CP-20261112-sql-procedure-reference -->
+## 2026-11-12 — CP-20261112-sql-procedure-reference (setup)
+
+Prepared requested stored-procedure reference: PostgreSQL and Oracle creation/calls, IN/OUT/INOUT parameters, missing-order errors, caller-owned rollback, functions versus cursors, cleanup and permissions. Official documentation checked; examples show expected output only, with separate unanswered recall prompts. No live database execution, learner attempt, assessment, review completion, timer change or RDS-001 acceptance. Added one unassessed concept with an adjustable initial diagnostic slot; existing review dates preserved. Next: Lesson 4 source inspection: list raw base tables, then inspect raw_hosts columns and sample rows before writing src_hosts.
+
+Evidence: `Notes/SQL/stored-procedures.md#sql-stored-procedures`
